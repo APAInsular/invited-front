@@ -9,6 +9,9 @@ import LandingPage from './pages/LandingPage';
 import MakeInvitationPage from './pages/MakeInvitationPage';
 import TemplatesPage from './pages/TemplatesPage';
 import RomanticTemplate from './templates/RomanticTemplate';
+import Dashboard from './pages/Dashboard';
+import UserList from './components/UserList';
+import InvitationList from './components/InvitationList';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +41,18 @@ const router = createBrowserRouter([
   {
     path: "/invitation/:partnerName/templates/:idTemplate",
     element: <RomanticTemplate />
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />
+  },
+  {
+    path: "/dashboard/users",
+    element: <UserList />
+  },
+  {
+    path: "/dashboard/invitations",
+    element: <InvitationList />
   }
 ]);
 

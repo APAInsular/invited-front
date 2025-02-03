@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 import apiClient from '../config/axiosConfig';
 

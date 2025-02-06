@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
 
 const LandingPage = () => {
     const [user, setUser] = useState(null);
@@ -40,61 +40,51 @@ const LandingPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="mt-5" style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
             {/* Hero Section */}
-            <section className="hero bg-cover text-white text-center py-5" style={{ backgroundImage: 'url("https://source.unsplash.com/1600x900/?wedding")', height: '100vh' }}>
-                <div className="overlay bg-dark bg-opacity-50 d-flex justify-content-center align-items-center h-100">
-                    <div>
-                        <h1 className="display-4">Crea tus invitaciones de boda únicas</h1>
-                        <h2>{user ? `Bienvenido, ${user.name}` : 'Bienvenido a nuestra página!'}</h2>
-                        <p className="lead">Diseña, personaliza y comparte tus invitaciones de manera fácil y rápida.</p>
-                    </div>
-                </div>
-            </section>
+            <header className='mt-5' style={{ backgroundColor: "#FAF9F8", color: "white", textAlign: "center", padding: "50px" }}>
+                <h1 className='mt-5' style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#F19292" }}>Crea Invitaciones Personalizadas</h1>
+                {user && (
+                    <h3 className='mt-5' style={{ color: "#F19292" }}>Bienvenido {user.Name} y {user.partner.Name}</h3>
+                )
+                }
+                <p style={{ marginTop: "10px", fontSize: "1.2rem", color: "#F19292" }}>Bodas, cumpleaños y más, con plantillas listas para ti.</p>
+                <Button variant="light" style={{ marginTop: "10px", color: "#FAF9F8", backgroundColor: "#F19292", fontWeight: "bold" }}>Comenzar</Button>
+            </header>
 
-            {/* Features Section */}
-            <section className="features py-5">
-                <Container>
-                    <h2 className="text-center mb-4">¿Por qué elegirnos?</h2>
-                    <Row>
-                        <Col md={4} className="mb-4">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Personalización Total</Card.Title>
-                                    <Card.Text>Elige entre miles de plantillas y personaliza los colores, las fuentes y las imágenes.</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col md={4} className="mb-4">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Envío Digital</Card.Title>
-                                    <Card.Text>Envía tus invitaciones a través de email o redes sociales en minutos.</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col md={4} className="mb-4">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Impresión de Alta Calidad</Card.Title>
-                                    <Card.Text>Si prefieres las invitaciones físicas, las imprimimos por ti con la mejor calidad.</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+            {/* Templates Section */}
+            <Container className="text-center" style={{ padding: "50px" }}>
+                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Elige una Plantilla</h2>
+                <p style={{ marginTop: "10px" }}>Personaliza tus invitaciones con nuestras opciones.</p>
+                <Row className="mt-4 justify-content-center">
+                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 1</Col>
+                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 2</Col>
+                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 3</Col>
+                </Row>
+                <Row className="mt-4 justify-content-center">
+                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 4</Col>
+                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 5</Col>
+                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 6</Col>
+                </Row>
+            </Container>
 
-            {/* Call to Action Section */}
-            <section className="cta bg-danger text-white text-center py-5">
-                <h2>¡Empieza a crear tu invitación ahora!</h2>
-                <Button href="/create" variant="light" size="lg">Crear Invitación</Button>
-            </section>
-
-            {/* Footer Section */}
-            <footer className="footer bg-dark text-white text-center py-3">
-                <p>&copy; 2025 Invitaciones de Boda. Todos los derechos reservados.</p>
-            </footer>
+            {/* Form Section */}
+            <div style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
+                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu Invitación</h2>
+                <p style={{ marginTop: "10px" }}>Llena el formulario y genera tu invitación en minutos.</p>
+                <Form style={{ maxWidth: "500px", margin: "0 auto", marginTop: "20px" }}>
+                    <Form.Group className="mb-3">
+                        <Form.Control type="text" placeholder="Nombre del evento" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Control type="text" placeholder="Fecha y hora" />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Control as="textarea" placeholder="Mensaje" />
+                    </Form.Group>
+                    <Button variant="danger" style={{ backgroundColor: "#F19292", borderColor: "#F19292", fontWeight: "bold" }}>Generar Invitación</Button>
+                </Form>
+            </div>
         </div>
     );
 };

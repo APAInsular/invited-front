@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <Login />
   },
   {
-    path: "/invitation/:partnerName",
+    path: "/:partnerName",
     element: <LandingPage />
   },
   {

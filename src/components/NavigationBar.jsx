@@ -1,9 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
+import ImagenLogo from '../Images/Logo_Invited_SinFondo.png'
 
 const NavigationBar = () => {
     const [user, setUser] = useState(null);
+
+    const defaultStyle = {
+        padding: "5px 10px",
+        margin: "0px 8px",
+        border: "2px solid #F19292",
+        borderRadius: "5px",
+        color: "#F19292",
+        textDecoration: "none",
+        transition: "all 0.3s ease-in-out",
+        fontWeight: "bold"
+    };
+
+    const hoverStyle = {
+        backgroundColor: "#F19292",
+        color: "#FAF9F8",
+        fontWeight: "bold"
+    };
+
+    const [hovered, setHovered] = useState(null);
 
     // Obtener el usuario autenticado al cargar el componente
     useEffect(() => {
@@ -65,24 +85,47 @@ const NavigationBar = () => {
     };
 
     return (
-        <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+        <Navbar bg="light" variant="light" expand="lg" fixed="top">
             <Container>
-                <Navbar.Brand href="/">Invitaciones de Boda</Navbar.Brand>
+                <Navbar.Brand href="/"><img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Nav.Link href="/">Inicio</Nav.Link>
-                        {user ? (
+                        {["Inicio", user ? `invitation/${user.name}/templates` : "invitation/noseque/templates", "login", "register"].map((path, index) => (
+                            <Nav.Link
+                                key={index}
+                                href={path === "Inicio" ? "/" : `/${path}`}
+                                style={hovered === index ? { ...defaultStyle, ...hoverStyle } : defaultStyle}
+                                onMouseEnter={() => setHovered(index)}
+                                onMouseLeave={() => setHovered(null)}
+                            >
+                                {path === "Inicio" ? "Inicio" : path.includes("invitation") ? "Crear invitación" : path === "login" ? "Iniciar Sesión" : "Registro"}
+                            </Nav.Link>
+                        ))}
+
+                        {user && (
                             <>
-                                <Nav.Link href={`/invitation/${user.name}/templates`}>Crear invitación</Nav.Link>
-                                <Nav.Link href="/profile">Perfil</Nav.Link>
-                                <Button variant="outline-light" onClick={handleLogout}>Cerrar Sesión</Button>
-                            </>
-                        ) : (
-                            <>
-                                <Nav.Link href={`/invitation/noseque/templates`}>Crear invitación</Nav.Link>
-                                <Nav.Link href="/login">Iniciar Sesión</Nav.Link>
-                                <Nav.Link href="/register">Registro</Nav.Link>
+                                <Nav.Link
+                                    href="/profile"
+                                    style={hovered === "profile" ? { ...defaultStyle, ...hoverStyle } : defaultStyle}
+                                    onMouseEnter={() => setHovered("profile")}
+                                    onMouseLeave={() => setHovered(null)}
+                                >
+                                    Perfil
+                                </Nav.Link>
+                                <Button
+                                    variant="outline-light"
+                                    onClick={handleLogout}
+                                    style={
+                                        hovered === "logout"
+                                            ? { backgroundColor: "white", color: "#F19292", border: "2px solid white" }
+                                            : { border: "2px solid white", color: "white" }
+                                    }
+                                    onMouseEnter={() => setHovered("logout")}
+                                    onMouseLeave={() => setHovered(null)}
+                                >
+                                    Cerrar Sesión
+                                </Button>
                             </>
                         )}
                     </Nav>

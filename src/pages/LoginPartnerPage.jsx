@@ -7,7 +7,7 @@ import apiClient, { getCsrfToken } from '../config/axiosConfig';
 const Login = () => {
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
-    email: '',
+    Email: '',
     password: ''
   });
   const [error, setError] = useState('');
@@ -25,10 +25,10 @@ const Login = () => {
   const loginPartner = async () => {
     try {
       // Obtener el CSRF token antes de iniciar sesión
-      await getCsrfToken();
+      //await getCsrfToken();
 
       // Realizar la solicitud de inicio de sesión
-      const response = await apiClient.post('/api/partner/login', formData);
+      const response = await apiClient.post('/api/login', formData);
 
       setMessage('Inicio de sesión exitoso');
 
@@ -38,7 +38,7 @@ const Login = () => {
       // Guardamos el token de autenticación en sessionStorage
       sessionStorage.setItem('auth_token', authToken);
 
-      console.log(message);
+      //console.log(message);
       console.log('Respuesta del servidor:', response.data);
 
       return response.data;
@@ -51,15 +51,15 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.email === '' || formData.password === '') {
+    if (formData.Email === '' || formData.password === '') {
       setError('Por favor, ingresa tu email y contraseña.');
     } else {
       setError('');
       try {
         const result = await loginPartner();
-        const partnerName = result.partner.name;
+        const partnerName = result.user_details.original.Name + '&' + result.user_details.original.partner.Name;
         const partnerNameWithoutSpaces = partnerName.replace(/\s+/g, '');
-        navigate(`/invitation/${partnerNameWithoutSpaces}`); // Redirige al usuario
+        navigate(`/${partnerNameWithoutSpaces}`); // Redirige al usuario
       } catch {
         setError('No se pudo iniciar sesión. Inténtalo de nuevo.');
       }
@@ -78,8 +78,8 @@ const Login = () => {
               <Form.Control
                 type="email"
                 placeholder="Ingresa tu email"
-                name="email"
-                value={formData.email}
+                name="Email"
+                value={formData.Email}
                 onChange={handleChange}
                 required
               />

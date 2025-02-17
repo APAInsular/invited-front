@@ -8,10 +8,10 @@ import NavigationBar from './components/NavigationBar';
 import LandingPage from './pages/LandingPage';
 import MakeInvitationPage from './pages/MakeInvitationPage';
 import TemplatesPage from './pages/TemplatesPage';
-import RomanticTemplate from './templates/RomanticTemplate';
 import Dashboard from './pages/Dashboard';
 import UserList from './components/UserList';
 import InvitationList from './components/InvitationList';
+import Invitations from './pages/Invitations';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     element: <LandingPage />
   },
   {
-    path: "/invitation/:partnerName/:template/form",
+    path: "/:partnerName/invitation/:templateName/form",
     element: <MakeInvitationPage />
   },
   {
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
     element: <TemplatesPage />
   },
   {
-    path: "/invitation/:partnerName/templates/:idTemplate",
-    element: <RomanticTemplate />
+    path: "/invitacion/:partnerName/:idWedding",
+    element: <Invitations />
   },
   {
     path: "/dashboard",

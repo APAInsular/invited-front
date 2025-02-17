@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 // Configurar Axios
 const apiClient = axios.create({
-    baseURL: 'http://localhost:8000', // Cambia esto por la URL de tu backend
+    baseURL: process.env.REACT_BACKEND_URL || 'http://localhost:8000', // Usa la variable de entorno o un valor por defecto
     withCredentials: true, // Permitir el envío de cookies en las solicitudes
     headers: {
         'Content-Type': 'application/json',

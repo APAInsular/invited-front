@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Llamamos a la API para obtener el usuario autenticado
@@ -39,13 +41,31 @@ const LandingPage = () => {
         fetchUser();  // Solo llamamos a la función que obtiene los datos
     }, []);
 
+    const colStyle = {
+        backgroundColor: "#F9E9E8",
+        padding: "20px",
+        borderRadius: "10px",
+        boxShadow: "0px 0px 10px rgba(0,0,0,0.1)",
+        margin: "10px",
+        cursor: "pointer",
+        textAlign: "center"
+    };
+
+    const handleNavigation = (path) => {
+        if (user) {
+            navigate(`/${user[0].Name}&${user[0].partner.Name}/invitation` + path);
+        } else {
+            navigate('/login')
+        }
+    };
+
     return (
         <div className="mt-5" style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
             {/* Hero Section */}
             <header className='mt-5' style={{ backgroundColor: "#FAF9F8", color: "white", textAlign: "center", padding: "50px" }}>
-                <h1 className='mt-5' style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#F19292" }}>Crea Invitaciones Personalizadas</h1>
+                <h1 className='mt-5' style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#F19292" }}>Crea Invitaciones Personalizadas prueba</h1>
                 {user && (
-                    <h3 className='mt-5' style={{ color: "#F19292" }}>Bienvenido {user.Name} y {user.partner.Name}</h3>
+                    <h3 className='mt-5' style={{ color: "#F19292" }}>Bienvenido {user[0].Name} y {user[0].partner.Name}</h3>
                 )
                 }
                 <p style={{ marginTop: "10px", fontSize: "1.2rem", color: "#F19292" }}>Bodas, cumpleaños y más, con plantillas listas para ti.</p>
@@ -57,14 +77,13 @@ const LandingPage = () => {
                 <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Elige una Plantilla</h2>
                 <p style={{ marginTop: "10px" }}>Personaliza tus invitaciones con nuestras opciones.</p>
                 <Row className="mt-4 justify-content-center">
-                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 1</Col>
-                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 2</Col>
-                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 3</Col>
+                    <Col md={3} style={colStyle} onClick={() => handleNavigation(`/PlantillaRomantica/form`)}>Plantilla Romantica</Col>
+                    <Col md={3} style={colStyle} onClick={() => handleNavigation(`/PlantillaSimple/form`)}>Plantilla Simple</Col>
+                    <Col md={3} style={colStyle} onClick={() => handleNavigation(`/PlantillaDramatica/form`)}>Plantilla Dramática</Col>
                 </Row>
                 <Row className="mt-4 justify-content-center">
-                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 4</Col>
-                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 5</Col>
-                    <Col md={3} style={{ backgroundColor: "#F9E9E8", padding: "20px", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", margin: "10px" }}>Plantilla 6</Col>
+                    <Col md={4} style={colStyle} onClick={() => handleNavigation(`/PlantillaDulce/form`)}>Plantilla Dulce</Col>
+                    <Col md={4} style={colStyle} onClick={() => handleNavigation(`/PlantillaOscuro/form`)}>Plantilla Oscuro</Col>
                 </Row>
             </Container>
 

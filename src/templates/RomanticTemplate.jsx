@@ -3,8 +3,9 @@ import { Container, Card, Spinner, Alert, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom';
 import { FaHeart, FaChurch, FaGlassCheers, FaTshirt } from 'react-icons/fa';
+import NewAttendantForm from '../components/newAttendantForm.jsx';
 
-const WeddingInvitation = () => {
+const RomanticTemplate = ({ weddingData }) => {
 
     // useEffect(() => {
     //     const fetchInvitationData = async () => {
@@ -31,9 +32,8 @@ const WeddingInvitation = () => {
         extraInformation: '',
         allergy: '',
         alimentation: '',
-        isChild: null,
-        numberOfChildren: 0,
-        childrenData: []
+        numberOfAttendant: "",
+        AttendantData: []
     });
 
     const handleInputChange = (e) => {
@@ -42,18 +42,6 @@ const WeddingInvitation = () => {
         setFormData({
             ...formData,
             [name]: val,
-        });
-    };
-
-    const handleChildDataChange = (index, field, value) => {
-        const updatedChildrenData = [...formData.childrenData];
-        updatedChildrenData[index] = {
-            ...updatedChildrenData[index],
-            [field]: value,
-        };
-        setFormData({
-            ...formData,
-            childrenData: updatedChildrenData,
         });
     };
 
@@ -135,150 +123,7 @@ const WeddingInvitation = () => {
                     </Card.Body>
                 </Card>
 
-                <Form onSubmit={handleSubmit} className="border p-4 shadow rounded" style={{ backgroundColor: '#fff8e6' }}>
-                    <h2 className="text-center text-primary mb-4">Confirma tu asistencia</h2>
-
-                    <Form.Group className="mb-3" controlId="name">
-                        <Form.Label>Nombre</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            required
-                            placeholder="Ingresa tu nombre"
-                        />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="surnames">
-                        <Form.Label>Apellidos</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="surnames"
-                            value={formData.surnames}
-                            onChange={handleInputChange}
-                            required
-                            placeholder="Ingresa tus apellidos"
-                        />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="extraInformation">
-                        <Form.Label>Información Extra</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            name="extraInformation"
-                            value={formData.extraInformation}
-                            onChange={handleInputChange}
-                            placeholder="Escribe cualquier información adicional"
-                        />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="allergy">
-                        <Form.Label>Alergias</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            name="allergy"
-                            value={formData.allergy}
-                            onChange={handleInputChange}
-                            placeholder="Especifica tus alergias (si tienes)"
-                        />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="alimentation">
-                        <Form.Label>Alimentación</Form.Label>
-                        <Form.Select
-                            name="alimentation"
-                            value={formData.alimentation}
-                            onChange={handleInputChange}
-                            required
-                        >
-                            <option value="">Selecciona una opción</option>
-                            <option value="Omnívoro">Omnívoro</option>
-                            <option value="Vegetariano">Vegetariano</option>
-                            <option value="Vegano">Vegano</option>
-                            <option value="Otro">Otro</option>
-                        </Form.Select>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="isChild">
-                        <Form.Label>¿Niño?</Form.Label>
-                        <div>
-                            <Button
-                                variant={formData.isChild === true ? 'primary' : 'outline-primary'}
-                                className="me-2"
-                                onClick={() => setFormData({ ...formData, isChild: true })}
-                            >
-                                Sí
-                            </Button>
-                            <Button
-                                variant={formData.isChild === false ? 'primary' : 'outline-primary'}
-                                onClick={() => setFormData({ ...formData, isChild: false, numberOfChildren: 0, childrenData: [] })}
-                            >
-                                No
-                            </Button>
-                        </div>
-                    </Form.Group>
-
-                    {formData.isChild && (
-                        <>
-                            <Form.Group className="mb-3" controlId="numberOfChildren">
-                                <Form.Label>¿Cuántos niños?</Form.Label>
-                                <Form.Control
-                                    type="number"
-                                    name="numberOfChildren"
-                                    value={formData.numberOfChildren}
-                                    onChange={(e) => {
-                                        const numberOfChildren = Number(e.target.value);
-                                        setFormData({
-                                            ...formData,
-                                            numberOfChildren,
-                                            childrenData: Array(numberOfChildren).fill({ name: '', surnames: '', age: '' }),
-                                        });
-                                    }}
-                                    min="1"
-                                    placeholder="Número de niños"
-                                />
-                            </Form.Group>
-
-                            {formData.childrenData.map((child, index) => (
-                                <div key={index} className="border p-3 mb-3 rounded">
-                                    <h5>Niño {index + 1}</h5>
-                                    <Form.Group className="mb-3" controlId={`childName-${index}`}>
-                                        <Form.Label>Nombre</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            value={child.name}
-                                            onChange={(e) => handleChildDataChange(index, 'name', e.target.value)}
-                                            placeholder="Nombre del niño"
-                                        />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId={`childSurnames-${index}`}>
-                                        <Form.Label>Apellidos</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            value={child.surnames}
-                                            onChange={(e) => handleChildDataChange(index, 'surnames', e.target.value)}
-                                            placeholder="Apellidos del niño"
-                                        />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId={`childAge-${index}`}>
-                                        <Form.Label>Edad</Form.Label>
-                                        <Form.Control
-                                            type="number"
-                                            value={child.age}
-                                            onChange={(e) => handleChildDataChange(index, 'age', e.target.value)}
-                                            placeholder="Edad del niño"
-                                        />
-                                    </Form.Group>
-                                </div>
-                            ))}
-                        </>
-                    )}
-
-                    <Button variant="primary" type="submit" className="w-100">
-                        Enviar Confirmación
-                    </Button>
-                </Form>
+                <NewAttendantForm weddingData={weddingData} />
             </main>
 
             <footer className="text-center mt-4">
@@ -286,8 +131,8 @@ const WeddingInvitation = () => {
                     ¡Esperamos verte allí con muchas ganas de celebrar! 🎉
                 </p>
             </footer>
-        </Container>
+        </Container >
     );
 };
 
-export default WeddingInvitation;
+export default RomanticTemplate;

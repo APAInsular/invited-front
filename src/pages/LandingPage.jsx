@@ -63,7 +63,7 @@ const LandingPage = () => {
         <div className="mt-5" style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
             {/* Hero Section */}
             <header className='mt-5' style={{ backgroundColor: "#FAF9F8", color: "white", textAlign: "center", padding: "50px" }}>
-                <h1 className='mt-5' style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#F19292" }}>Crea Invitaciones Personalizadas prueba</h1>
+                <h1 className='mt-5' style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#F19292" }}>Crea Invitaciones Personalizadas prueba publica</h1>
                 {user && (
                     <h3 className='mt-5' style={{ color: "#F19292" }}>Bienvenido {user[0].Name} y {user[0].partner.Name}</h3>
                 )

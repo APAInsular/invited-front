@@ -25,6 +25,14 @@ const NavigationBar = () => {
 
     const [hovered, setHovered] = useState(null);
 
+    const redirectToMain = () => {
+        if (user) {
+            window.location.href = `/${user.Name}&${user.partner.Name}`;
+        } else {
+            window.location.href = '/';
+        }
+    }
+
     // Obtener el usuario autenticado al cargar el componente
     useEffect(() => {
         const fetchUser = async () => {
@@ -84,7 +92,7 @@ const NavigationBar = () => {
     return (
         <Navbar bg="light" variant="light" expand="lg" fixed="top">
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand onClick={redirectToMain()}>
                     <img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

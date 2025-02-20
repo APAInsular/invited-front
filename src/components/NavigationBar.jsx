@@ -92,7 +92,7 @@ const NavigationBar = () => {
     return (
         <Navbar bg="light" variant="light" expand="lg" fixed="top">
             <Container>
-                <Navbar.Brand onClick={redirectToMain()}>
+                <Navbar.Brand onClick={() => redirectToMain()}>
                     <img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

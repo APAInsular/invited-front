@@ -35,7 +35,7 @@ const Invitations = () => {
     // Renderizamos el componente dependiendo del valor de wedding.template
     switch (wedding.template) {
         case "Plantilla Romantica":
-            return <WeddingWebsite />;
+            return <WeddingWebsite wedding={wedding} />;
         case "Plantilla Dramatica":
             return <DramaticTemplate />;
         case "Plantilla Simple":

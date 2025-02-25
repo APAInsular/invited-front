@@ -1,0 +1,351 @@
+/* ESTILOS GENERALES */
+
+.fontTitle {
+    font-family: 'Allura', cursive;
+    font-size: 35px;
+}
+
+.invitacionContainer {
+    max-width: 600px;
+    margin: 60px auto;
+    margin-top: 80px;
+    /* Más margen superior */
+    padding: 40px 20px;
+    /* Más padding para márgenes internos */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Contenedor de la foto con márgenes amplios */
+.contenedorFoto {
+    margin: 0 auto 30px auto;
+    /* Margen inferior más grande */
+    padding: 20px;
+    /* Espacio interno alrededor de la foto */
+    background-color: #f9f9f9;
+    /* Fondo claro para resaltar la foto */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la foto de los novios */
+.fotoNovios {
+    max-width: 100%;
+    /* Asegura que la imagen no se desborde */
+    width: 300px;
+    /* Tamaño fijo para la foto */
+    height: auto;
+    /* Mantiene la proporción */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Efecto hover */
+}
+
+.fotoNovios:hover {
+    transform: scale(1.05);
+    /* Ligero zoom al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+/* ESTILOS GENERALES */
+
+/* LINEA TEMPORAL CON EVENTOS */
+
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.timeline-line {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    background-color: #007bff;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    text-align: right;
+    padding-right: 60px;
+}
+
+.timeline-item.right {
+    text-align: left;
+    padding-left: 60px;
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #007bff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+/* Estilo para los cards */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+}
+
+/* Estilo de iconos */
+.icon {
+    font-size: 24px;
+    color: #007bff;
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        /* Asegura que las tarjetas estén centradas */
+    }
+
+    .timeline-item.left {
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    .timeline-item.right {
+        text-align: center;
+        padding-left: 20px;
+        left: 0;
+        /* Asegura que la tarjeta esté completamente alineada a la línea */
+    }
+
+    .timeline-item::before {
+        content: none;
+    }
+
+    .card {
+        margin: 0 auto 20px;
+    }
+}
+
+/* LINEA TEMPORAL CON EVENTOS */
+
+/* CUENTA ATRAS */
+
+.countdown-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* Permitimos que los elementos se apilen en pantallas pequeñas */
+    margin-top: 20px;
+}
+
+.time {
+    background: transparent;
+    color: #333;
+    /* Color más neutro para el texto */
+    padding: 10px 20px;
+    font-family: "Satisfy", cursive;
+    font-size: 30px;
+    /* Tamaño de fuente más grande y limpio */
+    font-weight: 600;
+    /* Ponderación media para el texto */
+    border-radius: 8px;
+    /* Bordes redondeados más suaves */
+    border: 2px solid #ccc;
+    /* Bordes finos y discretos */
+    min-width: 70px;
+    text-align: center;
+    transition: all 0.3s ease;
+    /* Transición suave para efectos */
+}
+
+.time span {
+    display: block;
+    font-size: 18px;
+    /* Texto más pequeño para las etiquetas */
+    color: #777;
+    /* Color más suave para las etiquetas */
+}
+
+.time:hover {
+    border-color: #007bff;
+    /* Color sutil de borde al hacer hover */
+    color: #007bff;
+    /* Cambiar color del texto en hover */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .countdown-box {
+        flex-direction: column;
+        /* Apilamos los elementos en columnas */
+        gap: 10px;
+        /* Menor espacio entre los elementos */
+    }
+
+    .time {
+        font-size: 26px;
+        /* Ajuste del tamaño de la fuente */
+        padding: 10px;
+        /* Reducción del padding */
+        min-width: 60px;
+        /* Ajuste del tamaño mínimo */
+    }
+
+    .time span {
+        font-size: 20px;
+        /* Tamaño de fuente aún más pequeño para las etiquetas */
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+/* CUENTA ATRAS */
+
+/* NOMBRE DE LOS NOVIOS */
+
+/* Contenedor principal */
+.couple-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sacramento', cursive;
+}
+
+/* Caja de nombres de los novios */
+.name-box {
+    font-size: 42px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #4c4c4c;
+}
+
+/* Nombre del novio */
+.groom {
+    color: #5f5f5f;
+}
+
+/* Nombre de la novia */
+.bride {
+    color: #5f5f5f;
+}
+
+/* Corazón entre los nombres */
+.heart {
+    font-size: 48px;
+    color: #f48fb1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texto pequeño debajo de los nombres */
+.couple-description {
+    font-size: 20px;
+    color: #757575;
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Estilo para la tipografía exótica */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+
+/*NOMBRE DE LOS NOVIOS */
+
+/* GALERIA */
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background: #f8f9fa;
+    padding: 10px 0;
+}
+
+.slider-track {
+    display: flex;
+    width: max-content;
+}
+
+.slider-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .slider-image {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-image {
+        max-width: 250px;
+    }
+}
+
+/* GALERIA */
+
+/* CANCION */
+
+.song-link p {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.song-link p strong {
+    color: #007bff;
+}
+
+/* CANCION */

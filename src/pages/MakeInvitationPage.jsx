@@ -17,14 +17,21 @@ export default function MakeInvitationForm() {
     });
 
     const [formData, setFormData] = useState({
-        Wedding_Date: "",
+        weddingDate: "",
         template: formattedTemplateName,
         foodType: "Sin Preferencias",
         guestCount: "",
         customMessage: "",
-        Dress_Code: "",
-        Music: "",
+        dressCode: "",
+        musicUrl: "",
+        musicTitle: "",
         user_id: "",
+        groomDescription: "",
+        brideDescription: "",
+        location: {  // Localización de la boda
+            City: "",
+            Country: ""
+        }
     });
 
     useEffect(() => {
@@ -39,13 +46,11 @@ export default function MakeInvitationForm() {
 
                 setUser(response.data);
 
-                console.log(response.data)
-
-                setFormData(prevData => ({ ...prevData, "user_id": response.data[0].id }))
+                setFormData(prevData => ({ ...prevData, "user_id": response.data.id }));
 
                 setUserInfo({
-                    novioName: `${response.data[0].Name}${response.data[0].First_Surname}`,
-                    noviaName: `${response.data[0].partner.Name}${response.data[0].partner.First_Surname}`,
+                    novioName: `${response.data.Name}${response.data.First_Surname}`,
+                    noviaName: `${response.data.partner.Name}${response.data.partner.First_Surname}`,
                 });
 
             } catch (error) {
@@ -61,13 +66,30 @@ export default function MakeInvitationForm() {
         setFormData(prevData => ({ ...prevData, [name]: value }));
     };
 
+    const handleChangeLocation = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            location: {
+                ...prevData.location, // Mantener las propiedades previas de location
+                [name]: value // Solo modificar la propiedad específica
+            }
+        }));
+    };
+
+
     const addEvent = () => {
-        setEvents([...events, { name: "", time: "", location: "", description: "" }]);
+        setEvents([...events, { name: "", time: "", location: { City: "", Country: "" }, description: "" }]);
     };
 
     const updateEvent = (index, field, value) => {
         const updatedEvents = [...events];
-        updatedEvents[index][field] = value;
+        if (field === "location.City" || field === "location.Country") {
+            const [locationField, subField] = field.split('.');
+            updatedEvents[index][locationField][subField] = value;
+        } else {
+            updatedEvents[index][field] = value;
+        }
         setEvents(updatedEvents);
     };
 
@@ -91,7 +113,6 @@ export default function MakeInvitationForm() {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
-            console.log("Invitación creada:", response.data);
             navigate(`/invitacion/${userInfo.novioName}-${userInfo.noviaName}/${response.data.wedding.id}`);
         } catch (error) {
             console.error("Error al crear la invitación:", error);
@@ -118,7 +139,7 @@ export default function MakeInvitationForm() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="date" name="Wedding_Date" value={formData.Wedding_Date} onChange={handleChange} required />
+                            <Form.Control type="date" name="weddingDate" value={formData.weddingDate} onChange={handleChange} required />
                         </Form.Group>
                     </Col>
                     <Col>
@@ -134,6 +155,22 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
+                {/* Localización de la Boda */}
+                <h4 className="m-0">Localización de la Boda</h4>
+                <Row>
+                    <Col>
+                        <Form.Group className="mb-3">
+                            <Form.Control type="text" placeholder="Ciudad" name="City" value={formData.location.city} onChange={handleChangeLocation} required />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3">
+                            <Form.Control type="text" placeholder="País" name="Country" value={formData.location.country} onChange={handleChangeLocation} required />
+                        </Form.Group>
+                    </Col>
+                </Row>
+
+
                 <h4 className="m-0">Itinerario de la Celebración</h4>
                 <p className="fw-lighter mb-2" style={{ fontSize: "0.8rem" }}>Añade todos los hitos de tu celebración</p>
                 {events.map((event, index) => (
@@ -145,7 +182,10 @@ export default function MakeInvitationForm() {
                             <Form.Control type="time" value={event.time} onChange={(e) => updateEvent(index, "time", e.target.value)} required />
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="Ubicación" value={event.location} onChange={(e) => updateEvent(index, "location", e.target.value)} required />
+                            <Form.Control type="text" placeholder="Ubicación Ciudad" value={event.location.City} onChange={(e) => updateEvent(index, "location.City", e.target.value)} required />
+                        </Col>
+                        <Col>
+                            <Form.Control type="text" placeholder="Ubicación País" value={event.location.Country} onChange={(e) => updateEvent(index, "location.Country", e.target.value)} required />
                         </Col>
                         <Col>
                             <Form.Control type="text" placeholder="Descripción" value={event.description} onChange={(e) => updateEvent(index, "description", e.target.value)} required />
@@ -178,23 +218,32 @@ export default function MakeInvitationForm() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Codigo de vestimenta" name="Dress_Code" value={formData.Dress_Code} onChange={handleChange} required />
+                            <Form.Control type="text" placeholder="Código de vestimenta" name="dressCode" value={formData.dressCode} onChange={handleChange} />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Musica" name="Music" value={formData.Music} onChange={handleChange} required />
+                            <Form.Control type="text" placeholder="Mensaje personal" name="customMessage" value={formData.customMessage} onChange={handleChange} />
                         </Form.Group>
                     </Col>
                 </Row>
+
+                {/* Música */}
+                <h4 className="m-0">Música</h4>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control as="textarea" rows={4} placeholder="Mensaje Personalizado" name="customMessage" value={formData.customMessage} onChange={handleChange} />
+                            <Form.Control type="text" placeholder="Título de la canción" name="musicTitle" value={formData.musicTitle} onChange={handleChange} />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Form.Group className="mb-3">
+                            <Form.Control type="text" placeholder="Enlace a la música" name="musicUrl" value={formData.musicUrl} onChange={handleChange} />
                         </Form.Group>
                     </Col>
                 </Row>
-                <Button type="submit" variant="danger">Crear Invitación</Button>
+
+                <Button type="submit">Enviar</Button>
             </Form>
         </Container>
     );

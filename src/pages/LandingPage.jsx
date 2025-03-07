@@ -65,7 +65,7 @@ const LandingPage = () => {
             <header className='mt-5' style={{ backgroundColor: "#FAF9F8", color: "white", textAlign: "center", padding: "50px" }}>
                 <h1 className='mt-5' style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#F19292" }}>Crea Invitaciones Personalizadas prueba publica</h1>
                 {user && (
-                    <h3 className='mt-5' style={{ color: "#F19292" }}>Bienvenido {user.Name} y {user.partner.Name}</h3>
+                    <h3 className='mt-5' style={{ color: "#F19292" }}>Bienvenido {user.name} y {user.partner.name}</h3>
                 )
                 }
                 <p style={{ marginTop: "10px", fontSize: "1.2rem", color: "#F19292" }}>Bodas, cumpleaños y más, con plantillas listas para ti.</p>

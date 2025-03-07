@@ -66,23 +66,16 @@ const NavigationBar = () => {
 
     const handleLogout = async () => {
         try {
-            // Obtener el token CSRF desde el meta tag
-            const getCSRFToken = () => {
-                const match = document.cookie.match(new RegExp('(^| )XSRF-TOKEN=([^;]+)'));
-                return match ? match[2] : null;
-            };
+            const token = sessionStorage.getItem('auth_token');
 
-            const csrfToken = getCSRFToken();
-
-            await apiClient.post('/api/partner/logout', {}, {
+            await apiClient.post('/api/logout', {}, {
                 headers: {
-                    'X-CSRF-TOKEN': csrfToken,
-                },
-                withCredentials: true,
+                    Authorization: `Bearer ${token}`,
+                }
             });
 
             setUser(null);
-            localStorage.removeItem('auth_token');
+            sessionStorage.removeItem('auth_token');
             window.location.href = '/login';
         } catch (error) {
             console.error('Error al cerrar sesión:', error);

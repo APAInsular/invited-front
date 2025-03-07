@@ -29,8 +29,8 @@ export default function MakeInvitationForm() {
         groomDescription: "",
         brideDescription: "",
         location: {  // Localización de la boda
-            City: "",
-            Country: ""
+            city: "",
+            country: ""
         }
     });
 
@@ -49,8 +49,8 @@ export default function MakeInvitationForm() {
                 setFormData(prevData => ({ ...prevData, "user_id": response.data.id }));
 
                 setUserInfo({
-                    novioName: `${response.data.Name}${response.data.First_Surname}`,
-                    noviaName: `${response.data.partner.Name}${response.data.partner.First_Surname}`,
+                    novioName: `${response.data.name} ${response.data.firstSurname}`,
+                    noviaName: `${response.data.partner.name} ${response.data.partner.firstSurname}`,
                 });
 
             } catch (error) {
@@ -77,14 +77,13 @@ export default function MakeInvitationForm() {
         }));
     };
 
-
     const addEvent = () => {
-        setEvents([...events, { name: "", time: "", location: { City: "", Country: "" }, description: "" }]);
+        setEvents([...events, { name: "", time: "", location: { city: "", country: "" }, description: "" }]);
     };
 
     const updateEvent = (index, field, value) => {
         const updatedEvents = [...events];
-        if (field === "location.City" || field === "location.Country") {
+        if (field === "location.city" || field === "location.country") {
             const [locationField, subField] = field.split('.');
             updatedEvents[index][locationField][subField] = value;
         } else {
@@ -117,6 +116,16 @@ export default function MakeInvitationForm() {
         } catch (error) {
             console.error("Error al crear la invitación:", error);
         }
+    };
+
+    const handleCoupleImageUpload = (event) => {
+        const file = event.target.files[0];
+        setFormData({ ...formData, coverImage: file });
+    };
+
+    const handleGalleryUpload = (event) => {
+        const files = Array.from(event.target.files);
+        setFormData({ ...formData, images: files });
     };
 
     return (
@@ -160,12 +169,12 @@ export default function MakeInvitationForm() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Ciudad" name="City" value={formData.location.city} onChange={handleChangeLocation} required />
+                            <Form.Control type="text" placeholder="Ciudad" name="city" value={formData.location.city} onChange={handleChangeLocation} required />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="País" name="Country" value={formData.location.country} onChange={handleChangeLocation} required />
+                            <Form.Control type="text" placeholder="País" name="country" value={formData.location.country} onChange={handleChangeLocation} required />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -182,13 +191,13 @@ export default function MakeInvitationForm() {
                             <Form.Control type="time" value={event.time} onChange={(e) => updateEvent(index, "time", e.target.value)} required />
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="Ubicación Ciudad" value={event.location.City} onChange={(e) => updateEvent(index, "location.City", e.target.value)} required />
+                            <Form.Control type="text" placeholder="Ubicación Ciudad" value={event.location.city} onChange={(e) => updateEvent(index, "location.city", e.target.value)} />
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="Ubicación País" value={event.location.Country} onChange={(e) => updateEvent(index, "location.Country", e.target.value)} required />
+                            <Form.Control type="text" placeholder="Ubicación País" value={event.location.country} onChange={(e) => updateEvent(index, "location.country", e.target.value)} />
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="Descripción" value={event.description} onChange={(e) => updateEvent(index, "description", e.target.value)} required />
+                            <Form.Control type="text" placeholder="Descripción" value={event.description} onChange={(e) => updateEvent(index, "description", e.target.value)} />
                         </Col>
                         <Col>
                             <Button variant="danger" onClick={() => removeEvent(index)}>Eliminar</Button>
@@ -242,6 +251,21 @@ export default function MakeInvitationForm() {
                         </Form.Group>
                     </Col>
                 </Row>
+
+                {/* <Row>
+                    <Col>
+                        <h4 className="m-0">Imagen de la Pareja</h4>
+                        <Form.Group className="mb-3">
+                            <Form.Control type="file" accept="image/*" onChange={handleCoupleImageUpload} required />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <h4 className="m-0">Galería de Imágenes</h4>
+                        <Form.Group className="mb-3">
+                            <Form.Control type="file" accept="image/*" multiple onChange={handleGalleryUpload} />
+                        </Form.Group>
+                    </Col>
+                </Row> */}
 
                 <Button type="submit">Enviar</Button>
             </Form>

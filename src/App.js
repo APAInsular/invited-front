@@ -57,9 +57,15 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  // Verifica si estamos en una ruta que empieza con "/invitacion/"
+  const pathname = window.location.pathname;
+  const regex = /\/invitacion\/[^\/]+\/[^\/]+/;
+  const isInvitationRoute = regex.test(pathname);
+
   return (
     <div>
-      <NavigationBar />
+      {/* Solo muestra el NavigationBar si no estamos en una ruta de invitación */}
+      {isInvitationRoute ? null : <NavigationBar />}
       <RouterProvider router={router} />
     </div>
   );

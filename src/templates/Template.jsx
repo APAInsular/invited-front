@@ -11,48 +11,53 @@ import SongLink from './components/SongLink';
 
 
 const images = [
-    "https://picsum.photos/300/200?random=1",
-    "https://picsum.photos/300/200?random=2",
-    "https://picsum.photos/300/200?random=3",
-    "https://picsum.photos/300/200?random=4",
-    "https://picsum.photos/300/200?random=5",
+    "/images/Image1.jpg",
+    "/images/Image2.jpg",
+    "/images/Image3.jpg",
+    "/images/Image4.jpg",
+    "/images/Image5.jpg",
+    "/images/Image6.jpg",
+    "/images/Image7.jpg",
+    "/images/Image8.jpg",
 ];
 
 const WeddingWebsite = ({ wedding }) => {
     console.log(wedding)
+
     return (
         <div>
             <div className="invitacionContainer">
                 <div className="contenedorFoto">
                     <img
-                        src="https://picsum.photos/300/200?random=6"
+                        src="/boda, a, a.jpg"
                         alt="Foto de los novios"
                         className="fotoNovios"
                     />
                 </div>
             </div>
 
-            <CoupleNames />
+            <CoupleNames groom={wedding.user.name} bride={wedding.user.partner.name} />
             <br />
             <hr />
             <br />
-            <SongLink />
+            <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} />
             <br />
             <hr />
             <br />
-            <CountDown />
+            <CountDown weddingDate={wedding.weddingDate} />
             <br />
             <hr />
             <br />
-            <WeddingTimeLine />
+            { /* lugar de boda */}
+            <WeddingTimeLine events={wedding.events} />
             <br />
             <hr />
             <br />
-            <Gallery images={images} speed={20} />
+            {images && <Gallery images={images} speed={20} />}
             <br />
             <hr />
             <br />
-            <WeddingForm />
+            <WeddingForm weddingId={wedding.id} />
 
         </div >
     );

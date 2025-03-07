@@ -10,17 +10,19 @@ function UserList({ users }) {
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Pareja</th>
                         <th>Email</th>
-                        <th>Rol</th>
+                        <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
                     {users.map(user => (
                         <tr key={user.id}>
                             <td>{user.id}</td>
-                            <td>{user.name}</td>
+                            <td>{user.name} {user.firstSurname} {user.secondSurname}</td>
+                            <td>{user.partner.name} {user.partner.firstSurname} {user.partner.secondSurname}</td>
                             <td>{user.email}</td>
-                            <td>{user.role}</td>
+                            <td>{user.phone}</td>
                         </tr>
                     ))}
                 </tbody>

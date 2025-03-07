@@ -7,7 +7,7 @@ import apiClient, { getCsrfToken } from '../config/axiosConfig';
 const Login = () => {
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
-    Email: '',
+    email: '',
     password: ''
   });
   const [error, setError] = useState('');
@@ -78,8 +78,8 @@ const Login = () => {
               <Form.Control
                 type="email"
                 placeholder="Ingresa tu email"
-                name="Email"
-                value={formData.Email}
+                name="email"
+                value={formData.email}
                 onChange={handleChange}
                 required
               />

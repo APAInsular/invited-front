@@ -8,8 +8,8 @@ function Sidebar({ onSelectComponent }) {
             <Button className='my-2' variant="primary" onClick={() => onSelectComponent('users')}>
                 Ver Usuarios
             </Button>
-            <Button className='my-2' variant="secondary" onClick={() => onSelectComponent('invitations')}>
-                Ver Invitados
+            <Button className='my-2' variant="secondary" onClick={() => onSelectComponent('weddings')}>
+                Ver Bodas
             </Button>
         </div>
     );

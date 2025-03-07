@@ -1,16 +1,36 @@
 /* ESTILOS GENERALES */
+/* Ocultar la barra de desplazamiento, pero permitir el desplazamiento */
+body {
+    overflow: scroll;
+    /* Permite desplazamiento */
+    background-color: #ffecdb;
+    color: #705843;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+html {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
 
 .fontTitle {
     font-family: 'Allura', cursive;
     font-size: 35px;
+    color: #705843;
 }
 
 .invitacionContainer {
     max-width: 600px;
-    margin: 60px auto;
-    margin-top: 80px;
+    /*margin: 60px auto;*/
+    /*margin-top: 80px;
     /* Más margen superior */
-    padding: 40px 20px;
+    /*padding: 40px 20px;
     /* Más padding para márgenes internos */
     background-color: #fff;
     border-radius: 10px;
@@ -20,9 +40,9 @@
 
 /* Contenedor de la foto con márgenes amplios */
 .contenedorFoto {
-    margin: 0 auto 30px auto;
+    margin: 0 auto 0 auto;
     /* Margen inferior más grande */
-    padding: 20px;
+    /*padding: 20px;
     /* Espacio interno alrededor de la foto */
     background-color: #f9f9f9;
     /* Fondo claro para resaltar la foto */
@@ -39,11 +59,10 @@
 .fotoNovios {
     max-width: 100%;
     /* Asegura que la imagen no se desborde */
-    width: 300px;
+    width: 100%;
     /* Tamaño fijo para la foto */
     height: auto;
     /* Mantiene la proporción */
-    border-radius: 10px;
     display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Efecto hover */
@@ -74,7 +93,7 @@
     bottom: 0;
     left: 50%;
     width: 5px;
-    background-color: #007bff;
+    background-color: #705843;
     transform: translateX(-50%);
 }
 
@@ -253,7 +272,7 @@
 
 /* Caja de nombres de los novios */
 .name-box {
-    font-size: 42px;
+    font-size: 38px;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -265,20 +284,23 @@
 /* Nombre del novio */
 .groom {
     color: #5f5f5f;
+    margin-right: 3px;
 }
 
 /* Nombre de la novia */
 .bride {
     color: #5f5f5f;
+    margin-left: 3px;
 }
 
 /* Corazón entre los nombres */
 .heart {
-    font-size: 48px;
+    font-size: 40px;
     color: #f48fb1;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 10px;
 }
 
 /* Texto pequeño debajo de los nombres */
@@ -301,7 +323,6 @@
 .slider-container {
     width: 100%;
     overflow: hidden;
-    background: #f8f9fa;
     padding: 10px 0;
 }
 

@@ -15,7 +15,7 @@ const Invitations = () => {
         const fetchWedding = async () => {
             try {
                 console.log(idWedding);
-                const response = await apiClient.get(`/api/weddings/${idWedding}`);
+                const response = await apiClient.get(`/api/weddings/${idWedding}/full-info`);
 
                 setWedding(response.data);
                 console.log(response.data);
@@ -33,13 +33,13 @@ const Invitations = () => {
     }
 
     // Renderizamos el componente dependiendo del valor de wedding.template
-    switch (wedding.template) {
+    switch (wedding.wedding.template) {
         case "Plantilla Romantica":
-            return <WeddingWebsite wedding={wedding} />;
+            return <WeddingWebsite wedding={wedding.wedding} />;
         case "Plantilla Dramatica":
-            return <DramaticTemplate />;
+            return <WeddingWebsite wedding={wedding.wedding} />;
         case "Plantilla Simple":
-            return <SimpleTemplate />;
+            return <WeddingWebsite wedding={wedding.wedding} />;
         default:
             return <div>Plantilla no encontrada</div>;
     }

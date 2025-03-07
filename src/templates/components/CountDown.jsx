@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/WeddingWebsite.css"
+import "../styles/WeddingWebsite.css";
 
-const weddingDate = new Date("2025-06-15T00:00:00"); // Ajusta la fecha de la boda
-
-const CountDown = () => {
+const CountDown = ({ weddingDate }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     function calculateTimeLeft() {
         const now = new Date();
-        const difference = weddingDate - now;
+        const targetDate = new Date(weddingDate); // Convertir la cadena a fecha
+        const difference = targetDate - now;
 
         return {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -24,7 +23,7 @@ const CountDown = () => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
         return () => clearInterval(timer);
-    }, []);
+    }, [weddingDate]); // Dependencia añadida para recalcular si cambia
 
     return (
         <div className="container text-center my-4">

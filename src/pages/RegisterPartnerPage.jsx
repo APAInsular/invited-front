@@ -67,19 +67,19 @@ export default function UserRegistrationForm() {
                 <Row>
                     <Col md={4}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre" {...register("Name", { required: "El nombre es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="text" placeholder="Nombre" {...register("name", { required: "El nombre es obligatorio" })} style={defaultStyle} />
                             {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
                         </Form.Group>
                     </Col>
                     <Col md={4}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Primer Apellido" {...register("First_Surname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="text" placeholder="Primer Apellido" {...register("firstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
                             {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
                         </Form.Group>
                     </Col>
                     <Col md={4}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Segundo Apellido" {...register("Second_Surname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="text" placeholder="Segundo Apellido" {...register("secondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
                             {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
                         </Form.Group>
                     </Col>
@@ -87,19 +87,19 @@ export default function UserRegistrationForm() {
                 <Row>
                     <Col md={4}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre Pareja" {...register("Partner_Name", { required: "El nombre es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="text" placeholder="Nombre Pareja" {...register("partnerName", { required: "El nombre es obligatorio" })} style={defaultStyle} />
                             {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
                         </Form.Group>
                     </Col>
                     <Col md={4}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Primer Apellido Pareja" {...register("Partner_First_Surname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="text" placeholder="Primer Apellido Pareja" {...register("partnerFirstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
                             {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
                         </Form.Group>
                     </Col>
                     <Col md={4}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Segundo Apellido Pareja" {...register("Partner_Second_Surname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="text" placeholder="Segundo Apellido Pareja" {...register("partnerSecondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
                             {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
                         </Form.Group>
                     </Col>
@@ -107,13 +107,13 @@ export default function UserRegistrationForm() {
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="tel" placeholder="Teléfono" {...register("Phone", { required: "El teléfono es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="tel" placeholder="Teléfono" {...register("phone", { required: "El teléfono es obligatorio" })} style={defaultStyle} />
                             {errors.Phone && <p className="text-danger">{errors.Phone.message}</p>}
                         </Form.Group>
                     </Col>
                     <Col md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="email" placeholder="Correo Electrónico" {...register("Email", { required: "El correo electrónico es obligatorio" })} style={defaultStyle} />
+                            <Form.Control type="email" placeholder="Correo Electrónico" {...register("email", { required: "El correo electrónico es obligatorio" })} style={defaultStyle} />
                             {errors.Email && <p className="text-danger">{errors.Email.message}</p>}
                         </Form.Group>
                     </Col>

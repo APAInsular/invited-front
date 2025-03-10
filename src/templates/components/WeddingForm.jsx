@@ -50,7 +50,7 @@ const WeddingForm = ({ weddingId }) => {
 
         console.log(dataToSend)
         try {
-            const response = await axios.post("http://localhost:8000/api/guests", dataToSend);
+            const response = await axios.post("/api/guests", dataToSend);
 
             console.log(response.data)
             alert("Formulario enviado con éxito");

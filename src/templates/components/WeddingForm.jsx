@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import apiClient from "../../config/axiosConfig";
 
 const WeddingForm = ({ weddingId }) => {
     const [hasCompanion, setHasCompanion] = useState(false);
@@ -50,7 +51,7 @@ const WeddingForm = ({ weddingId }) => {
 
         console.log(dataToSend)
         try {
-            const response = await axios.post("/api/guests", dataToSend);
+            const response = await apiClient.post("/api/guests", dataToSend);
 
             console.log(response.data)
             alert("Formulario enviado con éxito");

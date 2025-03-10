@@ -8,6 +8,7 @@ import CoupleNames from './components/CoupleNames';
 import WeddingForm from './components/WeddingForm';
 import Gallery from './components/Gallery';
 import SongLink from './components/SongLink';
+import ChurchLocation from './components/Location';
 
 
 const images = [
@@ -48,7 +49,10 @@ const WeddingWebsite = ({ wedding }) => {
             <br />
             <hr />
             <br />
-            { /* lugar de boda */}
+            <ChurchLocation location={wedding.location.city} country={wedding.location.country} />
+            <br />
+            <hr />
+            <br />
             <WeddingTimeLine events={wedding.events} />
             <br />
             <hr />

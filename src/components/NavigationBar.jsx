@@ -132,12 +132,12 @@ const NavigationBar = () => {
                         ) : (
                             <>
                                 <Nav.Link
-                                    href="/profile"
+                                    href="/dashboard"
                                     style={hovered === "profile" ? { ...defaultStyle, ...hoverStyle } : defaultStyle}
                                     onMouseEnter={() => setHovered("profile")}
                                     onMouseLeave={() => setHovered(null)}
                                 >
-                                    Perfil
+                                    Panel
                                 </Nav.Link>
                                 <Button
                                     variant="outline-light"

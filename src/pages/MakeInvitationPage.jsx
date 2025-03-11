@@ -49,8 +49,8 @@ export default function MakeInvitationForm() {
                 setFormData(prevData => ({ ...prevData, "user_id": response.data.id }));
 
                 setUserInfo({
-                    novioName: `${response.data.name} ${response.data.firstSurname}`,
-                    noviaName: `${response.data.partner.name} ${response.data.partner.firstSurname}`,
+                    novioName: `${response.data.name}${response.data.firstSurname}`,
+                    noviaName: `${response.data.partner.name}${response.data.partner.firstSurname}`,
                 });
 
             } catch (error) {

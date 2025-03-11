@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import apiClient from "../../config/axiosConfig";
 
@@ -100,16 +99,18 @@ const WeddingForm = ({ weddingId }) => {
                     </select>
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">¿Llevarás acompañante?</label>
-                    <div>
-                        <input type="radio" name="companion" value="yes" className="form-check-input me-2" onChange={handleCompanionChange} />
-                        <label className="form-check-label me-3">Sí</label>
+                {weddingId !== 1 &&
+                    <div className="mb-3">
+                        <label className="form-label">¿Llevarás acompañante?</label>
+                        <div>
+                            <input type="radio" name="companion" value="yes" className="form-check-input me-2" onChange={handleCompanionChange} />
+                            <label className="form-check-label me-3">Sí</label>
 
-                        <input type="radio" name="companion" value="no" className="form-check-input me-2" onChange={handleCompanionChange} defaultChecked />
-                        <label className="form-check-label">No</label>
+                            <input type="radio" name="companion" value="no" className="form-check-input me-2" onChange={handleCompanionChange} defaultChecked />
+                            <label className="form-check-label">No</label>
+                        </div>
                     </div>
-                </div>
+                }
 
                 {hasCompanion && (
                     <div className="mb-3">

@@ -34,6 +34,8 @@ const CountDown = ({ weddingDate }) => {
                 <div className="time">{timeLeft.minutes} <span>minutos</span></div>
                 <div className="time">{timeLeft.seconds} <span>segundos</span></div>
             </div>
+            <br />
+            <h4>{weddingDate}</h4>
         </div>
     );
 };

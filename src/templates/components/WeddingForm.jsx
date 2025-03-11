@@ -99,7 +99,7 @@ const WeddingForm = ({ weddingId }) => {
                     </select>
                 </div>
 
-                {weddingId !== 1 &&
+                {weddingId !== 9 &&
                     <div className="mb-3">
                         <label className="form-label">¿Llevarás acompañante?</label>
                         <div>

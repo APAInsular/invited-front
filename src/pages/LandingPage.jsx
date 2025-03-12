@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
+import '../templates/styles/LandingPage.css'
 
 const LandingPage = () => {
     const [user, setUser] = useState(null);
@@ -72,38 +73,108 @@ const LandingPage = () => {
                 <Button variant="light" style={{ marginTop: "10px", color: "#FAF9F8", backgroundColor: "#F19292", fontWeight: "bold" }}>Comenzar</Button>
             </header>
 
-            {/* Templates Section */}
-            <Container className="text-center" style={{ padding: "50px" }}>
-                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Elige una Plantilla</h2>
-                <p style={{ marginTop: "10px" }}>Personaliza tus invitaciones con nuestras opciones.</p>
-                <Row className="mt-4 justify-content-center">
-                    <Col md={3} style={colStyle} onClick={() => handleNavigation(`/PlantillaRomantica/form`)}>Plantilla Romantica</Col>
-                    <Col md={3} style={colStyle} onClick={() => handleNavigation(`/PlantillaSimple/form`)}>Plantilla Simple</Col>
-                    <Col md={3} style={colStyle} onClick={() => handleNavigation(`/PlantillaDramatica/form`)}>Plantilla Dramática</Col>
-                </Row>
-                <Row className="mt-4 justify-content-center">
-                    <Col md={4} style={colStyle} onClick={() => handleNavigation(`/PlantillaDulce/form`)}>Plantilla Dulce</Col>
-                    <Col md={4} style={colStyle} onClick={() => handleNavigation(`/PlantillaOscuro/form`)}>Plantilla Oscuro</Col>
-                </Row>
-            </Container>
+            <section id="inicio" class="hero">
+                <div class="hero-overlay">
+                    <div class="container hero-content">
+                        <h1>Crea tus invitaciones de boda digitales</h1>
+                        <p>Fácil, elegante y con confirmaciones de invitados en tiempo real.</p>
+                        <a href="#cta" class="btn btn-primary">Empieza Ahora</a>
+                    </div>
+                </div>
+            </section>
 
-            {/* Form Section */}
-            <div style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
-                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu Invitación</h2>
-                <p style={{ marginTop: "10px" }}>Llena el formulario y genera tu invitación en minutos.</p>
-                <Form style={{ maxWidth: "500px", margin: "0 auto", marginTop: "20px" }}>
-                    <Form.Group className="mb-3">
-                        <Form.Control type="text" placeholder="Nombre del evento" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Control type="text" placeholder="Fecha y hora" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Control as="textarea" placeholder="Mensaje" />
-                    </Form.Group>
-                    <Button variant="danger" style={{ backgroundColor: "#F19292", borderColor: "#F19292", fontWeight: "bold" }}>Generar Invitación</Button>
-                </Form>
-            </div>
+            <section id="caracteristicas" class="caracteristicas">
+                <div class="container">
+                    <h2>¿Por qué elegir Invited?</h2>
+                    <div class="caracteristicas-grid">
+                        <div class="caracteristica-item">
+                            <img src="https://via.placeholder.com/80" alt="Icono de diseño elegante" />
+                            <h3>Diseños Elegantes</h3>
+                            <p>Plantillas inspiradas en las últimas tendencias, personalizables y con tu toque único.</p>
+                        </div>
+                        <div class="caracteristica-item">
+                            <img src="https://via.placeholder.com/80" alt="Icono de gestión de invitados" />
+                            <h3>Gestión de Invitados</h3>
+                            <p>Confirma la asistencia en tiempo real y mantén todo bajo control sin estrés.</p>
+                        </div>
+                        <div class="caracteristica-item">
+                            <img src="https://via.placeholder.com/80" alt="Icono de soporte cercano" />
+                            <h3>Soporte Cercano</h3>
+                            <p>Estamos aquí para ayudarte con cualquier duda, de principio a fin.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="como-funciona" class="como-funciona">
+                <div class="container">
+                    <h2>Cómo Funciona</h2>
+                    <div class="pasos">
+                        <div class="paso">
+                            <span>1</span>
+                            <h3>Regístrate</h3>
+                            <p>Crea tu cuenta e inicia tu proyecto de invitación digital.</p>
+                        </div>
+                        <div class="paso">
+                            <span>2</span>
+                            <h3>Personaliza</h3>
+                            <p>Elige la plantilla, colores y añade la información de tu boda.</p>
+                        </div>
+                        <div class="paso">
+                            <span>3</span>
+                            <h3>Comparte</h3>
+                            <p>Envía la invitación a tus invitados por email, WhatsApp o redes sociales.</p>
+                        </div>
+                        <div class="paso">
+                            <span>4</span>
+                            <h3>Gestiona</h3>
+                            <p>Revisa confirmaciones y mantén todo bajo control en tu panel.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cta" class="cta-section">
+                <div class="container">
+                    <h2>Comienza Hoy Mismo</h2>
+                    <p>Convierte tu boda en una experiencia digital inolvidable.</p>
+                    <a href="#" class="btn btn-secondary">Crear Mi Invitación</a>
+                </div>
+            </section>
+
+            <section id="contacto" class="contacto">
+                <div class="container">
+                    <h2>¿Tienes preguntas?</h2>
+                    <p>Déjanos tu mensaje y te responderemos en breve.</p>
+                    <form action="#" method="POST" class="form-contacto">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required />
+
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required />
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="container">
+                    <nav class="footer-nav">
+                        <a href="#">Aviso Legal</a>
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Política de Cookies</a>
+                    </nav>
+                    <p class="footer-copy">
+                        &copy; Invited.es Desarrollada con &hearts; by
+                        <a href="https://platita.es" target="_blank" rel="noopener noreferrer">Platita Software</a>
+                    </p>
+                </div>
+            </footer>
         </div>
     );
 };

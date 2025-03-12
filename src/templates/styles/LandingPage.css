@@ -1,0 +1,338 @@
+/* -----------------------------
+   RESET BÁSICO
+----------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -----------------------------
+     VARIABLES (Paleta de colores y fuentes)
+  ----------------------------- */
+:root {
+    --color-primary: #F19292;
+    /* Rosa Salmón */
+    --color-bg-light: #F9E9E8;
+    /* Rosa Pastel / Nude */
+    --color-dark: #2F2F2F;
+    /* Gris oscuro para textos */
+    --color-bg: #FAF9F8;
+    /* Fondo claro */
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+}
+
+/* -----------------------------
+     BODY
+  ----------------------------- */
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* -----------------------------
+     HEADER
+  ----------------------------- */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--color-primary);
+}
+
+/* -----------------------------
+     HERO
+  ----------------------------- */
+.hero {
+    position: relative;
+    min-height: 60vh;
+    background: url("https://via.placeholder.com/1200x800") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* -----------------------------
+     BOTONES
+  ----------------------------- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: var(--color-dark);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    opacity: 0.9;
+}
+
+/* -----------------------------
+     CARACTERISTICAS
+  ----------------------------- */
+.caracteristicas {
+    padding: 3rem 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.caracteristicas h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.caracteristica-item {
+    background-color: var(--color-bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.caracteristica-item img {
+    margin-bottom: 1rem;
+}
+
+.caracteristica-item h3 {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+}
+
+/* -----------------------------
+     CÓMO FUNCIONA
+  ----------------------------- */
+.como-funciona {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.como-funciona h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pasos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.paso {
+    background-color: #fff;
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    margin: 0.5rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.paso span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 1rem;
+}
+
+/* -----------------------------
+     CTA SECTION
+  ----------------------------- */
+.cta-section {
+    padding: 3rem 0;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: #fff;
+}
+
+.cta-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* -----------------------------
+     CONTACTO
+  ----------------------------- */
+.contacto {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.form-contacto {
+    max-width: 500px;
+    margin: 1rem auto 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-contacto label {
+    font-weight: 600;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: var(--font-body);
+}
+
+/* -----------------------------
+     FOOTER
+  ----------------------------- */
+.footer {
+    background-color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer-nav {
+    margin-bottom: 1rem;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+.footer-nav a:hover {
+    color: var(--color-primary);
+}
+
+.footer-copy a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+.footer-copy a:hover {
+    color: var(--color-primary);
+}
+
+/* -----------------------------
+     RESPONSIVE (ajustes básicos)
+  ----------------------------- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pasos {
+        flex-direction: column;
+        align-items: center;
+    }
+}

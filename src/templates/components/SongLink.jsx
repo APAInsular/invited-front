@@ -56,7 +56,10 @@ const SongLink = ({ songUrl, songTitle }) => {
                 <button className="btn btn-cancion mt-2" onClick={togglePlay}>
                     {playing ? "⏸️ Pausar Canción" : "▶️ Reproducir Canción"}
                 </button>
-                <div ref={playerRef} style={{ display: "none" }}></div> {/* Ocultar el iframe */}
+                <div
+                    ref={playerRef}
+                    style={{ width: "1px", height: "1px", opacity: 0, position: "absolute", left: "-10000px" }}
+                ></div>
             </div>
         </div>
     );

@@ -49,8 +49,8 @@ export default function MakeInvitationForm() {
                 setFormData(prevData => ({ ...prevData, "user_id": response.data.id }));
 
                 setUserInfo({
-                    novioName: `${response.data.name}${response.data.firstSurname}`,
-                    noviaName: `${response.data.partner.name}${response.data.partner.firstSurname}`,
+                    novioName: `${response.data.name} ${response.data.firstSurname}`,
+                    noviaName: `${response.data.partner.name} ${response.data.partner.firstSurname}`,
                 });
 
             } catch (error) {
@@ -120,12 +120,18 @@ export default function MakeInvitationForm() {
 
     const handleCoupleImageUpload = (event) => {
         const file = event.target.files[0];
-        setFormData({ ...formData, coverImage: file });
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            coverImage: file
+        }));
     };
 
     const handleGalleryUpload = (event) => {
         const files = Array.from(event.target.files);
-        setFormData({ ...formData, images: files });
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            images: files
+        }));
     };
 
     return (
@@ -252,7 +258,7 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
-                {/* <Row>
+                <Row>
                     <Col>
                         <h4 className="m-0">Imagen de la Pareja</h4>
                         <Form.Group className="mb-3">
@@ -265,7 +271,7 @@ export default function MakeInvitationForm() {
                             <Form.Control type="file" accept="image/*" multiple onChange={handleGalleryUpload} />
                         </Form.Group>
                     </Col>
-                </Row> */}
+                </Row>
 
                 <Button type="submit">Enviar</Button>
             </Form>

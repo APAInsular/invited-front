@@ -41,7 +41,7 @@ const Invitations = () => {
         case "Plantilla Simple":
             return <WeddingWebsite wedding={wedding.wedding} />;
         default:
-            return <div>Plantilla no encontrada</div>;
+            return <WeddingWebsite wedding={wedding.wedding} />;
     }
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../templates/styles/LandingPage.css'
 
 const LandingPage = () => {
@@ -67,7 +67,12 @@ const LandingPage = () => {
                     <div class="container hero-content">
                         <h1>Crea tus invitaciones de boda digitales</h1>
                         <p>Fácil, elegante y con confirmaciones de invitados en tiempo real.</p>
-                        <a href="#cta" class="btn btn-primary">Empieza Ahora</a>
+                        {
+                            user ?
+                                <Link to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`} class="btn btn-primary">Empieza Ahora</Link>
+                                :
+                                <Link to="/login" class="btn btn-primary">Empieza Ahora</Link>
+                        }
                     </div>
                 </div>
             </section>

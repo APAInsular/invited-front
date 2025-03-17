@@ -145,6 +145,16 @@ function Dashboard() {
         }
     };
 
+    const formatDate = (dateString) => {
+        if (!dateString) return ""; // Manejo de valores nulos o indefinidos
+        const date = new Date(dateString);
+        return date.toLocaleDateString("es-ES", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+    };
+
     if (isLoading) return <div>Obteniendo información...</div>;
 
     return (
@@ -156,7 +166,7 @@ function Dashboard() {
                 <Col sm={9} className="p-3 mt-5">
                     {user && (
                         <div className="d-flex align-items-center">
-                            <h4 className="me-3">Bienvenido, {user.name}</h4>
+                            <h4 className="me-3">Bienvenido, {user.name} y {user.partner.name}</h4>
                             <Button variant="primary" onClick={handleShowUserModal}>Editar Perfil</Button>
                         </div>
                     )}
@@ -172,10 +182,8 @@ function Dashboard() {
                                         onGuestDeleted={onGuestDeleted}
                                     />
                                     <h4>Detalles de la Boda</h4>
-                                    <p>ID de la boda: {selectedWedding.id}</p>
                                     <p>Ubicación: {selectedWedding.location.city}, {selectedWedding.location.country}</p>
-                                    <p>Fecha: {selectedWedding.weddingDate}</p>
-                                    <p>Mensaje personalizado: {selectedWedding.customMessage}</p>
+                                    <p>Fecha: {formatDate(selectedWedding.weddingDate)}</p>                                    <p>Mensaje personalizado: {selectedWedding.customMessage}</p>
                                     <p>Código de vestimenta: {selectedWedding.dressCode}</p>
                                     <p>Tipo de comida: {selectedWedding.foodType}</p>
 
@@ -184,7 +192,7 @@ function Dashboard() {
                                         <ul>
                                             {selectedWedding.events.map((event, index) => (
                                                 <li key={index}>
-                                                    <strong>{event.name}</strong> - {event.time}
+                                                    <strong>{event.name}</strong> - {event.time.split(":").slice(0, 2).join(":")}
                                                     <p>{event.description}</p>
                                                 </li>
                                             ))}

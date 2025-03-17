@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import apiClient, { getCsrfToken } from '../config/axiosConfig';
-
+import apiClient from '../config/axiosConfig';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     email: '',
@@ -24,27 +27,11 @@ const Login = () => {
 
   const loginPartner = async () => {
     try {
-      // Obtener el CSRF token antes de iniciar sesión
-      //await getCsrfToken();
-
-      // Realizar la solicitud de inicio de sesión
       const response = await apiClient.post('/api/login', formData);
-
-      setMessage('Inicio de sesión exitoso');
-
-      // Supongamos que la respuesta contiene un token de autenticación
-      const authToken = response.data.token;
-
-      // Guardamos el token de autenticación en sessionStorage
-      sessionStorage.setItem('auth_token', authToken);
-
-      //console.log(message);
-      console.log('Respuesta del servidor:', response.data);
-
-      return response.data;
+      login(response.data.user_details.original, response.data.token);
+      navigate(`/`);
     } catch (error) {
-      console.error('Error en el inicio de sesión:', error.response?.data || error.message);
-      throw error;
+      setError('No se pudo iniciar sesión.');
     }
   };
 

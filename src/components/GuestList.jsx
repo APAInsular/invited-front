@@ -47,7 +47,7 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                             <th>Nombre</th>
                             <th>Acompañante</th>
                             <th>Edad</th>
-                            <th>Acciones</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,8 +56,8 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                                 <tr>
                                     <td>{guest.name} {guest.firstSurname} {guest.secondSurname}</td>
                                     <td>{guest.attendants.length > 0 ? "Si" : "No"}</td>
-                                    <td></td>
-                                    <td onClick={() => deleteGuest(guest.id)} style={{ cursor: "pointer", color: "red" }}>🗑️</td>
+                                    <td className='text-center'>-</td>
+                                    <td className='text-center' onClick={() => deleteGuest(guest.id)} style={{ cursor: "pointer", color: "red" }}>🗑️</td>
                                 </tr>
                                 {guest.attendants.length > 0 && guest.attendants.map((attendant) => (
                                     <tr key={attendant.id}>

@@ -27,6 +27,16 @@ const CountDown = ({ weddingDate }) => {
         return `${day}-${month}-${year}`;
     }
 
+    const formatDateToString = (dateString) => {
+        if (!dateString) return ""; // Manejo de valores nulos o indefinidos
+        const date = new Date(dateString);
+        return date.toLocaleDateString("es-ES", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+    };
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
@@ -44,7 +54,7 @@ const CountDown = ({ weddingDate }) => {
                 <div className="time">{timeLeft.seconds} <span>segundos</span></div>
             </div>
             <br />
-            <h4>{formatDate(weddingDate)}</h4> {/* Fecha formateada */}
+            <h4>{formatDateToString(weddingDate)}</h4> {/* Fecha formateada */}
         </div>
     );
 };

@@ -5,9 +5,9 @@ import "../styles/WeddingWebsite.css";
 const CountDown = ({ weddingDate }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-    function calculateTimeLeft() {
+    const calculateTimeLeft = () => {
         const now = new Date();
-        const targetDate = new Date(weddingDate); // Convertir la cadena a fecha
+        const targetDate = new Date(weddingDate);
         const difference = targetDate - now;
 
         return {
@@ -16,33 +16,25 @@ const CountDown = ({ weddingDate }) => {
             minutes: Math.floor((difference / 1000 / 60) % 60),
             seconds: Math.floor((difference / 1000) % 60),
         };
-    }
+    };
 
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-
-        return `${day}-${month}-${year}`;
-    }
-
-    const formatDateToString = (dateString) => {
-        if (!dateString) return ""; // Manejo de valores nulos o indefinidos
+    function formatDateToString(dateString) {
+        if (!dateString) return "";
         const date = new Date(dateString);
         return date.toLocaleDateString("es-ES", {
             day: "numeric",
             month: "long",
             year: "numeric",
         });
-    };
+    }
 
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
+
         return () => clearInterval(timer);
-    }, [weddingDate]); // Dependencia añadida para recalcular si cambia
+    }, [weddingDate]);
 
     return (
         <div className="container text-center my-4">
@@ -54,7 +46,7 @@ const CountDown = ({ weddingDate }) => {
                 <div className="time">{timeLeft.seconds} <span>segundos</span></div>
             </div>
             <br />
-            <h4>{formatDateToString(weddingDate)}</h4> {/* Fecha formateada */}
+            <h4>{formatDateToString(weddingDate)}</h4>
         </div>
     );
 };

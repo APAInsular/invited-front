@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/WeddingWebsite.css";
 
 const CountDown = ({ weddingDate }) => {
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     const calculateTimeLeft = () => {
         const now = new Date();
@@ -17,6 +16,9 @@ const CountDown = ({ weddingDate }) => {
             seconds: Math.floor((difference / 1000) % 60),
         };
     };
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
 
     function formatDateToString(dateString) {
         if (!dateString) return "";

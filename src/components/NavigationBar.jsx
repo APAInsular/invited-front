@@ -26,7 +26,7 @@ const NavigationBar = () => {
     };
 
     const redirectToMain = () => {
-        window.location.href = user ? `/${user.Name}&${user.partner.Name}` : '/';
+        window.location.href = "/";
     };
 
     return (

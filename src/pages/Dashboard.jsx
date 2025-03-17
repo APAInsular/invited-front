@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
 import Sidebar from '../components/Sidebar';
@@ -36,8 +35,6 @@ function Dashboard() {
         dressCode: '',
         foodType: ''
     });
-
-    const navigate = useNavigate();
 
     const onGuestDeleted = (guestId) => {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
@@ -155,6 +152,7 @@ function Dashboard() {
         });
     };
 
+    if (error) return <div>ERROR</div>
     if (isLoading) return <div>Obteniendo información...</div>;
 
     return (

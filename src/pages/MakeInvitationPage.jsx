@@ -8,6 +8,9 @@ export default function MakeInvitationForm() {
     const { templateName } = useParams();
     const formattedTemplateName = templateName.replace(/^Plantilla/, "Plantilla ");
 
+    const [previewImage, setPreviewImage] = useState();
+
+
     const [user, setUser] = useState(null);
     const [events, setEvents] = useState([]);
 
@@ -31,7 +34,9 @@ export default function MakeInvitationForm() {
         location: {  // Localización de la boda
             city: "",
             country: ""
-        }
+        },
+        coverImage: null,
+        images: []
     });
 
     useEffect(() => {
@@ -99,19 +104,43 @@ export default function MakeInvitationForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = sessionStorage.getItem('auth_token');
-
+    
+        // Preview Logic (from handleImageChange)
+        if (formData.coverImage) { // Assuming coverImage is the image you want to preview
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreviewImage(reader.result); // Set the preview image
+            };
+            reader.readAsDataURL(formData.coverImage);
+        }
+    
+        // FormData Creation (from previous example)
+        const form = new FormData();
+        form.append('coverImage', formData.coverImage);
+    
+        formData.images.forEach((file, index) => {
+            form.append(`images[${index}]`, file);
+        });
+    
+        for (const key in formData) {
+            if (key !== 'coverImage' && key !== 'images') {
+                form.append(key, formData[key]);
+            }
+        }
+    
         const finalData = {
             ...formData,
             events
-        };
-
-        console.log(finalData)
-
+        }; 
+        console.log(finalData);
         try {
             const response = await apiClient.post("/api/weddings", finalData, {
-                headers: { Authorization: `Bearer ${token}` }
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data'
+                }
             });
-
+    
             navigate(`/invitacion/${userInfo.novioName}-${userInfo.noviaName}/${response.data.wedding.id}`);
         } catch (error) {
             console.error("Error al crear la invitación:", error);
@@ -125,6 +154,17 @@ export default function MakeInvitationForm() {
             coverImage: file
         }));
     };
+
+    // const handleImageChange = (e) => {
+    //     const file = e.target.files[0];
+    //     if (file && validateAndSetImage(file)) {
+    //         const reader = new FileReader();
+    //         reader.onloadend = () => {
+    //             setPreviewImage(reader.result);
+    //         };
+    //         reader.readAsDataURL(file);
+    //     }
+    // };
 
     const handleGalleryUpload = (event) => {
         const files = Array.from(event.target.files);

@@ -10,7 +10,6 @@ import Gallery from './components/Gallery';
 import SongLink from './components/SongLink';
 import ChurchLocation from './components/Location';
 
-
 const images = [
     "/images/Image1.jpg",
     "/images/Image2.jpg",
@@ -23,14 +22,18 @@ const images = [
 ];
 
 const WeddingWebsite = ({ wedding }) => {
-    console.log(wedding)
+    console.log(wedding);
+
+    // Construye la URL completa de la imagen
+    const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000'; // Usa una variable de entorno o un valor por defecto
+    const imageUrl = `${baseUrl}/storage/${wedding.coverImage}`;
 
     return (
         <div>
             <div className="invitacionContainer">
                 <div className="contenedorFoto">
                     <img
-                        src="/boda, a, a.jpg"
+                        src={imageUrl} // Usa la URL completa aquí
                         alt="Foto de los novios"
                         className="fotoNovios"
                     />
@@ -57,14 +60,13 @@ const WeddingWebsite = ({ wedding }) => {
             <br />
             <hr />
             <br />
-            {images && <Gallery images={images} speed={20} />}
+            <Gallery images={images} speed={20} />
             <br />
             <hr />
             <br />
             <WeddingForm weddingId={wedding.id} />
-
-        </div >
+        </div>
     );
-}
+};
 
 export default WeddingWebsite;

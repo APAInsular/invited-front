@@ -59,7 +59,7 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                                     <td>{guest.name} {guest.firstSurname} {guest.secondSurname}</td>
                                     <td>{guest.attendants.length > 0 ? "Si" : "No"}</td>
                                     <td>{guest.allergy}</td>
-                                    <td>{guest.foodType}</td>
+                                    <td>{guest.feeding}</td>
                                     <td className='text-center'>-</td>
                                     <td className='text-center' onClick={() => deleteGuest(guest.id)} style={{ cursor: "pointer", color: "red" }}>🗑️</td>
                                 </tr>

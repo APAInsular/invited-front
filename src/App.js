@@ -14,6 +14,10 @@ import UserList from './components/UserList';
 import InvitationList from './components/InvitationList';
 import Invitations from './pages/Invitations';
 import Footer from './components/Footer';
+import LegalNotice from './pages/legalPages/LegalNotice';
+import PrivacyPolicy from './pages/legalPages/PrivacyPolicy';
+import ConditionsOfUse from './pages/legalPages/ConditionsOfUse';
+import CookiesPolicy from './pages/legalPages/CookiesPolicy';
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -25,7 +29,11 @@ const router = createBrowserRouter([
   { path: "/invitacion/:partnerName/:idWedding", element: <Invitations /> },
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/dashboard/users", element: <UserList /> },
-  { path: "/dashboard/invitations", element: <InvitationList /> }
+  { path: "/dashboard/invitations", element: <InvitationList /> },
+  { path: "/avisoLegal", element: <LegalNotice /> },
+  { path: "/politicaDePrivacidad", element: <PrivacyPolicy /> },
+  { path: "/condicionesDeUso", element: <ConditionsOfUse /> },
+  { path: "/politicaDeCookies", element: <CookiesPolicy /> }
 ]);
 
 function App() {

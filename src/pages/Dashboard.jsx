@@ -33,7 +33,8 @@ function Dashboard() {
         weddingDate: '',
         customMessage: '',
         dressCode: '',
-        foodType: ''
+        foodType: '',
+        guestCount: ''
     });
 
     const onGuestDeleted = (guestId) => {
@@ -100,7 +101,8 @@ function Dashboard() {
                         weddingDate: response.data.wedding.weddingDate,
                         customMessage: response.data.wedding.customMessage,
                         dressCode: response.data.wedding.dressCode,
-                        foodType: response.data.wedding.foodType
+                        foodType: response.data.wedding.foodType,
+                        guestCount: response.data.wedding.guestCount
                     });
                 } catch (err) {
                     setError('Error al obtener invitados.');
@@ -277,6 +279,7 @@ function Dashboard() {
                                 <Form.Group><Form.Label>Mensaje Personalizado</Form.Label><Form.Control type="text" name="customMessage" value={editWeddingData.customMessage} onChange={handleWeddingInputChange} /></Form.Group>
                                 <Form.Group><Form.Label>Código de Vestimenta</Form.Label><Form.Control type="text" name="dressCode" value={editWeddingData.dressCode} onChange={handleWeddingInputChange} /></Form.Group>
                                 <Form.Group><Form.Label>Tipo de Comida</Form.Label><Form.Control type="text" name="foodType" value={editWeddingData.foodType} onChange={handleWeddingInputChange} /></Form.Group>
+                                <Form.Group><Form.Label>Numero de invitados</Form.Label><Form.Control type="text" name="guestCount" value={editWeddingData.guestCount} onChange={handleWeddingInputChange} /></Form.Group>
                             </Form>
                         </Modal.Body>
                         <Modal.Footer>

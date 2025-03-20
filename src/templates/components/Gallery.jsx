@@ -14,6 +14,8 @@ const Gallery = ({ images, speed = 50 }) => {
         return () => clearInterval(interval);
     }, [speed]);
 
+
+
     return (
         <div className="slider-container">
             <h2 className="text-center my-4 fontTitle"><strong>🎞️ Conoce nuestra historia 🎞️</strong></h2>

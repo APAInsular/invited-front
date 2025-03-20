@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import apiClient from '../config/axiosConfig';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
@@ -83,6 +83,12 @@ const Login = () => {
                 required
               />
             </Form.Group>
+
+            <Row>
+              <Col>
+                <Link to={"/register"} style={{ fontSize: "12px" }}>No tengo una cuenta</Link>
+              </Col>
+            </Row>
 
             <Button variant="primary" type="submit" className="mt-4 w-100">
               Iniciar Sesión

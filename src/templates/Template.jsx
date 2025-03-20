@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/WeddingWebsite.css';
 
@@ -22,11 +22,22 @@ const images = [
 ];
 
 const WeddingWebsite = ({ wedding }) => {
-    console.log(wedding);
+    const [newImages, setNewImages] = useState([]);
+    const baseUrl = process.env.REACT_APP_BACKEND_URL; // Usa una variable de entorno o un valor por defecto
+
+    const changeImages = () => {
+        // Aseguramos que se genera un array con las URLs de las imágenes
+        const imageUrls = wedding.images.map((image) => `${baseUrl}/storage/${image.image}`);
+        setNewImages(imageUrls); // Actualizamos el estado con el nuevo array
+    }
+
+    useEffect(() => {
+        changeImages();
+    }, [wedding.images]);
 
     // Construye la URL completa de la imagen
-    const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000'; // Usa una variable de entorno o un valor por defecto
     const imageUrl = `${baseUrl}/storage/${wedding.coverImage}`;
+    console.log(imageUrl)
 
     return (
         <div>
@@ -68,7 +79,7 @@ const WeddingWebsite = ({ wedding }) => {
             <br />
             <hr />
             <br />
-            {wedding.id === 9 ? <Gallery images={images} speed={20} /> : <Gallery images={wedding.images} speed={20} />}
+            {wedding.id === 9 ? <Gallery images={images} speed={20} /> : <Gallery images={newImages} speed={20} />}
             <br />
             <hr />
             <br />

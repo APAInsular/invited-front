@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import apiClient from '../config/axiosConfig';
 import { redirect } from "react-router-dom";
@@ -61,8 +61,8 @@ export default function UserRegistrationForm() {
 
     return (
         <div className="mt-5" style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
-            <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu Invitación</h2>
-            <p style={{ marginTop: "10px" }}>Llena el formulario y genera tu invitación en minutos.</p>
+            <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu cuenta</h2>
+            <p style={{ marginTop: "10px" }}>Crea tu cuenta y disfruta de todos los beneficias de usar nuestra web</p>
             <Form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: "800px", margin: "0 auto", marginTop: "20px" }}>
                 <Row>
                     <Col md={4}>
@@ -132,7 +132,12 @@ export default function UserRegistrationForm() {
                         </Form.Group>
                     </Col>
                 </Row>
-                <Button type="submit" variant="danger" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>Registrar</Button>
+                <Row>
+                    <Col>
+                        <Link to={"/login"} style={{ fontSize: "12px" }}>Ya tengo una cuenta</Link>
+                    </Col>
+                </Row>
+                <Button type="submit" variant="danger" className="mt-3" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>Registrar</Button>
             </Form>
         </div>
     );

@@ -164,7 +164,7 @@ const LandingPage = () => {
                     </nav>
                     <p class="footer-copy">
                         &copy; Invited.es Desarrollada con &hearts; by
-                        <a href="https://platita.es" target="_blank" rel="noopener noreferrer">Platita Software</a>
+                        <a href="https://platita.es" target="_blank" rel="noopener noreferrer"> Platita Software</a>
                     </p>
                 </div>
             </footer>

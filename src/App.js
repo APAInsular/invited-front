@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard';
 import UserList from './components/UserList';
 import InvitationList from './components/InvitationList';
 import Invitations from './pages/Invitations';
+import Footer from './components/Footer';
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -34,7 +35,9 @@ function App() {
 
   return (
     <AuthProvider>
-      {!isInvitationRoute && <NavigationBar />}
+      {!isInvitationRoute && (
+        <NavigationBar />
+      )}
       <RouterProvider router={router} />
     </AuthProvider>
   );

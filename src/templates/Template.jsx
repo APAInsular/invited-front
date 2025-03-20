@@ -60,7 +60,7 @@ const WeddingWebsite = ({ wedding }) => {
             <br />
             <hr />
             <br />
-            <Gallery images={images} speed={20} />
+            {wedding.id === 9 ? <Gallery images={images} speed={20} /> : <Gallery images={wedding.images} speed={20} />}
             <br />
             <hr />
             <br />

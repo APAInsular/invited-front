@@ -93,9 +93,9 @@ const WeddingForm = ({ weddingId }) => {
                     <label className="form-label">Tipo de Alimentación</label>
                     <select className="form-select" name="feeding" value={formGuest.feeding} onChange={handleFormChange}>
                         <option value="">Selecciona...</option>
-                        <option value="omnivore">Omnívoro</option>
-                        <option value="vegetarian">Vegetariano</option>
-                        <option value="vegan">Vegano</option>
+                        <option value="Sin Preferencias">Sin preferecias</option>
+                        <option value="Vegatariana">Vegetariano</option>
+                        <option value="Vegana">Vegano</option>
                     </select>
                 </div>
 

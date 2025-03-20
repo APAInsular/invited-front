@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import '../templates/styles/LandingPage.css'
 
@@ -77,28 +77,27 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section id="caracteristicas" class="caracteristicas">
-                <div class="container">
-                    <h2>¿Por qué elegir Invited?</h2>
-                    <div class="caracteristicas-grid">
-                        <div class="caracteristica-item">
-                            <img src="https://via.placeholder.com/80" alt="Icono de diseño elegante" />
-                            <h3>Diseños Elegantes</h3>
-                            <p>Plantillas inspiradas en las últimas tendencias, personalizables y con tu toque único.</p>
-                        </div>
-                        <div class="caracteristica-item">
-                            <img src="https://via.placeholder.com/80" alt="Icono de gestión de invitados" />
-                            <h3>Gestión de Invitados</h3>
-                            <p>Confirma la asistencia en tiempo real y mantén todo bajo control sin estrés.</p>
-                        </div>
-                        <div class="caracteristica-item">
-                            <img src="https://via.placeholder.com/80" alt="Icono de soporte cercano" />
-                            <h3>Soporte Cercano</h3>
-                            <p>Estamos aquí para ayudarte con cualquier duda, de principio a fin.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div className="container mt-3">
+                <Card className="shadow-lg rounded-4" style={{ backgroundColor: "#FAF9F8", border: "none" }}>
+                    <Card.Body>
+                        <Card.Text className="mb-4" style={{ fontSize: "1.1rem", color: "#555" }}>
+                            <ul style={{ lineHeight: "1.8" }}>
+                                <li>Personalización del itinerario</li>
+                                <li>Tabla con los invitados y sus acompañantes</li>
+                                <li>Correos cada vez que alguien confirme</li>
+                                <li>Cuenta atrás para tu boda</li>
+                                <li>Diseño bonito y elegante</li>
+                                <li>Comodidad a la hora de enviar y manejar las invitaciones</li>
+                                <li>La tendrás al instante una vez se haya realizado el pago</li>
+                                <li>Podrás elegir una canción especial para que suene mientras tus invitados ven la invitación</li>
+                            </ul>
+                        </Card.Text>
+                        <Card.Title className="text-center mb-4" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#333" }}>
+                            <span style={{ color: "#E57373" }}>Precio:</span> 119€
+                        </Card.Title>
+                    </Card.Body>
+                </Card>
+            </div>
 
             <section id="como-funciona" class="como-funciona">
                 <div class="container">

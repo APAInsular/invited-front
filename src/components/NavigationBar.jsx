@@ -40,12 +40,8 @@ const NavigationBar = () => {
                     <Nav className="ms-auto">
                         <Nav.Link href="/" style={hovered === "home" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("home")}
-                            onMouseLeave={() => setHovered(null)}>Inicio</Nav.Link>
-
-                        <Nav.Link href={user ? `/invitation/${user.name}/templates` : "/invitation/noseque/templates"}
-                            style={hovered === "invitation" ? { ...styles.default, ...styles.hover } : styles.default}
-                            onMouseEnter={() => setHovered("invitation")}
-                            onMouseLeave={() => setHovered(null)}>Crear invitación</Nav.Link>
+                            onMouseLeave={() => setHovered(null)}>Inicio-
+                        </Nav.Link>
 
                         {!user ? (
                             <>

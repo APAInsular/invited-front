@@ -32,11 +32,19 @@ const WeddingWebsite = ({ wedding }) => {
         <div>
             <div className="invitacionContainer">
                 <div className="contenedorFoto">
-                    <img
-                        src={imageUrl} // Usa la URL completa aquí
-                        alt="Foto de los novios"
-                        className="fotoNovios"
-                    />
+                    {
+                        wedding.id === 9 ?
+                            <img
+                                src="/images/boda, a, a.jpg" // Usa la URL completa aquí
+                                alt="Foto de los novios"
+                                className="fotoNovios"
+                            /> :
+                            <img
+                                src={imageUrl} // Usa la URL completa aquí
+                                alt="Foto de los novios"
+                                className="fotoNovios"
+                            />
+                    }
                 </div>
             </div>
 

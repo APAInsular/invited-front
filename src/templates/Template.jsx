@@ -35,7 +35,7 @@ const WeddingWebsite = ({ wedding }) => {
                     {
                         wedding.id === 9 ?
                             <img
-                                src="/images/boda, a, a.jpg" // Usa la URL completa aquí
+                                src="/boda, a, a.jpg" // Usa la URL completa aquí
                                 alt="Foto de los novios"
                                 className="fotoNovios"
                             /> :

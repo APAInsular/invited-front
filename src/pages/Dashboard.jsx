@@ -118,7 +118,23 @@ function Dashboard() {
     const handleCloseWeddingModal = () => setShowWeddingModal(false);
 
     const handleWeddingInputChange = (e) => {
-        setEditWeddingData({ ...editWeddingData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        if (name === "location.city" || name === "location.country") {
+            // Actualizamos la propiedad de location de manera correcta
+            const [key, subKey] = name.split('.');
+            setEditWeddingData((prevData) => ({
+                ...prevData,
+                [key]: {
+                    ...prevData[key],
+                    [subKey]: value,
+                }
+            }));
+        } else {
+            setEditWeddingData({
+                ...editWeddingData,
+                [name]: value,
+            });
+        }
     };
 
     const handleSaveUserChanges = async () => {
@@ -274,7 +290,8 @@ function Dashboard() {
                         <Modal.Header closeButton><Modal.Title>Editar Boda</Modal.Title></Modal.Header>
                         <Modal.Body>
                             <Form>
-                                <Form.Group><Form.Label>Ubicación</Form.Label><Form.Control type="text" name="location" value={editWeddingData.location} onChange={handleWeddingInputChange} /></Form.Group>
+                                <Form.Group><Form.Label>Ubicación</Form.Label><Form.Control type="text" name="location.city" value={editWeddingData.location.city} onChange={handleWeddingInputChange} /></Form.Group>
+                                <Form.Group><Form.Label>Ubicación</Form.Label><Form.Control type="text" name="location.country" value={editWeddingData.location.country} onChange={handleWeddingInputChange} /></Form.Group>
                                 <Form.Group><Form.Label>Fecha de Boda</Form.Label><Form.Control type="date" name="weddingDate" value={editWeddingData.weddingDate} onChange={handleWeddingInputChange} /></Form.Group>
                                 <Form.Group><Form.Label>Mensaje Personalizado</Form.Label><Form.Control type="text" name="customMessage" value={editWeddingData.customMessage} onChange={handleWeddingInputChange} /></Form.Group>
                                 <Form.Group><Form.Label>Código de Vestimenta</Form.Label><Form.Control type="text" name="dressCode" value={editWeddingData.dressCode} onChange={handleWeddingInputChange} /></Form.Group>

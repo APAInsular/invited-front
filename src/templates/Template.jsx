@@ -9,6 +9,8 @@ import WeddingForm from './components/WeddingForm';
 import Gallery from './components/Gallery';
 import SongLink from './components/SongLink';
 import ChurchLocation from './components/Location';
+import ImagenLogo from '../Images/Logo_Invited_SinFondo.png';
+import { BsJustify } from 'react-icons/bs';
 
 const images = [
     "/images/Image1.jpg",
@@ -84,6 +86,13 @@ const WeddingWebsite = ({ wedding }) => {
             <hr />
             <br />
             <WeddingForm weddingId={wedding.id} />
+            <br />
+            <hr />
+            <br />
+            <div className="d-flex justify-content-center align-items-center mb-5" style={{ flexDirection: "column" }}>
+                <h2>Hecho con mucho amor por el equipo de</h2>
+                <img src={ImagenLogo} alt="" style={{ width: "200px" }} />
+            </div>
         </div>
     );
 };

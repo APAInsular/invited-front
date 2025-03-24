@@ -30,10 +30,10 @@ const router = createBrowserRouter([
   { path: "/dashboard", element: <Dashboard /> },
   { path: "/dashboard/users", element: <UserList /> },
   { path: "/dashboard/invitations", element: <InvitationList /> },
-  { path: "/avisoLegal", element: <LegalNotice /> },
-  { path: "/politicaDePrivacidad", element: <PrivacyPolicy /> },
-  { path: "/condicionesDeUso", element: <ConditionsOfUse /> },
-  { path: "/politicaDeCookies", element: <CookiesPolicy /> }
+  { path: "/aviso-legal", element: <LegalNotice /> },
+  { path: "/politica-de-privacidad", element: <PrivacyPolicy /> },
+  { path: "/terminos-y-condiciones", element: <ConditionsOfUse /> },
+  { path: "/politica-de-cookies", element: <CookiesPolicy /> }
 ]);
 
 function App() {

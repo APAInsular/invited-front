@@ -2,7 +2,7 @@ import React from "react";
 
 const ConditionsOfUse = () => {
     return (
-        <div className="container mx-auto my-5 p-6">
+        <div className="container mx-auto" style={{ marginTop: "90px" }}>
             <h1 className="text-2xl font-bold mb-4">TÉRMINOS Y CONDICIONES DE USO</h1>
             <p className="text-sm text-gray-600 mb-2">Última actualización: 19-03-2025</p>
 

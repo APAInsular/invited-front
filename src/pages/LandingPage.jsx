@@ -157,10 +157,10 @@ const LandingPage = () => {
             <footer class="footer">
                 <div class="container">
                     <nav class="footer-nav">
-                        <Link to={"/avisoLegal"}>Aviso Legal</Link>
-                        <Link to={"/politicaDePrivacidad"}>Política de Privacidad</Link>
-                        <Link to={"/condicionesDeUso"}>Términos y Condiciones</Link>
-                        <Link to={"/politicaDeCookies"}>Política de Cookies</Link>
+                        <Link to={"/aviso-legal"}>Aviso Legal</Link>
+                        <Link to={"/politica-de-privacidad"}>Política de Privacidad</Link>
+                        <Link to={"/terminos-y-condiciones"}>Términos y Condiciones</Link>
+                        <Link to={"/politica-de-cookies"}>Política de Cookies</Link>
                     </nav>
                     <p class="footer-copy">
                         &copy; Invited.es Desarrollada con &hearts; by

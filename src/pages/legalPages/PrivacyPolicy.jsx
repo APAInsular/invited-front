@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
     return (
-        <div className="container mx-auto p-6 my-5 shadow-md rounded-xl">
+        <div className="container mx-auto shadow-md rounded-xl" style={{ marginTop: "90px" }}>
             <h1 className="text-3xl font-bold mb-4">POLÍTICA DE PRIVACIDAD</h1>
             <p className="text-gray-600 mb-2">Fecha de última actualización: 19/03/2025</p>
 

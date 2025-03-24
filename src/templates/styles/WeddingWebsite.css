@@ -375,3 +375,7 @@ html {
 }
 
 /* CANCION */
+
+.grecaptcha-badge {
+    visibility: collapse !important;
+}

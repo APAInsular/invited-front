@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import apiClient from "../config/axiosConfig";
 import { useParams } from "react-router-dom";
 
-//import RomanticTemplate from "../templates/RomanticTemplate";
-import DramaticTemplate from "../templates/DramaticTemplate";
-import SimpleTemplate from "../templates/SimpleTemplate";
 import WeddingWebsite from "../templates/Template";
 
 const Invitations = () => {

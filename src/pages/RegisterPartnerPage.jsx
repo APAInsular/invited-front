@@ -42,14 +42,16 @@ export default function UserRegistrationForm() {
         //     return;
         // }
 
+        const token = "Token";
+
         try {
-            // const finalData = { data, token }
+            const finalData = { data, token }
 
             // console.log(finalData)
             // // Realizar la solicitud de registro con axios
             // const response = await registerUser(finalData)
 
-            const response = await registerUser(data)
+            const response = await registerUser(finalData)
 
             // Supongamos que el backend retorna un mensaje o un token
             console.log('Registro exitoso', response.data);

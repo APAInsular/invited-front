@@ -33,7 +33,7 @@ const LandingPage = () => {
         setMessage("");
 
         try {
-            const response = await apiClient.post("/contact", formData);
+            const response = await apiClient.post("/api/contact", formData);
             setMessage("Mensaje enviado con éxito.");
         } catch (error) {
             setMessage("Hubo un error al enviar el mensaje.");

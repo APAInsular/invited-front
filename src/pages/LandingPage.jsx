@@ -9,6 +9,40 @@ const LandingPage = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+
+    // Manejar cambios en los inputs
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    // Manejar envío del formulario
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setMessage("");
+
+        try {
+            const response = await apiClient.post("/contact", formData);
+            setMessage("Mensaje enviado con éxito.");
+        } catch (error) {
+            setMessage("Hubo un error al enviar el mensaje.");
+            console.error(error);
+        }
+
+        setLoading(false);
+    };
+
     useEffect(() => {
         // Llamamos a la API para obtener el usuario autenticado
         const fetchUser = async () => {
@@ -135,21 +169,46 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section id="contacto" class="contacto">
-                <div class="container">
+            <section id="contacto" className="contacto">
+                <div className="container">
                     <h2>¿Tienes preguntas?</h2>
                     <p>Déjanos tu mensaje y te responderemos en breve.</p>
-                    <form action="#" method="POST" class="form-contacto">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required />
+                    <form onSubmit={handleSubmit} className="form-contacto">
+                        <label htmlFor="name">Nombre</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
 
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required />
+                        <label htmlFor="email">Correo Electrónico</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
 
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        <label htmlFor="message">Mensaje</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        />
 
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" className="btn btn-primary" disabled={loading}>
+                            {loading ? "Enviando..." : "Enviar"}
+                        </button>
+
+                        {message && <p>{message}</p>}
                     </form>
                 </div>
             </section>

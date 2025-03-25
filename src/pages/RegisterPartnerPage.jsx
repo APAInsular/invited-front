@@ -26,28 +26,30 @@ export default function UserRegistrationForm() {
     } = useForm();
 
     const onSubmit = async (data) => {
-        if (!window.grecaptcha) {
-            alert("reCAPTCHA no está cargado correctamente");
-            return;
-        }
+        // if (!window.grecaptcha) {
+        //     alert("reCAPTCHA no está cargado correctamente");
+        //     return;
+        // }
 
-        const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY; // O import.meta.env.VITE_RECAPTCHA_SITE_KEY si usas Vite
-        console.log("Usando site key:", siteKey); // 👈 Verifica en consola
+        // const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY; // O import.meta.env.VITE_RECAPTCHA_SITE_KEY si usas Vite
+        // console.log("Usando site key:", siteKey); // 👈 Verifica en consola
 
-        const token = await window.grecaptcha.execute(siteKey, { action: "submit" });
-        console.log("Token generado:", token); // 👈 Verifica si se genera un token
+        // const token = await window.grecaptcha.execute(siteKey, { action: "submit" });
+        // console.log("Token generado:", token); // 👈 Verifica si se genera un token
 
-        if (!token) {
-            alert("Error al obtener el token de reCAPTCHA");
-            return;
-        }
+        // if (!token) {
+        //     alert("Error al obtener el token de reCAPTCHA");
+        //     return;
+        // }
 
         try {
-            const finalData = { data, token }
+            // const finalData = { data, token }
 
-            console.log(finalData)
-            // Realizar la solicitud de registro con axios
-            const response = await registerUser(finalData)
+            // console.log(finalData)
+            // // Realizar la solicitud de registro con axios
+            // const response = await registerUser(finalData)
+
+            const response = await registerUser(data)
 
             // Supongamos que el backend retorna un mensaje o un token
             console.log('Registro exitoso', response.data);

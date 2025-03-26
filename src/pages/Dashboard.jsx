@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Modal, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
 import Sidebar from '../components/Sidebar';
 import WeddingList from '../components/WeddingList';
 import GuestList from '../components/GuestList';
+import ProfileCard from '../components/ProfileCard';
 
 function Dashboard() {
     const [user, setUser] = useState(null);
@@ -211,19 +212,30 @@ function Dashboard() {
                             <h4 className="me-md-3 mb-2 mb-md-0 text-center text-md-start">
                                 Bienvenido, {user.name} y {user.partner.name}
                             </h4>
-                            <Button onClick={handleShowUserModal} className="ms-md-3">
-                                Editar Perfil
-                            </Button>
                         </div>
                     )}
 
                     {/* Main content */}
                     {activeComponent === 'weddings' && (
                         <>
+
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <ProfileCard
+                                        user={user}
+                                        onEdit={handleShowUserModal}
+                                    />
+                                </div>
+                                <div className="col-md-6">
+                                    {/* Puedes añadir otros componentes aquí */}
+                                </div>
+                            </div>
+
                             <WeddingList weddings={weddings} onWeddingSelect={setSelectedWeddingId} />
 
                             {selectedWedding && (
                                 <div className="mt-4">
+
                                     <GuestList
                                         guestCount={selectedWedding.guestCount}
                                         selectedWeddingId={selectedWeddingId}

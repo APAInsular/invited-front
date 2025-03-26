@@ -30,7 +30,7 @@ const WeddingWebsite = ({ wedding }) => {
     const changeImages = () => {
         // Aseguramos que se genera un array con las URLs de las imágenes
         if (wedding.images) {
-            const imageUrls = wedding.images.map((image) => `${baseUrl}/storage/${image.image}`);
+            const imageUrls = wedding.images.map((image) => `${baseUrl}storage/${image.image}`);
             setNewImages(imageUrls); // Actualizamos el estado con el nuevo array
         } else {
             return;
@@ -42,7 +42,7 @@ const WeddingWebsite = ({ wedding }) => {
     }, [wedding.images]);
 
     // Construye la URL completa de la imagen
-    const imageUrl = `${baseUrl}/storage/${wedding.coverImage}`;
+    const imageUrl = `${baseUrl}storage/${wedding.coverImage}`;
     console.log(imageUrl)
 
     return (

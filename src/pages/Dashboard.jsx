@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
 import Sidebar from '../components/Sidebar';
 import WeddingList from '../components/WeddingList';
@@ -16,6 +16,7 @@ function Dashboard() {
     const [isLoading, setIsLoading] = useState(true);
     const [showUserModal, setShowUserModal] = useState(false);
     const [showWeddingModal, setShowWeddingModal] = useState(false);
+    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     const [editUserData, setEditUserData] = useState({
         name: '',
         email: '',
@@ -174,49 +175,170 @@ function Dashboard() {
     if (isLoading) return <div>Obteniendo información...</div>;
 
     return (
-        <Container fluid className="mt-5">
-            <Row>
-                <Col sm={3} className="bg-light mt-5">
+        <Container fluid className="mt-5 px-0">
+            <Row className="g-0">
+                {/* Sidebar - hidden on small screens, shown on medium+ */}
+                <Col md={3} className="bg-light d-none d-md-block">
                     <Sidebar onSelectComponent={setActiveComponent} />
                 </Col>
-                <Col sm={9} className="p-3 mt-5">
-                    {user && (
-                        <div className="d-flex align-items-center">
-                            <h4 className="me-3">Bienvenido, {user.name} y {user.partner.name}</h4>
-                            <Button variant="primary" onClick={handleShowUserModal}>Editar Perfil</Button>
+
+                {/* Main content area */}
+                <Col xs={12} md={9} className="p-3 mt-5">
+                    {/* Mobile menu toggle button */}
+                    <Button
+                        variant="primary"
+                        className="d-md-none mb-3"
+                        onClick={() => setShowMobileSidebar(!showMobileSidebar)}
+                    >
+                        Menu
+                    </Button>
+
+                    {/* Mobile sidebar overlay */}
+                    {showMobileSidebar && (
+                        <div className="mobile-sidebar-overlay">
+                            <Sidebar
+                                onSelectComponent={(comp) => {
+                                    setActiveComponent(comp);
+                                    setShowMobileSidebar(false);
+                                }}
+                            />
                         </div>
                     )}
+
+                    {/* User welcome section */}
+                    {user && (
+                        <div className="d-flex flex-column flex-md-row align-items-center mb-4">
+                            <h4 className="me-md-3 mb-2 mb-md-0 text-center text-md-start">
+                                Bienvenido, {user.name} y {user.partner.name}
+                            </h4>
+                            <Button onClick={handleShowUserModal} className="ms-md-3">
+                                Editar Perfil
+                            </Button>
+                        </div>
+                    )}
+
+                    {/* Main content */}
                     {activeComponent === 'weddings' && (
                         <>
                             <WeddingList weddings={weddings} onWeddingSelect={setSelectedWeddingId} />
+
                             {selectedWedding && (
-                                <div>
+                                <div className="mt-4">
                                     <GuestList
                                         guestCount={selectedWedding.guestCount}
                                         selectedWeddingId={selectedWeddingId}
                                         guests={weddingGuest}
                                         onGuestDeleted={onGuestDeleted}
                                     />
-                                    <h4>Detalles de la Boda</h4>
-                                    <p>Ubicación: {selectedWedding.location.city}, {selectedWedding.location.country}</p>
-                                    <p>Fecha: {formatDate(selectedWedding.weddingDate)}</p>                                    <p>Mensaje personalizado: {selectedWedding.customMessage}</p>
-                                    <p>Código de vestimenta: {selectedWedding.dressCode}</p>
-                                    <p>Tipo de comida: {selectedWedding.foodType}</p>
 
-                                    <h5>Eventos de la Boda</h5>
+                                    <div className="d-flex justify-content-between align-items-center mb-3">
+                                        <h4>Detalles de la Boda</h4>
+                                        <Button
+                                            variant="warning"
+                                            onClick={handleShowWeddingModal}
+                                            size="sm"
+                                        >
+                                            Editar
+                                        </Button>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-12 col-md-6 mb-3">
+                                            <div className="card h-100 shadow-sm">
+                                                <div className="card-body">
+                                                    <h5 className="card-title text-primary mb-4">
+                                                        <i className="bi bi-geo-alt-fill me-2"></i>Detalles Principales
+                                                    </h5>
+                                                    <ul className="list-unstyled">
+                                                        <li className="mb-3 d-flex">
+                                                            <span className="me-2 text-muted">
+                                                                <i className="bi bi-geo"></i>
+                                                            </span>
+                                                            <div>
+                                                                <h6 className="mb-0 text-secondary">Ubicación</h6>
+                                                                <p className="mb-0">{selectedWedding.location.city}, {selectedWedding.location.country}</p>
+                                                            </div>
+                                                        </li>
+                                                        <li className="mb-3 d-flex">
+                                                            <span className="me-2 text-muted">
+                                                                <i className="bi bi-calendar-event"></i>
+                                                            </span>
+                                                            <div>
+                                                                <h6 className="mb-0 text-secondary">Fecha</h6>
+                                                                <p className="mb-0">{formatDate(selectedWedding.weddingDate)}</p>
+                                                            </div>
+                                                        </li>
+                                                        <li className="d-flex">
+                                                            <span className="me-2 text-muted">
+                                                                <i className="bi bi-chat-square-text"></i>
+                                                            </span>
+                                                            <div>
+                                                                <h6 className="mb-0 text-secondary">Mensaje</h6>
+                                                                <p className="mb-0 text-muted font-italic">"{selectedWedding.customMessage}"</p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="col-12 col-md-6 mb-3">
+                                            <div className="card h-100 shadow-sm">
+                                                <div className="card-body">
+                                                    <h5 className="card-title text-primary mb-4">
+                                                        <i className="bi bi-info-circle-fill me-2"></i>Información Adicional
+                                                    </h5>
+                                                    <ul className="list-unstyled">
+                                                        <li className="mb-3 d-flex">
+                                                            <span className="me-2 text-muted">
+                                                                <i className="bi bi-sunglasses"></i>
+                                                            </span>
+                                                            <div>
+                                                                <h6 className="mb-0 text-secondary">Vestimenta</h6>
+                                                                <p className="mb-0">
+                                                                    {selectedWedding.dressCode || "Sin especificar"}
+                                                                    {selectedWedding.dressCode && (
+                                                                        <small className="d-block text-muted mt-1">Código de vestimenta</small>
+                                                                    )}
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                        <li className="mb-3 d-flex">
+                                                            <span className="me-2 text-muted">
+                                                                <i className="bi bi-egg-fried"></i>
+                                                            </span>
+                                                            <div>
+                                                                <h6 className="mb-0 text-secondary">Comida</h6>
+                                                                <p className="mb-0">
+                                                                    {selectedWedding.foodType || "Por determinar"}
+                                                                    {selectedWedding.foodType && (
+                                                                        <small className="d-block text-muted mt-1">Tipo de menú</small>
+                                                                    )}
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 className="mt-3">Eventos de la Boda</h5>
                                     {selectedWedding.events && selectedWedding.events.length > 0 ? (
-                                        <ul>
+                                        <div className="list-group">
                                             {selectedWedding.events.map((event, index) => (
-                                                <li key={index}>
-                                                    <strong>{event.name}</strong> - {event.time.split(":").slice(0, 2).join(":")}
-                                                    <p>{event.description}</p>
-                                                </li>
+                                                <div key={index} className="list-group-item">
+                                                    <div className="d-flex w-100 justify-content-between">
+                                                        <h6 className="mb-1">{event.name}</h6>
+                                                        <small>{event.time.split(":").slice(0, 2).join(":")}</small>
+                                                    </div>
+                                                    <p className="mb-1">{event.description}</p>
+                                                </div>
                                             ))}
-                                        </ul>
+                                        </div>
                                     ) : (
                                         <p>No hay eventos programados para esta boda.</p>
                                     )}
-                                    <Button variant="warning" onClick={handleShowWeddingModal}>Editar Boda</Button>
                                 </div>
                             )}
                         </>
@@ -306,6 +428,25 @@ function Dashboard() {
                     </Modal>
                 </Col>
             </Row>
+            {/* Add CSS for mobile sidebar */}
+            <style jsx>{`
+                .mobile-sidebar-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 1000;
+                    padding: 20px;
+                }
+                
+                @media (min-width: 768px) {
+                    .mobile-sidebar-overlay {
+                        display: none;
+                    }
+                }
+            `}</style>
         </Container>
     );
 }

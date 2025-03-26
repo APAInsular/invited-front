@@ -1,26 +1,36 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Card } from 'react-bootstrap';
 
 function WeddingList({ weddings, onWeddingSelect }) {
     return (
-        <div>
-            <h3 className='mt-2'>Mis Bodas</h3>
-            {weddings.length > 0 ? (
-                <ListGroup>
-                    {weddings.map((wedding) => (
-                        <ListGroup.Item
-                            key={wedding.id}
-                            action
-                            onClick={() => onWeddingSelect(wedding.id)}
-                        >
-                            Fecha de la boda: {new Date(wedding.weddingDate).toLocaleDateString()}
-                        </ListGroup.Item>
-                    ))}
-                </ListGroup>
-            ) : (
-                <p>No tienes bodas registradas.</p>
-            )}
-        </div>
+        <Card className="mb-4">
+            <Card.Body>
+                <Card.Title>Mis Bodas</Card.Title>
+                {weddings.length > 0 ? (
+                    <ListGroup variant="flush">
+                        {weddings.map((wedding) => (
+                            <ListGroup.Item
+                                key={wedding.id}
+                                action
+                                onClick={() => onWeddingSelect(wedding.id)}
+                                className="py-3"
+                            >
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <strong>Boda el {new Date(wedding.weddingDate).toLocaleDateString()}</strong>
+                                    </span>
+                                    <span className="text-muted small">
+                                        {wedding.location.city}, {wedding.location.country}
+                                    </span>
+                                </div>
+                            </ListGroup.Item>
+                        ))}
+                    </ListGroup>
+                ) : (
+                    <p className="text-muted">No tienes bodas registradas.</p>
+                )}
+            </Card.Body>
+        </Card>
     );
 }
 

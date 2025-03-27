@@ -104,7 +104,7 @@ export default function MakeInvitationForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = sessionStorage.getItem('auth_token');
-    
+
         // Preview Logic (from handleImageChange)
         if (formData.coverImage) { // Assuming coverImage is the image you want to preview
             const reader = new FileReader();
@@ -113,25 +113,25 @@ export default function MakeInvitationForm() {
             };
             reader.readAsDataURL(formData.coverImage);
         }
-    
+
         // FormData Creation (from previous example)
         const form = new FormData();
         form.append('coverImage', formData.coverImage);
-    
+
         formData.images.forEach((file, index) => {
             form.append(`images[${index}]`, file);
         });
-    
+
         for (const key in formData) {
             if (key !== 'coverImage' && key !== 'images') {
                 form.append(key, formData[key]);
             }
         }
-    
+
         const finalData = {
             ...formData,
             events
-        }; 
+        };
         console.log(finalData);
         try {
             const response = await apiClient.post("/api/weddings", finalData, {
@@ -140,7 +140,7 @@ export default function MakeInvitationForm() {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-    
+
             navigate(`/invitacion/${userInfo.novioName}-${userInfo.noviaName}/${response.data.wedding.id}`);
         } catch (error) {
             console.error("Error al crear la invitación:", error);
@@ -201,10 +201,10 @@ export default function MakeInvitationForm() {
                         <Form.Group className="mb-3">
                             <Form.Select name="template" value={formData.template} onChange={handleChange} required>
                                 <option value="Plantilla Romantica">Plantilla Romántica</option>
-                                <option value="Plantilla Simple">Plantilla Simple</option>
-                                <option value="Plantilla Dramatica">Plantilla Dramática</option>
-                                <option value="Plantilla Dulce">Plantilla Dulce</option>
-                                <option value="Plantilla Oscura">Plantilla Oscura</option>
+                                <option value="Plantilla Simple" disabled>Plantilla Simple</option>
+                                <option value="Plantilla Dramatica" disabled>Plantilla Dramática</option>
+                                <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>
+                                <option value="Plantilla Oscura" disabled>Plantilla Oscura</option>
                             </Form.Select>
                         </Form.Group>
                     </Col>

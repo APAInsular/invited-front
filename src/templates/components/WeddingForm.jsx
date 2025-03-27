@@ -46,7 +46,23 @@ const WeddingForm = ({ weddingId }) => {
     const handleSendForm = async (e) => {
         e.preventDefault();
 
-        const dataToSend = { ...formGuest, attendants };
+        if (!window.grecaptcha) {
+            alert("reCAPTCHA no está cargado correctamente");
+            return;
+        }
+
+        const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY; // O import.meta.env.VITE_RECAPTCHA_SITE_KEY si usas Vite
+        console.log("Usando site key:", siteKey); // 👈 Verifica en consola
+
+        const token = await window.grecaptcha.execute(siteKey, { action: "submit" });
+        console.log("Token generado:", token); // 👈 Verifica si se genera un token
+
+        if (!token) {
+            alert("Error al obtener el token de reCAPTCHA");
+            return;
+        }
+
+        const dataToSend = { ...formGuest, attendants, token };
 
         console.log(dataToSend)
         try {

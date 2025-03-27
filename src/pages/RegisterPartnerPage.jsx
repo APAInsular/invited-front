@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 
 import { useNavigate, Link } from "react-router-dom";
-
+import Footer from "../components/Footer";
 import apiClient from '../config/axiosConfig';
 import { redirect } from "react-router-dom";
 
@@ -79,85 +79,90 @@ export default function UserRegistrationForm() {
     };
 
     return (
-        <div className="mt-5" style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
-            <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu cuenta</h2>
-            <p style={{ marginTop: "10px" }}>Crea tu cuenta y disfruta de todos los beneficias de usar nuestra web</p>
-            <Form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: "800px", margin: "0 auto", marginTop: "20px" }}>
-                <Row>
-                    <Col md={4}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre" {...register("name", { required: "El nombre es obligatorio" })} style={defaultStyle} />
-                            {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
-                        </Form.Group>
-                    </Col>
-                    <Col md={4}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Primer Apellido" {...register("firstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
-                            {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
-                        </Form.Group>
-                    </Col>
-                    <Col md={4}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Segundo Apellido" {...register("secondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
-                            {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
-                        </Form.Group>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={4}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre Pareja" {...register("partnerName", { required: "El nombre es obligatorio" })} style={defaultStyle} />
-                            {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
-                        </Form.Group>
-                    </Col>
-                    <Col md={4}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Primer Apellido Pareja" {...register("partnerFirstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
-                            {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
-                        </Form.Group>
-                    </Col>
-                    <Col md={4}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Segundo Apellido Pareja" {...register("partnerSecondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
-                            {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
-                        </Form.Group>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={6}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="tel" placeholder="Teléfono" {...register("phone", { required: "El teléfono es obligatorio" })} style={defaultStyle} />
-                            {errors.Phone && <p className="text-danger">{errors.Phone.message}</p>}
-                        </Form.Group>
-                    </Col>
-                    <Col md={6}>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="email" placeholder="Correo Electrónico" {...register("email", { required: "El correo electrónico es obligatorio" })} style={defaultStyle} />
-                            {errors.Email && <p className="text-danger">{errors.Email.message}</p>}
-                        </Form.Group>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="password" placeholder="Contraseña" {...register("password", { required: "La contraseña es obligatoria" })} style={defaultStyle} />
-                            {errors.password && <p className="text-danger">{errors.password.message}</p>}
-                        </Form.Group>
-                    </Col>
-                    <Col>
-                        <Form.Group className="mb-3">
-                            <Form.Control type="password" placeholder="Confirmar Contraseña" {...register("password_confirmation", { required: "Debes confirmar la contraseña" })} style={defaultStyle} />
-                            {errors.password_confirmation && <p className="text-danger">{errors.password_confirmation.message}</p>}
-                        </Form.Group>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Link to={"/login"} style={{ fontSize: "12px" }}>Ya tengo una cuenta</Link>
-                    </Col>
-                </Row>
-                <Button type="submit" variant="danger" className="mt-3" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>Registrar</Button>
-            </Form>
-        </div>
+        <>
+            <div className="mt-5" style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
+                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu cuenta</h2>
+                <p style={{ marginTop: "10px", marginBottom: "3px" }}>Crea tu cuenta y disfruta de todos los beneficias de usar nuestra web</p>
+                <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
+                <Form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: "800px", margin: "0 auto", marginTop: "20px" }}>
+                    <Row>
+                        <Col md={4}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="text" placeholder="Nombre*" {...register("name", { required: "El nombre es obligatorio" })} style={defaultStyle} />
+                                {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
+                            </Form.Group>
+                        </Col>
+                        <Col md={4}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="text" placeholder="Primer Apellido*" {...register("firstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
+                                {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
+                            </Form.Group>
+                        </Col>
+                        <Col md={4}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="text" placeholder="Segundo Apellido" {...register("secondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
+                                {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={4}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="text" placeholder="Nombre Pareja*" {...register("partnerName", { required: "El nombre es obligatorio" })} style={defaultStyle} />
+                                {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
+                            </Form.Group>
+                        </Col>
+                        <Col md={4}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="text" placeholder="Primer Apellido Pareja*" {...register("partnerFirstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
+                                {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
+                            </Form.Group>
+                        </Col>
+                        <Col md={4}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="text" placeholder="Segundo Apellido Pareja" {...register("partnerSecondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
+                                {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="tel" placeholder="Teléfono*" {...register("phone", { required: "El teléfono es obligatorio" })} style={defaultStyle} />
+                                {errors.Phone && <p className="text-danger">{errors.Phone.message}</p>}
+                            </Form.Group>
+                        </Col>
+                        <Col md={6}>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="email" placeholder="Correo Electrónico*" {...register("email", { required: "El correo electrónico es obligatorio" })} style={defaultStyle} />
+                                {errors.Email && <p className="text-danger">{errors.Email.message}</p>}
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="password" placeholder="Contraseña*" {...register("password", { required: "La contraseña es obligatoria" })} style={defaultStyle} />
+                                {errors.password && <p className="text-danger">{errors.password.message}</p>}
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group className="mb-3">
+                                <Form.Control type="password" placeholder="Confirmar Contraseña*" {...register("password_confirmation", { required: "Debes confirmar la contraseña" })} style={defaultStyle} />
+                                {errors.password_confirmation && <p className="text-danger">{errors.password_confirmation.message}</p>}
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Link to={"/login"} style={{ fontSize: "12px" }}>Ya tengo una cuenta</Link>
+                        </Col>
+                    </Row>
+                    <Button type="submit" variant="danger" className="mt-3" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>Registrar</Button>
+                </Form>
+
+            </div>
+            <Footer></Footer>
+        </>
     );
 }

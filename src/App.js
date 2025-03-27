@@ -43,10 +43,12 @@ function App() {
 
   return (
     <AuthProvider>
-      {!isInvitationRoute && (
-        <NavigationBar />
-      )}
-      <RouterProvider router={router} />
+      <div className='d-flex flex-column min-vh-100'>
+        {!isInvitationRoute && (
+          <NavigationBar />
+        )}
+        <RouterProvider router={router} />
+      </div>
     </AuthProvider>
   );
 }

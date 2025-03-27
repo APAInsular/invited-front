@@ -84,8 +84,8 @@ body {
   ----------------------------- */
 .hero {
     position: relative;
-    min-height: 60vh;
-    background: url("https://via.placeholder.com/1200x800") center/cover no-repeat;
+    min-height: 100vh;
+    background: url("/public/Invited.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,6 +105,8 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
+    min-height: 100vh;
+    padding-top: 250px;
 }
 
 .hero-content h1 {

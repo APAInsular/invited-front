@@ -79,14 +79,15 @@ const WeddingForm = ({ weddingId }) => {
     return (
         <div className="container my-4">
             <h2 className="mb-3">💍 Confirmar Asistencia</h2>
+            <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
             <form className="p-4 border rounded bg-light" onSubmit={handleSendForm}>
                 <div className="mb-3">
-                    <label className="form-label">Nombre</label>
+                    <label className="form-label">Nombre*</label>
                     <input type="text" className="form-control" name="name" value={formGuest.name} onChange={handleFormChange} required />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label">Primer Apellido</label>
+                    <label className="form-label">Primer Apellido*</label>
                     <input type="text" className="form-control" name="firstSurname" value={formGuest.firstSurname} onChange={handleFormChange} required />
                 </div>
 

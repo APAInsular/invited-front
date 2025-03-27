@@ -61,7 +61,7 @@ const Login = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>Email*</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Ingresa tu email"
@@ -73,7 +73,7 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group controlId="password" className="mt-3">
-              <Form.Label>Contraseña</Form.Label>
+              <Form.Label>Contraseña*</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Ingresa tu contraseña"
@@ -87,6 +87,7 @@ const Login = () => {
             <Row>
               <Col>
                 <Link to={"/register"} style={{ fontSize: "12px" }}>No tengo una cuenta</Link>
+                <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
               </Col>
             </Row>
 

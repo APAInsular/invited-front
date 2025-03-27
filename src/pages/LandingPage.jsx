@@ -4,6 +4,7 @@ import apiClient from '../config/axiosConfig';
 import { Button, Card } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import '../templates/styles/LandingPage.css'
+import Footer from '../components/Footer';
 
 const LandingPage = () => {
     const [user, setUser] = useState(null);
@@ -113,21 +114,53 @@ const LandingPage = () => {
     };
 
     return (
-        <div className="mt-5" style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
-            <section id="inicio" class="hero">
-                <div class="hero-overlay">
-                    <div class="container hero-content">
-                        <h1>Crea tus invitaciones de boda digitales</h1>
-                        <p>Fácil, elegante y con confirmaciones de invitados en tiempo real.</p>
-                        {
-                            user ?
-                                <Link to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`} class="btn btn-primary">Empieza Ahora</Link>
-                                :
-                                <Link to="/login" class="btn btn-primary">Empieza Ahora</Link>
-                        }
-                    </div>
+        <div style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
+            <>
+                {/* Metadatos ocultos para SEO */}
+                <div itemScope itemType="https://schema.org/ImageObject" style={{ display: 'none' }}>
+                    <img
+                        src="/public/Invited.jpg" // Asegúrate de que la ruta coincida con tu proyecto
+                        alt="Invited.es: invitaciones de boda con anillos de matrimonio y tulipanes"
+                        itemProp="image"
+                    />
+                    <meta itemProp="name" content="Invitaciones de boda digitales con Invited.es" />
+                    <meta itemProp="author" content="Invited.es" />
+                    <figcaption itemProp="description">
+                        Fotografía que muestra invitaciones de boda tradicionales, anillos de matrimonio y tulipanes,
+                        representando la transición hacia invitaciones digitales elegantes y personalizadas
+                        de Invited.es para bodas y eventos.
+                    </figcaption>
                 </div>
-            </section>
+
+                {/* Sección Hero con background-image */}
+                <section
+                    id="inicio"
+                    className="hero"
+                    style={{
+                        background: "url('/Invited.jpg') center/cover no-repeat",
+                        position: 'relative'
+                    }}
+                >
+                    <div className="hero-overlay">
+                        <div className="container hero-content">
+                            <h1>Crea tus invitaciones de boda digitales</h1>
+                            <p>Fácil, elegante y con confirmaciones de invitados en tiempo real.</p>
+                            {user ? (
+                                <Link
+                                    to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
+                                    className="btn btn-primary"
+                                >
+                                    Empieza Ahora
+                                </Link>
+                            ) : (
+                                <Link to="/login" className="btn btn-primary">
+                                    Empieza Ahora
+                                </Link>
+                            )}
+                        </div>
+                    </div>
+                </section>
+            </>
 
             <div className="container mt-3">
                 <Card className="shadow-lg rounded-4" style={{ backgroundColor: "#FAF9F8", border: "none" }}>
@@ -151,26 +184,26 @@ const LandingPage = () => {
                 </Card>
             </div>
 
-            <section id="como-funciona" class="como-funciona">
-                <div class="container">
+            <section id="como-funciona" className="como-funciona">
+                <div className="container">
                     <h2>Cómo Funciona</h2>
-                    <div class="pasos">
-                        <div class="paso">
+                    <div className="pasos">
+                        <div className="paso">
                             <span>1</span>
                             <h3>Regístrate</h3>
                             <p>Crea tu cuenta e inicia tu proyecto de invitación digital.</p>
                         </div>
-                        <div class="paso">
+                        <div className="paso">
                             <span>2</span>
                             <h3>Personaliza</h3>
                             <p>Elige la plantilla, colores y añade la información de tu boda.</p>
                         </div>
-                        <div class="paso">
+                        <div className="paso">
                             <span>3</span>
                             <h3>Comparte</h3>
                             <p>Envía la invitación a tus invitados por email, WhatsApp o redes sociales.</p>
                         </div>
-                        <div class="paso">
+                        <div className="paso">
                             <span>4</span>
                             <h3>Gestiona</h3>
                             <p>Revisa confirmaciones y mantén todo bajo control en tu panel.</p>
@@ -179,11 +212,10 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section id="cta" class="cta-section">
-                <div class="container">
+            <section id="cta" className="cta-section">
+                <div className="container">
                     <h2>Comienza Hoy Mismo</h2>
                     <p>Convierte tu boda en una experiencia digital inolvidable.</p>
-                    <a href="#" class="btn btn-secondary">Crear Mi Invitación</a>
                 </div>
             </section>
 
@@ -231,20 +263,7 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <footer class="footer">
-                <div class="container">
-                    <nav class="footer-nav">
-                        <Link to={"/aviso-legal"}>Aviso Legal</Link>
-                        <Link to={"/politica-de-privacidad"}>Política de Privacidad</Link>
-                        <Link to={"/terminos-y-condiciones"}>Términos y Condiciones</Link>
-                        <Link to={"/politica-de-cookies"}>Política de Cookies</Link>
-                    </nav>
-                    <p class="footer-copy">
-                        &copy; Invited.es Desarrollada con &hearts; by
-                        <a href="https://platita.es" target="_blank" rel="noopener noreferrer"> Platita Software</a>
-                    </p>
-                </div>
-            </footer>
+            <Footer></Footer>
         </div>
     );
 };

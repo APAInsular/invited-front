@@ -1,23 +1,35 @@
 import React from "react";
-import PrivacyPolicy from "../pages/legalPages/PrivacyPolicy";
-import ConditionsOfUse from "../pages/legalPages/ConditionsOfUse";
-import LegalNotice from "../pages/legalPages/LegalNotice";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white p-6 text-center">
-            <div className="container mx-auto">
-                <p className="mb-2">&copy; {new Date().getFullYear()} Isla32. Todos los derechos reservados.</p>
-                <div className="flex justify-center space-x-4">
-                    <a href="#aviso-legal" className="hover:underline">Aviso Legal</a>
-                    <a href="#politica-privacidad" className="hover:underline">Política de Privacidad</a>
-                    <a href="#condiciones-uso" className="hover:underline">Condiciones de Uso</a>
-                </div>
-                <div className="hidden">
-                    <LegalNotice />
-                    <PrivacyPolicy />
-                    <ConditionsOfUse />
-                </div>
+        <footer className="bg-light py-3 mt-auto">
+            <div className="container">
+                <nav className="d-flex flex-wrap justify-content-center gap-3 mb-2">
+                    <Link to="/aviso-legal" className="text-decoration-none">
+                        Aviso Legal
+                    </Link>
+                    <Link to="/politica-de-privacidad" className="text-decoration-none">
+                        Política de Privacidad
+                    </Link>
+                    <Link to="/terminos-y-condiciones" className="text-decoration-none">
+                        Términos y Condiciones
+                    </Link>
+                    <Link to="/politica-de-cookies" className="text-decoration-none">
+                        Política de Cookies
+                    </Link>
+                </nav>
+                <p className="text-center text-muted mb-0">
+                    &copy; Invited.es - Desarrollada con <span className="text-danger">♥</span> por{" "}
+                    <a
+                        href="https://platita.es"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-decoration-none"
+                    >
+                        Platita Software
+                    </a>
+                </p>
             </div>
         </footer>
     );

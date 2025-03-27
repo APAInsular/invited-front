@@ -178,27 +178,30 @@ export default function MakeInvitationForm() {
         <Container className="mt-5" style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
             <h2 className="m-0" style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu Invitación</h2>
             <p className="mb-2 m-0 fw-lighter" style={{ fontSize: "0.8rem" }}>Llena el formulario y genera tu invitación en minutos.</p>
+            <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
             <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", margin: "0 auto", marginTop: "20px" }}>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre Pareja" name="groomName" value={userInfo.novioName} required />
+                            <Form.Control type="text" placeholder="Nombre Pareja*" name="groomName" value={userInfo.novioName} required />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre Pareja" name="brideName" value={userInfo.noviaName} required />
+                            <Form.Control type="text" placeholder="Nombre Pareja*" name="brideName" value={userInfo.noviaName} required />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Fecha de la boda*</Form.Label>
                             <Form.Control type="date" name="weddingDate" value={formData.weddingDate} onChange={handleChange} required />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Plantilla a utilizar*</Form.Label>
                             <Form.Select name="template" value={formData.template} onChange={handleChange} required>
                                 <option value="Plantilla Romantica">Plantilla Romántica</option>
                                 <option value="Plantilla Simple" disabled>Plantilla Simple</option>
@@ -215,12 +218,14 @@ export default function MakeInvitationForm() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Ciudad*</Form.Label>
                             <Form.Control type="text" placeholder="Ciudad" name="city" value={formData.location.city} onChange={handleChangeLocation} required />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="País" name="country" value={formData.location.country} onChange={handleChangeLocation} required />
+                            <Form.Label>Localizacion*</Form.Label>
+                            <Form.Control type="text" placeholder="Localizacion" name="country" value={formData.location.country} onChange={handleChangeLocation} required />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -231,16 +236,16 @@ export default function MakeInvitationForm() {
                 {events.map((event, index) => (
                     <Row key={index} className="mb-3">
                         <Col>
-                            <Form.Control type="text" placeholder="Nombre" value={event.name} onChange={(e) => updateEvent(index, "name", e.target.value)} required />
+                            <Form.Control type="text" placeholder="Nombre*" value={event.name} onChange={(e) => updateEvent(index, "name", e.target.value)} required />
                         </Col>
                         <Col>
                             <Form.Control type="time" value={event.time} onChange={(e) => updateEvent(index, "time", e.target.value)} required />
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="Ubicación Ciudad" value={event.location.city} onChange={(e) => updateEvent(index, "location.city", e.target.value)} />
+                            <Form.Control type="text" placeholder="Ciudad" value={event.location.city} onChange={(e) => updateEvent(index, "location.city", e.target.value)} />
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="Ubicación País" value={event.location.country} onChange={(e) => updateEvent(index, "location.country", e.target.value)} />
+                            <Form.Control type="text" placeholder="Localización" value={event.location.country} onChange={(e) => updateEvent(index, "location.country", e.target.value)} />
                         </Col>
                         <Col>
                             <Form.Control type="text" placeholder="Descripción" value={event.description} onChange={(e) => updateEvent(index, "description", e.target.value)} />
@@ -255,6 +260,7 @@ export default function MakeInvitationForm() {
                 <Row className="mt-3">
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Tipo de alimentacion*</Form.Label>
                             <Form.Select name="foodType" value={formData.foodType} onChange={handleChange} required>
                                 <option value="Sin Preferencias">Sin Preferencias</option>
                                 <option value="Vegetariana">Vegetariana</option>
@@ -266,6 +272,7 @@ export default function MakeInvitationForm() {
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Numero de invitados*</Form.Label>
                             <Form.Control type="number" placeholder="Número de Invitados" name="guestCount" value={formData.guestCount} onChange={handleChange} required />
                         </Form.Group>
                     </Col>
@@ -273,11 +280,13 @@ export default function MakeInvitationForm() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Código de vestimenta*</Form.Label>
                             <Form.Control type="text" placeholder="Código de vestimenta" name="dressCode" value={formData.dressCode} onChange={handleChange} />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Mensaje para los invitados*</Form.Label>
                             <Form.Control type="text" placeholder="Mensaje personal" name="customMessage" value={formData.customMessage} onChange={handleChange} />
                         </Form.Group>
                     </Col>
@@ -288,11 +297,13 @@ export default function MakeInvitationForm() {
                 <Row>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Titulo de la cancion*</Form.Label>
                             <Form.Control type="text" placeholder="Título de la canción" name="musicTitle" value={formData.musicTitle} onChange={handleChange} />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group className="mb-3">
+                            <Form.Label>Enlace de la musica (YouTube)*</Form.Label>
                             <Form.Control type="text" placeholder="Enlace a la música" name="musicUrl" value={formData.musicUrl} onChange={handleChange} />
                         </Form.Group>
                     </Col>
@@ -300,13 +311,13 @@ export default function MakeInvitationForm() {
 
                 <Row>
                     <Col>
-                        <h4 className="m-0">Imagen de la Pareja</h4>
+                        <h4 className="m-0">Imagen de la Pareja*</h4>
                         <Form.Group className="mb-3">
                             <Form.Control type="file" accept="image/*" onChange={handleCoupleImageUpload} required />
                         </Form.Group>
                     </Col>
                     <Col>
-                        <h4 className="m-0">Galería de Imágenes</h4>
+                        <h4 className="m-0">Galería de Imágenes*</h4>
                         <Form.Group className="mb-3">
                             <Form.Control type="file" accept="image/*" multiple onChange={handleGalleryUpload} />
                         </Form.Group>

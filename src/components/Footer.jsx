@@ -6,18 +6,18 @@ const Footer = () => {
         <footer className="bg-light py-3 mt-auto">
             <div className="container">
                 <nav className="d-flex flex-wrap justify-content-center gap-3 mb-2">
-                    <Link to="/aviso-legal" className="text-decoration-none">
+                    <a href="/aviso-legal" className="text-decoration-none">
                         Aviso Legal
-                    </Link>
-                    <Link to="/politica-de-privacidad" className="text-decoration-none">
+                    </a>
+                    <a href="/politica-de-privacidad" className="text-decoration-none">
                         Política de Privacidad
-                    </Link>
-                    <Link to="/terminos-y-condiciones" className="text-decoration-none">
+                    </a>
+                    <a href="/terminos-y-condiciones" className="text-decoration-none">
                         Términos y Condiciones
-                    </Link>
-                    <Link to="/politica-de-cookies" className="text-decoration-none">
+                    </a>
+                    <a href="/politica-de-cookies" className="text-decoration-none">
                         Política de Cookies
-                    </Link>
+                    </a>
                 </nav>
                 <p className="text-center text-muted mb-0">
                     &copy; Invited.es - Desarrollada con <span className="text-danger">♥</span> por{" "}

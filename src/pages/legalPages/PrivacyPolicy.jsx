@@ -82,7 +82,7 @@ const PrivacyPolicy = () => {
                         <li>Derecho a la portabilidad.</li>
                         <li>Derecho de oposición.</li>
                     </ul>
-                    <p>Para ejercer estos derechos, el usuario podrá enviar un correo a <strong>hola@platita.es</strong>, indicando en el asunto “Protección de Datos” y adjuntando una copia de su documento de identidad.</p>
+                    <p>Para ejercer estos derechos, el usuario podrá enviar un correo a <strong>contacto@invited.es</strong>, indicando en el asunto “Protección de Datos” y adjuntando una copia de su documento de identidad.</p>
                 </section>
 
                 <section className="mb-6">
@@ -92,7 +92,7 @@ const PrivacyPolicy = () => {
 
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold mb-2">9. USO DE COOKIES</h2>
-                    <p>Para más información, consulta nuestra <a href="/cookies-policy" className="text-blue-500 hover:underline">Política de Cookies</a>.</p>
+                    <p>Para más información, consulta nuestra <a href="/politica-de-cookies" className="text-blue-500 hover:underline">Política de Cookies</a>.</p>
                 </section>
 
                 <section className="mb-6">

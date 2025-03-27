@@ -190,24 +190,6 @@ const LandingPage = () => {
                     </div>
                 </section>
             </>
-
-            {/* PRECIO */}
-            <section id="precio" className="precio">
-                <div className="container">
-                    <h2>Plan Único</h2>
-                    <div className="precio-card">
-                        <h3>Tu invitación digital por 119€</h3>
-                        <ul>
-                            <li>Acceso a todas las plantillas</li>
-                            <li>Soporte en español</li>
-                            <li>Actualizaciones ilimitadas</li>
-                            <li>Sin costes ocultos</li>
-                        </ul>
-                        <a href="#registro" className="btn btn-secondary">Crear Mi Invitación</a>
-                    </div>
-                </div>
-            </section>
-
             {/* BENEFICIOS / VENTAJAS */}
             <section id="beneficios" className="beneficios">
                 <div className="container">
@@ -228,6 +210,51 @@ const LandingPage = () => {
                         <div className="beneficio-item">
                             <h3>Cuenta atrás y detalles del evento</h3>
                             <p>Añade la fecha de la boda, mapas de localización y toda la información clave para tus invitados.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* PRECIO */}
+            <section id="precio" className="precio">
+                <div className="container">
+                    <h2>Plan Único</h2>
+                    <div className="precio-card">
+                        <h3>Tu invitación digital por 119€</h3>
+                        <ul>
+                            <li>Acceso a todas las plantillas</li>
+                            <li>Soporte en español</li>
+                            <li>Actualizaciones ilimitadas</li>
+                            <li>Sin costes ocultos</li>
+                        </ul>
+                        <a href="#registro" className="btn btn-secondary">Crear Mi Invitación</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="como-funciona" className="como-funciona">
+                <div className="container">
+                    <h2>Cómo Funciona</h2>
+                    <div className="pasos">
+                        <div className="paso">
+                            <span>1</span>
+                            <h3>Regístrate</h3>
+                            <p>Crea tu cuenta e inicia tu proyecto de invitación digital.</p>
+                        </div>
+                        <div className="paso">
+                            <span>2</span>
+                            <h3>Personaliza</h3>
+                            <p>Elige la plantilla, colores y añade la información de tu boda.</p>
+                        </div>
+                        <div className="paso">
+                            <span>3</span>
+                            <h3>Comparte</h3>
+                            <p>Envía la invitación a tus invitados por email, WhatsApp o redes sociales.</p>
+                        </div>
+                        <div className="paso">
+                            <span>4</span>
+                            <h3>Gestiona</h3>
+                            <p>Revisa confirmaciones y mantén todo bajo control en tu panel.</p>
                         </div>
                     </div>
                 </div>

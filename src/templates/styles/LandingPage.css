@@ -338,3 +338,193 @@ body {
         align-items: center;
     }
 }
+
+/* BENEFICIOS */
+.beneficios {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.beneficios-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.beneficio-item {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.beneficio-item h3 {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+}
+
+/* PRECIO */
+.precio {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.precio h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.precio-card {
+    background-color: var(--color-white);
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.precio-card h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.precio-card ul {
+    list-style: none;
+    margin: 1rem 0 2rem 0;
+    padding: 0;
+    text-align: left;
+}
+
+.precio-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* CÓMO FUNCIONA */
+.como-funciona {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.como-funciona h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.step {
+    background-color: var(--color-white);
+    flex: 1;
+    min-width: 200px;
+    max-width: 220px;
+    margin: 0.5rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-weight: 700;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 1rem;
+}
+
+.faq {
+    padding: 3rem 0;
+    background-color: #fff;
+    /* Ajusta a tu color preferido */
+    text-align: center;
+}
+
+.faq h2 {
+    font-family: 'Playfair Display', serif;
+    /* Ajusta a tu tipografía */
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.faq-accordion {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Estructura básica de cada item */
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #f9f9f9;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f1f1f1;
+    /* Efecto hover */
+}
+
+/* Icono o indicador (opcional) */
+.faq-question::after {
+    content: "▼";
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+/* Estado abierto: cambia el icono */
+.faq-item.open .faq-question::after {
+    transform: rotate(-180deg);
+}
+
+/* Contenido de la respuesta */
+.faq-answer {
+    height: 0;
+    padding: 0 1rem;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.faq-item.open .faq-answer {
+    height: auto;
+    opacity: 1;
+    padding: 1rem;
+}
+
+.faq-answer p {
+    margin: 1rem 0;
+}

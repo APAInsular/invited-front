@@ -54,7 +54,7 @@ export default function UserRegistrationForm() {
 
             // Si se desea redirigir o hacer algo más con la respuesta, se puede hacerlo aquí
             // Por ejemplo, redirigir a otra página o mostrar un mensaje de éxito
-            navigate(`/${data.Name}&${data.Partner_Name}`)
+            navigate(`/`)
             //alert('Registro exitoso');
 
 

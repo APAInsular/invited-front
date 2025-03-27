@@ -113,6 +113,35 @@ const LandingPage = () => {
         }
     };
 
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const faqs = [
+        {
+            question: "¿Puedo subir mi propia música para la invitación?",
+            answer:
+                "Sí, puedes añadir la canción especial de tu boda o cualquier música que desees para ambientar tu invitación.",
+        },
+        {
+            question: "¿Mis invitados necesitan descargar algo?",
+            answer:
+                "No. Simplemente recibirán un enlace a la invitación digital y podrán confirmar asistencia rellenando un simple formulario.",
+        },
+        {
+            question: "¿Puedo modificar la invitación después de compartirla?",
+            answer:
+                "¡Claro! Cualquier cambio que realices se actualizará automáticamente para tus invitados.",
+        },
+        {
+            question: "¿Hay algún límite de personas a las que puedo invitar?",
+            answer: "No, puedes enviar la invitación a tantas personas como necesites.",
+        },
+    ];
+
+    const toggleFAQ = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+
     return (
         <div style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
             <>
@@ -162,55 +191,69 @@ const LandingPage = () => {
                 </section>
             </>
 
-            <div className="container mt-3">
-                <Card className="shadow-lg rounded-4" style={{ backgroundColor: "#FAF9F8", border: "none" }}>
-                    <Card.Body>
-                        <Card.Text className="mb-4" style={{ fontSize: "1.1rem", color: "#555" }}>
-                            <ul style={{ lineHeight: "1.8" }}>
-                                <li>Personalización del itinerario</li>
-                                <li>Tabla con los invitados y sus acompañantes</li>
-                                <li>Correos cada vez que alguien confirme</li>
-                                <li>Cuenta atrás para tu boda</li>
-                                <li>Diseño bonito y elegante</li>
-                                <li>Comodidad a la hora de enviar y manejar las invitaciones</li>
-                                <li>La tendrás al instante una vez se haya realizado el pago</li>
-                                <li>Podrás elegir una canción especial para que suene mientras tus invitados ven la invitación</li>
-                            </ul>
-                        </Card.Text>
-                        <Card.Title className="text-center mb-4" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#333" }}>
-                            <span style={{ color: "#E57373" }}>Precio:</span> 119€
-                        </Card.Title>
-                    </Card.Body>
-                </Card>
-            </div>
-
-            <section id="como-funciona" className="como-funciona">
+            {/* PRECIO */}
+            <section id="precio" className="precio">
                 <div className="container">
-                    <h2>Cómo Funciona</h2>
-                    <div className="pasos">
-                        <div className="paso">
-                            <span>1</span>
-                            <h3>Regístrate</h3>
-                            <p>Crea tu cuenta e inicia tu proyecto de invitación digital.</p>
+                    <h2>Plan Único</h2>
+                    <div className="precio-card">
+                        <h3>Tu invitación digital por 119€</h3>
+                        <ul>
+                            <li>Acceso a todas las plantillas</li>
+                            <li>Soporte en español</li>
+                            <li>Actualizaciones ilimitadas</li>
+                            <li>Sin costes ocultos</li>
+                        </ul>
+                        <a href="#registro" className="btn btn-secondary">Crear Mi Invitación</a>
+                    </div>
+                </div>
+            </section>
+
+            {/* BENEFICIOS / VENTAJAS */}
+            <section id="beneficios" className="beneficios">
+                <div className="container">
+                    <h2>¿Por Qué Elegir Invited?</h2>
+                    <div className="beneficios-grid">
+                        <div className="beneficio-item">
+                            <h3>Ahorra tiempo y costes</h3>
+                            <p>Evita la impresión y el envío postal. Con nuestras invitaciones digitales, todo es más rápido y económico.</p>
                         </div>
-                        <div className="paso">
-                            <span>2</span>
-                            <h3>Personaliza</h3>
-                            <p>Elige la plantilla, colores y añade la información de tu boda.</p>
+                        <div className="beneficio-item">
+                            <h3>Diseño único y personalizable</h3>
+                            <p>Elige tu plantilla favorita y añade música para reflejar la esencia de tu boda.</p>
                         </div>
-                        <div className="paso">
-                            <span>3</span>
-                            <h3>Comparte</h3>
-                            <p>Envía la invitación a tus invitados por email, WhatsApp o redes sociales.</p>
+                        <div className="beneficio-item">
+                            <h3>Confirmaciones en tiempo real (RSVP)</h3>
+                            <p>Tus invitados podrán confirmar asistencia, recibirás un aviso por email y tendrás un panel con toda la información en tiempo real.</p>
                         </div>
-                        <div className="paso">
-                            <span>4</span>
-                            <h3>Gestiona</h3>
-                            <p>Revisa confirmaciones y mantén todo bajo control en tu panel.</p>
+                        <div className="beneficio-item">
+                            <h3>Cuenta atrás y detalles del evento</h3>
+                            <p>Añade la fecha de la boda, mapas de localización y toda la información clave para tus invitados.</p>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <section id="faq" className="faq">
+                <div className="container">
+                    <h2>Preguntas Frecuentes</h2>
+                    <div className="faq-accordion">
+                        {faqs.map((faq, index) => (
+                            <div
+                                key={index}
+                                className={`faq-item ${openIndex === index ? "open" : ""}`}
+                            >
+                                <button className="faq-question" onClick={() => toggleFAQ(index)}>
+                                    {faq.question}
+                                </button>
+                                <div className="faq-answer" style={{ display: openIndex === index ? "block" : "none" }}>
+                                    <p>{faq.answer}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
 
             <section id="cta" className="cta-section">
                 <div className="container">

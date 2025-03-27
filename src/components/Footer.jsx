@@ -6,16 +6,16 @@ const Footer = () => {
         <footer className="bg-light py-3 mt-auto">
             <div className="container">
                 <nav className="d-flex flex-wrap justify-content-center gap-3 mb-2">
-                    <a href="/aviso-legal" className="text-decoration-none">
+                    <a href="/aviso-legal" className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Aviso Legal
                     </a>
-                    <a href="/politica-de-privacidad" className="text-decoration-none">
+                    <a href="/politica-de-privacidad" className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Política de Privacidad
                     </a>
-                    <a href="/terminos-y-condiciones" className="text-decoration-none">
+                    <a href="/terminos-y-condiciones" className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Términos y Condiciones
                     </a>
-                    <a href="/politica-de-cookies" className="text-decoration-none">
+                    <a href="/politica-de-cookies" className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Política de Cookies
                     </a>
                 </nav>
@@ -26,6 +26,7 @@ const Footer = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-decoration-none"
+                        style={{ color: "#bc7272" }}
                     >
                         Platita Software
                     </a>

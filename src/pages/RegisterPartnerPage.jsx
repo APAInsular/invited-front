@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Row, Col, Button, Form, InputGroup } from "react-bootstrap";
+
+import { Eye, EyeOff } from "lucide-react";
 
 import { useNavigate, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import apiClient from '../config/axiosConfig';
-import { redirect } from "react-router-dom";
+import { useState } from "react";
 
 export default function UserRegistrationForm() {
     const navigate = useNavigate();
@@ -32,10 +34,8 @@ export default function UserRegistrationForm() {
         }
 
         const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY; // O import.meta.env.VITE_RECAPTCHA_SITE_KEY si usas Vite
-        console.log("Usando site key:", siteKey); // 👈 Verifica en consola
 
         const token = await window.grecaptcha.execute(siteKey, { action: "submit" });
-        console.log("Token generado:", token); // 👈 Verifica si se genera un token
 
         if (!token) {
             alert("Error al obtener el token de reCAPTCHA");
@@ -45,12 +45,10 @@ export default function UserRegistrationForm() {
         try {
             const finalData = { data, token }
 
-            console.log(finalData)
             // Realizar la solicitud de registro con axios
-            const response = await registerUser(finalData)
+            await registerUser(finalData)
 
             // Supongamos que el backend retorna un mensaje o un token
-            console.log('Registro exitoso', response.data);
 
             // Si se desea redirigir o hacer algo más con la respuesta, se puede hacerlo aquí
             // Por ejemplo, redirigir a otra página o mostrar un mensaje de éxito
@@ -77,6 +75,9 @@ export default function UserRegistrationForm() {
             throw error;
         }
     };
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     return (
         <>
@@ -142,13 +143,33 @@ export default function UserRegistrationForm() {
                     <Row>
                         <Col>
                             <Form.Group className="mb-3">
-                                <Form.Control type="password" placeholder="Contraseña*" {...register("password", { required: "La contraseña es obligatoria" })} style={defaultStyle} />
+                                <InputGroup>
+                                    <Form.Control
+                                        type={showPassword ? "text" : "password"}
+                                        placeholder="Contraseña*"
+                                        {...register("password", { required: "La contraseña es obligatoria" })}
+                                        style={defaultStyle}
+                                    />
+                                    <InputGroup.Text onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}>
+                                        {showPassword ? <EyeOff /> : <Eye />}
+                                    </InputGroup.Text>
+                                </InputGroup>
                                 {errors.password && <p className="text-danger">{errors.password.message}</p>}
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group className="mb-3">
-                                <Form.Control type="password" placeholder="Confirmar Contraseña*" {...register("password_confirmation", { required: "Debes confirmar la contraseña" })} style={defaultStyle} />
+                                <InputGroup>
+                                    <Form.Control
+                                        type={showConfirmPassword ? "text" : "password"}
+                                        placeholder="Confirmar Contraseña*"
+                                        {...register("password_confirmation", { required: "Debes confirmar la contraseña" })}
+                                        style={defaultStyle}
+                                    />
+                                    <InputGroup.Text onClick={() => setShowConfirmPassword(!showConfirmPassword)} style={{ cursor: "pointer" }}>
+                                        {showConfirmPassword ? <EyeOff /> : <Eye />}
+                                    </InputGroup.Text>
+                                </InputGroup>
                                 {errors.password_confirmation && <p className="text-danger">{errors.password_confirmation.message}</p>}
                             </Form.Group>
                         </Col>

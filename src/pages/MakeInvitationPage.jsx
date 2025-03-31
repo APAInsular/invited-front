@@ -132,7 +132,6 @@ export default function MakeInvitationForm() {
             ...formData,
             events
         };
-        console.log(finalData);
         try {
             const response = await apiClient.post("/api/weddings", finalData, {
                 headers: {
@@ -141,7 +140,8 @@ export default function MakeInvitationForm() {
                 }
             });
 
-            navigate(`/invitacion/${userInfo.novioName}-${userInfo.noviaName}/${response.data.wedding.id}`);
+            navigate("/thankyou")
+            //navigate(`/invitacion/${userInfo.novioName}-${userInfo.noviaName}/${response.data.wedding.id}`);
         } catch (error) {
             console.error("Error al crear la invitación:", error);
         }

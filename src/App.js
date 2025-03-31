@@ -18,6 +18,7 @@ import LegalNotice from './pages/legalPages/LegalNotice';
 import PrivacyPolicy from './pages/legalPages/PrivacyPolicy';
 import ConditionsOfUse from './pages/legalPages/ConditionsOfUse';
 import CookiesPolicy from './pages/legalPages/CookiesPolicy';
+import ThankYouPage from './pages/ThankYouPage';
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
   { path: "/aviso-legal", element: <LegalNotice /> },
   { path: "/politica-de-privacidad", element: <PrivacyPolicy /> },
   { path: "/terminos-y-condiciones", element: <ConditionsOfUse /> },
-  { path: "/politica-de-cookies", element: <CookiesPolicy /> }
+  { path: "/politica-de-cookies", element: <CookiesPolicy /> },
+  { path: "/thankyou", element: <ThankYouPage /> }
 ]);
 
 function App() {

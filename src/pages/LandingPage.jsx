@@ -227,7 +227,18 @@ const LandingPage = () => {
                             <li>Actualizaciones ilimitadas</li>
                             <li>Sin costes ocultos</li>
                         </ul>
-                        <a href="#registro" className="btn btn-secondary">Crear Mi Invitación</a>
+                        {user ? (
+                            <Link
+                                to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
+                                className="btn btn-primary"
+                            >
+                                Crea mi invitación
+                            </Link>
+                        ) : (
+                            <Link to="/login" className="btn btn-primary">
+                                Crea mi invitación
+                            </Link>
+                        )}
                     </div>
                 </div>
             </section>

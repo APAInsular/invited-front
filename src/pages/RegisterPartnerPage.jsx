@@ -10,6 +10,8 @@ import { useState } from "react";
 
 export default function UserRegistrationForm() {
     const navigate = useNavigate();
+    const [acceptedTerms, setAcceptedTerms] = useState(false);
+    const [formError, setFormError] = useState('');
 
     const defaultStyle = {
         padding: "5px 10px",
@@ -30,6 +32,11 @@ export default function UserRegistrationForm() {
     const onSubmit = async (data) => {
         if (!window.grecaptcha) {
             alert("reCAPTCHA no está cargado correctamente");
+            return;
+        }
+
+        if (!acceptedTerms) {
+            setFormError('Debes aceptar los términos y condiciones');
             return;
         }
 
@@ -179,10 +186,28 @@ export default function UserRegistrationForm() {
                             <Link to={"/login"} style={{ fontSize: "12px" }}>Ya tengo una cuenta</Link>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col>
+                            <Form.Group controlId="terms" className="mt-3 d-flex align-items-center">
+                                <Form.Check
+                                    type="checkbox"
+                                    className="me-2"
+                                    checked={acceptedTerms}
+                                    onChange={() => setAcceptedTerms(!acceptedTerms)}
+                                    required
+                                />
+                                <Form.Label className="m-0">
+                                    He leído y acepto las <a href="/politica-de-privacidad" target="_blank">políticas de privacidad</a>
+                                </Form.Label>
+                            </Form.Group>
+                            {formError && <p style={{ color: 'red' }}>{formError}</p>}
+                        </Col>
+                    </Row>
+
                     <Button type="submit" variant="danger" className="mt-3" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>Registrar</Button>
                 </Form>
 
-            </div>
+            </div >
             <Footer></Footer>
         </>
     );

@@ -11,6 +11,8 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -95,6 +97,23 @@ const Login = () => {
               <Col>
                 <Link to={"/register"} style={{ fontSize: "12px" }}>No tengo una cuenta</Link>
                 <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <Form.Group controlId="terms" className="mt-3 d-flex align-items-center">
+                  <Form.Check
+                    type="checkbox"
+                    className="me-2"
+                    checked={acceptedTerms}
+                    onChange={() => setAcceptedTerms(!acceptedTerms)}
+                    required
+                  />
+                  <Form.Label className="m-0">
+                    He leído y acepto las <a href="/politica-de-privacidad" target="_blank">políticas de privacidad</a>
+                  </Form.Label>
+                </Form.Group>
               </Col>
             </Row>
 

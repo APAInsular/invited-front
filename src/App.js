@@ -48,30 +48,6 @@ function App() {
 
   return (
     <AuthProvider>
-      {/* <>
-        <CookieConsent
-          location="bottom"
-          buttonText="Acepto"
-          cookieName="invitedCookieConsent"
-          style={{ background: "#F19292", fontFamily: "Montserrat, sans-serif" }}
-          buttonStyle={{
-            background: "#2F2F2F",
-            color: "#fff",
-            fontSize: "14px",
-            fontFamily: "Montserrat, sans-serif"
-          }}
-          expires={150}
-        >
-          Este sitio utiliza cookies para mejorar tu experiencia.{" "}
-          <a
-            href="/politica-de-cookies"
-            style={{ color: "#ffffff", textDecoration: "underline" }}
-          >
-            Más información
-          </a>
-        </CookieConsent>
-      </> */}
-
       <div className='d-flex flex-column min-vh-100'>
         {!isInvitationRoute && (
           <NavigationBar />

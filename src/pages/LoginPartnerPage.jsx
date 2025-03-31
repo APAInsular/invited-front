@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Alert, InputGroup } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
 import apiClient from '../config/axiosConfig';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
 
-  const [message, setMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -74,14 +76,19 @@ const Login = () => {
 
             <Form.Group controlId="password" className="mt-3">
               <Form.Label>Contraseña*</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Ingresa tu contraseña"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
+              <InputGroup>
+                <Form.Control
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Ingresa tu contraseña"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+                <InputGroup.Text onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}>
+                  {showPassword ? <EyeOff /> : <Eye />}
+                </InputGroup.Text>
+              </InputGroup>
             </Form.Group>
 
             <Row>

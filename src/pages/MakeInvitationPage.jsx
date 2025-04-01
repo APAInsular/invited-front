@@ -76,8 +76,8 @@ export default function MakeInvitationForm() {
         setFormData(prevData => ({
             ...prevData,
             location: {
-                ...prevData.location, // Mantener las propiedades previas de location
-                [name]: value // Solo modificar la propiedad específica
+                ...prevData.location,
+                [name]: value
             }
         }));
     };
@@ -105,16 +105,14 @@ export default function MakeInvitationForm() {
         e.preventDefault();
         const token = sessionStorage.getItem('auth_token');
 
-        // Preview Logic (from handleImageChange)
-        if (formData.coverImage) { // Assuming coverImage is the image you want to preview
+        if (formData.coverImage) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setPreviewImage(reader.result); // Set the preview image
+                setPreviewImage(reader.result);
             };
             reader.readAsDataURL(formData.coverImage);
         }
 
-        // FormData Creation (from previous example)
         const form = new FormData();
         form.append('coverImage', formData.coverImage);
 
@@ -141,7 +139,6 @@ export default function MakeInvitationForm() {
             });
 
             navigate("/thankyou")
-            //navigate(`/invitacion/${userInfo.novioName}-${userInfo.noviaName}/${response.data.wedding.id}`);
         } catch (error) {
             console.error("Error al crear la invitación:", error);
         }
@@ -154,17 +151,6 @@ export default function MakeInvitationForm() {
             coverImage: file
         }));
     };
-
-    // const handleImageChange = (e) => {
-    //     const file = e.target.files[0];
-    //     if (file && validateAndSetImage(file)) {
-    //         const reader = new FileReader();
-    //         reader.onloadend = () => {
-    //             setPreviewImage(reader.result);
-    //         };
-    //         reader.readAsDataURL(file);
-    //     }
-    // };
 
     const handleGalleryUpload = (event) => {
         const files = Array.from(event.target.files);

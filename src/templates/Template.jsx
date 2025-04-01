@@ -25,12 +25,13 @@ const images = [
 
 const WeddingWebsite = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
-    const baseUrl = process.env.REACT_APP_AWS_URL; // Usa una variable de entorno o un valor por defecto
+    const baseUrl = process.env.REACT_APP_BACKEND_URL; // Usa una variable de entorno o un valor por defecto
 
     const changeImages = () => {
         // Aseguramos que se genera un array con las URLs de las imágenes
         if (wedding.images) {
-            const imageUrls = wedding.images.map((image) => `${baseUrl}storage/${image.image}`);
+            const imageUrls = wedding.images.map((image) => `${baseUrl}/storage/${image.image}`)
+            //const imageUrls = wedding.images.map((image) => `${baseUrl}storage/${image.image}`);
             setNewImages(imageUrls); // Actualizamos el estado con el nuevo array
         } else {
             return;
@@ -42,8 +43,7 @@ const WeddingWebsite = ({ wedding }) => {
     }, [wedding.images]);
 
     // Construye la URL completa de la imagen
-    const imageUrl = `${baseUrl}storage/${wedding.coverImage}`;
-    console.log(imageUrl)
+    const imageUrl = `${baseUrl}/storage/${wedding.coverImage}`;
 
     return (
         <div>

@@ -44,6 +44,7 @@ const WeddingWebsite = ({ wedding }) => {
 
     // Construye la URL completa de la imagen
     const imageUrl = `${baseUrl}/storage/${wedding.coverImage}`;
+    console.log(imageUrl)
 
     return (
         <div>

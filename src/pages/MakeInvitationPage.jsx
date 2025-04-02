@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import apiClient from '../config/axiosConfig';
-import { vapor } from 'laravel-vapor';
+import Vapor from 'laravel-vapor';
 
 export default function MakeInvitationForm() {
     const navigate = useNavigate();
@@ -107,9 +107,9 @@ export default function MakeInvitationForm() {
             setIsUploading(true);
             setUploadProgress(0);
 
-            console.log(vapor)
+            console.log(Vapor)
 
-            const response = await vapor.store(file, {
+            const response = await Vapor.store(file, {
                 progress: progress => {
                     setUploadProgress(Math.round(progress * 100));
                 },

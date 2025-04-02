@@ -18,7 +18,6 @@ import PrivacyPolicy from './pages/legalPages/PrivacyPolicy';
 import ConditionsOfUse from './pages/legalPages/ConditionsOfUse';
 import CookiesPolicy from './pages/legalPages/CookiesPolicy';
 import ThankYouPage from './pages/ThankYouPage';
-import { configureVapor } from './config/vaporConfig';
 
 
 const router = createBrowserRouter([
@@ -43,8 +42,6 @@ function App() {
   const pathname = window.location.pathname;
   const regex = /\/invitacion\/[^\/]+\/[^\/]+/;
   const isInvitationRoute = regex.test(pathname);
-
-  configureVapor();
 
   return (
     <AuthProvider>

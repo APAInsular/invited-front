@@ -18,8 +18,8 @@ import PrivacyPolicy from './pages/legalPages/PrivacyPolicy';
 import ConditionsOfUse from './pages/legalPages/ConditionsOfUse';
 import CookiesPolicy from './pages/legalPages/CookiesPolicy';
 import ThankYouPage from './pages/ThankYouPage';
+import { configureVapor } from './config/vaporConfig';
 
-import { configureVapor } from './config/vapor';
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },

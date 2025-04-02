@@ -174,19 +174,33 @@ export default function MakeInvitationForm() {
         if (!file) return;
 
         try {
-            const imageUrl = await uploadFileToVapor(file);
-            setFormData(prevFormData => ({
-                ...prevFormData,
-                coverImageUrl: imageUrl
+            setIsUploading(true);
+            setError(null);
+
+            // 1. Sube el archivo a Vapor (S3)
+            const { url, key } = await Vapor.store(file, {
+                progress: progress => {
+                    setUploadProgress(Math.round(progress * 100));
+                },
+            });
+
+            // 2. Guarda la URL en el estado
+            setFormData(prev => ({
+                ...prev,
+                coverImageUrl: url, // URL pública de la imagen
+                coverImageKey: key, // Key del archivo en S3 (opcional)
             }));
 
+            // 3. Previsualización
             const reader = new FileReader();
-            reader.onloadend = () => {
-                setPreviewImage(reader.result);
-            };
+            reader.onloadend = () => setPreviewImage(reader.result);
             reader.readAsDataURL(file);
+
         } catch (error) {
-            console.error("Error al subir la imagen:", error);
+            setError("Error al subir la imagen: " + error.message);
+            console.error("Error en Vapor.store:", error);
+        } finally {
+            setIsUploading(false);
         }
     };
 

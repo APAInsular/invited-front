@@ -48,7 +48,7 @@ const ProfileCard = ({ user, onEdit, weddingDate }) => {
                     </div>
                     <div className="detail-item">
                         <HeartFill className="text-danger me-2" />
-                        <span>Casándose desde {new Date().toLocaleDateString('es-ES', { month: 'long', year: 'numeric' })}</span>
+                        <span>En Invited desde {new Date().toLocaleDateString('es-ES', { month: 'long', year: 'numeric' })}</span>
                     </div>
                 </div>
             </Card.Body>

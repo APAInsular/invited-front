@@ -10,7 +10,6 @@ export default function MakeInvitationForm() {
 
     const [previewImage, setPreviewImage] = useState();
 
-
     const [user, setUser] = useState(null);
     const [events, setEvents] = useState([]);
 

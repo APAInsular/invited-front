@@ -19,7 +19,7 @@ import ConditionsOfUse from './pages/legalPages/ConditionsOfUse';
 import CookiesPolicy from './pages/legalPages/CookiesPolicy';
 import ThankYouPage from './pages/ThankYouPage';
 
-import CookieConsent from "react-cookie-consent";
+import { configureVapor } from './config/vapor';
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -44,7 +44,7 @@ function App() {
   const regex = /\/invitacion\/[^\/]+\/[^\/]+/;
   const isInvitationRoute = regex.test(pathname);
 
-  console.log(document.cookie)
+  configureVapor();
 
   return (
     <AuthProvider>

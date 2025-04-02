@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
+import { Container, Row, Col, Button, Form, ProgressBar, Alert } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import apiClient from '../config/axiosConfig';
 import Vapor from 'laravel-vapor';
@@ -12,6 +12,7 @@ export default function MakeInvitationForm() {
     const [previewImage, setPreviewImage] = useState();
     const [uploadProgress, setUploadProgress] = useState(0);
     const [isUploading, setIsUploading] = useState(false);
+    const [error, setError] = useState(null);
 
     const [user, setUser] = useState(null);
     const [events, setEvents] = useState([]);
@@ -37,9 +38,22 @@ export default function MakeInvitationForm() {
             city: "",
             country: ""
         },
-        coverImageUrl: "", // Ahora guardaremos la URL de la imagen
-        galleryImageUrls: [] // URLs de las imágenes de la galería
+        coverImageUrl: "",
+        galleryImageUrls: []
     });
+
+    // Configuración inicial de Vapor
+    useEffect(() => {
+        // Verifica que Vapor esté disponible
+        if (typeof Vapor !== 'undefined') {
+            Vapor.config({
+                assetDomain: process.env.REACT_APP_VAPOR_ASSET_DOMAIN,
+            });
+        } else {
+            console.error('Vapor no está disponible');
+            setError('Error de configuración: Vapor no está disponible');
+        }
+    }, []);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -106,8 +120,11 @@ export default function MakeInvitationForm() {
         try {
             setIsUploading(true);
             setUploadProgress(0);
+            setError(null);
 
-            console.log(Vapor)
+            if (!Vapor || typeof Vapor.store !== 'function') {
+                throw new Error('Vapor no está configurado correctamente');
+            }
 
             const response = await Vapor.store(file, {
                 progress: progress => {
@@ -118,6 +135,7 @@ export default function MakeInvitationForm() {
             return response.url;
         } catch (error) {
             console.error("Error uploading file:", error);
+            setError(`Error al subir el archivo: ${error.message}`);
             throw error;
         } finally {
             setIsUploading(false);
@@ -129,26 +147,25 @@ export default function MakeInvitationForm() {
         const token = sessionStorage.getItem('auth_token');
 
         try {
-            // Preparar los datos para enviar
-            const finalData = {
+            if (!formData.coverImageUrl) {
+                setError("Debes subir una imagen de portada");
+                return;
+            }
+
+            const response = await apiClient.post("/api/weddings", {
                 ...formData,
                 events
-            };
-
-            console.log(finalData)
-
-            const response = await apiClient.post("/api/weddings", finalData, {
+            }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 }
             });
 
-            console.log(response.data)
-
             navigate("/thankyou");
         } catch (error) {
             console.error("Error al crear la invitación:", error);
+            setError(`Error al enviar el formulario: ${error.response?.data?.message || error.message}`);
         }
     };
 
@@ -163,7 +180,6 @@ export default function MakeInvitationForm() {
                 coverImageUrl: imageUrl
             }));
 
-            // Mostrar previsualización
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPreviewImage(reader.result);
@@ -179,8 +195,15 @@ export default function MakeInvitationForm() {
         if (!files.length) return;
 
         try {
-            const uploadPromises = files.map(file => uploadFileToVapor(file));
-            const urls = await Promise.all(uploadPromises);
+            const urls = [];
+            for (const file of files) {
+                try {
+                    const url = await uploadFileToVapor(file);
+                    urls.push(url);
+                } catch (error) {
+                    console.error(`Error al subir archivo ${file.name}:`, error);
+                }
+            }
 
             setFormData(prevFormData => ({
                 ...prevFormData,

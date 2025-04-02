@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import apiClient from '../config/axiosConfig';
+import { vapor } from 'laravel-vapor';
 
 export default function MakeInvitationForm() {
     const navigate = useNavigate();
@@ -9,7 +10,8 @@ export default function MakeInvitationForm() {
     const formattedTemplateName = templateName.replace(/^Plantilla/, "Plantilla ");
 
     const [previewImage, setPreviewImage] = useState();
-
+    const [uploadProgress, setUploadProgress] = useState(0);
+    const [isUploading, setIsUploading] = useState(false);
 
     const [user, setUser] = useState(null);
     const [events, setEvents] = useState([]);
@@ -31,12 +33,12 @@ export default function MakeInvitationForm() {
         user_id: "",
         groomDescription: "",
         brideDescription: "",
-        location: {  // Localización de la boda
+        location: {
             city: "",
             country: ""
         },
-        coverImage: null,
-        images: []
+        coverImageUrl: "", // Ahora guardaremos la URL de la imagen
+        galleryImageUrls: [] // URLs de las imágenes de la galería
     });
 
     useEffect(() => {
@@ -50,7 +52,6 @@ export default function MakeInvitationForm() {
                 });
 
                 setUser(response.data);
-
                 setFormData(prevData => ({ ...prevData, "user_id": response.data.id }));
 
                 setUserInfo({
@@ -101,63 +102,87 @@ export default function MakeInvitationForm() {
         setEvents(events.filter((_, i) => i !== index));
     };
 
+    const uploadFileToVapor = async (file) => {
+        try {
+            setIsUploading(true);
+            setUploadProgress(0);
+
+            const response = await vapor.store(file, {
+                progress: progress => {
+                    setUploadProgress(Math.round(progress * 100));
+                },
+            });
+
+            return response.url;
+        } catch (error) {
+            console.error("Error uploading file:", error);
+            throw error;
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = sessionStorage.getItem('auth_token');
 
-        if (formData.coverImage) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setPreviewImage(reader.result);
-            };
-            reader.readAsDataURL(formData.coverImage);
-        }
-
-        const form = new FormData();
-        form.append('coverImage', formData.coverImage);
-
-        formData.images.forEach((file, index) => {
-            form.append(`images[${index}]`, file);
-        });
-
-        for (const key in formData) {
-            if (key !== 'coverImage' && key !== 'images') {
-                form.append(key, formData[key]);
-            }
-        }
-
-        const finalData = {
-            ...formData,
-            events
-        };
         try {
+            // Preparar los datos para enviar
+            const finalData = {
+                ...formData,
+                events
+            };
+
             const response = await apiClient.post("/api/weddings", finalData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'application/json'
                 }
             });
 
-            navigate("/thankyou")
+            navigate("/thankyou");
         } catch (error) {
             console.error("Error al crear la invitación:", error);
         }
     };
 
-    const handleCoupleImageUpload = (event) => {
+    const handleCoupleImageUpload = async (event) => {
         const file = event.target.files[0];
-        setFormData(prevFormData => ({
-            ...prevFormData,
-            coverImage: file
-        }));
+        if (!file) return;
+
+        try {
+            const imageUrl = await uploadFileToVapor(file);
+            setFormData(prevFormData => ({
+                ...prevFormData,
+                coverImageUrl: imageUrl
+            }));
+
+            // Mostrar previsualización
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreviewImage(reader.result);
+            };
+            reader.readAsDataURL(file);
+        } catch (error) {
+            console.error("Error al subir la imagen:", error);
+        }
     };
 
-    const handleGalleryUpload = (event) => {
+    const handleGalleryUpload = async (event) => {
         const files = Array.from(event.target.files);
-        setFormData(prevFormData => ({
-            ...prevFormData,
-            images: files
-        }));
+        if (!files.length) return;
+
+        try {
+            const uploadPromises = files.map(file => uploadFileToVapor(file));
+            const urls = await Promise.all(uploadPromises);
+
+            setFormData(prevFormData => ({
+                ...prevFormData,
+                galleryImageUrls: [...prevFormData.galleryImageUrls, ...urls]
+            }));
+        } catch (error) {
+            console.error("Error al subir las imágenes:", error);
+        }
     };
 
     return (
@@ -299,18 +324,46 @@ export default function MakeInvitationForm() {
                     <Col>
                         <h4 className="m-0">Imagen de la Pareja*</h4>
                         <Form.Group className="mb-3">
-                            <Form.Control type="file" accept="image/*" onChange={handleCoupleImageUpload} required />
+                            <Form.Control
+                                type="file"
+                                accept="image/*"
+                                onChange={handleCoupleImageUpload}
+                                required
+                                disabled={isUploading}
+                            />
+                            {previewImage && (
+                                <div className="mt-2">
+                                    <img
+                                        src={previewImage}
+                                        alt="Preview"
+                                        style={{ maxWidth: "200px", maxHeight: "200px" }}
+                                    />
+                                </div>
+                            )}
                         </Form.Group>
                     </Col>
                     <Col>
-                        <h4 className="m-0">Galería de Imágenes*</h4>
+                        <h4 className="m-0">Galería de Imágenes</h4>
                         <Form.Group className="mb-3">
-                            <Form.Control type="file" accept="image/*" multiple onChange={handleGalleryUpload} />
+                            <Form.Control
+                                type="file"
+                                accept="image/*"
+                                multiple
+                                onChange={handleGalleryUpload}
+                                disabled={isUploading}
+                            />
+                            {formData.galleryImageUrls.length > 0 && (
+                                <div className="mt-2">
+                                    <p>Imágenes subidas: {formData.galleryImageUrls.length}</p>
+                                </div>
+                            )}
                         </Form.Group>
                     </Col>
                 </Row>
 
-                <Button type="submit">Enviar</Button>
+                <Button type="submit" disabled={isUploading}>
+                    {isUploading ? 'Subiendo imágenes...' : 'Enviar'}
+                </Button>
             </Form>
         </Container>
     );

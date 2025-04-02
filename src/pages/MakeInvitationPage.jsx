@@ -107,6 +107,8 @@ export default function MakeInvitationForm() {
             setIsUploading(true);
             setUploadProgress(0);
 
+            console.log(vapor)
+
             const response = await vapor.store(file, {
                 progress: progress => {
                     setUploadProgress(Math.round(progress * 100));
@@ -133,12 +135,16 @@ export default function MakeInvitationForm() {
                 events
             };
 
+            console.log(finalData)
+
             const response = await apiClient.post("/api/weddings", finalData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 }
             });
+
+            console.log(response.data)
 
             navigate("/thankyou");
         } catch (error) {

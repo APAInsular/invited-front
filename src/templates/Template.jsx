@@ -25,7 +25,7 @@ const images = [
 
 const WeddingWebsite = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
-    const baseUrl = process.env.REACT_APP_BACKEND_URL; // Usa una variable de entorno o un valor por defecto
+    const baseUrl = process.env.REACT_APP_AWS_URL; // Usa una variable de entorno o un valor por defecto
 
     const changeImages = () => {
         // Aseguramos que se genera un array con las URLs de las imágenes

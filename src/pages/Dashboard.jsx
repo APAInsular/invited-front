@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form, Table } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
 import Sidebar from '../components/Sidebar';
 import WeddingList from '../components/WeddingList';
 import GuestList from '../components/GuestList';
 import ProfileCard from '../components/ProfileCard';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import UserList from '../components/UserList';
 
 function Dashboard() {
+    const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [weddings, setWeddings] = useState([]);
     const [selectedWeddingId, setSelectedWeddingId] = useState(null);
@@ -19,6 +23,7 @@ function Dashboard() {
     const [showUserModal, setShowUserModal] = useState(false);
     const [showWeddingModal, setShowWeddingModal] = useState(false);
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+    const [users, setUsers] = useState(null)
     const [editUserData, setEditUserData] = useState({
         name: '',
         email: '',
@@ -43,6 +48,26 @@ function Dashboard() {
     const onGuestDeleted = (guestId) => {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
     };
+
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const token = sessionStorage.getItem('auth_token');
+                if (!token) navigate("/login");
+                const response = await apiClient.get('/api/user/is-admin', {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+                // Verificar si el usuario es admin
+                setIsAdmin(response.data.isAdmin);
+            } catch (error) {
+                console.error("Error al obtener el usuario:", error);
+            }
+        };
+        fetchUser();
+    }, []);
+
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -88,6 +113,46 @@ function Dashboard() {
             fetchWeddings();
         }
     }, [user]);
+
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
+    const fetchUsers = async () => {
+        try {
+            const token = sessionStorage.getItem('auth_token');
+            const response = await apiClient.get('/api/users', {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+
+            console.log(response.data)
+            setUsers(response.data);
+        } catch (error) {
+            console.error('Error al obtener usuarios:', error);
+        }
+    };
+
+    const deleteUser = async (userId) => {
+        const result = await Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción no se puede deshacer',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar'
+        });
+
+        if (result.isConfirmed) {
+            try {
+                await apiClient.delete(`/api/users/${userId}`);
+                setUsers(users.filter(user => user.id !== userId));
+                Swal.fire('Eliminado', 'El usuario ha sido eliminado.', 'success');
+            } catch (error) {
+                console.error('Error al eliminar usuario:', error);
+            }
+        }
+    };
 
     useEffect(() => {
         if (selectedWeddingId) {
@@ -182,7 +247,7 @@ function Dashboard() {
                 <Row className="g-0">
                     {/* Sidebar - hidden on small screens, shown on medium+ */}
                     <Col md={3} className="bg-light d-none d-md-block">
-                        <Sidebar onSelectComponent={setActiveComponent} />
+                        <Sidebar onSelectComponent={setActiveComponent} isAdmin={isAdmin} />
                     </Col>
 
                     {/* Main content area */}
@@ -220,7 +285,6 @@ function Dashboard() {
                         {/* Main content */}
                         {activeComponent === 'weddings' && (
                             <>
-
                                 <div className="row">
                                     <div className="col-md-6">
                                         <ProfileCard
@@ -237,7 +301,6 @@ function Dashboard() {
 
                                 {selectedWedding && (
                                     <div className="mt-4">
-
                                         <GuestList
                                             guestCount={selectedWedding.guestCount}
                                             selectedWeddingId={selectedWeddingId}
@@ -357,6 +420,11 @@ function Dashboard() {
                                 )}
                             </>
                         )}
+
+                        {activeComponent === 'admin' && isAdmin && (
+                            <UserList users={users} deleteUser={deleteUser} />
+                        )}
+
                         {/* Modal para editar usuario */}
                         <Modal show={showUserModal} onHide={handleCloseUserModal}>
                             <Modal.Header closeButton><Modal.Title>Editar Perfil</Modal.Title></Modal.Header>

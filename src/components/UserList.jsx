@@ -1,33 +1,35 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 
-function UserList({ users }) {
+function UserList({ users, deleteUser }) {
+
     return (
-        <div>
-            <h3>Lista de Usuarios</h3>
+        <div className="admin-panel mt-4">
+            <h5>Gestión de Usuarios</h5>
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Pareja</th>
                         <th>Email</th>
-                        <th>Telefono</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {users.map(user => (
                         <tr key={user.id}>
                             <td>{user.id}</td>
-                            <td>{user.name} {user.firstSurname} {user.secondSurname}</td>
-                            <td>{user.partner.name} {user.partner.firstSurname} {user.partner.secondSurname}</td>
+                            <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.phone}</td>
+                            <td>
+                                <Button variant="danger" size="sm" onClick={() => deleteUser(user.id)}>Eliminar</Button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
         </div>
+
     );
 }
 

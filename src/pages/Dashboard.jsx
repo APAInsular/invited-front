@@ -145,7 +145,10 @@ function Dashboard() {
 
         if (result.isConfirmed) {
             try {
-                await apiClient.delete(`/api/users/${userId}`);
+                const token = sessionStorage.getItem('auth_token');
+                await apiClient.delete(`/api/users/${userId}`, {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
                 setUsers(users.filter(user => user.id !== userId));
                 Swal.fire('Eliminado', 'El usuario ha sido eliminado.', 'success');
             } catch (error) {

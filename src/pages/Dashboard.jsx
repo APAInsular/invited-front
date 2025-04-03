@@ -24,6 +24,7 @@ function Dashboard() {
     const [showWeddingModal, setShowWeddingModal] = useState(false);
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     const [users, setUsers] = useState(null)
+    const [isAdmin, setIsAdmin] = useState();
     const [editUserData, setEditUserData] = useState({
         name: '',
         email: '',
@@ -49,10 +50,10 @@ function Dashboard() {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
     };
 
-    const [isAdmin, setIsAdmin] = useState(false);
+
 
     useEffect(() => {
-        const fetchUser = async () => {
+        const fetchUserAdmin = async () => {
             try {
                 const token = sessionStorage.getItem('auth_token');
                 if (!token) navigate("/login");
@@ -60,16 +61,12 @@ function Dashboard() {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 // Verificar si el usuario es admin
+                console.log(response)
                 setIsAdmin(response.data.isAdmin);
             } catch (error) {
                 console.error("Error al obtener el usuario:", error);
             }
         };
-        fetchUser();
-    }, []);
-
-
-    useEffect(() => {
         const fetchUser = async () => {
             try {
                 const token = sessionStorage.getItem('auth_token');
@@ -78,6 +75,7 @@ function Dashboard() {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setUser(response.data);
+
                 setEditUserData(
                     {
                         name: response.data.name,
@@ -96,7 +94,10 @@ function Dashboard() {
                 console.error("Error al obtener el usuario:", error);
             }
         };
+        fetchUserAdmin();
         fetchUser();
+
+
     }, []);
 
     useEffect(() => {
@@ -116,17 +117,20 @@ function Dashboard() {
 
     useEffect(() => {
         fetchUsers();
-    }, []);
+    }, [user]);
 
     const fetchUsers = async () => {
         try {
-            const token = sessionStorage.getItem('auth_token');
-            const response = await apiClient.get('/api/users', {
-                headers: { Authorization: `Bearer ${token}` },
-            });
+            if (user) {
+                const token = sessionStorage.getItem('auth_token');
+                const response = await apiClient.get('/api/users', {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+                console.log(isAdmin)
 
-            console.log(response.data)
-            setUsers(response.data);
+                console.log(response.data)
+                setUsers(response.data);
+            }
         } catch (error) {
             console.error('Error al obtener usuarios:', error);
         }

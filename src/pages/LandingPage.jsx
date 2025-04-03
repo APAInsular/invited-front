@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
-import { Button, Card } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import '../templates/styles/LandingPage.css'
 import Footer from '../components/Footer';

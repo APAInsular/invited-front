@@ -61,6 +61,8 @@ function Dashboard() {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 // Verificar si el usuario es admin
+                console.log(isAdmin)
+
                 console.log(response)
                 setIsAdmin(response.data.isAdmin);
             } catch (error) {
@@ -126,7 +128,6 @@ function Dashboard() {
                 const response = await apiClient.get('/api/users', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
-                console.log(isAdmin)
 
                 console.log(response.data)
                 setUsers(response.data);

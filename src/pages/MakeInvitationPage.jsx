@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import apiClient from '../config/axiosConfig';
+import Swal from 'sweetalert2'
 
 export default function MakeInvitationForm() {
     const navigate = useNavigate();
@@ -100,6 +101,22 @@ export default function MakeInvitationForm() {
         setEvents(events.filter((_, i) => i !== index));
     };
 
+    const validateDate = (formData) => {
+        const weddingDate = new Date(formData.weddingDate);
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1); // Fecha de mañana
+
+        if (weddingDate < tomorrow) {
+            Swal.fire({
+                icon: "error",
+                title: "Fecha no válida",
+                text: "La fecha de la boda no puede ser anterior a mañana.",
+            });
+            return false;
+        }
+        return true;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = sessionStorage.getItem('auth_token');
@@ -125,6 +142,14 @@ export default function MakeInvitationForm() {
             }
         }
 
+        if (!validateDate(formData)) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "La fecha debe ser a partir de mañana",
+            });
+        }
+
         const finalData = {
             ...formData,
             events
@@ -140,6 +165,25 @@ export default function MakeInvitationForm() {
             navigate("/thankyou")
         } catch (error) {
             console.error("Error al crear la invitación:", error);
+
+            switch (error.response.data.message) {
+                case "The events field is required.":
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Debes añadir un evento como mínimo",
+                    });
+                    break;
+                default:
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: error.response.data.message,
+                    });
+            }
+
+
+
         }
     };
 

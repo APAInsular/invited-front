@@ -5,6 +5,7 @@ import apiClient from '../config/axiosConfig';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Eye, EyeOff } from "lucide-react";
+import Swal from 'sweetalert2';
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -40,8 +41,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.Email === '' || formData.password === '') {
+    if (formData.email === '' || formData.password === '') {
       setError('Por favor, ingresa tu email y contraseña.');
+
     } else {
       setError('');
       try {
@@ -50,7 +52,7 @@ const Login = () => {
         const partnerNameWithoutSpaces = partnerName.replace(/\s+/g, '');
         navigate(`/${partnerNameWithoutSpaces}`); // Redirige al usuario
       } catch {
-        setError('No se pudo iniciar sesión. Inténtalo de nuevo.');
+        setError('No se pudo iniciar sesión. Contraseña o correo incorrectos.');
       }
     }
   };
@@ -70,7 +72,6 @@ const Login = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
 
@@ -83,7 +84,6 @@ const Login = () => {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  required
                 />
                 <InputGroup.Text onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}>
                   {showPassword ? <EyeOff /> : <Eye />}

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 
 import { Eye, EyeOff } from "lucide-react";
+import Swal from 'sweetalert2'
 
 import { useNavigate, Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -67,7 +68,14 @@ export default function UserRegistrationForm() {
         } catch (error) {
             // Manejo de errores de la solicitud
             console.error('Error en el registro:', error.response?.data || error.message);
-            alert('Hubo un error al registrar el usuario. Intenta nuevamente.');
+
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.response.data.message,
+            });
+
+
         }
     };
 

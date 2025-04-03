@@ -10,7 +10,7 @@ const NavigationBar = () => {
     const styles = {
         default: {
             padding: "5px 10px",
-            margin: "0px 8px",
+            margin: "4px 8px",
             border: "2px solid #F19292",
             borderRadius: "5px",
             color: "#F19292",

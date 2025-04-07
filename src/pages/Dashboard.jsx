@@ -50,6 +50,7 @@ function Dashboard() {
         foodType: '',
         guestCount: ''
     });
+    const baseUrl = process.env.REACT_APP_AWS_URL;
 
     const onGuestDeleted = (guestId) => {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
@@ -756,14 +757,14 @@ function Dashboard() {
                             </Modal.Header>
                             <Modal.Body>
                                 <div className="d-flex flex-wrap gap-3 justify-content-start">
-                                    {selectedWedding?.images?.map((imgUrl, index) => (
+                                    {selectedWedding?.images?.map((image, index) => (
                                         <div
                                             key={index}
                                             className="position-relative border rounded overflow-hidden"
                                             style={{ width: '150px', height: '150px' }}
                                         >
                                             <img
-                                                src={imgUrl}
+                                                src={`${baseUrl}${image}`}
                                                 alt={`boda-${index}`}
                                                 className="w-100 h-100 object-fit-cover"
                                             />
@@ -771,7 +772,7 @@ function Dashboard() {
                                                 variant="danger"
                                                 size="sm"
                                                 className="position-absolute top-0 end-0 m-1 p-1 rounded-circle"
-                                                onClick={() => handleDelete(imgUrl)}
+                                                onClick={() => handleDelete(image)}
                                             >
                                                 <X size={16} />
                                             </Button>

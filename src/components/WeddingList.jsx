@@ -1,11 +1,12 @@
 import React from 'react';
 import { ListGroup, Card } from 'react-bootstrap';
 
-function WeddingList({ weddings, onWeddingSelect }) {
+function WeddingList({ weddings, onWeddingSelect, isAdmin }) {
     return (
         <Card className="mb-4">
             <Card.Body>
-                <Card.Title>Mis Bodas</Card.Title>
+                <Card.Title>Lista de Bodas</Card.Title>
+
                 {weddings.length > 0 ? (
                     <ListGroup variant="flush">
                         {weddings.map((wedding) => (

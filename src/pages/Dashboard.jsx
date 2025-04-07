@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Modal, Form, Table } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
 import Sidebar from '../components/Sidebar';
 import WeddingList from '../components/WeddingList';
@@ -9,11 +9,14 @@ import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
+import NavbarAuth from '../components/NavbarAuth';
+import { X } from 'react-bootstrap-icons';
 
 function Dashboard() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [weddings, setWeddings] = useState([]);
+    const [allWeddings, setAllWeddings] = useState([]);
     const [selectedWeddingId, setSelectedWeddingId] = useState(null);
     const [selectedWedding, setSelectedWedding] = useState(null);
     const [weddingGuest, setWeddingGuest] = useState([]);
@@ -23,8 +26,10 @@ function Dashboard() {
     const [showUserModal, setShowUserModal] = useState(false);
     const [showWeddingModal, setShowWeddingModal] = useState(false);
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
-    const [users, setUsers] = useState(null)
+    const [users, setUsers] = useState([])
     const [isAdmin, setIsAdmin] = useState();
+    const [adminScene, setAdminScene] = useState("users");
+    const [filteredUsers, setFilteredUsers] = useState();
     const [editUserData, setEditUserData] = useState({
         name: '',
         email: '',
@@ -50,9 +55,20 @@ function Dashboard() {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
     };
 
-
+    /*
+    FUNCIONALIDADES ADMIN:
+    
+    -> Eliminar usuarios
+    -> Ver usuarios
+    -> Ver bodas - Con susu imágenes
+    -> Eliminar imágenes
+    -> Eliminar bodas
+    -> Editar usuarios
+    -> Editar bodas
+    */
 
     useEffect(() => {
+        setIsLoading(true);
         const fetchUserAdmin = async () => {
             try {
                 const token = sessionStorage.getItem('auth_token');
@@ -65,6 +81,22 @@ function Dashboard() {
 
                 console.log(response)
                 setIsAdmin(response.data.isAdmin);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Error al obtener el usuario:", error);
+            }
+        };
+        const fetchWeddingsAdmin = async () => {
+            try {
+                const token = sessionStorage.getItem('auth_token');
+                if (!token) navigate("/login");
+                const response = await apiClient.get('/api/weddings', {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+
+                console.log(response.data)
+                setAllWeddings(response.data);
+                setIsLoading(false);
             } catch (error) {
                 console.error("Error al obtener el usuario:", error);
             }
@@ -92,13 +124,14 @@ function Dashboard() {
                         }
                     }
                 );
+                setIsLoading(false);
             } catch (error) {
                 console.error("Error al obtener el usuario:", error);
             }
         };
         fetchUserAdmin();
+        fetchWeddingsAdmin();
         fetchUser();
-
 
     }, []);
 
@@ -122,6 +155,7 @@ function Dashboard() {
     }, [user]);
 
     const fetchUsers = async () => {
+        setIsLoading(true);
         try {
             if (user) {
                 const token = sessionStorage.getItem('auth_token');
@@ -131,6 +165,8 @@ function Dashboard() {
 
                 console.log(response.data)
                 setUsers(response.data);
+                setFilteredUsers(response.data);
+                setIsLoading(false);
             }
         } catch (error) {
             console.error('Error al obtener usuarios:', error);
@@ -193,6 +229,8 @@ function Dashboard() {
     const handleShowWeddingModal = () => setShowWeddingModal(true);
     const handleCloseWeddingModal = () => setShowWeddingModal(false);
 
+    const [showModal, setShowModal] = useState(false);
+
     const handleWeddingInputChange = (e) => {
         const { name, value } = e.target;
         if (name === "location.city" || name === "location.country") {
@@ -212,6 +250,32 @@ function Dashboard() {
             });
         }
     };
+
+    const handleSearch = (searchTerm) => {
+        if (searchTerm === null) {
+            // Si el campo de búsqueda está vacío, mostrar todos los usuarios
+            setFilteredUsers(users); // filteredUsers es un estado donde guardas los resultados
+            return;
+        }
+
+        const term = searchTerm.toLowerCase();
+
+        const results = users.filter(user => {
+            // Buscar coincidencias en nombre, email u otros campos relevantes
+            return (
+                user.name.toLowerCase().includes(term) ||
+                user.email.toLowerCase().includes(term) ||
+                (user.firstSurname && user.firstSurname.toLowerCase().includes(term))
+            );
+        });
+
+        setFilteredUsers(results);
+    };
+
+    const handleClearSearch = (searchTerm) => {
+        setFilteredUsers(users);
+        searchTerm = "";
+    }
 
     const handleSaveUserChanges = async () => {
         try {
@@ -246,8 +310,39 @@ function Dashboard() {
         });
     };
 
+    const handleDelete = (imageUrl) => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción eliminará la imagen permanentemente.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Actualizar bodas en el estado global
+                const updatedWeddings = weddings.map((w) => {
+                    if (w.id === selectedWeddingId) {
+                        return {
+                            ...w,
+                            images: w.images.filter((img) => img !== imageUrl),
+                        };
+                    }
+                    return w;
+                });
+
+                setWeddings(updatedWeddings);
+
+                Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');
+
+                // Aquí iría tu API real:
+                // await axios.delete(`/api/weddings/${wedding.id}/images`, { data: { imageUrl } })
+            }
+        });
+    };
+
     if (error) return <div>ERROR</div>
-    if (isLoading) return <div>Obteniendo información...</div>;
+    if (isLoading && users.length > 0 && filteredUsers.length > 0 && allWeddings.length > 0 && weddings.length > 0 && user && isAdmin) return <div>Obteniendo información...</div>;
 
     return (
         <>
@@ -305,7 +400,7 @@ function Dashboard() {
                                     </div>
                                 </div>
 
-                                <WeddingList weddings={weddings} onWeddingSelect={setSelectedWeddingId} />
+                                <WeddingList weddings={weddings} onWeddingSelect={setSelectedWeddingId} isAdmin={isAdmin} />
 
                                 {selectedWedding && (
                                     <div className="mt-4">
@@ -429,8 +524,162 @@ function Dashboard() {
                             </>
                         )}
 
-                        {activeComponent === 'admin' && isAdmin && (
-                            <UserList users={users} deleteUser={deleteUser} />
+                        {activeComponent === 'admin' && isAdmin && users && (
+                            <>
+                                <NavbarAuth
+                                    onSearch={handleSearch}
+                                    setAdminScene={setAdminScene}
+                                />
+
+                                {adminScene === 'users' && (
+                                    <UserList users={filteredUsers} deleteUser={deleteUser} handleClearSearch={handleClearSearch} />
+                                )}
+
+                                {adminScene === 'weddings' && (
+                                    <>
+                                        <h5 className='mt-3'>Gestión de Bodas</h5>
+                                        <WeddingList weddings={allWeddings} onWeddingSelect={setSelectedWeddingId} isAdmin={isAdmin} />
+                                        {selectedWedding && (
+                                            <div className="mt-4">
+                                                <Button
+                                                    variant="dangers"
+                                                    onClick={() => setSelectedWedding(null)}
+                                                    size="md"
+                                                    className='mb-2 btn btn-outline-dark rounded-pill'
+                                                >
+                                                    Cerrar boda
+                                                </Button>
+                                                {selectedWedding.images ? (
+                                                    <Button
+                                                        variant="dangers"
+                                                        onClick={() => setSelectedWedding(null)}
+                                                        size="md"
+                                                        className='mb-2 btn btn-outline-dark rounded-pill'
+                                                    >
+                                                        Ver imagenes
+                                                    </Button>
+                                                ) : null}
+
+                                                <GuestList
+                                                    guestCount={selectedWedding.guestCount}
+                                                    selectedWeddingId={selectedWeddingId}
+                                                    guests={weddingGuest}
+                                                    onGuestDeleted={onGuestDeleted}
+                                                />
+
+                                                <div className="d-flex justify-content-between align-items-center mb-3">
+                                                    <h4>Detalles de la Boda</h4>
+                                                    <Button
+                                                        variant="warning"
+                                                        onClick={handleShowWeddingModal}
+                                                        size="sm"
+                                                    >
+                                                        Editar
+                                                    </Button>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="col-12 col-md-6 mb-3">
+                                                        <div className="card h-100 shadow-sm">
+                                                            <div className="card-body">
+                                                                <h5 className="card-title text-primary mb-4">
+                                                                    <i className="bi bi-geo-alt-fill me-2"></i>Detalles Principales
+                                                                </h5>
+                                                                <ul className="list-unstyled">
+                                                                    <li className="mb-3 d-flex">
+                                                                        <span className="me-2 text-muted">
+                                                                            <i className="bi bi-geo"></i>
+                                                                        </span>
+                                                                        <div>
+                                                                            <h6 className="mb-0 text-secondary">Ubicación</h6>
+                                                                            <p className="mb-0">{selectedWedding.location.city}, {selectedWedding.location.country}</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li className="mb-3 d-flex">
+                                                                        <span className="me-2 text-muted">
+                                                                            <i className="bi bi-calendar-event"></i>
+                                                                        </span>
+                                                                        <div>
+                                                                            <h6 className="mb-0 text-secondary">Fecha</h6>
+                                                                            <p className="mb-0">{formatDate(selectedWedding.weddingDate)}</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li className="d-flex">
+                                                                        <span className="me-2 text-muted">
+                                                                            <i className="bi bi-chat-square-text"></i>
+                                                                        </span>
+                                                                        <div>
+                                                                            <h6 className="mb-0 text-secondary">Mensaje</h6>
+                                                                            <p className="mb-0 text-muted font-italic">"{selectedWedding.customMessage}"</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-12 col-md-6 mb-3">
+                                                        <div className="card h-100 shadow-sm">
+                                                            <div className="card-body">
+                                                                <h5 className="card-title text-primary mb-4">
+                                                                    <i className="bi bi-info-circle-fill me-2"></i>Información Adicional
+                                                                </h5>
+                                                                <ul className="list-unstyled">
+                                                                    <li className="mb-3 d-flex">
+                                                                        <span className="me-2 text-muted">
+                                                                            <i className="bi bi-sunglasses"></i>
+                                                                        </span>
+                                                                        <div>
+                                                                            <h6 className="mb-0 text-secondary">Vestimenta</h6>
+                                                                            <p className="mb-0">
+                                                                                {selectedWedding.dressCode || "Sin especificar"}
+                                                                                {selectedWedding.dressCode && (
+                                                                                    <small className="d-block text-muted mt-1">Código de vestimenta</small>
+                                                                                )}
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li className="mb-3 d-flex">
+                                                                        <span className="me-2 text-muted">
+                                                                            <i className="bi bi-egg-fried"></i>
+                                                                        </span>
+                                                                        <div>
+                                                                            <h6 className="mb-0 text-secondary">Comida</h6>
+                                                                            <p className="mb-0">
+                                                                                {selectedWedding.foodType || "Por determinar"}
+                                                                                {selectedWedding.foodType && (
+                                                                                    <small className="d-block text-muted mt-1">Tipo de menú</small>
+                                                                                )}
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h5 className="mt-3">Eventos de la Boda</h5>
+                                                {selectedWedding.events && selectedWedding.events.length > 0 ? (
+                                                    <div className="list-group">
+                                                        {selectedWedding.events.map((event, index) => (
+                                                            <div key={index} className="list-group-item">
+                                                                <div className="d-flex w-100 justify-content-between">
+                                                                    <h6 className="mb-1">{event.name}</h6>
+                                                                    <small>{event.time.split(":").slice(0, 2).join(":")}</small>
+                                                                </div>
+                                                                <p className="mb-1">{event.description}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <p>No hay eventos programados para esta boda.</p>
+                                                )}
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+                            </>
                         )}
 
                         {/* Modal para editar usuario */}
@@ -494,6 +743,42 @@ function Dashboard() {
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleCloseUserModal}>Cerrar</Button>
                                 <Button variant="primary" onClick={handleSaveUserChanges}>Guardar Cambios</Button>
+                            </Modal.Footer>
+                        </Modal>
+
+                        <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Imágenes de la boda</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <div className="d-flex flex-wrap gap-3 justify-content-start">
+                                    {selectedWedding?.images?.map((imgUrl, index) => (
+                                        <div
+                                            key={index}
+                                            className="position-relative border rounded overflow-hidden"
+                                            style={{ width: '150px', height: '150px' }}
+                                        >
+                                            <img
+                                                src={imgUrl}
+                                                alt={`boda-${index}`}
+                                                className="w-100 h-100 object-fit-cover"
+                                            />
+                                            <Button
+                                                variant="danger"
+                                                size="sm"
+                                                className="position-absolute top-0 end-0 m-1 p-1 rounded-circle"
+                                                onClick={() => handleDelete(imgUrl)}
+                                            >
+                                                <X size={16} />
+                                            </Button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={() => setShowModal(false)}>
+                                    Cerrar
+                                </Button>
                             </Modal.Footer>
                         </Modal>
 

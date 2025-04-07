@@ -321,14 +321,14 @@ function Dashboard() {
             showCancelButton: true,
             confirmButtonText: 'Sí, eliminar',
             cancelButtonText: 'Cancelar',
-        }).then((result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
                 // Actualizar bodas en el estado global
                 const updatedWeddings = weddings.map((w) => {
                     if (w.id === selectedWeddingId) {
                         return {
                             ...w,
-                            images: w.images.filter((img) => img !== imageUrl),
+                            images: w.images.filter((img) => img.id !== imageUrl),
                         };
                     }
                     return w;
@@ -336,10 +336,9 @@ function Dashboard() {
 
                 setWeddings(updatedWeddings);
 
-                Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');
+                await apiClient.delete(`/api/images/${selectedWeddingId}/images`, { data: { imageUrl } })
 
-                // Aquí iría tu API real:
-                // await axios.delete(`/api/weddings/${wedding.id}/images`, { data: { imageUrl } })
+                Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');
             }
         });
     };
@@ -772,7 +771,7 @@ function Dashboard() {
                                                 variant="danger"
                                                 size="sm"
                                                 className="position-absolute top-0 end-0 m-1 p-1 rounded-circle"
-                                                onClick={() => handleDelete(image)}
+                                                onClick={() => handleDelete(image.id)}
                                             >
                                                 <X size={16} />
                                             </Button>

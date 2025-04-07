@@ -764,7 +764,7 @@ function Dashboard() {
                                             style={{ width: '150px', height: '150px' }}
                                         >
                                             <img
-                                                src={`${baseUrl}${image}`}
+                                                src={`${baseUrl}${image.image}`}
                                                 alt={`boda-${index}`}
                                                 className="w-100 h-100 object-fit-cover"
                                             />

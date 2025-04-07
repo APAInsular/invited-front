@@ -323,19 +323,6 @@ function Dashboard() {
             cancelButtonText: 'Cancelar',
         }).then(async (result) => {
             if (result.isConfirmed) {
-                // Actualizar bodas en el estado global
-                const updatedWeddings = weddings.map((w) => {
-                    if (w.id === selectedWeddingId) {
-                        return {
-                            ...w,
-                            images: w.images.filter((img) => img.id !== imageUrl),
-                        };
-                    }
-                    return w;
-                });
-
-                setWeddings(updatedWeddings);
-
                 await apiClient.delete(`/api/images/${selectedWeddingId}/images`, { data: { imageUrl } })
 
                 Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');

@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
 import NavbarAuth from '../components/NavbarAuth';
 import { X } from 'react-bootstrap-icons';
-import { strong } from 'framer-motion/client';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -555,7 +554,7 @@ function Dashboard() {
                                                 {selectedWedding.images ? (
                                                     <Button
                                                         variant="dangers"
-                                                        onClick={() => setSelectedWedding(null)}
+                                                        onClick={() => setShowModal(true)}
                                                         size="md"
                                                         className='mb-2 btn btn-outline-dark rounded-pill'
                                                     >

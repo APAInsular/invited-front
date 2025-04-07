@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
 import NavbarAuth from '../components/NavbarAuth';
 import { X } from 'react-bootstrap-icons';
+import { strong } from 'framer-motion/client';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -558,7 +559,9 @@ function Dashboard() {
                                                     >
                                                         Ver imagenes
                                                     </Button>
-                                                ) : null}
+                                                ) : (
+                                                    <strong>No hay imagenes</strong>
+                                                )}
 
                                                 <GuestList
                                                     guestCount={selectedWedding.guestCount}

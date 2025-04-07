@@ -301,6 +301,8 @@ function Dashboard() {
         }
     };
 
+    console.log(selectedWedding)
+
     const formatDate = (dateString) => {
         if (!dateString) return ""; // Manejo de valores nulos o indefinidos
         const date = new Date(dateString);
@@ -560,7 +562,7 @@ function Dashboard() {
                                                         Ver imagenes
                                                     </Button>
                                                 ) : (
-                                                    <strong>No hay imagenes</strong>
+                                                    <strong className='ml-2'>No hay imagenes</strong>
                                                 )}
 
                                                 <GuestList

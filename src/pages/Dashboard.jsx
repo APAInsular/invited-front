@@ -28,6 +28,7 @@ function Dashboard() {
     const [showMobileSidebar, setShowMobileSidebar] = useState(false);
     const [users, setUsers] = useState([])
     const [isAdmin, setIsAdmin] = useState();
+    const [images, setImages] = useState(selectedWedding?.images || []);
     const [adminScene, setAdminScene] = useState("users");
     const [filteredUsers, setFilteredUsers] = useState();
     const [editUserData, setEditUserData] = useState({
@@ -301,6 +302,12 @@ function Dashboard() {
         }
     };
 
+    useEffect(() => {
+        if (selectedWedding?.images) {
+            setImages(selectedWedding.images);
+        }
+    }, [selectedWedding]);
+
     console.log(selectedWedding)
 
     const formatDate = (dateString) => {
@@ -313,7 +320,7 @@ function Dashboard() {
         });
     };
 
-    const handleDelete = (imageUrl) => {
+    const handleDelete = (imageId) => {
         Swal.fire({
             title: '¿Estás seguro?',
             text: 'Esta acción eliminará la imagen permanentemente.',
@@ -323,15 +330,23 @@ function Dashboard() {
             cancelButtonText: 'Cancelar',
         }).then(async (result) => {
             if (result.isConfirmed) {
-                const token = sessionStorage.getItem('auth_token');
-                await apiClient.delete(`/api/images/${imageUrl}`, {
-                    headers: { Authorization: `Bearer ${token}` },
-                })
+                try {
+                    const token = sessionStorage.getItem('auth_token');
+                    await apiClient.delete(`/api/images/${imageId}`, {
+                        headers: { Authorization: `Bearer ${token}` },
+                    });
 
-                Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');
+                    // Elimina del estado
+                    setImages((prevImages) => prevImages.filter(img => img.id !== imageId));
+
+                    Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');
+                } catch (error) {
+                    Swal.fire('Error', 'No se pudo eliminar la imagen.', 'error');
+                }
             }
         });
     };
+
 
     if (error) return <div>ERROR</div>
     if (isLoading && users.length > 0 && filteredUsers.length > 0 && allWeddings.length > 0 && weddings.length > 0 && user && isAdmin) return <div>Obteniendo información...</div>;
@@ -746,7 +761,7 @@ function Dashboard() {
                             </Modal.Header>
                             <Modal.Body>
                                 <div className="d-flex flex-wrap gap-3 justify-content-start">
-                                    {selectedWedding?.images?.map((image, index) => (
+                                    {images.map((image, index) => (
                                         <div
                                             key={index}
                                             className="position-relative border rounded overflow-hidden"

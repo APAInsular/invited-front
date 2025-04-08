@@ -323,7 +323,10 @@ function Dashboard() {
             cancelButtonText: 'Cancelar',
         }).then(async (result) => {
             if (result.isConfirmed) {
-                await apiClient.delete(`/api/images/${selectedWeddingId}`, { data: { imageUrl } })
+                const token = sessionStorage.getItem('auth_token');
+                await apiClient.delete(`/api/images/${selectedWeddingId}`, { data: { imageUrl } }, {
+                    headers: { Authorization: `Bearer ${token}` },
+                })
 
                 Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success');
             }

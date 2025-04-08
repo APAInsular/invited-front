@@ -324,7 +324,7 @@ function Dashboard() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 const token = sessionStorage.getItem('auth_token');
-                await apiClient.delete(`/api/images/${selectedWeddingId}`, { data: { imageUrl } }, {
+                await apiClient.delete(`/api/images/${imageUrl}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 })
 

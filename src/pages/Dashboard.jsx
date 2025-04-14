@@ -327,32 +327,22 @@ function Dashboard() {
 
         if (!files || files.length === 0) return;
 
-        // Validar tipos y tamaños
-        const validFiles = Array.from(files).filter(file =>
-            file.type.startsWith('image/') && file.size < 5 * 1024 * 1024
-        );
-
-        if (validFiles.length === 0) {
+        if (files.length === 0) {
             alert('Por favor, sube solo imágenes (max 5MB cada una)');
             return;
         }
 
-        // Crear previsualizaciones
-        const previewImages = validFiles.map(file => ({
-            id: `preview-${Date.now()}-${Math.random()}`,
-            url: URL.createObjectURL(file),
-            file
-        }));
-
-        setImages(prev => [...prev, ...previewImages]);
+        setImages(prev => [...prev, ...files]);
 
         try {
             const formData = new FormData();
-            validFiles.forEach(file => formData.append('images[]', file));
+            const token = sessionStorage.getItem("auth_token")
+            files.forEach(file => formData.append('images[]', file));
 
             const response = await apiClient.post(`/api/weddings/${selectedWeddingId}/images`, formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${token}`
                 }
             });
 

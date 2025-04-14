@@ -322,17 +322,49 @@ function Dashboard() {
         });
     };
 
-    const handleGalleryUpload = (e) => {
-        const files = e.target.files;
-        if (files && files.length > 0) {
-            const newImages = Array.from(files).map(file => (
-                file = new FileReader()
-            ));
-            setImages([...images, ...newImages]);
-        }
+    const handleGalleryUpload = async (e) => {
+        const files = e.target.files; // Corregido: usar 'files' en lugar de 'images'
 
-        console.log(images);
-        apiClient.post(`/api/weddings/${selectedWeddingId}/images`, { images })
+        if (files && files.length > 0) {
+            // Crear promesas para leer cada archivo
+            const imagePromises = Array.from(files).map(file => {
+                return new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        resolve({
+                            id: Date.now() + Math.random(), // ID único
+                            url: e.target.result, // Data URL de la imagen
+                            file: file // Objeto File original
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            // Esperar a que todas las imágenes se lean
+            const newImages = await Promise.all(imagePromises);
+
+            // Actualizar estado con las nuevas imágenes
+            setImages(prevImages => [...prevImages, ...newImages]);
+
+            // Subir imágenes al servidor
+            try {
+                const formData = new FormData();
+                files.forEach(file => {
+                    formData.append('images', file);
+                });
+
+                await apiClient.post(`/api/weddings/${selectedWeddingId}/images`, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+
+                console.log('Imágenes subidas exitosamente');
+            } catch (error) {
+                console.error('Error al subir imágenes:', error);
+            }
+        }
     };
 
     const handleDeleteImage = (imageId) => {

@@ -325,36 +325,65 @@ function Dashboard() {
     const handleGalleryUpload = async (e) => {
         const files = e.target.files;
 
-        if (!files || files.length === 0) return;
-
-        if (files.length === 0) {
-            alert('Por favor, sube solo imágenes (max 5MB cada una)');
+        if (!files || files.length === 0) {
+            alert('Por favor, selecciona al menos una imagen');
             return;
         }
 
-        setImages(prev => [...prev, ...files]);
+        // Convertir FileList a Array y validar imágenes
+        const filesArray = Array.from(files).filter(file => {
+            const isValid = file.type.startsWith('image/') && file.size <= 5 * 1024 * 1024;
+            if (!isValid) {
+                alert(`El archivo ${file.name} no es una imagen válida o excede el tamaño de 5MB`);
+            }
+            return isValid;
+        });
+
+        if (filesArray.length === 0) return;
 
         try {
+            // 1. Crear previsualizaciones locales
+            const previewImages = filesArray.map(file => ({
+                id: `preview-${Date.now()}-${file.name}`,
+                name: file.name,
+                url: URL.createObjectURL(file),
+                isUploading: true
+            }));
+
+            setImages(prev => [...prev, ...previewImages]);
+
+            // 2. Preparar FormData para subida
             const formData = new FormData();
-            const token = sessionStorage.getItem("auth_token")
-            files.forEach(file => formData.append('images[]', file));
+            filesArray.forEach(file => formData.append('images[]', file));
 
-            const response = await apiClient.post(`/api/weddings/${selectedWeddingId}/images`, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: `Bearer ${token}`
+            const token = sessionStorage.getItem("auth_token");
+
+            // 3. Subir al servidor
+            const response = await apiClient.post(
+                `/api/weddings/${selectedWeddingId}/images`,
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        Authorization: `Bearer ${token}`
+                    }
                 }
-            });
+            );
 
-            // Reemplazar previsualizaciones con datos reales del servidor
+            // 4. Actualizar estado con respuesta del servidor
             setImages(prev => [
-                ...prev,
-                ...files
+                ...prev.filter(img => !img.isUploading), // Eliminar previsualizaciones
+                ...response.data.map(img => ({
+                    ...img,
+                    url: `${baseUrl}${img.path}` // Asumiendo que el backend devuelve un path
+                }))
             ]);
 
         } catch (error) {
-            console.error('Error:', error.response?.data || error);
-            alert('Error al subir imágenes. Intenta nuevamente.');
+            console.error('Error al subir imágenes:', error.response?.data || error);
+            // Eliminar previsualizaciones en caso de error
+            setImages(prev => prev.filter(img => !img.isUploading));
+            alert('Error al subir imágenes. Por favor intenta nuevamente.');
         } finally {
             e.target.value = ''; // Resetear input
         }

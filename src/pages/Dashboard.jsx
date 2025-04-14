@@ -325,13 +325,14 @@ function Dashboard() {
     const handleGalleryUpload = (e) => {
         const files = e.target.files;
         if (files && files.length > 0) {
-            const newImages = Array.from(files).map(file => ({
-                id: Date.now() + Math.random(),
-                image: URL.createObjectURL(file),
-                file
-            }));
+            const newImages = Array.from(files).map(file => (
+                file = new FileReader()
+            ));
             setImages([...images, ...newImages]);
         }
+
+        console.log(images);
+        apiClient.post(`/api/weddings/${selectedWeddingId}/images`, { images })
     };
 
     const handleDeleteImage = (imageId) => {

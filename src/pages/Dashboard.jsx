@@ -323,36 +323,42 @@ function Dashboard() {
     };
 
     const handleGalleryUpload = async (e) => {
-        const files = e.target.files; // Obtener los archivos seleccionados
+        const files = e.target.files;
+        const token = sessionStorage.getItem("auth_token")
 
         if (files && files.length > 0) {
             try {
-                // 1. Crear FormData para la subida
+                // Convertir FileList a array de archivos
+                const filesArray = Array.from(files);
+
+                // Crear FormData y agregar los archivos como array
                 const formData = new FormData();
 
-                // Convertir FileList a Array y agregar cada archivo al FormData
-                Array.from(files).forEach((file, index) => {
-                    formData.append(`images`, file); // Usar el mismo nombre para múltiples archivos
+                // Opción 1: Si el backend espera un array de archivos en un solo campo
+                filesArray.forEach((file, index) => {
+                    formData.append(`images[]`, file); // Nota los corchetes []
                 });
 
-                // 2. Subir imágenes al servidor
+                // Subir al servidor
                 const response = await apiClient.post(
                     `/api/weddings/${selectedWeddingId}/images`,
                     formData,
                     {
                         headers: {
-                            'Content-Type': 'multipart/form-data'
+                            'Content-Type': 'multipart/form-data',
+                            Authorization: `Bearer ${token}`
                         }
                     }
                 );
 
-                // 3. Actualizar el estado con las imágenes subidas
-                // Asumiendo que la API responde con un array de objetos imagen
-                setImages(prev => [...prev, ...response.data]);
+                // Actualizar estado con la respuesta del servidor
+                if (response.data && Array.isArray(response.data)) {
+                    setImages(prev => [...prev, ...response.data]);
+                }
 
             } catch (error) {
-                console.error('Error al subir imágenes:', error);
-                // Opcional: mostrar notificación de error al usuario
+                console.error('Error al subir imágenes:', error.response?.data || error.message);
+                // Mostrar error al usuario si es necesario
             }
         }
     };

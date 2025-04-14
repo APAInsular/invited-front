@@ -370,12 +370,33 @@ function Dashboard() {
                 }
             );
 
-            // 4. Actualizar estado con respuesta del servidor
+            // 4. Manejo seguro de la respuesta
+            let uploadedImages = [];
+
+            // Caso 1: La respuesta es un array directo
+            if (Array.isArray(response.data)) {
+                uploadedImages = response.data;
+            }
+            // Caso 2: La respuesta es un objeto con propiedad 'data' que es array
+            else if (Array.isArray(response.data?.data)) {
+                uploadedImages = response.data.data;
+            }
+            // Caso 3: La respuesta es un objeto con imágenes en otra propiedad
+            else if (response.data?.images) {
+                uploadedImages = Array.isArray(response.data.images) ? response.data.images : [response.data.images];
+            }
+            // Caso 4: Formato inesperado pero contiene la información necesaria
+            else if (response.data) {
+                uploadedImages = [response.data]; // Convertir a array si es un solo objeto
+            }
+
+            // 5. Actualizar estado con respuesta del servidor
             setImages(prev => [
                 ...prev.filter(img => !img.isUploading), // Eliminar previsualizaciones
-                ...response.data.map(img => ({
-                    ...img,
-                    url: `${baseUrl}${img.path}` // Asumiendo que el backend devuelve un path
+                ...uploadedImages.map(img => ({
+                    id: img.id || `img-${Date.now()}-${Math.random()}`,
+                    url: img.url || `${baseUrl}${img.path}`,
+                    ...img
                 }))
             ]);
 

@@ -323,46 +323,36 @@ function Dashboard() {
     };
 
     const handleGalleryUpload = async (e) => {
-        const files = e.target.files; // Corregido: usar 'files' en lugar de 'images'
+        const files = e.target.files; // Obtener los archivos seleccionados
 
         if (files && files.length > 0) {
-            // Crear promesas para leer cada archivo
-            const imagePromises = Array.from(files).map(file => {
-                return new Promise((resolve) => {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        resolve({
-                            id: Date.now() + Math.random(), // ID único
-                            url: e.target.result, // Data URL de la imagen
-                            file: file // Objeto File original
-                        });
-                    };
-                    reader.readAsDataURL(file);
-                });
-            });
-
-            // Esperar a que todas las imágenes se lean
-            const newImages = await Promise.all(imagePromises);
-
-            // Actualizar estado con las nuevas imágenes
-            setImages(prevImages => [...prevImages, ...newImages]);
-
-            // Subir imágenes al servidor
             try {
+                // 1. Crear FormData para la subida
                 const formData = new FormData();
-                files.forEach(file => {
-                    formData.append('images', file);
+
+                // Convertir FileList a Array y agregar cada archivo al FormData
+                Array.from(files).forEach((file, index) => {
+                    formData.append(`images`, file); // Usar el mismo nombre para múltiples archivos
                 });
 
-                await apiClient.post(`/api/weddings/${selectedWeddingId}/images`, formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
+                // 2. Subir imágenes al servidor
+                const response = await apiClient.post(
+                    `/api/weddings/${selectedWeddingId}/images`,
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
                     }
-                });
+                );
 
-                console.log('Imágenes subidas exitosamente');
+                // 3. Actualizar el estado con las imágenes subidas
+                // Asumiendo que la API responde con un array de objetos imagen
+                setImages(prev => [...prev, ...response.data]);
+
             } catch (error) {
                 console.error('Error al subir imágenes:', error);
+                // Opcional: mostrar notificación de error al usuario
             }
         }
     };
@@ -396,7 +386,10 @@ function Dashboard() {
 
     // Función para abrir el selector de archivos
     const triggerFileInput = () => {
-        fileInputRef.current.click();
+        if (fileInputRef.current) {
+            fileInputRef.current.value = ''; // Limpiar para permitir reseleccionar los mismos archivos
+            fileInputRef.current.click();
+        }
     };
 
     if (error) return <div>ERROR</div>

@@ -348,13 +348,12 @@ function Dashboard() {
 
             // Reemplazar previsualizaciones con datos reales del servidor
             setImages(prev => [
-                ...prev.filter(img => !img.id.includes('preview-')),
-                ...response.data
+                ...prev,
+                ...files
             ]);
 
         } catch (error) {
             console.error('Error:', error.response?.data || error);
-            setImages(prev => prev.filter(img => !img.id.includes('preview-')));
             alert('Error al subir imágenes. Intenta nuevamente.');
         } finally {
             e.target.value = ''; // Resetear input

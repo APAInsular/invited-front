@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
 import Sidebar from '../components/Sidebar';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
 import NavbarAuth from '../components/NavbarAuth';
-import { X } from 'react-bootstrap-icons';
+import { Plus, X } from 'react-bootstrap-icons';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -52,6 +52,8 @@ function Dashboard() {
         guestCount: ''
     });
     const baseUrl = process.env.REACT_APP_AWS_URL;
+
+    const fileInputRef = useRef(null);
 
     const onGuestDeleted = (guestId) => {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
@@ -320,7 +322,19 @@ function Dashboard() {
         });
     };
 
-    const handleDelete = (imageId) => {
+    const handleGalleryUpload = (e) => {
+        const files = e.target.files;
+        if (files && files.length > 0) {
+            const newImages = Array.from(files).map(file => ({
+                id: Date.now() + Math.random(),
+                image: URL.createObjectURL(file),
+                file
+            }));
+            setImages([...images, ...newImages]);
+        }
+    };
+
+    const handleDeleteImage = (imageId) => {
         Swal.fire({
             title: '¿Estás seguro?',
             text: 'Esta acción eliminará la imagen permanentemente.',
@@ -347,6 +361,10 @@ function Dashboard() {
         });
     };
 
+    // Función para abrir el selector de archivos
+    const triggerFileInput = () => {
+        fileInputRef.current.click();
+    };
 
     if (error) return <div>ERROR</div>
     if (isLoading && users.length > 0 && filteredUsers.length > 0 && allWeddings.length > 0 && weddings.length > 0 && user && isAdmin) return <div>Obteniendo información...</div>;
@@ -411,6 +429,27 @@ function Dashboard() {
 
                                 {selectedWedding && (
                                     <div className="mt-4">
+                                        <Button
+                                            variant="dangers"
+                                            onClick={() => setSelectedWedding(null)}
+                                            size="md"
+                                            className='mb-2 btn btn-outline-dark rounded-pill'
+                                        >
+                                            Cerrar boda
+                                        </Button>
+                                        {selectedWedding.images ? (
+                                            <Button
+                                                variant="dangers"
+                                                onClick={() => setShowModal(true)}
+                                                size="md"
+                                                className='mb-2 btn btn-outline-dark rounded-pill'
+                                            >
+                                                Ver imagenes
+                                            </Button>
+                                        ) : (
+                                            <strong className='ml-2'>No hay imagenes</strong>
+                                        )}
+
                                         <GuestList
                                             guestCount={selectedWedding.guestCount}
                                             selectedWeddingId={selectedWeddingId}
@@ -757,7 +796,7 @@ function Dashboard() {
 
                         <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
                             <Modal.Header closeButton>
-                                <Modal.Title>Imágenes de la boda</Modal.Title>
+                                <Modal.Title>Galería de Imágenes</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 <div className="d-flex flex-wrap gap-3 justify-content-start">
@@ -768,7 +807,7 @@ function Dashboard() {
                                             style={{ width: '150px', height: '150px' }}
                                         >
                                             <img
-                                                src={`${baseUrl}${image.image}`}
+                                                src={image.image}
                                                 alt={`boda-${index}`}
                                                 className="w-100 h-100 object-fit-cover"
                                             />
@@ -776,12 +815,36 @@ function Dashboard() {
                                                 variant="danger"
                                                 size="sm"
                                                 className="position-absolute top-0 end-0 m-1 p-1 rounded-circle"
-                                                onClick={() => handleDelete(image.id)}
+                                                onClick={() => handleDeleteImage(image.id)}
                                             >
                                                 <X size={16} />
                                             </Button>
                                         </div>
                                     ))}
+
+                                    {/* Cuadrado para añadir nuevas imágenes */}
+                                    <div
+                                        className="border rounded d-flex flex-column justify-content-center align-items-center"
+                                        style={{
+                                            width: '150px',
+                                            height: '150px',
+                                            cursor: 'pointer',
+                                            borderStyle: 'dashed',
+                                            backgroundColor: 'rgba(0,0,0,0.05)'
+                                        }}
+                                        onClick={triggerFileInput}
+                                    >
+                                        <Plus size={32} className="text-muted" />
+                                        <span className="text-muted mt-2">Añadir imagen</span>
+                                        <input
+                                            type="file"
+                                            ref={fileInputRef}
+                                            accept="image/*"
+                                            multiple
+                                            style={{ display: 'none' }}
+                                            onChange={handleGalleryUpload}
+                                        />
+                                    </div>
                                 </div>
                             </Modal.Body>
                             <Modal.Footer>
@@ -790,7 +853,6 @@ function Dashboard() {
                                 </Button>
                             </Modal.Footer>
                         </Modal>
-
                         {/* Modal para editar boda */}
                         <Modal show={showWeddingModal} onHide={handleCloseWeddingModal}>
                             <Modal.Header closeButton><Modal.Title>Editar Boda</Modal.Title></Modal.Header>

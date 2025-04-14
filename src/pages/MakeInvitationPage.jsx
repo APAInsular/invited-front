@@ -270,7 +270,7 @@ export default function MakeInvitationForm() {
                             <Form.Control type="text" placeholder="Nombre*" value={event.name} onChange={(e) => updateEvent(index, "name", e.target.value)} required />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Form.Control type="time" value={event.time} onChange={(e) => updateEvent(index, "time", e.target.value)} required />
+                            <Form.Control type="time" placeholder="Hora" value={event.time} onChange={(e) => updateEvent(index, "time", e.target.value)} required />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
                             <Form.Control type="text" placeholder="Ciudad" value={event.location.city} onChange={(e) => updateEvent(index, "location.city", e.target.value)} />

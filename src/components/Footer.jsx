@@ -19,6 +19,9 @@ const Footer = () => {
                         Política de Cookies
                     </a>
                 </nav>
+                <div className="d-flex justify-content-center mb-2">
+                    <a rel='nofollow' href='https://www.bodas.net/' title='Bodas.net'><img alt='Bodas.net' src='https://www.bodas.net/images/sellos/Sello-bodas-peq--pp271919.png' /></a>
+                </div>
                 <p className="text-center text-muted mb-0">
                     &copy; Invited.es - Desarrollada con <span className="text-danger">♥</span> por{" "}
                     <a

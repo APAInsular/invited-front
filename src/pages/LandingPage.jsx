@@ -219,7 +219,26 @@ const LandingPage = () => {
                 <div className="container">
                     <h2>Plan Único</h2>
                     <div className="precio-card">
-                        <h3>Tu invitación digital por 119€</h3>
+                        <div>
+                            <h3>Tu invitación digital por
+                                <span style={{ textDecoration: "line-through", marginLeft: "8px", marginRight: "8px", color: "#999" }}>
+                                    119€
+                                </span>
+                                <span style={{ color: "#e63946", fontWeight: "bold" }}>
+                                    {(119 * 0.85).toFixed(2)}€
+                                </span>
+                                <span style={{
+                                    backgroundColor: "#e63946",
+                                    color: "white",
+                                    padding: "2px 8px",
+                                    borderRadius: "12px",
+                                    fontSize: "0.8rem",
+                                    marginLeft: "8px"
+                                }}>
+                                    15% OFF hasta el 30/05
+                                </span>
+                            </h3>
+                        </div>
                         <ul>
                             <li>Acceso a todas las plantillas</li>
                             <li>Soporte en español</li>

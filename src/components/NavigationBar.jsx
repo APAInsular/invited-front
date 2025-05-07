@@ -43,9 +43,15 @@ const NavigationBar = () => {
                             onMouseLeave={() => setHovered(null)}>Inicio
                         </Nav.Link>
 
-                        <Nav.Link href="https://blog.invited.es" style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
+                        <Nav.Link
+                            href="https://blog.invited.es"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("blog")}
-                            onMouseLeave={() => setHovered(null)}>Blog
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            Blog
                         </Nav.Link>
 
                         {!user ? (

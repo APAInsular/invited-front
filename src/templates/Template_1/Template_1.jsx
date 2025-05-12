@@ -46,7 +46,7 @@ const Template_1 = ({ wedding }) => {
             <section class="py-5 mt-4 section-bg bg-itinerario">
                 <WeddingTimeLine events={wedding.events} />
             </section>
-            <section class="py-5 mt-4 section-bg bg-gallery">
+            <section class="py-5 mt-4 section-bg bg-itinerario">
                 <Gallery images={newImages} speed={20} />
             </section>
             <section className="py-5 mb-3 mt-4 section-bg bg-gallery">

@@ -12,10 +12,10 @@ import { useEffect, useState } from 'react';
 
 const Template_1 = () => {
     const [tiempo, setTiempo] = useState({
-        dias: 0,
-        horas: 0,
-        minutos: 0,
-        segundos: 0,
+        dias: 10,
+        horas: 6,
+        minutos: 23,
+        segundos: 46,
     });
 
     useEffect(() => {

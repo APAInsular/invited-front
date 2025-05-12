@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeddingTimeLine_Plantilla_1 = () => (
     <section className="section-bg bg-itinerario">
-        <h2 className="section-title">Itinerario</h2>
+        <h2 className="section-title"><strong>Itinerario</strong></h2>
         <div className="timeline">
             <div className="timeline-item">
                 <div className="timeline-content">

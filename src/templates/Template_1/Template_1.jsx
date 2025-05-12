@@ -63,15 +63,15 @@ const Template_1 = ({ wedding }) => {
     return (
         <>
             <section className="header-invite text-center py-4 section-bg bg-portada">
-                <CoupleNames imageUrl={imageUrl} />
+                <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
             <section class="section-bg bg-countdown mt-4 py-5">
-                <SongLink />
-                <Location />
-                <CountDown {...tiempo} />
+                <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} />
+                <Location location={wedding.location.city} country={wedding.location.country} />
+                <CountDown weddingDate={wedding.weddingDate} />
             </section>
-            <WeddingTimeLine />
-            <Gallery />
+            <WeddingTimeLine events={wedding.events} />
+            <Gallery images={newImages} speed={20} />
         </>
     );
 };

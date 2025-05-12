@@ -1,16 +1,13 @@
 import React from 'react';
 
 const Gallery_Plantilla_1 = () => (
-    <section className="py-5 mt-4 section-bg bg-gallery">
+    <section className="section-bg bg-gallery">
+        <h2 className="section-title">Galería</h2>
         <div className="container">
-            <h2 className="section-title text-center mb-5">Conoce nuestra historia</h2>
-            <div className="row g-4">
-                {['photo1.jpg', 'photo2.jpg', 'photo3.jpg'].map((src, i) => (
-                    <div className="col-md-4" key={i}>
-                        <img src={`images/${src}`} className="img-fluid rounded" alt={`Historia ${i + 1}`} />
-                    </div>
-                ))}
-            </div>
+            {/* Galería con imágenes */}
+            <img src="./images/gallery/photo1.jpg" alt="Recuerdo 1" />
+            <img src="./images/gallery/photo2.jpg" alt="Recuerdo 2" />
+            {/* Agrega más imágenes aquí */}
         </div>
     </section>
 );

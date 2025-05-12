@@ -1,47 +1,32 @@
 import React from 'react';
 
-const timelineEvents = [
-    {
-        title: 'Cena de ensayo',
-        location: 'Hotel Meliá Villaverde',
-        date: 'Viernes 4 de octubre',
-        time: '21:00h'
-    },
-    {
-        title: 'Boda',
-        location: 'Pazo de Santa Catalina - Salón de Actos',
-        date: 'Sábado 5 de octubre',
-        time: '14:30h'
-    },
-    {
-        title: 'Cóctel',
-        location: 'Pazo de Santa Catalina - Terraza del Conde',
-        time: '18:30h'
-    },
-    {
-        title: 'Cena y Baile',
-        location: 'Pazo de Santa Catalina - Jardín Buena Vista',
-        time: '21:00h'
-    }
-];
-
 const WeddingTimeLine_Plantilla_1 = () => (
-    <section className="py-5 mt-4 section-bg bg-itinerario">
-        <div className="container">
-            <h2 className="section-title text-center mb-5">Itinerario de la boda:</h2>
-            <div className="timeline">
-                {timelineEvents.map((event, i) => (
-                    <div key={i} className="timeline-item">
-                        <div className="timeline-content">
-                            <h5>{event.title}</h5>
-                            <p>
-                                {event.location}<br />
-                                {event.date && <>{event.date}<br /></>}
-                                {event.time}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+    <section className="section-bg bg-itinerario">
+        <h2 className="section-title">Itinerario</h2>
+        <div className="timeline">
+            <div className="timeline-item">
+                <div className="timeline-content">
+                    <h5>16:00 - Ceremonia</h5>
+                    <p>Nos daremos el sí en la capilla del jardín.</p>
+                </div>
+            </div>
+            <div className="timeline-item">
+                <div className="timeline-content">
+                    <h5>17:30 - Cóctel</h5>
+                    <p>Brindaremos con aperitivos y buena música.</p>
+                </div>
+            </div>
+            <div className="timeline-item">
+                <div className="timeline-content">
+                    <h5>19:00 - Cena</h5>
+                    <p>Disfrutaremos de un banquete inolvidable.</p>
+                </div>
+            </div>
+            <div className="timeline-item">
+                <div className="timeline-content">
+                    <h5>22:00 - Fiesta</h5>
+                    <p>Baila con nosotros hasta el amanecer.</p>
+                </div>
             </div>
         </div>
     </section>

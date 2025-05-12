@@ -1,0 +1,196 @@
+/* Colores y tipografía global */
+body {
+    background-color: #b2dcda;
+    color: #5b4a6b;
+    font-family: 'Arial', sans-serif;
+
+    scroll-behavior: smooth;
+    overflow: hidden;
+    /* Evitamos scroll libre */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0 !important;
+}
+
+.section-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    /* Contrasta mejor con los fondos */
+    text-align: center;
+}
+
+.bg-portada {
+    background-image: url('./images/backgrounds/bg-portada.png');
+    width: 100%;
+}
+
+.bg-countdown {
+    background-image: url('./images/backgrounds/bg-countdown.png');
+}
+
+.bg-gallery {
+    background-image: url('./images/backgrounds/bg-gallery.png');
+}
+
+.bg-itinerario {
+    background-image: url('./images/backgrounds/bg-itinerario.png');
+}
+
+/* ===== Estilos para la sección de portada ===== */
+.header-invite {
+    position: relative;
+}
+
+.header-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    /* Debajo del marco */
+}
+
+/* Marco floral por delante y centrado */
+.floral-frame {
+    background: url("../images/acuarela_circulo_fondo_transparente-removebg-preview.png") center/cover no-repeat;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Por delante */
+    pointer-events: none;
+    /* Por si quieres que no interfiera con clics */
+}
+
+.invite-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #6c5b7b;
+}
+
+.invite-text {
+    font-size: 1rem;
+    width: 60%;
+}
+
+.invite-date,
+.invite-location {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #6c5b7b;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #5b4a6b;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    /* separación entre elementos */
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flower {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+}
+
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #6c5b7b;
+    font-family: 'Dancing Script', cursive;
+}
+
+.label {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid #ccc;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.6rem;
+    top: 0.2rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: #999;
+}
+
+.timeline-content h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 0.3rem;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 0.8rem;
+    }
+
+    .timeline-item::before {
+        left: -0.5rem;
+    }
+}

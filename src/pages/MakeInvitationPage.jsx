@@ -236,6 +236,7 @@ export default function MakeInvitationForm() {
                             <Form.Label>Plantilla a utilizar*</Form.Label>
                             <Form.Select name="template" value={formData.template} onChange={handleChange} required>
                                 <option value="Plantilla Romantica">Plantilla Romántica</option>
+                                <option value="Plantilla Acuarela">Plantilla Acuarela</option>
                                 <option value="Plantilla Simple" disabled>Plantilla Simple</option>
                                 <option value="Plantilla Dramatica" disabled>Plantilla Dramática</option>
                                 <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>

@@ -23,7 +23,7 @@ const CoupleNames_Plantilla_1 = ({ imageUrl, groom, bride, location, date }) => 
                     Tenemos el gusto de invitaros a nuestra boda que tendrá lugar
                 </p>
             </div>
-            <p className="invite-date">{() => formatDateToString(date)}</p>
+            <p className="invite-date">{formatDateToString(date)}</p>
             <p className="invite-location">
                 en <br></br><strong>{location}</strong>
             </p>

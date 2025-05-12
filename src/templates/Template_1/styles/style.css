@@ -29,20 +29,20 @@ body {
 }
 
 .bg-portada {
-    background-image: url('./images/backgrounds/bg-portada.png');
+    background-image: url('../images/backgrounds/bg-portada.png');
     width: 100%;
 }
 
 .bg-countdown {
-    background-image: url('./images/backgrounds/bg-countdown.png');
+    background-image: url('../images/backgrounds/bg-countdown.png');
 }
 
 .bg-gallery {
-    background-image: url('./images/backgrounds/bg-gallery.png');
+    background-image: url('../images/backgrounds/bg-gallery.png');
 }
 
 .bg-itinerario {
-    background-image: url('./images/backgrounds/bg-itinerario.png');
+    background-image: url('../images/backgrounds/bg-itinerario.png');
 }
 
 /* ===== Estilos para la sección de portada ===== */

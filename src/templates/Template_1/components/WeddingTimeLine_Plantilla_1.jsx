@@ -1,37 +1,59 @@
 import React from 'react';
+import './WeddingTimeline.css'; // Asegúrate de importar el CSS
+
+const events = [
+    {
+        title: "Cena de ensayo",
+        location: "Hotel Meliá Villaverde",
+        place: "",
+        date: "Viernes 4 de octubre",
+        time: "21:00h",
+    },
+    {
+        title: "Boda",
+        location: "Pazo de Santa Catalina",
+        place: "Salón de Actos",
+        date: "Sábado 5 de octubre",
+        time: "14:30h",
+    },
+    {
+        title: "Cóctel",
+        location: "Pazo de Santa Catalina",
+        place: "Terraza del Conde",
+        date: "Sábado 5 de octubre",
+        time: "18:30h",
+    },
+    {
+        title: "Cena y Baile",
+        location: "Pazo de Santa Catalina",
+        place: "Jardín Buena Vista",
+        date: "Sábado 5 de octubre",
+        time: "21:00h",
+    }
+];
 
 const WeddingTimeLine_Plantilla_1 = () => {
     return (
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Itinerario de la boda:</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h5>Cena de ensayo</h5>
-                        <p>Hotel Meliá Villaverde<br></br>Viernes 4 de octubre<br></br>21:00h</p>
+        <div className="timeline-container">
+            <h2 className="section-title text-center mb-5">Itinerario de la boda</h2>
+            <div className="timeline">
+                {events.map((event, index) => (
+                    <div key={index} className="timeline-item">
+                        <div className="timeline-dot"></div>
+                        <div className="timeline-content">
+                            <h5>{event.title}</h5>
+                            <p>
+                                {event.location}<br />
+                                {event.place && <>{event.place}<br /></>}
+                                {event.date}<br />
+                                {event.time}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h5>Boda</h5>
-                        <p>Pazo de Santa Catalina<br></br>Salón de Actos<br></br>Sábado 5 de octubre<br></br>14:30h</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h5>Cóctel</h5>
-                        <p>Pazo de Santa Catalina<br></br>Terraza del Conde<br></br>18:30h</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h5>Cena y Baile</h5>
-                        <p>Pazo de Santa Catalina<br></br>Jardín Buena Vista<br></br>21:00h</p>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );
-}
+};
 
 export default WeddingTimeLine_Plantilla_1;

@@ -13,8 +13,6 @@ import { Link } from "react-router-dom";
 // ];
 
 const Timeline = ({ events }) => {
-    let linkUbicacion = "hodcnskdcds"
-
     return (
         <div className="container">
             <h2 className="text-center my-4 fontTitle"><strong>💍 Itinerario de la boda 💍</strong></h2>
@@ -28,7 +26,7 @@ const Timeline = ({ events }) => {
                                 <i className={`bi ${event.icon} icon`}></i> {event.name}
                             </h5>
                             {event.location?.city && event.location?.country && (
-                                <Link to={linkUbicacion}>📍 {event.location.city} - {event.location.country}</Link>
+                                <p>📍 {event.location.city} - {event.location.country}</p>
                             )}
                             <p>🕒 {event.time.slice(0, 5)}</p>
                         </div>

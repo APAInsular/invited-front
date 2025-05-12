@@ -60,8 +60,67 @@ const Template_1 = ({ wedding }) => {
         return () => clearInterval(intervalo);
     }, []);
 
+    useEffect(() => {
+        const sections = Array.from(document.querySelectorAll('.section-bg'));
+        let currentIndex = 0;
+        let isScrolling = false;
+
+        const scrollToCurrent = () => {
+            isScrolling = true;
+            sections[currentIndex].scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                isScrolling = false;
+            }, 800);
+        };
+
+        const onWheel = (e) => {
+            if (isScrolling) return;
+            if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+                currentIndex++;
+                scrollToCurrent();
+            } else if (e.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+                scrollToCurrent();
+            }
+        };
+
+        const onTouchStart = (e) => {
+            touchStartY = e.touches[0].clientY;
+        };
+
+        const onTouchEnd = (e) => {
+            const touchEndY = e.changedTouches[0].clientY;
+            const deltaY = touchStartY - touchEndY;
+
+            if (Math.abs(deltaY) > 50 && !isScrolling) {
+                if (deltaY > 0 && currentIndex < sections.length - 1) {
+                    currentIndex++;
+                } else if (deltaY < 0 && currentIndex > 0) {
+                    currentIndex--;
+                }
+                scrollToCurrent();
+            }
+        };
+
+        let touchStartY = 0;
+
+        window.addEventListener('wheel', onWheel);
+        window.addEventListener('touchstart', onTouchStart);
+        window.addEventListener('touchend', onTouchEnd);
+
+        // Scroll inicial
+        scrollToCurrent();
+
+        return () => {
+            window.removeEventListener('wheel', onWheel);
+            window.removeEventListener('touchstart', onTouchStart);
+            window.removeEventListener('touchend', onTouchEnd);
+        };
+    }, []);
+
+
     return (
-        <>
+        <div className='body'>
             <section className="header-invite text-center py-4 section-bg bg-portada">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
@@ -72,7 +131,7 @@ const Template_1 = ({ wedding }) => {
             </section>
             <WeddingTimeLine events={wedding.events} />
             <Gallery images={newImages} speed={20} />
-        </>
+        </div>
     );
 };
 

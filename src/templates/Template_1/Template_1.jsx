@@ -5,6 +5,7 @@ import Location from './components/Location_Plantilla_1';
 import CountDown from './components/CountDown_Plantilla_1';
 import Gallery from './components/Gallery_Plantilla_1';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_1';
+import WeddingForm from './components/WeddingForm_Plantilla_1';
 
 import "./styles/style.css"
 
@@ -134,6 +135,9 @@ const Template_1 = ({ wedding }) => {
             </section>
             <section class="py-5 mt-4 section-bg bg-gallery">
                 <Gallery images={newImages} speed={20} />
+            </section>
+            <section className="py-5 mt-4 section-bg bg-gallery">
+                <WeddingForm />
             </section>
         </div>
     );

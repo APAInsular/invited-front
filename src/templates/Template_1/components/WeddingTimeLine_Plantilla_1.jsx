@@ -1,36 +1,5 @@
 import React from 'react';
 
-const events = [
-    {
-        title: "Cena de ensayo",
-        location: "Hotel Meliá Villaverde",
-        place: "",
-        date: "Viernes 4 de octubre",
-        time: "21:00h",
-    },
-    {
-        title: "Boda",
-        location: "Pazo de Santa Catalina",
-        place: "Salón de Actos",
-        date: "Sábado 5 de octubre",
-        time: "14:30h",
-    },
-    {
-        title: "Cóctel",
-        location: "Pazo de Santa Catalina",
-        place: "Terraza del Conde",
-        date: "Sábado 5 de octubre",
-        time: "18:30h",
-    },
-    {
-        title: "Cena y Baile",
-        location: "Pazo de Santa Catalina",
-        place: "Jardín Buena Vista",
-        date: "Sábado 5 de octubre",
-        time: "21:00h",
-    }
-];
-
 const WeddingTimeLine_Plantilla_1 = ({ events }) => {
     return (
         <div className="timeline-container">

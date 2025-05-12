@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Playlist Script';
-    src: url('/fonts/PlaylistScript/PlaylistScript.woff') format('woff'),
-        url('/fonts/PlaylistScript/PlaylistScript.ttf') format('truetype');
+    src: url('/fonts/PlaylistScript/PlayListScript.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

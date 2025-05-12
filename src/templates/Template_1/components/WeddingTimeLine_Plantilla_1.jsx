@@ -1,5 +1,4 @@
 import React from 'react';
-import './WeddingTimeline.css'; // Asegúrate de importar el CSS
 
 const events = [
     {
@@ -32,7 +31,7 @@ const events = [
     }
 ];
 
-const WeddingTimeLine_Plantilla_1 = () => {
+const WeddingTimeLine_Plantilla_1 = ({ events }) => {
     return (
         <div className="timeline-container">
             <h2 className="section-title text-center mb-5">Itinerario de la boda</h2>
@@ -41,12 +40,11 @@ const WeddingTimeLine_Plantilla_1 = () => {
                     <div key={index} className="timeline-item">
                         <div className="timeline-dot"></div>
                         <div className="timeline-content">
-                            <h5>{event.title}</h5>
+                            <h5>{event.name}</h5>
                             <p>
-                                {event.location}<br />
-                                {event.place && <>{event.place}<br /></>}
-                                {event.date}<br />
-                                {event.time}
+                                {event.location.city}<br />
+                                {event.location.country}<br />
+                                🕒 {event.time.slice(0, 5)}
                             </p>
                         </div>
                     </div>

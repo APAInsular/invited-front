@@ -4,11 +4,13 @@ const CoupleNames_Plantilla_1 = ({ imageUrl, groom, bride, location, date }) => 
     function formatDateToString(dateString) {
         if (!dateString) return "";
         const date = new Date(dateString);
-        return date.toLocaleDateString("es-ES", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-        });
+
+        const weekday = date.toLocaleDateString("es-ES", { weekday: "long" });
+        const day = date.getDate();
+        const month = date.toLocaleDateString("es-ES", { month: "long" });
+        const year = date.getFullYear();
+
+        return `${weekday} ${day} de ${month} de ${year}`;
     }
 
     return (

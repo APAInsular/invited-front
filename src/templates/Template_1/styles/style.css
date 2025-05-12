@@ -176,16 +176,6 @@
     line-height: 1.4;
 }
 
-.section-title {
-    font-size: 1.8rem;
-    color: #4A148C;
-}
-
-.section-subtitle {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
 .form-label-custom {
     font-weight: 500;
     color: #333;
@@ -207,13 +197,13 @@
 }
 
 .btn-main {
-    background-color: #4A148C;
+    background-color: #6c5b7b;
     color: #fff;
     border: none;
 }
 
 .btn-main:hover {
-    background-color: #6a1b9a;
+    background-color: #5757c6;
 }
 
 

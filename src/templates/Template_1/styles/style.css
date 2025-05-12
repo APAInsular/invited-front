@@ -3,9 +3,6 @@ body {
     background-color: #b2dcda;
     color: #5b4a6b;
     font-family: 'Arial', sans-serif;
-
-    scroll-behavior: smooth;
-    overflow: hidden;
     /* Evitamos scroll libre */
 }
 

@@ -4,7 +4,7 @@ const CoupleNames_Plantilla_1 = () => (
     <section className="section-bg bg-portada header-invite">
         <div className="floral-frame"></div>
         <img
-            src="../images/couple.jpg"
+            src="../image/couple.jpg"
             alt="Foto de los novios"
             className="header-photo"
         />

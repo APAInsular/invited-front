@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import apiClient from "../../config/axiosConfig";
+import apiClient from "../../../config/axiosConfig";
 
 const WeddingForm_Plantilla_1 = ({ weddingId }) => {
     const [hasCompanion, setHasCompanion] = useState(false);

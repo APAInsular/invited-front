@@ -1,35 +1,37 @@
 import React from 'react';
 
-const WeddingTimeLine_Plantilla_1 = () => (
-    <section className="section-bg bg-itinerario">
-        <h2 className="section-title"><strong>Itinerario</strong></h2>
-        <div className="timeline">
-            <div className="timeline-item">
-                <div className="timeline-content">
-                    <h5>16:00 - Ceremonia</h5>
-                    <p>Nos daremos el sí en la capilla del jardín.</p>
+const WeddingTimeLine_Plantilla_1 = () => {
+    return (
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Itinerario de la boda:</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h5>Cena de ensayo</h5>
+                        <p>Hotel Meliá Villaverde<br></br>Viernes 4 de octubre<br></br>21:00h</p>
+                    </div>
                 </div>
-            </div>
-            <div className="timeline-item">
-                <div className="timeline-content">
-                    <h5>17:30 - Cóctel</h5>
-                    <p>Brindaremos con aperitivos y buena música.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h5>Boda</h5>
+                        <p>Pazo de Santa Catalina<br></br>Salón de Actos<br></br>Sábado 5 de octubre<br></br>14:30h</p>
+                    </div>
                 </div>
-            </div>
-            <div className="timeline-item">
-                <div className="timeline-content">
-                    <h5>19:00 - Cena</h5>
-                    <p>Disfrutaremos de un banquete inolvidable.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h5>Cóctel</h5>
+                        <p>Pazo de Santa Catalina<br></br>Terraza del Conde<br></br>18:30h</p>
+                    </div>
                 </div>
-            </div>
-            <div className="timeline-item">
-                <div className="timeline-content">
-                    <h5>22:00 - Fiesta</h5>
-                    <p>Baila con nosotros hasta el amanecer.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h5>Cena y Baile</h5>
+                        <p>Pazo de Santa Catalina<br></br>Jardín Buena Vista<br></br>21:00h</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-);
+    );
+}
 
 export default WeddingTimeLine_Plantilla_1;

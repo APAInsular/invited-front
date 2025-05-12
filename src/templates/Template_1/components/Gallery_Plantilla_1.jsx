@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const Gallery_Plantilla_1 = () => (
-    <section className="section-bg bg-gallery">
-        <h2 className="section-title"><strong>Galería</strong></h2>
-        <div className="container">
-            {/* Galería con imágenes */}
-            <img src="./images/gallery/photo1.jpg" alt="Recuerdo 1" />
-            <img src="./images/gallery/photo2.jpg" alt="Recuerdo 2" />
-            {/* Agrega más imágenes aquí */}
+const Gallery_Plantilla_1 = ({ images, speed }) => {
+    const sliderRef = useRef(null);
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setOffset((prevOffset) => prevOffset - 1);
+        }, speed);
+
+        return () => clearInterval(interval);
+    }, [speed]);
+
+    return (
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Conoce nuestra historia</h2>
+            <div class="row g-4">
+                <div
+                    ref={sliderRef}
+                    className="slider-track"
+                    style={{ transform: `translateX(${offset}px)`, transition: "transform 0.1s linear" }}
+                >
+                    {[...images, ...images, ...images, ...images, ...images, ...images, ...images, ...images].map((image, index) => (
+                        <img key={index} src={image} alt={`Slide ${index}`} className="slider-image" />
+                    ))}
+                </div>
+            </div>
         </div>
-    </section>
-);
+    );
+}
 
 export default Gallery_Plantilla_1;

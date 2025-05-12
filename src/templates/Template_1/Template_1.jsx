@@ -129,8 +129,12 @@ const Template_1 = ({ wedding }) => {
                 <Location location={wedding.location.city} country={wedding.location.country} />
                 <CountDown weddingDate={wedding.weddingDate} />
             </section>
-            <WeddingTimeLine events={wedding.events} />
-            <Gallery images={newImages} speed={20} />
+            <section class="py-5 mt-4 section-bg bg-itinerario">
+                <WeddingTimeLine events={wedding.events} />
+            </section>
+            <section class="py-5 mt-4 section-bg bg-gallery">
+                <Gallery images={newImages} speed={20} />
+            </section>
         </div>
     );
 };

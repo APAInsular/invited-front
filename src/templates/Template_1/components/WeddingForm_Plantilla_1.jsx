@@ -91,7 +91,7 @@ const WeddingForm_Plantilla_1 = ({ weddingId }) => {
 
                 <div className="mb-3">
                     <label className="form-label-custom">Información Extra</label>
-                    <textarea className="input-custom" rows="3" name="extraInformation" value={formGuest.extraInformation} onChange={handleFormChange}></textarea>
+                    <input className="input-custom" rows="3" name="extraInformation" value={formGuest.extraInformation} onChange={handleFormChange}></input>
                 </div>
 
                 <div className="mb-3">

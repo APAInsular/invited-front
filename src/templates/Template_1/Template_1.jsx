@@ -62,12 +62,16 @@ const Template_1 = ({ wedding }) => {
 
     return (
         <>
-            <CoupleNames imageUrl={imageUrl} />
-            <CountDown {...tiempo} />
+            <section className="header-invite text-center mt-2 py-5 section-bg bg-portada">
+                <CoupleNames imageUrl={imageUrl} />
+            </section>
+            <section class="section-bg bg-countdown mt-4 py-5">
+                <SongLink />
+                <Location />
+                <CountDown {...tiempo} />
+            </section>
             <WeddingTimeLine />
             <Gallery />
-            <Location />
-            <SongLink />
         </>
     );
 };

@@ -5,7 +5,7 @@ const CoupleNames_Plantilla_1 = () => {
         <section className="header-invite text-center mt-4 py-5 section-bg bg-portada">
             <div className="container" style={{ marginTop: "60px" }}>
                 <div className="position-relative d-inline-block mb-4">
-                    <img src="../images/couple.jpg" alt="Samantha y Javier" className="img-fluid rounded-circle header-photo"></img>
+                    <img src="./images/couple.jpg" alt="Samantha y Javier" className="img-fluid rounded-circle header-photo"></img>
                     <div className="floral-frame"></div>
                 </div>
                 <h1 className="invite-name mt-3 mb-4">Samantha<br></br>&<br></br>Javier</h1>

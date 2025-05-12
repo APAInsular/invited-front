@@ -23,15 +23,14 @@ const CountDown_Plantilla_1 = ({ weddingDate }) => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, [calculateTimeLeft, weddingDate]);
+    }, [weddingDate]);
 
     return (
         <section class="py-5 text-center">
             <h2 class="section-title"><strong>Nos casamos en...</strong></h2>
             <div class="countdown">
                 <div class="countdown-item">
-                    <div class="flower"
-                        style={{ backgroundImage: "url('./images/flor_dias_y_minutos-removebg-preview.png');" }}>
+                    <div class="flower">
                         <span class="number">{timeLeft.days}</span>
                     </div>
                     <span class="label">Días</span>

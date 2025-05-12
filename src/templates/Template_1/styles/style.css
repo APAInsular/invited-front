@@ -114,6 +114,7 @@ body {
 }
 
 .flower {
+    background-image: url("../images/flor_dias_y_minutos-removebg-preview.png");
     position: relative;
     width: 90px;
     height: 90px;

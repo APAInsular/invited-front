@@ -6,7 +6,7 @@ import CountDown from './components/CountDown_Plantilla_1';
 import Gallery from './components/Gallery_Plantilla_1';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_1';
 
-import "../styles/style.css"
+import "./styles/style.css"
 
 import { useEffect, useState } from 'react';
 

@@ -214,7 +214,7 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section className="py-10 text-center" style={{ backgroundColor: '#f9f9f9' }}>
+            {/* <section className="py-10 text-center" style={{ backgroundColor: '#f9f9f9' }}>
                 <h2 className="text-3xl font-bold mb-4">Descubre nuestras invitaciones</h2>
                 <p className="text-lg mb-8">Explora nuestras plantillas diseñadas con amor</p>
 
@@ -239,7 +239,7 @@ const LandingPage = () => {
                         </a>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* PRECIO */}
             <section id="precio" className="precio">

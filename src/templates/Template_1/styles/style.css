@@ -179,6 +179,7 @@
 .form-label-custom {
     font-weight: 500;
     color: #333;
+    font-size: 0.9rem;
 }
 
 .input-custom {
@@ -189,11 +190,11 @@
 }
 
 .form-container {
-    background-color: #f9f9f9;
+    background-color: #95c6c4;
 }
 
 .bg-form {
-    background-color: #fff8f0;
+    background-color: #95c6c4;
 }
 
 .btn-main {

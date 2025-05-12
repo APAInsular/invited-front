@@ -71,7 +71,7 @@ const WeddingForm_Plantilla_1 = ({ weddingId }) => {
 
     return (
         <div className="container my-4">
-            <h2 className="section-title">💍 Confirmar Asistencia</h2>
+            <h2 className="section-title">Confirmar Asistencia</h2>
             <p className="text-muted small">(*) campos obligatorios</p>
             <form className="form-container bg-form p-4 border rounded" onSubmit={handleSendForm}>
                 <div className="mb-3">

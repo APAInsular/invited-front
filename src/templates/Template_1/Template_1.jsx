@@ -10,7 +10,28 @@ import "./styles/style.css"
 
 import { useEffect, useState } from 'react';
 
-const Template_1 = () => {
+const Template_1 = ({ wedding }) => {
+    const [newImages, setNewImages] = useState([]);
+    const baseUrl = process.env.REACT_APP_AWS_URL; // Usa una variable de entorno o un valor por defecto
+
+    const changeImages = () => {
+        // Aseguramos que se genera un array con las URLs de las imágenes
+        if (wedding.images) {
+            const imageUrls = wedding.images.map((image) => `${baseUrl}${image.image}`)
+            //const imageUrls = wedding.images.map((image) => `${baseUrl}storage/${image.image}`);
+            setNewImages(imageUrls); // Actualizamos el estado con el nuevo array
+        } else {
+            return;
+        }
+    }
+
+    useEffect(() => {
+        changeImages();
+    }, [wedding.images]);
+
+    // Construye la URL completa de la imagen
+    const imageUrl = `${baseUrl}${wedding.coverImage}`;
+
     const [tiempo, setTiempo] = useState({
         dias: 10,
         horas: 6,
@@ -41,7 +62,7 @@ const Template_1 = () => {
 
     return (
         <>
-            <CoupleNames />
+            <CoupleNames imageUrl={imageUrl} />
             <CountDown {...tiempo} />
             <WeddingTimeLine />
             <Gallery />

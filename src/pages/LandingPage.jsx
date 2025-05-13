@@ -254,7 +254,6 @@ const LandingPage = () => {
                                     <div className="camera"></div>
                                     <div className="display">
                                         <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-                                            {/* Reemplaza esta imagen por tu diseño */}
             <img
                 src="/placeholder-invitacion-moderna.png"
                 alt="Invitación Moderna"
@@ -281,7 +280,6 @@ const LandingPage = () => {
                 <div className="camera"></div>
                 <div className="display">
                     <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-                        {/* Reemplaza esta imagen por tu diseño */}
                         <img
                             src="/placeholder-invitacion-boho.png"
                             alt="Invitación Boho"
@@ -305,7 +303,7 @@ const LandingPage = () => {
                 </div >
             </section > */}
 
-{/* PRECIO */ }
+            {/* PRECIO */}
             <section id="precio" className="precio">
                 <div className="container">
                     <h2>Plan Único</h2>

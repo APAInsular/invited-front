@@ -30,7 +30,7 @@ const NavigationBar = () => {
     };
 
     return (
-        <Navbar bg="light" variant="light" expand="lg" fixed="top" style={{ boxShadow: "0 2px 10px grey" }}>
+        <Navbar bg="light" variant="light" expand="lg" fixed="top" style={{ boxShadow: "0 2px 10px grey", position: "relative", zIndex: "2000" }}>
             <Container>
                 <Navbar.Brand onClick={redirectToMain}>
                     <img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} />

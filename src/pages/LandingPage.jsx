@@ -227,7 +227,7 @@ const LandingPage = () => {
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">
                                         <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center">
+                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src="/images/Plantilla_0.png"
                                                 alt="Invitación Clásica"
                                                 class="img-fluid h-100 w-auto"></img>
@@ -249,7 +249,7 @@ const LandingPage = () => {
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">
                                         <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center">
+                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src="/images/Plantilla_1.png"
                                                 alt="Invitación Moderna"
                                                 class="img-fluid h-100 w-auto"></img>

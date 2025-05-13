@@ -159,9 +159,12 @@ const WeddingForm = ({ weddingId }) => {
                     </div>
                 )}
 
-                <button type="submit" className="btn btn-primary w-100">
-                    Enviar Confirmación
-                </button>
+                {weddingId !== 70 && weddingId !== 71 ? (
+                    <button type="submit" className="btn btn-primary w-100">
+                        Enviar Confirmación
+                    </button>
+                ) : null
+                }
             </form>
         </div>
     );

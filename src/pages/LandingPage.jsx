@@ -214,71 +214,93 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section className="py-20 text-center bg-gradient-to-br from-indigo-50 to-purple-50">
+            <section className="py-20 text-center bg-gradient-to-b from-rose-50 to-white">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-                        Nuestras Invitaciones Exclusivas
-                    </h2>
-                    <p className="text-xl mb-12 text-gray-600 max-w-2xl mx-auto">
-                        Diseños únicos que capturan la esencia de tu amor
+                    <h2 className="text-4xl font-bold mb-6 text-rose-800">Invitaciones Digitales Elegantes</h2>
+                    <p className="text-lg mb-12 text-gray-600 max-w-3xl mx-auto">
+                        Diseños adaptados a dispositivos móviles para compartir fácilmente
                     </p>
 
-                    <div className="flex flex-col md:flex-row justify-center items-stretch gap-10">
-                        <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg w-full max-w-sm group transition-all duration-500 hover:shadow-xl hover:scale-105">
-                            <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-rose-100 opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                            <div className="relative z-10 p-8">
-                                <div className="mb-6">
-                                    <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-amber-100 text-amber-800">
-                                        Vintage Charm
-                                    </span>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Tarjeta 1 - Clásica -->
+                        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                            <div className="p-1 bg-rose-100">
+                                <div className="mockup-phone mx-auto">
+                                    <div className="camera"></div>
+                                    <div className="display">
+                                        <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
+                                            {/* Reemplaza esta imagen por tu diseño */}
+                                            <img
+                                                src="/placeholder-invitacion-clasica.png"
+                                                alt="Invitación Clásica"
+                                                className="object-cover w-full h-full"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4 text-amber-900">Elegancia Atemporal</h3>
-                                <p className="text-gray-600 mb-8 leading-relaxed">
-                                    Inspirado en diseños clásicos con detalles dorados y tipografía serif.
-                                </p>
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Clásico</h3>
+                                <p className="text-gray-600 mb-6">Elegancia tradicional con detalles dorados y tipografía serif.</p>
                                 <a href="/demo/plantilla-1" target="_blank" rel="noopener noreferrer">
-                                    <button className="w-full py-3 px-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all shadow-md hover:shadow-lg">
-                                        Explorar Diseño
+                                    <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                                        Ver Demo
                                     </button>
                                 </a>
                             </div>
                         </div>
 
-                        <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg w-full max-w-sm group transition-all duration-500 hover:shadow-xl hover:scale-105">
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-30 group-hover:opacity-40 transition-opacity"></div>
-                            <div className="relative z-10 p-8">
-                                <div className="mb-6">
-                                    <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800">
-                                        Minimal Luxe
-                                    </span>
+                        <!-- Tarjeta 2 - Moderna -->
+                        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                            <div className="p-1 bg-rose-100">
+                                <div className="mockup-phone mx-auto">
+                                    <div className="camera"></div>
+                                    <div className="display">
+                                        <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
+                                            {/* Reemplaza esta imagen por tu diseño */}
+                                            <img
+                                                src="/placeholder-invitacion-moderna.png"
+                                                alt="Invitación Moderna"
+                                                className="object-cover w-full h-full"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4 text-blue-900">Simplicidad Sofisticada</h3>
-                                <p className="text-gray-600 mb-8 leading-relaxed">
-                                    Espacios en blanco estratégicos y tipografía moderna para un look contemporáneo.
-                                </p>
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Moderno</h3>
+                                <p className="text-gray-600 mb-6">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
                                 <a href="/demo/plantilla-2" target="_blank" rel="noopener noreferrer">
-                                    <button className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all shadow-md hover:shadow-lg">
-                                        Explorar Diseño
+                                    <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                                        Ver Demo
                                     </button>
                                 </a>
                             </div>
                         </div>
 
-                        <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg w-full max-w-sm group transition-all duration-500 hover:shadow-xl hover:scale-105">
-                            <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-30 group-hover:opacity-40 transition-opacity"></div>
-                            <div className="relative z-10 p-8">
-                                <div className="mb-6">
-                                    <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-800">
-                                        Boho Chic
-                                    </span>
+                        <!-- Tarjeta 3 - Boho -->
+                        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                            <div className="p-1 bg-rose-100">
+                                <div className="mockup-phone mx-auto">
+                                    <div className="camera"></div>
+                                    <div className="display">
+                                        <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
+                                            {/* Reemplaza esta imagen por tu diseño */}
+                                            <img
+                                                src="/placeholder-invitacion-boho.png"
+                                                alt="Invitación Boho"
+                                                className="object-cover w-full h-full"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4 text-green-900">Encanto Natural</h3>
-                                <p className="text-gray-600 mb-8 leading-relaxed">
-                                    Motivos florales y texturas orgánicas para una celebración llena de vida.
-                                </p>
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Boho</h3>
+                                <p className="text-gray-600 mb-6">Motivos florales y texturas naturales para un look orgánico.</p>
                                 <a href="/demo/plantilla-3" target="_blank" rel="noopener noreferrer">
-                                    <button className="w-full py-3 px-6 bg-gradient-to-r from-green-500 to-teal-500 text-white font-medium rounded-lg hover:from-green-600 hover:to-teal-600 transition-all shadow-md hover:shadow-lg">
-                                        Explorar Diseño
+                                    <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                                        Ver Demo
                                     </button>
                                 </a>
                             </div>

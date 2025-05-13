@@ -230,7 +230,7 @@ const LandingPage = () => {
                                         <div class="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src="/images/Plantilla_0.png"
                                                 alt="Invitación Clásica"
-                                                class="img-fluid h-100 w-auto"></img>
+                                                class="img-fluid w-auto"></img>
                                         </div>
                                     </div>
                                 </div>
@@ -252,7 +252,7 @@ const LandingPage = () => {
                                         <div class="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src="/images/Plantilla_1.png"
                                                 alt="Invitación Moderna"
-                                                class="img-fluid h-100 w-auto"></img>
+                                                class="img-fluid w-auto"></img>
                                         </div>
                                     </div>
                                 </div>
@@ -260,28 +260,6 @@ const LandingPage = () => {
                                     <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
                                     <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
                                     <a href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
-                                        Ver Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow-sm hover-shadow">
-                                <div class="p-2 bg-pink-pastel">
-                                    <div class="phone-mockup">
-                                        <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center">
-                                            <img src="https://via.placeholder.com/220x470/f8d7da/ffffff?text=Plantilla+3"
-                                                alt="Invitación Boho"
-                                                class="img-fluid h-100 w-auto"></img>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Boho</h3>
-                                    <p class="card-text text-muted">Motivos florales y texturas naturales para un look orgánico.</p>
-                                    <a href="/demo/plantilla-3" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
                                 </div>

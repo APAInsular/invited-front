@@ -228,7 +228,6 @@ const LandingPage = () => {
                                     <div className="camera"></div>
                                     <div className="display">
                                         <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-                                            {/* Reemplaza esta imagen por tu diseño */}
             <img
                 src="/placeholder-invitacion-clasica.png"
                 alt="Invitación Clásica"
@@ -256,52 +255,52 @@ const LandingPage = () => {
                                     <div className="display">
                                         <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
                                             {/* Reemplaza esta imagen por tu diseño */}
-                                            <img
-                                                src="/placeholder-invitacion-moderna.png"
-                                                alt="Invitación Moderna"
-                                                className="object-cover w-full h-full"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Moderno</h3>
-                                <p className="text-gray-600 mb-6">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
-                                <a href="/demo/plantilla-2" target="_blank" rel="noopener noreferrer">
-                                    <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-                                        Ver Demo
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
+            <img
+                src="/placeholder-invitacion-moderna.png"
+                alt="Invitación Moderna"
+                className="object-cover w-full h-full"
+            />
+        </div>
+                                    </div >
+                                </div >
+                            </div >
+    <div className="p-6">
+        <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Moderno</h3>
+        <p className="text-gray-600 mb-6">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
+        <a href="/demo/plantilla-2" target="_blank" rel="noopener noreferrer">
+            <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                Ver Demo
+            </button>
+        </a>
+    </div>
+                        </div >
 
-                        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                            <div className="p-1 bg-rose-100">
-                                <div className="mockup-phone mx-auto">
-                                    <div className="camera"></div>
-                                    <div className="display">
-                                        <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-                                            {/* Reemplaza esta imagen por tu diseño */}
-                                            <img
-                                                src="/placeholder-invitacion-boho.png"
-                                                alt="Invitación Boho"
-                                                className="object-cover w-full h-full"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Boho</h3>
-                                <p className="text-gray-600 mb-6">Motivos florales y texturas naturales para un look orgánico.</p>
-                                <a href="/demo/plantilla-3" target="_blank" rel="noopener noreferrer">
-                                    <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-                                        Ver Demo
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
+    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div className="p-1 bg-rose-100">
+            <div className="mockup-phone mx-auto">
+                <div className="camera"></div>
+                <div className="display">
+                    <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
+                        {/* Reemplaza esta imagen por tu diseño */}
+                        <img
+                            src="/placeholder-invitacion-boho.png"
+                            alt="Invitación Boho"
+                            className="object-cover w-full h-full"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="p-6">
+            <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Boho</h3>
+            <p className="text-gray-600 mb-6">Motivos florales y texturas naturales para un look orgánico.</p>
+            <a href="/demo/plantilla-3" target="_blank" rel="noopener noreferrer">
+                <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
+                    Ver Demo
+                </button>
+            </a>
+        </div>
+    </div>
                     </div >
                 </div >
             </section > */}

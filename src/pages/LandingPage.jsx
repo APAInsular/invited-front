@@ -214,94 +214,82 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* <section className="py-20 text-center bg-gradient-to-b from-rose-50 to-white">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-6 text-rose-800">Invitaciones Digitales Elegantes</h2>
-                    <p className="text-lg mb-12 text-gray-600 max-w-3xl mx-auto">
-                        Diseños adaptados a dispositivos móviles para compartir fácilmente
-                    </p>
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold text-danger-emphasis mb-3">Invitaciones Digitales</h2>
+                        <p class="lead text-muted">Diseños adaptados para compartir fácilmente desde tu móvil</p>
+                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                            <div className="p-1 bg-rose-100">
-                                <div className="mockup-phone mx-auto">
-                                    <div className="camera"></div>
-                                    <div className="display">
-                                        <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-            <img
-                src="/placeholder-invitacion-clasica.png"
-                alt="Invitación Clásica"
-                className="object-cover w-full h-full"
-            />
-        </div>
-                                    </div >
-                                </div >
-                            </div >
-    <div className="p-6">
-        <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Clásico</h3>
-        <p className="text-gray-600 mb-6">Elegancia tradicional con detalles dorados y tipografía serif.</p>
-        <a href="/demo/plantilla-1" target="_blank" rel="noopener noreferrer">
-            <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-                Ver Demo
-            </button>
-        </a>
-    </div>
-                        </div >
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm hover-shadow">
+                                <div class="p-2 bg-pink-pastel">
+                                    <div class="phone-mockup">
+                                        <div class="phone-camera"></div>
+                                        <div class="phone-screen d-flex align-items-center justify-content-center">
+                                            <img src="https://via.placeholder.com/220x470/f8d7da/ffffff?text=Plantilla+1"
+                                                alt="Invitación Clásica"
+                                                class="img-fluid h-100 w-auto"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Clásico</h3>
+                                    <p class="card-text text-muted">Elegancia tradicional con detalles dorados y tipografía serif.</p>
+                                    <a href="/demo/plantilla-1" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                        Ver Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                            <div className="p-1 bg-rose-100">
-                                <div className="mockup-phone mx-auto">
-                                    <div className="camera"></div>
-                                    <div className="display">
-                                        <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-            <img
-                src="/placeholder-invitacion-moderna.png"
-                alt="Invitación Moderna"
-                className="object-cover w-full h-full"
-            />
-        </div>
-                                    </div >
-                                </div >
-                            </div >
-    <div className="p-6">
-        <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Moderno</h3>
-        <p className="text-gray-600 mb-6">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
-        <a href="/demo/plantilla-2" target="_blank" rel="noopener noreferrer">
-            <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-                Ver Demo
-            </button>
-        </a>
-    </div>
-                        </div >
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm hover-shadow">
+                                <div class="p-2 bg-pink-pastel">
+                                    <div class="phone-mockup">
+                                        <div class="phone-camera"></div>
+                                        <div class="phone-screen d-flex align-items-center justify-content-center">
+                                            <img src="https://via.placeholder.com/220x470/f8d7da/ffffff?text=Plantilla+2"
+                                                alt="Invitación Moderna"
+                                                class="img-fluid h-100 w-auto"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
+                                    <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
+                                    <a href="/demo/plantilla-2" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                        Ver Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <div className="p-1 bg-rose-100">
-            <div className="mockup-phone mx-auto">
-                <div className="camera"></div>
-                <div className="display">
-                    <div className="artboard artboard-demo phone-1 bg-white flex items-center justify-center">
-                        <img
-                            src="/placeholder-invitacion-boho.png"
-                            alt="Invitación Boho"
-                            className="object-cover w-full h-full"
-                        />
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm hover-shadow">
+                                <div class="p-2 bg-pink-pastel">
+                                    <div class="phone-mockup">
+                                        <div class="phone-camera"></div>
+                                        <div class="phone-screen d-flex align-items-center justify-content-center">
+                                            <img src="https://via.placeholder.com/220x470/f8d7da/ffffff?text=Plantilla+3"
+                                                alt="Invitación Boho"
+                                                class="img-fluid h-100 w-auto"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Boho</h3>
+                                    <p class="card-text text-muted">Motivos florales y texturas naturales para un look orgánico.</p>
+                                    <a href="/demo/plantilla-3" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                        Ver Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-3 text-rose-700">Estilo Boho</h3>
-            <p className="text-gray-600 mb-6">Motivos florales y texturas naturales para un look orgánico.</p>
-            <a href="/demo/plantilla-3" target="_blank" rel="noopener noreferrer">
-                <button className="w-full bg-rose-200 hover:bg-rose-300 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-                    Ver Demo
-                </button>
-            </a>
-        </div>
-    </div>
-                    </div >
-                </div >
-            </section > */}
+            </section>
 
             {/* PRECIO */}
             <section id="precio" className="precio">

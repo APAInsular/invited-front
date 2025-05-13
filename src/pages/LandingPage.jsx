@@ -222,7 +222,6 @@ const LandingPage = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Tarjeta 1 - Clásica -->
                         <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div className="p-1 bg-rose-100">
                                 <div className="mockup-phone mx-auto">
@@ -250,7 +249,6 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <!-- Tarjeta 2 - Moderna -->
                         <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div className="p-1 bg-rose-100">
                                 <div className="mockup-phone mx-auto">
@@ -278,7 +276,6 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <!-- Tarjeta 3 - Boho -->
                         <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div className="p-1 bg-rose-100">
                                 <div className="mockup-phone mx-auto">

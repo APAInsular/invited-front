@@ -228,7 +228,7 @@ const LandingPage = () => {
                                     <div class="phone-mockup">
                                         <div class="phone-camera"></div>
                                         <div class="phone-screen d-flex align-items-center justify-content-center">
-                                            <img src="https://via.placeholder.com/220x470/f8d7da/ffffff?text=Plantilla+1"
+                                            <img src="/images/Plantilla_0.png"
                                                 alt="Invitación Clásica"
                                                 class="img-fluid h-100 w-auto"></img>
                                         </div>
@@ -237,7 +237,7 @@ const LandingPage = () => {
                                 <div class="card-body text-center">
                                     <h3 class="h4 card-title text-danger-emphasis">Estilo Clásico</h3>
                                     <p class="card-text text-muted">Elegancia tradicional con detalles dorados y tipografía serif.</p>
-                                    <a href="/demo/plantilla-1" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a href="https://www.invited.es/invitacion/javier-sandra/70" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
                                 </div>
@@ -250,7 +250,7 @@ const LandingPage = () => {
                                     <div class="phone-mockup">
                                         <div class="phone-camera"></div>
                                         <div class="phone-screen d-flex align-items-center justify-content-center">
-                                            <img src="https://via.placeholder.com/220x470/f8d7da/ffffff?text=Plantilla+2"
+                                            <img src="/images/Plantilla_1.png"
                                                 alt="Invitación Moderna"
                                                 class="img-fluid h-100 w-auto"></img>
                                         </div>
@@ -259,7 +259,7 @@ const LandingPage = () => {
                                 <div class="card-body text-center">
                                     <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
                                     <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
-                                    <a href="/demo/plantilla-2" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
                                 </div>

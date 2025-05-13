@@ -227,7 +227,7 @@ const LandingPage = () => {
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">
                                         <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
+                                        <div class="phone-screen align-items-center justify-content-center">
                                             <img src="/images/Plantilla_0.png"
                                                 alt="Invitación Clásica"
                                                 class="img-fluid h-100 w-auto"></img>

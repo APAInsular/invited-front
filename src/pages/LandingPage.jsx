@@ -224,7 +224,6 @@ const LandingPage = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center items-stretch gap-10">
-                        <!-- Tarjeta 1 - Estilo Vintage -->
                         <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg w-full max-w-sm group transition-all duration-500 hover:shadow-xl hover:scale-105">
                             <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-rose-100 opacity-20 group-hover:opacity-30 transition-opacity"></div>
                             <div className="relative z-10 p-8">
@@ -245,7 +244,6 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <!-- Tarjeta 2 - Estilo Minimalista -->
                         <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg w-full max-w-sm group transition-all duration-500 hover:shadow-xl hover:scale-105">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-30 group-hover:opacity-40 transition-opacity"></div>
                             <div className="relative z-10 p-8">
@@ -266,7 +264,6 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <!-- Tarjeta 3 - Estilo Boho -->
                         <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg w-full max-w-sm group transition-all duration-500 hover:shadow-xl hover:scale-105">
                             <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-30 group-hover:opacity-40 transition-opacity"></div>
                             <div className="relative z-10 p-8">

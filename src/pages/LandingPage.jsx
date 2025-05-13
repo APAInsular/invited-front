@@ -222,7 +222,7 @@ const LandingPage = () => {
                     </div>
 
                     <div class="row g-4">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card h-100 border-0 shadow-sm hover-shadow">
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">
@@ -244,7 +244,7 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card h-100 border-0 shadow-sm hover-shadow">
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">

@@ -214,32 +214,33 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* <section className="py-10 text-center" style={{ backgroundColor: '#f9f9f9' }}>
-                <h2 className="text-3xl font-bold mb-4">Descubre nuestras invitaciones</h2>
-                <p className="text-lg mb-8">Explora nuestras plantillas diseñadas con amor</p>
+            <section className="py-16 text-center bg-gradient-to-b from-pink-100 via-white to-pink-100">
+                <h2 className="text-4xl font-extrabold mb-4 text-pink-700">Descubre nuestras invitaciones</h2>
+                <p className="text-lg mb-10 text-gray-700">Explora nuestras plantillas diseñadas con amor</p>
 
-                <div className="flex justify-center flex-wrap gap-6">
-                    <div className="bg-white shadow-md rounded-lg p-6 w-72">
-                        <h3 className="text-xl font-semibold mb-3">Plantilla Clásica</h3>
-                        <p className="text-gray-600 mb-4">Elegante y atemporal, ideal para bodas tradicionales.</p>
+                <div className="flex justify-center flex-wrap gap-8 px-4">
+                    <div className="bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-2xl p-6 w-80 transform hover:-translate-y-1">
+                        <h3 className="text-2xl font-semibold mb-3 text-pink-600">Plantilla Clásica</h3>
+                        <p className="text-gray-600 mb-5">Elegante y atemporal, ideal para bodas tradicionales.</p>
                         <a href="/demo/plantilla-1" target="_blank" rel="noopener noreferrer">
-                            <button className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">
+                            <button className="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600 transition-colors duration-200">
                                 Ver Demo
                             </button>
                         </a>
                     </div>
 
-                    <div className="bg-white shadow-md rounded-lg p-6 w-72">
-                        <h3 className="text-xl font-semibold mb-3">Plantilla Moderna</h3>
-                        <p className="text-gray-600 mb-4">Con un toque actual, perfecta para bodas únicas.</p>
+                    <div className="bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-2xl p-6 w-80 transform hover:-translate-y-1">
+                        <h3 className="text-2xl font-semibold mb-3 text-pink-600">Plantilla Moderna</h3>
+                        <p className="text-gray-600 mb-5">Con un toque actual, perfecta para bodas únicas.</p>
                         <a href="/demo/plantilla-2" target="_blank" rel="noopener noreferrer">
-                            <button className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">
+                            <button className="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600 transition-colors duration-200">
                                 Ver Demo
                             </button>
                         </a>
                     </div>
                 </div>
-            </section> */}
+            </section>
+
 
             {/* PRECIO */}
             <section id="precio" className="precio">

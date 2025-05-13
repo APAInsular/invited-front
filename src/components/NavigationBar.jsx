@@ -36,7 +36,7 @@ const NavigationBar = () => {
                     <img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" style={{ zIndex: "1000" }}>
+                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link href="/" style={hovered === "home" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("home")}

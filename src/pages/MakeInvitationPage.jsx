@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import apiClient from '../config/axiosConfig';
 import Swal from 'sweetalert2'
+import { span } from "framer-motion/client";
 
 export default function MakeInvitationForm() {
     const navigate = useNavigate();
@@ -10,6 +11,8 @@ export default function MakeInvitationForm() {
     const formattedTemplateName = templateName.replace(/^Plantilla/, "Plantilla ");
 
     const [previewImage, setPreviewImage] = useState();
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const [user, setUser] = useState(null);
     const [events, setEvents] = useState([]);
@@ -119,6 +122,7 @@ export default function MakeInvitationForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const token = sessionStorage.getItem('auth_token');
 
         if (formData.coverImage) {
@@ -162,6 +166,7 @@ export default function MakeInvitationForm() {
                 }
             });
 
+            setIsLoading(false)
             navigate("/thankyou")
         } catch (error) {
             console.error("Error al crear la invitación:", error);
@@ -360,7 +365,15 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
-                <Button type="submit" onClick={() => handleSubmit()} style={{ zIndex: "99999" }} className="w-100">Enviar</Button>
+                <Button type="submit" onClick={() => handleSubmit()} style={{ zIndex: "99999" }} className="w-100">
+                    {isLoading ? (
+                        <span>Cargando...</span>
+                    ) : (
+                        <span>Enviar</span>
+                    )
+                    }
+
+                </Button>
             </Form>
         </Container>
     );

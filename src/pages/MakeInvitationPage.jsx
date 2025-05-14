@@ -121,7 +121,6 @@ export default function MakeInvitationForm() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
         setIsLoading(true);
         const token = sessionStorage.getItem('auth_token');
 

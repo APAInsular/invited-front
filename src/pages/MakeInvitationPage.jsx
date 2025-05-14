@@ -158,12 +158,25 @@ export default function MakeInvitationForm() {
             ...formData,
             events
         };
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "justo antes de ejecutar el post",
+        });
+
         try {
             const response = await apiClient.post("/api/weddings", finalData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
                 }
+            });
+
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "justo despues de ejecutar el post",
             });
 
             setIsLoading(false)

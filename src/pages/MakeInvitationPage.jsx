@@ -360,7 +360,7 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
-                <Button type="submit" className="w-100">Enviar</Button>
+                <Button type="submit" onClick={() => handleSubmit()} className="w-100">Enviar</Button>
             </Form>
         </Container>
     );

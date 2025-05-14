@@ -378,7 +378,7 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
-                <Button type="submit" onClick={() => handleSubmit()} style={{ zIndex: "99999" }} className="w-100">
+                <Button type="submit" style={{ zIndex: "99999" }} className="w-100">
                     {isLoading ? (
                         <span>Cargando...</span>
                     ) : (

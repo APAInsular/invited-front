@@ -35,7 +35,7 @@ const Gallery_Plantilla_1 = ({ images, speed }) => {
                             src={image}
                             alt={`Slide ${index}`}
                             className="slider-image"
-                            style={{ height: '200px', marginRight: '16px', objectFit: 'cover' }}
+                            style={{ minWidth: '200px', minHeight: '400px', marginRight: '16px', objectFit: 'cover' }}
                         />
                     ))}
                 </div>

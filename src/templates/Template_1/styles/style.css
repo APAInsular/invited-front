@@ -67,7 +67,7 @@
 }
 
 .invite-name {
-    font-family: 'Playlist Script', cursive;
+    font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     color: #6c5b7b;
 }
@@ -79,13 +79,13 @@
 
 .invite-date,
 .invite-location {
-    font-family: 'Playlist Script', cursive;
+    font-family: 'Dancing Script', cursive;
     font-size: 1.5rem;
     margin-bottom: 0;
 }
 
 .section-title {
-    font-family: 'Playlist Script', cursive;
+    font-family: 'Dancing Script', cursive;
     font-size: 2rem;
     color: #6c5b7b;
 }
@@ -125,7 +125,7 @@
     font-size: 24px;
     font-weight: bold;
     color: #6c5b7b;
-    font-family: 'Playlist Script', cursive;
+    font-family: 'Dancing Script', cursive;
 }
 
 .label {

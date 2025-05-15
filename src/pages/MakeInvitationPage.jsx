@@ -169,7 +169,7 @@ export default function MakeInvitationForm() {
             const response = await apiClient.post("/api/weddings", finalData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/octet-stream'
+                    'Content-Type': 'multipart/form-data'
                 }
             });
 

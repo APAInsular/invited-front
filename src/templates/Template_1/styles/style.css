@@ -254,3 +254,8 @@
     margin-right: 1rem;
     flex-shrink: 0;
 }
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}

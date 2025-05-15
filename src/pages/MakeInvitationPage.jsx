@@ -125,66 +125,82 @@ export default function MakeInvitationForm() {
         setIsLoading(true);
         const token = sessionStorage.getItem('auth_token');
 
-        // 1) Construimos un FormData e incluimos los archivos:
-        const form = new FormData();
         if (formData.coverImage) {
-            form.append('coverImage', formData.coverImage);              // archivo único
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreviewImage(reader.result);
+            };
+            reader.readAsDataURL(formData.coverImage);
         }
+
+        const form = new FormData();
+        form.append('coverImage', formData.coverImage);
+
         formData.images.forEach((file, index) => {
-            form.append(`images[${index}]`, file);                       // array de archivos
+            form.append(`images[${index}]`, file);
         });
 
-        // 2) Añadimos todos los demás campos (strings, números, etc.)
-        Object.entries(formData).forEach(([key, value]) => {
+        for (const key in formData) {
             if (key !== 'coverImage' && key !== 'images') {
-                // Si el campo es un objeto (por ejemplo location o events), lo stringify:
-                if (typeof value === 'object') {
-                    form.append(key, JSON.stringify(value));
-                } else {
-                    form.append(key, value);
-                }
+                form.append(key, formData[key]);
             }
-        });
+        }
 
-        // 3) Validación de la fecha, y salimos si no es correcta
         if (!validateDate(formData)) {
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'La fecha debe ser a partir de mañana',
+                icon: "error",
+                title: "Oops...",
+                text: "La fecha debe ser a partir de mañana",
             });
-            setIsLoading(false);
-            return;
         }
+
+        const finalData = {
+            ...formData,
+            events
+        };
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "justo antes de ejecutar el post",
+        });
 
         try {
-            // 4) Enviamos el FormData COMPLETO (no objeto JSON), sin fijar Content-Type
-            const response = await apiClient.post(
-                '/api/weddings',
-                form,
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        // ¡OJO! No pongas 'Content-Type': 'multipart/form-data' aquí :contentReference[oaicite:1]{index=1}
-                    }
+            const response = await apiClient.post("/api/weddings", finalData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/octet-stream'
                 }
-            );
+            });
 
             Swal.fire({
-                icon: 'success',
-                title: '¡Invitación creada!',
-                text: 'Redirigiendo…',
+                icon: "error",
+                title: "Oops...",
+                text: "justo despues de ejecutar el post",
             });
-            navigate('/thankyou');
 
+            setIsLoading(false)
+            navigate("/thankyou")
         } catch (error) {
-            console.error('Error al crear la invitación:', error);
-            // manejo de errores...
-        } finally {
-            setIsLoading(false);
+            console.error("Error al crear la invitación:", error);
+
+            switch (error.response.data.message) {
+                case "The events field is required.":
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Debes añadir un evento como mínimo",
+                    });
+                    break;
+                default:
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: error.response.data.message,
+                    });
+            }
         }
     };
-
 
     const handleCoupleImageUpload = (event) => {
         const file = event.target.files[0];

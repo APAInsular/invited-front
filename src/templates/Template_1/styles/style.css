@@ -236,3 +236,21 @@
     color: #95c6c4;
     font-weight: bold;
 }
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    white-space: nowrap;
+}
+
+.slider-image {
+    height: 150px;
+    width: auto;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}

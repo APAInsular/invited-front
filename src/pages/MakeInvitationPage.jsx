@@ -378,14 +378,16 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
-                <Button type="submit" style={{ zIndex: "99999" }} className="w-100">
-                    {isLoading ? (
-                        <span>Cargando...</span>
-                    ) : (
-                        <span>Enviar</span>
-                    )
-                    }
-
+                <Button
+                    type="submit"
+                    style={{ zIndex: 99999, cursor: 'pointer' }}
+                    onClick={handleSubmit}
+                    onTouchEnd={(e) => {
+                        e.preventDefault();        // evita doble envío
+                        handleSubmit(e);
+                    }}
+                >
+                    {isLoading ? 'Cargando...' : 'Enviar'}
                 </Button>
             </Form>
         </Container>

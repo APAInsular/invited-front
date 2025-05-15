@@ -31,6 +31,9 @@
 .bg-gallery {
     background-image: url('../images/backgrounds/bg-gallery.png');
     background-repeat: repeat-y;
+    background-size: auto;
+    background-position: top center;
+    background-attachment: scroll;
 }
 
 .bg-itinerario {

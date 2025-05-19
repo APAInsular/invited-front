@@ -237,7 +237,7 @@ const LandingPage = () => {
                                 <div class="card-body text-center">
                                     <h3 class="h4 card-title text-danger-emphasis">Estilo Clásico</h3>
                                     <p class="card-text text-muted">Elegancia tradicional con detalles dorados y tipografía serif.</p>
-                                    <a href="https://www.invited.es/invitacion/javier-sandra/70" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/70" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
                                 </div>
@@ -259,7 +259,7 @@ const LandingPage = () => {
                                 <div class="card-body text-center">
                                     <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
                                     <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
-                                    <a href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
                                 </div>

@@ -51,6 +51,7 @@
     object-fit: cover;
     position: relative;
     z-index: 1;
+    margin-top: 100px;
     /* Debajo del marco */
 }
 
@@ -58,12 +59,13 @@
 .floral-frame {
     background: url("../images/corazon_imagen_novios.png") center/cover no-repeat;
     position: absolute;
-    width: 375px;
-    height: 375px;
+    width: 350px;
+    height: 350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    margin-top: 125px;
     /* Por delante */
     pointer-events: none;
     /* Por si quieres que no interfiera con clics */

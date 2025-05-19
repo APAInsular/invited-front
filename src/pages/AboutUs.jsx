@@ -19,7 +19,7 @@ const AboutUs = () => {
                     <div className="row align-items-center mb-5">
                         <div className="col-md-6 mb-4 mb-md-0">
                             <img
-                                src="/images/Logo_Invited_SinFondo.png"
+                                src="/images/Nuestra_Mision.jpg"
                                 alt="Equipo de Invited.es"
                                 className="img-fluid rounded shadow"
                             />

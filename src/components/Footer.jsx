@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import PeerList from "../assets/icons/Launch_SVG_Light.svg"
 
 const Footer = () => {
     return (
@@ -22,7 +21,6 @@ const Footer = () => {
                     </a>
                 </nav>
                 <div className="d-flex justify-content-center mb-2">
-                    <PeerList />
                 </div>
                 <p className="text-center text-muted mb-0">
                     &copy; Invited.es - Desarrollada con <span className="text-danger">♥</span> por{" "}

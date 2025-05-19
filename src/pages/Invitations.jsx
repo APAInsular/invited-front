@@ -3,8 +3,8 @@ import apiClient from "../config/axiosConfig";
 import { useParams } from "react-router-dom";
 
 import WeddingWebsite from "../templates/Template";
-import PlantillaAcuarela from "../templates/Template_1/Template_1";
-import PlantillaEraseUnaVez from "../templates/Template_2/Template_2";
+import Template_1 from "../templates/Template_1/Template_1";
+import Template_2 from "../templates/Template_2/Template_2";
 
 const Invitations = () => {
     const [wedding, setWedding] = useState(null);
@@ -36,9 +36,9 @@ const Invitations = () => {
         case "Plantilla Romantica":
             return <WeddingWebsite wedding={wedding.wedding} />;
         case "Plantilla Acuarela":
-            return <PlantillaAcuarela wedding={wedding.wedding} />;
+            return <Template_1 wedding={wedding.wedding} />;
         case "Plantilla Érase una vez":
-            return <PlantillaEraseUnaVez wedding={wedding.wedding} />;
+            return <Template_2 wedding={wedding.wedding} />;
         default:
             return <WeddingWebsite wedding={wedding.wedding} />;
     }

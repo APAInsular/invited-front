@@ -51,7 +51,7 @@
     object-fit: cover;
     position: relative;
     z-index: 1;
-    margin-top: 100px;
+    margin-top: 200px;
     /* Debajo del marco */
 }
 
@@ -65,7 +65,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    margin-top: 125px;
+    margin-top: 150px;
     /* Por delante */
     pointer-events: none;
     /* Por si quieres que no interfiera con clics */

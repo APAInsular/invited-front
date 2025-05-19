@@ -37,7 +37,7 @@ const AboutUs = () => {
                     <div className="row align-items-center">
                         <div className="col-md-6 order-md-2 mb-4 mb-md-0">
                             <img
-                                src="/images/Nuestra_Historia.png"
+                                src="/images/Nuestra_Historia.jpg"
                                 alt="Nuestra misión"
                                 className="img-fluid rounded shadow"
                             />

@@ -46,12 +46,12 @@
 }
 
 .header-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     position: relative;
     z-index: 1;
-    margin-top: 225px;
+    margin-top: 175px;
     /* Debajo del marco */
 }
 
@@ -65,7 +65,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    margin-top: 125px;
+    margin-top: 75px;
     /* Por delante */
     pointer-events: none;
     /* Por si quieres que no interfiera con clics */

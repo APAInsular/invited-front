@@ -52,3 +52,16 @@ body {
 main {
   flex: 1;
 }
+
+/* AboutUs.css */
+.bg-light {
+  background-color: #f9e9e8 !important;
+}
+
+.text-danger-emphasis {
+  color: #c93f3f;
+}
+
+img.shadow {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}

@@ -53,6 +53,16 @@ const NavigationBar = () => {
                         >
                             Blog
                         </Nav.Link>
+                        <Nav.Link
+                            href="/about-us"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseEnter={() => setHovered("blog")}
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            Sobre nosotros
+                        </Nav.Link>
 
                         {!user ? (
                             <>

@@ -65,7 +65,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    margin-top: 135px;
+    margin-top: 125px;
     /* Por delante */
     pointer-events: none;
     /* Por si quieres que no interfiera con clics */

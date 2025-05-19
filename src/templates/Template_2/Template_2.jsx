@@ -4,8 +4,8 @@ import SongLink from './components/SongLink_Plantilla_2';
 import Location from './components/Location_Plantilla_2';
 import CountDown from './components/CountDown_Plantilla_2';
 import Gallery from './components/Gallery_Plantilla_2';
-import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_1';
-import WeddingForm from './components/WeddingForm_Plantilla_1';
+import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_2';
+import WeddingForm from './components/WeddingForm_Plantilla_2';
 
 import "./styles/style.css"
 

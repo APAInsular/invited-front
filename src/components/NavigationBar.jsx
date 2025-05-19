@@ -57,8 +57,8 @@ const NavigationBar = () => {
                             href="/about-us"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
-                            onMouseEnter={() => setHovered("blog")}
+                            style={hovered === "about" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseEnter={() => setHovered("about")}
                             onMouseLeave={() => setHovered(null)}
                         >
                             Sobre nosotros

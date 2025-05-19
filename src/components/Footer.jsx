@@ -23,7 +23,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center mb-2">
                     <div className="d-flex justify-content-center mb-2">
                         <a rel="nofollow" href="https://peerlist.io/javierjg/project/invited" title="Peerlist">
-                            <img src="../assets/icons/Peerlist_Launchpad.png" alt="Peerlist" />
+                            <img src="/assets/icons/Peerlist_Launchpad.png" alt="Peerlist" style={{ width: "300px" }} />
                         </a>
                     </div>
                 </div>

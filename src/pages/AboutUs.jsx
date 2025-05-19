@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 const AboutUs = () => {
     return (
-        <div style={{ backgroundColor: '#FAF9F8', color: '#2F2F2F', minHeight: '100vh', marginTop: "50px" }}>
+        <div style={{ backgroundColor: '#FAF9F8', color: '#2F2F2F', minHeight: '100vh', marginTop: "80px" }}>
             <section className="py-5 text-center">
                 <div className="container">
                     <h1 className="display-5 fw-bold text-danger-emphasis">Sobre Nosotros</h1>

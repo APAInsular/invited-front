@@ -21,6 +21,11 @@ const Footer = () => {
                     </a>
                 </nav>
                 <div className="d-flex justify-content-center mb-2">
+                    <div className="d-flex justify-content-center mb-2">
+                        <a rel="nofollow" href="https://peerlist.io/javierjg/project/invited" title="Peerlist">
+                            <img src="../assets/icons/Peerlist_Launchpad.png" alt="Peerlist" />
+                        </a>
+                    </div>
                 </div>
                 <p className="text-center text-muted mb-0">
                     &copy; Invited.es - Desarrollada con <span className="text-danger">♥</span> por{" "}

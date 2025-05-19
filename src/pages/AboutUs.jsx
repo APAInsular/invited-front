@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 const AboutUs = () => {
     return (
-        <div style={{ backgroundColor: '#FAF9F8', color: '#2F2F2F', minHeight: '100vh' }}>
+        <div style={{ backgroundColor: '#FAF9F8', color: '#2F2F2F', minHeight: '100vh', marginTop: "50px" }}>
             <section className="py-5 text-center">
                 <div className="container">
                     <h1 className="display-5 fw-bold text-danger-emphasis">Sobre Nosotros</h1>
@@ -19,7 +19,7 @@ const AboutUs = () => {
                     <div className="row align-items-center mb-5">
                         <div className="col-md-6 mb-4 mb-md-0">
                             <img
-                                src="/images/about-team.jpg"
+                                src="/images/Logo_Invited_SinFondo.png"
                                 alt="Equipo de Invited.es"
                                 className="img-fluid rounded shadow"
                             />
@@ -37,7 +37,7 @@ const AboutUs = () => {
                     <div className="row align-items-center">
                         <div className="col-md-6 order-md-2 mb-4 mb-md-0">
                             <img
-                                src="/images/about-mission.jpg"
+                                src="/images/Nuestra_Historia.png"
                                 alt="Nuestra misión"
                                 className="img-fluid rounded shadow"
                             />

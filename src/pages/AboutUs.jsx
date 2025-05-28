@@ -22,7 +22,7 @@ const AboutUs = () => {
                         </h2>
                         <p style={{ color: '#6B5A4A', lineHeight: '1.6', fontSize: '1rem' }}>
                             Detrás de cada invitación hay una historia de amor esperando ser contada. La nuestra comenzó cuando descubrimos que las parejas merecían algo más que simples tarjetas tradicionales para anunciar el día más especial de sus vidas. Nacimos de un sueño compartido: transformar la manera en que las parejas conectan con sus seres queridos antes del gran día.
-
+                            <br />
                             Lo que empezó como una conversación entre amigos apasionados por el diseño y las bodas, se convirtió en Invited.es. Cada línea de código, cada diseño y cada palabra que creamos lleva consigo la emoción de quienes entendemos que una invitación no es solo papel o pixels—es el primer capítulo de una celebración inolvidable.</p>
                     </div>
                     <div style={{ flex: '1' }}>
@@ -42,7 +42,7 @@ const AboutUs = () => {
                         </h2>
                         <p style={{ color: '#6B5A4A', lineHeight: '1.6', fontSize: '1rem' }}>
                             Creemos que cada historia de amor es única, y merece ser anunciada de forma igualmente especial. Nuestra misión va más allá de crear invitaciones digitales; buscamos liberar la expresión personal de cada pareja, convirtiendo sus sueños en experiencias visuales que emocionen desde el primer vistazo.
-
+                            <br />
                             Cuando una pareja confía en nosotros, no solo les ofrecemos una herramienta—les entregamos un lienzo en blanco donde plasmar su personalidad, sus colores y el tono de su celebración. Porque entendemos que las pequeñas decisiones, como elegir la tipografía perfecta o el color ideal, son parte del viaje hacia el "sí quiero".</p>
                     </div>
                     <div style={{ flex: '1' }}>
@@ -81,7 +81,7 @@ const AboutUs = () => {
                         </h2>
                         <p style={{ color: '#6B5A4A', lineHeight: '1.6', fontSize: '1rem' }}>
                             Caminar junto a ti en este viaje es nuestro mayor privilegio. Cada duda que resolvemos, cada diseño que ajustamos y cada sonrisa que provocamos cuando ves tu invitación terminada, alimenta nuestra pasión por lo que hacemos.
-
+                            <br />
                             Nuestro equipo no está formado por simples diseñadores o programadores—somos soñadores, confidentes y, en cierto modo, cómplices de tu historia. Estamos aquí para escucharte, entenderte y asegurarnos de que el primer anuncio de tu boda refleje exactamente lo que imaginas. Porque tu felicidad es nuestra mayor recompensa, y tu confianza, nuestro tesoro más preciado.</p>
                     </div>
                     <div style={{ flex: '1' }}>

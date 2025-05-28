@@ -10,7 +10,7 @@ const AboutUs = () => {
                     Sobre <span style={{ color: '#9B7B57' }}>Nosotros</span>
                 </h1>
                 <p style={{ fontStyle: 'italic', color: '#7E6B5A', marginBottom: '40px', fontSize: '1.15rem' }}>
-                    El equipo detr谩s de las invitaciones que cuentan historias de amor
+                    El equipo detrás de las invitaciones que cuentan historias de amor
                 </p>
                 <div style={{ width: '60px', height: '4px', backgroundColor: '#C69C6D', marginBottom: '60px' }}></div>
 
@@ -86,7 +86,7 @@ const AboutUs = () => {
                     </div>
                     <div style={{ flex: '1' }}>
                         <img
-                            src="/images/Nuestro_Compromiso.jpg"
+                            src="/images/Logo_Invited_SinFondo.png"
                             alt="Nuestro compromiso"
                             style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px rgba(198,156,109,0.3)' }}
                         />

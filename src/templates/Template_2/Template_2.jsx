@@ -35,7 +35,7 @@ const Template_2 = ({ wedding }) => {
 
     return (
         <div className='body-template2'>
-            <section className="header-invite-template2 text-center py-4 section-bg-template2 bg-portada-template2">
+            <section className="mt-4 header-invite-template2 text-center py-4 section-bg-template2 bg-portada-template2">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
             <section className="section-bg-template2 bg-countdown-template2">

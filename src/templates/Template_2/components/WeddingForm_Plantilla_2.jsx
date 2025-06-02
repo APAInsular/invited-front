@@ -70,38 +70,38 @@ const WeddingForm_Plantilla_2 = ({ weddingId }) => {
     };
 
     return (
-        <div className="container" style={{ marginTop: "-100px" }}>
-            <h2 className="section-title">Confirmar Asistencia</h2>
+        <div className="container-template2" style={{ marginTop: "-100px" }}>
+            <h2 className="section-title-template2">Confirmar Asistencia</h2>
             <p className="text-muted small">(*) campos obligatorios</p>
-            <form className="form-container bg-form p-4 border rounded" onSubmit={handleSendForm}>
+            <form className="form-container-template2 bg-form-template2 p-4 border rounded" onSubmit={handleSendForm}>
                 <div className="mb-3">
-                    <label className="form-label-custom">Nombre*</label>
-                    <input type="text" className="input-custom" name="name" value={formGuest.name} onChange={handleFormChange} required />
+                    <label className="form-label-custom-template2">Nombre*</label>
+                    <input type="text" className="input-custom-template2" name="name" value={formGuest.name} onChange={handleFormChange} required />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label-custom">Primer Apellido*</label>
-                    <input type="text" className="input-custom" name="firstSurname" value={formGuest.firstSurname} onChange={handleFormChange} required />
+                    <label className="form-label-custom-template2">Primer Apellido*</label>
+                    <input type="text" className="input-custom-template2" name="firstSurname" value={formGuest.firstSurname} onChange={handleFormChange} required />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label-custom">Segundo Apellido</label>
-                    <input type="text" className="input-custom" name="secondSurname" value={formGuest.secondSurname} onChange={handleFormChange} required />
+                    <label className="form-label-custom-template2">Segundo Apellido</label>
+                    <input type="text" className="input-custom-template2" name="secondSurname" value={formGuest.secondSurname} onChange={handleFormChange} required />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label-custom">Información Extra</label>
-                    <input className="input-custom" rows="3" name="extraInformation" value={formGuest.extraInformation} onChange={handleFormChange}></input>
+                    <label className="form-label-custom-template2">Información Extra</label>
+                    <input className="input-custom-template2" rows="3" name="extraInformation" value={formGuest.extraInformation} onChange={handleFormChange}></input>
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label-custom">Alergias</label>
-                    <input type="text" className="input-custom" name="allergy" value={formGuest.allergy} onChange={handleFormChange} />
+                    <label className="form-label-custom-template2">Alergias</label>
+                    <input type="text" className="input-custom-template2" name="allergy" value={formGuest.allergy} onChange={handleFormChange} />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label-custom">Tipo de Alimentación</label>
-                    <select className="input-custom" name="feeding" value={formGuest.feeding} onChange={handleFormChange}>
+                    <label className="form-label-custom-template2">Tipo de Alimentación</label>
+                    <select className="input-custom-template2" name="feeding" value={formGuest.feeding} onChange={handleFormChange}>
                         <option value="">Selecciona...</option>
                         <option value="Sin preferencias">Sin preferencias</option>
                         <option value="Vegatariana">Vegetariano</option>
@@ -111,7 +111,7 @@ const WeddingForm_Plantilla_2 = ({ weddingId }) => {
 
                 {weddingId !== 9 && (
                     <div className="mb-3">
-                        <label className="form-label-custom">¿Llevarás acompañante?</label>
+                        <label className="form-label-custom-template2">¿Llevarás acompañante?</label>
                         <div className="d-flex gap-3 align-items-center mt-2">
                             <div>
                                 <input type="radio" name="companion" value="yes" className="form-check-input me-1" onChange={handleCompanionChange} />
@@ -127,39 +127,39 @@ const WeddingForm_Plantilla_2 = ({ weddingId }) => {
 
                 {hasCompanion && (
                     <div className="mb-3">
-                        <label className="form-label-custom">¿Cuántos acompañantes?</label>
-                        <input type="number" className="input-custom" min="1" max="5" value={companionCount} onChange={handleCompanionCountChange} />
+                        <label className="form-label-custom-template2">¿Cuántos acompañantes?</label>
+                        <input type="number" className="input-custom-template2" min="1" max="5" value={companionCount} onChange={handleCompanionCountChange} />
                     </div>
                 )}
 
                 {attendants.length > 0 && (
                     <div className="mb-3">
-                        <h4 className="section-subtitle mt-3">Datos de los Acompañantes</h4>
+                        <h4 className="section-subtitle-template2 mt-3">Datos de los Acompañantes</h4>
                         {attendants.map((_, index) => (
                             <div key={index} className="p-3 mb-2 border rounded bg-white">
                                 <h5 className="text-primary">Acompañante {index + 1}</h5>
                                 <div className="mb-2">
-                                    <label className="form-label-custom">Nombre</label>
-                                    <input type="text" className="input-custom" onChange={(e) => handleCompanionInputChange(index, "name", e.target.value)} />
+                                    <label className="form-label-custom-template2">Nombre</label>
+                                    <input type="text" className="input-custom-template2" onChange={(e) => handleCompanionInputChange(index, "name", e.target.value)} />
                                 </div>
                                 <div className="mb-2">
-                                    <label className="form-label-custom">Primer Apellido</label>
-                                    <input type="text" className="input-custom" onChange={(e) => handleCompanionInputChange(index, "firstSurname", e.target.value)} />
+                                    <label className="form-label-custom-template2">Primer Apellido</label>
+                                    <input type="text" className="input-custom-template2" onChange={(e) => handleCompanionInputChange(index, "firstSurname", e.target.value)} />
                                 </div>
                                 <div className="mb-2">
-                                    <label className="form-label-custom">Segundo Apellido</label>
-                                    <input type="text" className="input-custom" onChange={(e) => handleCompanionInputChange(index, "secondSurname", e.target.value)} />
+                                    <label className="form-label-custom-template2">Segundo Apellido</label>
+                                    <input type="text" className="input-custom-template2" onChange={(e) => handleCompanionInputChange(index, "secondSurname", e.target.value)} />
                                 </div>
                                 <div className="mb-2">
-                                    <label className="form-label-custom">Edad del acompañante</label>
-                                    <input type="text" className="input-custom" onChange={(e) => handleCompanionInputChange(index, "age", e.target.value)} />
+                                    <label className="form-label-custom-template2">Edad del acompañante</label>
+                                    <input type="text" className="input-custom-template2" onChange={(e) => handleCompanionInputChange(index, "age", e.target.value)} />
                                 </div>
                             </div>
                         ))}
                     </div>
                 )}
 
-                <button type="submit" className="btn btn-main w-100">
+                <button type="submit" className="btn btn-main-template2 w-100">
                     Enviar Confirmación
                 </button>
             </form>

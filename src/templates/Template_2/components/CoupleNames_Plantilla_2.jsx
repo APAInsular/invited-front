@@ -16,17 +16,17 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
     return (
         <div className="container" style={{ marginTop: "60px" }}>
             <div className="position-relative d-inline-block mb-4">
-                <img src={imageUrl} alt="Samantha y Javier" className="img-fluid rounded-circle header-photo"></img>
-                <div className="floral-frame"></div>
+                <img src={imageUrl} alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
+                <div className="floral-frame-template2"></div>
             </div>
-            <h1 className="invite-name mt-3 mb-4">{groom} & {bride}</h1>
+            <h1 className="invite-name-template2 mt-3 mb-4">{groom} & {bride}</h1>
             <div className="d-flex justify-content-center">
-                <p className="invite-text mb-4">
+                <p className="invite-text-template2 mb-4">
                     Tenemos el gusto de invitaros a nuestra boda que tendrá lugar
                 </p>
             </div>
-            <p className="invite-date">{formatDateToString(date)}</p>
-            <p className="invite-location">
+            <p className="invite-date-template2">{formatDateToString(date)}</p>
+            <p className="invite-location-template2">
                 en <br></br><strong>{location}</strong>
             </p>
         </div>

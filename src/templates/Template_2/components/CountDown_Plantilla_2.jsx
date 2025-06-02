@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const CountDown_Plantilla_2 = ({ weddingDate }) => {
-
     const calculateTimeLeft = () => {
         const now = new Date();
         const targetDate = new Date(weddingDate);
@@ -21,44 +20,40 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
-
         return () => clearInterval(timer);
     }, [weddingDate]);
 
     return (
-        <section class="py-5 text-center">
-            <h2 class="section-title"><strong>Nos casamos en...</strong></h2>
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="flower">
-                        <span class="number">{timeLeft.days}</span>
+        <section className="py-5 text-center bg-countdown-template2">
+            <h2 className="section-title-template2"><strong>Nos casamos en...</strong></h2>
+            <div className="countdown-template2">
+                <div className="countdown-item-template2">
+                    <div className="flower-template2">
+                        <span className="number-template2">{timeLeft.days}</span>
                     </div>
-                    <span class="label">Días</span>
+                    <span className="label">Días</span>
                 </div>
-                <div class="countdown-item">
-                    <div class="flower"
-                        style={{ backgroundImage: "url('./images/flor_horas_y_segundos-removebg-preview.png');" }}>
-                        <span class="number">{timeLeft.hours}</span>
+                <div className="countdown-item-template2">
+                    <div className="flower-template2" style={{ backgroundImage: "url('./images/flor_horas_y_segundos-removebg-preview.png')" }}>
+                        <span className="number-template2">{timeLeft.hours}</span>
                     </div>
-                    <span class="label">Horas</span>
+                    <span className="label">Horas</span>
                 </div>
-                <div class="countdown-item">
-                    <div class="flower"
-                        style={{ backgroundImage: "url('./images/flor_dias_y_minutos-removebg-preview.png');" }}>
-                        <span class="number">{timeLeft.minutes}</span>
+                <div className="countdown-item-template2">
+                    <div className="flower-template2" style={{ backgroundImage: "url('./images/flor_dias_y_minutos-removebg-preview.png')" }}>
+                        <span className="number-template2">{timeLeft.minutes}</span>
                     </div>
-                    <span class="label">Minutos</span>
+                    <span className="label">Minutos</span>
                 </div>
-                <div class="countdown-item">
-                    <div class="flower"
-                        style={{ backgroundImage: "url('./images/flor_horas_y_segundos-removebg-preview.png');" }}>
-                        <span class="number">{timeLeft.seconds}</span>
+                <div className="countdown-item-template2">
+                    <div className="flower-template2" style={{ backgroundImage: "url('./images/flor_horas_y_segundos-removebg-preview.png')" }}>
+                        <span className="number-template2">{timeLeft.seconds}</span>
                     </div>
-                    <span class="label">Segundos</span>
+                    <span className="label">Segundos</span>
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default CountDown_Plantilla_2;

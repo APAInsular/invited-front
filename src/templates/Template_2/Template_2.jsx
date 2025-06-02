@@ -34,22 +34,22 @@ const Template_2 = ({ wedding }) => {
     const imageUrl = `${baseUrl}${wedding.coverImage}`;
 
     return (
-        <div className='body'>
-            <section className="header-invite text-center py-4 section-bg bg-portada">
+        <div className='body-template2'>
+            <section className="header-invite-template2 text-center py-4 section-bg-template2 bg-portada-template2">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
-            <section className="section-bg bg-countdown mt-4 py-5">
+            <section className="section-bg-template2 bg-countdown-template2 mt-4 py-5">
                 <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} />
                 <Location location={wedding.location.city} country={wedding.location.country} />
                 <CountDown weddingDate={wedding.weddingDate} />
             </section>
-            <section className="py-5 mt-4 section-bg bg-itinerario">
+            <section className="py-5 mt-4 section-bg-template2 bg-itinerario-template2">
                 <WeddingTimeLine events={wedding.events} />
             </section>
-            <section className="py-5 mt-4 section-bg bg-gallery">
+            <section className="py-5 mt-4 section-bg-template2 bg-gallery-template2">
                 <Gallery images={newImages} speed={20} />
             </section>
-            <section className="py-5 section-bg bg-portada">
+            <section className="py-5 section-bg-template2 bg-portada-template2">
                 <WeddingForm weddingId={wedding.id} />
             </section>
         </div>

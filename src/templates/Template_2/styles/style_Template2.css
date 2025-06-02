@@ -46,7 +46,7 @@
     object-fit: cover;
     position: relative;
     z-index: 1;
-    margin-top: 100px;
+    margin-top: 125px;
 
     /* Aplicar la máscara SVG: */
     mask: url(#mascara-corazon);

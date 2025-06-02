@@ -20,19 +20,19 @@
     text-align: center;
 }
 
-.bg-portada {
+.bg-portada-template2 {
     background-image: url('../images/backgrounds/bg-portada_Template2.png');
 }
 
-.bg-countdown {
+.bg-countdown-template2 {
     background-image: url('../images/backgrounds/bg-countdown_Template2.png');
 }
 
-.bg-gallery {
+.bg-gallery-template2 {
     background-image: url('../images/backgrounds/bg-gallery_Template2.png');
 }
 
-.bg-itinerario {
+.bg-itinerario-template2 {
     background-image: url('../images/backgrounds/bg-itinerario_Template2.png');
 }
 

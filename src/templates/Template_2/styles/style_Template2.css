@@ -104,12 +104,12 @@
 }
 
 .flower-template2 {
-    background-image: url("../images/flor_dias_y_minutos-removebg-preview.png");
-    position: relative;
-    width: 90px;
-    height: 90px;
+    background-image: url("../images/flor_dias_y_minutos-removebg-preview.png") no-repeat center center;
+    width: 300px;
+    height: 300px;
     background-size: cover;
-    background-position: center;
+
+    clip-path: path('M150,25 C100, -25 0, 25 0, 100 C0, 175 75, 200 150, 250 C225, 200 300, 175 300, 100 C300, 25 200, -25 150, 25 Z');
 }
 
 .number-template2 {

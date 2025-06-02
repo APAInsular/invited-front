@@ -3,7 +3,7 @@ import { Church } from "lucide-react";
 
 const Location_Plantilla_2 = ({ location, country }) => {
     return (
-        <section className="text-center">
+        <section className="text-center mt-4">
             <div className="container">
                 <h2 className="section-title-template2"><strong>¿A dónde ir?</strong></h2>
                 <Church size={32} className="text-gray-700" />

@@ -24,7 +24,7 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
     }, [weddingDate]);
 
     return (
-        <section className="py-5 text-center bg-countdown-template2">
+        <section className="py-5 text-center bg-countdown-template2 mt-4">
             <h2 className="section-title-template2"><strong>Nos casamos en...</strong></h2>
             <div className="countdown-template2">
                 <div className="countdown-item-template2">

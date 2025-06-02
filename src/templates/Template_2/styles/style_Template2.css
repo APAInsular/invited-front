@@ -41,8 +41,8 @@
 }
 
 .header-photo-template2 {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     object-fit: cover;
     position: relative;
     z-index: 1;

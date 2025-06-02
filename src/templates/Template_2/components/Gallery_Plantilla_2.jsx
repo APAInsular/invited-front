@@ -13,12 +13,12 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
     }, [speed]);
 
     return (
-        <div className="container-template2">
+        <div className="container">
             <h2 className="section-title-template2 text-center mb-5">Conoce nuestra historia</h2>
             <div className="row g-4" style={{ overflow: 'hidden' }}>
                 <div
                     ref={sliderRef}
-                    className="slider-track-template2"
+                    className="slider-track"
                     style={{
                         minWidth: '200px',         // Ancho fijo
                         minHeight: '400px',        // Alto fijo
@@ -34,7 +34,7 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
                             key={index}
                             src={image}
                             alt={`Slide ${index}`}
-                            className="slider-image-template2"
+                            className="slider-image"
                             style={{ minWidth: '200px', minHeight: '400px', marginRight: '16px', objectFit: 'cover' }}
                         />
                     ))}

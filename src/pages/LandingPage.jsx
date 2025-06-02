@@ -279,7 +279,7 @@ const LandingPage = () => {
                                 <span style={{ textDecoration: "line-through", marginLeft: "8px", marginRight: "8px", color: "#999" }}>
                                     119€
                                 </span>
-                                <span style={{ color: "#e63946", fontWeight: "bold" }}>
+                                {/* <span style={{ color: "#e63946", fontWeight: "bold" }}>
                                     {(119 * 0.85).toFixed(2)}€
                                 </span>
                                 <span style={{
@@ -291,7 +291,7 @@ const LandingPage = () => {
                                     marginLeft: "8px"
                                 }}>
                                     15% OFF hasta el 30/05
-                                </span>
+                                </span> */}
                             </h3>
                         </div>
                         <ul>

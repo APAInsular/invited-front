@@ -276,7 +276,7 @@ const LandingPage = () => {
                     <div className="precio-card">
                         <div>
                             <h3>Tu invitación digital por
-                                <span style={{ textDecoration: "line-through", marginLeft: "8px", marginRight: "8px", color: "#999" }}>
+                                <span style={{ marginLeft: "8px", marginRight: "8px", color: "#999" }}>
                                     119€
                                 </span>
                                 {/* <span style={{ color: "#e63946", fontWeight: "bold" }}>

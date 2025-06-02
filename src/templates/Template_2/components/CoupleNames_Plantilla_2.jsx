@@ -21,10 +21,10 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
                     <defs>
                         <mask id="mascara-corazon" maskContentUnits="objectBoundingBox">
                             <path fill="white" d="M0.5,0.85 
-                            C0.75,1 1,0.75 1,0.5 
-                            C1,0.25 0.75,0 0.5,0 
-                            C0.25,0 0,0.25 0,0.5 
-                            C0,0.75 0.25,1 0.5,0.85 Z"/>
+                                C0.75,1  1,0.75  1,0.5 
+                                C1,0.25  0.75,0  0.5,0 
+                                C0.25,0  0,0.25   0,0.5 
+                                C0,0.75  0.25,1   0.5,0.85 Z"/>
                         </mask>
                     </defs>
                 </svg>

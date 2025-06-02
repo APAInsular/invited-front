@@ -37,7 +37,7 @@ const Invitations = () => {
             return <WeddingWebsite wedding={wedding.wedding} />;
         case "Plantilla Acuarela":
             return <Template_1 wedding={wedding.wedding} />;
-        case "Plantilla Érase una vez":
+        case "Plantilla Erase una vez":
             return <Template_2 wedding={wedding.wedding} />;
         default:
             return <WeddingWebsite wedding={wedding.wedding} />;

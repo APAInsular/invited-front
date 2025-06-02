@@ -112,6 +112,10 @@
     align-items: center;
 }
 
+.flower-template2 {
+    position: relative;
+}
+
 .number-template2 {
     position: absolute;
     top: 50%;

@@ -28,19 +28,27 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
             <h2 className="section-title-template2"><strong>Nos casamos en...</strong></h2>
             <div className="countdown-template2">
                 <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.days}</span>
+                    <div className="flower-template2">
+                        <span className="number-template2">{timeLeft.days}</span>
+                    </div>
                     <span className="label">Días</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.hours}</span>
+                    <div className="flower-template2">
+                        <span className="number-template2">{timeLeft.hours}</span>
+                    </div>
                     <span className="label">Horas</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.minutes}</span>
+                    <div className="flower-template2">
+                        <span className="number-template2">{timeLeft.minutes}</span>
+                    </div>
                     <span className="label">Minutos</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.seconds}</span>
+                    <div className="flower-template2">
+                        <span className="number-template2">{timeLeft.seconds}</span>
+                    </div>
                     <span className="label">Segundos</span>
                 </div>
             </div>

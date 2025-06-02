@@ -112,15 +112,6 @@
     align-items: center;
 }
 
-.flower-template2 {
-    background-image: url("../images/flor_dias_y_minutos-removebg-preview.png");
-    position: relative;
-    width: 90px;
-    height: 90px;
-    background-size: cover;
-    background-position: center;
-}
-
 .number-template2 {
     position: absolute;
     top: 50%;

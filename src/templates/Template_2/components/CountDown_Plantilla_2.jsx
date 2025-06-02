@@ -28,27 +28,19 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
             <h2 className="section-title-template2"><strong>Nos casamos en...</strong></h2>
             <div className="countdown-template2">
                 <div className="countdown-item-template2">
-                    <div className="flower-template2">
-                        <span className="number-template2">{timeLeft.days}</span>
-                    </div>
+                    <span className="number-template2">{timeLeft.days}</span>
                     <span className="label">Días</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <div className="flower-template2" style={{ backgroundImage: "url('./images/flor_horas_y_segundos-removebg-preview.png')" }}>
-                        <span className="number-template2">{timeLeft.hours}</span>
-                    </div>
+                    <span className="number-template2">{timeLeft.hours}</span>
                     <span className="label">Horas</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <div className="flower-template2" style={{ backgroundImage: "url('./images/flor_dias_y_minutos-removebg-preview.png')" }}>
-                        <span className="number-template2">{timeLeft.minutes}</span>
-                    </div>
+                    <span className="number-template2">{timeLeft.minutes}</span>
                     <span className="label">Minutos</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <div className="flower-template2" style={{ backgroundImage: "url('./images/flor_horas_y_segundos-removebg-preview.png')" }}>
-                        <span className="number-template2">{timeLeft.seconds}</span>
-                    </div>
+                    <span className="number-template2">{timeLeft.seconds}</span>
                     <span className="label">Segundos</span>
                 </div>
             </div>

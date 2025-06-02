@@ -16,20 +16,6 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
     return (
         <div className="container" style={{ marginTop: "60px" }}>
             <div className="position-relative d-inline-block mb-4">
-
-                <svg width="0" height="0">
-                    <defs>
-                        <mask id="mascara-corazon" maskContentUnits="objectBoundingBox">
-                            <g transform="translate(0,1) scale(1,-1)">
-                                <path fill="white" d="M0.5,0.85 
-                                C0.75,1  1,0.75  1,0.5 
-                                C1,0.25  0.75,0  0.5,0 
-                                C0.25,0  0,0.25   0,0.5 
-                                C0,0.75  0.25,1   0.5,0.85 Z"/>
-                            </g>
-                        </mask>
-                    </defs>
-                </svg>
                 <img src={imageUrl} alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
                 <div className="floral-frame-template2"></div>
             </div>

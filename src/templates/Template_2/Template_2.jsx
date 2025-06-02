@@ -38,7 +38,7 @@ const Template_2 = ({ wedding }) => {
             <section className="header-invite-template2 text-center py-4 section-bg-template2 bg-portada-template2">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
-            <section className="section-bg-template2 bg-countdown-template2 py-5">
+            <section className="section-bg-template2 bg-countdown-template2">
                 <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} />
                 <Location location={wedding.location.city} country={wedding.location.country} />
                 <CountDown weddingDate={wedding.weddingDate} />

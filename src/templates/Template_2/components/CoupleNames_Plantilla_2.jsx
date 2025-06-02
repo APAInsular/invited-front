@@ -19,7 +19,7 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
                 <img src={imageUrl} alt="Samantha y Javier" className="img-fluid rounded-circle header-photo"></img>
                 <div className="floral-frame"></div>
             </div>
-            <h1 className="invite-name mt-3 mb-4"><strong>{groom}<br></br>&<br></br>{bride}</strong></h1>
+            <h1 className="invite-name mt-3 mb-4"><strong>{groom}<br></br>& cambio<br></br>{bride}</strong></h1>
             <div className="d-flex justify-content-center">
                 <p className="invite-text mb-4">
                     Tenemos el gusto de invitaros a nuestra boda que tendrá lugar

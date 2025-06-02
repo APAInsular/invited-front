@@ -15,7 +15,7 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
 
     return (
         <div className="container" style={{ marginTop: "60px" }}>
-            <div className="position-relative d-inline-block mb-4 hearth-frame">
+            <div className="position-relative d-inline-block mb-4">
                 <img src={imageUrl} alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
                 <div className="floral-frame-template2"></div>
             </div>

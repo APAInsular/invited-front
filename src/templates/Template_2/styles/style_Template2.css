@@ -46,7 +46,13 @@
     object-fit: cover;
     position: relative;
     z-index: 1;
-    margin-top: 125px;
+    margin-top: 100px;
+
+    /* Aplicar la máscara SVG: */
+    mask: url(#mascara-corazon);
+    mask-type: alpha;
+    -webkit-mask: url(#mascara-corazon);
+    -webkit-mask-type: alpha;
 }
 
 .floral-frame-template2 {

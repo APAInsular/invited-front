@@ -49,7 +49,7 @@ const Template_2 = ({ wedding }) => {
             <section className="py-5 mt-4 section-bg bg-gallery">
                 <Gallery images={newImages} speed={20} />
             </section>
-            <section className="py-5 section-bg bg-gallery">
+            <section className="py-5 section-bg bg-portada">
                 <WeddingForm weddingId={wedding.id} />
             </section>
         </div>

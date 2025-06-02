@@ -24,32 +24,25 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
     }, [weddingDate]);
 
     return (
-        <section className="py-5 text-center bg-countdown-template2 my-4 py-5">
-            <h2 className="section-title-template2"><strong>Nos casamos en...</strong></h2>
-            <div className="countdown-template2">
+        <section className="countdown-section-template2">
+            <h2 className="countdown-title-template2">Solo faltan....</h2>
+            <div className="castle-background-template2"></div>
+            <div className="countdown-numbers-template2">
                 <div className="countdown-item-template2">
-                    <div className="flower-template2">
-                        <span className="number-template2">{timeLeft.days}</span>
-                    </div>
-                    <span className="label">Días</span>
+                    <span className="number-template2">{timeLeft.days.toString().padStart(2, '0')}</span>
+                    <span className="label-template2">Días</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <div className="flower-template2">
-                        <span className="number-template2">{timeLeft.hours}</span>
-                    </div>
-                    <span className="label">Horas</span>
+                    <span className="number-template2">{timeLeft.hours.toString().padStart(2, '0')}</span>
+                    <span className="label-template2">Horas</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <div className="flower-template2">
-                        <span className="number-template2">{timeLeft.minutes}</span>
-                    </div>
-                    <span className="label">Minutos</span>
+                    <span className="number-template2">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                    <span className="label-template2">Minutos</span>
                 </div>
                 <div className="countdown-item-template2">
-                    <div className="flower-template2">
-                        <span className="number-template2">{timeLeft.seconds}</span>
-                    </div>
-                    <span className="label">Segundos</span>
+                    <span className="number-template2">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                    <span className="label-template2">Segundos</span>
                 </div>
             </div>
         </section>

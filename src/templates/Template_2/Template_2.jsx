@@ -7,7 +7,7 @@ import Gallery from './components/Gallery_Plantilla_2';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_2';
 import WeddingForm from './components/WeddingForm_Plantilla_2';
 
-import "./styles/style.css"
+import "./styles/style_Template2.css"
 
 import { useEffect, useState } from 'react';
 

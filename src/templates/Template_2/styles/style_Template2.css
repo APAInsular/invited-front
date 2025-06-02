@@ -82,8 +82,17 @@
 
 .section-title-template2 {
     font-family: 'New Waltograph', cursive;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #6c5b7b;
+}
+
+
+.song-link-template2 {
+    font-size: 1rem;
+}
+
+.btn-cancion-template2 {
+    color: #909090
 }
 
 .section-subtitle-template2 {

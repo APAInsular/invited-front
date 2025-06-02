@@ -1,11 +1,4 @@
 @font-face {
-    font-family: 'Playlist Script';
-    src: url('/../../../assets/fonts/PlayListScript/Playlist-Script.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'New Waltograph';
     src: url('../../../assets/fonts/WaltoGraph/waltographUI.ttf') format('truetype');
     font-weight: normal;

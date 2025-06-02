@@ -51,12 +51,15 @@
 
 .floral-frame-template2 {
     background: url("../images/corazon_imagen_novios.png") center/cover no-repeat;
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-
-    clip-path: path('M150,25 C100, -25 0, 25 0, 100 C0, 175 75, 200 150, 250 C225, 200 300, 175 300, 100 C300, 25 200, -25 150, 25 Z');
-
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-top: 75px;
+    pointer-events: none;
 }
 
 .invite-name-template2 {

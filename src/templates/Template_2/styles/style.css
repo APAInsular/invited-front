@@ -1,9 +1,16 @@
-/* @font-face {
+@font-face {
     font-family: 'Playlist Script';
-    src: url('/fonts/PlayListScript/Playlist-Script.woff') format('woff');
+    src: url('/../../../assets/fonts/PlayListScript/Playlist-Script.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-} */
+}
+
+@font-face {
+    font-family: 'New Waltograph';
+    src: url('../../../assets/fonts/WaltoGraph/waltographUI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .body {
     background-color: #fff;
@@ -72,7 +79,7 @@
 }
 
 .invite-name {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'New Waltograph', cursive;
     font-size: 3rem;
     color: #6c5b7b;
 }

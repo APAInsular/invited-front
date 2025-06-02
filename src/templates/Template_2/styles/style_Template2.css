@@ -41,12 +41,13 @@
 }
 
 .header-photo-template2 {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
     position: relative;
     z-index: 1;
     margin-top: 175px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    clip-path: path("M 150 270 Q 30 180 75 90 Q 150 0 225 90 Q 270 180 150 270 Z");
 }
 
 .floral-frame-template2 {

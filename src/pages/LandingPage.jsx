@@ -222,7 +222,7 @@ const LandingPage = () => {
                     </div>
 
                     <div class="row g-4">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card h-100 border-0 shadow-sm hover-shadow">
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">
@@ -244,7 +244,7 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card h-100 border-0 shadow-sm hover-shadow">
                                 <div class="p-2 bg-pink-pastel">
                                     <div class="phone-mockup">
@@ -260,6 +260,28 @@ const LandingPage = () => {
                                     <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
                                     <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
                                     <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
+                                        Ver Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm hover-shadow">
+                                <div class="p-2 bg-pink-pastel">
+                                    <div class="phone-mockup">
+                                        <div class="phone-camera"></div>
+                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
+                                            <img src="/images/Plantilla_2.png"
+                                                alt="Invitación Moderna"
+                                                class="img-fluid w-auto"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
+                                    <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/luis-lucas/79" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
                                 </div>

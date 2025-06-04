@@ -161,27 +161,6 @@ const Crowdfunding = () => {
             `}</style>
 
             <div className="container-fluid px-0">
-                {/* Header */}
-                <header className="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-                    <div className="container">
-                        <a className="navbar-brand" href="/">
-                            <img src="https://www.invited.es/images/logo_invited.png" alt="Invited Logo" height="40" />
-                        </a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ms-auto">
-                                <li className="nav-item"><a className="nav-link" href="/">Inicio</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/blog">Blog</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/about">Sobre nosotros</a></li>
-                                <li className="nav-item"><a className="nav-link" href="/login">Iniciar sesión</a></li>
-                                <li className="nav-item"><a className="btn btn-outline-danger ms-2" href="/register">Registro</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </header>
-
                 {/* Hero Section */}
                 <section className="hero text-center">
                     <div className="container py-5">
@@ -230,7 +209,7 @@ const Crowdfunding = () => {
                             ].map((feature, idx) => (
                                 <div className="col-md-6 col-lg-3" key={idx}>
                                     <div className="feature-card p-4 h-100 bg-white text-center">
-                                        <img src={feature.img} alt={feature.alt} className="img-fluid mb-3" style={{ color: "black" }} />
+                                        <i className={`${feature.icon} text-rosa-fuerte`} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}></i>
                                         <h4 className="mb-3">{feature.title}</h4>
                                         <p>{feature.text}</p>
                                     </div>

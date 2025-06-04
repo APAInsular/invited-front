@@ -10,6 +10,11 @@ const Crowdfunding = () => {
                 rel="stylesheet"
             />
 
+            {/* Google Fonts */}
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
             {/* Estilos personalizados */}
             <style>{`
                 :root {
@@ -23,7 +28,21 @@ const Crowdfunding = () => {
                 
                 body {
                     color: var(--gris-texto);
-                    font-family: 'Arial', sans-serif;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.6;
+                }
+                
+                h1, h2, h3, h4, h5, h6,
+                .display-1, .display-2, .display-3, .display-4,
+                .hero h1, section h2 {
+                    font-family: 'Playfair Display', serif;
+                    font-weight: 600;
+                }
+                
+                .hero h1 {
+                    font-weight: 700;
                 }
                 
                 .bg-rosa-claro {
@@ -257,16 +276,14 @@ const Crowdfunding = () => {
                 </section>
 
                 {/* Video Section */}
-                {/* Video Section */}
-                {/* Video Section */}
                 <section className="py-5">
                     <div className="container">
                         <h2 className="text-center mb-5">Conoce Invited en acción</h2>
-                        <div className="ratio ratio-16x9"> {/* Relación de aspecto estándar */}
+                        <div className="ratio ratio-16x9">
                             <video
                                 controls
-                                className="object-fit-contain" /* Mantiene proporciones sin recortar */
-                                poster="/LogoInvited_3.png" /* Opcional */
+                                className="object-fit-contain"
+                                poster="/LogoInvited_3.png"
                             >
                                 <source src="/videos/Presentación_Invited.mp4" type="video/mp4" />
                             </video>
@@ -278,8 +295,8 @@ const Crowdfunding = () => {
                 <section className="py-5 bg-light">
                     <div className="container">
                         <h2 className="text-center mb-5">Cronograma de entregas</h2>
-                        <div className="d-flex justify-content-center"> {/* Contenedor centrado */}
-                            <div className="timeline-crowfunding" style={{ maxWidth: '800px' }}> {/* Ancho máximo */}
+                        <div className="d-flex justify-content-center">
+                            <div className="timeline-crowfunding" style={{ maxWidth: '800px' }}>
                                 {[
                                     ['6 de junio de 2025', 'Lanzamiento de la campaña en Kickstarter.'],
                                     ['6 de julio de 2025', 'Inicio formal del desarrollo (I+D y arquitectura).'],

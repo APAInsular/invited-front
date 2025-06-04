@@ -268,7 +268,7 @@ const Crowdfunding = () => {
                             </div>
                             <div className="col-lg-6">
                                 <img
-                                    src="https://www.invited.es/images/hero-crowdfunding-2.jpg"
+                                    src="/images/Plantilla_1.png"
                                     alt="Javier y Antonio trabajando en Invited"
                                     className="img-fluid rounded shadow"
                                 />

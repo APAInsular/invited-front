@@ -287,7 +287,7 @@ const Crowdfunding = () => {
                         <h2 className="text-center mb-5">Conoce Invited en acción</h2>
                         <div className="video-wrapper">
                             <iframe
-                                src="https://www.youtube.com/embed/TU_VIDEO_ID?rel=0&autoplay=0"
+                                src="https://youtube.com/shorts/zY8YaqLEOmY?feature=share"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen

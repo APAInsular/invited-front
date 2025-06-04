@@ -278,19 +278,23 @@ const Crowdfunding = () => {
                 <section className="py-5 bg-light">
                     <div className="container">
                         <h2 className="text-center mb-5">Cronograma de entregas</h2>
-                        <div className="timeline-crowfunding d-flex justify-content-center">
-                            {[
-                                ['6 de junio de 2025', 'Lanzamiento de la campaña en Kickstarter.'],
-                                ['6 de julio de 2025', 'Inicio formal del desarrollo (I+D y arquitectura).'],
-                                ['6 de agosto de 2025', 'Implementación del panel de proveedores y pruebas internas.'],
-                                ['6 de septiembre de 2025', 'Diseño e integración de 20 plantillas premium.'],
-                                ['30 de septiembre de 2025', 'Pruebas finales (QA), ajustes y lanzamiento completo.']
-                            ].map(([date, desc], i) => (
-                                <div className="timeline-item-crowfunding ps-4" key={i}>
-                                    <h4 className="text-rosa-fuerte">{date}</h4>
-                                    <p>{desc}</p>
-                                </div>
-                            ))}
+                        <div className="d-flex justify-content-center"> {/* Contenedor centrado */}
+                            <div className="timeline-crowfunding" style={{ maxWidth: '800px' }}> {/* Ancho máximo */}
+                                {[
+                                    ['6 de junio de 2025', 'Lanzamiento de la campaña en Kickstarter.'],
+                                    ['6 de julio de 2025', 'Inicio formal del desarrollo (I+D y arquitectura).'],
+                                    ['6 de agosto de 2025', 'Implementación del panel de proveedores y pruebas internas.'],
+                                    ['6 de septiembre de 2025', 'Diseño e integración de 20 plantillas premium.'],
+                                    ['30 de septiembre de 2025', 'Pruebas finales (QA), ajustes y lanzamiento completo.']
+                                ].map(([date, desc], i) => (
+                                    <div className="timeline-item-crowfunding position-relative ps-4 mb-4" key={i}>
+                                        <div className="timeline-bullet position-absolute start-0 translate-middle-x bg-white border border-3 border-rosa-fuerte rounded-circle"
+                                            style={{ width: '20px', height: '20px', top: '5px' }}></div>
+                                        <h4 className="text-rosa-fuerte mb-2">{date}</h4>
+                                        <p className="mb-0">{desc}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>

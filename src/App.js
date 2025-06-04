@@ -19,6 +19,7 @@ import ConditionsOfUse from './pages/legalPages/ConditionsOfUse';
 import CookiesPolicy from './pages/legalPages/CookiesPolicy';
 import ThankYouPage from './pages/ThankYouPage';
 import AboutUs from './pages/AboutUs';
+import Crowfunding from './pages/Crowfunding';
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,8 @@ const router = createBrowserRouter([
   { path: "/terminos-y-condiciones", element: <ConditionsOfUse /> },
   { path: "/politica-de-cookies", element: <CookiesPolicy /> },
   { path: "/thankyou", element: <ThankYouPage /> },
-  { path: "/about-us", element: <AboutUs /> }
+  { path: "/about-us", element: <AboutUs /> },
+  { path: "/crowfunding", element: <Crowfunding /> }
 ]);
 
 function App() {

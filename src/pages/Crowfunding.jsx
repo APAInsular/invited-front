@@ -322,7 +322,7 @@ const Crowdfunding = () => {
                         <div className="row g-4">
                             {[
                                 {
-                                    title: 'Early Bird – Invitación Digital (€48)',
+                                    title: 'Early Bird – Invitación Digital (48€)',
                                     items: [
                                         '1 invitación digital (valor €119) con 60% de descuento',
                                         'Envíos ilimitados (enlace WhatsApp/email)',
@@ -332,7 +332,7 @@ const Crowdfunding = () => {
                                     ]
                                 },
                                 {
-                                    title: 'Proveedor – Pack 5 Invitaciones (€446)',
+                                    title: 'Proveedor – Pack 5 Invitaciones (446€)',
                                     items: [
                                         '5 invitaciones digitales con 25% de descuento',
                                         'Panel de proveedores para gestionar invitaciones',
@@ -341,7 +341,7 @@ const Crowdfunding = () => {
                                     ]
                                 },
                                 {
-                                    title: 'Proveedor – Pack 10 Invitaciones (€833)',
+                                    title: 'Proveedor – Pack 10 Invitaciones (833€)',
                                     items: [
                                         '10 invitaciones digitales con 30% de descuento',
                                         'Panel de proveedores',
@@ -350,7 +350,7 @@ const Crowdfunding = () => {
                                     ]
                                 },
                                 {
-                                    title: 'Proveedor – Pack 20 Invitaciones (€1.547)',
+                                    title: 'Proveedor – Pack 20 Invitaciones (1.547€)',
                                     items: [
                                         '20 invitaciones digitales con 35% de descuento',
                                         'Panel de proveedores',
@@ -359,7 +359,7 @@ const Crowdfunding = () => {
                                     ]
                                 },
                                 {
-                                    title: 'Creador de Plantillas (€250)',
+                                    title: 'Creador de Plantillas (250€)',
                                     items: [
                                         'Diseño colaborativo de tu propia plantilla',
                                         '20% de royalties en cada venta futura',
@@ -368,7 +368,7 @@ const Crowdfunding = () => {
                                     ]
                                 },
                                 {
-                                    title: 'White-Label Empresarial (€3.900)',
+                                    title: 'White-Label Empresarial (3.900€)',
                                     items: [
                                         'Licencia "llave en mano" con rebranding completo',
                                         'Servidor y dominio incluidos',

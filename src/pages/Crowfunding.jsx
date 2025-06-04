@@ -305,8 +305,6 @@ const Crowdfunding = () => {
                                     ['30 de septiembre de 2025', 'Pruebas finales (QA), ajustes y lanzamiento completo.']
                                 ].map(([date, desc], i) => (
                                     <div className="timeline-item-crowfunding position-relative ps-4 mb-4" key={i}>
-                                        <div className="timeline-bullet position-absolute start-0 translate-middle-x bg-white border border-3 border-rosa-fuerte rounded-circle"
-                                            style={{ width: '20px', height: '20px', top: '5px' }}></div>
                                         <h4 className="text-rosa-fuerte mb-2">{date}</h4>
                                         <p className="mb-0">{desc}</p>
                                     </div>

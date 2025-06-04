@@ -257,16 +257,22 @@ const Crowdfunding = () => {
                 </section>
 
                 {/* Video Section */}
+                {/* Video Section */}
                 <section className="py-5">
                     <div className="container">
                         <h2 className="text-center mb-5">Conoce Invited en acción</h2>
-                        <div className="video-wrapper">
-                            <iframe
-                                src="https://www.youtube.com/shorts/zY8YaqLEOmY?embed_config={...}"
-                                frameBorder="0"
-                                allowFullScreen
-                                title="Invited Video"
-                            />
+                        <div className="video-wrapper rounded-3 overflow-hidden">
+                            <video
+                                controls
+                                autoPlay
+                                muted
+                                loop
+                                className="w-100"
+                                poster="/LogoInvited_3.png"  // Opcional: imagen de portada
+                            >
+                                <source src="/videos/Presentación_Invited.mp4" type="video/mp4" />
+                                Tu navegador no soporta el elemento de video.
+                            </video>
                         </div>
                     </div>
                 </section>

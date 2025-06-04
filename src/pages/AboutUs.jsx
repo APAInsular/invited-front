@@ -58,17 +58,17 @@ const AboutUs = () => {
                 <section style={{ backgroundColor: '#F7F3EF', padding: '60px 40px', borderRadius: '12px', marginBottom: '80px', display: 'flex', justifyContent: 'space-around' }}>
                     <div style={{ maxWidth: '220px', backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                         <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
-                        <h3 style={{ fontWeight: '700', marginBottom: '10px' }}>Pasión</h3>
+                        <h3 style={{ fontWeight: '600', marginBottom: '10px' }}>Pasión</h3>
                         <p style={{ fontSize: '0.9rem', color: '#7E6B5A' }}>Amamos lo que hacemos y ponemos nuestro corazón en cada detalle de vuestras invitaciones.</p>
                     </div>
                     <div style={{ maxWidth: '220px', backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                         <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
-                        <h3 style={{ fontWeight: '700', marginBottom: '10px' }}>Comunicación</h3>
+                        <h3 style={{ fontWeight: '600', marginBottom: '10px' }}>Comunicación</h3>
                         <p style={{ fontSize: '0.9rem', color: '#7E6B5A' }}>Escuchamos vuestras ideas y mantenemos un diálogo constante durante todo el proceso.</p>
                     </div>
                     <div style={{ maxWidth: '220px', backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                         <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
-                        <h3 style={{ fontWeight: '700', marginBottom: '10px' }}>Creatividad</h3>
+                        <h3 style={{ fontWeight: '600', marginBottom: '10px' }}>Creatividad</h3>
                         <p style={{ fontSize: '0.9rem', color: '#7E6B5A' }}>Buscamos soluciones únicas y personalizadas para que vuestra invitación sea verdaderamente especial.</p>
                     </div>
                 </section>

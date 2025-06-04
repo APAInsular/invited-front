@@ -133,7 +133,7 @@ const Crowdfunding = () => {
                 .timeline-item-crowfunding::before {
                     content: '';
                     position: absolute;
-                    left: -0.75rem; /* Ajustamos a -1rem para alinear con la línea */
+                    left: -1rem; /* Ajustamos a -1rem para alinear con la línea */
                     top: 0.5rem; /* Pequeño ajuste vertical para mejor alineación */
                     width: 16px;
                     height: 16px;

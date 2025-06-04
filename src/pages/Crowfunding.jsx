@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const Crowdfunding = () => {
     return (
@@ -158,27 +159,6 @@ const Crowdfunding = () => {
                     left: 0;
                 }
             `}</style>
-
-            {/* Header */}
-            <header className="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-                <div className="container">
-                    <a className="navbar-brand" href="/">
-                        <img src="https://www.invited.es/images/logo_invited.png" alt="Invited Logo" height="40" />
-                    </a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ms-auto">
-                            <li className="nav-item"><a className="nav-link" href="/">Inicio</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/blog">Blog</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/about">Sobre nosotros</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/login">Iniciar sesión</a></li>
-                            <li className="nav-item"><a className="btn btn-outline-danger ms-2" href="/register">Registro</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
 
             <div className="container-fluid px-0">
                 {/* Header */}
@@ -415,6 +395,8 @@ const Crowdfunding = () => {
                     </div>
                 </section>
             </div>
+
+            <Footer />
 
             {/* Bootstrap JS */}
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -181,7 +181,7 @@ const Crowdfunding = () => {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-5">
+                <section className="py-5 my-4">
                     <div className="container">
                         <h2 className="text-center mb-5">¿Por qué elegir Invited?</h2>
                         <div className="row g-4">

@@ -278,7 +278,7 @@ const Crowdfunding = () => {
                 <section className="py-5 bg-light">
                     <div className="container">
                         <h2 className="text-center mb-5">Cronograma de entregas</h2>
-                        <div className="timeline-crowfunging">
+                        <div className="timeline-crowfunding d-flex justify-content-center">
                             {[
                                 ['6 de junio de 2025', 'Lanzamiento de la campaña en Kickstarter.'],
                                 ['6 de julio de 2025', 'Inicio formal del desarrollo (I+D y arquitectura).'],

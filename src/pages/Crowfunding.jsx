@@ -208,26 +208,22 @@ const Crowdfunding = () => {
                         <div className="row g-4">
                             {[
                                 {
-                                    img: "https://www.invited.es/images/icon_time_cost.svg",
-                                    alt: "Ahorra tiempo y costes",
+                                    icon: "bi bi-clock-history", // Icono de reloj (para ahorro de tiempo)
                                     title: "Ahorra tiempo y costes",
                                     text: "Evita la impresión y el envío postal. Con nuestras invitaciones digitales, todo es más rápido y económico."
                                 },
                                 {
-                                    img: "https://www.invited.es/images/icon_design.svg",
-                                    alt: "Diseño único y personalizable",
+                                    icon: "bi bi-palette", // Icono de paleta de colores
                                     title: "Diseño único y personalizable",
                                     text: "Elige tu plantilla favorita y añade música para reflejar la esencia de tu celebración."
                                 },
                                 {
-                                    img: "https://www.invited.es/images/icon_rsvp.svg",
-                                    alt: "Confirmaciones en tiempo real (RSVP)",
+                                    icon: "bi bi-check-circle", // Icono de checkmark en círculo
                                     title: "Confirmaciones en tiempo real (RSVP)",
                                     text: "Tus invitados podrán confirmar asistencia, elegir menú y notificar alergias. Tú recibirás avisos en tiempo real."
                                 },
                                 {
-                                    img: "https://www.invited.es/images/icon_countdown.svg",
-                                    alt: "Cuenta atrás y detalles del evento",
+                                    icon: "bi bi-calendar-event", // Icono de calendario
                                     title: "Cuenta atrás y detalles del evento",
                                     text: "Añade la fecha, ubicaciones y toda la información clave para tus invitados, con un elegante temporizador en pantalla."
                                 }

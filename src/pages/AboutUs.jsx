@@ -55,7 +55,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* Valores */}
-                <section className='row' style={{ backgroundColor: '#F7F3EF', padding: '60px 40px', borderRadius: '12px', marginBottom: '80px', display: 'flex', justifyContent: 'space-around' }}>
+                <section className='row g-4' style={{ backgroundColor: '#F7F3EF', padding: '60px 40px', borderRadius: '12px', marginBottom: '80px', display: 'flex', justifyContent: 'space-around' }}>
                     <div className='col-md-4' style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                         <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
                         <h3 style={{ fontWeight: '600', marginBottom: '10px' }}>Pasión</h3>

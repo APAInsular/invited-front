@@ -245,7 +245,7 @@ const Crowdfunding = () => {
                                     <li className="mb-2"><strong>Escalabilidad:</strong> ampliaremos Invited a cumpleaños, bautizos y más si superamos el objetivo.</li>
                                 </ul>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 d-flex justify-content-center">
                                 <img
                                     src="/images/Plantilla_1.png"
                                     alt="Javier y Antonio trabajando en Invited"

@@ -230,7 +230,7 @@ const Crowdfunding = () => {
                             ].map((feature, idx) => (
                                 <div className="col-md-6 col-lg-3" key={idx}>
                                     <div className="feature-card p-4 h-100 bg-white text-center">
-                                        <img src={feature.img} alt={feature.alt} className="img-fluid mb-3" />
+                                        <img src={feature.img} alt={feature.alt} className="img-fluid mb-3" style={{ color: "black" }} />
                                         <h4 className="mb-3">{feature.title}</h4>
                                         <p>{feature.text}</p>
                                     </div>

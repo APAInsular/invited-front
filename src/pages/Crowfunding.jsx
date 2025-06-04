@@ -258,20 +258,17 @@ const Crowdfunding = () => {
 
                 {/* Video Section */}
                 {/* Video Section */}
+                {/* Video Section */}
                 <section className="py-5">
                     <div className="container">
                         <h2 className="text-center mb-5">Conoce Invited en acción</h2>
-                        <div className="video-wrapper rounded-3 overflow-hidden">
+                        <div className="ratio ratio-16x9"> {/* Relación de aspecto estándar */}
                             <video
                                 controls
-                                autoPlay
-                                muted
-                                loop
-                                className="w-100"
-                                poster="/LogoInvited_3.png"  // Opcional: imagen de portada
+                                className="object-fit-contain" /* Mantiene proporciones sin recortar */
+                                poster="/LogoInvited_3.png" /* Opcional */
                             >
                                 <source src="/videos/Presentación_Invited.mp4" type="video/mp4" />
-                                Tu navegador no soporta el elemento de video.
                             </video>
                         </div>
                     </div>

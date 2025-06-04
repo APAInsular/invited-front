@@ -1,154 +1,184 @@
 import React from "react";
-import Head from "next/head";
 
 const Crowdfunding = () => {
     return (
-        <>
-            <Head>
-                <link
-                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-                    rel="stylesheet"
-                />
-                <style>{`
-                    :root {
-                        --rosa-claro: #fddede;
-                        --rosa-fuerte: #f97c7c;
-                        --gris-medio: #555555;
-                        --gris-claro: #f7f7f7;
-                        --blanco: #ffffff;
-                        --gris-texto: #333333;
-                    }
-                    
-                    body {
-                        color: var(--gris-texto);
-                    }
-                    
-                    .bg-rosa-claro {
-                        background-color: var(--rosa-claro);
-                    }
-                    
-                    .bg-rosa-fuerte {
-                        background-color: var(--rosa-fuerte);
-                    }
-                    
-                    .text-rosa-fuerte {
-                        color: var(--rosa-fuerte);
-                    }
-                    
-                    .btn-primary {
-                        background-color: var(--rosa-fuerte);
-                        border-color: var(--rosa-fuerte);
-                    }
-                    
-                    .btn-primary:hover {
-                        background-color: var(--gris-medio);
-                        border-color: var(--gris-medio);
-                    }
-                    
-                    .navbar {
-                        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                    }
-                    
-                    .hero {
-                        background: linear-gradient(rgba(253, 222, 222, 0.8), rgba(253, 222, 222, 0.9)), 
-                                    url('https://www.invited.es/images/hero-bg.jpg');
-                        background-size: cover;
-                        background-position: center;
-                        padding: 6rem 0;
-                    }
-                    
-                    .feature-card {
-                        transition: transform 0.3s;
-                        border-radius: 10px;
-                    }
-                    
-                    .feature-card:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                    }
-                    
-                    .feature-card img {
-                        height: 80px;
-                        margin-bottom: 1rem;
-                    }
-                    
-                    .video-wrapper {
-                        position: relative;
-                        padding-bottom: 56.25%; /* 16:9 */
-                        height: 0;
-                        overflow: hidden;
-                    }
-                    
-                    .video-wrapper iframe {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 10px;
-                    }
-                    
-                    .timeline {
-                        position: relative;
-                        padding-left: 1.5rem;
-                    }
-                    
-                    .timeline::before {
-                        content: '';
-                        position: absolute;
-                        left: 7px;
-                        top: 0;
-                        height: 100%;
-                        width: 2px;
-                        background: var(--rosa-fuerte);
-                    }
-                    
-                    .timeline-item {
-                        position: relative;
-                        padding-bottom: 2rem;
-                    }
-                    
-                    .timeline-item::before {
-                        content: '';
-                        position: absolute;
-                        left: -1.7rem;
-                        top: 0;
-                        width: 16px;
-                        height: 16px;
-                        border-radius: 50%;
-                        background: var(--blanco);
-                        border: 3px solid var(--rosa-fuerte);
-                    }
-                    
-                    .reward-card {
-                        border: 1px solid var(--rosa-claro);
-                        border-radius: 10px;
-                        transition: all 0.3s;
-                    }
-                    
-                    .reward-card:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                        border-color: var(--rosa-fuerte);
-                    }
-                    
-                    .reward-card h3 {
-                        border-bottom: 1px solid var(--rosa-claro);
-                        padding-bottom: 1rem;
-                        color: var(--rosa-fuerte);
-                    }
-                    
-                    .reward-card ul {
-                        list-style-type: none;
-                    }
-                    
-                    .reward-card ul li::before {
-                        content: '✓';
-                        color: var(--rosa-fuerte);
-                        margin-right: 0.5rem;
-                    }
-                `}</style>
-            </Head>
+        <div className="container-fluid px-0">
+            {/* Bootstrap CSS */}
+            <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+                rel="stylesheet"
+            />
+
+            {/* Estilos personalizados */}
+            <style>{`
+                :root {
+                    --rosa-claro: #fddede;
+                    --rosa-fuerte: #f97c7c;
+                    --gris-medio: #555555;
+                    --gris-claro: #f7f7f7;
+                    --blanco: #ffffff;
+                    --gris-texto: #333333;
+                }
+                
+                body {
+                    color: var(--gris-texto);
+                    font-family: 'Arial', sans-serif;
+                }
+                
+                .bg-rosa-claro {
+                    background-color: var(--rosa-claro);
+                }
+                
+                .bg-rosa-fuerte {
+                    background-color: var(--rosa-fuerte);
+                }
+                
+                .text-rosa-fuerte {
+                    color: var(--rosa-fuerte);
+                }
+                
+                .btn-primary {
+                    background-color: var(--rosa-fuerte);
+                    border-color: var(--rosa-fuerte);
+                }
+                
+                .btn-primary:hover {
+                    background-color: var(--gris-medio);
+                    border-color: var(--gris-medio);
+                }
+                
+                .navbar {
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+                
+                .hero {
+                    background: linear-gradient(rgba(253, 222, 222, 0.8), rgba(253, 222, 222, 0.9)), 
+                                url('https://www.invited.es/images/hero-bg.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    padding: 6rem 0;
+                }
+                
+                .feature-card {
+                    transition: transform 0.3s;
+                    border-radius: 10px;
+                }
+                
+                .feature-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                }
+                
+                .feature-card img {
+                    height: 80px;
+                    margin-bottom: 1rem;
+                }
+                
+                .video-wrapper {
+                    position: relative;
+                    padding-bottom: 56.25%; /* 16:9 */
+                    height: 0;
+                    overflow: hidden;
+                }
+                
+                .video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+                
+                .timeline {
+                    position: relative;
+                    padding-left: 1.5rem;
+                }
+                
+                .timeline::before {
+                    content: '';
+                    position: absolute;
+                    left: 7px;
+                    top: 0;
+                    height: 100%;
+                    width: 2px;
+                    background: var(--rosa-fuerte);
+                }
+                
+                .timeline-item {
+                    position: relative;
+                    padding-bottom: 2rem;
+                }
+                
+                .timeline-item::before {
+                    content: '';
+                    position: absolute;
+                    left: -1.7rem;
+                    top: 0;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: var(--blanco);
+                    border: 3px solid var(--rosa-fuerte);
+                }
+                
+                .reward-card {
+                    border: 1px solid var(--rosa-claro);
+                    border-radius: 10px;
+                    transition: all 0.3s;
+                }
+                
+                .reward-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                    border-color: var(--rosa-fuerte);
+                }
+                
+                .reward-card h3 {
+                    border-bottom: 1px solid var(--rosa-claro);
+                    padding-bottom: 1rem;
+                    color: var(--rosa-fuerte);
+                }
+                
+                .reward-card ul {
+                    list-style-type: none;
+                    padding-left: 0;
+                }
+                
+                .reward-card ul li {
+                    position: relative;
+                    padding-left: 1.5rem;
+                    margin-bottom: 0.5rem;
+                }
+                
+                .reward-card ul li::before {
+                    content: '✓';
+                    color: var(--rosa-fuerte);
+                    position: absolute;
+                    left: 0;
+                }
+            `}</style>
+
+            {/* Header */}
+            <header className="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+                <div className="container">
+                    <a className="navbar-brand" href="/">
+                        <img src="https://www.invited.es/images/logo_invited.png" alt="Invited Logo" height="40" />
+                    </a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav ms-auto">
+                            <li className="nav-item"><a className="nav-link" href="/">Inicio</a></li>
+                            <li className="nav-item"><a className="nav-link" href="/blog">Blog</a></li>
+                            <li className="nav-item"><a className="nav-link" href="/about">Sobre nosotros</a></li>
+                            <li className="nav-item"><a className="nav-link" href="/login">Iniciar sesión</a></li>
+                            <li className="nav-item"><a className="btn btn-outline-danger ms-2" href="/register">Registro</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
 
             <div className="container-fluid px-0">
                 {/* Header */}
@@ -384,18 +414,11 @@ const Crowdfunding = () => {
                         </div>
                     </div>
                 </section>
-
-                {/* Footer */}
-                <footer className="py-4 bg-dark text-white">
-                    <div className="container text-center">
-                        <p className="mb-0">© 2025 Invited. Todos los derechos reservados.</p>
-                    </div>
-                </footer>
             </div>
 
             {/* Bootstrap JS */}
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        </>
+        </div>
     );
 };
 

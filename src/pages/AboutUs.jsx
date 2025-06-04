@@ -5,14 +5,14 @@ import Footer from '../components/Footer';
 const AboutUs = () => {
     return (
         <div style={{ backgroundColor: '#FBF8F5', color: '#4A4440', minHeight: '100vh', marginTop: '80px', fontFamily: "'Georgia', serif" }}>
-            <section style={{ maxWidth: '900px', margin: '0 auto', padding: '80px 20px 40px 20px' }}>
-                <h1 style={{ fontWeight: '700', fontSize: '3rem', color: '#C69C6D', marginBottom: '10px' }}>
-                    Sobre <span style={{ color: '#9B7B57' }}>Nosotros</span>
+            <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 20px 40px 20px' }}>
+                <h1 style={{ fontWeight: '700', fontSize: '3rem', color: '#F19292', marginBottom: '10px' }}>
+                    Sobre <span style={{ color: '#F19292' }}>Nosotros</span>
                 </h1>
                 <p style={{ fontStyle: 'italic', color: '#7E6B5A', marginBottom: '40px', fontSize: '1.15rem' }}>
                     El equipo detrás de las invitaciones que cuentan historias de amor
                 </p>
-                <div style={{ width: '60px', height: '4px', backgroundColor: '#C69C6D', marginBottom: '60px' }}></div>
+                <div style={{ width: '60px', height: '4px', backgroundColor: '#F19292', marginBottom: '60px' }}></div>
 
                 {/* Nuestra Historia */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '40px', marginBottom: '80px' }}>
@@ -29,7 +29,7 @@ const AboutUs = () => {
                         <img
                             src="/images/Nuestra_Historia.jpg"
                             alt="Nuestra historia"
-                            style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px rgba(198,156,109,0.3)' }}
+                            style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px #F19292' }}
                         />
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const AboutUs = () => {
                 {/* Nuestra Misi贸n */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '40px', marginBottom: '80px', flexDirection: 'row-reverse' }}>
                     <div style={{ flex: '1' }}>
-                        <h2 style={{ fontWeight: '700', fontSize: '1.75rem', marginBottom: '10px', borderBottom: '2px solid #C69C6D', display: 'inline-block', paddingBottom: '6px' }}>
+                        <h2 style={{ fontWeight: '700', fontSize: '1.75rem', marginBottom: '10px', borderBottom: '2px solid #F19292', display: 'inline-block', paddingBottom: '6px' }}>
                             Nuestra Misión
                         </h2>
                         <p style={{ color: '#6B5A4A', lineHeight: '1.6', fontSize: '1rem' }}>
@@ -49,7 +49,7 @@ const AboutUs = () => {
                         <img
                             src="/images/Nuestra_Mision.jpg"
                             alt="Nuestra mision"
-                            style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px rgba(198,156,109,0.3)' }}
+                            style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px #F19292' }}
                         />
                     </div>
                 </div>
@@ -57,17 +57,17 @@ const AboutUs = () => {
                 {/* Valores */}
                 <section style={{ backgroundColor: '#F7F3EF', padding: '60px 40px', borderRadius: '12px', marginBottom: '80px', display: 'flex', justifyContent: 'space-around' }}>
                     <div style={{ maxWidth: '220px', backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
-                        <div style={{ fontSize: '2rem', color: '#C69C6D', marginBottom: '15px' }}></div>
+                        <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
                         <h3 style={{ fontWeight: '700', marginBottom: '10px' }}>Pasión</h3>
                         <p style={{ fontSize: '0.9rem', color: '#7E6B5A' }}>Amamos lo que hacemos y ponemos nuestro corazón en cada detalle de vuestras invitaciones.</p>
                     </div>
                     <div style={{ maxWidth: '220px', backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
-                        <div style={{ fontSize: '2rem', color: '#C69C6D', marginBottom: '15px' }}></div>
+                        <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
                         <h3 style={{ fontWeight: '700', marginBottom: '10px' }}>Comunicación</h3>
                         <p style={{ fontSize: '0.9rem', color: '#7E6B5A' }}>Escuchamos vuestras ideas y mantenemos un diálogo constante durante todo el proceso.</p>
                     </div>
                     <div style={{ maxWidth: '220px', backgroundColor: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', textAlign: 'center' }}>
-                        <div style={{ fontSize: '2rem', color: '#4A4440', marginBottom: '15px' }}></div>
+                        <div style={{ fontSize: '2rem', color: '#F19292', marginBottom: '15px' }}></div>
                         <h3 style={{ fontWeight: '700', marginBottom: '10px' }}>Creatividad</h3>
                         <p style={{ fontSize: '0.9rem', color: '#7E6B5A' }}>Buscamos soluciones únicas y personalizadas para que vuestra invitación sea verdaderamente especial.</p>
                     </div>
@@ -76,7 +76,7 @@ const AboutUs = () => {
                 {/* Nuestro Compromiso */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '40px', marginBottom: '80px' }}>
                     <div style={{ flex: '1' }}>
-                        <h2 style={{ fontWeight: '700', fontSize: '1.75rem', marginBottom: '10px', borderBottom: '2px solid #C69C6D', display: 'inline-block', paddingBottom: '6px' }}>
+                        <h2 style={{ fontWeight: '700', fontSize: '1.75rem', marginBottom: '10px', borderBottom: '2px solid #F19292', display: 'inline-block', paddingBottom: '6px' }}>
                             Nuestro Compromiso
                         </h2>
                         <p style={{ color: '#6B5A4A', lineHeight: '1.6', fontSize: '1rem' }}>
@@ -88,7 +88,7 @@ const AboutUs = () => {
                         <img
                             src="/images/Logo_Invited_SinFondo.png"
                             alt="Nuestro compromiso"
-                            style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px rgba(198,156,109,0.3)' }}
+                            style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 10px #F19292' }}
                         />
                     </div>
                 </div>
@@ -101,10 +101,10 @@ const AboutUs = () => {
                     <p style={{ maxWidth: '600px', color: '#6B5A4A', fontSize: '1rem', marginBottom: '30px' }}>
                         Dejad que el primer capítulo de vuestra celebración sea tan especial como vosotros. Creemos juntos una invitación que emocione desde el primer vistazo.
                     </p>
-                    <button style={{ backgroundColor: '#C69C6D', color: '#fff', border: 'none', padding: '12px 30px', borderRadius: '20px', marginRight: '15px', cursor: 'pointer', fontWeight: '600', fontSize: '1rem' }}>
+                    <button style={{ backgroundColor: '#F19292', color: '#fff', border: 'none', padding: '12px 30px', borderRadius: '20px', marginRight: '15px', cursor: 'pointer', fontWeight: '600', fontSize: '1rem' }}>
                         Crear mi invitación
                     </button>
-                    <button style={{ backgroundColor: 'transparent', border: '2px solid #C69C6D', color: '#C69C6D', padding: '12px 30px', borderRadius: '20px', cursor: 'pointer', fontWeight: '600', fontSize: '1rem' }}>
+                    <button style={{ backgroundColor: 'transparent', border: '2px solid #F19292', color: '#F19292', padding: '12px 30px', borderRadius: '20px', cursor: 'pointer', fontWeight: '600', fontSize: '1rem' }}>
                         Ver ejemplos
                     </button>
                 </div>

@@ -91,12 +91,12 @@ const Crowdfunding = () => {
                     border-radius: 10px;
                 }
                 
-                .timeline {
+                .timeline-crowfunding {
                     position: relative;
                     padding-left: 1.5rem;
                 }
                 
-                .timeline::before {
+                .timeline-crowfunding::before {
                     content: '';
                     position: absolute;
                     left: 7px;
@@ -106,12 +106,12 @@ const Crowdfunding = () => {
                     background: var(--rosa-fuerte);
                 }
                 
-                .timeline-item {
+                .timeline-item-crowfunding {
                     position: relative;
                     padding-bottom: 2rem;
                 }
                 
-                .timeline-item::before {
+                .timeline-item-crowfunding::before {
                     content: '';
                     position: absolute;
                     left: -1.7rem;
@@ -262,9 +262,8 @@ const Crowdfunding = () => {
                         <h2 className="text-center mb-5">Conoce Invited en acción</h2>
                         <div className="video-wrapper">
                             <iframe
-                                src="https://youtube.com/shorts/zY8YaqLEOmY?si=EgyiHdbi-oQJZp8a"
+                                src="https://www.youtube.com/shorts/zY8YaqLEOmY?embed_config={...}"
                                 frameBorder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                                 title="Invited Video"
                             />
@@ -276,7 +275,7 @@ const Crowdfunding = () => {
                 <section className="py-5 bg-light">
                     <div className="container">
                         <h2 className="text-center mb-5">Cronograma de entregas</h2>
-                        <div className="timeline">
+                        <div className="timeline-crowfunging">
                             {[
                                 ['6 de junio de 2025', 'Lanzamiento de la campaña en Kickstarter.'],
                                 ['6 de julio de 2025', 'Inicio formal del desarrollo (I+D y arquitectura).'],
@@ -284,7 +283,7 @@ const Crowdfunding = () => {
                                 ['6 de septiembre de 2025', 'Diseño e integración de 20 plantillas premium.'],
                                 ['30 de septiembre de 2025', 'Pruebas finales (QA), ajustes y lanzamiento completo.']
                             ].map(([date, desc], i) => (
-                                <div className="timeline-item ps-4" key={i}>
+                                <div className="timeline-item-crowfunding ps-4" key={i}>
                                     <h4 className="text-rosa-fuerte">{date}</h4>
                                     <p>{desc}</p>
                                 </div>

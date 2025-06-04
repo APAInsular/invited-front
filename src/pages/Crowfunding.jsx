@@ -112,35 +112,36 @@ const Crowdfunding = () => {
                 
                 .timeline-crowfunding {
                     position: relative;
-                    padding-left: 1.5rem;
+                    padding-left: 2rem; /* Aumentamos el padding para dar más espacio */
                 }
-                
+
                 .timeline-crowfunding::before {
                     content: '';
                     position: absolute;
-                    left: 7px;
+                    left: 1rem; /* Ajustamos a 1rem (16px) que es mitad de 2rem */
                     top: 0;
                     height: 100%;
                     width: 2px;
                     background: var(--rosa-fuerte);
                 }
-                
+
                 .timeline-item-crowfunding {
                     position: relative;
                     padding-bottom: 2rem;
                 }
-                
+
                 .timeline-item-crowfunding::before {
                     content: '';
                     position: absolute;
-                    left: -1.7rem;
-                    top: 0;
+                    left: -1rem; /* Ajustamos a -1rem para alinear con la línea */
+                    top: 0.25rem; /* Pequeño ajuste vertical para mejor alineación */
                     width: 16px;
                     height: 16px;
                     border-radius: 50%;
                     background: var(--blanco);
                     border: 3px solid var(--rosa-fuerte);
-                }
+                    transform: translateX(-50%); /* Centrado perfecto */
+                }           
                 
                 .reward-card {
                     border: 1px solid var(--rosa-claro);

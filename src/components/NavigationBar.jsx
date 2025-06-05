@@ -42,16 +42,13 @@ const NavigationBar = () => {
                             onMouseEnter={() => setHovered("home")}
                             onMouseLeave={() => setHovered(null)}>Inicio
                         </Nav.Link>
-
                         <Nav.Link
-                            href="https://blog.invited.es"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
-                            onMouseEnter={() => setHovered("blog")}
+                            href="/about-us"
+                            style={hovered === "about" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseEnter={() => setHovered("about")}
                             onMouseLeave={() => setHovered(null)}
                         >
-                            Blog
+                            Sobre nosotros
                         </Nav.Link>
                         <Nav.Link
                             href="/crowfunding"
@@ -62,12 +59,14 @@ const NavigationBar = () => {
                             Crowfunding
                         </Nav.Link>
                         <Nav.Link
-                            href="/about-us"
-                            style={hovered === "about" ? { ...styles.default, ...styles.hover } : styles.default}
-                            onMouseEnter={() => setHovered("about")}
+                            href="https://blog.invited.es"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseEnter={() => setHovered("blog")}
                             onMouseLeave={() => setHovered(null)}
                         >
-                            Sobre nosotros
+                            Blog
                         </Nav.Link>
                         <Nav.Link
                             href="/contact"

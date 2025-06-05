@@ -55,8 +55,6 @@ const NavigationBar = () => {
                         </Nav.Link>
                         <Nav.Link
                             href="/crowfunding"
-                            target="_blank"
-                            rel="noopener noreferrer"
                             style={hovered === "crowfunding" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("crowfunding")}
                             onMouseLeave={() => setHovered(null)}
@@ -65,8 +63,6 @@ const NavigationBar = () => {
                         </Nav.Link>
                         <Nav.Link
                             href="/about-us"
-                            target="_blank"
-                            rel="noopener noreferrer"
                             style={hovered === "about" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("about")}
                             onMouseLeave={() => setHovered(null)}

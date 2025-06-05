@@ -150,26 +150,9 @@ const ContactPage = () => {
                                     <div>
                                         <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Dirección</h3>
                                         <p className="mb-0" style={{ color: customStyles.lightText }}>
-                                            Av. Insurgentes Sur 1234<br />
-                                            Col. Condesa, Ciudad de México<br />
-                                            C.P. 06140
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="d-flex mb-4">
-                                    <div className="me-3" style={{ color: customStyles.primaryColor }}>
-                                        <FaPhone size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Teléfonos</h3>
-                                        <p className="mb-0" style={{ color: customStyles.lightText }}>
-                                            <a href="tel:+525512345678" className="text-decoration-none" style={{ color: customStyles.lightText }}>
-                                                (55) 1234 5678
-                                            </a><br />
-                                            <a href="tel:+525598765432" className="text-decoration-none" style={{ color: customStyles.lightText }}>
-                                                (55) 9876 5432
-                                            </a>
+                                            Calle Canalejas 13<br />
+                                            Puerto del Rosario, Las Palmas (España)<br />
+                                            C.P. 35600
                                         </p>
                                     </div>
                                 </div>
@@ -182,11 +165,8 @@ const ContactPage = () => {
                                         <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Correo electrónico</h3>
                                         <p className="mb-0">
                                             <a href="mailto:contacto@empresa.com" className="text-decoration-none" style={{ color: customStyles.lightText }}>
-                                                contacto@empresa.com
+                                                contacto@invited.es
                                             </a><br />
-                                            <a href="mailto:soporte@empresa.com" className="text-decoration-none" style={{ color: customStyles.lightText }}>
-                                                soporte@empresa.com
-                                            </a>
                                         </p>
                                     </div>
                                 </div>
@@ -198,8 +178,8 @@ const ContactPage = () => {
                                     <div>
                                         <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Horario de atención</h3>
                                         <p className="mb-0" style={{ color: customStyles.lightText }}>
-                                            Lunes a Viernes: 9:00 - 18:00 hrs<br />
-                                            Sábados: 10:00 - 14:00 hrs<br />
+                                            Lunes a Viernes: 9:00 - 14:00 hrs<br />
+                                            Sábados: Cerrados<br />
                                             Domingos: Cerrado
                                         </p>
                                     </div>
@@ -208,16 +188,36 @@ const ContactPage = () => {
                                 <div className="mt-5">
                                     <h3 className="h5 mb-3" style={{ color: customStyles.textColor }}>Síguenos</h3>
                                     <div className="d-flex gap-3">
-                                        <a href="https://www.facebook.com/invit3d" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                        <a
+                                            href="https://www.facebook.com/invit3d"
+                                            className="btn btn-outline-secondary btn-icon rounded-circle p-3"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <FaFacebook size={24} />
                                         </a>
-                                        <a href="https://www.instagram.com/invited.es" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                        <a
+                                            href="https://www.instagram.com/invited.es"
+                                            className="btn btn-outline-secondary btn-icon rounded-circle p-3"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <FaInstagram size={24} />
                                         </a>
-                                        <a href="https://www.youtube.com/@Invited-es/" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                        <a
+                                            href="https://www.youtube.com/@Invited-es/"
+                                            className="btn btn-outline-secondary btn-icon rounded-circle p-3"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <FaYoutube size={24} />
                                         </a>
-                                        <a href="https://www.linkedin.com/company/platita/" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                        <a
+                                            href="https://www.linkedin.com/company/platita/"
+                                            className="btn btn-outline-secondary btn-icon rounded-circle p-3"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <FaLinkedin size={24} />
                                         </a>
                                     </div>

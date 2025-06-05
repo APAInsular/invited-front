@@ -20,6 +20,7 @@ import CookiesPolicy from './pages/legalPages/CookiesPolicy';
 import ThankYouPage from './pages/ThankYouPage';
 import AboutUs from './pages/AboutUs';
 import Crowfunding from './pages/Crowfunding';
+import ContactPage from './pages/ContactPage';
 
 
 const router = createBrowserRouter([
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
   { path: "/politica-de-cookies", element: <CookiesPolicy /> },
   { path: "/thankyou", element: <ThankYouPage /> },
   { path: "/about-us", element: <AboutUs /> },
-  { path: "/crowfunding", element: <Crowfunding /> }
+  { path: "/crowfunding", element: <Crowfunding /> },
+  { path: "/contact", element: <ContactPage /> }
 ]);
 
 function App() {

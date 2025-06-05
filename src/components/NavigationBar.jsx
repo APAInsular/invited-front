@@ -69,6 +69,14 @@ const NavigationBar = () => {
                         >
                             Sobre nosotros
                         </Nav.Link>
+                        <Nav.Link
+                            href="/contact"
+                            style={hovered === "contact" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseEnter={() => setHovered("contact")}
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            Contacto
+                        </Nav.Link>
 
                         {!user ? (
                             <>

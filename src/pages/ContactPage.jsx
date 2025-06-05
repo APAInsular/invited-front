@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaYoutube } from 'react-icons/fa';
 import Footer from '../components/Footer';
 
 const ContactPage = () => {
@@ -208,17 +208,17 @@ const ContactPage = () => {
                                 <div className="mt-5">
                                     <h3 className="h5 mb-3" style={{ color: customStyles.textColor }}>Síguenos</h3>
                                     <div className="d-flex gap-3">
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
-                                            <FaFacebook />
+                                        <a href="https://www.facebook.com/invit3d" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                            <FaFacebook size={24} />
                                         </a>
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
-                                            <FaInstagram />
+                                        <a href="https://www.instagram.com/invited.es" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                            <FaInstagram size={24} />
                                         </a>
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
-                                            <FaTwitter />
+                                        <a href="https://www.youtube.com/@Invited-es/" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                            <FaYoutube size={24} />
                                         </a>
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
-                                            <FaLinkedin />
+                                        <a href="https://www.linkedin.com/company/platita/" className="btn btn-outline-secondary btn-icon rounded-circle p-3">
+                                            <FaLinkedin size={24} />
                                         </a>
                                     </div>
                                 </div>

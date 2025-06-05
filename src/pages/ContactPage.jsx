@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import Footer from '../components/Footer';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -240,6 +241,8 @@ const ContactPage = () => {
                     ></iframe>
                 </div>
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };

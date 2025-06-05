@@ -208,16 +208,16 @@ const ContactPage = () => {
                                 <div className="mt-5">
                                     <h3 className="h5 mb-3" style={{ color: customStyles.textColor }}>Síguenos</h3>
                                     <div className="d-flex gap-3">
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-2">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
                                             <FaFacebook />
                                         </a>
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-2">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
                                             <FaInstagram />
                                         </a>
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-2">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
                                             <FaTwitter />
                                         </a>
-                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-2">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle p-4">
                                             <FaLinkedin />
                                         </a>
                                     </div>

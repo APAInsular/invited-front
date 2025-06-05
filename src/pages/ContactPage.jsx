@@ -214,9 +214,7 @@ const ContactPage = () => {
                                     <div>
                                         <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Horario de atención</h3>
                                         <p className="mb-0" style={{ color: customStyles.lightText }}>
-                                            Lunes a Viernes: 9:00 - 14:00 hrs<br />
-                                            Sábados: Cerrados<br />
-                                            Domingos: Cerrado
+                                            Lunes a Viernes: 9:00 - 14:00 hrs
                                         </p>
                                     </div>
                                 </div>

@@ -30,39 +30,49 @@ const ContactPage = () => {
             setMessage('¡Gracias por tu mensaje! Te responderemos en breve.');
             setFormData({ name: '', email: '', message: '' });
 
-            // Limpiar el mensaje después de 5 segundos
             setTimeout(() => setMessage(''), 5000);
         }, 1500);
     };
 
+    // Estilos personalizados
+    const customStyles = {
+        primaryColor: '#F19292',
+        primaryHover: '#e07d7d',
+        lightBg: '#FFF9F9',
+        textColor: '#333333',
+        lightText: '#6c757d'
+    };
+
     return (
-        <div className="bg-light">
+        <div style={{ backgroundColor: customStyles.lightBg }}>
             {/* Hero Section */}
-            <div className="bg-danger text-white py-5">
-                <div className="container text-center py-4">
+            <div style={{
+                backgroundColor: customStyles.primaryColor,
+                padding: '5rem 0'
+            }}>
+                <div className="container text-center text-white">
                     <h1 className="display-4 fw-bold mb-3">Contáctanos</h1>
-                    <p className="lead mx-auto" style={{ maxWidth: '800px' }}>
-                        Estamos aquí para ayudarte. Ponte en contacto con nosotros a través del formulario, redes sociales o visita nuestras oficinas.
+                    <p className="lead mx-auto" style={{ maxWidth: '700px' }}>
+                        Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.
                     </p>
                 </div>
             </div>
 
             {/* Main Content */}
-            <div className="container my-5">
+            <div className="container py-5">
                 <div className="row g-4">
-                    {/* Formulario de contacto - Columna izquierda */}
-                    <div className="col-lg-6">
-                        <div className="card shadow-sm h-100">
-                            <div className="card-body p-4">
-                                <h2 className="text-danger mb-4">¿Tienes preguntas?</h2>
-                                <p className="text-muted mb-4">Déjanos tu mensaje y te responderemos en breve.</p>
+                    {/* Formulario de contacto */}
+                    <div className="col-lg-7">
+                        <div className="card border-0 shadow-sm h-100">
+                            <div className="card-body p-4 p-md-5">
+                                <h2 className="mb-4" style={{ color: customStyles.primaryColor }}>Envía un mensaje</h2>
 
                                 <form onSubmit={handleSubmit}>
-                                    <div className="mb-3">
-                                        <label htmlFor="name" className="form-label">Nombre</label>
+                                    <div className="mb-4">
+                                        <label htmlFor="name" className="form-label fw-medium">Nombre completo</label>
                                         <input
                                             type="text"
-                                            className="form-control"
+                                            className="form-control py-2"
                                             id="name"
                                             name="name"
                                             value={formData.name}
@@ -71,11 +81,11 @@ const ContactPage = () => {
                                         />
                                     </div>
 
-                                    <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">Correo Electrónico</label>
+                                    <div className="mb-4">
+                                        <label htmlFor="email" className="form-label fw-medium">Correo electrónico</label>
                                         <input
                                             type="email"
-                                            className="form-control"
+                                            className="form-control py-2"
                                             id="email"
                                             name="email"
                                             value={formData.email}
@@ -85,12 +95,12 @@ const ContactPage = () => {
                                     </div>
 
                                     <div className="mb-4">
-                                        <label htmlFor="message" className="form-label">Mensaje</label>
+                                        <label htmlFor="message" className="form-label fw-medium">Tu mensaje</label>
                                         <textarea
-                                            className="form-control"
+                                            className="form-control py-2"
                                             id="message"
                                             name="message"
-                                            rows="5"
+                                            rows="6"
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
@@ -99,7 +109,13 @@ const ContactPage = () => {
 
                                     <button
                                         type="submit"
-                                        className="btn btn-danger w-100 py-2 fw-bold"
+                                        className="btn w-100 py-3 fw-bold text-white"
+                                        style={{
+                                            backgroundColor: customStyles.primaryColor,
+                                            border: 'none'
+                                        }}
+                                        onMouseOver={(e) => e.target.style.backgroundColor = customStyles.primaryHover}
+                                        onMouseOut={(e) => e.target.style.backgroundColor = customStyles.primaryColor}
                                         disabled={loading}
                                     >
                                         {loading ? (
@@ -107,11 +123,11 @@ const ContactPage = () => {
                                                 <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
                                                 Enviando...
                                             </>
-                                        ) : 'Enviar Mensaje'}
+                                        ) : 'Enviar mensaje'}
                                     </button>
 
                                     {message && (
-                                        <div className="alert alert-success mt-3 mb-0">
+                                        <div className="alert alert-success mt-4 mb-0">
                                             {message}
                                         </div>
                                     )}
@@ -120,79 +136,87 @@ const ContactPage = () => {
                         </div>
                     </div>
 
-                    {/* Información de contacto - Columna derecha */}
-                    <div className="col-lg-6">
-                        <div className="card shadow-sm h-100">
-                            <div className="card-body p-4">
-                                <h2 className="text-danger mb-4">Información de Contacto</h2>
+                    {/* Información de contacto */}
+                    <div className="col-lg-5">
+                        <div className="card border-0 shadow-sm h-100">
+                            <div className="card-body p-4 p-md-5">
+                                <h2 className="mb-4" style={{ color: customStyles.primaryColor }}>Información de contacto</h2>
 
                                 <div className="d-flex mb-4">
-                                    <div className="bg-danger bg-opacity-10 text-danger rounded-circle p-3 me-3 flex-shrink-0">
-                                        <FaMapMarkerAlt size={20} />
+                                    <div className="me-3" style={{ color: customStyles.primaryColor }}>
+                                        <FaMapMarkerAlt size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2">Dirección</h3>
-                                        <p className="text-muted mb-0">
-                                            Calle Principal #123, Colonia Centro<br />
-                                            Ciudad de México, CDMX 06000
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Dirección</h3>
+                                        <p className="mb-0" style={{ color: customStyles.lightText }}>
+                                            Av. Insurgentes Sur 1234<br />
+                                            Col. Condesa, Ciudad de México<br />
+                                            C.P. 06140
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="d-flex mb-4">
-                                    <div className="bg-danger bg-opacity-10 text-danger rounded-circle p-3 me-3 flex-shrink-0">
-                                        <FaPhone size={20} />
+                                    <div className="me-3" style={{ color: customStyles.primaryColor }}>
+                                        <FaPhone size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2">Teléfonos</h3>
-                                        <p className="text-muted mb-0">
-                                            Oficina: <a href="tel:+525512345678" className="text-decoration-none">(55) 1234 5678</a><br />
-                                            Móvil: <a href="tel:+525587654321" className="text-decoration-none">(55) 8765 4321</a>
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Teléfonos</h3>
+                                        <p className="mb-0" style={{ color: customStyles.lightText }}>
+                                            <a href="tel:+525512345678" className="text-decoration-none" style={{ color: customStyles.lightText }}>
+                                                (55) 1234 5678
+                                            </a><br />
+                                            <a href="tel:+525598765432" className="text-decoration-none" style={{ color: customStyles.lightText }}>
+                                                (55) 9876 5432
+                                            </a>
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="d-flex mb-4">
-                                    <div className="bg-danger bg-opacity-10 text-danger rounded-circle p-3 me-3 flex-shrink-0">
-                                        <FaEnvelope size={20} />
+                                    <div className="me-3" style={{ color: customStyles.primaryColor }}>
+                                        <FaEnvelope size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2">Correos Electrónicos</h3>
-                                        <p className="text-muted mb-0">
-                                            <a href="mailto:info@empresa.com" className="text-decoration-none">info@empresa.com</a><br />
-                                            <a href="mailto:soporte@empresa.com" className="text-decoration-none">soporte@empresa.com</a><br />
-                                            <a href="mailto:ventas@empresa.com" className="text-decoration-none">ventas@empresa.com</a>
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Correo electrónico</h3>
+                                        <p className="mb-0">
+                                            <a href="mailto:contacto@empresa.com" className="text-decoration-none" style={{ color: customStyles.lightText }}>
+                                                contacto@empresa.com
+                                            </a><br />
+                                            <a href="mailto:soporte@empresa.com" className="text-decoration-none" style={{ color: customStyles.lightText }}>
+                                                soporte@empresa.com
+                                            </a>
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="d-flex mb-4">
-                                    <div className="bg-danger bg-opacity-10 text-danger rounded-circle p-3 me-3 flex-shrink-0">
-                                        <FaClock size={20} />
+                                    <div className="me-3" style={{ color: customStyles.primaryColor }}>
+                                        <FaClock size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2">Horario de Atención</h3>
-                                        <p className="text-muted mb-0">
-                                            Lunes a Viernes: 9:00 am - 6:00 pm<br />
-                                            Sábados: 10:00 am - 2:00 pm<br />
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Horario de atención</h3>
+                                        <p className="mb-0" style={{ color: customStyles.lightText }}>
+                                            Lunes a Viernes: 9:00 - 18:00 hrs<br />
+                                            Sábados: 10:00 - 14:00 hrs<br />
                                             Domingos: Cerrado
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="mt-4 pt-2">
-                                    <h3 className="h5 mb-3">Síguenos en redes sociales</h3>
+                                <div className="mt-5">
+                                    <h3 className="h5 mb-3" style={{ color: customStyles.textColor }}>Síguenos</h3>
                                     <div className="d-flex gap-3">
-                                        <a href="#" className="btn btn-outline-danger btn-social rounded-circle">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle">
                                             <FaFacebook />
                                         </a>
-                                        <a href="#" className="btn btn-outline-danger btn-social rounded-circle">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle">
                                             <FaInstagram />
                                         </a>
-                                        <a href="#" className="btn btn-outline-danger btn-social rounded-circle">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle">
                                             <FaTwitter />
                                         </a>
-                                        <a href="#" className="btn btn-outline-danger btn-social rounded-circle">
+                                        <a href="#" className="btn btn-outline-secondary btn-icon rounded-circle">
                                             <FaLinkedin />
                                         </a>
                                     </div>

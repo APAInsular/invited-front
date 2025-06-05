@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaEnvelope, FaClock, FaYoutube } from 'react-icons/fa';
 import Footer from '../components/Footer';
+import apiClient from '../config/axiosConfig';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -20,19 +21,38 @@ const ContactPage = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        setMessage("");
 
-        // Simulación de envío del formulario
-        setTimeout(() => {
-            console.log('Formulario enviado:', formData);
-            setLoading(false);
-            setMessage('¡Gracias por tu mensaje! Te responderemos en breve.');
-            setFormData({ name: '', email: '', message: '' });
+        if (!window.grecaptcha) {
+            alert("reCAPTCHA no está cargado correctamente");
+            return;
+        }
 
-            setTimeout(() => setMessage(''), 5000);
-        }, 1500);
+        const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY; // O import.meta.env.VITE_RECAPTCHA_SITE_KEY si usas Vite
+        console.log("Usando site key:", siteKey); // 👈 Verifica en consola
+
+        const token = await window.grecaptcha.execute(siteKey, { action: "submit" });
+        console.log("Token generado:", token); // 👈 Verifica si se genera un token
+
+        if (!token) {
+            alert("Error al obtener el token de reCAPTCHA");
+            return;
+        }
+
+        try {
+            const finalData = { formData, token }
+            console.log(finalData)
+            await apiClient.post("/api/contact", finalData);
+            setMessage("Mensaje enviado con éxito.");
+        } catch (error) {
+            setMessage("Hubo un error al enviar el mensaje.");
+            console.error(error);
+        }
+
+        setLoading(false);
     };
 
     // Estilos personalizados

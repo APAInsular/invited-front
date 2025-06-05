@@ -44,7 +44,7 @@ const ContactPage = () => {
     };
 
     return (
-        <div style={{ backgroundColor: customStyles.lightBg, marginTop: "100px" }}>
+        <div style={{ backgroundColor: customStyles.lightBg, marginTop: "90px" }}>
             {/* Hero Section */}
             <div style={{
                 backgroundColor: customStyles.primaryColor,

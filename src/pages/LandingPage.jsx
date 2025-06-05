@@ -250,7 +250,7 @@ const LandingPage = () => {
                                     <div class="phone-mockup">
                                         <div class="phone-camera"></div>
                                         <div class="phone-screen d-flex align-items-center justify-content-center w-100">
-                                            <img
+                                            <img src='/images/Plantilla_1.png'
                                                 alt="Invitación Moderna"
                                                 class="img-fluid w-auto"></img>
                                         </div>

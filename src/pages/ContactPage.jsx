@@ -44,7 +44,7 @@ const ContactPage = () => {
     };
 
     return (
-        <div style={{ backgroundColor: customStyles.lightBg }}>
+        <div style={{ backgroundColor: customStyles.lightBg, marginTop: "100px" }}>
             {/* Hero Section */}
             <div style={{
                 backgroundColor: customStyles.primaryColor,
@@ -230,7 +230,7 @@ const ContactPage = () => {
                 <div className="mt-5 rounded-3 overflow-hidden shadow-sm">
                     <iframe
                         title="Ubicación de la empresa"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.88861477103!2d-99.1697679246908!3d19.42702048187285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1717638188768!5m2!1ses!2smx"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.032433578925!2d-13.86272292468735!3d28.50087507571541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4618b6c4e50aa3%3A0x5a9a80a6d20b1e0!2sCalle%20Canalejas%2C%2013%2C%2035600%20Puerto%20del%20Rosario%2C%20Las%20Palmas%2C%20Espa%C3%B1a!5e0!3m2!1ses!2smx!4v1717640000000!5m2!1ses!2smx"
                         width="100%"
                         height="450"
                         style={{ border: 'none' }}

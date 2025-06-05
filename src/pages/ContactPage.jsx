@@ -108,6 +108,22 @@ const ContactPage = () => {
                                         ></textarea>
                                     </div>
 
+                                    {/* Checkbox de términos y condiciones */}
+                                    <div className="mb-4 form-check">
+                                        <input
+                                            type="checkbox"
+                                            className="form-check-input"
+                                            id="terms"
+                                            name="terms"
+                                            checked={formData.terms || false}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                        <label htmlFor="terms" className="form-check-label ms-2">
+                                            Acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer" style={{ color: customStyles.primaryColor }}>términos y condiciones</a> y la <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer" style={{ color: customStyles.primaryColor }}>política de privacidad</a>
+                                        </label>
+                                    </div>
+
                                     <button
                                         type="submit"
                                         className="btn w-100 py-3 fw-bold text-white"

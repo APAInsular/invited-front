@@ -22,7 +22,7 @@ export default function MakeInvitationForm() {
         noviaName: ""
     });
 
-    const [templatePreview, setTemplatePreview] = useState('');
+    const [templatePreview, setTemplatePreview] = useState('/images/Plantilla_0.png');
 
     const [formData, setFormData] = useState({
         weddingDate: "",
@@ -248,8 +248,8 @@ export default function MakeInvitationForm() {
                 <Row>
                     {/* Columna izquierda: inputs */}
                     <Col xs={12} md={6}>
-                        <Row>
-                            <Col xs={12}>
+                        <Row className="align-items-center">
+                            <Col xs={12} className="align-items-center">
                                 <Form.Group className="mb-3">
                                     <Form.Label>Fecha de la boda*</Form.Label>
                                     <Form.Control
@@ -261,7 +261,7 @@ export default function MakeInvitationForm() {
                                     />
                                 </Form.Group>
                             </Col>
-                            <Col xs={12}>
+                            <Col xs={12} className="align-items-center">
                                 <Form.Group className="mb-3">
                                     <Form.Label>Plantilla a utilizar*</Form.Label>
                                     <Form.Select
@@ -285,7 +285,7 @@ export default function MakeInvitationForm() {
                     {/* Columna derecha: previsualización */}
                     <Col xs={12} md={6} className="d-flex align-items-center justify-content-center">
                         {templatePreview && (
-                            <div className="text-center w-100">
+                            <div className="text-center w-100 mb-2">
                                 <img
                                     src={templatePreview}
                                     alt="Previsualización de la plantilla"

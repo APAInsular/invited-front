@@ -26,7 +26,7 @@ export default function MakeInvitationForm() {
 
     const [formData, setFormData] = useState({
         weddingDate: "",
-        template: formattedTemplateName,
+        template: "s",
         foodType: "Sin Preferencias",
         guestCount: "",
         customMessage: "",
@@ -245,7 +245,7 @@ export default function MakeInvitationForm() {
                 </Row>
 
                 {/* Fecha y plantilla - se apilan en móviles */}
-                <Row>
+                <Row className="align-items-center mb-3">
                     {/* Columna izquierda: inputs */}
                     <Col xs={12} md={6}>
                         <Row className="align-items-center">
@@ -285,7 +285,7 @@ export default function MakeInvitationForm() {
                     {/* Columna derecha: previsualización */}
                     <Col xs={12} md={6} className="d-flex align-items-center justify-content-center">
                         {templatePreview && (
-                            <div className="text-center w-100 mb-2">
+                            <div className="text-center w-100">
                                 <img
                                     src={templatePreview}
                                     alt="Previsualización de la plantilla"

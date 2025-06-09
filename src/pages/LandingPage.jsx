@@ -235,8 +235,8 @@ const LandingPage = () => {
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Clásico</h3>
-                                    <p class="card-text text-muted">Elegancia tradicional con detalles dorados y tipografía serif.</p>
+                                    <h3 class="h4 card-title text-danger-emphasis">Clásico</h3>
+                                    <p class="card-text text-muted">Elegancia tradicional con detalles clásicos y tipografía serif.</p>
                                     <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/70" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
@@ -257,8 +257,8 @@ const LandingPage = () => {
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
-                                    <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
+                                    <h3 class="h4 card-title text-danger-emphasis">Acuarela BOHO</h3>
+                                    <p class="card-text text-muted">Diseño floral con colores frios y tipografía elegante.</p>
                                     <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
@@ -279,8 +279,8 @@ const LandingPage = () => {
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Estilo Moderno</h3>
-                                    <p class="card-text text-muted">Diseño limpio con espacios en blanco y tipografía sans-serif.</p>
+                                    <h3 class="h4 card-title text-danger-emphasis">Érase una vez</h3>
+                                    <p class="card-text text-muted">Diseño inspirado en Disney con un gran atractivo.</p>
                                     <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/luis-lucas/81" class="btn bg-pink-pastel text-dark border-0 w-100">
                                         Ver Demo
                                     </a>
@@ -289,10 +289,10 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* PRECIO */}
-            <section id="precio" className="precio">
+            <section section id="precio" className="precio" >
                 <div className="container">
                     <h2>Plan Único</h2>
                     <div className="precio-card">

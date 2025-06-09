@@ -263,17 +263,17 @@ export default function MakeInvitationForm() {
                                 <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>
                                 <option value="Plantilla Oscura" disabled>Plantilla Oscura</option>
                             </Form.Select>
-                            {templatePreview && (
-                                <div className="mt-2 text-center">
-                                    <img
-                                        src={templatePreview}
-                                        alt="Previsualización de la plantilla"
-                                        style={{ maxWidth: '100%', height: 'auto', maxHeight: '150px', borderRadius: '8px' }}
-                                    />
-                                </div>
-                            )}
                         </Form.Group>
                     </Col>
+                    {templatePreview && (
+                        <div className="mt-2 text-center">
+                            <img
+                                src={templatePreview}
+                                alt="Previsualización de la plantilla"
+                                style={{ maxWidth: '100%', height: 'auto', maxHeight: '250px', borderRadius: '8px' }}
+                            />
+                        </div>
+                    )}
                 </Row>
 
                 {/* Localización de la Boda */}

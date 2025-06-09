@@ -292,7 +292,7 @@ export default function MakeInvitationForm() {
                                     style={{
                                         maxWidth: '100%',
                                         height: 'auto',
-                                        maxHeight: '250px',
+                                        maxHeight: '400px',
                                         borderRadius: '8px',
                                         objectFit: 'contain',
                                     }}

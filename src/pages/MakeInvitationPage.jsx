@@ -246,35 +246,62 @@ export default function MakeInvitationForm() {
 
                 {/* Fecha y plantilla - se apilan en móviles */}
                 <Row>
+                    {/* Columna izquierda: inputs */}
                     <Col xs={12} md={6}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Fecha de la boda*</Form.Label>
-                            <Form.Control type="date" name="weddingDate" value={formData.weddingDate} onChange={handleChange} required />
-                        </Form.Group>
+                        <Row>
+                            <Col xs={12}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Fecha de la boda*</Form.Label>
+                                    <Form.Control
+                                        type="date"
+                                        name="weddingDate"
+                                        value={formData.weddingDate}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+                            <Col xs={12}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Plantilla a utilizar*</Form.Label>
+                                    <Form.Select
+                                        name="template"
+                                        value={formData.template}
+                                        onChange={handleChange}
+                                        required
+                                    >
+                                        <option value="Plantilla Romantica">Plantilla Clásica</option>
+                                        <option value="Plantilla Acuarela">Plantilla Acuarela</option>
+                                        <option value="Plantilla Erase una vez">Plantilla Érase una vez</option>
+                                        <option value="Plantilla Dramatica" disabled>Plantilla Dramática</option>
+                                        <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>
+                                        <option value="Plantilla Oscura" disabled>Plantilla Oscura</option>
+                                    </Form.Select>
+                                </Form.Group>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col xs={12} md={6}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Plantilla a utilizar*</Form.Label>
-                            <Form.Select name="template" value={formData.template} onChange={handleChange} required>
-                                <option value="Plantilla Romantica">Plantilla Clásica</option>
-                                <option value="Plantilla Acuarela">Plantilla Acuarela</option>
-                                <option value="Plantilla Erase una vez">Plantilla Érase una vez</option>
-                                <option value="Plantilla Dramatica" disabled>Plantilla Dramática</option>
-                                <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>
-                                <option value="Plantilla Oscura" disabled>Plantilla Oscura</option>
-                            </Form.Select>
-                        </Form.Group>
+
+                    {/* Columna derecha: previsualización */}
+                    <Col xs={12} md={6} className="d-flex align-items-center justify-content-center">
+                        {templatePreview && (
+                            <div className="text-center w-100">
+                                <img
+                                    src={templatePreview}
+                                    alt="Previsualización de la plantilla"
+                                    style={{
+                                        maxWidth: '100%',
+                                        height: 'auto',
+                                        maxHeight: '250px',
+                                        borderRadius: '8px',
+                                        objectFit: 'contain',
+                                    }}
+                                />
+                            </div>
+                        )}
                     </Col>
-                    {templatePreview && (
-                        <div className="mt-2 text-center">
-                            <img
-                                src={templatePreview}
-                                alt="Previsualización de la plantilla"
-                                style={{ maxWidth: '100%', height: 'auto', maxHeight: '250px', borderRadius: '8px' }}
-                            />
-                        </div>
-                    )}
                 </Row>
+
 
                 {/* Localización de la Boda */}
                 <h4 className="m-0">Localización de la Boda</h4>

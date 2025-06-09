@@ -6,7 +6,7 @@ import WeddingList from '../components/WeddingList';
 import GuestList from '../components/GuestList';
 import ProfileCard from '../components/ProfileCard';
 import Footer from '../components/Footer';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
 import NavbarAuth from '../components/NavbarAuth';
@@ -500,7 +500,15 @@ function Dashboard() {
                                         />
                                     </div>
                                     <div className="col-md-6">
-                                        {/* Puedes añadir otros componentes aquí */}
+                                        {user ? (
+                                            <Link
+                                                to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
+                                                className="btn btn-primary"
+                                            >
+                                                Empieza Ahora
+                                            </Link>
+                                        ) : null
+                                        }
                                     </div>
                                 </div>
 

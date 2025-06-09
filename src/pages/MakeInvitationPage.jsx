@@ -22,6 +22,8 @@ export default function MakeInvitationForm() {
         noviaName: ""
     });
 
+    const [templatePreview, setTemplatePreview] = useState('');
+
     const [formData, setFormData] = useState({
         weddingDate: "",
         template: formattedTemplateName,
@@ -41,6 +43,22 @@ export default function MakeInvitationForm() {
         coverImage: null,
         images: []
     });
+
+    useEffect(() => {
+        switch (formData.template) {
+            case 'Plantilla Romantica':
+                setTemplatePreview('/images/Plantilla_0.png');
+                break;
+            case 'Plantilla Acuarela':
+                setTemplatePreview('/images/Plantilla_1.png');
+                break;
+            case 'Plantilla Erase una vez':
+                setTemplatePreview('/images/Plantilla_2.png');
+                break;
+            default:
+                setTemplatePreview('');
+        }
+    }, [formData.template]);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -245,6 +263,15 @@ export default function MakeInvitationForm() {
                                 <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>
                                 <option value="Plantilla Oscura" disabled>Plantilla Oscura</option>
                             </Form.Select>
+                            {templatePreview && (
+                                <div className="mt-2 text-center">
+                                    <img
+                                        src={templatePreview}
+                                        alt="Previsualización de la plantilla"
+                                        style={{ maxWidth: '100%', height: 'auto', maxHeight: '150px', borderRadius: '8px' }}
+                                    />
+                                </div>
+                            )}
                         </Form.Group>
                     </Col>
                 </Row>

@@ -95,10 +95,10 @@ const NavigationBar = () => {
                             Contacto
                         </Nav.Link>
 
-                        <select style={{ ...styles.select }} value={language} onChange={handleChange}>
+                        {/* <select style={{ ...styles.select }} value={language} onChange={handleChange}>
                             <option style={{ ...styles.option }} value="es">🇪🇸 ES</option>
                             <option style={{ ...styles.option }} value="en">🇬🇧 EN</option>
-                        </select>
+                        </select> */}
 
                         {!user ? (
                             <>

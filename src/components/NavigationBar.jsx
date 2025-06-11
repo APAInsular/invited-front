@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { AuthContext } from '../context/AuthContext';
 import ImagenLogo from '../Images/Logo_Invited_SinFondo.png';
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from '../context/LaguageContext';
 
 const NavigationBar = () => {
     const { user, logout } = useContext(AuthContext);

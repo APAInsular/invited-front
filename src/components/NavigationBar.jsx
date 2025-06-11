@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { AuthContext } from '../context/AuthContext';
 import ImagenLogo from '../Images/Logo_Invited_SinFondo.png';
-import { useLanguage } from '../context/LaguageContext';
 
 const NavigationBar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -39,12 +38,6 @@ const NavigationBar = () => {
 
     const redirectToMain = () => {
         window.location.href = "/";
-    };
-
-    const { language, changeLanguage } = useLanguage();
-
-    const handleChange = (e) => {
-        changeLanguage(e.target.value);
     };
 
     return (

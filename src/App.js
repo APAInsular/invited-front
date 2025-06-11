@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AuthProvider } from './context/AuthContext';
-import { LanguageProvider } from './context/LaguageContext';
 import NavigationBar from './components/NavigationBar';
 import RegisterPartnerPage from './pages/RegisterPartnerPage';
 import Login from './pages/LoginPartnerPage';
@@ -51,16 +50,14 @@ function App() {
   const isInvitationRoute = regex.test(pathname);
 
   return (
-    <LanguageProvider>
-      <AuthProvider>
-        <div className='d-flex flex-column min-vh-100'>
-          {!isInvitationRoute && (
-            <NavigationBar />
-          )}
-          <RouterProvider router={router} />
-        </div>
-      </AuthProvider>
-    </LanguageProvider>
+    <AuthProvider>
+      <div className='d-flex flex-column min-vh-100'>
+        {!isInvitationRoute && (
+          <NavigationBar />
+        )}
+        <RouterProvider router={router} />
+      </div>
+    </AuthProvider>
   );
 }
 

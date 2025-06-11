@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { AuthContext } from '../context/AuthContext';
 import ImagenLogo from '../Images/Logo_Invited_SinFondo.png';
+import { useLanguage } from "../context/LanguageContext";
 
 const NavigationBar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -22,11 +23,28 @@ const NavigationBar = () => {
             backgroundColor: "#F19292",
             color: "#FAF9F8",
             fontWeight: "bold"
+        },
+        select: {
+            fontSize: "1rem",
+            padding: "0.4rem 0.8rem",
+            borderRadius: "6px",
+            border: "1px solid #ccc",
+            backgroundColor: "white",
+            cursor: "pointer"
+        },
+        option: {
+            fontSize: "1rem"
         }
     };
 
     const redirectToMain = () => {
         window.location.href = "/";
+    };
+
+    const { language, changeLanguage } = useLanguage();
+
+    const handleChange = (e) => {
+        changeLanguage(e.target.value);
     };
 
     return (
@@ -76,6 +94,11 @@ const NavigationBar = () => {
                         >
                             Contacto
                         </Nav.Link>
+
+                        <select style={{ ...styles.select }} value={language} onChange={handleChange}>
+                            <option style={{ ...styles.option }} value="es">🇪🇸 ES</option>
+                            <option style={{ ...styles.option }} value="en">🇬🇧 EN</option>
+                        </select>
 
                         {!user ? (
                             <>

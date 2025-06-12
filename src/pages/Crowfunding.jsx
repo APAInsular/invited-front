@@ -190,7 +190,7 @@ const Crowdfunding = () => {
                             Cero papel, cero estrés.
                         </p>
                         <a
-                            href="https://www.kickstarter.com/projects/javier/invited"
+                            href="https://www.kickstarter.com/projects/javierjg/invited-100-automated-digital-invitations-for-weddings"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary btn-lg px-4"

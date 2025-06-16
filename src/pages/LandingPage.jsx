@@ -140,7 +140,6 @@ const LandingPage = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-
     return (
         <div style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
             <>

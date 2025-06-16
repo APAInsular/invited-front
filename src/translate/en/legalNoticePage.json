@@ -1,31 +1,48 @@
 {
     "legalNotice": "Legal Notice",
     "updated": "Last update: 20 March 2025",
-    "Introduction":{
+    "Introduction": {
         "title": "1. Owner Identification",
-        
         "companyName": "Company Name:",
         "companyNameText": "APA Insular, S.L.",
-
         "registeredAddress": "Registered Address:",
         "registeredAddressText": "Caserío Tesjuate, 39A, 35611, Puerto del Rosario, Las Palmas, Spain",
-
-        "office":  "Office:",
+        "office": "Office:",
         "officeText": "C/ Canalejas, 13. Vivero 15, 35600, Puerto del Rosario, Las Palmas, Spain",
-
         "cif": "CIF:",
         "cifText": "B04978920",
-
         "phone": "Phone:",
         "phoneText": "+34 613 026 824",
-
         "email": "Email:",
         "emailText": "contacto@invited.es",
-
         "domainName": "Domain Name:",
         "domainNameText": "https://invited.es/",
-
         "registration": "Registration",
         "registrationText": "Registered on March 19, 2021, in Volume 203, page 121, entry no. 1, sheet IF 8879"
+    },
+    "object": {
+        "title": "2. Object",
+        "text": "This Legal Notice governs the use of the website invited.es, including all services available on it. Its main purpose is the creation and management of digital invitations for weddings, events, communions, birthdays, and other special occasions."
+    },
+    "intellectual": {
+        "title": "3. Intellectual and Industrial Property",
+        "text": "All content on this website, including texts, images, logos, and graphic design, is the exclusive property of APA Insular S.L. or third parties with authorized use. Total or partial reproduction without express authorization is prohibited, except for personal and private use."
+    },
+    "terms": {
+        "title": "4. Terms of Use",
+        "text": "The user agrees to use the website appropriately, in compliance with current regulations and respecting third-party rights. Any fraudulent, unlawful use, or any action that could harm the website’s operation or the interests of APA Insular S.L. is strictly prohibited."
+    },
+    "disclaimer": {
+        "title": "5. Disclaimer of Liability",
+        "content": "Content:",
+        "contentText": "APA Insular S.L. does not guarantee the accuracy, completeness, or timeliness of the content and is not liable for possible errors or omissions.",
+        "links": "External Links:",
+        "linksText": "The website may contain links to third parties, which do not imply affiliation or responsibility for their content or policies.",
+        "availability": "Availability and accessibility:",
+        "availabilityText": "Although efforts are made to keep the website operational, uninterrupted service or the absence of technical errors is not guaranteed."
+    },
+    "law": {
+        "title": "6. Applicable Law and Jurisdiction",
+        "text": "This Legal Notice is governed by Spanish law, including Law 34/2002 on Information Society Services and Electronic Commerce, Organic Law 3/2018 on the Protection of Personal Data, and Regulation (EU) 2016/679. Any dispute will be resolved by the Courts and Tribunals of Las Palmas de Gran Canaria."
     }
 }

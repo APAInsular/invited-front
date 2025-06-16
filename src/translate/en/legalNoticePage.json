@@ -1,0 +1,31 @@
+{
+    "legalNotice": "Legal Notice",
+    "updated": "Last update: 20 March 2025",
+    "Introduction":{
+        "title": "1. Owner Identification",
+        
+        "companyName": "Company Name:",
+        "companyNameText": "APA Insular, S.L.",
+
+        "registeredAddress": "Registered Address:",
+        "registeredAddressText": "Caserío Tesjuate, 39A, 35611, Puerto del Rosario, Las Palmas, Spain",
+
+        "office":  "Office:",
+        "officeText": "C/ Canalejas, 13. Vivero 15, 35600, Puerto del Rosario, Las Palmas, Spain",
+
+        "cif": "CIF:",
+        "cifText": "B04978920",
+
+        "phone": "Phone:",
+        "phoneText": "+34 613 026 824",
+
+        "email": "Email:",
+        "emailText": "contacto@invited.es",
+
+        "domainName": "Domain Name:",
+        "domainNameText": "https://invited.es/",
+
+        "registration": "Registration",
+        "registrationText": "Registered on March 19, 2021, in Volume 203, page 121, entry no. 1, sheet IF 8879"
+    }
+}

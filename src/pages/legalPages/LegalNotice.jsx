@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 const LegalNotice = () => {
     return (
         <>
-            <div className="container mx-auto" style={{ marginTop: "90px" }}>
+            <div className="container mx-auto" style={{ marginTop: "150px" }}>
                 <h1 className="text-3xl font-bold mb-4">Aviso Legal</h1>
                 <p className="text-gray-600 mb-2">Última actualización: 20 de marzo de 2025</p>
 

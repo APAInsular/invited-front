@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { AuthContext } from '../context/AuthContext';
 import ImagenLogo from '../Images/Logo_Invited_SinFondo.png';
+import LanguageSelector from './LanguageSelector';
+import UserMenu from './UserMenu';
 
 const NavigationBar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -88,31 +90,9 @@ const NavigationBar = () => {
                             Contacto
                         </Nav.Link>
 
-                        {/* <select style={{ ...styles.select }} value={language} onChange={handleChange}>
-                            <option style={{ ...styles.option }} value="es">🇪🇸 ES</option>
-                            <option style={{ ...styles.option }} value="en">🇬🇧 EN</option>
-                        </select> */}
+                        <LanguageSelector />
 
-                        {!user ? (
-                            <>
-                                <Nav.Link href="/login" style={hovered === "login" ? { ...styles.default, ...styles.hover } : styles.default}
-                                    onMouseEnter={() => setHovered("login")}
-                                    onMouseLeave={() => setHovered(null)}>Iniciar Sesión</Nav.Link>
-
-                                <Nav.Link href="/register" style={hovered === "register" ? { ...styles.default, ...styles.hover } : styles.default}
-                                    onMouseEnter={() => setHovered("register")}
-                                    onMouseLeave={() => setHovered(null)}>Registro</Nav.Link>
-                            </>
-                        ) : (
-                            <>
-                                <Nav.Link href="/dashboard" style={hovered === "profile" ? { ...styles.default, ...styles.hover } : styles.default}
-                                    onMouseEnter={() => setHovered("profile")}
-                                    onMouseLeave={() => setHovered(null)}>Panel</Nav.Link>
-                                <Button variant="outline-light" onClick={logout} style={hovered === "logout" ? { ...styles.default, ...styles.hover } : styles.default}
-                                    onMouseEnter={() => setHovered("logout")}
-                                    onMouseLeave={() => setHovered(null)}>Cerrar Sesión</Button>
-                            </>
-                        )}
+                        <UserMenu user={user} logout={logout} />
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,8 +1,88 @@
 {
     "title": "Make your digital invitations",
     "subtitle": "Easy, elegant, and with real-time guest confirmations",
+    "titleButton": "Start now",
     "why": {
-        "title": "",
-        "": ""
-    }
+        "title": "Why use our service?",
+        
+        "cardTitle1": "Save time and costs",
+        "cardText1": "Avoid printing and mailing. With our digital invitations, everything is faster and more economical.",
+        
+        "cardTitle2": "Unique and customizable design",
+        "cardText2": "Choose your favorite template and add music to reflect the essence of your wedding.",
+        
+        "cardTitle3": "Real-time confirmations (RSVP)",
+        "cardText3": "Your guests can confirm attendance, you'll receive an email notification, and you'll have a dashboard with all the information in real time.",
+        
+        "cardTitle4": "Countdown and event details",
+        "cardText4": "Add the wedding date, location maps, and all key information for your guests."   
+    },
+    "invitation": {
+        "title": "Digital invitations",
+        "subtitle": "Designs optimized for easy sharing from your phone",
+      
+        "cardTitle1": "Classic",
+        "cardText1": "Traditional elegance with classic details and serif typography.",
+       
+        "cardTitle2": "BOHO Watercolor",
+        "cardText2": "Floral design with cool tones and elegant typography.",
+       
+        "cardTitle3": "Once Upon a Time",
+       
+        "cardText3": "Disney-inspired design with great charm.",
+        "button": "Show Demo"
+    },
+    "paySection":{
+        "title": "Your digital invitation for €119",
+        "text1": "Access to all templates",
+        "text2": "Support in Spanish",
+        "text3": "Unlimited updates",
+        "text4": "No hidden costs",
+        "button": "Create my invitation"
+    },
+    "howItWorks": {
+        "title": "How does it work?",
+        "cardTitle1": "Sign Up",
+        "cardText1": "Create your account and start your digital invitation project.",
+
+        "cardTitle2": "Personalize",
+        "cardText2": "Choose the template, colors, and add your wedding information.",
+
+        "cardTitle3": "Share",
+        "cardText3": "Send the invitation to your guests via email, WhatsApp, or social media.",
+
+        "cardTitle4": "Manage",
+        "cardText4": "Check confirmations and keep everything under control from your dashboard."
+    },
+    "faq":{
+        "title": "Frequently Asked Questions",
+        "question1": "Can I upload my own music for the invitation?",
+        "answer1": "Yes, you can add your wedding's special song or any music you like to set the mood for your invitation.",
+
+        "question2": "Do my guests need to download anything?",
+        "answer2": "No. They will simply receive a link to the digital invitation and can confirm their attendance by filling out a short form.",
+
+        "question3": "Can I edit the invitation after sharing it?",
+        "answer3": "Absolutely! Any changes you make will be automatically updated for your guests.",
+
+        "question4": "Is there a limit to how many people I can invite?",
+        "answer4": "No, you can send the invitation to as many people as you need."
+    },
+    "startToday": {
+        "title": "Start today",
+        "text": "Convierte tu boda en una experiencia digital inolvidable."
+    },
+    "contactForm":{
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "button": "Send"
+    },
+    "footer": {
+        "text": "© Invited.es – Developed with ❤️ by Platita Software",
+        "legalNotice": "Legal Notice",
+        "privacyPolicy": "Privacy Policy",  
+        "cookiesPolicy": "Cookies Policy",
+        "termsOfService": "Terms of Service"
+    }   
 }

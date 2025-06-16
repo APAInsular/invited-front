@@ -9,7 +9,7 @@ import WeddingForm from './components/WeddingForm';
 import Gallery from './components/Gallery';
 import SongLink from './components/SongLink';
 import ChurchLocation from './components/Location';
-import ImagenLogo from '../Images/Logo_Invited_SinFondo.png';
+import ImagenLogo from '../Images/Logo_invited_recortado-removebg-preview.png';
 import { BsJustify } from 'react-icons/bs';
 
 const images = [

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { useLanguage } from '../context/LanguageContext'; // Ajusta la ruta según tu estructura
+import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ scrolled }) => {
     const { language, changeLanguage } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [hoveredItem, setHoveredItem] = useState(null);
@@ -12,9 +12,8 @@ const LanguageSelector = () => {
         { code: 'en', name: 'English', flag: 'https://flagcdn.com/gb.svg' }
     ];
 
-    const selectedLang = languages.find(lang => lang.code === language);
+    const selectedLang = languages.find(lang => lang.code === language) || languages[0];
 
-    // Cerrar el dropdown al hacer clic fuera
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -29,70 +28,69 @@ const LanguageSelector = () => {
     }, []);
 
     const handleLanguageChange = (langCode) => {
-        changeLanguage(langCode); // Actualiza el contexto de idioma
+        changeLanguage(langCode);
         setIsOpen(false);
     };
 
-    // Estilos personalizados
+    // Estilos basados en el estado scrolled
     const styles = {
         container: {
             position: 'relative',
             display: 'inline-block',
             fontFamily: 'Arial, sans-serif',
-            width: '120px',
             margin: '4px 8px'
         },
         triggerButton: {
             display: 'flex',
             alignItems: 'center',
             padding: '5px 10px',
-            border: '2px solid #F19292',
+            border: scrolled ? '2px solid #F19292' : '2px solid #fff',
             borderRadius: '5px',
-            color: '#F19292',
+            color: scrolled ? '#F19292' : '#fff',
             textDecoration: 'none',
             transition: 'all 0.3s ease-in-out',
             fontWeight: 'bold',
             backgroundColor: 'transparent',
             cursor: 'pointer',
-            width: '100%',
             justifyContent: 'space-between'
         },
         triggerButtonHover: {
-            backgroundColor: 'rgba(241, 146, 146, 0.1)',
-            transform: 'scale(1.02)'
+            backgroundColor: scrolled ? '#F19292' : '#fff',
+            color: scrolled ? 'white' : '#F19292'
         },
         dropdown: {
             position: 'absolute',
             top: '100%',
             left: 0,
             right: 0,
-            backgroundColor: 'white',
-            border: '2px solid #F19292',
+            backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.8)',
+            border: scrolled ? '2px solid #F19292' : '2px solid #fff',
             borderRadius: '5px',
             marginTop: '5px',
             boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
             zIndex: 1000,
-            overflow: 'hidden'
+            overflow: 'hidden',
+            backdropFilter: 'blur(5px)'
         },
         option: {
             display: 'flex',
             alignItems: 'center',
             padding: '10px',
             cursor: 'pointer',
-            backgroundColor: 'white',
+            backgroundColor: 'transparent',
             transition: 'all 0.3s ease-in-out',
-            color: '#333',
+            color: scrolled ? '#333' : '#fff',
             textDecoration: 'none',
             fontWeight: 'normal'
         },
         optionHover: {
-            backgroundColor: 'rgba(241, 146, 146, 0.1)',
-            color: '#F19292',
+            backgroundColor: scrolled ? 'rgba(241, 146, 146, 0.3)' : 'rgba(255, 255, 255, 0.3)',
+            color: scrolled ? '#F19292' : '#fff',
             fontWeight: 'bold'
         },
         optionSelected: {
-            backgroundColor: 'rgba(241, 146, 146, 0.2)',
-            color: '#F19292',
+            backgroundColor: scrolled ? 'rgba(241, 146, 146, 0.2)' : 'rgba(255, 255, 255, 0.2)',
+            color: scrolled ? '#F19292' : '#fff',
             fontWeight: 'bold'
         }
     };
@@ -113,9 +111,10 @@ const LanguageSelector = () => {
                         src={selectedLang.flag}
                         alt={selectedLang.name}
                         width="24"
+                        height="18"
                         style={{ marginRight: '8px' }}
                     />
-                    <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
+                    <span style={{ fontWeight: 'bold', textTransform: 'uppercase', marginRight: "25px" }}>
                         {selectedLang.code}
                     </span>
                 </div>
@@ -144,13 +143,11 @@ const LanguageSelector = () => {
                                     src={lang.flag}
                                     alt={lang.name}
                                     width="24"
+                                    height="18"
                                     style={{ marginRight: '10px' }}
                                 />
                                 <div>
-                                    <div style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                                        {lang.code}
-                                    </div>
-                                    <div style={{ fontSize: '12px', color: '#666' }}>
+                                    <div style={{ fontSize: '12px', color: scrolled ? '#666' : '#ddd' }}>
                                         {lang.name}
                                     </div>
                                 </div>

@@ -4,10 +4,13 @@ import apiClient from '../config/axiosConfig';
 import { Link, useNavigate } from 'react-router-dom';
 import '../templates/styles/LandingPage.css'
 import Footer from '../components/Footer';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 const LandingPage = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+
+    const { t, loadingTranslation } = usePageTranslation('landingPage');
 
     const [formData, setFormData] = useState({
         name: "",
@@ -104,14 +107,6 @@ const LandingPage = () => {
         textAlign: "center"
     };
 
-    const handleNavigation = (path) => {
-        if (user) {
-            navigate(`/${user.Name}&${user.partner.Name}/invitation` + path);
-        } else {
-            navigate('/login')
-        }
-    };
-
     const [openIndex, setOpenIndex] = useState(null);
 
     const faqs = [
@@ -135,6 +130,10 @@ const LandingPage = () => {
             answer: "No, puedes enviar la invitación a tantas personas como necesites.",
         },
     ];
+
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -170,18 +169,18 @@ const LandingPage = () => {
                 >
                     <div className="hero-overlay">
                         <div className="container hero-content">
-                            <h1>Crea tus invitaciones de boda digitales</h1>
-                            <p>Fácil, elegante y con confirmaciones de invitados en tiempo real.</p>
+                            <h1>{t('title')}</h1>
+                            <p>{t('subtitle')}</p>
                             {user ? (
                                 <Link
                                     to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
                                     className="btn btn-primary"
                                 >
-                                    Empieza Ahora
+                                    {t('titleButton')}
                                 </Link>
                             ) : (
                                 <Link to="/login" className="btn btn-primary">
-                                    Empieza Ahora
+                                    {t('titleButton')}
                                 </Link>
                             )}
                         </div>
@@ -191,23 +190,23 @@ const LandingPage = () => {
             {/* BENEFICIOS / VENTAJAS */}
             <section id="beneficios" className="beneficios">
                 <div className="container">
-                    <h2>¿Por Qué Elegir Invited?</h2>
+                    <h2>{t('why.title')}</h2>
                     <div className="beneficios-grid">
                         <div className="beneficio-item">
-                            <h3>Ahorra tiempo y costes</h3>
-                            <p>Evita la impresión y el envío postal. Con nuestras invitaciones digitales, todo es más rápido y económico.</p>
+                            <h3>{t('why.cardTitle1')}</h3>
+                            <p>{t('why.cardText1')}</p>
                         </div>
                         <div className="beneficio-item">
-                            <h3>Diseño único y personalizable</h3>
-                            <p>Elige tu plantilla favorita y añade música para reflejar la esencia de tu boda.</p>
+                            <h3>{t('why.cardTitle2')}</h3>
+                            <p>{t('why.cardText2')}</p>
                         </div>
                         <div className="beneficio-item">
-                            <h3>Confirmaciones en tiempo real (RSVP)</h3>
-                            <p>Tus invitados podrán confirmar asistencia, recibirás un aviso por email y tendrás un panel con toda la información en tiempo real.</p>
+                            <h3>{t('why.cardTitle3')}</h3>
+                            <p>{t('why.cardText3')}</p>
                         </div>
                         <div className="beneficio-item">
-                            <h3>Cuenta atrás y detalles del evento</h3>
-                            <p>Añade la fecha de la boda, mapas de localización y toda la información clave para tus invitados.</p>
+                            <h3>{t('why.cardTitle4')}</h3>
+                            <p>{t('why.cardText4')}</p>
                         </div>
                     </div>
                 </div>
@@ -216,8 +215,8 @@ const LandingPage = () => {
             <section class="py-5 bg-light">
                 <div class="container">
                     <div class="text-center mb-5">
-                        <h2 class="display-5 fw-bold text-danger-emphasis mb-3">Invitaciones Digitales</h2>
-                        <p class="lead text-muted">Diseños adaptados para compartir fácilmente desde tu móvil</p>
+                        <h2 class="display-5 fw-bold text-danger-emphasis mb-3">{t('invitation.title')}</h2>
+                        <p class="lead text-muted">{t('invitation.subtitle')}</p>
                     </div>
 
                     <div class="row g-4">

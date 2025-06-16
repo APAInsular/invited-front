@@ -1,0 +1,67 @@
+{
+    "title": "Crea tus invitaciones digitales",
+    "subtitle": "Fáciles, elegantes y con confirmaciones de asistencia en tiempo real",
+    "titleButton": "Empieza ahora",
+    "why": {
+        "title": "¿Por qué usar nuestro servicio?",
+        "cardTitle1": "Ahorra tiempo y costes",
+        "cardText1": "Evita imprimir y enviar por correo. Con nuestras invitaciones digitales, todo es más rápido y económico.",
+        "cardTitle2": "Diseño único y personalizable",
+        "cardText2": "Elige tu plantilla favorita y añade música para reflejar la esencia de tu boda.",
+        "cardTitle3": "Confirmaciones en tiempo real (RSVP)",
+        "cardText3": "Tus invitados podrán confirmar su asistencia, recibirás una notificación por email y tendrás un panel con toda la información en tiempo real.",
+        "cardTitle4": "Cuenta regresiva y detalles del evento",
+        "cardText4": "Añade la fecha de la boda, mapas de ubicación y toda la información clave para tus invitados."
+    },
+    "invitation": {
+        "title": "Invitaciones digitales",
+        "subtitle": "Diseños optimizados para compartir fácilmente desde tu móvil",
+        "cardTitle1": "Clásica",
+        "cardText1": "Elegancia tradicional con detalles clásicos y tipografía con serifas.",
+        "cardTitle2": "BOHO Acuarela",
+        "cardText2": "Diseño floral con tonos fríos y tipografía elegante.",
+        "cardTitle3": "Érase una vez",
+        "cardText3": "Diseño inspirado en Disney con mucho encanto.",
+        "button": "Ver demo"
+    },
+    "paySection": {
+        "title": "Tu invitación digital por 119€",
+        "text1": "Acceso a todas las plantillas",
+        "text2": "Soporte en español",
+        "text3": "Actualizaciones ilimitadas",
+        "text4": "Sin costes ocultos",
+        "button": "Crear mi invitación"
+    },
+    "howItWorks": {
+        "title": "¿Cómo funciona?",
+        "cardTitle1": "Regístrate",
+        "cardText1": "Crea tu cuenta y comienza tu proyecto de invitación digital.",
+        "cardTitle2": "Personaliza",
+        "cardText2": "Elige la plantilla, los colores y añade la información de tu boda.",
+        "cardTitle3": "Comparte",
+        "cardText3": "Envía la invitación a tus invitados por email, WhatsApp o redes sociales.",
+        "cardTitle4": "Gestiona",
+        "cardText4": "Consulta las confirmaciones y mantén todo bajo control desde tu panel."
+    },
+    "faq": {
+        "title": "Preguntas frecuentes",
+        "question1": "¿Puedo subir mi propia música para la invitación?",
+        "answer1": "Sí, puedes añadir la canción especial de tu boda o cualquier música que desees para ambientar tu invitación.",
+        "question2": "¿Mis invitados necesitan descargar algo?",
+        "answer2": "No. Simplemente recibirán un enlace a la invitación digital y podrán confirmar su asistencia rellenando un formulario breve.",
+        "question3": "¿Puedo editar la invitación después de compartirla?",
+        "answer3": "¡Por supuesto! Cualquier cambio que realices se actualizará automáticamente para tus invitados.",
+        "question4": "¿Hay un límite de personas a las que puedo invitar?",
+        "answer4": "No, puedes enviar la invitación a tantas personas como necesites."
+    },
+    "startToday": {
+        "title": "Empieza hoy",
+        "text": "Convierte tu boda en una experiencia digital inolvidable."
+    },
+    "contactForm": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "message": "Mensaje",
+        "button": "Enviar"
+    }
+}

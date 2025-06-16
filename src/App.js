@@ -1,7 +1,6 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { AuthProvider } from './context/AuthContext';
 import NavigationBar from './components/NavigationBar';
 import RegisterPartnerPage from './pages/RegisterPartnerPage';
@@ -21,42 +20,46 @@ import ThankYouPage from './pages/ThankYouPage';
 import AboutUs from './pages/AboutUs';
 import Crowfunding from './pages/Crowfunding';
 import ContactPage from './pages/ContactPage';
-
+import AppLayout from './layouts/AppLayout';
 
 const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
-  { path: "/register", element: <RegisterPartnerPage /> },
-  { path: "/login", element: <Login /> },
-  { path: "/:partnerName", element: <LandingPage /> },
-  { path: "/:partnerName/invitation/:templateName/form", element: <MakeInvitationPage /> },
-  { path: "/invitation/:partnerName/templates", element: <TemplatesPage /> },
-  { path: "/invitacion/:partnerName/:idWedding", element: <Invitations /> },
-  { path: "/dashboard", element: <Dashboard /> },
-  { path: "/dashboard/users", element: <UserList /> },
-  { path: "/dashboard/invitations", element: <InvitationList /> },
-  { path: "/aviso-legal", element: <LegalNotice /> },
-  { path: "/politica-de-privacidad", element: <PrivacyPolicy /> },
-  { path: "/terminos-y-condiciones", element: <ConditionsOfUse /> },
-  { path: "/politica-de-cookies", element: <CookiesPolicy /> },
-  { path: "/thankyou", element: <ThankYouPage /> },
-  { path: "/about-us", element: <AboutUs /> },
-  { path: "/crowfunding", element: <Crowfunding /> },
-  { path: "/contact", element: <ContactPage /> }
+  // Redirigir raíz a español
+  {
+    path: "/",
+    element: <Navigate to="/es" replace />
+  },
+
+  // Rutas con idioma
+  {
+    path: "/:lang",
+    element: <AppLayout />,
+    children: [
+      { index: true, element: <LandingPage /> },
+      { path: "register", element: <RegisterPartnerPage /> },
+      { path: "login", element: <Login /> },
+      { path: ":partnerName", element: <LandingPage /> },
+      { path: ":partnerName/invitation/:templateName/form", element: <MakeInvitationPage /> },
+      { path: "invitation/:partnerName/templates", element: <TemplatesPage /> },
+      { path: "invitacion/:partnerName/:idWedding", element: <Invitations /> },
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "dashboard/users", element: <UserList /> },
+      { path: "dashboard/invitations", element: <InvitationList /> },
+      { path: "aviso-legal", element: <LegalNotice /> },
+      { path: "politica-de-privacidad", element: <PrivacyPolicy /> },
+      { path: "terminos-y-condiciones", element: <ConditionsOfUse /> },
+      { path: "politica-de-cookies", element: <CookiesPolicy /> },
+      { path: "thankyou", element: <ThankYouPage /> },
+      { path: "about-us", element: <AboutUs /> },
+      { path: "crowfunding", element: <Crowfunding /> },
+      { path: "contact", element: <ContactPage /> }
+    ]
+  }
 ]);
 
 function App() {
-  const pathname = window.location.pathname;
-  const regex = /\/invitacion\/[^\/]+\/[^\/]+/;
-  const isInvitationRoute = regex.test(pathname);
-
   return (
     <AuthProvider>
-      <div className='d-flex flex-column min-vh-100'>
-        {!isInvitationRoute && (
-          <NavigationBar />
-        )}
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </AuthProvider>
   );
 }

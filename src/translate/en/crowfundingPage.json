@@ -1,0 +1,145 @@
+{
+  "crowdfundingPage": {
+    "hero": {
+      "title": "Crowdfunding · Invited",
+      "description": "Help us launch Invited: the 100% automated digital invitation platform for weddings and events. Zero paper, zero stress.",
+      "button": "Visit our campaign",
+      "link": "https://www.kickstarter.com/projects/javierjg/invited-100-automated-digital-invitations-for-weddings"
+    },
+    "features": {
+      "title": "Why choose Invited?",
+      "list": [
+        {
+          "icon": "bi bi-clock-history",
+          "title": "Save time and costs",
+          "text": "Avoid printing and mailing. With our digital invitations, everything is faster and more affordable."
+        },
+        {
+          "icon": "bi bi-palette",
+          "title": "Unique and customizable design",
+          "text": "Choose your favorite template and add music to reflect the spirit of your celebration."
+        },
+        {
+          "icon": "bi bi-check-circle",
+          "title": "Real-time confirmations (RSVP)",
+          "text": "Your guests can confirm attendance, choose menu options, and report allergies. You’ll get notifications instantly."
+        },
+        {
+          "icon": "bi bi-calendar-event",
+          "title": "Countdown and event details",
+          "text": "Add the date, locations, and all key information for your guests, with an elegant on-screen timer."
+        }
+      ]
+    },
+    "inspiration": {
+      "title1": "Our inspiration",
+      "paragraph1": "We’re Javier and Antonio, founders of Invited, a platform born in the Canary Islands with the desire to restore the essence of every celebration: human connection.",
+      "title2": "Why crowdfunding?",
+      "paragraph2": "We believe in the power of community. With your help, we’ll be able to:",
+      "goals": [
+        "Consolidate the technological core – Two developers and one manager working for three months...",
+        "Design premium templates – 20 exclusive designs in different styles...",
+        "Launch an emotional marketing campaign – To reach couples, families, and professionals..."
+      ],
+      "paragraph3": "Every euro raised will be transformed into hours of code, design, and messages saying: “Yes, we’ll be there!”",
+      "title3": "Our commitment",
+      "commitments": [
+        "Total transparency: we’ll publish weekly updates and share the budget.",
+        "Quality and closeness: direct channel with backers for suggestions and questions.",
+        "Scalability: we’ll expand Invited to birthdays, baptisms and more if we exceed our goal."
+      ],
+      "imageAlt": "Javier and Antonio working on Invited",
+      "imageSrc": "/images/Plantilla_1.png"
+    },
+    "video": {
+      "title": "See Invited in action",
+      "poster": "/LogoInvited_3.png",
+      "videoSrc": "/videos/Presentación_Invited.mp4"
+    },
+    "timeline": {
+      "title": "Delivery Timeline",
+      "steps": [
+        {
+          "date": "June 6, 2025",
+          "description": "Kickstarter campaign launch."
+        },
+        {
+          "date": "July 6, 2025",
+          "description": "Start of development (R&D and architecture)."
+        },
+        {
+          "date": "August 6, 2025",
+          "description": "Supplier panel implementation and internal testing."
+        },
+        {
+          "date": "September 6, 2025",
+          "description": "Design and integration of 20 premium templates."
+        },
+        {
+          "date": "September 30, 2025",
+          "description": "Final testing (QA), adjustments, and full launch."
+        }
+      ]
+    },
+    "rewards": {
+      "title": "Rewards",
+      "list": [
+        {
+          "title": "Early Bird – Digital Invitation (€48)",
+          "items": [
+            "1 digital invitation (worth €119) with 60% discount",
+            "Unlimited sending (WhatsApp/email link)",
+            "Unlimited email notifications",
+            "Access to basic couple dashboard",
+            "Priority support during the campaign"
+          ]
+        },
+        {
+          "title": "Vendor – Pack of 5 Invitations (€446)",
+          "items": [
+            "5 digital invitations with 25% discount",
+            "Vendor dashboard to manage invitations",
+            "Unlimited notifications",
+            "Priority B2B support"
+          ]
+        },
+        {
+          "title": "Vendor – Pack of 10 Invitations (€833)",
+          "items": [
+            "10 digital invitations with 30% discount",
+            "Vendor dashboard",
+            "Unlimited notifications",
+            "Priority B2B support"
+          ]
+        },
+        {
+          "title": "Vendor – Pack of 20 Invitations (€1,547)",
+          "items": [
+            "20 digital invitations with 35% discount",
+            "Vendor dashboard",
+            "Unlimited notifications",
+            "Priority B2B support"
+          ]
+        },
+        {
+          "title": "Template Creator (€250)",
+          "items": [
+            "Collaborative design of your own template",
+            "20% royalties on every future sale",
+            "Unlimited sending and notifications",
+            "Priority support"
+          ]
+        },
+        {
+          "title": "White-Label Business Pack (€3,900)",
+          "items": [
+            "Turnkey license with full rebranding",
+            "Server and domain included",
+            "Admin dashboard",
+            "1 year free support + updates"
+          ]
+        }
+      ]
+    }
+  }
+}

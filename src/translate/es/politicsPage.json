@@ -1,0 +1,93 @@
+{
+  "privacyPolicy": "POLÍTICA DE PRIVACIDAD",
+  "updated": "Fecha de última actualización: 19 de marzo de 2025",
+  "controllerIdentification": {
+    "title": "1. IDENTIFICACIÓN DEL RESPONSABLE DEL TRATAMIENTO",
+    "responsible": "Responsable:",
+    "responsibleText": "APA Insular S.L. (en adelante, el “Responsable” o “Invited.es”)",
+    "registration": "Inscripción:",
+    "registrationText": "Inscrita con fecha 19 de marzo de 2021, en el Tomo 203, folio 121, inscripción 1º, en la hoja IF 8879",
+    "cif": "CIF:",
+    "cifText": "B04978920",
+    "registeredAddress": "Domicilio Social:",
+    "registeredAddressText": "Caserío Tesjuate, 39A, 35611, Puerto del Rosario, Las Palmas",
+    "office": "Oficina:",
+    "officeText": "C/ Canalejas, 13. Vivero 15, 35600, Puerto del Rosario, Las Palmas",
+    "email": "Correo electrónico de contacto:",
+    "emailText": "contacto@invited.es",
+    "website": "Sitio Web:",
+    "websiteText": "https://invited.es",
+    "description": "La presente Política de Privacidad regula la recogida y el tratamiento de los datos personales que se realicen a través del sitio web https://invited.es, así como en las diferentes interacciones que el usuario pueda mantener con Invited.es."
+  },
+  "collectedData": {
+    "title": "2. DATOS PERSONALES RECOPILADOS",
+    "intro": "En función de las funcionalidades que utilice el usuario en el Sitio Web, se podrán recabar distintos tipos de datos personales, tales como:",
+    "list": [
+      "Datos de contacto: nombre, apellidos, dirección de correo electrónico, número de teléfono y dirección postal.",
+      "Datos de navegación: dirección IP, navegador, tipo de dispositivo, sistema operativo, historial de navegación.",
+      "Datos de personalización y servicio: información proporcionada para la creación y gestión de invitaciones digitales.",
+      "Datos relativos a la relación contractual: información necesaria para la facturación, pagos y la gestión de la relación con el usuario."
+    ]
+  },
+  "purpose": {
+    "title": "3. FINALIDAD DEL TRATAMIENTO DE DATOS",
+    "intro": "Los datos personales recabados se tratarán con las siguientes finalidades:",
+    "list": [
+      "Gestión del servicio de invitaciones digitales.",
+      "Facturación, cobros y pagos.",
+      "Atención al cliente.",
+      "Envío de comunicaciones comerciales con consentimiento expreso.",
+      "Cumplimiento de obligaciones legales.",
+      "Mejora de los servicios."
+    ]
+  },
+  "lawfulBasis": {
+    "title": "4. LEGITIMACIÓN PARA EL TRATAMIENTO",
+    "intro": "La base legal para el tratamiento de los datos personales varía según la finalidad:",
+    "list": [
+      "Gestión del servicio y relación contractual: Ejecución de un contrato.",
+      "Atención al cliente: Consentimiento del usuario.",
+      "Comunicaciones comerciales: Consentimiento expreso.",
+      "Cumplimiento de obligaciones legales: Cumplimiento normativo.",
+      "Mejora de servicios: Interés legítimo del Responsable."
+    ]
+  },
+  "dataRetention": {
+    "title": "5. CONSERVACIÓN DE LOS DATOS",
+    "text": "Los datos personales se conservarán mientras dure la relación contractual y hasta que el usuario solicite su supresión. También se conservarán durante los plazos legales exigidos."
+  },
+  "dataDisclosure": {
+    "title": "6. COMUNICACIÓN DE DATOS A TERCEROS",
+    "intro": "Invited.es comunicará los datos personales únicamente a:",
+    "list": [
+      "Proveedores de servicios auxiliares.",
+      "Organismos públicos cuando la ley lo exija.",
+      "Colaboradores para la gestión de la invitación digital."
+    ]
+  },
+  "userRights": {
+    "title": "7. DERECHOS DE LOS USUARIOS",
+    "intro": "El usuario puede ejercer los siguientes derechos:",
+    "list": [
+      "Derecho de acceso.",
+      "Derecho de rectificación.",
+      "Derecho de supresión (derecho al olvido).",
+      "Derecho a la limitación del tratamiento.",
+      "Derecho a la portabilidad.",
+      "Derecho de oposición."
+    ],
+    "additionalText": "Para ejercer estos derechos, el usuario podrá enviar un correo a contacto@invited.es, indicando en el asunto “Protección de Datos” y adjuntando una copia de su documento de identidad."
+  },
+  "dataSecurity": {
+    "title": "8. SEGURIDAD DE LOS DATOS",
+    "text": "Invited.es se compromete a implantar medidas técnicas y organizativas para garantizar la seguridad de los datos personales."
+  },
+  "cookies": {
+    "title": "9. USO DE COOKIES",
+    "text": "Para más información, consulta nuestra Política de Cookies."
+  },
+  "policyUpdate": {
+    "title": "10. ACTUALIZACIÓN DE LA POLÍTICA DE PRIVACIDAD",
+    "text": "Esta política puede modificarse. Se informará de cambios relevantes en el sitio web."
+  }
+}

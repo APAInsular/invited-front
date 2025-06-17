@@ -1,0 +1,13 @@
+{
+  "login": {
+    "title": "Log In",
+    "emailLabel": "Email*",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password*",
+    "passwordPlaceholder": "Enter your password",
+    "noAccount": "I don't have an account",
+    "requiredFieldsNote": "(*) required fields",
+    "submitButton": "Log In",
+    "errorMessage": "An error occurred"
+  }
+}

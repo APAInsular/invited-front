@@ -1,0 +1,53 @@
+{
+    "legalNotice": "Aviso Legal",
+    "updated": "Última actualización: 20 de marzo de 2025",
+    "Introduction": {
+        "title": "1. Identificación del Titular",
+        "companyName": "Razón Social:",
+        "companyNameText": "APA Insular, S.L.",
+        "registeredAddress": "Domicilio Social:",
+        "registeredAddressText": "Caserío Tesjuate, 39A, 35611, Puerto del Rosario, Las Palmas, Spain",
+        "office": "Oficina:",
+        "officeText": "C/ Canalejas, 13. Vivero 15, 35600, Puerto del Rosario, Las Palmas, Spain",
+        "cif": "CIF:",
+        "cifText": "B04978920",
+        "phone": "Teléfono:",
+        "phoneText": "+34 613 026 824",
+        "email": "Email:",
+        "emailText": "contacto@invited.es",
+        "domainName": "Nombre de dominio:",
+        "domainNameText": "https://invited.es/",
+        "registration": "Inscripción:",
+        "registrationText": "Inscrita el 19 de marzo de 2021, en el Tomo 203, folio 121, inscripción 1º, hoja IF 8879"
+    },
+    "object": {
+        "title": "2. Objeto",
+        "text": "El presente Aviso Legal regula el uso de la web invited.es, incluyendo todos los servicios disponibles en ella. Su finalidad principal es la creación y gestión de invitaciones digitales para bodas, eventos, comuniones, cumpleaños y otros acontecimientos especiales."
+    },
+    "intellectual": {
+        "title": "3. Propiedad Intelectual e Industrial",
+        "text": "Todos los contenidos del sitio web, incluyendo textos, imágenes, logotipos y diseño gráfico, son propiedad exclusiva de APA Insular S.L. o de terceros con autorización para su uso. Queda prohibida su reproducción total o parcial sin autorización expresa, salvo para uso personal y privado."
+    },
+    "terms": {
+        "title": "4. Condiciones de Uso",
+        "text": "El usuario se compromete a utilizar la web de forma adecuada, respetando la normativa vigente y los derechos de terceros. Está prohibido cualquier uso fraudulento, ilícito o que pueda perjudicar el funcionamiento de la web o los intereses de APA Insular S.L."
+    },
+    "disclaimer": {
+        "title": "5. Exclusión de Responsabilidad",
+        "content": "Contenido:",
+        "contentText": "APA Insular S.L. no garantiza la exactitud, integridad o actualidad de los contenidos y no se responsabiliza de posibles errores u omisiones.",
+        "links": "Enlaces Externos:",
+        "linksText": "La web puede contener enlaces a terceros, los cuales no implican afiliación ni responsabilidad sobre sus contenidos o políticas.",
+        "availability": "Disponibilidad y Accesibilidad:",
+        "availabilityText": "Aunque se realizan esfuerzos para mantener la web operativa, no se garantiza su funcionamiento ininterrumpido ni la ausencia de errores técnicos."
+    },
+    "law": {
+        "title": "6. Legislación Aplicable y Jurisdicción",
+        "text": "Este Aviso Legal se rige por la legislación española, incluyendo la Ley 34/2002 de Servicios de la Sociedad de la Información y Comercio Electrónico, la Ley Orgánica 3/2018 de Protección de Datos Personales y el Reglamento (UE) 2016/679. Cualquier disputa será resuelta en los Juzgados y Tribunales de Las Palmas de Gran Canaria."
+    },
+    "modification": {
+        "title": "7. Modificación del Aviso Legal",
+        "text": "APA Insular S.L. se reserva el derecho a modificar este Aviso Legal en cualquier momento y sin previo aviso. Se recomienda a los usuarios revisar periódicamente el contenido para estar informados de posibles cambios."
+    }
+    
+}

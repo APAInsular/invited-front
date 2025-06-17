@@ -1,0 +1,145 @@
+{
+  "crowdfundingPage": {
+    "hero": {
+      "title": "Crowdfunding · Invited",
+      "description": "Ayúdanos a lanzar Invited: la plataforma de invitaciones digitales 100% automáticas para bodas y eventos. Cero papel, cero estrés.",
+      "button": "Visita nuestra campaña",
+      "link": "https://www.kickstarter.com/projects/javierjg/invited-100-automated-digital-invitations-for-weddings"
+    },
+    "features": {
+      "title": "¿Por qué elegir Invited?",
+      "list": [
+        {
+          "icon": "bi bi-clock-history",
+          "title": "Ahorra tiempo y costes",
+          "text": "Evita la impresión y el envío postal. Con nuestras invitaciones digitales, todo es más rápido y económico."
+        },
+        {
+          "icon": "bi bi-palette",
+          "title": "Diseño único y personalizable",
+          "text": "Elige tu plantilla favorita y añade música para reflejar la esencia de tu celebración."
+        },
+        {
+          "icon": "bi bi-check-circle",
+          "title": "Confirmaciones en tiempo real (RSVP)",
+          "text": "Tus invitados podrán confirmar asistencia, elegir menú y notificar alergias. Tú recibirás avisos en tiempo real."
+        },
+        {
+          "icon": "bi bi-calendar-event",
+          "title": "Cuenta atrás y detalles del evento",
+          "text": "Añade la fecha, ubicaciones y toda la información clave para tus invitados, con un elegante temporizador en pantalla."
+        }
+      ]
+    },
+    "inspiration": {
+      "title1": "Nuestra inspiración",
+      "paragraph1": "Somos Javier y Antonio, fundadores de Invited, una plataforma nacida en las Islas Canarias con el anhelo de devolverle a cada celebración su esencia: la conexión humana.",
+      "title2": "¿Por qué crowdfunding?",
+      "paragraph2": "Creemos en el poder de la comunidad. Con vuestra ayuda, podremos:",
+      "goals": [
+        "Consolidar el núcleo tecnológico – Dos desarrolladores y un gestor trabajarán durante tres meses…",
+        "Diseñar plantillas premium – 20 diseños exclusivos de diferentes estilos…",
+        "Lanzar una campaña de marketing emocional – Para llegar a parejas, familiares y profesionales…"
+      ],
+      "paragraph3": "Cada euro recaudado se traducirá en horas de código, diseño y mensajes de \"¡Sí, estaremos allí!\"",
+      "title3": "Nuestro compromiso",
+      "commitments": [
+        "Transparencia total: publicaremos avances semanales y compartiremos el presupuesto.",
+        "Calidad y cercanía: canal directo con los mecenas para sugerencias y dudas.",
+        "Escalabilidad: ampliaremos Invited a cumpleaños, bautizos y más si superamos el objetivo."
+      ],
+      "imageAlt": "Javier y Antonio trabajando en Invited",
+      "imageSrc": "/images/Plantilla_1.png"
+    },
+    "video": {
+      "title": "Conoce Invited en acción",
+      "poster": "/LogoInvited_3.png",
+      "videoSrc": "/videos/Presentación_Invited.mp4"
+    },
+    "timeline": {
+      "title": "Cronograma de entregas",
+      "steps": [
+        {
+          "date": "6 de junio de 2025",
+          "description": "Lanzamiento de la campaña en Kickstarter."
+        },
+        {
+          "date": "6 de julio de 2025",
+          "description": "Inicio formal del desarrollo (I+D y arquitectura)."
+        },
+        {
+          "date": "6 de agosto de 2025",
+          "description": "Implementación del panel de proveedores y pruebas internas."
+        },
+        {
+          "date": "6 de septiembre de 2025",
+          "description": "Diseño e integración de 20 plantillas premium."
+        },
+        {
+          "date": "30 de septiembre de 2025",
+          "description": "Pruebas finales (QA), ajustes y lanzamiento completo."
+        }
+      ]
+    },
+    "rewards": {
+      "title": "Recompensas",
+      "list": [
+        {
+          "title": "Early Bird – Invitación Digital (48€)",
+          "items": [
+            "1 invitación digital (valor €119) con 60% de descuento",
+            "Envíos ilimitados (enlace WhatsApp/email)",
+            "Notificaciones por email ilimitadas",
+            "Acceso al panel básico de novios",
+            "Soporte prioritario durante la campaña"
+          ]
+        },
+        {
+          "title": "Proveedor – Pack 5 Invitaciones (446€)",
+          "items": [
+            "5 invitaciones digitales con 25% de descuento",
+            "Panel de proveedores para gestionar invitaciones",
+            "Notificaciones ilimitadas",
+            "Soporte prioritario B2B"
+          ]
+        },
+        {
+          "title": "Proveedor – Pack 10 Invitaciones (833€)",
+          "items": [
+            "10 invitaciones digitales con 30% de descuento",
+            "Panel de proveedores",
+            "Notificaciones ilimitadas",
+            "Soporte prioritario B2B"
+          ]
+        },
+        {
+          "title": "Proveedor – Pack 20 Invitaciones (1.547€)",
+          "items": [
+            "20 invitaciones digitales con 35% de descuento",
+            "Panel de proveedores",
+            "Notificaciones ilimitadas",
+            "Soporte prioritario B2B"
+          ]
+        },
+        {
+          "title": "Creador de Plantillas (250€)",
+          "items": [
+            "Diseño colaborativo de tu propia plantilla",
+            "20% de royalties en cada venta futura",
+            "Envíos y notificaciones ilimitados",
+            "Soporte prioritario"
+          ]
+        },
+        {
+          "title": "White-Label Empresarial (3.900€)",
+          "items": [
+            "Licencia \"llave en mano\" con rebranding completo",
+            "Servidor y dominio incluidos",
+            "Panel de administración",
+            "Soporte gratuito 1 año + actualizaciones"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "sidebar": {
+    "menu": "Menu"
+  },
+  "welcome": {
+    "greeting": "Welcome, {user.name} and {user.partner.name}"
+  },
+  "buttons": {
+    "startNow": "Start Now",
+    "closeWedding": "Close Wedding",
+    "viewImages": "View Images",
+    "edit": "Edit",
+    "close": "Close",
+    "saveChanges": "Save Changes",
+    "addImage": "Add Image"
+  },
+  "sections": {
+    "mainDetails": "Main Details",
+    "location": "Location",
+    "date": "Date",
+    "message": "Message",
+    "additionalInfo": "Additional Information",
+    "dressCode": "Dress Code",
+    "food": "Food",
+    "weddingEvents": "Wedding Events",
+    "noEvents": "No events scheduled for this wedding.",
+    "editProfile": "Edit Profile",
+    "partnerData": "Partner's Information",
+    "editWedding": "Edit Wedding",
+    "weddingDetails": "Wedding Details",
+    "gallery": "Image Gallery",
+    "guestCount": "Number of Guests",
+    "weddingManagement": "Wedding Management"
+  },
+  "labels": {
+    "name": "Name",
+    "firstSurname": "First Surname",
+    "secondSurname": "Second Surname",
+    "email": "Email",
+    "phone": "Phone",
+    "partnerName": "Partner's Name",
+    "partnerFirstSurname": "Partner's First Surname",
+    "partnerSecondSurname": "Partner's Second Surname",
+    "customMessage": "Custom Message",
+    "weddingDate": "Wedding Date",
+    "dressCode": "Dress Code",
+    "foodType": "Food Type",
+    "notSpecified": "Not specified",
+    "toBeDetermined": "To be determined",
+    "code": "Dress Code",
+    "menuType": "Menu Type"
+  },
+  "admin": {
+    "users": "Users",
+    "weddings": "Weddings"
+  },
+  "modal": {
+    "close": "Close"
+  }
+}

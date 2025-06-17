@@ -1,0 +1,60 @@
+{
+  "sidebar": {
+    "menu": "Menu"
+  },
+  "welcome": {
+    "greeting": "Bienvenido, {user.name} y {user.partner.name}"
+  },
+  "buttons": {
+    "startNow": "Empieza Ahora",
+    "closeWedding": "Cerrar boda",
+    "viewImages": "Ver imagenes",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "saveChanges": "Guardar Cambios",
+    "addImage": "Añadir imagen"
+  },
+  "sections": {
+    "mainDetails": "Detalles Principales",
+    "location": "Ubicación",
+    "date": "Fecha",
+    "message": "Mensaje",
+    "additionalInfo": "Información Adicional",
+    "dressCode": "Vestimenta",
+    "food": "Comida",
+    "weddingEvents": "Eventos de la Boda",
+    "noEvents": "No hay eventos programados para esta boda.",
+    "editProfile": "Editar Perfil",
+    "partnerData": "Datos de la Pareja",
+    "editWedding": "Editar Boda",
+    "weddingDetails": "Detalles de la Boda",
+    "gallery": "Galería de Imágenes",
+    "guestCount": "Numero de invitados",
+    "weddingManagement": "Gestión de Bodas"
+  },
+  "labels": {
+    "name": "Nombre",
+    "firstSurname": "Primer Apellido",
+    "secondSurname": "Segundo Apellido",
+    "email": "Email",
+    "phone": "Teléfono",
+    "partnerName": "Nombre de la Pareja",
+    "partnerFirstSurname": "Primer Apellido de la Pareja",
+    "partnerSecondSurname": "Segundo Apellido de la Pareja",
+    "customMessage": "Mensaje Personalizado",
+    "weddingDate": "Fecha de Boda",
+    "dressCode": "Código de Vestimenta",
+    "foodType": "Tipo de Comida",
+    "notSpecified": "Sin especificar",
+    "toBeDetermined": "Por determinar",
+    "code": "Código de vestimenta",
+    "menuType": "Tipo de menú"
+  },
+  "admin": {
+    "users": "Usuarios",
+    "weddings": "Bodas"
+  },
+  "modal": {
+    "close": "Cerrar"
+  }
+}

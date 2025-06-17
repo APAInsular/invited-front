@@ -1,0 +1,13 @@
+{
+  "login": {
+    "title": "Iniciar Sesión",
+    "emailLabel": "Email*",
+    "emailPlaceholder": "Ingresa tu email",
+    "passwordLabel": "Contraseña*",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "noAccount": "No tengo una cuenta",
+    "requiredFieldsNote": "(*) campos obligatorios",
+    "submitButton": "Iniciar Sesión",
+    "errorMessage": "Ocurrió un error"
+  }
+}

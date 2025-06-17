@@ -1,0 +1,52 @@
+{
+  "aboutPage": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "The team behind the invitations that tell love stories"
+    },
+    "ourStory": {
+      "title": "Our Story",
+      "text": "Behind every invitation there is a love story waiting to be told. Ours began when we realized that couples deserved more than just traditional cards to announce the most special day of their lives. We were born from a shared dream: to transform the way couples connect with their loved ones before the big day.\n\nWhat started as a conversation between friends passionate about design and weddings became Invited.es. Every line of code, every design, and every word we create carries the excitement of those of us who understand that an invitation is not just paper or pixels—it’s the first chapter of an unforgettable celebration.",
+      "imageAlt": "Our story",
+      "imageSrc": "/images/Nuestra_Historia.jpg"
+    },
+    "ourMission": {
+      "title": "Our Mission",
+      "text": "We believe that every love story is unique and deserves to be announced in an equally special way. Our mission goes beyond creating digital invitations; we aim to unleash the personal expression of each couple, turning their dreams into visual experiences that move from the very first glance.\n\nWhen a couple trusts us, we don't just offer them a tool—we provide a blank canvas to express their personality, their colors, and the tone of their celebration. Because we understand that small decisions, like choosing the perfect font or the ideal color, are part of the journey to \"I do.\"",
+      "imageAlt": "Our mission",
+      "imageSrc": "/images/Nuestra_Mision.jpg"
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        {
+          "icon": "❤️",
+          "title": "Passion",
+          "text": "We love what we do and put our hearts into every detail of your invitations."
+        },
+        {
+          "icon": "💬",
+          "title": "Communication",
+          "text": "We listen to your ideas and maintain open dialogue throughout the entire process."
+        },
+        {
+          "icon": "🎨",
+          "title": "Creativity",
+          "text": "We look for unique, personalized solutions to make your invitation truly special."
+        }
+      ]
+    },
+    "ourCommitment": {
+      "title": "Our Commitment",
+      "text": "Walking with you on this journey is our greatest privilege. Every question we answer, every design we refine, and every smile we spark when you see your finished invitation fuels our passion for what we do.\n\nOur team isn’t just made up of designers or developers—we’re dreamers, confidants, and in a way, accomplices to your story. We’re here to listen, understand, and make sure the first announcement of your wedding reflects exactly what you envision. Because your happiness is our greatest reward, and your trust, our most treasured asset.",
+      "imageAlt": "Our commitment",
+      "imageSrc": "/images/Logo_Invited_SinFondo.png"
+    },
+    "callToAction": {
+      "title": "Ready to begin your story?",
+      "text": "Let the first chapter of your celebration be as special as you are. Let’s create an invitation that excites from the very first glance.",
+      "primaryButton": "Create my invitation",
+      "secondaryButton": "View examples"
+    }
+  }
+}

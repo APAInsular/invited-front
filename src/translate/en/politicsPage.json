@@ -1,0 +1,93 @@
+{
+  "privacyPolicy": "PRIVACY POLICY",
+  "updated": "Last update: 19 March 2025",
+  "controllerIdentification": {
+    "title": "1. IDENTIFICATION OF THE DATA CONTROLLER",
+    "responsible": "Controller:",
+    "responsibleText": "APA Insular S.L. (hereinafter, the “Controller” or “Invited.es”)",
+    "registration": "Registration:",
+    "registrationText": "Registered on March 19, 2021, in Volume 203, page 121, entry no. 1, sheet IF 8879",
+    "cif": "CIF:",
+    "cifText": "B04978920",
+    "registeredAddress": "Registered Address:",
+    "registeredAddressText": "Caserío Tesjuate, 39A, 35611, Puerto del Rosario, Las Palmas",
+    "office": "Office:",
+    "officeText": "C/ Canalejas, 13. Vivero 15, 35600, Puerto del Rosario, Las Palmas",
+    "email": "Contact Email:",
+    "emailText": "contacto@invited.es",
+    "website": "Website:",
+    "websiteText": "https://invited.es",
+    "description": "This Privacy Policy governs the collection and processing of personal data carried out through the website https://invited.es, as well as in the various interactions that the user may have with Invited.es."
+  },
+  "collectedData": {
+    "title": "2. PERSONAL DATA COLLECTED",
+    "intro": "Depending on the features the user uses on the Website, different types of personal data may be collected, such as:",
+    "list": [
+      "Contact data: name, surname, email address, phone number, and postal address.",
+      "Browsing data: IP address, browser, device type, operating system, browsing history.",
+      "Customization and service data: information provided for the creation and management of digital invitations.",
+      "Contractual relationship data: information required for billing, payments, and managing the user relationship."
+    ]
+  },
+  "purpose": {
+    "title": "3. PURPOSE OF DATA PROCESSING",
+    "intro": "The personal data collected will be processed for the following purposes:",
+    "list": [
+      "Management of the digital invitation service.",
+      "Billing, collections, and payments.",
+      "Customer support.",
+      "Sending commercial communications with express consent.",
+      "Compliance with legal obligations.",
+      "Service improvement."
+    ]
+  },
+  "lawfulBasis": {
+    "title": "4. LAWFUL BASIS FOR PROCESSING",
+    "intro": "The legal basis for the processing of personal data varies depending on the purpose:",
+    "list": [
+      "Service management and contractual relationship: Performance of a contract.",
+      "Customer support: User consent.",
+      "Commercial communications: Express consent.",
+      "Compliance with legal obligations: Legal compliance.",
+      "Service improvement: Controller’s legitimate interest."
+    ]
+  },
+  "dataRetention": {
+    "title": "5. DATA RETENTION",
+    "text": "Personal data will be retained for the duration of the contractual relationship and until the user requests its deletion. Data will also be retained for the legally required periods."
+  },
+  "dataDisclosure": {
+    "title": "6. DATA DISCLOSURE TO THIRD PARTIES",
+    "intro": "Invited.es will disclose personal data only to:",
+    "list": [
+      "Auxiliary service providers.",
+      "Public bodies when required by law.",
+      "Partners for managing the digital invitation."
+    ]
+  },
+  "userRights": {
+    "title": "7. USER RIGHTS",
+    "intro": "The user may exercise the following rights:",
+    "list": [
+      "Right of access.",
+      "Right to rectification.",
+      "Right to erasure (right to be forgotten).",
+      "Right to restriction of processing.",
+      "Right to data portability.",
+      "Right to object."
+    ],
+    "additionalText": "To exercise these rights, the user may send an email to contacto@invited.es, indicating 'Data Protection' in the subject line and attaching a copy of their ID document."
+  },
+  "dataSecurity": {
+    "title": "8. DATA SECURITY",
+    "text": "Invited.es commits to implementing technical and organizational measures to ensure the security of personal data."
+  },
+  "cookies": {
+    "title": "9. USE OF COOKIES",
+    "text": "For more information, please see our Cookie Policy."
+  },
+  "policyUpdate": {
+    "title": "10. PRIVACY POLICY UPDATE",
+    "text": "This policy may be modified. Relevant changes will be communicated on the website."
+  }
+}

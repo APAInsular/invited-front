@@ -1,0 +1,87 @@
+{
+  "termsAndConditions": "TERMS AND CONDITIONS OF USE",
+  "updated": "Last update: 19 March 2025",
+  "introduction": {
+    "title": "1. INTRODUCTION",
+    "paragraphs": [
+      "Welcome to Invited.es (hereinafter, \"Invited\"), a digital application for creating and managing invitations for weddings, events, communions, birthdays, and other celebrations, developed and managed by APA Insular SL (hereinafter, \"the Company\" or \"APA Insular SL\").",
+      "Access to and use of this website and the services offered herein implies full and unreserved acceptance of these Terms and Conditions of Use. If you do not agree with any of the conditions set out here, you should refrain from using Invited."
+    ]
+  },
+  "controllerData": {
+    "title": "2. IDENTIFICATION AND CONTROLLER INFORMATION",
+    "responsible": "Controller:",
+    "responsibleText": "APA Insular SL",
+    "cif": "CIF:",
+    "cifText": "B04978920",
+    "address": "Registered Address:",
+    "addressText": "Caserío Tesjuate, 39A, 35611, Puerto del Rosario, Las Palmas",
+    "office": "Office:",
+    "officeText": "C/ Canalejas, 13. Vivero 15, 35600, Puerto del Rosario, Las Palmas",
+    "email": "Contact Email:",
+    "emailText": "hola@platita.es",
+    "website": "Website:",
+    "websiteText": "https://invited.es"
+  },
+  "object": {
+    "title": "3. PURPOSE",
+    "paragraphs": [
+      "These Terms and Conditions govern access, browsing, and use of the website https://invited.es and the services offered, which consist of creating, customizing, and managing digital invitations for events and celebrations. Use of Invited implies acceptance and compliance with these conditions, which may be modified at any time by the Company."
+    ]
+  },
+  "siteUse": {
+    "title": "4. SITE USE AND ACCESS CONDITIONS",
+    "useAllowedTitle": "4.1. Permitted Use",
+    "useAllowedParagraphs": [
+      "The user agrees to use the website and services lawfully, in good faith, respecting public order and accepted customs.",
+      "Likewise, the user agrees not to use Invited for fraudulent, illegal purposes or any use that may compromise security, interfere with the normal operation of the service, or damage, disable, or overload the Company’s technology infrastructure."
+    ],
+    "accountSecurityTitle": "4.2. Registration and Account Security",
+    "accountSecurityParagraphs": [
+      "When registering on Invited, the user must provide truthful and complete information. The user is responsible for maintaining the confidentiality of login credentials and agrees to immediately notify the Company of any unauthorized use or suspected breach of account security."
+    ]
+  },
+  "intellectualProperty": {
+    "title": "5. INTELLECTUAL AND INDUSTRIAL PROPERTY",
+    "paragraphs": [
+      "All content, trademarks, logos, graphics, texts, images, software, and other elements appearing on the website are the exclusive property of APA Insular SL or third parties who have authorized their use. Reproduction, distribution, modification, public communication, or any other form of exploitation of said content is expressly prohibited without prior written authorization from the rightful owner, except for personal and private use."
+    ]
+  },
+  "liability": {
+    "title": "6. LIMITATION OF LIABILITY",
+    "availabilityTitle": "6.1. Availability and Operation",
+    "availabilityParagraphs": [
+      "The Company agrees to make reasonable efforts to maintain availability and proper functioning of the website and services, but does not guarantee uninterrupted operation or error-free performance.",
+      "In no case shall APA Insular SL be held liable for interruptions, delays, or errors that may affect the service."
+    ],
+    "contentLinksTitle": "6.2. Content and Links",
+    "contentLinksParagraphs": [
+      "The Company assumes no responsibility for the accuracy, completeness, or timeliness of content provided by third parties through links included on the website.",
+      "Use of such links is the sole responsibility of the user."
+    ]
+  },
+  "contracting": {
+    "title": "7. ECONOMIC CONDITIONS AND CONTRACTING",
+    "paragraphs": [
+      "If Invited offers paid services, they will be governed by specific agreements that complement these Terms and Conditions, detailing pricing conditions, payment methods, cancellation policies, and refunds, among other aspects."
+    ]
+  },
+  "modifications": {
+    "title": "8. MODIFICATIONS",
+    "paragraphs": [
+      "The Company reserves the right to modify at any time and without prior notice the layout, configuration, and content of the website, as well as these terms of use."
+    ]
+  },
+  "jurisdiction": {
+    "title": "9. APPLICABLE LAW AND JURISDICTION",
+    "paragraphs": [
+      "The relationship between the user and APA Insular SL will be governed by the current Spanish legislation."
+    ]
+  },
+  "contact": {
+    "title": "10. CONTACT",
+    "paragraphs": [
+      "For any questions related to these Terms and Conditions, the user may contact APA Insular SL via email at: contacto@invited.es."
+    ]
+  }
+}

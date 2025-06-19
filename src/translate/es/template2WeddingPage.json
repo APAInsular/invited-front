@@ -1,0 +1,47 @@
+{
+  "CountDown": {
+    "title": "Solo faltan....",
+    "labels": ["Días", "Horas", "Minutos", "Segundos"]
+  },
+  "CoupleNames": {
+    "invitationText": "Tenemos el gusto de invitaros a nuestra boda que tendrá lugar",
+    "locationPrefix": "en"
+  },
+  "Gallery": {
+    "title": "📸 Conoce nuestra historia 📸"
+  },
+  "Location": {
+    "title": "📍 ¿A dónde ir?"
+  },
+  "SongLink": {
+    "title": "🎶 Nuestra canción especial 🎶",
+    "playing": "Reproduciendo la canción:",
+    "playButton": "▶️ Reproducir Canción",
+    "pauseButton": "⏸️ Pausar Canción"
+  },
+  "WeddingForm": {
+    "title": "💌 Confirmar Asistencia",
+    "requiredNote": "(*) campos obligatorios",
+    "fields": {
+      "name": "Nombre*",
+      "firstSurname": "Primer Apellido*",
+      "secondSurname": "Segundo Apellido",
+      "extraInformation": "Información Extra",
+      "allergy": "Alergias",
+      "feeding": {
+        "label": "Tipo de Alimentación",
+        "options": ["Selecciona...", "Sin preferencias", "Vegetariano", "Vegano"]
+      },
+      "companionQuestion": "¿Llevarás acompañante?",
+      "companionCount": "¿Cuántos acompañantes?",
+      "attendantFields": [
+        "Nombre", "Primer Apellido", "Segundo Apellido", "Edad del acompañante"
+      ]
+    },
+    "submitButton": "Enviar Confirmación"
+  },
+  "WeddingTimeLine": {
+    "title": "💍 Itinerario de la boda 💍",
+    "timePrefix": "🕒"
+  }
+}

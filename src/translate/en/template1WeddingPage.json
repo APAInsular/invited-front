@@ -1,0 +1,50 @@
+{
+  "CountDown": {
+    "title": "⏳ We're getting married in... ⏳",
+    "units": ["days", "hours", "minutes", "seconds"]
+  },
+  "CoupleNames": {
+    "heartIcon": "💖"
+  },
+  "Gallery": {
+    "title": "🎞️ Discover our story 🎞️"
+  },
+  "ChurchLocation": {
+    "title": "Where to go?"
+  },
+  "SongLink": {
+    "title": "🎶 Our special song 🎶",
+    "playingText": "Now playing",
+    "playButton": "▶️ Play Song",
+    "pauseButton": "⏸️ Pause Song"
+  },
+  "WeddingForm": {
+    "title": "💍 Confirm Attendance",
+    "requiredNote": "(*) required fields",
+    "fields": {
+      "name": "First Name*",
+      "firstSurname": "Last Name*",
+      "secondSurname": "Second Last Name",
+      "extraInformation": "Additional Information",
+      "allergy": "Allergies",
+      "feeding": {
+        "label": "Dietary Preference",
+        "options": ["Select...", "No preference", "Vegetarian", "Vegan"]
+      },
+      "companionQuestion": "Will you bring a guest?",
+      "companionCount": "How many guests?",
+      "attendantFields": [
+        "Name",
+        "Last Name",
+        "Second Last Name",
+        "Guest's Age"
+      ]
+    },
+    "submitButton": "Submit Confirmation"
+  },
+  "Timeline": {
+    "title": "💍 Wedding Timeline 💍",
+    "locationPrefix": "📍",
+    "timePrefix": "🕒"
+  }
+}

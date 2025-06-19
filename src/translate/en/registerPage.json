@@ -1,0 +1,35 @@
+{
+  "title": "Create your account",
+  "subtitle": "Create your account and enjoy all the benefits of using our website",
+  "note": "(*) required fields",
+  "fields": {
+    "name": "First Name*",
+    "firstSurname": "Last Name*",
+    "secondSurname": "Second Last Name",
+    "partnerName": "Partner's First Name*",
+    "partnerFirstSurname": "Partner's Last Name*",
+    "partnerSecondSurname": "Partner's Second Last Name",
+    "phone": "Phone*",
+    "email": "Email*",
+    "password": "Password*",
+    "confirmPassword": "Confirm Password*"
+  },
+  "errors": {
+    "name": "First name is required",
+    "firstSurname": "Last name is required",
+    "secondSurname": "Second last name is required",
+    "partnerName": "Partner's first name is required",
+    "partnerFirstSurname": "Partner's last name is required",
+    "partnerSecondSurname": "Partner's second last name is required",
+    "phone": "Phone number is required",
+    "email": "Email is required",
+    "password": "Password is required",
+    "confirmPassword": "Password confirmation is required"
+  },
+  "loginRedirect": "I already have an account",
+  "terms": {
+    "label": "I have read and accept the",
+    "link": "privacy policy"
+  },
+  "submit": "Register"
+}

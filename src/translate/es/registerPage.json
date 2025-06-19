@@ -1,0 +1,35 @@
+{
+  "title": "Crea tu cuenta",
+  "subtitle": "Crea tu cuenta y disfruta de todos los beneficias de usar nuestra web",
+  "note": "(*) campos obligatorios",
+  "fields": {
+    "name": "Nombre*",
+    "firstSurname": "Primer Apellido*",
+    "secondSurname": "Segundo Apellido",
+    "partnerName": "Nombre Pareja*",
+    "partnerFirstSurname": "Primer Apellido Pareja*",
+    "partnerSecondSurname": "Segundo Apellido Pareja",
+    "phone": "Teléfono*",
+    "email": "Correo Electrónico*",
+    "password": "Contraseña*",
+    "confirmPassword": "Confirmar Contraseña*"
+  },
+  "errors": {
+    "name": "El nombre es obligatorio",
+    "firstSurname": "El primer apellido es obligatorio",
+    "secondSurname": "El segundo apellido es obligatorio",
+    "partnerName": "El nombre es obligatorio",
+    "partnerFirstSurname": "El primer apellido es obligatorio",
+    "partnerSecondSurname": "El segundo apellido es obligatorio",
+    "phone": "El teléfono es obligatorio",
+    "email": "El correo electrónico es obligatorio",
+    "password": "La contraseña es obligatoria",
+    "confirmPassword": "Debes confirmar la contraseña"
+  },
+  "loginRedirect": "Ya tengo una cuenta",
+  "terms": {
+    "label": "He leído y acepto las",
+    "link": "políticas de privacidad"
+  },
+  "submit": "Registrar"
+}

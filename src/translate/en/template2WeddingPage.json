@@ -1,0 +1,47 @@
+{
+  "CountDown": {
+    "title": "Only...",
+    "labels": ["Days", "Hours", "Minutes", "Seconds"]
+  },
+  "CoupleNames": {
+    "invitationText": "We are delighted to invite you to our wedding which will take place on",
+    "locationPrefix": "in"
+  },
+  "Gallery": {
+    "title": "📸 Discover our story 📸"
+  },
+  "Location": {
+    "title": "📍 Where to go?"
+  },
+  "SongLink": {
+    "title": "🎶 Our special song 🎶",
+    "playing": "Now playing:",
+    "playButton": "▶️ Play Song",
+    "pauseButton": "⏸️ Pause Song"
+  },
+  "WeddingForm": {
+    "title": "💌 RSVP",
+    "requiredNote": "(*) required fields",
+    "fields": {
+      "name": "First Name*",
+      "firstSurname": "Last Name*",
+      "secondSurname": "Second Last Name",
+      "extraInformation": "Additional Information",
+      "allergy": "Allergies",
+      "feeding": {
+        "label": "Dietary Preference",
+        "options": ["Select...", "No preferences", "Vegetarian", "Vegan"]
+      },
+      "companionQuestion": "Will you bring a guest?",
+      "companionCount": "How many guests?",
+      "attendantFields": [
+        "Name", "Last Name", "Second Last Name", "Guest's Age"
+      ]
+    },
+    "submitButton": "Submit RSVP"
+  },
+  "WeddingTimeLine": {
+    "title": "💍 Wedding Schedule 💍",
+    "timePrefix": "🕒"
+  }
+}

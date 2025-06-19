@@ -1,0 +1,43 @@
+{
+  "cookiesPolicy": "POLÍTICA DE COOKIES",
+  "updated": "Fecha de última actualización: 19 de marzo de 2025",
+  "whatAreCookies": {
+    "title": "1. ¿Qué son las cookies?",
+    "text": "Las cookies son pequeños archivos de texto que se almacenan en el dispositivo (ordenador, móvil o tableta) del usuario cuando visita un sitio web. Estas cookies permiten que el Sitio Web recuerde sus acciones y preferencias (como el idioma, el tamaño de fuente, etc.) durante un período de tiempo, facilitando así la navegación y mejorando su experiencia."
+  },
+  "cookiesUsed": {
+    "title": "2. ¿Qué cookies utiliza Invited.es?",
+    "text": "Invited.es, una aplicación desarrollada por APA Insular SL, utiliza cookies propias y de terceros con el fin de optimizar la experiencia del usuario. En concreto, empleamos las siguientes categorías de cookies:",
+    "essentialCookies": {
+      "title": "Cookies esenciales:",
+      "text": "Estas cookies son imprescindibles para el correcto funcionamiento del Sitio Web. Permiten, por ejemplo, la autenticación del usuario, la gestión de sesiones y el acceso a áreas seguras. Sin ellas, el Sitio Web no podría funcionar adecuadamente."
+    },
+    "performanceCookies": {
+      "title": "Cookies de rendimiento y análisis:",
+      "text": "Estas cookies recopilan información anónima sobre cómo los usuarios interactúan con el Sitio Web. Nos permiten medir el rendimiento, detectar posibles problemas y optimizar la experiencia de navegación. Entre estas herramientas puede estar, por ejemplo, Google Analytics (o servicios similares)."
+    },
+    "functionalityCookies": {
+      "title": "Cookies de funcionalidad:",
+      "text": "Estas cookies recuerdan las preferencias y elecciones que realiza el usuario en el Sitio Web, como el idioma o la personalización de ciertos contenidos, para ofrecer una experiencia más adaptada y personalizada."
+    },
+    "advertisingCookies": {
+      "title": "Cookies de publicidad (si las hubiere):",
+      "text": "En caso de utilizarse, estas cookies se emplean para mostrar anuncios relevantes y medir la efectividad de las campañas publicitarias. Generalmente, son instaladas por terceros y su uso está sujeto a sus propias políticas de privacidad."
+    }
+  },
+  "cookieManagement": {
+    "title": "3. Gestión y eliminación de cookies",
+    "paragraphs": [
+      "Usted puede configurar su navegador para aceptar, rechazar o eliminar las cookies. La mayoría de los navegadores ofrecen opciones de configuración para gestionar las cookies; sin embargo, la desactivación de algunas de ellas podría afectar la funcionalidad y el rendimiento del Sitio Web.",
+      "Para obtener información detallada sobre cómo gestionar o eliminar cookies, consulte las instrucciones que ofrece su navegador o visite https://www.allaboutcookies.org."
+    ]
+  },
+  "policyChanges": {
+    "title": "4. Cambios en la Política de Cookies",
+    "text": "Esta Política de Cookies podrá ser actualizada en función de cambios legislativos o de las prácticas de uso de cookies en el Sitio Web. Se recomienda a los usuarios revisar esta política periódicamente para estar informados sobre las actualizaciones."
+  },
+  "contact": {
+    "title": "5. Contacto",
+    "text": "Si tiene alguna duda o desea obtener más información acerca del uso de cookies en Invited.es, por favor, póngase en contacto con nosotros a través del correo electrónico: contacto@invited.es."
+  }
+}

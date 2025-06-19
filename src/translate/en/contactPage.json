@@ -1,0 +1,54 @@
+{
+  "contactPage": {
+    "hero": {
+      "title": "Contact Us",
+      "description": "We’re here to help. Write to us and we’ll get back to you as soon as possible."
+    },
+    "formSection": {
+      "title": "Send a Message",
+      "fields": {
+        "nameLabel": "Full Name",
+        "emailLabel": "Email Address",
+        "messageLabel": "Your Message",
+        "termsCheckbox": "I accept the",
+        "termsLink": "terms and conditions",
+        "privacyLink": "privacy policy",
+        "submitButton": "Send Message",
+        "sendingButton": "Sending..."
+      },
+      "successMessage": "Your message has been sent successfully."
+    },
+    "contactInfoSection": {
+      "title": "Contact Information",
+      "address": {
+        "title": "Address",
+        "lines": [
+          "Calle Canalejas 13",
+          "Puerto del Rosario, Las Palmas (Spain)",
+          "Postal Code: 35600"
+        ]
+      },
+      "email": {
+        "title": "Email",
+        "value": "contacto@invited.es"
+      },
+      "hours": {
+        "title": "Office Hours",
+        "value": "Monday to Friday: 9:00 AM - 2:00 PM"
+      },
+      "social": {
+        "title": "Follow Us",
+        "links": {
+          "facebook": "https://www.facebook.com/invit3d",
+          "instagram": "https://www.instagram.com/invited.es",
+          "youtube": "https://www.youtube.com/@Invited-es/",
+          "linkedin": "https://www.linkedin.com/company/platita/"
+        }
+      }
+    },
+    "map": {
+      "title": "Company Location",
+      "iframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.032433578925!2d-13.86272292468735!3d28.50087507571541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4618b6c4e50aa3%3A0x5a9a80a6d20b1e0!2sCalle%20Canalejas%2C%2013%2C%2035600%20Puerto%20del%20Rosario%2C%20Las%20Palmas%2C%20Espa%C3%B1a!5e0!3m2!1ses!2smx!4v1717640000000!5m2!1ses!2smx"
+    }
+  }
+}

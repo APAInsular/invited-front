@@ -1,0 +1,43 @@
+{
+  "cookiesPolicy": "COOKIES POLICY",
+  "updated": "Last update: 19 March 2025",
+  "whatAreCookies": {
+    "title": "1. What are cookies?",
+    "text": "Cookies are small text files stored on the user's device (computer, mobile, or tablet) when visiting a website. These cookies allow the Website to remember your actions and preferences (such as language, font size, etc.) for a certain period, thus facilitating navigation and improving the user experience."
+  },
+  "cookiesUsed": {
+    "title": "2. What cookies does Invited.es use?",
+    "text": "Invited.es, an application developed by APA Insular SL, uses both first-party and third-party cookies to optimize the user experience. Specifically, we use the following categories of cookies:",
+    "essentialCookies": {
+      "title": "Essential cookies:",
+      "text": "These cookies are essential for the proper functioning of the Website. They enable, for example, user authentication, session management, and access to secure areas. Without them, the Website cannot function properly."
+    },
+    "performanceCookies": {
+      "title": "Performance and analytics cookies:",
+      "text": "These cookies collect anonymous information about how users interact with the Website. They allow us to measure performance, identify potential issues, and optimize the browsing experience. These tools may include, for example, Google Analytics (or similar services)."
+    },
+    "functionalityCookies": {
+      "title": "Functionality cookies:",
+      "text": "These cookies remember the preferences and choices made by the user on the Website, such as language or customization of certain content, to offer a more tailored and personalized experience."
+    },
+    "advertisingCookies": {
+      "title": "Advertising cookies (if applicable):",
+      "text": "If used, these cookies are intended to display relevant ads and measure the effectiveness of advertising campaigns. They are generally installed by third parties and their use is subject to their own privacy policies."
+    }
+  },
+  "cookieManagement": {
+    "title": "3. Managing and deleting cookies",
+    "paragraphs": [
+      "You can configure your browser to accept, reject, or delete cookies. Most browsers offer settings to manage cookies; however, disabling some of them may affect the functionality and performance of the Website.",
+      "For detailed information on how to manage or delete cookies, please refer to your browser's instructions or visit https://www.allaboutcookies.org."
+    ]
+  },
+  "policyChanges": {
+    "title": "4. Changes to the Cookies Policy",
+    "text": "This Cookies Policy may be updated due to legislative changes or changes in the use of cookies on the Website. Users are encouraged to review this policy periodically to stay informed of any updates."
+  },
+  "contact": {
+    "title": "5. Contact",
+    "text": "If you have any questions or wish to obtain more information about the use of cookies on Invited.es, please contact us at: contacto@invited.es."
+  }
+}

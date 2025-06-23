@@ -48,6 +48,21 @@
   },
   "contracting": {
     "title": "7. ECONOMIC CONDITIONS AND CONTRACTING",
+<<<<<<< HEAD
+    "paragraph": "If Invited offers paid services, they will be governed by specific agreements that complement these Terms and Conditions, detailing pricing conditions, payment methods, cancellation policies, and refunds, among other aspects."
+  },
+  "modifications": {
+    "title": "8. MODIFICATIONS",
+    "paragraph": "The Company reserves the right to modify at any time and without prior notice the layout, configuration, and content of the website, as well as these terms of use."
+  },
+  "jurisdiction": {
+    "title": "9. APPLICABLE LAW AND JURISDICTION",
+    "paragraph": "The relationship between the user and APA Insular SL will be governed by the current Spanish legislation."
+  },
+  "contact": {
+    "title": "10. CONTACT",
+    "paragraph": "For any questions related to these Terms and Conditions, the user may contact APA Insular SL via email at: contacto@invited.es."
+=======
     "paragraph1": "If Invited offers paid services, they will be governed by specific agreements that complement these Terms and Conditions, detailing pricing conditions, payment methods, cancellation policies, and refunds, among other aspects."
   },
   "modifications": {
@@ -61,5 +76,6 @@
   "contact": {
     "title": "10. CONTACT",
     "paragraph1": "For any questions related to these Terms and Conditions, the user may contact APA Insular SL via email at: contacto@invited.es."
+>>>>>>> 6b9dfe4de8f242f4ee553d214b9b365eda612699
   }
 }

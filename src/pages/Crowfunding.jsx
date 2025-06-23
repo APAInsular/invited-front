@@ -1,7 +1,14 @@
 import React from "react";
 import Footer from "../components/Footer";
+import usePageTranslation from '../hooks/usePageTranslation';
 
 const Crowdfunding = () => {
+    const { t, loadingTranslation } = usePageTranslation('crowfundingPage');
+
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
+
     return (
         <div className="container-fluid px-0">
             {/* Bootstrap CSS */}
@@ -184,18 +191,17 @@ const Crowdfunding = () => {
                 {/* Hero Section */}
                 <section className="hero text-center">
                     <div className="container py-5">
-                        <h1 className="display-4 fw-bold mb-4">Crowdfunding · Invited</h1>
+                        <h1 className="display-4 fw-bold mb-4">{t('crowdfundingPage.hero.title')}</h1>
                         <p className="lead mb-4 mx-auto" style={{ maxWidth: "600px" }}>
-                            Ayúdanos a lanzar Invited: la plataforma de invitaciones digitales 100% automáticas para bodas y eventos.
-                            Cero papel, cero estrés.
+                            {t('crowdfundingPage.hero.description')}
                         </p>
                         <a
-                            href="https://www.kickstarter.com/projects/javierjg/invited-100-automated-digital-invitations-for-weddings"
+                            href={t('crowdfundingPage.hero.link')}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary btn-lg px-4"
                         >
-                            Visita nuestra campaña
+                            {t('crowdfundingPage.hero.button')}
                         </a>
                     </div>
                 </section>
@@ -203,38 +209,36 @@ const Crowdfunding = () => {
                 {/* Features Section */}
                 <section className="py-5 my-4">
                     <div className="container">
-                        <h2 className="text-center mb-5">¿Por qué elegir Invited?</h2>
+                        <h2 className="text-center mb-5">{t('crowdfundingPage.features.title')}</h2>
                         <div className="row g-4">
-                            {[
-                                {
-                                    icon: "bi bi-clock-history", // Icono de reloj (para ahorro de tiempo)
-                                    title: "Ahorra tiempo y costes",
-                                    text: "Evita la impresión y el envío postal. Con nuestras invitaciones digitales, todo es más rápido y económico."
-                                },
-                                {
-                                    icon: "bi bi-palette", // Icono de paleta de colores
-                                    title: "Diseño único y personalizable",
-                                    text: "Elige tu plantilla favorita y añade música para reflejar la esencia de tu celebración."
-                                },
-                                {
-                                    icon: "bi bi-check-circle", // Icono de checkmark en círculo
-                                    title: "Confirmaciones en tiempo real (RSVP)",
-                                    text: "Tus invitados podrán confirmar asistencia, elegir menú y notificar alergias. Tú recibirás avisos en tiempo real."
-                                },
-                                {
-                                    icon: "bi bi-calendar-event", // Icono de calendario
-                                    title: "Cuenta atrás y detalles del evento",
-                                    text: "Añade la fecha, ubicaciones y toda la información clave para tus invitados, con un elegante temporizador en pantalla."
-                                }
-                            ].map((feature, idx) => (
-                                <div className="col-md-6 col-lg-3" key={idx}>
-                                    <div className="feature-card p-4 h-100 bg-white text-center">
-                                        <i className={`${feature.icon} text-rosa-fuerte`} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}></i>
-                                        <h4 className="mb-3">{feature.title}</h4>
-                                        <p>{feature.text}</p>
-                                    </div>
+                            <div className="col-md-6 col-lg-3">
+                                <div className="feature-card p-4 h-100 bg-white text-center">
+                                    <i className={`${t('crowdfundingPage.features.feature1.icon')} text-rosa-fuerte`} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}></i>
+                                    <h4 className="mb-3">{t('crowdfundingPage.features.feature1.title')}</h4>
+                                    <p>{t('crowdfundingPage.features.feature1.text')}</p>
                                 </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6 col-lg-3">
+                                <div className="feature-card p-4 h-100 bg-white text-center">
+                                    <i className={`${t('crowdfundingPage.features.feature2.icon')} text-rosa-fuerte`} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}></i>
+                                    <h4 className="mb-3">{t('crowdfundingPage.features.feature2.title')}</h4>
+                                    <p>{t('crowdfundingPage.features.feature2.text')}</p>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-3">
+                                <div className="feature-card p-4 h-100 bg-white text-center">
+                                    <i className={`${t('crowdfundingPage.features.feature3.icon')} text-rosa-fuerte`} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}></i>
+                                    <h4 className="mb-3">{t('crowdfundingPage.features.feature3.title')}</h4>
+                                    <p>{t('crowdfundingPage.features.feature3.text')}</p>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-3">
+                                <div className="feature-card p-4 h-100 bg-white text-center">
+                                    <i className={`${t('crowdfundingPage.features.feature4.icon')} text-rosa-fuerte`} style={{ fontSize: '2.5rem', marginBottom: '1rem' }}></i>
+                                    <h4 className="mb-3">{t('crowdfundingPage.features.feature4.title')}</h4>
+                                    <p>{t('crowdfundingPage.features.feature4.text')}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -244,31 +248,31 @@ const Crowdfunding = () => {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 mb-4 mb-lg-0">
-                                <h3 className="text-rosa-fuerte mb-3">Nuestra inspiración</h3>
+                                <h3 className="text-rosa-fuerte mb-3">{t('crowdfundingPage.inspiration.title1')}</h3>
                                 <p className="mb-4">
-                                    Somos Javier y Antonio, fundadores de <strong>Invited</strong>, una plataforma nacida en las Islas Canarias con el anhelo de devolverle a cada celebración su esencia: la conexión humana.
+                                    {t('crowdfundingPage.inspiration.paragraph1')}
                                 </p>
 
-                                <h3 className="text-rosa-fuerte mb-3">¿Por qué crowdfunding?</h3>
-                                <p className="mb-3">Creemos en el poder de la comunidad. Con vuestra ayuda, podremos:</p>
+                                <h3 className="text-rosa-fuerte mb-3">{t('crowdfundingPage.inspiration.title2')}</h3>
+                                <p className="mb-3">{t('crowdfundingPage.inspiration.paragraph2')}</p>
                                 <ul className="mb-4">
-                                    <li className="mb-2"><strong>Consolidar el núcleo tecnológico</strong> – Dos desarrolladores y un gestor trabajarán durante tres meses…</li>
-                                    <li className="mb-2"><strong>Diseñar plantillas premium</strong> – 20 diseños exclusivos de diferentes estilos…</li>
-                                    <li className="mb-2"><strong>Lanzar una campaña de marketing emocional</strong> – Para llegar a parejas, familiares y profesionales…</li>
+                                    <li className="mb-2">{t('crowdfundingPage.inspiration.goal1')}</li>
+                                    <li className="mb-2">{t('crowdfundingPage.inspiration.goal2')}</li>
+                                    <li className="mb-2">{t('crowdfundingPage.inspiration.goal3')}</li>
                                 </ul>
-                                <p className="mb-4">Cada euro recaudado se traducirá en horas de código, diseño y mensajes de "¡Sí, estaremos allí!".</p>
+                                <p className="mb-4">{t('crowdfundingPage.inspiration.paragraph3')}</p>
 
-                                <h3 className="text-rosa-fuerte mb-3">Nuestro compromiso</h3>
+                                <h3 className="text-rosa-fuerte mb-3">{t('crowdfundingPage.inspiration.title3')}</h3>
                                 <ul>
-                                    <li className="mb-2"><strong>Transparencia total:</strong> publicaremos avances semanales y compartiremos el presupuesto.</li>
-                                    <li className="mb-2"><strong>Calidad y cercanía:</strong> canal directo con los mecenas para sugerencias y dudas.</li>
-                                    <li className="mb-2"><strong>Escalabilidad:</strong> ampliaremos Invited a cumpleaños, bautizos y más si superamos el objetivo.</li>
+                                    <li className="mb-2">{t('crowdfundingPage.inspiration.commitment1')}</li>
+                                    <li className="mb-2">{t('crowdfundingPage.inspiration.commitment2')}</li>
+                                    <li className="mb-2">{t('crowdfundingPage.inspiration.commitment3')}</li>
                                 </ul>
                             </div>
                             <div className="col-lg-6 d-flex justify-content-center">
                                 <img
-                                    src="/images/Plantilla_1.png"
-                                    alt="Javier y Antonio trabajando en Invited"
+                                    src={t('crowdfundingPage.inspiration.imageSrc')}
+                                    alt={t('crowdfundingPage.inspiration.imageAlt')}
                                     className="img-fluid rounded shadow"
                                 />
                             </div>
@@ -279,14 +283,14 @@ const Crowdfunding = () => {
                 {/* Video Section */}
                 <section className="py-5">
                     <div className="container">
-                        <h2 className="text-center mb-5">Conoce Invited en acción</h2>
+                        <h2 className="text-center mb-5">{t('crowdfundingPage.video.title')}</h2>
                         <div className="ratio ratio-16x9">
                             <video
                                 controls
                                 className="object-fit-contain"
-                                poster="/LogoInvited_3.png"
+                                poster={t('crowdfundingPage.video.poster')}
                             >
-                                <source src="/videos/Presentación_Invited.mp4" type="video/mp4" />
+                                <source src={t('crowdfundingPage.video.videoSrc')} type="video/mp4" />
                             </video>
                         </div>
                     </div>
@@ -295,21 +299,29 @@ const Crowdfunding = () => {
                 {/* Timeline Section */}
                 <section className="py-5 bg-light">
                     <div className="container">
-                        <h2 className="text-center mb-5">Cronograma de entregas</h2>
+                        <h2 className="text-center mb-5">{t('crowdfundingPage.timeline.title')}</h2>
                         <div className="d-flex justify-content-center">
                             <div className="timeline-crowfunding" style={{ maxWidth: '800px' }}>
-                                {[
-                                    ['6 de junio de 2025', 'Lanzamiento de la campaña en Kickstarter.'],
-                                    ['6 de julio de 2025', 'Inicio formal del desarrollo (I+D y arquitectura).'],
-                                    ['6 de agosto de 2025', 'Implementación del panel de proveedores y pruebas internas.'],
-                                    ['6 de septiembre de 2025', 'Diseño e integración de 20 plantillas premium.'],
-                                    ['30 de septiembre de 2025', 'Pruebas finales (QA), ajustes y lanzamiento completo.']
-                                ].map(([date, desc], i) => (
-                                    <div className="timeline-item-crowfunding position-relative ps-4 mb-4" key={i}>
-                                        <h4 className="text-rosa-fuerte mb-2">{date}</h4>
-                                        <p className="mb-0">{desc}</p>
-                                    </div>
-                                ))}
+                                <div className="timeline-item-crowfunding position-relative ps-4 mb-4">
+                                    <h4 className="text-rosa-fuerte mb-2">{t('crowdfundingPage.timeline.step1.date')}</h4>
+                                    <p className="mb-0">{t('crowdfundingPage.timeline.step1.description')}</p>
+                                </div>
+                                <div className="timeline-item-crowfunding position-relative ps-4 mb-4">
+                                    <h4 className="text-rosa-fuerte mb-2">{t('crowdfundingPage.timeline.step2.date')}</h4>
+                                    <p className="mb-0">{t('crowdfundingPage.timeline.step2.description')}</p>
+                                </div>
+                                <div className="timeline-item-crowfunding position-relative ps-4 mb-4">
+                                    <h4 className="text-rosa-fuerte mb-2">{t('crowdfundingPage.timeline.step3.date')}</h4>
+                                    <p className="mb-0">{t('crowdfundingPage.timeline.step3.description')}</p>
+                                </div>
+                                <div className="timeline-item-crowfunding position-relative ps-4 mb-4">
+                                    <h4 className="text-rosa-fuerte mb-2">{t('crowdfundingPage.timeline.step4.date')}</h4>
+                                    <p className="mb-0">{t('crowdfundingPage.timeline.step4.description')}</p>
+                                </div>
+                                <div className="timeline-item-crowfunding position-relative ps-4 mb-4">
+                                    <h4 className="text-rosa-fuerte mb-2">{t('crowdfundingPage.timeline.step5.date')}</h4>
+                                    <p className="mb-0">{t('crowdfundingPage.timeline.step5.description')}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -318,76 +330,75 @@ const Crowdfunding = () => {
                 {/* Rewards Section */}
                 <section className="py-5">
                     <div className="container">
-                        <h2 className="text-center mb-5">Recompensas</h2>
+                        <h2 className="text-center mb-5">{t('crowdfundingPage.rewards.title')}</h2>
                         <div className="row g-4">
-                            {[
-                                {
-                                    title: 'Early Bird – Invitación Digital (48€)',
-                                    items: [
-                                        '1 invitación digital (valor €119) con 60% de descuento',
-                                        'Envíos ilimitados (enlace WhatsApp/email)',
-                                        'Notificaciones por email ilimitadas',
-                                        'Acceso al panel básico de novios',
-                                        'Soporte prioritario durante la campaña'
-                                    ]
-                                },
-                                {
-                                    title: 'Proveedor – Pack 5 Invitaciones (446€)',
-                                    items: [
-                                        '5 invitaciones digitales con 25% de descuento',
-                                        'Panel de proveedores para gestionar invitaciones',
-                                        'Notificaciones ilimitadas',
-                                        'Soporte prioritario B2B'
-                                    ]
-                                },
-                                {
-                                    title: 'Proveedor – Pack 10 Invitaciones (833€)',
-                                    items: [
-                                        '10 invitaciones digitales con 30% de descuento',
-                                        'Panel de proveedores',
-                                        'Notificaciones ilimitadas',
-                                        'Soporte prioritario B2B'
-                                    ]
-                                },
-                                {
-                                    title: 'Proveedor – Pack 20 Invitaciones (1.547€)',
-                                    items: [
-                                        '20 invitaciones digitales con 35% de descuento',
-                                        'Panel de proveedores',
-                                        'Notificaciones ilimitadas',
-                                        'Soporte prioritario B2B'
-                                    ]
-                                },
-                                {
-                                    title: 'Creador de Plantillas (250€)',
-                                    items: [
-                                        'Diseño colaborativo de tu propia plantilla',
-                                        '20% de royalties en cada venta futura',
-                                        'Envíos y notificaciones ilimitados',
-                                        'Soporte prioritario'
-                                    ]
-                                },
-                                {
-                                    title: 'White-Label Empresarial (3.900€)',
-                                    items: [
-                                        'Licencia "llave en mano" con rebranding completo',
-                                        'Servidor y dominio incluidos',
-                                        'Panel de administración',
-                                        'Soporte gratuito 1 año + actualizaciones'
-                                    ]
-                                }
-                            ].map((reward, i) => (
-                                <div className="col-md-6 col-lg-4" key={i}>
-                                    <div className="reward-card p-4 h-100 bg-white">
-                                        <h3 className="mb-3">{reward.title}</h3>
-                                        <ul className="mb-0">
-                                            {reward.items.map((item, j) => (
-                                                <li key={j} className="mb-2">{item}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                            <div className="col-md-6 col-lg-4">
+                                <div className="reward-card p-4 h-100 bg-white">
+                                    <h3 className="mb-3">{t('crowdfundingPage.rewards.reward1.title')}</h3>
+                                    <ul className="mb-0">
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward1.item1')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward1.item2')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward1.item3')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward1.item4')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward1.item5')}</li>
+                                    </ul>
                                 </div>
-                            ))}
+                            </div>
+                            <div className="col-md-6 col-lg-4">
+                                <div className="reward-card p-4 h-100 bg-white">
+                                    <h3 className="mb-3">{t('crowdfundingPage.rewards.reward2.title')}</h3>
+                                    <ul className="mb-0">
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward2.item1')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward2.item2')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward2.item3')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward2.item4')}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-4">
+                                <div className="reward-card p-4 h-100 bg-white">
+                                    <h3 className="mb-3">{t('crowdfundingPage.rewards.reward3.title')}</h3>
+                                    <ul className="mb-0">
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward3.item1')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward3.item2')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward3.item3')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward3.item4')}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-4">
+                                <div className="reward-card p-4 h-100 bg-white">
+                                    <h3 className="mb-3">{t('crowdfundingPage.rewards.reward4.title')}</h3>
+                                    <ul className="mb-0">
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward4.item1')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward4.item2')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward4.item3')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward4.item4')}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-4">
+                                <div className="reward-card p-4 h-100 bg-white">
+                                    <h3 className="mb-3">{t('crowdfundingPage.rewards.reward5.title')}</h3>
+                                    <ul className="mb-0">
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward5.item1')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward5.item2')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward5.item3')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward5.item4')}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-lg-4">
+                                <div className="reward-card p-4 h-100 bg-white">
+                                    <h3 className="mb-3">{t('crowdfundingPage.rewards.reward6.title')}</h3>
+                                    <ul className="mb-0">
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward6.item1')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward6.item2')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward6.item3')}</li>
+                                        <li className="mb-2">{t('crowdfundingPage.rewards.reward6.item4')}</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

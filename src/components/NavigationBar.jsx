@@ -59,7 +59,7 @@ const NavigationBar = () => {
         <Navbar expand="lg" style={styles.navbar} fixed="top">
             <Container>
                 <Navbar.Brand as={Link} to={localizedLink("/")} style={{ fontWeight: 'bold', color: '#F19292' }}>
-                    {scrolled ? <img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} /> : <img src={ImagenLogoBlanco} alt="Logo" style={{ width: "120px" }} />}
+                    <img src={ImagenLogo} alt="Logo" style={{ width: "120px" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle
                     aria-controls="basic-navbar-nav"

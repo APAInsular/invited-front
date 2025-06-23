@@ -5,9 +5,11 @@ import apiClient from '../config/axiosConfig';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Eye, EyeOff } from "lucide-react";
-import Swal from 'sweetalert2';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 const Login = () => {
+  const { t, loadingTranslation } = usePageTranslation('loginPage');
+
   const { login } = useContext(AuthContext);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +36,7 @@ const Login = () => {
       login(response.data.user_details.original, response.data.token);
       navigate(`/`);
     } catch (error) {
-      setError('No se pudo iniciar sesión.');
+      setError(`${t('login.errorMessage')}`);
     }
   };
 
@@ -42,7 +44,7 @@ const Login = () => {
     e.preventDefault();
 
     if (formData.email === '' || formData.password === '') {
-      setError('Por favor, ingresa tu email y contraseña.');
+      setError(`${t('login.errorMessage')}`);
 
     } else {
       setError('');
@@ -52,23 +54,27 @@ const Login = () => {
         const partnerNameWithoutSpaces = partnerName.replace(/\s+/g, '');
         navigate(`/${partnerNameWithoutSpaces}`); // Redirige al usuario
       } catch {
-        setError('No se pudo iniciar sesión. Contraseña o correo incorrectos.');
+        setError(`${t('login.errorMessage')}`);
       }
     }
   };
+
+  if (loadingTranslation) {
+    return <div className="text-center py-5">Loading translations...</div>;
+  }
 
   return (
     <Container className="py-5 mt-5">
       <Row className="justify-content-center py-5">
         <Col md={6}>
-          <h2 className="text-center mb-4">Iniciar Sesión</h2>
+          <h2 className="text-center mb-4">{t('login.title')}</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="email">
-              <Form.Label>Email*</Form.Label>
+              <Form.Label>{t('login.emailLabel')}</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Ingresa tu email"
+                placeholder={t('login.emailPlaceholder')}
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -76,11 +82,11 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group controlId="password" className="mt-3">
-              <Form.Label>Contraseña*</Form.Label>
+              <Form.Label>{t('login.passwordLabel')}</Form.Label>
               <InputGroup>
                 <Form.Control
                   type={showPassword ? "text" : "password"}
-                  placeholder="Ingresa tu contraseña"
+                  placeholder={t('login.passwordPlaceholder')}
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
@@ -93,13 +99,13 @@ const Login = () => {
 
             <Row>
               <Col>
-                <Link to={"/register"} style={{ fontSize: "12px" }}>No tengo una cuenta</Link>
-                <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
+                <Link to={"/register"} style={{ fontSize: "12px" }}>{t('login.noAccount')}</Link>
+                <p style={{ marginTop: "1px", fontSize: "12px" }}>{t('login.requiredFieldsNote')}</p>
               </Col>
             </Row>
 
             <Button variant="primary" type="submit" className="mt-4 w-100">
-              Iniciar Sesión
+              {t('login.submitButton')}
             </Button>
           </Form>
         </Col>

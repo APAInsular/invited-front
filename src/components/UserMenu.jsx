@@ -2,12 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Nav, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignInAlt, faUserPlus, faSignOutAlt, faCog } from '@fortawesome/free-solid-svg-icons';
+import { useParams } from 'react-router-dom';
 
 const UserMenu = ({ user, logout }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [scrolled, setScrolled] = useState(false);
     const menuRef = useRef(null);
+    const { lang } = useParams();
 
     // Cerrar el menú al hacer clic fuera
     useEffect(() => {
@@ -33,6 +35,11 @@ const UserMenu = ({ user, logout }) => {
     }, []);
 
     const toggleMenu = () => setIsOpen(!isOpen);
+
+    // Función para generar enlaces con el idioma actual
+    const localizedLink = (path) => {
+        return `/${lang}${path}`;
+    };
 
     const styles = {
         default: {
@@ -112,7 +119,7 @@ const UserMenu = ({ user, logout }) => {
                     {!user ? (
                         <>
                             <Nav.Link
-                                href="/login"
+                                href={localizedLink("/login")}
                                 style={hoveredItem === "login" ? { ...styles.default, ...styles.hover } : styles.default}
                                 onMouseEnter={() => setHoveredItem("login")}
                                 onMouseLeave={() => setHoveredItem(null)}
@@ -124,7 +131,7 @@ const UserMenu = ({ user, logout }) => {
                             </Nav.Link>
 
                             <Nav.Link
-                                href="/register"
+                                href={localizedLink("/register")}
                                 style={hoveredItem === "register" ? { ...styles.default, ...styles.hover } : styles.default}
                                 onMouseEnter={() => setHoveredItem("register")}
                                 onMouseLeave={() => setHoveredItem(null)}
@@ -138,7 +145,7 @@ const UserMenu = ({ user, logout }) => {
                     ) : (
                         <>
                             <Nav.Link
-                                href="/dashboard"
+                                href={localizedLink("/dashboard")}
                                 style={hoveredItem === "profile" ? { ...styles.default, ...styles.hover } : styles.default}
                                 onMouseEnter={() => setHoveredItem("profile")}
                                 onMouseLeave={() => setHoveredItem(null)}

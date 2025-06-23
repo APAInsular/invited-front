@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiClient from '../config/axiosConfig';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import '../templates/styles/LandingPage.css'
 import Footer from '../components/Footer';
 import usePageTranslation from '../hooks/usePageTranslation';
@@ -9,6 +9,7 @@ import usePageTranslation from '../hooks/usePageTranslation';
 const LandingPage = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const { lang } = useParams();
 
     const { t, loadingTranslation } = usePageTranslation('landingPage');
 
@@ -128,6 +129,11 @@ const LandingPage = () => {
         },
     ];
 
+    // Función para generar enlaces con el idioma actual
+    const localizedLink = (path) => {
+        return `/${lang}${path}`;
+    };
+
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;
     }
@@ -170,13 +176,13 @@ const LandingPage = () => {
                             <p>{t('subtitle')}</p>
                             {user ? (
                                 <Link
-                                    to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
+                                    to={localizedLink(`/${user.name}&${user.partner.name}/invitation/plantilla/form`)}
                                     className="btn btn-primary"
                                 >
                                     {t('titleButton')}
                                 </Link>
                             ) : (
-                                <Link to="/login" className="btn btn-primary">
+                                <Link to={localizedLink('/login')} className="btn btn-primary">
                                     {t('titleButton')}
                                 </Link>
                             )}
@@ -417,7 +423,7 @@ const LandingPage = () => {
             </section>
 
             <Footer></Footer>
-        </div>
+        </div >
     );
 };
 

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import apiClient from '../config/axiosConfig';
 import Swal from 'sweetalert2'
 import { span } from "framer-motion/client";
+import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function MakeInvitationForm() {
     const navigate = useNavigate();
@@ -11,6 +12,8 @@ export default function MakeInvitationForm() {
     const formattedTemplateName = templateName.replace(/^Plantilla/, "Plantilla ");
 
     const [previewImage, setPreviewImage] = useState();
+
+    const { t, loadingTranslation } = usePageTranslation('thankYouPage');
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -224,34 +227,50 @@ export default function MakeInvitationForm() {
         }));
     };
 
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
+
     return (
         <Container className="mt-5" style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
-            <h2 className="m-0" style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu Invitación</h2>
-            <p className="mb-2 m-0 fw-lighter" style={{ fontSize: "0.8rem" }}>Llena el formulario y genera tu invitación en minutos.</p>
-            <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
+            <h2 className="m-0" style={{ fontSize: "2rem", fontWeight: "bold" }}>{t('formTitle')}</h2>
+            <p className="mb-2 m-0 fw-lighter" style={{ fontSize: "0.8rem" }}>{t('formSubtitle')}</p>
+            <p style={{ marginTop: "1px", fontSize: "12px" }}>{t('requiredFieldsNote')}</p>
+
             <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", margin: "0 auto", marginTop: "20px" }}>
-                {/* Nombre de la pareja - ahora se apila en móviles */}
+                {/* Partner Names */}
                 <Row>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre Pareja*" name="groomName" value={userInfo.novioName} required />
+                            <Form.Control
+                                type="text"
+                                placeholder={t('partnerName')}
+                                name="groomName"
+                                value={userInfo.groomName}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Control type="text" placeholder="Nombre Pareja*" name="brideName" value={userInfo.noviaName} required />
+                            <Form.Control
+                                type="text"
+                                placeholder={t('partnerName')}
+                                name="brideName"
+                                value={userInfo.brideName}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
 
-                {/* Fecha y plantilla - se apilan en móviles */}
+                {/* Date and Template */}
                 <Row className="align-items-center mb-3">
-                    {/* Columna izquierda: inputs */}
                     <Col xs={12} md={6}>
                         <Row className="align-items-center">
                             <Col xs={12} className="align-items-center">
                                 <Form.Group className="mb-3">
-                                    <Form.Label>Fecha de la boda*</Form.Label>
+                                    <Form.Label>{t('weddingDate')}</Form.Label>
                                     <Form.Control
                                         type="date"
                                         name="weddingDate"
@@ -263,32 +282,31 @@ export default function MakeInvitationForm() {
                             </Col>
                             <Col xs={12} className="align-items-center">
                                 <Form.Group className="mb-3">
-                                    <Form.Label>Plantilla a utilizar*</Form.Label>
+                                    <Form.Label>{t('templateLabel')}</Form.Label>
                                     <Form.Select
                                         name="template"
                                         value={formData.template}
                                         onChange={handleChange}
                                         required
                                     >
-                                        <option value="Plantilla Romantica">Plantilla Clásica</option>
-                                        <option value="Plantilla Acuarela">Plantilla Acuarela</option>
-                                        <option value="Plantilla Erase una vez">Plantilla Érase una vez</option>
-                                        <option value="Plantilla Dramatica" disabled>Plantilla Dramática</option>
-                                        <option value="Plantilla Dulce" disabled>Plantilla Dulce</option>
-                                        <option value="Plantilla Oscura" disabled>Plantilla Oscura</option>
+                                        <option value="Plantilla Romantica">{t('templateOptions.romantic')}</option>
+                                        <option value="Plantilla Acuarela">{t('templateOptions.watercolor')}</option>
+                                        <option value="Plantilla Erase una vez">{t('templateOptions.fairytale')}</option>
+                                        <option value="Plantilla Dramatica" disabled>{t('templateOptions.dramatic')}</option>
+                                        <option value="Plantilla Dulce" disabled>{t('templateOptions.sweet')}</option>
+                                        <option value="Plantilla Oscura" disabled>{t('templateOptions.dark')}</option>
                                     </Form.Select>
                                 </Form.Group>
                             </Col>
                         </Row>
                     </Col>
 
-                    {/* Columna derecha: previsualización */}
                     <Col xs={12} md={6} className="d-flex align-items-center justify-content-center">
                         {templatePreview && (
                             <div className="text-center w-100">
                                 <img
                                     src={templatePreview}
-                                    alt="Previsualización de la plantilla"
+                                    alt={t('templatePreviewAlt')}
                                     style={{
                                         maxWidth: '100%',
                                         height: 'auto',
@@ -302,117 +320,207 @@ export default function MakeInvitationForm() {
                     </Col>
                 </Row>
 
-
-                {/* Localización de la Boda */}
-                <h4 className="m-0">Localización de la Boda</h4>
+                {/* Location */}
+                <h4 className="m-0">{t('locationTitle')}</h4>
                 <Row>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Ciudad*</Form.Label>
-                            <Form.Control type="text" placeholder="Ciudad" name="city" value={formData.location.city} onChange={handleChangeLocation} required />
+                            <Form.Label>{t('city')}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={t('city')}
+                                name="city"
+                                value={formData.location.city}
+                                onChange={handleChangeLocation}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Localizacion*</Form.Label>
-                            <Form.Control type="text" placeholder="Localizacion" name="country" value={formData.location.country} onChange={handleChangeLocation} required />
+                            <Form.Label>{t('country')}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={t('country')}
+                                name="country"
+                                value={formData.location.country}
+                                onChange={handleChangeLocation}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
 
-                <h4 className="m-0">Itinerario de la Celebración</h4>
-                <p className="fw-lighter mb-2" style={{ fontSize: "0.8rem" }}>Añade todos los hitos de tu celebración</p>
+                {/* Itinerary */}
+                <h4 className="m-0">{t('itineraryTitle')}</h4>
+                <p className="fw-lighter mb-2" style={{ fontSize: "0.8rem" }}>{t('itinerarySubtitle')}</p>
                 {events.map((event, index) => (
                     <Row key={index} className="mb-3">
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Form.Control type="text" placeholder="Nombre*" value={event.name} onChange={(e) => updateEvent(index, "name", e.target.value)} required />
+                            <Form.Control
+                                type="text"
+                                placeholder={t('eventName')}
+                                value={event.name}
+                                onChange={(e) => updateEvent(index, "name", e.target.value)}
+                                required
+                            />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Form.Control type="time" placeholder="Hora" value={event.time} onChange={(e) => updateEvent(index, "time", e.target.value)} required />
+                            <Form.Control
+                                type="time"
+                                placeholder={t('eventTime')}
+                                value={event.time}
+                                onChange={(e) => updateEvent(index, "time", e.target.value)}
+                                required
+                            />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Form.Control type="text" placeholder="Ciudad" value={event.location.city} onChange={(e) => updateEvent(index, "location.city", e.target.value)} />
+                            <Form.Control
+                                type="text"
+                                placeholder={t('eventCity')}
+                                value={event.location.city}
+                                onChange={(e) => updateEvent(index, "location.city", e.target.value)}
+                            />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Form.Control type="text" placeholder="Localización" value={event.location.country} onChange={(e) => updateEvent(index, "location.country", e.target.value)} />
+                            <Form.Control
+                                type="text"
+                                placeholder={t('eventLocation')}
+                                value={event.location.country}
+                                onChange={(e) => updateEvent(index, "location.country", e.target.value)}
+                            />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Form.Control type="text" placeholder="Descripción" value={event.description} onChange={(e) => updateEvent(index, "description", e.target.value)} />
+                            <Form.Control
+                                type="text"
+                                placeholder={t('eventDescription')}
+                                value={event.description}
+                                onChange={(e) => updateEvent(index, "description", e.target.value)}
+                            />
                         </Col>
                         <Col xs={12} md={2} className="mb-2 mb-md-0">
-                            <Button variant="danger" onClick={() => removeEvent(index)} className="w-100">Eliminar</Button>
+                            <Button
+                                variant="danger"
+                                onClick={() => removeEvent(index)}
+                                className="w-100"
+                            >
+                                {t('removeEvent')}
+                            </Button>
                         </Col>
                     </Row>
                 ))}
-                <Button variant="secondary" onClick={addEvent} className="mb-3">Añadir Evento</Button>
+                <Button variant="secondary" onClick={addEvent} className="mb-3">
+                    {t('addEvent')}
+                </Button>
 
-                {/* Tipo de alimentación y número de invitados */}
+                {/* Food and Guests */}
                 <Row>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Tipo de alimentacion*</Form.Label>
+                            <Form.Label>{t('foodTypeLabel')}</Form.Label>
                             <Form.Select name="foodType" value={formData.foodType} onChange={handleChange} required>
-                                <option value="Sin Preferencias">Sin Preferencias</option>
-                                <option value="Vegetariana">Vegetariana</option>
-                                <option value="Vegana">Vegana</option>
-                                <option value="Mixta">Mixta</option>
-                                <option value="Otra">Otra</option>
+                                <option value="Sin Preferencias">{t('foodOptions.none')}</option>
+                                <option value="Vegetariana">{t('foodOptions.vegetarian')}</option>
+                                <option value="Vegana">{t('foodOptions.vegan')}</option>
+                                <option value="Mixta">{t('foodOptions.mixed')}</option>
+                                <option value="Otra">{t('foodOptions.other')}</option>
                             </Form.Select>
                         </Form.Group>
                     </Col>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Numero de invitados*</Form.Label>
-                            <Form.Control type="number" placeholder="Número de Invitados" name="guestCount" value={formData.guestCount} onChange={handleChange} required />
+                            <Form.Label>{t('guestCountLabel')}</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder={t('guestCountLabel')}
+                                name="guestCount"
+                                value={formData.guestCount}
+                                onChange={handleChange}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
 
-                {/* Código de vestimenta y mensaje */}
+                {/* Dress Code and Message */}
                 <Row>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Código de vestimenta*</Form.Label>
-                            <Form.Control type="text" placeholder="Código de vestimenta" name="dressCode" value={formData.dressCode} onChange={handleChange} />
+                            <Form.Label>{t('dressCode')}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={t('dressCode')}
+                                name="dressCode"
+                                value={formData.dressCode}
+                                onChange={handleChange}
+                            />
                         </Form.Group>
                     </Col>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Mensaje para los invitados*</Form.Label>
-                            <Form.Control type="text" placeholder="Mensaje personal" name="customMessage" value={formData.customMessage} onChange={handleChange} />
+                            <Form.Label>{t('customMessage')}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={t('customMessage')}
+                                name="customMessage"
+                                value={formData.customMessage}
+                                onChange={handleChange}
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
 
-                {/* Música */}
-                <h4 className="m-0">Música</h4>
+                {/* Music */}
+                <h4 className="m-0">{t('musicTitle')}</h4>
                 <Row>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Titulo de la cancion*</Form.Label>
-                            <Form.Control type="text" placeholder="Título de la canción" name="musicTitle" value={formData.musicTitle} onChange={handleChange} />
+                            <Form.Label>{t('musicTitle')}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={t('musicTitle')}
+                                name="musicTitle"
+                                value={formData.musicTitle}
+                                onChange={handleChange}
+                            />
                         </Form.Group>
                     </Col>
                     <Col xs={12} md={6}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Enlace de la musica (YouTube)*</Form.Label>
-                            <Form.Control type="text" placeholder="Enlace a la música" name="musicUrl" value={formData.musicUrl} onChange={handleChange} />
+                            <Form.Label>{t('musicUrl')}</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder={t('musicUrl')}
+                                name="musicUrl"
+                                value={formData.musicUrl}
+                                onChange={handleChange}
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
 
-                {/* Imágenes */}
+                {/* Images */}
                 <Row>
                     <Col xs={12} md={6}>
-                        <h4 className="m-0">Imagen de la Pareja*</h4>
+                        <h4 className="m-0">{t('coupleImage')}</h4>
                         <Form.Group className="mb-3">
-                            <Form.Control type="file" accept="image/*" onChange={handleCoupleImageUpload} required />
+                            <Form.Control
+                                type="file"
+                                accept="image/*"
+                                onChange={handleCoupleImageUpload}
+                                required
+                            />
                         </Form.Group>
                     </Col>
                     <Col xs={12} md={6}>
-                        <h4 className="m-0">Galería de Imágenes*</h4>
+                        <h4 className="m-0">{t('galleryImages')}</h4>
                         <Form.Group className="mb-3">
-                            <Form.Control type="file" accept="image/*" multiple onChange={handleGalleryUpload} />
+                            <Form.Control
+                                type="file"
+                                accept="image/*"
+                                multiple
+                                onChange={handleGalleryUpload}
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -422,11 +530,12 @@ export default function MakeInvitationForm() {
                     style={{ zIndex: 99999, cursor: 'pointer' }}
                     onClick={handleSubmit}
                     onTouchEnd={(e) => {
-                        e.preventDefault();        // evita doble envío
+                        e.preventDefault();
                         handleSubmit(e);
                     }}
+                    disabled={isLoading}
                 >
-                    {isLoading ? 'Cargando...' : 'Enviar'}
+                    {isLoading ? t('loadingText') : t('submitButton')}
                 </Button>
             </Form>
         </Container>

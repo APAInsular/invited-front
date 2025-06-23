@@ -1,0 +1,19 @@
+{
+    "navigation": {
+        "home": "Inicio",
+        "about": "Nosotros",
+        "crowdfunding": "Crowdfunding",
+        "blog": "Blog",
+        "contact": "Contacto"
+    },
+    "userMenu": {
+        "userMenuLabel": "Menu Usuario",
+        "signIn": "Iniciar sesión",
+        "register": "Registrarse",
+        "dashboard": "Panel",
+        "logOut": "Cerrar sesión",
+        "errors": {
+            "invalidUserObject": "Usuario invalido"
+        }
+    }
+}

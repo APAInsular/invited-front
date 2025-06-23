@@ -1,0 +1,19 @@
+{
+    "navigation": {
+        "home": "Home",
+        "about": "About Us",
+        "crowdfunding": "Crowdfunding",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "userMenu": {
+        "userMenuLabel": "User menu",
+        "signIn": "Sign In",
+        "register": "Register",
+        "dashboard": "Dashboard",
+        "logOut": "Log Out",
+        "errors": {
+            "invalidUserObject": "Invalid user object"
+        }
+    }
+}

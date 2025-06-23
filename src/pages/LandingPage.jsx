@@ -381,7 +381,7 @@ const LandingPage = () => {
             <section id="contacto" className="contacto">
                 <div className="container">
                     <h2>{t('contactForm.title')}</h2>
-                    <p>{t('contactForm.subtitle')}</p>
+                    <p>{t('contactForm.description')}</p>
                     <form onSubmit={handleSubmit} className="form-contacto">
                         <label htmlFor="name">{t('contactForm.name')}</label>
                         <input

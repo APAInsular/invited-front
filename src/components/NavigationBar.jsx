@@ -5,7 +5,8 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import LanguageSelector from './LanguageSelector';
 import UserMenu from './UserMenu';
-import ImagenLogoBlanco from '../Images/Logo_invited_recortado_blanco.png'
+import ImagenLogoBlanco from '../Images/Logo_invited_recortado_blanco.png';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 const NavigationBar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -16,18 +17,13 @@ const NavigationBar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(window.scrollY > 50);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Función para generar enlaces con el idioma actual
     const localizedLink = (path) => {
         return `/${lang}${path}`;
     };
@@ -54,6 +50,12 @@ const NavigationBar = () => {
             padding: '10px 0'
         }
     };
+
+    const { t, loadingTranslation } = usePageTranslation('navigation');
+
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
 
     return (
         <Navbar expand="lg" style={styles.navbar} fixed="top">
@@ -83,15 +85,33 @@ const NavigationBar = () => {
                     padding: '10px'
                 }}>
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to={localizedLink("/")} style={hovered === "home" ? { ...styles.default, ...styles.hover } : styles.default}
+                        <Nav.Link
+                            as={Link}
+                            to={localizedLink("/")}
+                            style={hovered === "home" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("home")}
-                            onMouseLeave={() => setHovered(null)}>Inicio</Nav.Link>
-                        <Nav.Link as={Link} to={localizedLink("/about-us")} style={hovered === "about" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            {t('navigation.home')}
+                        </Nav.Link>
+                        <Nav.Link
+                            as={Link}
+                            to={localizedLink("/about-us")}
+                            style={hovered === "about" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("about")}
-                            onMouseLeave={() => setHovered(null)}>Nosotros</Nav.Link>
-                        <Nav.Link as={Link} to={localizedLink("/crowfunding")} style={hovered === "crowd" ? { ...styles.default, ...styles.hover } : styles.default}
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            {t('navigation.about')}
+                        </Nav.Link>
+                        <Nav.Link
+                            as={Link}
+                            to={localizedLink("/crowfunding")}
+                            style={hovered === "crowd" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("crowd")}
-                            onMouseLeave={() => setHovered(null)}>Crowdfunding</Nav.Link>
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            {t('navigation.crowdfunding')}
+                        </Nav.Link>
                         <Nav.Link
                             href="https://blog.invited.es/"
                             style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
@@ -100,17 +120,23 @@ const NavigationBar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Blog
+                            {t('navigation.blog')}
                         </Nav.Link>
-                        <Nav.Link as={Link} to={localizedLink("/contact")} style={hovered === "contact" ? { ...styles.default, ...styles.hover } : styles.default}
+                        <Nav.Link
+                            as={Link}
+                            to={localizedLink("/contact")}
+                            style={hovered === "contact" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("contact")}
-                            onMouseLeave={() => setHovered(null)}>Contacto</Nav.Link>
+                            onMouseLeave={() => setHovered(null)}
+                        >
+                            {t('navigation.contact')}
+                        </Nav.Link>
                     </Nav>
                     <LanguageSelector scrolled={scrolled} />
-                    <UserMenu />
+                    <UserMenu user={user} logout={logout} />
                 </Navbar.Collapse>
-            </Container >
-        </Navbar >
+            </Container>
+        </Navbar>
     );
 };
 

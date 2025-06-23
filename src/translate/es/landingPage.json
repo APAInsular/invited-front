@@ -59,6 +59,8 @@
         "text": "Convierte tu boda en una experiencia digital inolvidable."
     },
     "contactForm": {
+        "title": "Contactanos",
+        "description": "Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.",
         "name": "Nombre",
         "email": "Correo electrónico",
         "message": "Mensaje",

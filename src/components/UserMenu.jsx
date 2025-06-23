@@ -3,15 +3,23 @@ import { Nav, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignInAlt, faUserPlus, faSignOutAlt, faCog } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 const UserMenu = ({ user, logout }) => {
+    const { t, loadingTranslation } = usePageTranslation('navigation');
     const [isOpen, setIsOpen] = useState(false);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [scrolled, setScrolled] = useState(false);
     const menuRef = useRef(null);
     const { lang } = useParams();
 
-    // Cerrar el menú al hacer clic fuera
+    // Debug user state changes
+    useEffect(() => {
+        console.log('User state changed:', user);
+    }, [user]);
+
+    // Close menu when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -25,6 +33,7 @@ const UserMenu = ({ user, logout }) => {
         };
     }, []);
 
+    // Scroll effect
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -36,35 +45,14 @@ const UserMenu = ({ user, logout }) => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    // Función para generar enlaces con el idioma actual
     const localizedLink = (path) => {
         return `/${lang}${path}`;
     };
 
     const styles = {
-        default: {
-            padding: "5px 10px",
-            margin: "4px 8px",
-            border: scrolled ? "2px solid #F19292" : "2px solid #fff",
-            borderRadius: "5px",
-            color: scrolled ? "#F19292" : "#fff",
-            textDecoration: "none",
-            transition: "all 0.3s ease-in-out",
-            fontWeight: "bold",
-            backgroundColor: 'transparent'
-        },
-        hover: {
-            backgroundColor: scrolled ? "#F19292" : "#fff",
-            color: scrolled ? "white" : "#F19292"
-        },
         menuButton: {
-            ...(scrolled ? {
-                border: "2px solid #F19292",
-                color: "#F19292"
-            } : {
-                border: "2px solid #fff",
-                color: "#fff"
-            }),
+            border: scrolled ? "2px solid #F19292" : "2px solid #fff",
+            color: scrolled ? "#F19292" : "#fff",
             background: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
@@ -72,7 +60,11 @@ const UserMenu = ({ user, logout }) => {
             display: 'flex',
             alignItems: 'center',
             transition: 'all 0.3s ease-in-out',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            ...(hoveredItem === 'trigger' && {
+                backgroundColor: scrolled ? "#F19292" : "#fff",
+                color: scrolled ? "white" : "#F19292"
+            })
         },
         dropdown: {
             position: 'absolute',
@@ -91,82 +83,92 @@ const UserMenu = ({ user, logout }) => {
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
-            padding: '8px 12px'
+            padding: '8px 12px',
+            color: scrolled ? '#333' : '#fff',
+            textDecoration: 'none',
+            '&:hover': {
+                backgroundColor: scrolled ? "#F19292" : "#fff",
+                color: scrolled ? "white" : "#F19292"
+            }
         }
     };
+
+    // Enhanced user check with debugging
+    const isUserLoggedIn = (() => {
+        const isValid = user && typeof user === 'object' && Object.keys(user).length > 0;
+        if (!isValid && user !== null) {
+            console.warn(t('userMenu.errors.invalidUserObject'), user);
+        }
+        return isValid;
+    })();
+
+    if (loadingTranslation) {
+        return null; // or a loading spinner
+    }
 
     return (
         <div ref={menuRef} style={{ position: 'relative', display: 'inline-block' }}>
             <Button
                 variant="outline-light"
                 onClick={toggleMenu}
-                style={{
-                    ...styles.menuButton,
-                    ...(hoveredItem === 'trigger' ? styles.hover : {})
-                }}
+                style={styles.menuButton}
                 onMouseEnter={() => setHoveredItem('trigger')}
                 onMouseLeave={() => setHoveredItem(null)}
                 aria-expanded={isOpen}
-                aria-label="Menú de usuario"
+                aria-label={t('userMenu.userMenuLabel')}
             >
                 <FontAwesomeIcon icon={faUser} style={{ marginRight: '5px' }} />
-                {user?.name && <span style={{ marginRight: '5px' }}>{user.name}</span>}
+                {isUserLoggedIn && user.name && (
+                    <span style={{ marginRight: '5px' }}>{user.name}</span>
+                )}
                 <span style={{ fontSize: '12px' }}>{isOpen ? '▲' : '▼'}</span>
             </Button>
 
             {isOpen && (
                 <div style={styles.dropdown}>
-                    {!user ? (
+                    {!isUserLoggedIn ? (
                         <>
                             <Nav.Link
                                 href={localizedLink("/login")}
-                                style={hoveredItem === "login" ? { ...styles.default, ...styles.hover } : styles.default}
+                                style={styles.menuItem}
                                 onMouseEnter={() => setHoveredItem("login")}
                                 onMouseLeave={() => setHoveredItem(null)}
                             >
-                                <div style={styles.menuItem}>
-                                    <FontAwesomeIcon icon={faSignInAlt} />
-                                    <span>Iniciar Sesión</span>
-                                </div>
+                                <FontAwesomeIcon icon={faSignInAlt} />
+                                <span>{t('userMenu.signIn')}</span>
                             </Nav.Link>
 
                             <Nav.Link
                                 href={localizedLink("/register")}
-                                style={hoveredItem === "register" ? { ...styles.default, ...styles.hover } : styles.default}
+                                style={styles.menuItem}
                                 onMouseEnter={() => setHoveredItem("register")}
                                 onMouseLeave={() => setHoveredItem(null)}
                             >
-                                <div style={styles.menuItem}>
-                                    <FontAwesomeIcon icon={faUserPlus} />
-                                    <span>Registro</span>
-                                </div>
+                                <FontAwesomeIcon icon={faUserPlus} />
+                                <span>{t('userMenu.register')}</span>
                             </Nav.Link>
                         </>
                     ) : (
                         <>
                             <Nav.Link
                                 href={localizedLink("/dashboard")}
-                                style={hoveredItem === "profile" ? { ...styles.default, ...styles.hover } : styles.default}
+                                style={styles.menuItem}
                                 onMouseEnter={() => setHoveredItem("profile")}
                                 onMouseLeave={() => setHoveredItem(null)}
                             >
-                                <div style={styles.menuItem}>
-                                    <FontAwesomeIcon icon={faCog} />
-                                    <span>Panel de Usuario</span>
-                                </div>
+                                <FontAwesomeIcon icon={faCog} />
+                                <span>{t('userMenu.dashboard')}</span>
                             </Nav.Link>
 
                             <Nav.Link
                                 as="button"
                                 onClick={logout}
-                                style={hoveredItem === "logout" ? { ...styles.default, ...styles.hover } : styles.default}
+                                style={styles.menuItem}
                                 onMouseEnter={() => setHoveredItem("logout")}
                                 onMouseLeave={() => setHoveredItem(null)}
                             >
-                                <div style={styles.menuItem}>
-                                    <FontAwesomeIcon icon={faSignOutAlt} />
-                                    <span>Cerrar Sesión</span>
-                                </div>
+                                <FontAwesomeIcon icon={faSignOutAlt} />
+                                <span>{t('userMenu.logOut')}</span>
                             </Nav.Link>
                         </>
                     )}
@@ -174,6 +176,22 @@ const UserMenu = ({ user, logout }) => {
             )}
         </div>
     );
+};
+
+UserMenu.propTypes = {
+    user: PropTypes.oneOfType([
+        PropTypes.shape({
+            name: PropTypes.string,
+            email: PropTypes.string,
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        }),
+        PropTypes.oneOf([null, undefined])
+    ]),
+    logout: PropTypes.func.isRequired
+};
+
+UserMenu.defaultProps = {
+    user: null
 };
 
 export default UserMenu;

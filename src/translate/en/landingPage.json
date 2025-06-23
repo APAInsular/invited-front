@@ -59,6 +59,8 @@
         "text": "Turn your wedding into an unforgettable digital experience."
     },
     "contactForm": {
+        "title": "Contact Us",
+        "description": "We’re here to help. Write to us and we’ll get back to you as soon as possible.",
         "name": "Name",
         "email": "Email",
         "message": "Message",

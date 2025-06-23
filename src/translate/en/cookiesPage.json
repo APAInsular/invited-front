@@ -27,10 +27,8 @@
   },
   "cookieManagement": {
     "title": "3. Managing and deleting cookies",
-    "paragraphs": [
-      "You can configure your browser to accept, reject, or delete cookies. Most browsers offer settings to manage cookies; however, disabling some of them may affect the functionality and performance of the Website.",
-      "For detailed information on how to manage or delete cookies, please refer to your browser's instructions or visit https://www.allaboutcookies.org."
-    ]
+    "paragraph1": "You can configure your browser to accept, reject, or delete cookies. Most browsers offer settings to manage cookies; however, disabling some of them may affect the functionality and performance of the Website.",
+    "paragraph2": "For detailed information on how to manage or delete cookies, please refer to your browser's instructions or visit https://www.allaboutcookies.org."
   },
   "policyChanges": {
     "title": "4. Changes to the Cookies Policy",

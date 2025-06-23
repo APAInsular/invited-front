@@ -1,7 +1,7 @@
 {
     "legalNotice": "Aviso Legal",
     "updated": "Última actualización: 20 de marzo de 2025",
-    "Introduction": {
+    "introduction": {
         "title": "1. Identificación del Titular",
         "companyName": "Razón Social:",
         "companyNameText": "APA Insular, S.L.",
@@ -49,5 +49,4 @@
         "title": "7. Modificación del Aviso Legal",
         "text": "APA Insular S.L. se reserva el derecho a modificar este Aviso Legal en cualquier momento y sin previo aviso. Se recomienda a los usuarios revisar periódicamente el contenido para estar informados de posibles cambios."
     }
-    
 }

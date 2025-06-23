@@ -1,22 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
 
 const Footer = () => {
+    const { lang } = useParams();
+    // Función para generar enlaces con el idioma actual
+    const localizedLink = (path) => {
+        return `/${lang}${path}`;
+    };
+
     return (
         <footer className="bg-light py-3 mt-auto">
             <div className="container">
                 <nav className="d-flex flex-wrap justify-content-center gap-3 mb-2">
-                    <a href="/aviso-legal" className="text-decoration-none" style={{ color: "#bc7272" }}>
+                    <a href={localizedLink("/aviso-legal")} className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Aviso Legal
                     </a>
-                    <a href="/politica-de-privacidad" className="text-decoration-none" style={{ color: "#bc7272" }}>
+                    <a href={localizedLink("/politica-de-privacidad")} className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Política de Privacidad
                     </a>
-                    <a href="/terminos-y-condiciones" className="text-decoration-none" style={{ color: "#bc7272" }}>
+                    <a href={localizedLink("/terminos-y-condiciones")} className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Términos y Condiciones
                     </a>
-                    <a href="/politica-de-cookies" className="text-decoration-none" style={{ color: "#bc7272" }}>
+                    <a href={localizedLink("/politica-de-cookies")} className="text-decoration-none" style={{ color: "#bc7272" }}>
                         Política de Cookies
                     </a>
                 </nav>

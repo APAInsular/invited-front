@@ -111,23 +111,20 @@ const LandingPage = () => {
 
     const faqs = [
         {
-            question: "¿Puedo subir mi propia música para la invitación?",
-            answer:
-                "Sí, puedes añadir la canción especial de tu boda o cualquier música que desees para ambientar tu invitación.",
+            question: t('faq.question1'),
+            answer: t('faq.answer1'),
         },
         {
-            question: "¿Mis invitados necesitan descargar algo?",
-            answer:
-                "No. Simplemente recibirán un enlace a la invitación digital y podrán confirmar asistencia rellenando un simple formulario.",
+            question: t('faq.question2'),
+            answer: t('faq.answer2'),
         },
         {
-            question: "¿Puedo modificar la invitación después de compartirla?",
-            answer:
-                "¡Claro! Cualquier cambio que realices se actualizará automáticamente para tus invitados.",
+            question: t('faq.question3'),
+            answer: t('faq.answer3'),
         },
         {
-            question: "¿Hay algún límite de personas a las que puedo invitar?",
-            answer: "No, puedes enviar la invitación a tantas personas como necesites.",
+            question: t('faq.question4'),
+            answer: t('faq.answer4'),
         },
     ];
 
@@ -145,7 +142,7 @@ const LandingPage = () => {
                 {/* Metadatos ocultos para SEO */}
                 <div itemScope itemType="https://schema.org/ImageObject" style={{ display: 'none' }}>
                     <img
-                        src="/public/Invited.jpg" // Asegúrate de que la ruta coincida con tu proyecto
+                        src="/public/Invited.jpg"
                         alt="Invited.es: invitaciones de boda con anillos de matrimonio y tulipanes"
                         itemProp="image"
                     />
@@ -212,124 +209,107 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section class="py-5 bg-light">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="display-5 fw-bold text-danger-emphasis mb-3">{t('invitation.title')}</h2>
-                        <p class="lead text-muted">{t('invitation.subtitle')}</p>
+            <section className="py-5 bg-light">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="display-5 fw-bold text-danger-emphasis mb-3">{t('invitation.title')}</h2>
+                        <p className="lead text-muted">{t('invitation.subtitle')}</p>
                     </div>
 
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow-sm hover-shadow">
-                                <div class="p-2 bg-pink-pastel">
-                                    <div class="phone-mockup">
-                                        <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
+                    <div className="row g-4">
+                        <div className="col-md-4">
+                            <div className="card h-100 border-0 shadow-sm hover-shadow">
+                                <div className="p-2 bg-pink-pastel">
+                                    <div className="phone-mockup">
+                                        <div className="phone-camera"></div>
+                                        <div className="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src="/images/Plantilla_0.png"
-                                                alt="Invitación Clásica"
-                                                class="img-fluid w-auto"></img>
+                                                alt={t('invitation.cardTitle1')}
+                                                className="img-fluid w-auto"></img>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Clásico</h3>
-                                    <p class="card-text text-muted">Elegancia tradicional con detalles clásicos y tipografía serif.</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/70" class="btn bg-pink-pastel text-dark border-0 w-100">
-                                        Ver Demo
+                                <div className="card-body text-center">
+                                    <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle1')}</h3>
+                                    <p className="card-text text-muted">{t('invitation.cardText1')}</p>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/70" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                        {t('invitation.button')}
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow-sm hover-shadow">
-                                <div class="p-2 bg-pink-pastel">
-                                    <div class="phone-mockup">
-                                        <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
+                        <div className="col-md-4">
+                            <div className="card h-100 border-0 shadow-sm hover-shadow">
+                                <div className="p-2 bg-pink-pastel">
+                                    <div className="phone-mockup">
+                                        <div className="phone-camera"></div>
+                                        <div className="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src='/images/Plantilla_1.png'
-                                                alt="Invitación Moderna"
-                                                class="img-fluid w-auto"></img>
+                                                alt={t('invitation.cardTitle2')}
+                                                className="img-fluid w-auto"></img>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Acuarela BOHO</h3>
-                                    <p class="card-text text-muted">Diseño floral con colores frios y tipografía elegante.</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/71" class="btn bg-pink-pastel text-dark border-0 w-100">
-                                        Ver Demo
+                                <div className="card-body text-center">
+                                    <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle2')}</h3>
+                                    <p className="card-text text-muted">{t('invitation.cardText2')}</p>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/71" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                        {t('invitation.button')}
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow-sm hover-shadow">
-                                <div class="p-2 bg-pink-pastel">
-                                    <div class="phone-mockup">
-                                        <div class="phone-camera"></div>
-                                        <div class="phone-screen d-flex align-items-center justify-content-center w-100">
+                        <div className="col-md-4">
+                            <div className="card h-100 border-0 shadow-sm hover-shadow">
+                                <div className="p-2 bg-pink-pastel">
+                                    <div className="phone-mockup">
+                                        <div className="phone-camera"></div>
+                                        <div className="phone-screen d-flex align-items-center justify-content-center w-100">
                                             <img src="/images/Plantilla_2.png"
-                                                alt="Invitación Moderna"
-                                                class="img-fluid w-auto"></img>
+                                                alt={t('invitation.cardTitle3')}
+                                                className="img-fluid w-auto"></img>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body text-center">
-                                    <h3 class="h4 card-title text-danger-emphasis">Érase una vez</h3>
-                                    <p class="card-text text-muted">Diseño inspirado en Disney con un gran atractivo.</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/luis-lucas/81" class="btn bg-pink-pastel text-dark border-0 w-100">
-                                        Ver Demo
+                                <div className="card-body text-center">
+                                    <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle3')}</h3>
+                                    <p className="card-text text-muted">{t('invitation.cardText3')}</p>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/luis-lucas/81" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                        {t('invitation.button')}
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
             {/* PRECIO */}
-            <section section id="precio" className="precio" >
+            <section id="precio" className="precio">
                 <div className="container">
-                    <h2>Plan Único</h2>
+                    <h2>{t('paySection.title')}</h2>
                     <div className="precio-card">
                         <div>
-                            <h3>Tu invitación digital por
-                                <span style={{ marginLeft: "8px", marginRight: "8px", color: "#999" }}>
-                                    119€
-                                </span>
-                                {/* <span style={{ color: "#e63946", fontWeight: "bold" }}>
-                                    {(119 * 0.85).toFixed(2)}€
-                                </span>
-                                <span style={{
-                                    backgroundColor: "#e63946",
-                                    color: "white",
-                                    padding: "2px 8px",
-                                    borderRadius: "12px",
-                                    fontSize: "0.8rem",
-                                    marginLeft: "8px"
-                                }}>
-                                    15% OFF hasta el 30/05
-                                </span> */}
-                            </h3>
+                            <h3>{t('paySection.title')}</h3>
                         </div>
                         <ul>
-                            <li>Acceso a todas las plantillas</li>
-                            <li>Soporte en español</li>
-                            <li>Actualizaciones ilimitadas</li>
-                            <li>Sin costes ocultos</li>
+                            <li>{t('paySection.text1')}</li>
+                            <li>{t('paySection.text2')}</li>
+                            <li>{t('paySection.text3')}</li>
+                            <li>{t('paySection.text4')}</li>
                         </ul>
                         {user ? (
                             <Link
                                 to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
                                 className="btn btn-primary"
                             >
-                                Crea mi invitación
+                                {t('paySection.button')}
                             </Link>
                         ) : (
                             <Link to="/login" className="btn btn-primary">
-                                Crea mi invitación
+                                {t('paySection.button')}
                             </Link>
                         )}
                     </div>
@@ -338,27 +318,27 @@ const LandingPage = () => {
 
             <section id="como-funciona" className="como-funciona">
                 <div className="container">
-                    <h2>Cómo Funciona</h2>
+                    <h2>{t('howItWorks.title')}</h2>
                     <div className="pasos">
                         <div className="paso">
                             <span>1</span>
-                            <h3>Regístrate</h3>
-                            <p>Crea tu cuenta e inicia tu proyecto de invitación digital.</p>
+                            <h3>{t('howItWorks.cardTitle1')}</h3>
+                            <p>{t('howItWorks.cardText1')}</p>
                         </div>
                         <div className="paso">
                             <span>2</span>
-                            <h3>Personaliza</h3>
-                            <p>Elige la plantilla, colores y añade la información de tu boda.</p>
+                            <h3>{t('howItWorks.cardTitle2')}</h3>
+                            <p>{t('howItWorks.cardText2')}</p>
                         </div>
                         <div className="paso">
                             <span>3</span>
-                            <h3>Comparte</h3>
-                            <p>Envía la invitación a tus invitados por email, WhatsApp o redes sociales.</p>
+                            <h3>{t('howItWorks.cardTitle3')}</h3>
+                            <p>{t('howItWorks.cardText3')}</p>
                         </div>
                         <div className="paso">
                             <span>4</span>
-                            <h3>Gestiona</h3>
-                            <p>Revisa confirmaciones y mantén todo bajo control en tu panel.</p>
+                            <h3>{t('howItWorks.cardTitle4')}</h3>
+                            <p>{t('howItWorks.cardText4')}</p>
                         </div>
                     </div>
                 </div>
@@ -366,7 +346,7 @@ const LandingPage = () => {
 
             <section id="faq" className="faq">
                 <div className="container">
-                    <h2>Preguntas Frecuentes</h2>
+                    <h2>{t('faq.title')}</h2>
                     <div className="faq-accordion">
                         {faqs.map((faq, index) => (
                             <div
@@ -385,20 +365,19 @@ const LandingPage = () => {
                 </div>
             </section>
 
-
             <section id="cta" className="cta-section">
                 <div className="container">
-                    <h2>Comienza Hoy Mismo</h2>
-                    <p>Convierte tu boda en una experiencia digital inolvidable.</p>
+                    <h2>{t('startToday.title')}</h2>
+                    <p>{t('startToday.text')}</p>
                 </div>
             </section>
 
             <section id="contacto" className="contacto">
                 <div className="container">
-                    <h2>¿Tienes preguntas?</h2>
-                    <p>Déjanos tu mensaje y te responderemos en breve.</p>
+                    <h2>{t('contactForm.title')}</h2>
+                    <p>{t('contactForm.subtitle')}</p>
                     <form onSubmit={handleSubmit} className="form-contacto">
-                        <label htmlFor="name">Nombre</label>
+                        <label htmlFor="name">{t('contactForm.name')}</label>
                         <input
                             type="text"
                             id="name"
@@ -408,7 +387,7 @@ const LandingPage = () => {
                             required
                         />
 
-                        <label htmlFor="email">Correo Electrónico</label>
+                        <label htmlFor="email">{t('contactForm.email')}</label>
                         <input
                             type="email"
                             id="email"
@@ -418,7 +397,7 @@ const LandingPage = () => {
                             required
                         />
 
-                        <label htmlFor="message">Mensaje</label>
+                        <label htmlFor="message">{t('contactForm.message')}</label>
                         <textarea
                             id="message"
                             name="message"
@@ -429,7 +408,7 @@ const LandingPage = () => {
                         />
 
                         <button type="submit" className="btn btn-primary" disabled={loading}>
-                            {loading ? "Enviando..." : "Enviar"}
+                            {loading ? t('contactForm.sending') : t('contactForm.button')}
                         </button>
 
                         {message && <p>{message}</p>}
@@ -438,7 +417,7 @@ const LandingPage = () => {
             </section>
 
             <Footer></Footer>
-        </div >
+        </div>
     );
 };
 

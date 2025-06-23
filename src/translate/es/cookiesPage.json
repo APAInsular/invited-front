@@ -27,10 +27,8 @@
   },
   "cookieManagement": {
     "title": "3. Gestión y eliminación de cookies",
-    "paragraphs": [
-      "Usted puede configurar su navegador para aceptar, rechazar o eliminar las cookies. La mayoría de los navegadores ofrecen opciones de configuración para gestionar las cookies; sin embargo, la desactivación de algunas de ellas podría afectar la funcionalidad y el rendimiento del Sitio Web.",
-      "Para obtener información detallada sobre cómo gestionar o eliminar cookies, consulte las instrucciones que ofrece su navegador o visite https://www.allaboutcookies.org."
-    ]
+    "paragraph1": "Usted puede configurar su navegador para aceptar, rechazar o eliminar las cookies. La mayoría de los navegadores ofrecen opciones de configuración para gestionar las cookies; sin embargo, la desactivación de algunas de ellas podría afectar la funcionalidad y el rendimiento del Sitio Web.",
+    "paragraph2": "Para obtener información detallada sobre cómo gestionar o eliminar cookies, consulte las instrucciones que ofrece su navegador o visite https://www.allaboutcookies.org."
   },
   "policyChanges": {
     "title": "4. Cambios en la Política de Cookies",

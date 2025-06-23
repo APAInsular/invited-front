@@ -1,24 +1,24 @@
 {
-  "CountDown": {
+  "countdown": {
     "title": "⏳ We're getting married in... ⏳",
     "units": ["days", "hours", "minutes", "seconds"]
   },
-  "CoupleNames": {
+  "coupleNames": {
     "heartIcon": "💖"
   },
-  "Gallery": {
+  "gallery": {
     "title": "🎞️ Discover our story 🎞️"
   },
-  "ChurchLocation": {
+  "churchLocation": {
     "title": "Where to go?"
   },
-  "SongLink": {
+  "songLink": {
     "title": "🎶 Our special song 🎶",
     "playingText": "Now playing",
     "playButton": "▶️ Play Song",
     "pauseButton": "⏸️ Pause Song"
   },
-  "WeddingForm": {
+  "weddingForm": {
     "title": "💍 Confirm Attendance",
     "requiredNote": "(*) required fields",
     "fields": {
@@ -42,7 +42,7 @@
     },
     "submitButton": "Submit Confirmation"
   },
-  "Timeline": {
+  "timeline": {
     "title": "💍 Wedding Timeline 💍",
     "locationPrefix": "📍",
     "timePrefix": "🕒"

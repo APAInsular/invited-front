@@ -1,25 +1,25 @@
 {
-  "CountDown": {
+  "countdown": {
     "title": "Only...",
     "labels": ["Days", "Hours", "Minutes", "Seconds"]
   },
-  "CoupleNames": {
+  "coupleNames": {
     "invitationText": "We are delighted to invite you to our wedding which will take place on",
     "locationPrefix": "in"
   },
-  "Gallery": {
+  "gallery": {
     "title": "📸 Discover our story 📸"
   },
-  "Location": {
+  "location": {
     "title": "📍 Where to go?"
   },
-  "SongLink": {
+  "songLink": {
     "title": "🎶 Our special song 🎶",
     "playing": "Now playing:",
     "playButton": "▶️ Play Song",
     "pauseButton": "⏸️ Pause Song"
   },
-  "WeddingForm": {
+  "weddingForm": {
     "title": "💌 RSVP",
     "requiredNote": "(*) required fields",
     "fields": {
@@ -40,7 +40,7 @@
     },
     "submitButton": "Submit RSVP"
   },
-  "WeddingTimeLine": {
+  "weddingTimeLine": {
     "title": "💍 Wedding Schedule 💍",
     "timePrefix": "🕒"
   }

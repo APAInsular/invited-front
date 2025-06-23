@@ -4,7 +4,7 @@
   },
   "welcome": {
     "greeting": "Welcome,",
-    "greetin2": "and"
+    "greeting2": "and"
   },
   "buttons": {
     "startNow": "Start Now",

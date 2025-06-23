@@ -951,16 +951,16 @@ function Dashboard() {
                         </Modal>
                         {/* Modal para editar boda */}
                         <Modal show={showWeddingModal} onHide={handleCloseWeddingModal}>
-                            <Modal.Header closeButton><Modal.Title>{t("sections.weddingEdit")}</Modal.Title></Modal.Header>
+                            <Modal.Header closeButton><Modal.Title>{t("sections.editWedding")}</Modal.Title></Modal.Header>
                             <Modal.Body>
                                 <Form>
-                                    <Form.Group><Form.Label>{t("labels.location")}</Form.Label><Form.Control type="text" name="location.city" value={editWeddingData.location.city} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>{t("labels.location")}</Form.Label><Form.Control type="text" name="location.country" value={editWeddingData.location.country} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("sections.location")}</Form.Label><Form.Control type="text" name="location.city" value={editWeddingData.location.city} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("sections.location")}</Form.Label><Form.Control type="text" name="location.country" value={editWeddingData.location.country} onChange={handleWeddingInputChange} /></Form.Group>
                                     <Form.Group><Form.Label>{t("labels.weddingDate")}</Form.Label><Form.Control type="date" name="weddingDate" value={editWeddingData.weddingDate} onChange={handleWeddingInputChange} /></Form.Group>
                                     <Form.Group><Form.Label>{t("labels.customMessage")}</Form.Label><Form.Control type="text" name="customMessage" value={editWeddingData.customMessage} onChange={handleWeddingInputChange} /></Form.Group>
                                     <Form.Group><Form.Label>{t("labels.dressCode")}</Form.Label><Form.Control type="text" name="dressCode" value={editWeddingData.dressCode} onChange={handleWeddingInputChange} /></Form.Group>
                                     <Form.Group><Form.Label>{t("labels.foodType")}</Form.Label><Form.Control type="text" name="foodType" value={editWeddingData.foodType} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>{t("labels.guestCount")}</Form.Label><Form.Control type="text" name="guestCount" value={editWeddingData.guestCount} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("sections.guestCount")}</Form.Label><Form.Control type="text" name="guestCount" value={editWeddingData.guestCount} onChange={handleWeddingInputChange} /></Form.Group>
                                 </Form>
                             </Modal.Body>
                             <Modal.Footer>

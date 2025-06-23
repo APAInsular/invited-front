@@ -3,10 +3,8 @@
   "updated": "Última actualización: 19 de marzo de 2025",
   "introduction": {
     "title": "1. INTRODUCCIÓN",
-    "paragraphs": [
-      "Bienvenido a Invited.es (en adelante, \"Invited\"), una aplicación digital para la creación y gestión de invitaciones para bodas, eventos, comuniones, cumpleaños y otras celebraciones, desarrollada y gestionada por APA Insular SL (en adelante, \"la Empresa\" o \"APA Insular SL\").",
-      "El acceso y uso de este sitio web y de los servicios que se ofrecen en él implica la aceptación plena y sin reservas de los presentes Términos y Condiciones de Uso. Si no está de acuerdo con alguna de las condiciones aquí establecidas, deberá abstenerse de utilizar Invited."
-    ]
+    "paragraph1": "Bienvenido a Invited.es (en adelante, \"Invited\"), una aplicación digital para la creación y gestión de invitaciones para bodas, eventos, comuniones, cumpleaños y otras celebraciones, desarrollada y gestionada por APA Insular SL (en adelante, \"la Empresa\" o \"APA Insular SL\").",
+    "paragraph2": "El acceso y uso de este sitio web y de los servicios que se ofrecen en él implica la aceptación plena y sin reservas de los presentes Términos y Condiciones de Uso. Si no está de acuerdo con alguna de las condiciones aquí establecidas, deberá abstenerse de utilizar Invited."
   },
   "controllerData": {
     "title": "2. IDENTIFICACIÓN Y DATOS DEL RESPONSABLE",
@@ -25,63 +23,43 @@
   },
   "object": {
     "title": "3. OBJETO",
-    "paragraphs": [
-      "Los presentes Términos y Condiciones regulan el acceso, la navegación y el uso de la web https://invited.es y los servicios ofrecidos, que consisten en la creación, personalización y gestión de invitaciones digitales para eventos y celebraciones. La utilización de Invited implica la aceptación y cumplimiento de estas condiciones, que podrán ser modificadas en cualquier momento por la Empresa."
-    ]
+    "paragraph1": "Los presentes Términos y Condiciones regulan el acceso, la navegación y el uso de la web https://invited.es y los servicios ofrecidos, que consisten en la creación, personalización y gestión de invitaciones digitales para eventos y celebraciones. La utilización de Invited implica la aceptación y cumplimiento de estas condiciones, que podrán ser modificadas en cualquier momento por la Empresa."
   },
   "siteUse": {
     "title": "4. USO DEL SITIO Y CONDICIONES DE ACCESO",
     "useAllowedTitle": "4.1. Uso Permitido",
-    "useAllowedParagraphs": [
-      "El usuario se compromete a utilizar el sitio web y los servicios de forma lícita, de acuerdo con la buena fe, el orden público y las buenas costumbres.",
-      "Asimismo, se obliga a no emplear Invited con fines fraudulentos, ilícitos, que atenten contra la seguridad o el normal funcionamiento del servicio o que puedan dañar, inutilizar o sobrecargar la infraestructura tecnológica de la Empresa."
-    ],
+    "useAllowedParagraph1": "El usuario se compromete a utilizar el sitio web y los servicios de forma lícita, de acuerdo con la buena fe, el orden público y las buenas costumbres.",
+    "useAllowedParagraph2": "Asimismo, se obliga a no emplear Invited con fines fraudulentos, ilícitos, que atenten contra la seguridad o el normal funcionamiento del servicio o que puedan dañar, inutilizar o sobrecargar la infraestructura tecnológica de la Empresa.",
     "accountSecurityTitle": "4.2. Registro y Seguridad de la Cuenta",
-    "accountSecurityParagraphs": [
-      "Al registrarse en Invited, el usuario deberá facilitar datos veraces y completos. Es responsabilidad del usuario mantener la confidencialidad de las credenciales de acceso, comprometiéndose a notificar de forma inmediata a la Empresa cualquier uso no autorizado o sospecha de vulneración de la seguridad de su cuenta."
-    ]
+    "accountSecurityParagraph1": "Al registrarse en Invited, el usuario deberá facilitar datos veraces y completos. Es responsabilidad del usuario mantener la confidencialidad de las credenciales de acceso, comprometiéndose a notificar de forma inmediata a la Empresa cualquier uso no autorizado o sospecha de vulneración de la seguridad de su cuenta."
   },
   "intellectualProperty": {
     "title": "5. PROPIEDAD INTELECTUAL E INDUSTRIAL",
-    "paragraphs": [
-      "Todos los contenidos, marcas, logotipos, gráficos, textos, imágenes, software y demás elementos que aparecen en el sitio web son propiedad exclusiva de APA Insular SL o de terceros que han autorizado su uso. Queda expresamente prohibida la reproducción, distribución, modificación, comunicación pública o cualquier otra forma de explotación de dichos contenidos sin la autorización previa y por escrito de su titular, salvo para uso personal y privado."
-    ]
+    "paragraph1": "Todos los contenidos, marcas, logotipos, gráficos, textos, imágenes, software y demás elementos que aparecen en el sitio web son propiedad exclusiva de APA Insular SL o de terceros que han autorizado su uso. Queda expresamente prohibida la reproducción, distribución, modificación, comunicación pública o cualquier otra forma de explotación de dichos contenidos sin la autorización previa y por escrito de su titular, salvo para uso personal y privado."
   },
   "liability": {
     "title": "6. LIMITACIÓN DE RESPONSABILIDAD",
     "availabilityTitle": "6.1. Disponibilidad y Funcionamiento",
-    "availabilityParagraphs": [
-      "La Empresa se compromete a realizar esfuerzos razonables para mantener la disponibilidad y correcto funcionamiento del sitio web y de los servicios, pero no garantiza un funcionamiento ininterrumpido o exento de errores.",
-      "En ningún caso APA Insular SL será responsable por las interrupciones, demoras o errores que puedan afectar al servicio."
-    ],
+    "availabilityParagraph1": "La Empresa se compromete a realizar esfuerzos razonables para mantener la disponibilidad y correcto funcionamiento del sitio web y de los servicios, pero no garantiza un funcionamiento ininterrumpido o exento de errores.",
+    "availabilityParagraph2": "En ningún caso APA Insular SL será responsable por las interrupciones, demoras o errores que puedan afectar al servicio.",
     "contentLinksTitle": "6.2. Contenidos y Enlaces",
-    "contentLinksParagraphs": [
-      "La Empresa no asume responsabilidad por la veracidad, integridad o actualidad de los contenidos ofrecidos por terceros a través de enlaces incluidos en el sitio web.",
-      "El usuario utiliza dichos enlaces bajo su exclusiva responsabilidad."
-    ]
+    "contentLinksParagraph1": "La Empresa no asume responsabilidad por la veracidad, integridad o actualidad de los contenidos ofrecidos por terceros a través de enlaces incluidos en el sitio web.",
+    "contentLinksParagraph2": "El usuario utiliza dichos enlaces bajo su exclusiva responsabilidad."
   },
   "contracting": {
     "title": "7. CONDICIONES ECONÓMICAS Y CONTRATACIÓN",
-    "paragraphs": [
-      "Si Invited ofrece servicios de pago, se regularán mediante contratos específicos que complementarán estos Términos y Condiciones, en los cuales se detallarán las condiciones económicas, métodos de pago, políticas de cancelación y reembolsos, entre otros aspectos."
-    ]
+    "paragraph1": "Si Invited ofrece servicios de pago, se regularán mediante contratos específicos que complementarán estos Términos y Condiciones, en los cuales se detallarán las condiciones económicas, métodos de pago, políticas de cancelación y reembolsos, entre otros aspectos."
   },
   "modifications": {
     "title": "8. MODIFICACIONES",
-    "paragraphs": [
-      "La Empresa se reserva el derecho a modificar en cualquier momento y sin previo aviso la presentación, configuración y contenido del sitio web, así como las presentes condiciones de uso."
-    ]
+    "paragraph1": "La Empresa se reserva el derecho a modificar en cualquier momento y sin previo aviso la presentación, configuración y contenido del sitio web, así como las presentes condiciones de uso."
   },
   "jurisdiction": {
     "title": "9. LEGISLACIÓN APLICABLE Y JURISDICCIÓN",
-    "paragraphs": [
-      "La relación entre el usuario y APA Insular SL se regirá por la normativa española vigente."
-    ]
+    "paragraph1": "La relación entre el usuario y APA Insular SL se regirá por la normativa española vigente."
   },
   "contact": {
     "title": "10. CONTACTO",
-    "paragraphs": [
-      "Para cualquier consulta relacionada con estos Términos y Condiciones, el usuario puede dirigirse a APA Insular SL a través del correo electrónico: contacto@invited.es."
-    ]
+    "paragraph1": "Para cualquier consulta relacionada con estos Términos y Condiciones, el usuario puede dirigirse a APA Insular SL a través del correo electrónico: contacto@invited.es."
   }
 }

@@ -22,11 +22,9 @@
       "title": "Información de contacto",
       "address": {
         "title": "Dirección",
-        "lines": [
-          "Calle Canalejas 13",
-          "Puerto del Rosario, Las Palmas (España)",
-          "C.P. 35600"
-        ]
+        "line1": "Calle Canalejas 13",
+        "line2": "Puerto del Rosario, Las Palmas (España)",
+        "line3": "C.P. 35600"
       },
       "email": {
         "title": "Correo electrónico",
@@ -38,12 +36,10 @@
       },
       "social": {
         "title": "Síguenos",
-        "links": {
-          "facebook": "https://www.facebook.com/invit3d",
-          "instagram": "https://www.instagram.com/invited.es",
-          "youtube": "https://www.youtube.com/@Invited-es/",
-          "linkedin": "https://www.linkedin.com/company/platita/"
-        }
+        "facebook": "https://www.facebook.com/invit3d",
+        "instagram": "https://www.instagram.com/invited.es",
+        "youtube": "https://www.youtube.com/@Invited-es/",
+        "linkedin": "https://www.linkedin.com/company/platita/"
       }
     },
     "map": {

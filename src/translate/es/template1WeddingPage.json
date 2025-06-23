@@ -1,7 +1,10 @@
 {
   "countdown": {
     "title": "⏳ ¡¡¡Nos casamos en...!!! ⏳",
-    "units": ["días", "horas", "minutos", "segundos"]
+    "unit1": "días",
+    "unit2": "horas",
+    "unit3": "minutos",
+    "unit4": "segundos"
   },
   "coupleNames": {
     "heartIcon": "💖"
@@ -27,18 +30,17 @@
       "secondSurname": "Segundo Apellido",
       "extraInformation": "Información Extra",
       "allergy": "Alergias",
-      "feeding": {
-        "label": "Tipo de Alimentación",
-        "options": ["Selecciona...", "Sin preferencias", "Vegetariano", "Vegano"]
-      },
+      "feedingLabel": "Tipo de Alimentación",
+      "feedingOption1": "Selecciona...",
+      "feedingOption2": "Sin preferencias",
+      "feedingOption3": "Vegetariano",
+      "feedingOption4": "Vegano",
       "companionQuestion": "¿Llevarás acompañante?",
       "companionCount": "¿Cuántos acompañantes?",
-      "attendantFields": [
-        "Nombre",
-        "Primer Apellido",
-        "Segundo Apellido",
-        "Edad del acompañante"
-      ]
+      "attendantField1": "Nombre",
+      "attendantField2": "Primer Apellido",
+      "attendantField3": "Segundo Apellido",
+      "attendantField4": "Edad del acompañante"
     },
     "submitButton": "Enviar Confirmación"
   },

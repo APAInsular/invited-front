@@ -8,8 +8,12 @@ import { useNavigate, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import apiClient from '../config/axiosConfig';
 import { useState } from "react";
+import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function UserRegistrationForm() {
+    const { t, loadingTranslation } = usePageTranslation('registerPage');
+
+
     const navigate = useNavigate();
     const [acceptedTerms, setAcceptedTerms] = useState(false);
     const [formError, setFormError] = useState('');
@@ -94,64 +98,106 @@ export default function UserRegistrationForm() {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
+
     return (
         <>
             <div className="mt-5" style={{ backgroundColor: "#F9E9E8", padding: "50px", textAlign: "center" }}>
-                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Crea tu cuenta</h2>
-                <p style={{ marginTop: "10px", marginBottom: "3px" }}>Crea tu cuenta y disfruta de todos los beneficias de usar nuestra web</p>
-                <p style={{ marginTop: "1px", fontSize: "12px" }}>(*) campos obligatorios</p>
+                <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>{t('title')}</h2>
+                <p style={{ marginTop: "10px", marginBottom: "3px" }}>{t('subtitle')}</p>
+                <p style={{ marginTop: "1px", fontSize: "12px" }}>{t('note')}</p>
                 <Form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: "800px", margin: "0 auto", marginTop: "20px" }}>
                     <Row>
                         <Col md={4}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="text" placeholder="Nombre*" {...register("name", { required: "El nombre es obligatorio" })} style={defaultStyle} />
-                                {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
+                                <Form.Control
+                                    type="text"
+                                    placeholder={t('fields.name')}
+                                    {...register("name", { required: t('errors.name') })}
+                                    style={defaultStyle}
+                                />
+                                {errors.name && <p className="text-danger">{errors.name.message}</p>}
                             </Form.Group>
                         </Col>
                         <Col md={4}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="text" placeholder="Primer Apellido*" {...register("firstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
-                                {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
+                                <Form.Control
+                                    type="text"
+                                    placeholder={t('fields.firstSurname')}
+                                    {...register("firstSurname", { required: t('errors.firstSurname') })}
+                                    style={defaultStyle}
+                                />
+                                {errors.firstSurname && <p className="text-danger">{errors.firstSurname.message}</p>}
                             </Form.Group>
                         </Col>
                         <Col md={4}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="text" placeholder="Segundo Apellido" {...register("secondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
-                                {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
+                                <Form.Control
+                                    type="text"
+                                    placeholder={t('fields.secondSurname')}
+                                    {...register("secondSurname")}
+                                    style={defaultStyle}
+                                />
                             </Form.Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={4}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="text" placeholder="Nombre Pareja*" {...register("partnerName", { required: "El nombre es obligatorio" })} style={defaultStyle} />
-                                {errors.Name && <p className="text-danger">{errors.Name.message}</p>}
+                                <Form.Control
+                                    type="text"
+                                    placeholder={t('fields.partnerName')}
+                                    {...register("partnerName", { required: t('errors.partnerName') })}
+                                    style={defaultStyle}
+                                />
+                                {errors.partnerName && <p className="text-danger">{errors.partnerName.message}</p>}
                             </Form.Group>
                         </Col>
                         <Col md={4}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="text" placeholder="Primer Apellido Pareja*" {...register("partnerFirstSurname", { required: "El primer apellido es obligatorio" })} style={defaultStyle} />
-                                {errors.First_Surname && <p className="text-danger">{errors.First_Surname.message}</p>}
+                                <Form.Control
+                                    type="text"
+                                    placeholder={t('fields.partnerFirstSurname')}
+                                    {...register("partnerFirstSurname", { required: t('errors.partnerFirstSurname') })}
+                                    style={defaultStyle}
+                                />
+                                {errors.partnerFirstSurname && <p className="text-danger">{errors.partnerFirstSurname.message}</p>}
                             </Form.Group>
                         </Col>
                         <Col md={4}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="text" placeholder="Segundo Apellido Pareja" {...register("partnerSecondSurname", { required: "El segundo apellido es obligatorio" })} style={defaultStyle} />
-                                {errors.Second_Surname && <p className="text-danger">{errors.Second_Surname.message}</p>}
+                                <Form.Control
+                                    type="text"
+                                    placeholder={t('fields.partnerSecondSurname')}
+                                    {...register("partnerSecondSurname")}
+                                    style={defaultStyle}
+                                />
                             </Form.Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={6}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="tel" placeholder="Teléfono*" {...register("phone", { required: "El teléfono es obligatorio" })} style={defaultStyle} />
-                                {errors.Phone && <p className="text-danger">{errors.Phone.message}</p>}
+                                <Form.Control
+                                    type="tel"
+                                    placeholder={t('fields.phone')}
+                                    {...register("phone", { required: t('errors.phone') })}
+                                    style={defaultStyle}
+                                />
+                                {errors.phone && <p className="text-danger">{errors.phone.message}</p>}
                             </Form.Group>
                         </Col>
                         <Col md={6}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="email" placeholder="Correo Electrónico*" {...register("email", { required: "El correo electrónico es obligatorio" })} style={defaultStyle} />
-                                {errors.Email && <p className="text-danger">{errors.Email.message}</p>}
+                                <Form.Control
+                                    type="email"
+                                    placeholder={t('fields.email')}
+                                    {...register("email", { required: t('errors.email') })}
+                                    style={defaultStyle}
+                                />
+                                {errors.email && <p className="text-danger">{errors.email.message}</p>}
                             </Form.Group>
                         </Col>
                     </Row>
@@ -161,8 +207,8 @@ export default function UserRegistrationForm() {
                                 <InputGroup>
                                     <Form.Control
                                         type={showPassword ? "text" : "password"}
-                                        placeholder="Contraseña*"
-                                        {...register("password", { required: "La contraseña es obligatoria" })}
+                                        placeholder={t('fields.password')}
+                                        {...register("password", { required: t('errors.password') })}
                                         style={defaultStyle}
                                     />
                                     <InputGroup.Text onClick={() => setShowPassword(!showPassword)} style={{ cursor: "pointer" }}>
@@ -177,8 +223,8 @@ export default function UserRegistrationForm() {
                                 <InputGroup>
                                     <Form.Control
                                         type={showConfirmPassword ? "text" : "password"}
-                                        placeholder="Confirmar Contraseña*"
-                                        {...register("password_confirmation", { required: "Debes confirmar la contraseña" })}
+                                        placeholder={t('fields.confirmPassword')}
+                                        {...register("password_confirmation", { required: t('errors.confirmPassword') })}
                                         style={defaultStyle}
                                     />
                                     <InputGroup.Text onClick={() => setShowConfirmPassword(!showConfirmPassword)} style={{ cursor: "pointer" }}>
@@ -191,7 +237,7 @@ export default function UserRegistrationForm() {
                     </Row>
                     <Row>
                         <Col>
-                            <Link to={"/login"} style={{ fontSize: "12px" }}>Ya tengo una cuenta</Link>
+                            <Link to={"/login"} style={{ fontSize: "12px" }}>{t('loginRedirect')}</Link>
                         </Col>
                     </Row>
                     <Row>
@@ -205,17 +251,18 @@ export default function UserRegistrationForm() {
                                     required
                                 />
                                 <Form.Label className="m-0">
-                                    He leído y acepto las <a href="/politica-de-privacidad" target="_blank">políticas de privacidad</a>
+                                    {t('terms.label')} <a href="/politica-de-privacidad" target="_blank">{t('terms.link')}</a>
                                 </Form.Label>
                             </Form.Group>
                             {formError && <p style={{ color: 'red' }}>{formError}</p>}
                         </Col>
                     </Row>
 
-                    <Button type="submit" variant="danger" className="mt-3" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>Registrar</Button>
+                    <Button type="submit" variant="danger" className="mt-3" style={{ ...defaultStyle, backgroundColor: "#F19292", color: "white" }}>
+                        {t('submit')}
+                    </Button>
                 </Form>
-
-            </div >
+            </div>
             <Footer></Footer>
         </>
     );

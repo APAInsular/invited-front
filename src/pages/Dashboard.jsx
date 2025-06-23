@@ -619,9 +619,7 @@ function Dashboard() {
                                                                     <h6 className="mb-0 text-secondary">{t("sections.dressCode")}</h6>
                                                                     <p className="mb-0">
                                                                         {selectedWedding.dressCode || "Sin especificar"}
-                                                                        {selectedWedding.dressCode && (
-                                                                            <small className="d-block text-muted mt-1">{t("sections.dressCode")}</small>
-                                                                        )}
+                                                                        
                                                                     </p>
                                                                 </div>
                                                             </li>
@@ -633,9 +631,7 @@ function Dashboard() {
                                                                     <h6 className="mb-0 text-secondary">{t("sections.food")}</h6>
                                                                     <p className="mb-0">
                                                                         {selectedWedding.foodType || "Por determinar"}
-                                                                        {selectedWedding.foodType && (
-                                                                            <small className="d-block text-muted mt-1">{t("labels.foodType")}</small>
-                                                                        )}
+                                                                        
                                                                     </p>
                                                                 </div>
                                                             </li>

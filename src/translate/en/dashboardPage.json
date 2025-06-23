@@ -3,12 +3,14 @@
     "menu": "Menu"
   },
   "welcome": {
-    "greeting": "Welcome, {user.name} and {user.partner.name}"
+    "greeting": "Welcome,",
+    "greetin2": "and"
   },
   "buttons": {
     "startNow": "Start Now",
     "closeWedding": "Close Wedding",
     "viewImages": "View Images",
+    "noImages": "No images available",
     "edit": "Edit",
     "close": "Close",
     "saveChanges": "Save Changes",

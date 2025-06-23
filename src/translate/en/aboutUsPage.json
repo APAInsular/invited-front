@@ -6,13 +6,15 @@
     },
     "ourStory": {
       "title": "Our Story",
-      "text": "Behind every invitation, there is a love story waiting to be told. Ours began when we realized that couples deserved more than just traditional cards to announce the most special day of their lives. We were born from a shared dream: to transform the way couples connect with their loved ones before the big day.\n\nWhat started as a conversation between friends passionate about design and weddings became Invited.es. Every line of code, every design, and every word we create carries the excitement of those who understand that an invitation is not just paper or pixels: it is the first chapter of an unforgettable celebration.",
+      "text": "Behind every invitation, there is a love story waiting to be told. Ours began when we realized that couples deserved more than just traditional cards to announce the most special day of their lives. We were born from a shared dream: to transform the way couples connect with their loved ones before the big day.",
+      "text2": "What started as a conversation between friends passionate about design and weddings became Invited.es. Every line of code, every design, and every word we create carries the excitement of those who understand that an invitation is not just paper or pixels: it is the first chapter of an unforgettable celebration.",
       "imageAlt": "Our story",
       "imageSrc": "/images/Nuestra_Historia.jpg"
     },
     "ourMission": {
       "title": "Our Mission",
-      "text": "We believe that every love story is unique and deserves to be announced in an equally special way. Our mission goes beyond creating digital invitations; we seek to unleash each couple’s personal expression, turning their dreams into visual experiences that move from the very first glance.\n\nWhen a couple trusts us, we don’t just offer them a tool—we give them a blank canvas to express their personality, their colors, and the tone of their celebration. Because we understand that small decisions, like choosing the perfect font or the ideal color, are also part of the journey to saying 'I do.'",
+      "text": "We believe that every love story is unique and deserves to be announced in an equally special way. Our mission goes beyond creating digital invitations; we seek to unleash each couple’s personal expression, turning their dreams into visual experiences that move from the very first glance.",
+      "text2": "When a couple trusts us, we don’t just offer them a tool—we give them a blank canvas to express their personality, their colors, and the tone of their celebration. Because we understand that small decisions, like choosing the perfect font or the ideal color, are also part of the journey to saying 'I do.'",
       "imageAlt": "Our mission",
       "imageSrc": "/images/Nuestra_Mision.jpg"
     },
@@ -30,7 +32,8 @@
     },
     "ourCommitment": {
       "title": "Our Commitment",
-      "text": "Walking with you on this journey is our greatest privilege. Every question we answer, every design we perfect, and every smile we spark when you see your finished invitation fuels our passion for what we do.\n\nOur team is not made up solely of designers or developers—we are dreamers, confidants, and, in a way, accomplices to your story. We are here to listen, understand, and make sure the first announcement of your wedding reflects exactly what you imagined. Because your happiness is our greatest reward, and your trust, our most precious asset.",
+      "text": "Walking with you on this journey is our greatest privilege. Every question we answer, every design we perfect, and every smile we spark when you see your finished invitation fuels our passion for what we do.",
+      "text2": "Our team is not made up solely of designers or developers—we are dreamers, confidants, and, in a way, accomplices to your story. We are here to listen, understand, and make sure the first announcement of your wedding reflects exactly what you imagined. Because your happiness is our greatest reward, and your trust, our most precious asset.",
       "imageAlt": "Our commitment",
       "imageSrc": "/images/Logo_Invited_SinFondo.png"
     },

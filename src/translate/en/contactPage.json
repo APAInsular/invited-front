@@ -12,11 +12,13 @@
         "messageLabel": "Your Message",
         "termsCheckbox": "I accept the",
         "termsLink": "terms and conditions",
+        "termsCheckbox2": "and the",
         "privacyLink": "privacy policy",
         "submitButton": "Send Message",
         "sendingButton": "Sending..."
       },
-      "successMessage": "Your message has been sent successfully."
+      "successMessage": "Your message has been sent successfully.",
+      "failedMessage": "Error sending message. Please try again later."
     },
     "contactInfoSection": {
       "title": "Contact Information",

@@ -12,35 +12,29 @@
         "messageLabel": "Tu mensaje",
         "termsCheckbox": "Acepto los",
         "termsLink": "términos y condiciones",
+        "termsCheckbox2": "y la",
         "privacyLink": "política de privacidad",
         "submitButton": "Enviar mensaje",
         "sendingButton": "Enviando..."
       },
-      "successMessage": "Tu mensaje ha sido enviado con éxito."
+      "successMessage": "Tu mensaje ha sido enviado con éxito.",
+      "failedMessage": "Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
     },
     "contactInfoSection": {
       "title": "Información de contacto",
-      "address": {
-        "title": "Dirección",
-        "line1": "Calle Canalejas 13",
-        "line2": "Puerto del Rosario, Las Palmas (España)",
-        "line3": "C.P. 35600"
-      },
-      "email": {
-        "title": "Correo electrónico",
-        "value": "contacto@invited.es"
-      },
-      "hours": {
-        "title": "Horario de atención",
-        "value": "Lunes a Viernes: 9:00 - 14:00 hrs"
-      },
-      "social": {
-        "title": "Síguenos",
-        "facebook": "https://www.facebook.com/invit3d",
-        "instagram": "https://www.instagram.com/invited.es",
-        "youtube": "https://www.youtube.com/@Invited-es/",
-        "linkedin": "https://www.linkedin.com/company/platita/"
-      }
+      "addressTitle": "Dirección",
+      "addressLine1": "Calle Canalejas 13",
+      "addressLine2": "Puerto del Rosario, Las Palmas (España)",
+      "addressLine3": "C.P. 35600",
+      "emailTitle": "Correo electrónico",
+      "emailValue": "contacto@invited.es",
+      "hoursTitle": "Horario de atención",
+      "hoursValue": "Lunes a Viernes: 9:00 - 14:00 hrs",
+      "socialTitle": "Síguenos",
+      "facebookLink": "https://www.facebook.com/invit3d",
+      "instagramLink": "https://www.instagram.com/invited.es",
+      "youtubeLink": "https://www.youtube.com/@Invited-es/",
+      "linkedinLink": "https://www.linkedin.com/company/platita/"
     },
     "map": {
       "title": "Ubicación de la empresa",

@@ -2,16 +2,22 @@ import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaEnvelope, FaClock, FaYoutube } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import apiClient from '../config/axiosConfig';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 const ContactPage = () => {
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
+    const { t, loadingTranslation } = usePageTranslation('contactPage');
+
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
     });
 
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState('');
+    
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -46,9 +52,9 @@ const ContactPage = () => {
             const finalData = { formData, token }
             console.log(finalData)
             await apiClient.post("/api/contact", finalData);
-            setMessage("Mensaje enviado con éxito.");
+            setMessage(`${t('contactPage.formSection.successMessage')}`);
         } catch (error) {
-            setMessage("Hubo un error al enviar el mensaje.");
+            setMessage(`${t('contactPage.formSection.failedMessage')}`);
             console.error(error);
         }
 
@@ -64,6 +70,10 @@ const ContactPage = () => {
         lightText: '#6c757d'
     };
 
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
+
     return (
         <div style={{ backgroundColor: customStyles.lightBg, marginTop: "90px" }}>
             {/* Hero Section */}
@@ -72,9 +82,9 @@ const ContactPage = () => {
                 padding: '5rem 0'
             }}>
                 <div className="container text-center text-white">
-                    <h1 className="display-4 fw-bold mb-3">Contáctanos</h1>
+                    <h1 className="display-4 fw-bold mb-3">{t('contactPage.hero.title')}</h1>
                     <p className="lead mx-auto" style={{ maxWidth: '700px' }}>
-                        Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.
+                        {t('contactPage.hero.description')}
                     </p>
                 </div>
             </div>
@@ -86,11 +96,11 @@ const ContactPage = () => {
                     <div className="col-lg-7">
                         <div className="card border-0 shadow-sm h-100">
                             <div className="card-body p-4 p-md-5">
-                                <h2 className="mb-4" style={{ color: customStyles.primaryColor }}>Envía un mensaje</h2>
+                                <h2 className="mb-4" style={{ color: customStyles.primaryColor }}>{t('contactPage.formSection.title')}</h2>
 
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-4">
-                                        <label htmlFor="name" className="form-label fw-medium">Nombre completo</label>
+                                        <label htmlFor="name" className="form-label fw-medium">{t('contactPage.formSection.fields.nameLabel')}</label>
                                         <input
                                             type="text"
                                             className="form-control py-2"
@@ -103,7 +113,7 @@ const ContactPage = () => {
                                     </div>
 
                                     <div className="mb-4">
-                                        <label htmlFor="email" className="form-label fw-medium">Correo electrónico</label>
+                                        <label htmlFor="email" className="form-label fw-medium">{t('contactPage.formSection.fields.emailLabel')}</label>
                                         <input
                                             type="email"
                                             className="form-control py-2"
@@ -116,7 +126,7 @@ const ContactPage = () => {
                                     </div>
 
                                     <div className="mb-4">
-                                        <label htmlFor="message" className="form-label fw-medium">Tu mensaje</label>
+                                        <label htmlFor="message" className="form-label fw-medium">{t('contactPage.formSection.fields.messageLabel')}</label>
                                         <textarea
                                             className="form-control py-2"
                                             id="message"
@@ -140,7 +150,7 @@ const ContactPage = () => {
                                             required
                                         />
                                         <label htmlFor="terms" className="form-check-label ms-2">
-                                            Acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer" style={{ color: customStyles.primaryColor }}>términos y condiciones</a> y la <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer" style={{ color: customStyles.primaryColor }}>política de privacidad</a>
+                                            {t('contactPage.formSection.fields.termsCheckbox')} <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer" style={{ color: customStyles.primaryColor }}>{t('contactPage.formSection.fields.termsLink')}</a> {t('contactPage.formSection.fields.termsCheckbox2')} <a href="/politica-privacidad" target="_blank" rel="noopener noreferrer" style={{ color: customStyles.primaryColor }}>{t('contactPage.formSection.fields.privacyLink')}</a>
                                         </label>
                                     </div>
 
@@ -158,9 +168,9 @@ const ContactPage = () => {
                                         {loading ? (
                                             <>
                                                 <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                                                Enviando...
+                                                {t('contactPage.formSection.fields.sendingButton')}
                                             </>
-                                        ) : 'Enviar mensaje'}
+                                        ) : `${t('contactPage.formSection.fields.submitButton')}` }
                                     </button>
 
                                     {message && (
@@ -177,18 +187,18 @@ const ContactPage = () => {
                     <div className="col-lg-5">
                         <div className="card border-0 shadow-sm h-100">
                             <div className="card-body p-4 p-md-5">
-                                <h2 className="mb-4" style={{ color: customStyles.primaryColor }}>Información de contacto</h2>
+                                <h2 className="mb-4" style={{ color: customStyles.primaryColor }}>{t("contactPage.contactInfoSection.title")}</h2>
 
                                 <div className="d-flex mb-4">
                                     <div className="me-3" style={{ color: customStyles.primaryColor }}>
                                         <FaMapMarkerAlt size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Dirección</h3>
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>{t("contactPage.contactInfoSection.addressTitle")}</h3>
                                         <p className="mb-0" style={{ color: customStyles.lightText }}>
-                                            Calle Canalejas 13<br />
-                                            Puerto del Rosario, Las Palmas (España)<br />
-                                            C.P. 35600
+                                            {t("contactPage.contactInfoSection.addressLine1")}<br />
+                                            {t("contactPage.contactInfoSection.addressLine2")}<br />
+                                            {t("contactPage.contactInfoSection.addressLine3")}
                                         </p>
                                     </div>
                                 </div>
@@ -198,10 +208,10 @@ const ContactPage = () => {
                                         <FaEnvelope size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Correo electrónico</h3>
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>{t("contactPage.contactInfoSection.emailTitle")}</h3>
                                         <p className="mb-0">
                                             <a href="mailto:contacto@empresa.com" className="text-decoration-none" style={{ color: customStyles.lightText }}>
-                                                contacto@invited.es
+                                                {t("contactPage.contactInfoSection.emailValue")}
                                             </a><br />
                                         </p>
                                     </div>
@@ -212,15 +222,15 @@ const ContactPage = () => {
                                         <FaClock size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>Horario de atención</h3>
+                                        <h3 className="h5 mb-2" style={{ color: customStyles.textColor }}>{t("contactPage.contactInfoSection.hoursTitle")}</h3>
                                         <p className="mb-0" style={{ color: customStyles.lightText }}>
-                                            Lunes a Viernes: 9:00 - 14:00 hrs
+                                            {t("contactPage.contactInfoSection.hoursValue")}
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="mt-5">
-                                    <h3 className="h5 mb-3" style={{ color: customStyles.textColor }}>Síguenos</h3>
+                                    <h3 className="h5 mb-3" style={{ color: customStyles.textColor }}>{t("contactPage.contactInfoSection.socialTitle")}</h3>
                                     <div className="d-flex gap-3">
                                         <a
                                             href="https://www.facebook.com/invit3d"

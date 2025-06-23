@@ -3,12 +3,14 @@
     "menu": "Menu"
   },
   "welcome": {
-    "greeting": "Bienvenido, {user.name} y {user.partner.name}"
+    "greeting": "Bienvenido,",
+    "greetin2": "y"
   },
   "buttons": {
     "startNow": "Empieza Ahora",
     "closeWedding": "Cerrar boda",
     "viewImages": "Ver imagenes",
+    "noImages": "No hay imágenes disponibles",
     "edit": "Editar",
     "close": "Cerrar",
     "saveChanges": "Guardar Cambios",

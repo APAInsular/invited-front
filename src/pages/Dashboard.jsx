@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
 import NavbarAuth from '../components/NavbarAuth';
 import { Plus, X } from 'react-bootstrap-icons';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -58,6 +59,10 @@ function Dashboard() {
     const onGuestDeleted = (guestId) => {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
     };
+
+    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+
+
 
     /*
     FUNCIONALIDADES ADMIN:
@@ -448,6 +453,10 @@ function Dashboard() {
     if (error) return <div>ERROR</div>
     if (isLoading && users.length > 0 && filteredUsers.length > 0 && allWeddings.length > 0 && weddings.length > 0 && user && isAdmin) return <div>Obteniendo información...</div>;
 
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
+
     return (
         <>
             <Container fluid className="mt-5 px-0">
@@ -465,7 +474,7 @@ function Dashboard() {
                             className="d-md-none mb-3"
                             onClick={() => setShowMobileSidebar(!showMobileSidebar)}
                         >
-                            Menu
+                            {t('sidebar.menu')}
                         </Button>
 
                         {/* Mobile sidebar overlay */}
@@ -484,7 +493,7 @@ function Dashboard() {
                         {user && (
                             <div className="d-flex flex-column flex-md-row align-items-center mb-4">
                                 <h4 className="me-md-3 mb-2 mb-md-0 text-center text-md-start">
-                                    Bienvenido, {user.name} y {user.partner.name}
+                                    {t("welcome.greeting")} {user.name} {t("welcome.greeting2")} {user.partner.name}
                                 </h4>
                             </div>
                         )}
@@ -505,7 +514,7 @@ function Dashboard() {
                                                 to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
                                                 className="btn btn-primary"
                                             >
-                                                Empieza Ahora
+                                                {t("buttons.startNow")}
                                             </Link>
                                         ) : null
                                         }
@@ -522,7 +531,7 @@ function Dashboard() {
                                             size="md"
                                             className='mb-2 btn btn-outline-dark rounded-pill'
                                         >
-                                            Cerrar boda
+                                            {t("buttons.closeWedding")}
                                         </Button>
                                         {selectedWedding.images ? (
                                             <Button
@@ -531,10 +540,10 @@ function Dashboard() {
                                                 size="md"
                                                 className='mb-2 btn btn-outline-dark rounded-pill'
                                             >
-                                                Ver imagenes
+                                                {t("buttons.viewImages")}
                                             </Button>
                                         ) : (
-                                            <strong className='ml-2'>No hay imagenes</strong>
+                                            <strong className='ml-2'>{t("buttons.noImages")}</strong>
                                         )}
 
                                         <GuestList
@@ -545,13 +554,13 @@ function Dashboard() {
                                         />
 
                                         <div className="d-flex justify-content-between align-items-center mb-3">
-                                            <h4>Detalles de la Boda</h4>
+                                            <h4>{t("sections.weddingDetails")}</h4>
                                             <Button
                                                 variant="warning"
                                                 onClick={handleShowWeddingModal}
                                                 size="sm"
                                             >
-                                                Editar
+                                                {t("buttons.edit")}
                                             </Button>
                                         </div>
 
@@ -560,7 +569,7 @@ function Dashboard() {
                                                 <div className="card h-100 shadow-sm">
                                                     <div className="card-body">
                                                         <h5 className="card-title text-primary mb-4">
-                                                            <i className="bi bi-geo-alt-fill me-2"></i>Detalles Principales
+                                                            <i className="bi bi-geo-alt-fill me-2"></i>{t("sections.mainDetails")}
                                                         </h5>
                                                         <ul className="list-unstyled">
                                                             <li className="mb-3 d-flex">
@@ -568,7 +577,7 @@ function Dashboard() {
                                                                     <i className="bi bi-geo"></i>
                                                                 </span>
                                                                 <div>
-                                                                    <h6 className="mb-0 text-secondary">Ubicación</h6>
+                                                                    <h6 className="mb-0 text-secondary">{t("sections.location")}</h6>
                                                                     <p className="mb-0">{selectedWedding.location.city}, {selectedWedding.location.country}</p>
                                                                 </div>
                                                             </li>
@@ -577,7 +586,7 @@ function Dashboard() {
                                                                     <i className="bi bi-calendar-event"></i>
                                                                 </span>
                                                                 <div>
-                                                                    <h6 className="mb-0 text-secondary">Fecha</h6>
+                                                                    <h6 className="mb-0 text-secondary">{t("sections.date")}</h6>
                                                                     <p className="mb-0">{formatDate(selectedWedding.weddingDate)}</p>
                                                                 </div>
                                                             </li>
@@ -586,7 +595,7 @@ function Dashboard() {
                                                                     <i className="bi bi-chat-square-text"></i>
                                                                 </span>
                                                                 <div>
-                                                                    <h6 className="mb-0 text-secondary">Mensaje</h6>
+                                                                    <h6 className="mb-0 text-secondary">{t("sections.message")}</h6>
                                                                     <p className="mb-0 text-muted font-italic">"{selectedWedding.customMessage}"</p>
                                                                 </div>
                                                             </li>
@@ -599,7 +608,7 @@ function Dashboard() {
                                                 <div className="card h-100 shadow-sm">
                                                     <div className="card-body">
                                                         <h5 className="card-title text-primary mb-4">
-                                                            <i className="bi bi-info-circle-fill me-2"></i>Información Adicional
+                                                            <i className="bi bi-info-circle-fill me-2"></i>{t("sections.additionalInfo")}
                                                         </h5>
                                                         <ul className="list-unstyled">
                                                             <li className="mb-3 d-flex">
@@ -607,11 +616,11 @@ function Dashboard() {
                                                                     <i className="bi bi-sunglasses"></i>
                                                                 </span>
                                                                 <div>
-                                                                    <h6 className="mb-0 text-secondary">Vestimenta</h6>
+                                                                    <h6 className="mb-0 text-secondary">{t("sections.dressCode")}</h6>
                                                                     <p className="mb-0">
                                                                         {selectedWedding.dressCode || "Sin especificar"}
                                                                         {selectedWedding.dressCode && (
-                                                                            <small className="d-block text-muted mt-1">Código de vestimenta</small>
+                                                                            <small className="d-block text-muted mt-1">{t("sections.dressCode")}</small>
                                                                         )}
                                                                     </p>
                                                                 </div>
@@ -621,11 +630,11 @@ function Dashboard() {
                                                                     <i className="bi bi-egg-fried"></i>
                                                                 </span>
                                                                 <div>
-                                                                    <h6 className="mb-0 text-secondary">Comida</h6>
+                                                                    <h6 className="mb-0 text-secondary">{t("sections.food")}</h6>
                                                                     <p className="mb-0">
                                                                         {selectedWedding.foodType || "Por determinar"}
                                                                         {selectedWedding.foodType && (
-                                                                            <small className="d-block text-muted mt-1">Tipo de menú</small>
+                                                                            <small className="d-block text-muted mt-1">{t("labels.foodType")}</small>
                                                                         )}
                                                                     </p>
                                                                 </div>
@@ -636,7 +645,7 @@ function Dashboard() {
                                             </div>
                                         </div>
 
-                                        <h5 className="mt-3">Eventos de la Boda</h5>
+                                        <h5 className="mt-3">{t("sections.weddingEvents")}</h5>
                                         {selectedWedding.events && selectedWedding.events.length > 0 ? (
                                             <div className="list-group">
                                                 {selectedWedding.events.map((event, index) => (
@@ -650,7 +659,7 @@ function Dashboard() {
                                                 ))}
                                             </div>
                                         ) : (
-                                            <p>No hay eventos programados para esta boda.</p>
+                                            <p>{t("sections.noEvents")}</p>
                                         )}
                                     </div>
                                 )}
@@ -670,7 +679,7 @@ function Dashboard() {
 
                                 {adminScene === 'weddings' && (
                                     <>
-                                        <h5 className='mt-3'>Gestión de Bodas</h5>
+                                        <h5 className='mt-3'>{t("sections.weddingManagement")}</h5>
                                         <WeddingList weddings={allWeddings} onWeddingSelect={setSelectedWeddingId} isAdmin={isAdmin} />
                                         {selectedWedding && (
                                             <div className="mt-4">
@@ -680,7 +689,7 @@ function Dashboard() {
                                                     size="md"
                                                     className='mb-2 btn btn-outline-dark rounded-pill'
                                                 >
-                                                    Cerrar boda
+                                                    {t("buttons.closeWedding")}
                                                 </Button>
                                                 {selectedWedding.images ? (
                                                     <Button
@@ -689,10 +698,10 @@ function Dashboard() {
                                                         size="md"
                                                         className='mb-2 btn btn-outline-dark rounded-pill'
                                                     >
-                                                        Ver imagenes
+                                                        {t("buttons.viewImages")}
                                                     </Button>
                                                 ) : (
-                                                    <strong className='ml-2'>No hay imagenes</strong>
+                                                    <strong className='ml-2'>{t("buttons.noImages")}</strong>
                                                 )}
 
                                                 <GuestList
@@ -703,13 +712,13 @@ function Dashboard() {
                                                 />
 
                                                 <div className="d-flex justify-content-between align-items-center mb-3">
-                                                    <h4>Detalles de la Boda</h4>
+                                                    <h4>{t("sections.weddingDetails")}</h4>
                                                     <Button
                                                         variant="warning"
                                                         onClick={handleShowWeddingModal}
                                                         size="sm"
                                                     >
-                                                        Editar
+                                                        {t("buttons.edit")}
                                                     </Button>
                                                 </div>
 
@@ -718,7 +727,7 @@ function Dashboard() {
                                                         <div className="card h-100 shadow-sm">
                                                             <div className="card-body">
                                                                 <h5 className="card-title text-primary mb-4">
-                                                                    <i className="bi bi-geo-alt-fill me-2"></i>Detalles Principales
+                                                                    <i className="bi bi-geo-alt-fill me-2"></i>{t("sections.mainDetails")}
                                                                 </h5>
                                                                 <ul className="list-unstyled">
                                                                     <li className="mb-3 d-flex">
@@ -726,7 +735,7 @@ function Dashboard() {
                                                                             <i className="bi bi-geo"></i>
                                                                         </span>
                                                                         <div>
-                                                                            <h6 className="mb-0 text-secondary">Ubicación</h6>
+                                                                            <h6 className="mb-0 text-secondary">{t("sections.location")}</h6>
                                                                             <p className="mb-0">{selectedWedding.location.city}, {selectedWedding.location.country}</p>
                                                                         </div>
                                                                     </li>
@@ -757,7 +766,7 @@ function Dashboard() {
                                                         <div className="card h-100 shadow-sm">
                                                             <div className="card-body">
                                                                 <h5 className="card-title text-primary mb-4">
-                                                                    <i className="bi bi-info-circle-fill me-2"></i>Información Adicional
+                                                                    <i className="bi bi-info-circle-fill me-2"></i>{t("sections.additionalInfo")}
                                                                 </h5>
                                                                 <ul className="list-unstyled">
                                                                     <li className="mb-3 d-flex">
@@ -765,11 +774,11 @@ function Dashboard() {
                                                                             <i className="bi bi-sunglasses"></i>
                                                                         </span>
                                                                         <div>
-                                                                            <h6 className="mb-0 text-secondary">Vestimenta</h6>
+                                                                            <h6 className="mb-0 text-secondary">{t("sections.dressCode")}</h6>
                                                                             <p className="mb-0">
                                                                                 {selectedWedding.dressCode || "Sin especificar"}
                                                                                 {selectedWedding.dressCode && (
-                                                                                    <small className="d-block text-muted mt-1">Código de vestimenta</small>
+                                                                                    <small className="d-block text-muted mt-1">{t("sections.dressCode")}</small>
                                                                                 )}
                                                                             </p>
                                                                         </div>
@@ -779,11 +788,11 @@ function Dashboard() {
                                                                             <i className="bi bi-egg-fried"></i>
                                                                         </span>
                                                                         <div>
-                                                                            <h6 className="mb-0 text-secondary">Comida</h6>
+                                                                            <h6 className="mb-0 text-secondary">{t("sections.food")}</h6>
                                                                             <p className="mb-0">
                                                                                 {selectedWedding.foodType || "Por determinar"}
                                                                                 {selectedWedding.foodType && (
-                                                                                    <small className="d-block text-muted mt-1">Tipo de menú</small>
+                                                                                    <small className="d-block text-muted mt-1">{t("labels.foodType")}</small>
                                                                                 )}
                                                                             </p>
                                                                         </div>
@@ -794,7 +803,7 @@ function Dashboard() {
                                                     </div>
                                                 </div>
 
-                                                <h5 className="mt-3">Eventos de la Boda</h5>
+                                                <h5 className="mt-3">{t("sections.weddingEvents")}</h5>
                                                 {selectedWedding.events && selectedWedding.events.length > 0 ? (
                                                     <div className="list-group">
                                                         {selectedWedding.events.map((event, index) => (
@@ -808,7 +817,7 @@ function Dashboard() {
                                                         ))}
                                                     </div>
                                                 ) : (
-                                                    <p>No hay eventos programados para esta boda.</p>
+                                                    <p>{t("sections.noEvents")}</p>
                                                 )}
                                             </div>
                                         )}
@@ -819,17 +828,17 @@ function Dashboard() {
 
                         {/* Modal para editar usuario */}
                         <Modal show={showUserModal} onHide={handleCloseUserModal}>
-                            <Modal.Header closeButton><Modal.Title>Editar Perfil</Modal.Title></Modal.Header>
+                            <Modal.Header closeButton><Modal.Title>{t("sections.editProfile")}l</Modal.Title></Modal.Header>
                             <Modal.Body>
                                 <Form>
-                                    <Form.Group><Form.Label>Nombre</Form.Label><Form.Control type="text" name="name" value={editUserData.name} onChange={(e) => setEditUserData({ ...editUserData, name: e.target.value })} /></Form.Group>
-                                    <Form.Group><Form.Label>Primer Apellido</Form.Label><Form.Control type="text" name="firstSurname" value={editUserData.firstSurname} onChange={(e) => setEditUserData({ ...editUserData, firstSurname: e.target.value })} /></Form.Group>
-                                    <Form.Group><Form.Label>Segundo Apellido</Form.Label><Form.Control type="text" name="secondSurname" value={editUserData.secondSurname} onChange={(e) => setEditUserData({ ...editUserData, secondSurname: e.target.value })} /></Form.Group>
-                                    <Form.Group><Form.Label>Email</Form.Label><Form.Control type="email" name="email" value={editUserData.email} onChange={(e) => setEditUserData({ ...editUserData, email: e.target.value })} /></Form.Group>
-                                    <Form.Group><Form.Label>Teléfono</Form.Label><Form.Control type="text" name="phone" value={editUserData.phone} onChange={(e) => setEditUserData({ ...editUserData, phone: e.target.value })} /></Form.Group>
-                                    <h5>Datos de la Pareja</h5>
+                                    <Form.Group><Form.Label>{t("labels.name")}</Form.Label><Form.Control type="text" name="name" value={editUserData.name} onChange={(e) => setEditUserData({ ...editUserData, name: e.target.value })} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.firstSurname")}</Form.Label><Form.Control type="text" name="firstSurname" value={editUserData.firstSurname} onChange={(e) => setEditUserData({ ...editUserData, firstSurname: e.target.value })} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.secondSurname")}</Form.Label><Form.Control type="text" name="secondSurname" value={editUserData.secondSurname} onChange={(e) => setEditUserData({ ...editUserData, secondSurname: e.target.value })} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.email")}</Form.Label><Form.Control type="email" name="email" value={editUserData.email} onChange={(e) => setEditUserData({ ...editUserData, email: e.target.value })} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.phone")}</Form.Label><Form.Control type="text" name="phone" value={editUserData.phone} onChange={(e) => setEditUserData({ ...editUserData, phone: e.target.value })} /></Form.Group>
+                                    <h5>{t("sections.partnerData")}</h5>
                                     <Form.Group>
-                                        <Form.Label>Nombre de la Pareja</Form.Label>
+                                        <Form.Label>{t("labels.partnerName")}</Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="partner.name"
@@ -844,7 +853,7 @@ function Dashboard() {
                                         />
                                     </Form.Group>
                                     <Form.Group>
-                                        <Form.Label>Primer Apellido de la Pareja</Form.Label>
+                                        <Form.Label>{t("labels.partnerFirstSurname")}</Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="partner.firstSurname"
@@ -859,7 +868,7 @@ function Dashboard() {
                                         />
                                     </Form.Group>
                                     <Form.Group>
-                                        <Form.Label>Segundo Apellido de la Pareja</Form.Label>
+                                        <Form.Label>{t("labels.partnerSecondSurname")}</Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="partner.secondSurname"
@@ -876,14 +885,14 @@ function Dashboard() {
                                 </Form>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleCloseUserModal}>Cerrar</Button>
-                                <Button variant="primary" onClick={handleSaveUserChanges}>Guardar Cambios</Button>
+                                <Button variant="secondary" onClick={handleCloseUserModal}>{t("buttons.close")}</Button>
+                                <Button variant="primary" onClick={handleSaveUserChanges}>{t("buttons.saveChanges")}</Button>
                             </Modal.Footer>
                         </Modal>
 
                         <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
                             <Modal.Header closeButton>
-                                <Modal.Title>Galería de Imágenes</Modal.Title>
+                                <Modal.Title>{t("sections.gallery")}</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 <div className="d-flex flex-wrap gap-3 justify-content-start">
@@ -922,7 +931,7 @@ function Dashboard() {
                                         onClick={triggerFileInput}
                                     >
                                         <Plus size={32} className="text-muted" />
-                                        <span className="text-muted mt-2">Añadir imagen</span>
+                                        <span className="text-muted mt-2">{t("buttons.addImage")}</span>
                                         <input
                                             type="file"
                                             ref={fileInputRef}
@@ -942,21 +951,21 @@ function Dashboard() {
                         </Modal>
                         {/* Modal para editar boda */}
                         <Modal show={showWeddingModal} onHide={handleCloseWeddingModal}>
-                            <Modal.Header closeButton><Modal.Title>Editar Boda</Modal.Title></Modal.Header>
+                            <Modal.Header closeButton><Modal.Title>{t("sections.weddingEdit")}</Modal.Title></Modal.Header>
                             <Modal.Body>
                                 <Form>
-                                    <Form.Group><Form.Label>Ubicación</Form.Label><Form.Control type="text" name="location.city" value={editWeddingData.location.city} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>Ubicación</Form.Label><Form.Control type="text" name="location.country" value={editWeddingData.location.country} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>Fecha de Boda</Form.Label><Form.Control type="date" name="weddingDate" value={editWeddingData.weddingDate} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>Mensaje Personalizado</Form.Label><Form.Control type="text" name="customMessage" value={editWeddingData.customMessage} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>Código de Vestimenta</Form.Label><Form.Control type="text" name="dressCode" value={editWeddingData.dressCode} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>Tipo de Comida</Form.Label><Form.Control type="text" name="foodType" value={editWeddingData.foodType} onChange={handleWeddingInputChange} /></Form.Group>
-                                    <Form.Group><Form.Label>Numero de invitados</Form.Label><Form.Control type="text" name="guestCount" value={editWeddingData.guestCount} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.location")}</Form.Label><Form.Control type="text" name="location.city" value={editWeddingData.location.city} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.location")}</Form.Label><Form.Control type="text" name="location.country" value={editWeddingData.location.country} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.weddingDate")}</Form.Label><Form.Control type="date" name="weddingDate" value={editWeddingData.weddingDate} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.customMessage")}</Form.Label><Form.Control type="text" name="customMessage" value={editWeddingData.customMessage} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.dressCode")}</Form.Label><Form.Control type="text" name="dressCode" value={editWeddingData.dressCode} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.foodType")}</Form.Label><Form.Control type="text" name="foodType" value={editWeddingData.foodType} onChange={handleWeddingInputChange} /></Form.Group>
+                                    <Form.Group><Form.Label>{t("labels.guestCount")}</Form.Label><Form.Control type="text" name="guestCount" value={editWeddingData.guestCount} onChange={handleWeddingInputChange} /></Form.Group>
                                 </Form>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleCloseWeddingModal}>Cerrar</Button>
-                                <Button variant="primary" onClick={handleSaveWeddingChanges}>Guardar Cambios</Button>
+                                <Button variant="secondary" onClick={handleCloseWeddingModal}>{t("buttons.close")}</Button>
+                                <Button variant="primary" onClick={handleSaveWeddingChanges}>{t("buttons.saveChanges")}</Button>
                             </Modal.Footer>
                         </Modal>
                     </Col>

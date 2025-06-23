@@ -18,23 +18,15 @@
     },
     "values": {
       "title": "Nuestros Valores",
-      "items": [
-        {
-          "icon": "❤️",
-          "title": "Pasión",
-          "text": "Amamos lo que hacemos y ponemos nuestro corazón en cada detalle de vuestras invitaciones."
-        },
-        {
-          "icon": "💬",
-          "title": "Comunicación",
-          "text": "Escuchamos vuestras ideas y mantenemos un diálogo constante durante todo el proceso."
-        },
-        {
-          "icon": "🎨",
-          "title": "Creatividad",
-          "text": "Buscamos soluciones únicas y personalizadas para que vuestra invitación sea verdaderamente especial."
-        }
-      ]
+      "value1Icon": "❤️",
+      "value1Title": "Pasión",
+      "value1Text": "Amamos lo que hacemos y ponemos nuestro corazón en cada detalle de vuestras invitaciones.",
+      "value2Icon": "💬",
+      "value2Title": "Comunicación",
+      "value2Text": "Escuchamos vuestras ideas y mantenemos un diálogo constante durante todo el proceso.",
+      "value3Icon": "🎨",
+      "value3Title": "Creatividad",
+      "value3Text": "Buscamos soluciones únicas y personalizadas para que vuestra invitación sea verdaderamente especial."
     },
     "ourCommitment": {
       "title": "Nuestro Compromiso",

@@ -1,7 +1,10 @@
 {
   "countdown": {
     "title": "Only...",
-    "labels": ["Days", "Hours", "Minutes", "Seconds"]
+    "label1": "Days",
+    "label2": "Hours",
+    "label3": "Minutes",
+    "label4": "Seconds"
   },
   "coupleNames": {
     "invitationText": "We are delighted to invite you to our wedding which will take place on",
@@ -28,15 +31,17 @@
       "secondSurname": "Second Last Name",
       "extraInformation": "Additional Information",
       "allergy": "Allergies",
-      "feeding": {
-        "label": "Dietary Preference",
-        "options": ["Select...", "No preferences", "Vegetarian", "Vegan"]
-      },
+      "feedingLabel": "Dietary Preference",
+      "feedingOption1": "Select...",
+      "feedingOption2": "No preferences",
+      "feedingOption3": "Vegetarian",
+      "feedingOption4": "Vegan",
       "companionQuestion": "Will you bring a guest?",
       "companionCount": "How many guests?",
-      "attendantFields": [
-        "Name", "Last Name", "Second Last Name", "Guest's Age"
-      ]
+      "attendantField1": "Name",
+      "attendantField2": "Last Name",
+      "attendantField3": "Second Last Name",
+      "attendantField4": "Guest's Age"
     },
     "submitButton": "Submit RSVP"
   },

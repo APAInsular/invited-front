@@ -22,35 +22,29 @@
   "collectedData": {
     "title": "2. PERSONAL DATA COLLECTED",
     "intro": "Depending on the features the user uses on the Website, different types of personal data may be collected, such as:",
-    "list": [
-      "Contact data: name, surname, email address, phone number, and postal address.",
-      "Browsing data: IP address, browser, device type, operating system, browsing history.",
-      "Customization and service data: information provided for the creation and management of digital invitations.",
-      "Contractual relationship data: information required for billing, payments, and managing the user relationship."
-    ]
+    "type1": "Contact data: name, surname, email address, phone number, and postal address.",
+    "type2": "Browsing data: IP address, browser, device type, operating system, browsing history.",
+    "type3": "Customization and service data: information provided for the creation and management of digital invitations.",
+    "type4": "Contractual relationship data: information required for billing, payments, and managing the user relationship."
   },
   "purpose": {
     "title": "3. PURPOSE OF DATA PROCESSING",
     "intro": "The personal data collected will be processed for the following purposes:",
-    "list": [
-      "Management of the digital invitation service.",
-      "Billing, collections, and payments.",
-      "Customer support.",
-      "Sending commercial communications with express consent.",
-      "Compliance with legal obligations.",
-      "Service improvement."
-    ]
+    "purpose1": "Management of the digital invitation service.",
+    "purpose2": "Billing, collections, and payments.",
+    "purpose3": "Customer support.",
+    "purpose4": "Sending commercial communications with express consent.",
+    "purpose5": "Compliance with legal obligations.",
+    "purpose6": "Service improvement."
   },
   "lawfulBasis": {
     "title": "4. LAWFUL BASIS FOR PROCESSING",
     "intro": "The legal basis for the processing of personal data varies depending on the purpose:",
-    "list": [
-      "Service management and contractual relationship: Performance of a contract.",
-      "Customer support: User consent.",
-      "Commercial communications: Express consent.",
-      "Compliance with legal obligations: Legal compliance.",
-      "Service improvement: Controller’s legitimate interest."
-    ]
+    "basis1": "Service management and contractual relationship: Performance of a contract.",
+    "basis2": "Customer support: User consent.",
+    "basis3": "Commercial communications: Express consent.",
+    "basis4": "Compliance with legal obligations: Legal compliance.",
+    "basis5": "Service improvement: Controller’s legitimate interest."
   },
   "dataRetention": {
     "title": "5. DATA RETENTION",
@@ -59,23 +53,19 @@
   "dataDisclosure": {
     "title": "6. DATA DISCLOSURE TO THIRD PARTIES",
     "intro": "Invited.es will disclose personal data only to:",
-    "list": [
-      "Auxiliary service providers.",
-      "Public bodies when required by law.",
-      "Partners for managing the digital invitation."
-    ]
+    "disclosure1": "Auxiliary service providers.",
+    "disclosure2": "Public bodies when required by law.",
+    "disclosure3": "Partners for managing the digital invitation."
   },
   "userRights": {
     "title": "7. USER RIGHTS",
     "intro": "The user may exercise the following rights:",
-    "list": [
-      "Right of access.",
-      "Right to rectification.",
-      "Right to erasure (right to be forgotten).",
-      "Right to restriction of processing.",
-      "Right to data portability.",
-      "Right to object."
-    ],
+    "right1": "Right of access.",
+    "right2": "Right to rectification.",
+    "right3": "Right to erasure (right to be forgotten).",
+    "right4": "Right to restriction of processing.",
+    "right5": "Right to data portability.",
+    "right6": "Right to object.",
     "additionalText": "To exercise these rights, the user may send an email to contacto@invited.es, indicating 'Data Protection' in the subject line and attaching a copy of their ID document."
   },
   "dataSecurity": {

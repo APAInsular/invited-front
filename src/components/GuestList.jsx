@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button, OverlayTrigger, Tooltip, Card, Badge, Accordion } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
     const [guestCountData, setGuestCountData] = useState();
@@ -18,6 +19,9 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
         fetchWeddings();
     }, [selectedWeddingId]);
 
+    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+
+
     const deleteGuest = async (guestId) => {
         if (!window.confirm("¿Seguro que quieres eliminar este invitado?")) return;
 
@@ -32,12 +36,15 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
             alert("Hubo un error al intentar eliminar el invitado.");
         }
     };
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
 
     return (
         <Card className="mb-4">
             <Card.Body>
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                    <Card.Title>Lista de Invitados</Card.Title>
+                    <Card.Title>{t("sections.guestList")}</Card.Title>
                     <Badge bg="info" pill>
                         {guestCountData}/{guestCount}
                     </Badge>
@@ -49,12 +56,12 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                             {/* Desktop table */}
                             <thead className="d-none d-md-table-header-group">
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Acompañante</th>
-                                    <th>Alergia</th>
-                                    <th>Alimentación</th>
-                                    <th>Edad</th>
-                                    <th>Acción</th>
+                                    <th>{t("labels.guestName")}</th>
+                                    <th>{t("labels.guestAccompanied")}</th>
+                                    <th>{t("labels.guestAllergy")}</th>
+                                    <th>{t("labels.guestFeeding")}</th>
+                                    <th>{t("labels.guestAge")}</th>
+                                    <th>{t("labels.guestAction")}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -76,8 +83,8 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                                                 )}
                                             </td>
                                             <td>{guest.attendants.length > 0 ? "Sí" : "No"}</td>
-                                            <td>{guest.allergy ? guest.allergy : "Ninguna"}</td>
-                                            <td>{guest.feeding ? guest.feeding : "Sin preferencias"}</td>
+                                            <td>{guest.allergy ? guest.allergy : t("labels.notSpecified")}</td>
+                                            <td>{guest.feeding ? guest.feeding : t("labels.notSpecified")}</td>
                                             <td className='text-center'>-</td>
                                             <td className='text-center' onClick={() => deleteGuest(guest.id)} style={{ cursor: "pointer", color: "red" }}>🗑️</td>
                                         </tr>
@@ -101,17 +108,17 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                                                         </Accordion.Header>
                                                         <Accordion.Body>
                                                             <div className="mb-2">
-                                                                <strong>Nombre completo:</strong> {guest.name} {guest.firstSurname} {guest.secondSurname}
+                                                                <strong>{t("guestList.mobileDetails.fullName")}</strong> {guest.name} {guest.firstSurname} {guest.secondSurname}
                                                             </div>
                                                             <div className="mb-2">
-                                                                <strong>Alergias:</strong> {guest.allergy || "Ninguna"}
+                                                                <strong>{t("guestList.mobileDetails.allergy")}</strong> {guest.allergy || t("labels.notSpecified")}
                                                             </div>
                                                             <div className="mb-2">
-                                                                <strong>Alimentación:</strong> {guest.feeding || "Sin preferencias"}
+                                                                <strong>{t("guestList.mobileDetails.feeding")}</strong> {guest.feeding || t("labels.notSpecified")}
                                                             </div>
                                                             {guest.extraInformation && (
                                                                 <div className="mb-2">
-                                                                    <strong>Información adicional:</strong> {guest.extraInformation}
+                                                                    <strong>{t("guestList.mobileDetails.extraInfo")}</strong> {guest.extraInformation}
                                                                 </div>
                                                             )}
                                                             <div className="d-flex justify-content-end">
@@ -120,17 +127,17 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                                                                     size="sm"
                                                                     onClick={() => deleteGuest(guest.id)}
                                                                 >
-                                                                    Eliminar
+                                                                    {t("guestList.deleteButton")}
                                                                 </Button>
                                                             </div>
 
                                                             {guest.attendants.length > 0 && (
                                                                 <div className="mt-3">
-                                                                    <h6>Acompañantes:</h6>
+                                                                    <h6>{t("guestList.mobileDetails.companions")}</h6>
                                                                     <ul className="list-group">
                                                                         {guest.attendants.map((attendant) => (
                                                                             <li key={attendant.id} className="list-group-item">
-                                                                                {attendant.name} {attendant.firstSurname} - Edad: {attendant.age}
+                                                                                {attendant.name} {attendant.firstSurname} - {t("guestList.mobileDetails.companionAge")}: {attendant.age}
                                                                             </li>
                                                                         ))}
                                                                     </ul>
@@ -156,10 +163,11 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
                         </Table>
                     </div>
                 ) : (
-                    <p className="text-muted">No hay invitados registrados.</p>
+                    <p className="text-muted">{t("guestList.noGuests")}</p>
                 )}
             </Card.Body>
         </Card>
+
     );
 }
 

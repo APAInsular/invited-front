@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import apiClient from '../config/axiosConfig';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 function EditUserModal({ show, onClose, userData, onUserUpdated }) {
     const [formData, setFormData] = useState({
@@ -13,6 +14,9 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
         partnerFirstSurname: '',
         partnerSecondSurname: '',
     });
+
+    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+
 
     useEffect(() => {
         if (userData) {
@@ -36,16 +40,18 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
     const handleSave = async () => {
         onUserUpdated(formData);
     };
-
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
     return (
         <Modal show={show} onHide={onClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Editar Perfil</Modal.Title>
+                <Modal.Title>{t("sections.editProfile")}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
                     <Form.Group>
-                        <Form.Label>Nombre</Form.Label>
+                        <Form.Label>{t("labels.name")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="name"
@@ -54,7 +60,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Primer Apellido</Form.Label>
+                        <Form.Label>{t("labels.firstSurname")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="firstSurname"
@@ -63,7 +69,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Segundo Apellido</Form.Label>
+                        <Form.Label>{t("labels.secondSurname")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="secondSurname"
@@ -72,7 +78,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label>{t("labels.email")}</Form.Label>
                         <Form.Control
                             type="email"
                             name="email"
@@ -81,7 +87,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Teléfono</Form.Label>
+                        <Form.Label>{t("labels.phone")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="phone"
@@ -89,9 +95,9 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                             onChange={handleInputChange}
                         />
                     </Form.Group>
-                    <h5>Datos de la Pareja</h5>
+                    <h5>{t("sections.partnerData")}</h5>
                     <Form.Group>
-                        <Form.Label>Nombre</Form.Label>
+                        <Form.Label>{t("labels.partnerName")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="partnerName"
@@ -100,7 +106,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Primer Apellido</Form.Label>
+                        <Form.Label>{t("labels.partnerFirstSurname")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="partnerFirstSurname"
@@ -109,7 +115,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Segundo Apellido</Form.Label>
+                        <Form.Label>{t("labels.partnerSecondSurname")}</Form.Label>
                         <Form.Control
                             type="text"
                             name="partnerSecondSurname"
@@ -121,10 +127,10 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={onClose}>
-                    Cerrar
+                    {t("buttons.close")}
                 </Button>
                 <Button variant="primary" onClick={handleSave}>
-                    Guardar cambios
+                    {t("buttons.saveChanges")}
                 </Button>
             </Modal.Footer>
         </Modal>

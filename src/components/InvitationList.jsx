@@ -1,7 +1,14 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 function InvitationList({ invitations }) {
+
+    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
     return (
         <div>
             <h3>Lista de Invitaciones</h3>

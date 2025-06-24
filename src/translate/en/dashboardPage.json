@@ -32,7 +32,11 @@
     "weddingDetails": "Wedding Details",
     "gallery": "Image Gallery",
     "guestCount": "Number of Guests",
-    "weddingManagement": "Wedding Management"
+    "weddingManagement": "Wedding Management",
+    "guestList": "Guest List",
+    "invitationList": "Invitation List",
+    "userProfile": "User Profile",
+    "userManagement": "User Management"
   },
   "labels": {
     "name": "Name",
@@ -46,11 +50,25 @@
     "customMessage": "Custom Message",
     "weddingDate": "Wedding Date",
     "dressCode": "Dress Code",
-    "foodType": "Food Type",
+    "foodType": "Menu Type",
     "notSpecified": "Not specified",
     "toBeDetermined": "To be determined",
     "code": "Dress Code",
-    "menuType": "Menu Type"
+    "menuType": "Menu Type",
+    "guestName": "Guest Name",
+    "guestAccompanied": "Companion",
+    "guestAllergy": "Allergy",
+    "guestFeeding": "Feeding",
+    "guestAge": "Age",
+    "guestAction": "Action",
+    "extraInformation": "Additional Information",
+    "invitationId": "ID",
+    "invitationEmail": "Name",
+    "invitationStatus": "Attendance",
+    "invitationHasCompanion": "Companion",
+    "invitationCompanionName": "Companion's Name",
+    "invitationFeeding": "Feeding",
+    "invitationChildren": "Children"
   },
   "admin": {
     "users": "Users",
@@ -58,5 +76,42 @@
   },
   "modal": {
     "close": "Close"
+  },
+  "modals": {
+    "editProfileTitle": "Edit Profile",
+    "sectionTitleUser": "Personal Information",
+    "sectionTitlePartner": "Partner's Information"
+  },
+  "guestList": {
+    "noGuests": "No guests registered.",
+    "tooltipExtraInfo": "Additional Information",
+    "deleteButton": "Delete",
+    "mobileDetails": {
+      "fullName": "Full Name:",
+      "allergy": "Allergies:",
+      "feeding": "Feeding:",
+      "extraInfo": "Additional Information:",
+      "companions": "Companions:",
+      "companionAge": "Companion's Age"
+    }
+  },
+  "userProfile": {
+    "title": "User Profile",
+    "planBadge": "Premium Plan",
+    "editButton": "Edit",
+    "withPartner": "and",
+    "emailFallback": "Not specified",
+    "phoneFallback": "Not specified",
+    "memberSince": "On Invited since"
+  },
+  "userManagement": {
+    "title": "User Management",
+    "tableHeaders": {
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "actions": "Actions"
+    },
+    "deleteButton": "Delete"
   }
 }

@@ -941,7 +941,7 @@ function Dashboard() {
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={() => setShowModal(false)}>
-                                    Cerrar
+                                    {t("buttons.close")}
                                 </Button>
                             </Modal.Footer>
                         </Modal>

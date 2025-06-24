@@ -1,20 +1,20 @@
 {
   "sidebar": {
-    "menu": "Menu"
+    "menu": "Menú"
   },
   "welcome": {
     "greeting": "Bienvenido,",
     "greeting2": "y"
   },
   "buttons": {
-    "startNow": "Empieza Ahora",
-    "closeWedding": "Cerrar boda",
-    "viewImages": "Ver imagenes",
+    "startNow": "Comenzar ahora",
+    "closeWedding": "Cerrar Boda",
+    "viewImages": "Ver Imágenes",
     "noImages": "No hay imágenes disponibles",
     "edit": "Editar",
     "close": "Cerrar",
     "saveChanges": "Guardar Cambios",
-    "addImage": "Añadir imagen"
+    "addImage": "Agregar Imagen"
   },
   "sections": {
     "mainDetails": "Detalles Principales",
@@ -22,35 +22,53 @@
     "date": "Fecha",
     "message": "Mensaje",
     "additionalInfo": "Información Adicional",
-    "dressCode": "Vestimenta",
+    "dressCode": "Código de Vestimenta",
     "food": "Comida",
     "weddingEvents": "Eventos de la Boda",
     "noEvents": "No hay eventos programados para esta boda.",
     "editProfile": "Editar Perfil",
-    "partnerData": "Datos de la Pareja",
+    "partnerData": "Información de la Pareja",
     "editWedding": "Editar Boda",
     "weddingDetails": "Detalles de la Boda",
     "gallery": "Galería de Imágenes",
-    "guestCount": "Numero de invitados",
-    "weddingManagement": "Gestión de Bodas"
+    "guestCount": "Número de Invitados",
+    "weddingManagement": "Gestión de la Boda",
+    "guestList": "Lista de Invitados",
+    "invitationList": "Lista de Invitaciones",
+    "userProfile": "Perfil de Usuario",
+    "userManagement": "Gestión de Usuarios"
   },
   "labels": {
     "name": "Nombre",
     "firstSurname": "Primer Apellido",
     "secondSurname": "Segundo Apellido",
-    "email": "Email",
+    "email": "Correo Electrónico",
     "phone": "Teléfono",
     "partnerName": "Nombre de la Pareja",
     "partnerFirstSurname": "Primer Apellido de la Pareja",
     "partnerSecondSurname": "Segundo Apellido de la Pareja",
     "customMessage": "Mensaje Personalizado",
-    "weddingDate": "Fecha de Boda",
+    "weddingDate": "Fecha de la Boda",
     "dressCode": "Código de Vestimenta",
-    "foodType": "Tipo de Comida",
-    "notSpecified": "Sin especificar",
+    "foodType": "Tipo de Menú",
+    "notSpecified": "No especificado",
     "toBeDetermined": "Por determinar",
-    "code": "Código de vestimenta",
-    "menuType": "Tipo de menú"
+    "code": "Código de Vestimenta",
+    "menuType": "Tipo de Menú",
+    "guestName": "Nombre del Invitado",
+    "guestAccompanied": "Acompañante",
+    "guestAllergy": "Alergia",
+    "guestFeeding": "Alimentación",
+    "guestAge": "Edad",
+    "guestAction": "Acción",
+    "extraInformation": "Información Adicional",
+    "invitationId": "ID",
+    "invitationEmail": "Nombre",
+    "invitationStatus": "Asistencia",
+    "invitationHasCompanion": "Acompañante",
+    "invitationCompanionName": "Nombre del Acompañante",
+    "invitationFeeding": "Alimentación",
+    "invitationChildren": "Niños"
   },
   "admin": {
     "users": "Usuarios",
@@ -58,5 +76,42 @@
   },
   "modal": {
     "close": "Cerrar"
+  },
+  "modals": {
+    "editProfileTitle": "Editar Perfil",
+    "sectionTitleUser": "Información Personal",
+    "sectionTitlePartner": "Información de la Pareja"
+  },
+  "guestList": {
+    "noGuests": "No hay invitados registrados.",
+    "tooltipExtraInfo": "Información Adicional",
+    "deleteButton": "Eliminar",
+    "mobileDetails": {
+      "fullName": "Nombre Completo:",
+      "allergy": "Alergias:",
+      "feeding": "Alimentación:",
+      "extraInfo": "Información Adicional:",
+      "companions": "Acompañantes:",
+      "companionAge": "Edad del Acompañante"
+    }
+  },
+  "userProfile": {
+    "title": "Perfil de Usuario",
+    "planBadge": "Plan Premium",
+    "editButton": "Editar",
+    "withPartner": "y",
+    "emailFallback": "No especificado",
+    "phoneFallback": "No especificado",
+    "memberSince": "En Invited desde"
+  },
+  "userManagement": {
+    "title": "Gestión de Usuarios",
+    "tableHeaders": {
+      "id": "ID",
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "actions": "Acciones"
+    },
+    "deleteButton": "Eliminar"
   }
 }

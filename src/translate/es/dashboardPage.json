@@ -1,6 +1,12 @@
 {
   "sidebar": {
-    "menu": "Menú"
+    "menu": "Menú",
+    "MBP": "Mi boda perfecta",
+    "home": "Inicio",
+    "weddings": "Bodas",
+    "guests": "Invitados",
+    "invitations": "Invitaciones",
+    "configuration": "Configuración"
   },
   "welcome": {
     "greeting": "Bienvenido,",
@@ -34,6 +40,9 @@
     "guestCount": "Número de Invitados",
     "weddingManagement": "Gestión de la Boda",
     "guestList": "Lista de Invitados",
+    "weddingList": "Lista de Bodas",
+    "weddingListDate": "Boda del día",
+    "noWeddings": "No hay bodas programadas.",
     "invitationList": "Lista de Invitaciones",
     "userProfile": "Perfil de Usuario",
     "userManagement": "Gestión de Usuarios"
@@ -113,5 +122,5 @@
       "actions": "Acciones"
     },
     "deleteButton": "Eliminar"
-  }
+  } 
 }

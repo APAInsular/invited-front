@@ -1,8 +1,13 @@
 import React from 'react';
 import { Table, Button } from 'react-bootstrap';
+import usePageTranslation from '../hooks/usePageTranslation';
 
 function UserList({ users, deleteUser }) {
+    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
 
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
     return (
         <div className="admin-panel mt-4">
             <h5>{t("sections.userManagement")}</h5>

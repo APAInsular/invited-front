@@ -1,6 +1,12 @@
 {
   "sidebar": {
-    "menu": "Menu"
+    "menu": "Menu",
+    "MBP": "My Perfect Wedding",
+    "home": "Home",
+    "weddings": "Weddings",
+    "guests": "Guests",
+    "invitations": "Invitations",
+    "configuration": "Configuration"
   },
   "welcome": {
     "greeting": "Welcome,",
@@ -34,6 +40,9 @@
     "guestCount": "Number of Guests",
     "weddingManagement": "Wedding Management",
     "guestList": "Guest List",
+    "weddingList": "Wedding List",
+    "weddingListDate": "Wedding on",
+    "noWeddings": "No weddings scheduled.",
     "invitationList": "Invitation List",
     "userProfile": "User Profile",
     "userManagement": "User Management"

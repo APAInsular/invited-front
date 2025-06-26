@@ -238,7 +238,7 @@ const LandingPage = () => {
                                 <div className="card-body text-center">
                                     <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle1')}</h3>
                                     <p className="card-text text-muted">{t('invitation.cardText1')}</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/70" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/javier-sandra/70" className="btn bg-pink-pastel text-dark border-0 w-100">
                                         {t('invitation.button')}
                                     </a>
                                 </div>
@@ -260,7 +260,7 @@ const LandingPage = () => {
                                 <div className="card-body text-center">
                                     <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle2')}</h3>
                                     <p className="card-text text-muted">{t('invitation.cardText2')}</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/javier-sandra/71" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/javier-sandra/71" className="btn bg-pink-pastel text-dark border-0 w-100">
                                         {t('invitation.button')}
                                     </a>
                                 </div>
@@ -282,7 +282,7 @@ const LandingPage = () => {
                                 <div className="card-body text-center">
                                     <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle3')}</h3>
                                     <p className="card-text text-muted">{t('invitation.cardText3')}</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/invitacion/luis-lucas/81" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/luis-lucas/81" className="btn bg-pink-pastel text-dark border-0 w-100">
                                         {t('invitation.button')}
                                     </a>
                                 </div>

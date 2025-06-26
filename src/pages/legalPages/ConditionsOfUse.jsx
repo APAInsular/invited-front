@@ -17,8 +17,8 @@ const ConditionsOfUse = () => {
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('introduction.title')}</h2>
-                    <p>{t('introduction.paragraphs[0]')}</p>
-                    <p>{t('introduction.paragraphs[1]')}</p>
+                    <p>{t('introduction.paragraph1')}</p>
+                    <p>{t('introduction.paragraph2')}</p>
                 </section>
 
                 <section className="mb-6">
@@ -33,51 +33,51 @@ const ConditionsOfUse = () => {
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('object.title')}</h2>
-                    <p>{t('object.paragraphs[0]')}</p>
+                    <p>{t('object.paragraph1')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('siteUse.title')}</h2>
                     <h3 className="text-lg font-semibold">{t('siteUse.useAllowedTitle')}</h3>
-                    <p>{t('siteUse.useAllowedParagraphs[0]')}</p>
-                    <p>{t('siteUse.useAllowedParagraphs[1]')}</p>
+                    <p>{t('siteUse.useAllowedParagraph1')}</p>
+                    <p>{t('siteUse.useAllowedParagraph2')}</p>
                     <h3 className="text-lg font-semibold">{t('siteUse.accountSecurityTitle')}</h3>
-                    <p>{t('siteUse.accountSecurityParagraphs[0]')}</p>
+                    <p>{t('siteUse.accountSecurityParagraph1')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('intellectualProperty.title')}</h2>
-                    <p>{t('intellectualProperty.paragraphs[0]')}</p>
+                    <p>{t('intellectualProperty.paragraph1')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('liability.title')}</h2>
                     <h3 className="text-lg font-semibold">{t('liability.availabilityTitle')}</h3>
-                    <p>{t('liability.availabilityParagraphs[0]')}</p>
-                    <p>{t('liability.availabilityParagraphs[1]')}</p>
+                    <p>{t('liability.availabilityParagraph1')}</p>
+                    <p>{t('liability.availabilityParagraph2')}</p>
                     <h3 className="text-lg font-semibold">{t('liability.contentLinksTitle')}</h3>
-                    <p>{t('liability.contentLinksParagraphs[0]')}</p>
-                    <p>{t('liability.contentLinksParagraphs[1]')}</p>
+                    <p>{t('liability.contentLinksParagraph1')}</p>
+                    <p>{t('liability.contentLinksParagraph2')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('contracting.title')}</h2>
-                    <p>{t('contracting.paragraphs[0]')}</p>
+                    <p>{t('contracting.paragraph1')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('modifications.title')}</h2>
-                    <p>{t('modifications.paragraphs[0]')}</p>
+                    <p>{t('modifications.paragraph1')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('jurisdiction.title')}</h2>
-                    <p>{t('jurisdiction.paragraphs[0]')}</p>
+                    <p>{t('jurisdiction.paragraph1')}</p>
                 </section>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">{t('contact.title')}</h2>
-                    <p>{t('contact.paragraphs[0]')}</p>
+                    <p>{t('contact.paragraph1')}</p>
                 </section>
             </div>
             <Footer></Footer>

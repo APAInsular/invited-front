@@ -295,7 +295,6 @@ const LandingPage = () => {
             {/* PRECIO */}
             <section id="precio" className="precio">
                 <div className="container">
-                    <h2>{t('paySection.title')}</h2>
                     <div className="precio-card">
                         <div>
                             <h3>{t('paySection.title')}</h3>

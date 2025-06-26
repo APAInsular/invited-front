@@ -13,7 +13,7 @@ import { useLanguage } from '../../context/LanguageContext';
 const Template_1 = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
     const [showLanguageModal, setShowLanguageModal] = useState(false);
-    const { language, changeLanguage } = useLanguage();
+    // const { language, changeLanguage } = useLanguage();
     const baseUrl = process.env.REACT_APP_AWS_URL;
 
     const changeImages = () => {
@@ -25,44 +25,44 @@ const Template_1 = ({ wedding }) => {
 
     useEffect(() => {
         changeImages();
-        // Mostrar modal si no hay idioma seleccionado (opcional)
-        const langFromStorage = localStorage.getItem('weddingLanguage');
-        if (!langFromStorage) {
-            setShowLanguageModal(true);
-        }
+        // // Mostrar modal si no hay idioma seleccionado (opcional)
+        // const langFromStorage = localStorage.getItem('weddingLanguage');
+        // if (!langFromStorage) {
+        //     setShowLanguageModal(true);
+        // }
     }, [wedding.images]);
 
-    const handleLanguageSelect = (selectedLang) => {
-        changeLanguage(selectedLang);
-        setShowLanguageModal(false);
-        localStorage.setItem('weddingLanguage', selectedLang);
-    };
+    // const handleLanguageSelect = (selectedLang) => {
+    //     changeLanguage(selectedLang);
+    //     setShowLanguageModal(false);
+    //     localStorage.setItem('weddingLanguage', selectedLang);
+    // };
 
     const imageUrl = `${baseUrl}${wedding.coverImage}`;
 
-    if (showLanguageModal) {
-        return (
-            <div className="language-modal-overlay">
-                <div className="language-modal">
-                    <h2>Selecciona tu idioma / Select your language</h2>
-                    <div className="language-options">
-                        <button
-                            onClick={() => handleLanguageSelect('es')}
-                            className="language-button"
-                        >
-                            Español
-                        </button>
-                        <button
-                            onClick={() => handleLanguageSelect('en')}
-                            className="language-button"
-                        >
-                            English
-                        </button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+    // if (showLanguageModal) {
+    //     return (
+    //         <div className="language-modal-overlay">
+    //             <div className="language-modal">
+    //                 <h2>Selecciona tu idioma / Select your language</h2>
+    //                 <div className="language-options">
+    //                     <button
+    //                         onClick={() => handleLanguageSelect('es')}
+    //                         className="language-button"
+    //                     >
+    //                         Español
+    //                     </button>
+    //                     <button
+    //                         onClick={() => handleLanguageSelect('en')}
+    //                         className="language-button"
+    //                     >
+    //                         English
+    //                     </button>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className='body'>

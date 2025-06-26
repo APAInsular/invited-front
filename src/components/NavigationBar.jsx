@@ -44,7 +44,7 @@ const NavigationBar = () => {
             color: scrolled ? "white" : "#F19292"
         },
         navbar: {
-            backgroundColor: scrolled ? 'transparent' : 'transparent',
+            backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
             boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.1)' : 'none',
             transition: 'all 0.4s ease-in-out',
             padding: '10px 0'
@@ -80,7 +80,7 @@ const NavigationBar = () => {
                     <span style={{ display: 'none' }}></span>
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav" style={{
-                    backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(0, 0, 0, 0.8)',
+                    backgroundColor: scrolled ? 'transparent' : 'rgba(0, 0, 0, 0.8)',
                     borderRadius: '10px',
                     padding: '10px'
                 }}>

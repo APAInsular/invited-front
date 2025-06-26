@@ -13,7 +13,7 @@ export default function MakeInvitationForm() {
 
     const [previewImage, setPreviewImage] = useState();
 
-    const { t, loadingTranslation } = usePageTranslation('thankYouPage');
+    const { t, loadingTranslation } = usePageTranslation('makeInvitationPage');
 
     const [isLoading, setIsLoading] = useState(false);
 

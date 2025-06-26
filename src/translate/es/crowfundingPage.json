@@ -2,97 +2,122 @@
   "crowdfundingPage": {
     "hero": {
       "title": "Crowdfunding · Invited",
-      "description": "Ayúdanos a lanzar Invited: la plataforma de invitaciones digitales 100% automáticas para bodas y eventos. Cero papel, cero estrés.",
+      "description": "Ayúdanos a lanzar Invited: la plataforma de invitaciones digitales 100% automatizada para bodas y eventos. Cero papel, cero estrés.",
       "button": "Visita nuestra campaña",
       "link": "https://www.kickstarter.com/projects/javierjg/invited-100-automated-digital-invitations-for-weddings"
     },
     "features": {
       "title": "¿Por qué elegir Invited?",
-      "item1Icon": "bi bi-clock-history",
-      "item1Title": "Ahorra tiempo y costes",
-      "item1Text": "Evita la impresión y el envío postal. Con nuestras invitaciones digitales, todo es más rápido y económico.",
-      "item2Icon": "bi bi-palette",
-      "item2Title": "Diseño único y personalizable",
-      "item2Text": "Elige tu plantilla favorita y añade música para reflejar la esencia de tu celebración.",
-      "item3Icon": "bi bi-check-circle",
-      "item3Title": "Confirmaciones en tiempo real (RSVP)",
-      "item3Text": "Tus invitados podrán confirmar asistencia, elegir menú y notificar alergias. Tú recibirás avisos en tiempo real.",
-      "item4Icon": "bi bi-calendar-event",
-      "item4Title": "Cuenta atrás y detalles del evento",
-      "item4Text": "Añade la fecha, ubicaciones y toda la información clave para tus invitados, con un elegante temporizador en pantalla."
+      "feature1": {
+        "icon": "bi bi-clock-history",
+        "title": "Ahorra tiempo y costes",
+        "text": "Evita imprimir y enviar. Con nuestras invitaciones digitales, todo es más rápido y económico."
+      },
+      "feature2": {
+        "icon": "bi bi-palette",
+        "title": "Diseño único y personalizable",
+        "text": "Elige tu plantilla favorita y añade música para reflejar el espíritu de tu celebración."
+      },
+      "feature3": {
+        "icon": "bi bi-check-circle",
+        "title": "Confirmaciones en tiempo real (RSVP)",
+        "text": "Tus invitados pueden confirmar asistencia, elegir menú y avisar sobre alergias. Recibirás notificaciones al instante."
+      },
+      "feature4": {
+        "icon": "bi bi-calendar-event",
+        "title": "Cuenta atrás y detalles del evento",
+        "text": "Añade la fecha, ubicaciones y toda la información clave para tus invitados, con un elegante temporizador en pantalla."
+      }
     },
     "inspiration": {
       "title1": "Nuestra inspiración",
-      "paragraph1": "Somos Javier y Antonio, fundadores de Invited, una plataforma nacida en las Islas Canarias con el anhelo de devolverle a cada celebración su esencia: la conexión humana.",
+      "paragraph1": "Somos Javier y Antonio, fundadores de Invited, una plataforma nacida en Canarias con el deseo de recuperar la esencia de cada celebración: la conexión humana.",
       "title2": "¿Por qué crowdfunding?",
-      "paragraph2": "Creemos en el poder de la comunidad. Con vuestra ayuda, podremos:",
-      "goal1": "Consolidar el núcleo tecnológico – Dos desarrolladores y un gestor trabajarán durante tres meses…",
-      "goal2": "Diseñar plantillas premium – 20 diseños exclusivos de diferentes estilos…",
-      "goal3": "Lanzar una campaña de marketing emocional – Para llegar a parejas, familiares y profesionales…",
-      "paragraph3": "Cada euro recaudado se traducirá en horas de código, diseño y mensajes de \"¡Sí, estaremos allí!\"",
+      "paragraph2": "Creemos en el poder de la comunidad. Con tu ayuda, podremos:",
+      "goal1": "Consolidar el núcleo tecnológico – Dos desarrolladores y un gestor trabajando durante tres meses...",
+      "goal2": "Diseñar plantillas premium – 20 diseños exclusivos en distintos estilos...",
+      "goal3": "Lanzar una campaña de marketing emocional – Para llegar a parejas, familias y profesionales...",
+      "paragraph3": "Cada euro recaudado se transformará en horas de código, diseño y mensajes que digan: '¡Sí, estaremos allí!'",
       "title3": "Nuestro compromiso",
-      "commitment1": "Transparencia total: publicaremos avances semanales y compartiremos el presupuesto.",
-      "commitment2": "Calidad y cercanía: canal directo con los mecenas para sugerencias y dudas.",
-      "commitment3": "Escalabilidad: ampliaremos Invited a cumpleaños, bautizos y más si superamos el objetivo.",
+      "commitment1": "Transparencia total: publicaremos actualizaciones semanales y compartiremos el presupuesto.",
+      "commitment2": "Calidad y cercanía: canal directo con los patrocinadores para sugerencias y preguntas.",
+      "commitment3": "Escalabilidad: ampliaremos Invited a cumpleaños, bautizos y más si superamos la meta.",
       "imageAlt": "Javier y Antonio trabajando en Invited",
       "imageSrc": "/images/Plantilla_1.png"
     },
     "video": {
-      "title": "Conoce Invited en acción",
+      "title": "Mira Invited en acción",
       "poster": "/LogoInvited_3.png",
       "videoSrc": "/videos/Presentación_Invited.mp4"
     },
     "timeline": {
-      "title": "Cronograma de entregas",
-      "step1Date": "6 de junio de 2025",
-      "step1Description": "Lanzamiento de la campaña en Kickstarter.",
-      "step2Date": "6 de julio de 2025",
-      "step2Description": "Inicio formal del desarrollo (I+D y arquitectura).",
-      "step3Date": "6 de agosto de 2025",
-      "step3Description": "Implementación del panel de proveedores y pruebas internas.",
-      "step4Date": "6 de septiembre de 2025",
-      "step4Description": "Diseño e integración de 20 plantillas premium.",
-      "step5Date": "30 de septiembre de 2025",
-      "step5Description": "Pruebas finales (QA), ajustes y lanzamiento completo."
+      "title": "Cronograma de entrega",
+      "step1": {
+        "date": "6 de junio de 2025",
+        "description": "Lanzamiento de la campaña en Kickstarter."
+      },
+      "step2": {
+        "date": "6 de julio de 2025",
+        "description": "Inicio del desarrollo (I+D y arquitectura)."
+      },
+      "step3": {
+        "date": "6 de agosto de 2025",
+        "description": "Implementación del panel para proveedores y pruebas internas."
+      },
+      "step4": {
+        "date": "6 de septiembre de 2025",
+        "description": "Diseño e integración de 20 plantillas premium."
+      },
+      "step5": {
+        "date": "30 de septiembre de 2025",
+        "description": "Pruebas finales (QA), ajustes y lanzamiento completo."
+      }
     },
     "rewards": {
       "title": "Recompensas",
-      "reward1Title": "Early Bird – Invitación Digital (48€)",
-      "reward1Item1": "1 invitación digital (valor €119) con 60% de descuento",
-      "reward1Item2": "Envíos ilimitados (enlace WhatsApp/email)",
-      "reward1Item3": "Notificaciones por email ilimitadas",
-      "reward1Item4": "Acceso al panel básico de novios",
-      "reward1Item5": "Soporte prioritario durante la campaña",
-
-      "reward2Title": "Proveedor – Pack 5 Invitaciones (446€)",
-      "reward2Item1": "5 invitaciones digitales con 25% de descuento",
-      "reward2Item2": "Panel de proveedores para gestionar invitaciones",
-      "reward2Item3": "Notificaciones ilimitadas",
-      "reward2Item4": "Soporte prioritario B2B",
-
-      "reward3Title": "Proveedor – Pack 10 Invitaciones (833€)",
-      "reward3Item1": "10 invitaciones digitales con 30% de descuento",
-      "reward3Item2": "Panel de proveedores",
-      "reward3Item3": "Notificaciones ilimitadas",
-      "reward3Item4": "Soporte prioritario B2B",
-
-      "reward4Title": "Proveedor – Pack 20 Invitaciones (1.547€)",
-      "reward4Item1": "20 invitaciones digitales con 35% de descuento",
-      "reward4Item2": "Panel de proveedores",
-      "reward4Item3": "Notificaciones ilimitadas",
-      "reward4Item4": "Soporte prioritario B2B",
-
-      "reward5Title": "Creador de Plantillas (250€)",
-      "reward5Item1": "Diseño colaborativo de tu propia plantilla",
-      "reward5Item2": "20% de royalties en cada venta futura",
-      "reward5Item3": "Envíos y notificaciones ilimitados",
-      "reward5Item4": "Soporte prioritario",
-
-      "reward6Title": "White-Label Empresarial (3.900€)",
-      "reward6Item1": "Licencia \"llave en mano\" con rebranding completo",
-      "reward6Item2": "Servidor y dominio incluidos",
-      "reward6Item3": "Panel de administración",
-      "reward6Item4": "Soporte gratuito 1 año + actualizaciones"
+      "reward1": {
+        "title": "Early Bird – Invitación Digital (€48)",
+        "item1": "1 invitación digital (valorada en €119) con 60% de descuento",
+        "item2": "Envío ilimitado (enlace por WhatsApp/correo)",
+        "item3": "Notificaciones por correo ilimitadas",
+        "item4": "Acceso al panel básico para parejas",
+        "item5": "Soporte prioritario durante la campaña"
+      },
+      "reward2": {
+        "title": "Proveedor – Pack de 5 Invitaciones (€446)",
+        "item1": "5 invitaciones digitales con 25% de descuento",
+        "item2": "Panel de proveedor para gestionar invitaciones",
+        "item3": "Notificaciones ilimitadas",
+        "item4": "Soporte B2B prioritario"
+      },
+      "reward3": {
+        "title": "Proveedor – Pack de 10 Invitaciones (€833)",
+        "item1": "10 invitaciones digitales con 30% de descuento",
+        "item2": "Panel de proveedor",
+        "item3": "Notificaciones ilimitadas",
+        "item4": "Soporte B2B prioritario"
+      },
+      "reward4": {
+        "title": "Proveedor – Pack de 20 Invitaciones (€1,547)",
+        "item1": "20 invitaciones digitales con 35% de descuento",
+        "item2": "Panel de proveedor",
+        "item3": "Notificaciones ilimitadas",
+        "item4": "Soporte B2B prioritario"
+      },
+      "reward5": {
+        "title": "Creador de Plantillas (€250)",
+        "item1": "Diseño colaborativo de tu propia plantilla",
+        "item2": "20% de regalías por cada venta futura",
+        "item3": "Envío y notificaciones ilimitadas",
+        "item4": "Soporte prioritario"
+      },
+      "reward6": {
+        "title": "Pack Empresarial Marca Blanca (€3,900)",
+        "item1": "Licencia llave en mano con rebranding completo",
+        "item2": "Servidor y dominio incluidos",
+        "item3": "Panel de administración",
+        "item4": "1 año de soporte y actualizaciones gratis"
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Gallery_Plantilla_1 = ({ images, speed }) => {
+const Gallery_Plantilla_1 = ({ images, speed, text }) => {
     const sliderRef = useRef(null);
     const [offset, setOffset] = useState(0);
 
@@ -14,7 +14,7 @@ const Gallery_Plantilla_1 = ({ images, speed }) => {
 
     return (
         <div className="container">
-            <h2 className="section-title text-center mb-5">Conoce nuestra historia</h2>
+            <h2 className="section-title text-center mb-5">{text.title}</h2>
             <div className="row g-4" style={{ overflow: 'hidden' }}>
                 <div
                     ref={sliderRef}

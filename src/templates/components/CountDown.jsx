@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/WeddingWebsite.css";
 
-const CountDown = ({ weddingDate }) => {
+const CountDown = ({ weddingDate, text }) => {
 
     const calculateTimeLeft = () => {
         const now = new Date();
@@ -40,12 +40,12 @@ const CountDown = ({ weddingDate }) => {
 
     return (
         <div className="container text-center my-4">
-            <h2 className="mb-3 fontTitle"><strong>⏳ ¡¡¡Nos casamos en...!!! ⏳</strong></h2>
+            <h2 className="mb-3 fontTitle"><strong>{text.title}</strong></h2>
             <div className="countdown-box">
-                <div className="time">{timeLeft.days} <span>días</span></div>
-                <div className="time">{timeLeft.hours} <span>horas</span></div>
-                <div className="time">{timeLeft.minutes} <span>minutos</span></div>
-                <div className="time">{timeLeft.seconds} <span>segundos</span></div>
+                <div className="time">{timeLeft.days} <span>{text.unit1}</span></div>
+                <div className="time">{timeLeft.hours} <span>{text.unit2}</span></div>
+                <div className="time">{timeLeft.minutes} <span>{text.unit3}</span></div>
+                <div className="time">{timeLeft.seconds} <span>{text.unit4}</span></div>
             </div>
             <br />
             <h4>{formatDateToString(weddingDate)}</h4>

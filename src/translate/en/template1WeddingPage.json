@@ -14,7 +14,7 @@
   },
   "songLink": {
     "title": "🎶 Our special song 🎶",
-    "playingText": "Now playing",
+    "playingText": "Now playing: ",
     "playButton": "▶️ Play Song",
     "pauseButton": "⏸️ Pause Song"
   },
@@ -34,6 +34,9 @@
       "feedingOption4": "Vegan",
       "companionQuestion": "Will you bring a guest?",
       "companionCount": "How many guests?",
+      "answerYes": "Yes",
+      "answerNo": "No",
+      "attendantTitle": "Attendants Information",
       "attendantField1": "Name",
       "attendantField2": "Last Name",
       "attendantField3": "Second Last Name",
@@ -42,8 +45,6 @@
     "submitButton": "Submit Confirmation"
   },
   "timeline": {
-    "title": "💍 Wedding Timeline 💍",
-    "locationPrefix": "📍",
-    "timePrefix": "🕒"
+    "title": "💍 Wedding Timeline 💍"
   }
 }

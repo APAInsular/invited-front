@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const SongLink_Plantilla_1 = ({ songUrl, songTitle }) => {
+const SongLink_Plantilla_1 = ({ songUrl, songTitle, text }) => {
     const [player, setPlayer] = useState(null);
     const [playing, setPlaying] = useState(false);
     const videoId = songUrl.split("v=")[1]?.split("&")[0];
@@ -49,11 +49,11 @@ const SongLink_Plantilla_1 = ({ songUrl, songTitle }) => {
     return (
         <section class="py-5 text-center">
             <div className="container text-center my-4">
-                <h2 className="mb-3 section-title"><strong>Nuestra canción especial</strong></h2>
+                <h2 className="mb-3 section-title"><strong>{text.title}</strong></h2>
                 <div className="song-link">
-                    <p>Reproduciendo la canción: <br /><strong>{songTitle}</strong></p>
+                    <p>{text.playingText}<br /><strong>{songTitle}</strong></p>
                     <button className="btn btn-cancion mt-2" onClick={togglePlay}>
-                        {playing ? "⏸️ Pausar Canción" : "▶️ Reproducir Canción"}
+                        {playing ? `${text.pauseButton}` : `${text.playButton}`}
                     </button>
                     <div
                         ref={playerRef}

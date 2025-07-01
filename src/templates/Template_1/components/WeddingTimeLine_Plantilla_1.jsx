@@ -1,9 +1,9 @@
 import React from 'react';
 
-const WeddingTimeLine_Plantilla_1 = ({ events }) => {
+const WeddingTimeLine_Plantilla_1 = ({ events, text }) => {
     return (
         <div className="timeline-container">
-            <h2 className="section-title text-center mb-5">Itinerario de la boda</h2>
+            <h2 className="section-title text-center mb-5">{text.title}</h2>
             <div className="timeline">
                 {events.map((event, index) => (
                     <div key={index} className="timeline-item">

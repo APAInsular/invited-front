@@ -17,7 +17,7 @@
   },
   "songLink": {
     "title": "🎶 Nuestra canción especial 🎶",
-    "playingText": "Reproduciendo la canción",
+    "playingText": "Reproduciendo la canción: ",
     "playButton": "▶️ Reproducir Canción",
     "pauseButton": "⏸️ Pausar Canción"
   },
@@ -37,6 +37,9 @@
       "feedingOption4": "Vegano",
       "companionQuestion": "¿Llevarás acompañante?",
       "companionCount": "¿Cuántos acompañantes?",
+      "answerYes": "Si",
+      "answerNo": "No",
+      "attendantTitle": "Datos de los acompañantes",
       "attendantField1": "Nombre",
       "attendantField2": "Primer Apellido",
       "attendantField3": "Segundo Apellido",

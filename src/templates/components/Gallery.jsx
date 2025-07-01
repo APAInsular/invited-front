@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/WeddingWebsite.css"
 
-const Gallery = ({ images, speed = 50 }) => {
+const Gallery = ({ images, speed = 50, text }) => {
     const sliderRef = useRef(null);
     const [offset, setOffset] = useState(0);
 
@@ -14,11 +14,9 @@ const Gallery = ({ images, speed = 50 }) => {
         return () => clearInterval(interval);
     }, [speed]);
 
-
-
     return (
         <div className="slider-container">
-            <h2 className="text-center my-4 fontTitle"><strong>🎞️ Conoce nuestra historia 🎞️</strong></h2>
+            <h2 className="text-center my-4 fontTitle"><strong>{text.title}</strong></h2>
 
             <div
                 ref={sliderRef}

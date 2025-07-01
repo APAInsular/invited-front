@@ -12,6 +12,10 @@ import ChurchLocation from './components/Location';
 import ImagenLogo from '../Images/Logo_invited_recortado-removebg-preview.png';
 import { BsJustify } from 'react-icons/bs';
 
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSelectorPopup from '../components/LanguageSelectorPopUp';
+import usePageTranslation from '../hooks/usePageTranslation';
+
 const images = [
     "/images/Image1.jpg",
     "/images/Image2.jpg",
@@ -25,26 +29,50 @@ const images = [
 
 const WeddingWebsite = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
-    const baseUrl = process.env.REACT_APP_AWS_URL; // Usa una variable de entorno o un valor por defecto
+    const [showPopup, setShowPopup] = useState(false);
+    const { changeLanguage } = useLanguage();
+
+    const { t, loadingTranslation } = usePageTranslation('template1WeddingPage');
+
+    const baseUrl = process.env.REACT_APP_AWS_URL;
 
     const changeImages = () => {
-        // Aseguramos que se genera un array con las URLs de las imágenes
         if (wedding.images) {
-            const imageUrls = wedding.images.map((image) => `${baseUrl}${image.image}`)
-            //const imageUrls = wedding.images.map((image) => `${baseUrl}storage/${image.image}`);
-            setNewImages(imageUrls); // Actualizamos el estado con el nuevo array
-        } else {
-            return;
+            const imageUrls = wedding.images.map((image) => `${baseUrl}${image.image}`);
+            setNewImages(imageUrls);
         }
-    }
+    };
 
     useEffect(() => {
         changeImages();
     }, [wedding.images]);
 
-    // Construye la URL completa de la imagen
+    useEffect(() => {
+        const storedLang = localStorage.getItem('language');
+        if (storedLang) {
+            changeLanguage(storedLang);
+        } else {
+            setShowPopup(true);
+        }
+    }, []);
+
+    const handleLanguageSelect = (lang) => {
+        changeLanguage(lang)
+        localStorage.setItem('language', lang);
+        setShowPopup(false);
+    };
+
     const imageUrl = `${baseUrl}${wedding.coverImage}`;
-    console.log(imageUrl)
+
+    if (showPopup) {
+        return <LanguageSelectorPopup onSelect={handleLanguageSelect} />;
+    }
+
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
+
+    //console.log(t('weddingForm'))
 
     return (
         <div>
@@ -70,27 +98,27 @@ const WeddingWebsite = ({ wedding }) => {
             <br />
             <hr />
             <br />
-            <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} />
+            <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} text={t('songLink')} />
             <br />
             <hr />
             <br />
-            <CountDown weddingDate={wedding.weddingDate} />
+            <CountDown weddingDate={wedding.weddingDate} text={t('countdown')} />
             <br />
             <hr />
             <br />
-            <ChurchLocation location={wedding.location.city} country={wedding.location.country} />
+            <ChurchLocation location={wedding.location.city} country={wedding.location.country} text={t('churchLocation')} />
             <br />
             <hr />
             <br />
-            <WeddingTimeLine events={wedding.events} />
+            <WeddingTimeLine events={wedding.events} text={t('timeline')} />
             <br />
             <hr />
             <br />
-            {wedding.id === 9 ? <Gallery images={images} speed={20} /> : <Gallery images={newImages} speed={20} />}
+            {wedding.id === 9 ? <Gallery images={images} speed={20} text={t('gallery')} /> : <Gallery images={newImages} speed={20} text={t('gallery')} />}
             <br />
             <hr />
             <br />
-            <WeddingForm weddingId={wedding.id} />
+            <WeddingForm weddingId={wedding.id} text={t('weddingForm')} fields={t('weddingForm.fields')} />
             <br />
             <hr />
             <br />

@@ -8,12 +8,18 @@ import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_1';
 import WeddingForm from './components/WeddingForm_Plantilla_1';
 import "./styles/style_Template1.css";
 import { useEffect, useState } from 'react';
-import { useLanguage } from '../../context/LanguageContext';
+
+import { useLanguage } from "../../context/LanguageContext"
+import LanguageSelectorPopup from '../../components/LanguageSelectorPopUp';
+import usePageTranslation from '../../hooks/usePageTranslation';
 
 const Template_1 = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
-    const [showLanguageModal, setShowLanguageModal] = useState(false);
-    // const { language, changeLanguage } = useLanguage();
+    const [showPopup, setShowPopup] = useState(false);
+    const { changeLanguage } = useLanguage();
+
+    const { t, loadingTranslation } = usePageTranslation('template1WeddingPage');
+
     const baseUrl = process.env.REACT_APP_AWS_URL;
 
     const changeImages = () => {
@@ -21,48 +27,36 @@ const Template_1 = ({ wedding }) => {
             const imageUrls = wedding.images.map((image) => `${baseUrl}${image.image}`);
             setNewImages(imageUrls);
         }
-    }
+    };
 
     useEffect(() => {
         changeImages();
-        // // Mostrar modal si no hay idioma seleccionado (opcional)
-        // const langFromStorage = localStorage.getItem('weddingLanguage');
-        // if (!langFromStorage) {
-        //     setShowLanguageModal(true);
-        // }
     }, [wedding.images]);
 
-    // const handleLanguageSelect = (selectedLang) => {
-    //     changeLanguage(selectedLang);
-    //     setShowLanguageModal(false);
-    //     localStorage.setItem('weddingLanguage', selectedLang);
-    // };
+    useEffect(() => {
+        const storedLang = localStorage.getItem('language');
+        if (storedLang) {
+            changeLanguage(storedLang);
+        } else {
+            setShowPopup(true);
+        }
+    }, []);
+
+    const handleLanguageSelect = (lang) => {
+        changeLanguage(lang)
+        localStorage.setItem('language', lang);
+        setShowPopup(false);
+    };
 
     const imageUrl = `${baseUrl}${wedding.coverImage}`;
 
-    // if (showLanguageModal) {
-    //     return (
-    //         <div className="language-modal-overlay">
-    //             <div className="language-modal">
-    //                 <h2>Selecciona tu idioma / Select your language</h2>
-    //                 <div className="language-options">
-    //                     <button
-    //                         onClick={() => handleLanguageSelect('es')}
-    //                         className="language-button"
-    //                     >
-    //                         Español
-    //                     </button>
-    //                     <button
-    //                         onClick={() => handleLanguageSelect('en')}
-    //                         className="language-button"
-    //                     >
-    //                         English
-    //                     </button>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // }
+    if (showPopup) {
+        return <LanguageSelectorPopup onSelect={handleLanguageSelect} />;
+    }
+
+    if (loadingTranslation) {
+        return <div className="text-center py-5">Loading translations...</div>;
+    }
 
     return (
         <div className='body'>
@@ -79,29 +73,36 @@ const Template_1 = ({ wedding }) => {
                 <SongLink
                     songUrl={wedding.musicUrl}
                     songTitle={wedding.musicTitle}
+                    text={t('songLink')}
                 />
                 <Location
                     location={wedding.location.city}
                     country={wedding.location.country}
+                    text={t('churchLocation')}
                 />
                 <CountDown
                     weddingDate={wedding.weddingDate}
+                    text={t('countdown')}
                 />
             </section>
             <section className="py-5 mt-4 section-bg bg-itinerario-template1">
                 <WeddingTimeLine
                     events={wedding.events}
+                    text={t('timeline')}
                 />
             </section>
             <section className="py-5 mt-4 section-bg bg-portada-template1">
                 <Gallery
                     images={newImages}
                     speed={20}
+                    text={t('gallery')}
                 />
             </section>
             <section className="py-5 section-bg bg-gallery-template1">
                 <WeddingForm
                     weddingId={wedding.id}
+                    text={t('weddingForm')}
+                    fields={t('weddingForm.fields')}
                 />
             </section>
         </div>

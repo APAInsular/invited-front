@@ -13,6 +13,8 @@ export default function MakeInvitationForm() {
 
     const [previewImage, setPreviewImage] = useState();
 
+    const { lang } = useParams();
+
     const { t, loadingTranslation } = usePageTranslation('makeInvitationPage');
 
     const [isLoading, setIsLoading] = useState(false);
@@ -106,6 +108,10 @@ export default function MakeInvitationForm() {
         }));
     };
 
+    const localizedLink = (path) => {
+        return `/${lang}${path}`;
+    };
+
     const addEvent = () => {
         setEvents([...events, { name: "", time: "", location: { city: "", country: "" }, description: "" }]);
     };
@@ -189,7 +195,7 @@ export default function MakeInvitationForm() {
             });
 
             setIsLoading(false)
-            navigate("/thankyou")
+            localizedLink('/thankyou')
         } catch (error) {
             console.error("Error al crear la invitación:", error);
 
@@ -226,6 +232,8 @@ export default function MakeInvitationForm() {
             images: files
         }));
     };
+
+
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

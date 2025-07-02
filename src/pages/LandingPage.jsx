@@ -307,7 +307,7 @@ const LandingPage = () => {
                         </ul>
                         {user ? (
                             <Link
-                                to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
+                                to={localizedLink(`/${user.name}&${user.partner.name}/invitation/plantilla/form`)}
                                 className="btn btn-primary"
                             >
                                 {t('paySection.button')}

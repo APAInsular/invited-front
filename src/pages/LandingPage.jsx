@@ -313,7 +313,7 @@ const LandingPage = () => {
                                 {t('paySection.button')}
                             </Link>
                         ) : (
-                            <Link to="/login" className="btn btn-primary">
+                            <Link to={localizedLink("/login")} className="btn btn-primary">
                                 {t('paySection.button')}
                             </Link>
                         )}

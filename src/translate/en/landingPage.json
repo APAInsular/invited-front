@@ -4,11 +4,11 @@
     "titleButton": "Start now",
     "why": {
         "title": "Why use our service?",
-        "cardTitle1": "Save time and costs",
+        "cardTitle1": "Save time and money",
         "cardText1": "Avoid printing and mailing. With our digital invitations, everything is faster and more economical.",
         "cardTitle2": "Unique and customizable design",
         "cardText2": "Choose your favorite template and add music to reflect the essence of your wedding.",
-        "cardTitle3": "Real-time confirmations (RSVP)",
+        "cardTitle3": "Real-time RSVPs",
         "cardText3": "Your guests can confirm attendance, you'll receive an email notification, and you'll have a dashboard with all the information in real time.",
         "cardTitle4": "Countdown and event details",
         "cardText4": "Add the wedding date, location maps, and all key information for your guests."
@@ -21,13 +21,13 @@
         "cardTitle2": "BOHO Watercolor",
         "cardText2": "Floral design with cool tones and elegant typography.",
         "cardTitle3": "Once Upon a Time",
-        "cardText3": "Disney-inspired design with great charm.",
+        "cardText3": "Disney-inspired design with fairy-tale charm.",
         "button": "Show Demo"
     },
     "paySection": {
         "title": "Your digital invitation for €59",
         "text1": "Access to all templates",
-        "text2": "Support in Spanish and English",
+        "text2": "Support in English",
         "text3": "Unlimited updates",
         "text4": "No hidden costs",
         "button": "Create my invitation"

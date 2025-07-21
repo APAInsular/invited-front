@@ -48,7 +48,7 @@ const WeddingWebsite = ({ wedding }) => {
     }, [wedding.images]);
 
     useEffect(() => {
-        const storedLang = localStorage.getItem('language');
+        const storedLang = sessionStorage.getItem('language');
         if (storedLang) {
             changeLanguage(storedLang);
         } else {
@@ -58,7 +58,7 @@ const WeddingWebsite = ({ wedding }) => {
 
     const handleLanguageSelect = (lang) => {
         changeLanguage(lang)
-        localStorage.setItem('language', lang);
+        sessionStorage.setItem('language', lang);
         setShowPopup(false);
     };
 

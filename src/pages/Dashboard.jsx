@@ -511,7 +511,8 @@ function Dashboard() {
                                     <div className="col-md-6">
                                         {user ? (
                                             <Link
-                                                to={`/${user.name}&${user.partner.name}/invitation/plantilla/form`}
+                                                to={localizedLink(`/${user.name}&${user.partner.name}/invitation/plantilla/form`)}
+                                                
                                                 className="btn btn-primary"
                                             >
                                                 {t("buttons.startNow")}

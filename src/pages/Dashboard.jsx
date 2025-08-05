@@ -7,6 +7,7 @@ import GuestList from '../components/GuestList';
 import ProfileCard from '../components/ProfileCard';
 import Footer from '../components/Footer';
 import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserList from '../components/UserList';
 import NavbarAuth from '../components/NavbarAuth';
@@ -63,6 +64,7 @@ function Dashboard() {
     const { t, loadingTranslation } = usePageTranslation('dashboardPage');
 
     // Función para generar enlaces con el idioma actual
+    const { lang } = useParams();
     const localizedLink = (path) => {
         return `/${lang}${path}`;
     };

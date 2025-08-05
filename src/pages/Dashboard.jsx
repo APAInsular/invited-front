@@ -62,6 +62,11 @@ function Dashboard() {
 
     const { t, loadingTranslation } = usePageTranslation('dashboardPage');
 
+    // Función para generar enlaces con el idioma actual
+    const localizedLink = (path) => {
+        return `/${lang}${path}`;
+    };
+
 
 
     /*

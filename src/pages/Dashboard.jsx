@@ -6,7 +6,7 @@ import WeddingList from '../components/WeddingList';
 import GuestList from '../components/GuestList';
 import ProfileCard from '../components/ProfileCard';
 import Footer from '../components/Footer';
-import { Link, useNavigate } from 'react-router-dom';
+//import { Link, useNavigate } from 'react-router-dom';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserList from '../components/UserList';

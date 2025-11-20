@@ -104,15 +104,6 @@ const NavigationBar = () => {
                             {t('navigation.about')}
                         </Nav.Link>
                         <Nav.Link
-                            as={Link}
-                            to={localizedLink("/crowfunding")}
-                            style={hovered === "crowd" ? { ...styles.default, ...styles.hover } : styles.default}
-                            onMouseEnter={() => setHovered("crowd")}
-                            onMouseLeave={() => setHovered(null)}
-                        >
-                            {t('navigation.crowdfunding')}
-                        </Nav.Link>
-                        <Nav.Link
                             href="https://blog.invited.es/"
                             style={hovered === "blog" ? { ...styles.default, ...styles.hover } : styles.default}
                             onMouseEnter={() => setHovered("blog")}

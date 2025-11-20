@@ -110,12 +110,12 @@ const AboutUs = () => {
                 <div className="row align-items-center g-5 mb-5">
                     <div className="col-lg-6">
                         <h2 className="fw-bold mb-3 pb-2 border-bottom border-2" style={{ borderColor: '#F19292' }}>
-                        {t("aboutPage.ourCommitment.title")}
+                            {t("aboutPage.ourCommitment.title")}
                         </h2>
                         <p className="text-muted lh-lg">
-                        {t("aboutPage.ourCommitment.text")}
+                            {t("aboutPage.ourCommitment.text")}
                             <br /><br />
-                        {t("aboutPage.ourCommitment.text2")}
+                            {t("aboutPage.ourCommitment.text2")}
                         </p>
                     </div>
                     <div className="col-lg-6">
@@ -131,19 +131,11 @@ const AboutUs = () => {
                 {/* Call to Action */}
                 <div className="mb-5">
                     <h2 className="fw-bold mb-4">
-                    {t("aboutPage.callToAction.title")}
+                        {t("aboutPage.callToAction.title")}
                     </h2>
                     <p className="text-muted mb-4" style={{ maxWidth: '600px' }}>
                         {t("aboutPage.callToAction.text")}
                     </p>
-                    <div className="d-flex flex-wrap gap-3">
-                        <button className="btn text-white px-4 py-2 rounded-pill fw-semibold" style={{ backgroundColor: '#F19292' }}>
-                            {t("aboutPage.callToAction.primaryButton")}
-                        </button>
-                        <button className="btn border-2 px-4 py-2 rounded-pill fw-semibold" style={{ borderColor: '#F19292', color: '#F19292' }}>
-                            {t("aboutPage.callToAction.secondaryButton")}
-                        </button>
-                    </div>
                 </div>
             </div>
 

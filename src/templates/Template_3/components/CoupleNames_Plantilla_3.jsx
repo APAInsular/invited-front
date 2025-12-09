@@ -14,8 +14,8 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
     }
 
     return (
-        <div className="container" style={{ marginTop: "60px" }}>
-            <div className="position-relative d-inline-block mb-4">
+        <div className="container" style={{ marginTop: "-40px" }}>
+            <div className="position-relative d-inline-block mb-3">
                 <img src='https://media.glamour.mx/photos/640258dd03837e4b8abcfa87/3:2/w_3000,h_2000,c_limit/Pareja%20enamorada.jpg' alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
                 {/* <div className="floral-frame-template2"></div> */}
             </div>

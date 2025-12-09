@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'New Waltograph';
-    src: url('../../../assets/fonts/WaltoGraph/waltographUI.ttf') format('truetype');
+    font-family: 'Pinyon Script';
+    src: url('../../../assets/fonts/PinyonScript/PinyonScript-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    
 }
 
 .body-template2 {
-    background-color: #fff;
+    background-color: #2C4D65;
 }
 
 .section-bg-template2 {
@@ -63,14 +64,15 @@
 } */
 
 .invite-name-template2 {
-    font-family: 'New Waltograph', cursive;
+    font-family: 'Pinyon Script', cursive;
     font-size: 2rem;
-    color: #6c5b7b;
+    color: #fff;
 }
 
 .invite-text-template2 {
     font-size: 1rem;
     width: 60%;
+    color: #fff;
 }
 
 .invite-date-template2,
@@ -78,12 +80,13 @@
     font-family: 'Dancing Script', cursive;
     font-size: 1.5rem;
     margin-bottom: 0;
+    color: #fff;
 }
 
 .section-title-template2 {
     font-family: 'New Waltograph', cursive;
     font-size: 1.5rem;
-    color: #6c5b7b;
+    color: #fff;
 }
 
 
@@ -276,3 +279,4 @@
 .btn-main-template2:hover {
     background-color: #95c6c4;
 }
+

@@ -1,10 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useLanguage } from "../../context/LanguageContext";
-import LanguageSelectorPopup from "../../components/LanguageSelectorPopUp";
-import usePageTranslation from "../../hooks/usePageTranslation";
-
-// ? Styles
-import "./styles.css";
+import { useLanguage } from '../context/LanguageContext';
+import usePageTranslation from '../hooks/usePageTranslation';
+import LanguageSelectorPopup from '../components/LanguageSelectorPopUp';
 
 const BaseTemplate = ({ translationPage, children }) => {
   const [showPopup, setShowPopup] = useState(false);

@@ -1,43 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/WeddingWebsite.css";
+import useCountdown from '../logic/useCountdown';
+import { formatDateToString } from '../logic/utils';
 
 const CountDown = ({ weddingDate, text }) => {
-
-    const calculateTimeLeft = () => {
-        const now = new Date();
-        const targetDate = new Date(weddingDate);
-        const difference = targetDate - now;
-
-        return {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / 1000 / 60) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
-        };
-    };
-
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-
-    function formatDateToString(dateString) {
-        if (!dateString) return "";
-        const date = new Date(dateString);
-        return date.toLocaleDateString("es-ES", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-        });
-    }
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, [weddingDate]);
-
+    const timeLeft = useCountdown(weddingDate);
+    
     return (
         <div className="container text-center my-4">
             <h2 className="mb-3 fontTitle"><strong>{text.title}</strong></h2>

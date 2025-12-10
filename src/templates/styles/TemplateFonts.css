@@ -1,0 +1,111 @@
+/* 
+  ? This file defines the base font styles and default variables.
+  ! ⚠️ Important:
+  * Please do NOT modify the variables in this file.
+  * If you need to override any value, create a separate CSS file
+  * and redefine the variables there.
+*/
+
+/* TODO: Optimize fonts. */
+/* ? Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+/* ? Variables */
+:root {
+  --text-font: system-ui, sans-serif;
+  --text-size: 1rem;
+  --text-color: black;
+
+  --title-font: "Allura";
+  --title-size: 7rem;
+  --title-weight: normal;
+  --title-color: var(--text-color, black);
+
+  --subtitle-font: "Satisfy";
+  --subtitle-size: 1.95rem;
+  --subtitle-weight: normal;
+  --subtitle-color: var(--text-color, black);
+
+  --low-font: "Sacramento";
+  --low-size: 1.2rem;
+}
+
+/* ? Font utils */
+.font-allura {
+  font-family: "Allura", cursive !important;
+}
+
+.font-satisfy {
+  font-family: "Satisfy", cursive !important;
+}
+
+.font-sacramento {
+  font-family: "Sacramento", cursive !important;
+}
+
+.title {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  color: var(--title-color);
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font-family: var(--subtitle-font);
+  font-size: var(--subtitle-size);
+  font-weight: var(--subtitle-weight);
+  color: var(--subtitle-color);
+  margin: 0.7rem 0;
+}
+
+.text {
+  font-family: var(--text-font);
+  font-size: var(--text-size);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.title-low {
+  font-family: var(--low-font);
+  font-size: var(--low-size);
+  opacity: 0.75;
+  margin: 0.5rem 0;
+}
+
+.font-allura {
+  font-family: "Allura", cursive !important;
+}
+
+.font-satisfy {
+  font-family: "Satisfy", cursive !important;
+}
+
+.font-sacramento {
+  font-family: "Sacramento", cursive !important;
+}
+
+/* ? Font utilities */
+.title {
+  font-family: var(--title-font);
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  color: var(--title-color);
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font-family: var(--subtitle-font);
+  font-size: var(--subtitle-size);
+  font-weight: var(--subtitle-weight);
+  margin: 0.7rem 0;
+}
+
+.title-low {
+  font-family: var(--low-font);
+  font-size: var(--low-size);
+  opacity: 0.75;
+  margin: 0.5rem 0;
+}

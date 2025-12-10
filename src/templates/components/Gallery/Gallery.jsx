@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./Gallery.css"
 
 const Gallery = ({ images, speed = 50, text }) => {

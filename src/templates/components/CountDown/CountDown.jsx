@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import useCountdown from '../../logic/useCountdown';
 import { formatDateToString } from '../../logic/utils';
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./CountDown.css";
 
-const CountDown = ({ weddingDate, text }) => {
+const CountDown = ({ weddingDate, text, titleClasses="font-allura" }) => {
     const timeLeft = useCountdown(weddingDate);
     
     return (
         <div className="container text-center my-4">
-            <h2 className="mb-3 fontTitle"><strong>{text.title}</strong></h2>
+            <h2 className={"mb-3 subtitle"}>{text.title}</h2>
             <div className="countdown-box">
                 <div className="time">{timeLeft.days} <span>{text.unit1}</span></div>
                 <div className="time">{timeLeft.hours} <span>{text.unit2}</span></div>

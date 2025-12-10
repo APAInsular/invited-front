@@ -9,14 +9,11 @@
 
 
 /* CUENTA ATRAS */
-
-
 .time {
     background: transparent;
     color: #333;
     /* Color más neutro para el texto */
     padding: 10px 20px;
-    font-family: "Satisfy", cursive;
     font-size: 30px;
     /* Tamaño de fuente más grande y limpio */
     font-weight: 600;

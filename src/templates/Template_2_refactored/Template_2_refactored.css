@@ -1,0 +1,15 @@
+:root {
+  --title-font: "Allura";
+  --title-size: 3.75rem;
+  --title-weight: bold;
+  --title-color: rgb(127, 127, 127);
+  --text-color: #705843;
+
+  --subtitle-font: "satisfy";
+  --subtitle-weight: normal;
+
+  --text-font: system-ui, sans-serif;
+
+  --low-font: "Sacramento";
+}
+

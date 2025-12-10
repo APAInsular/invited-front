@@ -3,6 +3,27 @@ import { useLanguage } from '../context/LanguageContext';
 import usePageTranslation from '../hooks/usePageTranslation';
 import LanguageSelectorPopup from '../components/LanguageSelectorPopUp';
 
+// ? Only import base styles here.
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./styles/TemplateDefaults.css"
+
+/**
+ * BaseTemplate
+ *
+ * What this component does:
+ *
+ * - Imports the application's base styles.
+ * - Loads the translation data.
+ * - Passes the translated values to its child component.
+ *
+ * Recommendation:
+ * - Use this template only when rendering a single child component.
+ *
+ * @param {Object} props
+ * @param {Object} props.translationPage - Translation data for the page.
+ * @param {ReactNode} props.children -*
+*/
 const BaseTemplate = ({ translationPage, children }) => {
   const [showPopup, setShowPopup] = useState(false);
   const { changeLanguage } = useLanguage();

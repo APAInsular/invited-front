@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import apiClient from "../config/axiosConfig";
 import { useParams } from "react-router-dom";
 
-import Template2Refactored from "../templates/Teplate_2_refactored";
 import BaseTemplate from '../templates/BaseTemplate';
 import Template_1 from '../templates/Template_1/Template_1';
+import Template2Refactored from '../templates/Template_2_refactored/Teplate_2_refactored';
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);

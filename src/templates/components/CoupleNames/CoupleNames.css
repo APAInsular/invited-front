@@ -1,0 +1,40 @@
+/* Nombre del novio */
+.groom {
+    color: #5f5f5f;
+    margin-right: 3px;
+}
+
+/* Nombre de la novia */
+.bride {
+    color: #5f5f5f;
+    margin-left: 3px;
+}
+
+/* Corazón entre los nombres */
+.heart {
+    font-size: 40px;
+    color: #f48fb1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+/* Contenedor principal */
+.couple-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sacramento', cursive;
+}
+
+/* Caja de nombres de los novios */
+.name-box {
+    font-size: 38px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #4c4c4c;
+}

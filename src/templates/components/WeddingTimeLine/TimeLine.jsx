@@ -1,8 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import '../styles/WeddingWebsite.css'
-import { Link } from "react-router-dom";
+import './TimeLine.css'
 
 const Timeline = ({ events, text }) => {
     return (

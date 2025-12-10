@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/WeddingWebsite.css"
+import "./Gallery.css"
 
 const Gallery = ({ images, speed = 50, text }) => {
     const sliderRef = useRef(null);

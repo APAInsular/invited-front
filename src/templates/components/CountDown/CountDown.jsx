@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import useCountdown from '../../logic/useCountdown';
+import { formatDateToString } from '../../logic/utils';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/WeddingWebsite.css";
-import useCountdown from '../logic/useCountdown';
-import { formatDateToString } from '../logic/utils';
+import "./CountDown.css";
 
 const CountDown = ({ weddingDate, text }) => {
     const timeLeft = useCountdown(weddingDate);

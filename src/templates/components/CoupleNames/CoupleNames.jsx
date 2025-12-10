@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/WeddingWebsite.css";
+import "./CoupleNames.css";
 
 const CoupleNames = ({ groom, bride }) => {
     return (

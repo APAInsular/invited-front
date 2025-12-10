@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/WeddingWebsite.css";
+import "./SongLink.css";
 
 const SongLink = ({ songUrl, songTitle, text }) => {
     const [player, setPlayer] = useState(null);

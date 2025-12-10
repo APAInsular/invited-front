@@ -1,16 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
+
+import ImagenLogo from "../../Images/Logo_invited_recortado-removebg-preview.png";
+import fallbackImage from "../Template_2_refactored/images/pareja.png";
+import CountDown from '../components/CountDown/CountDown';
+import SongLink from '../components/SongLink/SongLink';
+import CoupleNames from '../components/CoupleNames/CoupleNames';
+import ChurchLocation from '../components/Location/Location';
+import Timeline from '../components/WeddingTimeLine/TimeLine';
+import Gallery from '../components/Gallery/Gallery';
+import WeddingForm from '../components/WeddingForm/WeddingForm';
+
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import WeddingTimeLine from "./components/WeddingTimeLine";
-import CountDown from "./components/CountDown";
-import WeddingForm from "./components/WeddingForm";
-import Gallery from "./components/Gallery";
-import SongLink from "./components/SongLink";
-import ChurchLocation from "./components/Location";
-import ImagenLogo from "../Images/Logo_invited_recortado-removebg-preview.png";
-
-import fallbackImage from "./Template_2_refactored/images/pareja.png";
-import CoupleNames from './components/CoupleNames';
+import "../styles/TemplateDefaults.css";
 
 const Template2Refactored = ({ wedding, trad }) => {
   const [newImages, setNewImages] = useState([]);
@@ -62,7 +63,7 @@ const Template2Refactored = ({ wedding, trad }) => {
         text={trad("churchLocation")}
       />
 
-      <WeddingTimeLine events={wedding.events} text={trad("timeline")} />
+      <Timeline events={wedding.events} text={trad("timeline")} />
 
       <Gallery images={newImages} speed={20} text={trad("gallery")} />
 

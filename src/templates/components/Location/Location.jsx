@@ -1,5 +1,4 @@
 import { Church } from "lucide-react";
-import "../styles/WeddingWebsite.css";
 
 const ChurchLocation = ({ location, country, text }) => {
     return (

@@ -70,9 +70,9 @@ const WeddingForm_Plantilla_2 = ({ weddingId }) => {
     };
 
     return (
-        <div className="container-template2" style={{ marginTop: "-100px" }}>
+        <div className="container-template2 " style={{ marginTop: "-100px" }}>
             <h2 className="section-title-template2">Confirmar Asistencia</h2>
-            <p className="text-muted small">(*) campos obligatorios</p>
+            <p className="text-white small">(*) campos obligatorios</p>
             <form className="form-container-template2 bg-form-template2 p-4 border rounded" onSubmit={handleSendForm}>
                 <div className="mb-3">
                     <label className="form-label-custom-template2">Nombre*</label>

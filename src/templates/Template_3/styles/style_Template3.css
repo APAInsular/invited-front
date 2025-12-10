@@ -5,6 +5,13 @@
     font-style: normal;
     
 }
+@font-face {
+    font-family: 'Sistina';
+    src: url('../../../assets/fonts/Sistina/Sistina\ LT\ W04\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
 
 .body-template2 {
     background-color: #2C4D65;
@@ -29,11 +36,11 @@
 }
 
 .bg-gallery-template2 {
-    background-image: url('../images/backgrounds/bg-gallery_Template2.png');
+    background-image: url('../images/backgrounds/4.jpg');
 }
 
 .bg-itinerario-template2 {
-    background-image: url('../images/backgrounds/bg-itinerario_Template2.png');
+    background-image: url('../images/backgrounds/3.jpg');
 }
 
 /* ===== Estilos para la sección de portada ===== */
@@ -42,12 +49,12 @@
 }
 
 .header-photo-template2 {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     position: relative;
     z-index: 1;
-    margin-top: 185px;
+    margin-top: 90px;
 }
 
 /* .floral-frame-template2 {
@@ -63,35 +70,39 @@
     pointer-events: none;
 } */
 
+
 .invite-name-template2 {
     font-family: 'Pinyon Script', cursive;
-    font-size: 2rem;
+    font-size: 3.5rem;
     color: #fff;
+    margin-top: 80px;
 }
 
 .invite-text-template2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Sistina';
     width: 60%;
     color: #fff;
 }
 
 .invite-date-template2,
 .invite-location-template2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.5rem;
+    font-family: 'Sistina', cursive;
+    font-size: 1.6rem;
     margin-bottom: 0;
     color: #fff;
 }
 
 .section-title-template2 {
-    font-family: 'New Waltograph', cursive;
-    font-size: 1.5rem;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4rem;
     color: #fff;
 }
 
 
 .song-link-template2 {
     font-size: 1rem;
+    color: #fff;
 }
 
 .btn-cancion-template2 {
@@ -100,7 +111,7 @@
 
 .section-subtitle-template2 {
     font-size: 1rem;
-    color: #5b4a6b;
+    color: #fff;
 }
 
 .countdown-section-template2 {
@@ -108,14 +119,15 @@
     text-align: center;
     padding: 3rem 1rem;
     overflow: hidden;
+    color: #fff;
 }
 
-.countdown-title-template2 {
-    font-family: 'New Waltograph', cursive;
+/* .countdown-title-template2 {
+    font-family: 'Dancing Script', cursive;
     font-size: 2rem;
-    color: #000;
+    color: #ce0b0b;
     margin-bottom: 1rem;
-}
+} */
 
 .countdown-numbers-template2 {
     display: flex;
@@ -131,33 +143,32 @@
 }
 
 .number-template2 {
-    font-family: 'New Waltograph', cursive;
+    font-family: 'Sistina', cursive;
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #6c5b7b;
+    color: #fff;
     line-height: 1;
 }
 
 .label-template2 {
     margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #333;
-    font-family: 'New Waltograph', cursive;
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'Sistina', cursive;
 }
 
 
-.timeline-container-template2 {
+/* .timeline-container-template2 {
     padding: 2rem 1rem;
-}
+} */
 
-.timeline-template2 {
+/* .timeline-template2 {
     position: relative;
     margin-left: 2rem;
     padding-left: 2rem;
     border-left: 3px solid #95c6c4;
-}
+} */
 
-.timeline-item-template2 {
+/* .timeline-item-template2 {
     position: relative;
     margin-bottom: 2rem;
 }
@@ -180,95 +191,96 @@
     border-radius: 0.5rem;
     border: 1px solid #dee2e6;
     max-width: 500px;
-}
+} */
 
-.timeline-content-template2 h5 {
+ .timeline-item h5 {
     margin-top: 0;
-    color: #95c6c4;
+    color: #fff;
     font-weight: bold;
 }
 
-.timeline-content-template2 p {
+.timeline-item p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+    font-family: 'faustina';
     color: #ffffff;
     line-height: 1.4;
-}
+} 
 
-.form-label-custom-template2 {
+/* .form-label-custom-template2 {
     font-weight: 500;
     color: #333;
     font-size: 0.9rem;
-}
+} */
 
-.input-custom-template2 {
+/* .input-custom-template2 {
     border-radius: 0.5rem;
     border: 1px solid #ccc;
     padding: 0.5rem;
     width: 100%;
-}
+} */
 
-.form-container-template2 {
+/* .form-container-template2 {
     background-color: #95c6c4;
-}
+} */
 
-.bg-form-template2 {
+/* .bg-form-template2 {
     background-color: #95c6c4;
-}
+} */
 
-.btn-main-template2 {
+/* .btn-main-template2 {
     background-color: #6c5b7b;
     color: #fff;
     border: none;
-}
+} */
 
-.btn-main-template2:hover {
+/* .btn-main-template2:hover {
     background-color: #95c6c4;
-}
+} */
 
-.slider-container-template2 {
+/* .slider-container-template2 {
     overflow: hidden;
     width: 100%;
     position: relative;
-}
+} */
 
-.slider-track-template2 {
+ .slider-track{
     display: flex;
     white-space: nowrap;
-}
+} 
 
-.slider-image-template2 {
+.slider-image{
     height: 150px;
     width: auto;
     margin-right: 1rem;
     flex-shrink: 0;
-}
+} 
 
-.slider-wrapper-template2 {
+/* .slider-wrapper-template2 {
     overflow: hidden;
     width: 100%;
-}
+} */
 
-.form-label-custom-template2 {
+ .form-label-custom-template2 {
     font-weight: 500;
-    color: #333;
+    color: #fff;
     font-size: 0.9rem;
-}
+} 
 
-.input-custom-template2 {
+/* .input-custom-template2 {
     border-radius: 0.5rem;
     border: 1px solid #ccc;
     padding: 0.5rem;
     width: 100%;
-}
+} */
 
-.form-container-template2 {
+/* .form-container-template2 {
     background-color: #fff;
-}
+} */
 
-.bg-form-template2 {
-    background-color: #fff;
-}
+ .bg-form-template2 {
+    background-color: #2C4D65;
+} 
 
 .btn-main-template2 {
     background-color: #6c5b7b;

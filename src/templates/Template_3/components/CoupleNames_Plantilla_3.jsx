@@ -14,12 +14,12 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
     }
 
     return (
-        <div className="container" style={{ marginTop: "-40px" }}>
-            <div className="position-relative d-inline-block mb-3">
-                <img src='https://media.glamour.mx/photos/640258dd03837e4b8abcfa87/3:2/w_3000,h_2000,c_limit/Pareja%20enamorada.jpg' alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
-                {/* <div className="floral-frame-template2"></div> */}
+         <div className="container" >
+            <h1 className="invite-name-template2 ">{groom} & {bride}</h1>
+            <div className="position-relative d-inline-block mb-4">
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsT5PDZ7q5nVBWH6o7kaOe6NqNDIdmsjpJsg&s' 
+                    alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
             </div>
-            <h1 className="invite-name-template2 mt-3 mb-4">{groom} & {bride}</h1>
             <div className="d-flex justify-content-center">
                 <p className="invite-text-template2 mb-4">
                     Tenemos el gusto de invitaros a nuestra boda que tendrá lugar
@@ -27,7 +27,7 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
             </div>
             <p className="invite-date-template2">{formatDateToString(date)}</p>
             <p className="invite-location-template2">
-                en <br></br><strong>{location}</strong>
+                en <br></br>{location}
             </p>
         </div>
     );

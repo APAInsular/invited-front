@@ -24,9 +24,9 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
     }, [weddingDate]);
 
     return (
-        <section className="countdown-section-template2 mt-4 py-5">
-            <h2 className="section-title-template2 mb-4">Solo faltan....</h2>
-            <div className="countdown-numbers-template2 mt-4 pt-5">
+        <section className="countdown-section-template2 mt-4 py-4">
+            <h2 className="section-title-template2 mb-4">Cuenta atrás</h2>
+            <div className="countdown-numbers-template2 mt-4 pt-1">
                 <div className="countdown-item-template2">
                     <span className="number-template2">{timeLeft.days.toString().padStart(2, '0')}</span>
                     <span className="label-template2">Días</span>

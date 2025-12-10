@@ -30,7 +30,7 @@ const Invitations = () => {
     // }, [idWedding]);
 
     // Si la boda aún no se ha cargado, mostramos un mensaje de carga
-    return <Template_3 wedding={                 {
+    return <Template_3 wedding={{
     "id": 81,
     "user_id": 19,
     "location_id": 1,
@@ -49,7 +49,7 @@ const Invitations = () => {
     "updated_at": "2025-06-04T08:19:08.000000Z",
     "user": {
         "id": 19,
-        "name": "Alfonso",
+        "name": "Javier",
         "firstSurname": "Garcia",
         "secondSurname": "Rodriguez",
         "email": "colaboracionesinvited@gmail.com",

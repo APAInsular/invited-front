@@ -7,5 +7,9 @@
   --title-weight: bold;
   --title-color: rgb(127, 127, 127);
   --text-color: #705843;
+  --bg-color: #705843;
 }
 
+section {
+  background-color: rgb(255, 228, 175);
+}

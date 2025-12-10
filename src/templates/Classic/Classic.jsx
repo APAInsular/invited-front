@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import ImagenLogo from "../../Images/Logo_invited_recortado-removebg-preview.png";
-import fallbackImage from "../Template_2_refactored/images/pareja.png";
+import fallbackImage from "./images/pareja.png";
 import CountDown from "../components/CountDown/CountDown";
 import SongLink from "../components/SongLink/SongLink";
 import CoupleNames from "../components/CoupleNames/CoupleNames";
@@ -10,9 +10,9 @@ import Timeline from "../components/WeddingTimeLine/TimeLine";
 import Gallery from "../components/Gallery/Gallery";
 import WeddingForm from "../components/WeddingForm/WeddingForm";
 
-import "./Template_2_refactored.css";
+import "./Classic.css";
 
-const Template2Refactored = ({ wedding, images, trad }) => {
+const Classic = ({ wedding, images, trad }) => {
 
 
   return (
@@ -77,4 +77,4 @@ const Template2Refactored = ({ wedding, images, trad }) => {
   );
 };
 
-export default Template2Refactored;
+export default Classic;

@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useLanguage } from '../context/LanguageContext';
-import usePageTranslation from '../hooks/usePageTranslation';
-import LanguageSelectorPopup from '../components/LanguageSelectorPopUp';
+import { useLanguage } from "../context/LanguageContext";
+import usePageTranslation from "../hooks/usePageTranslation";
+import LanguageSelectorPopup from "../components/LanguageSelectorPopUp";
 
 // ? Only import base styles here.
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "./styles/TemplateDefaults.css"
+import "./styles/TemplateDefaults.css";
 
 /**
  * BaseTemplate
@@ -23,18 +23,37 @@ import "./styles/TemplateDefaults.css"
  * @param {Object} props
  * @param {Object} props.translationPage - Translation data for the page.
  * @param {ReactNode} props.children -*
-*/
-const BaseTemplate = ({ translationPage, children }) => {
+ */
+const BaseTemplate = ({ translationPage, wedding, children }) => {
+  const baseUrl = process.env.REACT_APP_AWS_URL;
+
   const [showPopup, setShowPopup] = useState(false);
   const { changeLanguage } = useLanguage();
+  const [newImages, setNewImages] = useState([]);
+
+  const changeImages = useCallback(() => {
+    if (wedding.images) {
+      const imageUrls = wedding.images.map(
+        (image) => `${baseUrl}${image.image}`
+      );
+      setNewImages(imageUrls);
+    }
+  }, []);
+
+  useEffect(() => {
+    changeImages();
+  }, [wedding.images]);
 
   const { t: trad, loadingTranslation } = usePageTranslation(translationPage);
 
-  const handleLanguageSelect = useCallback((lang) => {
-    changeLanguage(lang);
-    sessionStorage.setItem("language", lang);
-    setShowPopup(false);
-  }, [changeLanguage]);
+  const handleLanguageSelect = useCallback(
+    (lang) => {
+      changeLanguage(lang);
+      sessionStorage.setItem("language", lang);
+      setShowPopup(false);
+    },
+    [changeLanguage]
+  );
 
   useEffect(() => {
     const storedLang = sessionStorage.getItem("language");
@@ -51,7 +70,12 @@ const BaseTemplate = ({ translationPage, children }) => {
   if (loadingTranslation)
     return <div className="text-center py-5">Loading translations...</div>;
 
-  const injectedProps = { trad, loadingTranslation };
+  const injectedProps = {
+    wedding,
+    images: newImages,
+    trad,
+    loadingTranslation,
+  };
 
   return (
     <>

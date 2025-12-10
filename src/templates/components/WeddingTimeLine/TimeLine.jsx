@@ -4,7 +4,7 @@ import "./TimeLine.css";
 const Timeline = ({ events, text }) => {
   return (
     <div className="container">
-      <h2 className="text-center my-4 fontTitle">
+      <h2 className="text-center my-4 subtitle">
         <strong>{text.title}</strong>
       </h2>
       <div className="timeline position-relative">

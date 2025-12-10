@@ -1,9 +1,9 @@
 :root {
   --text-font: "sans-serif";
-  --title-font: "Allura";
+  --title-font: "Playwrite USA Modern";
+  --title-size: 2.75rem;
   --subtitle-font: "Allura";
   --subtitle-weight: bold;
-  --title-size: 3.75rem;
   --title-weight: bold;
   --title-color: rgb(127, 127, 127);
   --text-color: #705843;

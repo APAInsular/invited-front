@@ -11,10 +11,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+USA+Modern&display=swap");
+@font-face {
+    font-family: 'NewWaltograph';
+    src: url('../../assets/fonts/WaltoGraph/waltographUI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* ? Variables */
 :root {
-  --text-font: system-ui, sans-serif;
+  --text-font: "sans-serif";
   --text-size: 1rem;
   --text-color: black;
 
@@ -23,7 +31,7 @@
   --title-weight: normal;
   --title-color: var(--text-color, black);
 
-  --subtitle-font: "Satisfy";
+  --subtitle-font: "Allura";
   --subtitle-size: 1.95rem;
   --subtitle-weight: normal;
   --subtitle-color: var(--text-color, black);
@@ -43,6 +51,14 @@
 
 .font-sacramento {
   font-family: "Sacramento", cursive !important;
+}
+
+.font-new-waltograph {
+  font-family: "NewWaltograph" !important;
+}
+
+.font-playwrite-usa-modern {
+  font-family: "Playwrite USA Modern" !important;
 }
 
 .title {

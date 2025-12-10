@@ -1,0 +1,41 @@
+.page-section {
+  width: 100%;
+  min-height: 300px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.center-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-vertical.center-horizontal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 0 1rem;
+  box-sizing: border-box;
+}

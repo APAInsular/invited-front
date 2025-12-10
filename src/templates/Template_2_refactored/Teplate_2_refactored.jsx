@@ -12,24 +12,8 @@ import WeddingForm from "../components/WeddingForm/WeddingForm";
 
 import "./Template_2_refactored.css";
 
-const Template2Refactored = ({ wedding, trad }) => {
-  const [newImages, setNewImages] = useState([]);
+const Template2Refactored = ({ wedding, images, trad }) => {
 
-  const changeImages = useCallback(() => {
-    if (wedding.images) {
-      const imageUrls = wedding.images.map(
-        (image) => `${baseUrl}${image.image}`
-      );
-      setNewImages(imageUrls);
-    }
-  }, []);
-
-  const baseUrl = process.env.REACT_APP_AWS_URL;
-  const imageUrl = `${baseUrl}${wedding.coverImage}`;
-
-  useEffect(() => {
-    changeImages();
-  }, [wedding.images]);
 
   return (
     // TODO: Idea: Scroll Animation here.
@@ -50,7 +34,10 @@ const Template2Refactored = ({ wedding, trad }) => {
       </section>
 
       <section className="sep-bottom">
-        <CountDown titleClasses="text-3xl font-allura bold" weddingDate={wedding.weddingDate} text={trad("countdown")} />
+        <CountDown weddingDate={wedding.weddingDate} text={trad("countdown")} />
+      </section>
+
+      <section className="sep-bottom">
         <ChurchLocation
           location={wedding.location.city}
           country={wedding.location.country}
@@ -64,7 +51,7 @@ const Template2Refactored = ({ wedding, trad }) => {
           songTitle={wedding.musicTitle}
           text={trad("songLink")}
         />
-        <Gallery images={newImages} speed={20} text={trad("gallery")} />
+        <Gallery images={images} speed={20} text={trad("gallery")} />
       </section>
 
       <section className="sep-bottom">

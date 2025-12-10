@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import BaseTemplate from '../templates/BaseTemplate';
 import Template_1 from '../templates/Template_1/Template_1';
 import Template2Refactored from '../templates/Template_2_refactored/Teplate_2_refactored';
+import HavanaModerna from "../templates/HavanaModerna/HavanaModerna";
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
@@ -166,8 +167,8 @@ const Invitations = () => {
     };
 
   return (
-    <BaseTemplate translationPage={"template1WeddingPage"}>
-      <Template2Refactored wedding={weddingFalse.wedding} />
+    <BaseTemplate translationPage={"template1WeddingPage"} wedding={weddingFalse.wedding}>
+      <HavanaModerna />
     </BaseTemplate>
   );
 

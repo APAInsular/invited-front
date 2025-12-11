@@ -22,7 +22,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
     text-align: center;
 }
@@ -41,6 +42,10 @@
 
 .bg-itinerario-template2 {
     background-image: url('../images/backgrounds/itinerario.jpg');
+    background-size: contain;
+    background-repeat: repeat;
+
+
 }
 
 /* ===== Estilos para la sección de portada ===== */
@@ -107,7 +112,7 @@
 
 
 .btn-cancion{
-    background-color:cadetblue;
+    background-color: #031757;
     color: #f7f0f0
 } 
 
@@ -210,7 +215,7 @@
 } 
 
 .btn-main-template2 {
-    background-color: #6c5b7b;
+    background-color: #031757;
     color: #fff;
     border: none;
 }

@@ -11,7 +11,7 @@ const WeddingTimeLine_Plantilla_2 = ({ events }) => {
                             <h5>{event.name}</h5>
                             <p>
                                 {/* {event.location.country}<br /> */}
-                                🕒 {event.time}
+                                 {event.time}
                             </p>
                         </div>
                     </div>

@@ -295,7 +295,7 @@ const LandingPage = () => {
                                     <div className="phone-mockup">
                                         <div className="phone-camera"></div>
                                         <div className="phone-screen d-flex align-items-center justify-content-center w-100">
-                                            <img src="/images/Plantilla_3.png"
+                                            <img src="/images/Havana_Moderna.png"
                                                 alt={t('invitation.cardTitle4')}
                                                 className="img-fluid w-auto"></img>
                                         </div>
@@ -304,7 +304,7 @@ const LandingPage = () => {
                                 <div className="card-body text-center">
                                     <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle4')}</h3>
                                     <p className="card-text text-muted">{t('invitation.cardText4')}</p>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/luis-lucas/81" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/luis-lucas/85" className="btn bg-pink-pastel text-dark border-0 w-100">
                                         {t('invitation.button')}
                                     </a>
                                 </div>

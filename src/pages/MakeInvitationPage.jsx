@@ -61,7 +61,7 @@ export default function MakeInvitationForm() {
                 setTemplatePreview('/images/Plantilla_2.png');
                 break;
             case 'Plantilla Havana Moderna':
-                setTemplatePreview('/images/Plantilla_3.png');
+                setTemplatePreview('/images/Havana_Moderna.png');
                 break;
             default:
                 setTemplatePreview('');

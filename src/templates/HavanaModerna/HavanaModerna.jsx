@@ -21,6 +21,7 @@ import { formatDateToString } from "../logic/utils";
 import HavanaCountDown from "./components/HavanaCoutDown/HavanaCountDown";
 import HavanaTimeline from "./components/HavanaTimeLine/HavanaTimeLine";
 import "./HavanaModerna.css";
+import casados from "./images/casadosfelices.webp";
 
 const HavanaModerna = ({ wedding, images, trad }) => {
   return (
@@ -33,7 +34,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
               style={{ width: "300px", height: "400px" }}
             >
               <img
-                src="https://placehold.co/300x400"
+                src={casados}
                 alt="Foto base"
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{ objectFit: "contain", padding: "11px" }}
@@ -78,7 +79,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
         centerVertically
       >
         <section className="text-center">
-          <h3 className="title-low">Nuestra cansión</h3>
+          <h3 className="title-low">Nuestra canción</h3>
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
@@ -98,7 +99,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <section className="text-center">
           <h3 className="title-low">Nuestra aventura...</h3>
-          <Gallery speed={20} text={trad("gallery")} />
+          <Gallery images={[]} speed={20} text={trad("gallery")} />
           <h3 className="title-low">¡...continuará contigo!</h3>
         </section>
       </Page>

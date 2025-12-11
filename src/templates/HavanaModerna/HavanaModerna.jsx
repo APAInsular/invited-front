@@ -98,7 +98,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <section className="text-center">
           <h3 className="title-low">Nuestra aventura...</h3>
-          <Gallery images={images} speed={20} text={trad("gallery")} />
+          <Gallery speed={20} text={trad("gallery")} />
           <h3 className="title-low">¡...continuará contigo!</h3>
         </section>
       </Page>

@@ -15,52 +15,11 @@ import "./styles/style_Template3.css"
 
 import { useEffect, useState } from 'react';
 
-const Template_2 = ({ wedding }) => {
-    const [newImages, setNewImages] = useState([]);
-    const [showPopup, setShowPopup] = useState(false);
-    const { changeLanguage } = useLanguage();
-
-    const { t, loadingTranslation } = usePageTranslation();
-
+const Template_3 = ({ wedding, trad: t, images }) => {
+   
     const baseUrl = process.env.REACT_APP_AWS_URL;
 
-    const changeImages = () => {
-        if (wedding.images) {
-            const imageUrls = wedding.images.map((image) => `${baseUrl}${image.image}`);
-            setNewImages(imageUrls);
-        }
-    };
-    
-
-    useEffect(() => {
-        changeImages();
-    }, [wedding.images]);
-
-    useEffect(() => {
-        const storedLang = localStorage.getItem('language');
-        if (storedLang) {
-            changeLanguage(storedLang);
-        } else {
-            setShowPopup(true);
-        }
-    }, []);
-
-    const handleLanguageSelect = (lang) => {
-        changeLanguage(lang)
-        localStorage.setItem('language', lang);
-        setShowPopup(false);
-    };
-
     const imageUrl = `${baseUrl}${wedding.coverImage}`;
-
-    if (showPopup) {
-        return <LanguageSelectorPopup onSelect={handleLanguageSelect} />;
-    }
-
-    if (loadingTranslation) {
-        return <div className="text-center py-5">Loading translations...</div>;
-    }
-
 
     return (
         <div className='body-template2'>
@@ -76,7 +35,7 @@ const Template_2 = ({ wedding }) => {
                 <WeddingTimeLine events={wedding.events} text={t('timeline')} />
             </section>
             <section className="py-5 mt-4 section-bg-template2 bg-gallery-template2">
-                <Gallery images={newImages} speed={20} text={t('gallery')} />
+                <Gallery images={images} speed={20} text={t('gallery')} />
             </section>
             <section className="py-5 section-bg-template2 bg-gallery-template2">
                 <WeddingForm weddingId={wedding.id} text={t('weddingForm')} />
@@ -85,4 +44,4 @@ const Template_2 = ({ wedding }) => {
     );
 };
 
-export default Template_2;
+export default Template_3;

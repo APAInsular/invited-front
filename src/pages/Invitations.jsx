@@ -7,6 +7,7 @@ import BaseTemplate from "../templates/BaseTemplate";
 import DemoWrapper from "../templates/DemoWrapper";
 import Classic from '../templates/Classic/Classic';
 import HavanaModerna from './../templates/HavanaModerna/HavanaModerna';
+import Template_3 from './../templates/Template_3/Template_3';
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
@@ -173,7 +174,7 @@ const Invitations = () => {
         translationPage={"template1WeddingPage"}
         wedding={weddingFalse.wedding}
       >
-        <HavanaModerna />
+        <HavanaModerna/>
       </BaseTemplate>
     </DemoWrapper>
   );

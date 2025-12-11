@@ -1,0 +1,15 @@
+:root {
+  --text-font: "sans-serif";
+  --title-font: "Allura";
+  --subtitle-font: "Allura";
+  --subtitle-weight: bold;
+  --title-size: 3.75rem;
+  --title-weight: bold;
+  --title-color: rgb(127, 127, 127);
+  --text-color: #705843;
+  --bg-color: #705843;
+}
+
+.Classic section {
+  background-color: rgb(255, 228, 175);
+}

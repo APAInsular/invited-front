@@ -1,4 +1,3 @@
-import React from 'react';
 import CoupleNames from './components/CoupleNames_Plantilla_1';
 import SongLink from './components/SongLink_Plantilla_1';
 import Location from './components/Location_Plantilla_1';
@@ -6,12 +5,13 @@ import CountDown from './components/CountDown_Plantilla_1';
 import Gallery from './components/Gallery_Plantilla_1';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_1';
 import WeddingForm from './components/WeddingForm_Plantilla_1';
-import "./styles/style_Template1.css";
 import { useEffect, useState } from 'react';
 
 import { useLanguage } from "../../context/LanguageContext"
 import LanguageSelectorPopup from '../../components/LanguageSelectorPopUp';
 import usePageTranslation from '../../hooks/usePageTranslation';
+
+import "./styles/style_Template1.css";
 
 const Template_1 = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);

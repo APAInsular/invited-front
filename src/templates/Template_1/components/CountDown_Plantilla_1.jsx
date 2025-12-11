@@ -1,29 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import useCountdown from '../../logic/useCountdown';
 
 const CountDown_Plantilla_1 = ({ weddingDate, text }) => {
 
-    const calculateTimeLeft = () => {
-        const now = new Date();
-        const targetDate = new Date(weddingDate);
-        const difference = targetDate - now;
-
-        return {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / 1000 / 60) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
-        };
-    };
-
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, [weddingDate]);
+    const timeLeft = useCountdown(weddingDate);
 
     return (
         <section class="py-5 text-center">

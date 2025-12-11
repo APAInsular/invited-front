@@ -60,6 +60,9 @@ export default function MakeInvitationForm() {
             case 'Plantilla Erase una vez':
                 setTemplatePreview('/images/Plantilla_2.png');
                 break;
+            case 'Plantilla Havana Moderna':
+                setTemplatePreview('/images/Plantilla_3.png');
+                break;
             default:
                 setTemplatePreview('');
         }
@@ -300,7 +303,7 @@ export default function MakeInvitationForm() {
                                         <option value="Plantilla Romantica">{t('templateOptions.romantic')}</option>
                                         <option value="Plantilla Acuarela">{t('templateOptions.watercolor')}</option>
                                         <option value="Plantilla Erase una vez">{t('templateOptions.fairytale')}</option>
-                                        <option value="Plantilla Dramatica" disabled>{t('templateOptions.dramatic')}</option>
+                                        <option value="Plantilla Havana Moderna">{t('templateOptions.havana')}</option>
                                         <option value="Plantilla Dulce" disabled>{t('templateOptions.sweet')}</option>
                                         <option value="Plantilla Oscura" disabled>{t('templateOptions.dark')}</option>
                                     </Form.Select>

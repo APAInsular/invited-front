@@ -1,0 +1,32 @@
+.yt-player {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+button {
+    background-color: #705843;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* CANCION */
+/*
+.song-link p {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.song-link p strong {
+    color: #705843;
+}
+
+
+
+    */
+

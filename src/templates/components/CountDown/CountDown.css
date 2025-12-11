@@ -1,0 +1,69 @@
+.Classic .countdown-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* Permitimos que los elementos se apilen en pantallas pequeñas */
+    margin-top: 20px;
+}
+
+
+/* CUENTA ATRAS */
+.Classic .time {
+    background: transparent;
+    color: #333;
+    /* Color más neutro para el texto */
+    padding: 10px 20px;
+    font-size: 30px;
+    /* Tamaño de fuente más grande y limpio */
+    font-weight: 600;
+    /* Ponderación media para el texto */
+    border-radius: 8px;
+    /* Bordes redondeados más suaves */
+    border: 2px solid #ccc;
+    /* Bordes finos y discretos */
+    min-width: 70px;
+    text-align: center;
+    transition: all 0.3s ease;
+    /* Transición suave para efectos */
+}
+
+.Classic .time span {
+    display: block;
+    font-size: 18px;
+    /* Texto más pequeño para las etiquetas */
+    color: #777;
+    /* Color más suave para las etiquetas */
+}
+
+.Classic .time:hover {
+    border-color: #007bff;
+    /* Color sutil de borde al hacer hover */
+    color: #007bff;
+    /* Cambiar color del texto en hover */
+}
+
+/* Estilos para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .Classic .countdown-box {
+        flex-direction: column;
+        /* Apilamos los elementos en columnas */
+        gap: 10px;
+        /* Menor espacio entre los elementos */
+    }
+
+       .Classic .time {
+        font-size: 26px;
+        /* Ajuste del tamaño de la fuente */
+        padding: 10px;
+        /* Reducción del padding */
+        min-width: 60px;
+        /* Ajuste del tamaño mínimo */
+    }
+
+    .Classic .time span {
+        font-size: 20px;
+        /* Tamaño de fuente aún más pequeño para las etiquetas */
+    }
+}

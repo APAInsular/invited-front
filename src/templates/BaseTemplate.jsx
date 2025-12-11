@@ -3,10 +3,6 @@ import { useLanguage } from "../context/LanguageContext";
 import usePageTranslation from "../hooks/usePageTranslation";
 import LanguageSelectorPopup from "../components/LanguageSelectorPopUp";
 
-// ? Only import base styles here.
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./styles/TemplateDefaults.css";
 
 /**
  * BaseTemplate

@@ -1,9 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-
 import CoupleNames from "../components/CoupleNames/CoupleNames";
-import CountDown from "../components/CountDown/CountDown";
 import WeddingForm from "../components/WeddingForm/WeddingForm";
-import Timeline from "../components/WeddingTimeLine/TimeLine";
 import Gallery from "../components/Gallery/Gallery";
 import SongLink from "../components/SongLink/SongLink";
 import Location from "../components/Location/Location";
@@ -16,13 +12,16 @@ import BACKGROUND3 from "./images/background_3.jpg";
 import FRAME from "./images/frame.webp";
 
 import Page from "../components/Page/Page";
-import useCountdown from "../logic/useCountdown";
-import { formatDateToString } from "../logic/utils";
 import HavanaCountDown from "./components/HavanaCoutDown/HavanaCountDown";
 import HavanaTimeline from "./components/HavanaTimeLine/HavanaTimeLine";
-import "./HavanaModerna.css";
-import casados from "./images/casadosfelices.webp";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../styles/TemplateDefaults.css";
+import "./HavanaModerna.css";
+import Carrousel from '../components/Carrousel/Carrousel';
+import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
+import image from "./images/casadosfelices.webp";
 const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className="HavanaModerna">
@@ -34,11 +33,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
               style={{ width: "300px", height: "400px" }}
             >
               <img
-<<<<<<< HEAD
-                src={casados}
-=======
-                src={coverImage}
->>>>>>> master
+                src={image}
                 alt="Foto base"
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{ objectFit: "contain", padding: "11px" }}
@@ -99,15 +94,19 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
           />
         </section>
       </Page>
+          {/*            images={["https://placehold.co/300x500", "https://placehold.co/300x500", "https://placehold.co/300x500"]}  */}
 
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <section className="text-center">
           <h3 className="title-low">Nuestra aventura...</h3>
-<<<<<<< HEAD
-          <Gallery images={[]} speed={20} text={trad("gallery")} />
-=======
-          <Gallery images={images} speed={20} text={trad("gallery")} />
->>>>>>> master
+          <Carrousel
+            images={images}
+            text={trad("gallery")}
+            renderItem={(src, i) => (
+              <CarrouselCard src={src} height={"1500px"}/>
+            )}
+          />
+
           <h3 className="title-low">¡...continuará contigo!</h3>
         </section>
       </Page>

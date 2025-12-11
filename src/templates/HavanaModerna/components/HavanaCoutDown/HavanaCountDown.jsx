@@ -37,7 +37,7 @@ const HavanaCountDown = ({ weddingDate, text }) => {
         </div>
       </div>
 
-      <h4 className="mt-4">{formatDateToString(weddingDate)}</h4>
+      <h4 className="p-3 mt-4">{formatDateToString(weddingDate)}</h4>
     </div>
   );
 };

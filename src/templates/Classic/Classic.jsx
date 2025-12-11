@@ -10,6 +10,9 @@ import Timeline from "../components/WeddingTimeLine/TimeLine";
 import Gallery from "../components/Gallery/Gallery";
 import WeddingForm from "../components/WeddingForm/WeddingForm";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../styles/TemplateDefaults.css";
 import "./Classic.css";
 
 const Classic = ({ wedding, images, trad }) => {

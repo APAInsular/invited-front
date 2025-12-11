@@ -1,7 +1,7 @@
 :root {
   --text-font: "sans-serif";
-  --title-font: "Playwrite USA Modern";
-  --title-size: 2.75rem;
+  --title-font: "Allura";
+  --title-size: 4.75rem;
   --title-color: rgb(0, 0, 0);
   --title-weight: bold;
   --subtitle-font: "Allura";
@@ -16,4 +16,19 @@ button {
   border-radius: 10%;
   border: 2px black solid;
   color: black;
+}
+
+.page-container::before {
+  content: '';
+  position: absolute; 
+  inset: 0; 
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0) 90%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  pointer-events: none;
+  z-index: 1; 
 }

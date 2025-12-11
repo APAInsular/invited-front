@@ -22,7 +22,7 @@ import HavanaCountDown from "./components/HavanaCoutDown/HavanaCountDown";
 import HavanaTimeline from "./components/HavanaTimeLine/HavanaTimeLine";
 import "./HavanaModerna.css";
 
-const HavanaModerna = ({ wedding, images, trad }) => {
+const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className="HavanaModerna">
       <Page backgroundImage={BACKGROUND1} padding="0" minHeight="830px">
@@ -33,7 +33,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
               style={{ width: "300px", height: "400px" }}
             >
               <img
-                src={wedding.coverImage}
+                src={coverImage}
                 alt="Foto base"
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{ objectFit: "contain", padding: "11px" }}

@@ -17,7 +17,7 @@ const Classic = ({ wedding, images, trad }) => {
 
   return (
     // TODO: Idea: Scroll Animation here.
-    <div>
+    <div className="Classic">
       <div className="w-100">
         <img
           src={fallbackImage}

@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 
 import BaseTemplate from "../templates/BaseTemplate";
 
-import HavanaModerna from "../templates/HavanaModerna/HavanaModerna";
 import DemoWrapper from "../templates/DemoWrapper";
 import Classic from '../templates/Classic/Classic';
+import HavanaModerna from './../templates/HavanaModerna/HavanaModerna';
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
@@ -173,7 +173,7 @@ const Invitations = () => {
         translationPage={"template1WeddingPage"}
         wedding={weddingFalse.wedding}
       >
-        <Classic />
+        <HavanaModerna />
       </BaseTemplate>
     </DemoWrapper>
   );

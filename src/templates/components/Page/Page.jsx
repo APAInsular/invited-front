@@ -1,33 +1,59 @@
-import React from "react";
 import "./Page.css";
 
 const Page = ({
-  children,
   backgroundImage,
-  padding = "4rem 1rem",
-  minHeight = "300px",
+  backgroundColor = 'transparent',
+  minHeight = '100vh',
+  contentHeight = 'auto',
   centerVertically = false,
-  centerHorizontally = false
+  centerHorizontally = true,
+  padding = '2rem 1rem',
+  maxWidth = '900px',
+  className = '',
+  header,
+  footer,
+  children
 }) => {
+  const pageStyles = {
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
+    backgroundColor: backgroundColor,
+    minHeight: minHeight,
+  };
 
-  const classes = ["page-section"];
-
-  if (centerVertically) classes.push("center-vertical");
-  if (centerHorizontally) classes.push("center-horizontal");
+  const contentStyles = {
+    height: contentHeight,
+    padding: padding,
+    maxWidth: maxWidth,
+  };
 
   return (
-    <section
-      className={classes.join(" ")}
-      style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
-        padding,
-        minHeight
-      }}
+    <div 
+      className={`page-container ${className}`}
+      style={pageStyles}
     >
-      <div className="page-content">
-        {children}
+      {header && (
+        <div className="page-header">
+          {header}
+        </div>
+      )}
+      
+      <div 
+        className={`page-section ${centerVertically ? 'center-vertical' : ''} ${centerHorizontally ? 'center-horizontal' : ''}`}
+      >
+        <div 
+          className="page-content"
+          style={contentStyles}
+        >
+          {children}
+        </div>
       </div>
-    </section>
+
+      {footer && (
+        <div className="page-footer">
+          {footer}
+        </div>
+      )}
+    </div>
   );
 };
 

@@ -13,30 +13,45 @@ import LOGO from "../../Images/Logo_invited_recortado-removebg-preview.png";
 import BACKGROUND1 from "./images/background.jpg";
 import BACKGROUND2 from "./images/background_2.jpg";
 import BACKGROUND3 from "./images/background_3.jpg";
+import FRAME from "./images/frame.webp";
 
-import "./HavanaModerna.css";
 import Page from "../components/Page/Page";
 import useCountdown from "../logic/useCountdown";
 import { formatDateToString } from "../logic/utils";
-import HavanaCountDown from './components/HavanaCoutDown/HavanaCountDown';
+import HavanaCountDown from "./components/HavanaCoutDown/HavanaCountDown";
 import HavanaTimeline from "./components/HavanaTimeLine/HavanaTimeLine";
+import "./HavanaModerna.css";
 
 const HavanaModerna = ({ wedding, images, trad }) => {
   return (
-    <div>
-      <Page backgroundImage={BACKGROUND1} padding="0" minHeight="500px">
+    <div className="HavanaModerna">
+      <Page backgroundImage={BACKGROUND1} padding="0" minHeight="830px">
         <section>
           <div className="d-flex justify-content-center mt-5">
-            <img
-              src={"https://placehold.co/300x400"}
-              alt="Foto de los novios"
-              className="img-fluid w-50"
-            />
+            <div
+              className="position-relative"
+              style={{ width: "300px", height: "400px" }}
+            >
+              <img
+                src="https://placehold.co/300x400"
+                alt="Foto base"
+                className="position-absolute top-0 start-0 w-100 h-100"
+                style={{ objectFit: "contain", padding: "11px" }}
+              />
+
+              <img
+                src={FRAME}
+                alt="Frame"
+                className="position-absolute top-0 start-0 w-100 h-100"
+              />
+            </div>
           </div>
+
           <CoupleNames
             groom={wedding.user.name}
             bride={wedding.user.partner.name}
             icon="&"
+            asColumn
           />
           <p className="p-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
@@ -45,35 +60,54 @@ const HavanaModerna = ({ wedding, images, trad }) => {
             aliquam quod recusandae doloribus!
           </p>
           <div className="text-center subtitle">¡No puedes faltar!</div>
-          <HavanaCountDown
-            weddingDate={wedding.weddingDate}
-            text={trad("coutdown")}
+        </section>
+      </Page>
+
+      <Page
+        footer={
+          <section className="text-center">
+            <h3 className="title-low">¡El tiempo no se detiene!</h3>
+            <HavanaCountDown
+              weddingDate={wedding.weddingDate}
+              text={trad("countdown")}
+            />
+          </section>
+        }
+        backgroundImage={BACKGROUND1}
+        minHeight="830px"
+        centerVertically
+      >
+        <section className="text-center">
+          <h3 className="title-low">Nuestra cansión</h3>
+          <SongLink
+            songUrl={wedding.musicUrl}
+            songTitle={wedding.musicTitle}
+            text={trad("songLink")}
+          />
+        </section>
+        <section className="text-center">
+          <h3 className="title-low">¿Donde nos encontramos?</h3>
+          <Location
+            location={wedding.location.city}
+            country={wedding.location.country}
+            text={trad("churchLocation")}
           />
         </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND1} minHeight="500px" centerVertically>
-        <Location
-          location={wedding.location.city}
-          country={wedding.location.country}
-          text={trad("churchLocation")}
-        />
+      <Page backgroundImage={BACKGROUND1} minHeight="830px">
+        <section className="text-center">
+          <h3 className="title-low">Nuestra aventura...</h3>
+          <Gallery images={images} speed={20} text={trad("gallery")} />
+          <h3 className="title-low">¡...continuará contigo!</h3>
+        </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND1} minHeight="500px" centerVertically>
-        <SongLink
-          songUrl={wedding.musicUrl}
-          songTitle={wedding.musicTitle}
-          text={trad("songLink")}
-        />
-        <Gallery images={images} speed={20} text={trad("gallery")} />
-      </Page>
-
-      <Page backgroundImage={BACKGROUND2} minHeight="500px">
+      <Page backgroundImage={BACKGROUND1} minHeight="830px" centerVertically>
         <HavanaTimeline events={wedding.events} text={trad("timeline")} />
       </Page>
 
-      <Page backgroundImage={BACKGROUND1} minHeight="500px">
+      <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <WeddingForm
           weddingId={wedding.id}
           text={trad("weddingForm")}
@@ -81,7 +115,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
         />
       </Page>
 
-      <Page backgroundImage={BACKGROUND1}>
+      <Page backgroundImage={BACKGROUND1} minHeight="150px">
         <h2 className="text-center">
           {"Hecho con mucho amor por el equipo de"}
         </h2>

@@ -2,10 +2,18 @@
   --text-font: "sans-serif";
   --title-font: "Playwrite USA Modern";
   --title-size: 2.75rem;
+  --title-color: rgb(0, 0, 0);
+  --title-weight: bold;
   --subtitle-font: "Allura";
   --subtitle-weight: bold;
-  --title-weight: bold;
-  --title-color: rgb(127, 127, 127);
-  --text-color: #705843;
+  --text-color: #000000;
+  --bg-color: rgb(69, 69, 69);
+  --low-font: "sans-serif";
 }
 
+button {
+  background-color: transparent;
+  border-radius: 10%;
+  border: 2px black solid;
+  color: black;
+}

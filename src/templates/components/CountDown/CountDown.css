@@ -1,4 +1,4 @@
-.countdown-box {
+.Classic .countdown-box {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -9,7 +9,7 @@
 
 
 /* CUENTA ATRAS */
-.time {
+.Classic .time {
     background: transparent;
     color: #333;
     /* Color más neutro para el texto */
@@ -28,7 +28,7 @@
     /* Transición suave para efectos */
 }
 
-.time span {
+.Classic .time span {
     display: block;
     font-size: 18px;
     /* Texto más pequeño para las etiquetas */
@@ -36,7 +36,7 @@
     /* Color más suave para las etiquetas */
 }
 
-.time:hover {
+.Classic .time:hover {
     border-color: #007bff;
     /* Color sutil de borde al hacer hover */
     color: #007bff;
@@ -46,14 +46,14 @@
 /* Estilos para pantallas pequeñas */
 
 @media (max-width: 768px) {
-    .countdown-box {
+    .Classic .countdown-box {
         flex-direction: column;
         /* Apilamos los elementos en columnas */
         gap: 10px;
         /* Menor espacio entre los elementos */
     }
 
-       .time {
+       .Classic .time {
         font-size: 26px;
         /* Ajuste del tamaño de la fuente */
         padding: 10px;
@@ -62,7 +62,7 @@
         /* Ajuste del tamaño mínimo */
     }
 
-    .time span {
+    .Classic .time span {
         font-size: 20px;
         /* Tamaño de fuente aún más pequeño para las etiquetas */
     }

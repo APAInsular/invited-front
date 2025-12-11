@@ -3,9 +3,9 @@ import apiClient from "../config/axiosConfig";
 import { useParams } from "react-router-dom";
 
 import Classic from "../templates/Classic/Classic";
-import Template_1 from "../templates/Template_2/Template_1";
+import Template_1 from "../templates/Template_1/Template_1";
 import Template_2 from "../templates/Template_2/Template_2";
-import HavanaModerna from './../templates/HavanaModerna/HavanaModerna';
+import HavanaModerna from '../templates/HavanaModerna/HavanaModerna';
 import BaseTemplate from "../templates/BaseTemplate";
 
 const Invitations = () => {

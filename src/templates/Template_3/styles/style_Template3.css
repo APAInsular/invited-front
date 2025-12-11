@@ -32,7 +32,7 @@
 }
 
 .bg-countdown-template2 {
-    background-image: url('../images/backgrounds/2.jpg');
+    background-image: url('../images/backgrounds/countdown.jpg');
 }
 
 .bg-gallery-template2 {
@@ -40,7 +40,7 @@
 }
 
 .bg-itinerario-template2 {
-    background-image: url('../images/backgrounds/3.jpg');
+    background-image: url('../images/backgrounds/itinerario.jpg');
 }
 
 /* ===== Estilos para la sección de portada ===== */
@@ -105,9 +105,11 @@
     color: #fff;
 }
 
-.btn-cancion-template2 {
-    color: #909090
-}
+
+.btn-cancion{
+    background-color:cadetblue;
+    color: #f7f0f0
+} 
 
 .section-subtitle-template2 {
     font-size: 1rem;
@@ -168,31 +170,30 @@
  .slider-track{
     display: flex;
     white-space: nowrap;
-    position: relative;
-    z-index: 2;
+    overflow:visible;
+    
 } 
 
 .slider-image{
-    height: 150px;
+    height: 100%;
     width: auto;
     margin-right: 1rem;
     flex-shrink: 0;
+    object-fit: cover;
 
 
 } 
 
 .square-carousel {
     background: url("../images/cuadro-carrusel.png") center/cover no-repeat;
-    position: absolute;
-    width: 100%;
-    height: 400px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    margin-top: 10px;
-    pointer-events: none;
-}  
+    aspect-ratio: 3 / 1; /* Ajusta según la forma real del cuadro */
+    position: relative;
+    overflow: hidden;
+    padding: 12% 10%; /* Ajusta la ventana interna del cuadro */
+    height: 330px; 
+    right: 50px ;
+    
+}   
 
 
 

@@ -15,18 +15,18 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
     return (
         <div className="container">
             <h2 className="section-title-template2 text-center my-5 mb-5">Nuestra historia</h2>
-            <div className="row g-2 " style={{ overflow: 'hidden' }}>
+            <div className="square-carousel" >
                 <div
                     ref={sliderRef}
                     className="slider-track"
                     style={{
-                        minWidth: '200px',         // Ancho fijo
-                        minHeight: '400px',        // Alto fijo
-                        display: 'flex',
+                       // minWidth: '200px',         // Ancho fijo
+                       // minHeight: '400px',        // Alto fijo
+                       // display: 'flex',
                         transform: `translateX(${offset}px)`,
                         transition: 'transform 0.1s linear',
-                        whiteSpace: 'nowrap',
-                        borderRadius: '12px'    // Opcional: bordes redondeados
+                       // whiteSpace: 'nowrap',
+                       // borderRadius: '12px'    // Opcional: bordes redondeados
                     }}
                     
                 >
@@ -36,13 +36,12 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
                             src={image}
                             alt={`Slide ${index}`}
                             className="slider-image"
-                            style={{ minWidth: '200px', minHeight: '250px', marginRight: '16px', objectFit: 'cover' }}
+                            style={{ minWidth: '200px', minHeight: '250px', marginRight: '16px' }}
                         />
                     ))}
                 </div>
-                <div className="square-carousel"></div>
             </div>
-            <h2 className="section-title-template2 text-center">¡Que florezca el amor!</h2>
+            <h2 className="section-title-template2 text-center my-3">¡Que florezca el amor!</h2>
         </div>
     );
 };

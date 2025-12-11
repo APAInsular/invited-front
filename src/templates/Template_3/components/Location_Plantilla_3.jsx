@@ -6,7 +6,7 @@ const Location_Plantilla_2 = ({ location, country }) => {
         <section className="text-center my-4 py-1">
             <div className="container mt-4">
                 <h2 className="section-title-template2">Lugar de la Boda</h2>
-                <Church size={32} className="text-white" />
+                <Church size={40} className="text-white" />
                 <p className="section-subtitle-template2 mb-0">
                     {location}<br />
                     {country}

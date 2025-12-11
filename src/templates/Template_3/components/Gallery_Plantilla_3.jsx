@@ -21,7 +21,7 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
                     className="slider-track"
                     style={{
                         minWidth: '200px',         // Ancho fijo
-                        minHeight: '800px',        // Alto fijo
+                        minHeight: '100px',        // Alto fijo
                         display: 'flex',
                         transform: `translateX(${offset}px)`,
                         transition: 'transform 0.1s linear',

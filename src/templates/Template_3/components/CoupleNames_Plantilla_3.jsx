@@ -14,11 +14,12 @@ const CoupleNames_Plantilla_2 = ({ imageUrl, groom, bride, location, date }) => 
     }
 
     return (
-         <div className="container" >
+         <div className="container"  >
             <h1 className="invite-name-template2 ">{groom} & {bride}</h1>
             <div className="position-relative d-inline-block mb-4">
                 <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsT5PDZ7q5nVBWH6o7kaOe6NqNDIdmsjpJsg&s' 
                     alt="Samantha y Javier" className="img-fluid rounded-circle header-photo-template2"></img>
+                <div className="circle-frame"></div>
             </div>
             <div className="d-flex justify-content-center">
                 <p className="invite-text-template2 mb-4">

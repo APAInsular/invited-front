@@ -23,7 +23,7 @@ import HavanaTimeline from "./components/HavanaTimeLine/HavanaTimeLine";
 import "./HavanaModerna.css";
 import casados from "./images/casadosfelices.webp";
 
-const HavanaModerna = ({ wedding, images, trad }) => {
+const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className="HavanaModerna">
       <Page backgroundImage={BACKGROUND1} padding="0" minHeight="830px">
@@ -34,7 +34,11 @@ const HavanaModerna = ({ wedding, images, trad }) => {
               style={{ width: "300px", height: "400px" }}
             >
               <img
+<<<<<<< HEAD
                 src={casados}
+=======
+                src={coverImage}
+>>>>>>> master
                 alt="Foto base"
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{ objectFit: "contain", padding: "11px" }}
@@ -99,7 +103,11 @@ const HavanaModerna = ({ wedding, images, trad }) => {
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <section className="text-center">
           <h3 className="title-low">Nuestra aventura...</h3>
+<<<<<<< HEAD
           <Gallery images={[]} speed={20} text={trad("gallery")} />
+=======
+          <Gallery images={images} speed={20} text={trad("gallery")} />
+>>>>>>> master
           <h3 className="title-low">¡...continuará contigo!</h3>
         </section>
       </Page>

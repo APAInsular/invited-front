@@ -223,7 +223,7 @@ const LandingPage = () => {
                     </div>
 
                     <div className="row g-4">
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <div className="card h-100 border-0 shadow-sm hover-shadow">
                                 <div className="p-2 bg-pink-pastel">
                                     <div className="phone-mockup">
@@ -245,7 +245,7 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <div className="card h-100 border-0 shadow-sm hover-shadow">
                                 <div className="p-2 bg-pink-pastel">
                                     <div className="phone-mockup">
@@ -267,7 +267,7 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <div className="card h-100 border-0 shadow-sm hover-shadow">
                                 <div className="p-2 bg-pink-pastel">
                                     <div className="phone-mockup">
@@ -283,6 +283,28 @@ const LandingPage = () => {
                                     <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle3')}</h3>
                                     <p className="card-text text-muted">{t('invitation.cardText3')}</p>
                                     <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/luis-lucas/81" className="btn bg-pink-pastel text-dark border-0 w-100">
+                                        {t('invitation.button')}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-md-3">
+                            <div className="card h-100 border-0 shadow-sm hover-shadow">
+                                <div className="p-2 bg-pink-pastel">
+                                    <div className="phone-mockup">
+                                        <div className="phone-camera"></div>
+                                        <div className="phone-screen d-flex align-items-center justify-content-center w-100">
+                                            <img src="/images/Havana_Moderna.png"
+                                                alt={t('invitation.cardTitle4')}
+                                                className="img-fluid w-auto"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card-body text-center">
+                                    <h3 className="h4 card-title text-danger-emphasis">{t('invitation.cardTitle4')}</h3>
+                                    <p className="card-text text-muted">{t('invitation.cardText4')}</p>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.invited.es/es/invitacion/luis-lucas/85" className="btn bg-pink-pastel text-dark border-0 w-100">
                                         {t('invitation.button')}
                                     </a>
                                 </div>

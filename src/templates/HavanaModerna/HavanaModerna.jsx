@@ -33,7 +33,7 @@ const HavanaModerna = ({ wedding, images, trad }) => {
               style={{ width: "300px", height: "400px" }}
             >
               <img
-                src="https://placehold.co/300x400"
+                src={wedding.coverImage}
                 alt="Foto base"
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{ objectFit: "contain", padding: "11px" }}

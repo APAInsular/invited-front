@@ -55,6 +55,8 @@ const BaseTemplate = ({ translationPage, wedding, children }) => {
     [changeLanguage]
   );
 
+  const imageUrl = `${baseUrl}${wedding.coverImage}`;
+
   useEffect(() => {
     const storedLang = sessionStorage.getItem("language");
     if (storedLang) {
@@ -73,6 +75,7 @@ const BaseTemplate = ({ translationPage, wedding, children }) => {
   const injectedProps = {
     wedding,
     images: newImages,
+    coverImage: imageUrl,
     trad,
     loadingTranslation,
   };

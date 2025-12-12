@@ -6,7 +6,7 @@ const CoupleNames = ({ groom, bride, icon = "💖", asColumn = false }) => {
       asColumn={asColumn}
       left={<h2 className="title">{groom}</h2>}
       right={<h2 className="title">{bride}</h2>}
-      separator={<span className="text-5xl">{icon}</span>}
+      separator={<span className="title text-6xl">{icon}</span>}
     />
   );
 };

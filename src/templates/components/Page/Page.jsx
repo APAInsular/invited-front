@@ -1,12 +1,12 @@
 import "./Page.css";
 
 const Page = ({
+  backgroundSize = "100%",
   backgroundImage,
   backgroundColor = 'transparent',
   minHeight = '100vh',
   contentHeight = 'auto',
   centerVertically = false,
-  centerHorizontally = true,
   padding = '2rem 1rem',
   maxWidth = '900px',
   className = '',
@@ -18,6 +18,7 @@ const Page = ({
     backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
     backgroundColor: backgroundColor,
     minHeight: minHeight,
+    backgroundSize
   };
 
   const contentStyles = {
@@ -38,7 +39,7 @@ const Page = ({
       )}
       
       <div 
-        className={`page-section ${centerVertically ? 'center-vertical' : ''} ${centerHorizontally ? 'center-horizontal' : ''}`}
+        className={`page-section ${centerVertically ? 'center-vertical' : ''}`}
       >
         <div 
           className="page-content"

@@ -13,7 +13,6 @@ import FRAME from "./images/frame.webp";
 
 import Page from "../components/Page/Page";
 import HavanaCountDown from "./components/HavanaCoutDown/HavanaCountDown";
-import HavanaTimeline from "./components/HavanaTimeLine/HavanaTimeLine";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -22,6 +21,9 @@ import "./HavanaModerna.css";
 import Carrousel from '../components/Carrousel/Carrousel';
 import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 import image from "./images/casadosfelices.webp";
+import TIMELINE_ICON from "./images/right-arrow-svgrepo-com.svg";
+import Timeline from "../components/Timeline/Timeline";
+
 const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className="HavanaModerna">
@@ -101,7 +103,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
           <h3 className="title-low">Nuestra aventura...</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}
+            text={trad("gallery")}icon
             renderItem={(src, i) => (
               <CarrouselCard src={src} height={"1500px"}/>
             )}
@@ -111,8 +113,8 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
         </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND1} minHeight="830px" centerVertically>
-        <HavanaTimeline events={wedding.events} text={trad("timeline")} />
+      <Page backgroundSize="auto" backgroundImage={BACKGROUND1} minHeight="830px" centerVertically>
+        <Timeline events={wedding.events} text={trad("timeline")} icon={{iconSrc: TIMELINE_ICON}} />
       </Page>
 
       <Page backgroundImage={BACKGROUND1} minHeight="830px">

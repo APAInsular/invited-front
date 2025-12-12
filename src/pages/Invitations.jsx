@@ -8,6 +8,7 @@ import Template_2 from "../templates/Template_2/Template_2";
 import HavanaModerna from "../templates/HavanaModerna/HavanaModerna";
 import BaseTemplate from "../templates/BaseTemplate";
 import DemoWrapper from "./../templates/DemoWrapper";
+import EleganteParis from "../templates/EleganteParis/EleganteParis";
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
@@ -305,7 +306,7 @@ const Invitations = () => {
         translationPage="template1WeddingPage"
         wedding={placeholder}
       >
-        <HavanaModerna />
+        <EleganteParis />
       </BaseTemplate>
     </DemoWrapper>
   );

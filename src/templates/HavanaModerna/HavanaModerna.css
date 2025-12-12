@@ -11,14 +11,14 @@
   --low-font: "sans-serif";
 }
 
-button {
+.HavanaModerna button {
   background-color: transparent;
   border-radius: 10%;
   border: 2px black solid;
   color: black;
 }
 
-.page-container::before {
+.HavanaModerna .page-container::before {
   content: '';
   position: absolute; 
   inset: 0; 

@@ -2,7 +2,7 @@ import "./NameWithSeparator.css";
 
 const NamesWithSeparator = ({ left, right, separator, asColumn = false }) => {
   return (
-    <div className="container my-4">
+    <div className="container">
       <div
         className="names-separator"
         style={{

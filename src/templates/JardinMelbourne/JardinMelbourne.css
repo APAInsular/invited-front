@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap");
+
+:root {
+  --text-font: "sans-serif";
+  --text-size: 1.2rem;
+  --title-font: "Gwendolyn";
+  --title-size: 4.75rem;
+  --title-color: rgb(0, 0, 0);
+  --title-weight: "normal";
+  --subtitle-font: "Allura";
+  --subtitle-weight: bold;
+  --text-color: #000000;
+  --bg-color: rgb(69, 69, 69);
+  --low-font: "Gwendolyn";
+  --low-size: 4rem;
+}
+
+.JardinMelbourne button {
+  background-color: transparent;
+  border-radius: 10%;
+  border: 2px black solid;
+  color: black;
+}

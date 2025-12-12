@@ -1,15 +1,13 @@
 .page-container {
   width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: repeat-y;
   position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
 }
-
 .page-header {
   width: 100%;
   flex-shrink: 0;
@@ -21,6 +19,7 @@
   width: 100%;
   display: flex;
   box-sizing: border-box;
+  flex-direction: column;
 }
 
 .page-section.center-vertical {
@@ -29,6 +28,7 @@
 
 .page-section.center-horizontal {
   align-items: center;
+  align-content: center;
 }
 
 .page-content {

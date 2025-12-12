@@ -1,4 +1,5 @@
-const HavanaTimeline = ({ events, text }) => {
+const Timeline = ({ events, text, icon = {} }) => {
+  const { iconSrc = "https://placehold.co/40", iconWidth = "40px", iconHeight = "40px" } = icon;
   return (
     <div className="container" style={{ maxWidth: "600px", margin: "0 auto", padding: "40px 20px" }}>
       <h2 style={{ 
@@ -35,7 +36,7 @@ const HavanaTimeline = ({ events, text }) => {
               top: "0",
               fontWeight: "bold"
             }}>
-              <img style={{width: "40px", height: "40px"}} alt="" />
+              <img style={{width: iconWidth, height: iconHeight}} src={iconSrc} alt="" />
             </div>
 
             <div>
@@ -70,4 +71,4 @@ const HavanaTimeline = ({ events, text }) => {
   );
 };
 
-export default HavanaTimeline;
+export default Timeline;

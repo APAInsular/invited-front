@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Gallery_Plantilla_2 = ({ images, speed }) => {
+const Gallery_Plantilla_3 = ({ images, speed }) => {
     const sliderRef = useRef(null);
     const [offset, setOffset] = useState(0);
 
@@ -14,7 +14,7 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
 
     return (
         <div className="container mt-4 py-4">
-            <h2 className="section-title-template2 text-center my-5 mb-5">Nuestra historia</h2>
+            <h2 className="section-title-template3 text-center my-5 mb-5">Nuestra historia</h2>
             <div className="square-carousel" >
                 <div
                     ref={sliderRef}
@@ -41,9 +41,9 @@ const Gallery_Plantilla_2 = ({ images, speed }) => {
                     ))}
                 </div>
             </div>
-            <h2 className="section-title-template2 text-center my-3">¡Que florezca el amor!</h2>
+            <h2 className="section-title-template3 text-center my-3">¡Que florezca el amor!</h2>
         </div>
     );
 };
 
-export default Gallery_Plantilla_2;
+export default Gallery_Plantilla_3;

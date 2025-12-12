@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const CountDown_Plantilla_2 = ({ weddingDate }) => {
+const CountDown_Plantilla_3 = ({ weddingDate }) => {
     const calculateTimeLeft = () => {
         const now = new Date();
         const targetDate = new Date(weddingDate);
@@ -24,28 +24,28 @@ const CountDown_Plantilla_2 = ({ weddingDate }) => {
     }, [weddingDate]);
 
     return (
-        <section className="countdown-section-template2 mt-4 py-4">
-            <h2 className="section-title-template2 mb-4">Cuenta atrás</h2>
-            <div className="countdown-numbers-template2 mt-4 pt-1">
-                <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.days.toString().padStart(2, '0')}</span>
-                    <span className="label-template2">Días</span>
+        <section className="countdown-section-template3 mt-4 py-4">
+            <h2 className="section-title-template3 mb-4">Cuenta atrás</h2>
+            <div className="countdown-numbers-template3 mt-4 pt-1">
+                <div className="countdown-item-template3">
+                    <span className="number-template3">{timeLeft.days.toString().padStart(2, '0')}</span>
+                    <span className="label-template3">Días</span>
                 </div>
-                <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.hours.toString().padStart(2, '0')}</span>
-                    <span className="label-template2">Horas</span>
+                <div className="countdown-item-template3">
+                    <span className="number-template3">{timeLeft.hours.toString().padStart(2, '0')}</span>
+                    <span className="label-template3">Horas</span>
                 </div>
-                <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                    <span className="label-template2">Minutos</span>
+                <div className="countdown-item-template3">
+                    <span className="number-template3">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                    <span className="label-template3">Minutos</span>
                 </div>
-                <div className="countdown-item-template2">
-                    <span className="number-template2">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                    <span className="label-template2">Segundos</span>
+                <div className="countdown-item-template3">
+                    <span className="number-template3">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                    <span className="label-template3">Segundos</span>
                 </div>
             </div>
         </section>
     );
 };
 
-export default CountDown_Plantilla_2;
+export default CountDown_Plantilla_3;

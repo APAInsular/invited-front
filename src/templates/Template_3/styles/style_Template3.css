@@ -13,11 +13,11 @@
     
 }
 
-.body-template2 {
+.body-template3 {
     background-color: #2C4D65;
 }
 
-.section-bg-template2 {
+.section-bg-template3 {
     position: relative;
     background-size: cover;
     background-position: center;
@@ -28,19 +28,19 @@
     text-align: center;
 }
 
-.bg-portada-template2 {
+.bg-portada-template3 {
     background-image: url('../images/backgrounds/fondo.png');
 }
 
-.bg-countdown-template2 {
+.bg-countdown-template3 {
     background-image: url('../images/backgrounds/countdown.jpg');
 }
 
-.bg-gallery-template2 {
+.bg-gallery-template3 {
     background-image: url('../images/backgrounds/fondo.png');
 }
 
-.bg-itinerario-template2 {
+.bg-itinerario-template3 {
     background-image: url('../images/backgrounds/itinerario.jpg');
     background-size: contain;
     background-repeat: repeat;
@@ -49,11 +49,11 @@
 }
 
 /* ===== Estilos para la sección de portada ===== */
-.header-invite-template2 {
+.header-invite-template3 {
     position: relative;
 }
 
-.header-photo-template2 {
+.header-photo-template3 {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -76,36 +76,36 @@
 } 
 
 
-.invite-name-template2 {
+.invite-name-template3 {
     font-family: 'Pinyon Script', cursive;
     font-size: 3.5rem;
     color: #fff;
     margin-top: 80px;
 }
 
-.invite-text-template2 {
+.invite-text-template3 {
     font-size: 1.2rem;
     font-family: 'Sistina';
     width: 60%;
     color: #fff;
 }
 
-.invite-date-template2,
-.invite-location-template2 {
+.invite-date-template3,
+.invite-location-template3 {
     font-family: 'Sistina', cursive;
     font-size: 1.6rem;
     margin-bottom: 0;
     color: #fff;
 }
 
-.section-title-template2 {
+.section-title-template3 {
     font-family: 'Pinyon Script', cursive;
     font-size: 4rem;
     color: #fff;
 }
 
 
-.song-link-template2 {
+.song-link-template3 {
     font-size: 1rem;
     color: #fff;
 }
@@ -116,12 +116,12 @@
     color: #f7f0f0
 } 
 
-.section-subtitle-template2 {
+.section-subtitle-template3 {
     font-size: 1rem;
     color: #fff;
 }
 
-.countdown-section-template2 {
+.countdown-section-template3 {
     position: relative;
     text-align: center;
     padding: 3rem 1rem;
@@ -129,27 +129,27 @@
     color: #fff;
 }
 
-.countdown-numbers-template2 {
+.countdown-numbers-template3 {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.countdown-item-template2 {
+.countdown-item-template3 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.number-template2 {
+.number-template3 {
     font-family: 'Sistina', cursive;
     font-size: 2.5rem;
     color: #fff;
     line-height: 1;
 }
 
-.label-template2 {
+.label-template {
     margin-top: 0.5rem;
     font-size: 1rem;
     color: #fff;
@@ -202,25 +202,30 @@
 
 
 
- .form-label-custom-template2 {
+ .form-label-custom-template3 {
     font-weight: 500;
     color: #fff;
     font-size: 0.9rem;
 } 
 
-
+ .input-custom-template3 {
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    width: 100%;
+} 
 
  .bg-form-template2 {
     background-color: #2C4D65;
 } 
 
-.btn-main-template2 {
+.btn-main-template3 {
     background-color: #031757;
     color: #fff;
     border: none;
 }
 
-.btn-main-template2:hover {
+.btn-main-template3:hover {
     background-color: #95c6c4;
 }
 
@@ -275,12 +280,7 @@
     font-size: 0.9rem;
 } */
 
-/* .input-custom-template2 {
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    width: 100%;
-} */
+
 
 /* .form-container-template2 {
     background-color: #95c6c4;

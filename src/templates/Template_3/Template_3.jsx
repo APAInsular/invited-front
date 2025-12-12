@@ -15,7 +15,7 @@ import "./styles/style_Template3.css"
 
 import { useEffect, useState } from 'react';
 
-const Template_2 = ({ wedding }) => {
+const Template_3 = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const { changeLanguage } = useLanguage();
@@ -63,26 +63,26 @@ const Template_2 = ({ wedding }) => {
 
 
     return (
-        <div className='body-template2'>
-            <section className="header-invite-template2 text-center py-4 section-bg-template2 bg-portada-template2">
+        <div className='body-template3'>
+            <section className="header-invite-template3 text-center py-4 section-bg-template3 bg-portada-template3">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
-            <section className="mt-4 section-bg-template2 bg-countdown-template2">
+            <section className="mt-4 section-bg-template3 bg-countdown-template3">
                 <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} text={t('songLink')} />
                 <Location location={wedding.location.city} country={wedding.location.country} text={t('churchLocation')} />
                 <CountDown weddingDate={wedding.weddingDate} text={t('countdown')} />
             </section>
-            <section className="py-5 mt-4 section-bg-template2 bg-itinerario-template2">
+            <section className="py-5 mt-4 section-bg-template3 bg-itinerario-template3">
                 <WeddingTimeLine events={wedding.events} text={t('timeline')} />
             </section>
-            <section className="py-5 mt-4 section-bg-template2 bg-gallery-template2">
+            <section className="py-5 mt-4 section-bg-template3 bg-gallery-template3">
                 <Gallery images={newImages} speed={20} text={t('gallery')} />
             </section>
-            <section className="py-5 mt-4 section-bg-template2 bg-gallery-template2">
+            <section className="py-5 mt-4 section-bg-template3 bg-gallery-template3">
                 <WeddingForm weddingId={wedding.id} text={t('weddingForm')} />
             </section>
         </div>
     );
 };
 
-export default Template_2;
+export default Template_3;

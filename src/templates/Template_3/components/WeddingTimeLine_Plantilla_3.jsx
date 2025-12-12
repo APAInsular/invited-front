@@ -1,9 +1,9 @@
 import React from 'react';
 
-const WeddingTimeLine_Plantilla_2 = ({ events }) => {
+const WeddingTimeLine_Plantilla_3 = ({ events }) => {
     return (
         <div className="timeline-container">
-            <h2 className="section-title-template2 text-center mb-5">Itinerario</h2>
+            <h2 className="section-title-template3 text-center mb-5">Itinerario</h2>
             <div >
                 {events.map((event, index) => (
                     <div key={index} className="timeline-item">
@@ -21,4 +21,4 @@ const WeddingTimeLine_Plantilla_2 = ({ events }) => {
     );
 };
 
-export default WeddingTimeLine_Plantilla_2;
+export default WeddingTimeLine_Plantilla_3;

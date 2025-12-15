@@ -15,7 +15,7 @@ import "./styles/style_Template4.css"
 
 import { useEffect, useState } from 'react';
 
-const Template_3 = ({ wedding }) => {
+const Template_4 = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const { changeLanguage } = useLanguage();
@@ -85,4 +85,4 @@ const Template_3 = ({ wedding }) => {
     );
 };
 
-export default Template_3;
+export default Template_4;

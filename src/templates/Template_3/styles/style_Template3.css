@@ -142,6 +142,14 @@
     align-items: center;
 }
 
+.invite-date-template3 {
+    font-family: 'Sistina', cursive;
+    font-size: 1.4rem;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+
 .number-template3 {
     font-family: 'Sistina', cursive;
     font-size: 2.5rem;
@@ -156,17 +164,17 @@
     font-family: 'Sistina', cursive;
 }
 
- .timeline-item h5 {
+ .timeline-item-template3 h5 {
     margin-top: 0;
     color: #fff;
     font-weight: bold;
 }
 
-.timeline-item p {
+.timeline-item-template3 p {
     margin: 0;
     font-size: 1.5rem;
-    font-family: 'faustina';
-    color: #ffffff;
+    font-family: 'Sistina';
+    color: #fff;
     line-height: 1.4;
 }
 
@@ -189,7 +197,7 @@
 
 } 
 
-.square-carousel {
+.square-carousel-template3 {
     background: url("../images/cuadro-carrusel.png") center/cover no-repeat;
     aspect-ratio: 3 / 1; /* Ajusta según la forma real del cuadro */
     position: relative;

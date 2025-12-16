@@ -63,22 +63,22 @@ const Template_4 = ({ wedding }) => {
 
 
     return (
-        <div className='body-template3'>
-            <section className="header-invite-template3 text-center py-4 section-bg-template3 bg-portada-template3">
+        <div className='body-template4'>
+            <section className="text-center  py-4 section-bg-template4 bg-portada-template4">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
-            <section className=" section-bg-template3 bg-countdown-template3">
+            <section className=" section-bg-template4 bg-countdown-template4">
                 <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} text={t('songLink')} />
                 <Location location={wedding.location.city} country={wedding.location.country} text={t('churchLocation')} />
                 <CountDown weddingDate={wedding.weddingDate} text={t('countdown')} />
             </section>
-            <section className="py-5  section-bg-template3 bg-itinerario-template3">
+            <section className="section-bg-template4 bg-itinerario-template4">
                 <WeddingTimeLine events={wedding.events} text={t('timeline')} />
             </section>
-            <section className="py-5  section-bg-template3 bg-gallery-template3">
+            <section className=" section-bg-template4 bg-gallery-template4">
                 <Gallery images={newImages} speed={20} text={t('gallery')} />
             </section>
-            <section className="py-5  section-bg-template3 bg-asistencia-template4">
+            <section className=" section-bg-template4 bg-asistencia-template4">
                 <WeddingForm weddingId={wedding.id} text={t('weddingForm')} />
             </section>
         </div>

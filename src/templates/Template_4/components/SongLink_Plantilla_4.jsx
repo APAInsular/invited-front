@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const SongLink_Plantilla_3 = ({ songUrl, songTitle }) => {
+const SongLink_Plantilla_4 = ({ songUrl, songTitle }) => {
     const [player, setPlayer] = useState(null);
     const [playing, setPlaying] = useState(false);
     const videoId = songUrl.split("v=")[1]?.split("&")[0];
@@ -48,11 +48,11 @@ const SongLink_Plantilla_3 = ({ songUrl, songTitle }) => {
 
     return (
         <section className="text-center">
-            <div className="container text-center py-2">
-                <h2 className="mb-1 section-title-template3">Nuestra canción</h2>
-                <div className="song-link-template3">
+            <div className="container text-center ">
+                <h2 className="mb-1 section-title-template4">Nuestra canción</h2>
+                <div className="song-link-template4">
                     <p><br /><strong>{songTitle}</strong></p>
-                    <button className="btn btn-cancion mt-2" onClick={togglePlay}>
+                    <button className="btn btn-cancion " onClick={togglePlay}>
                         {playing ? "⏸️ Pausar Canción" : "▶️ Reproducir Canción"}
                     </button>
                     <div
@@ -65,4 +65,4 @@ const SongLink_Plantilla_3 = ({ songUrl, songTitle }) => {
     );
 }
 
-export default SongLink_Plantilla_3;
+export default SongLink_Plantilla_4;

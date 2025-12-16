@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const CountDown_Plantilla_3 = ({ weddingDate }) => {
+const CountDown_Plantilla_4 = ({ weddingDate }) => {
     const calculateTimeLeft = () => {
         const now = new Date();
         const targetDate = new Date(weddingDate);
@@ -14,6 +14,15 @@ const CountDown_Plantilla_3 = ({ weddingDate }) => {
         };
     };
 
+    const formatDate = (date) => {
+        return new Date(date).toLocaleDateString('es-ES', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    };
+
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
@@ -24,28 +33,39 @@ const CountDown_Plantilla_3 = ({ weddingDate }) => {
     }, [weddingDate]);
 
     return (
-        <section className="countdown-section-template3 mt-4 py-4">
-            <h2 className="section-title-template3 mb-4">Cuenta atrás</h2>
-            <div className="countdown-numbers-template3 mt-4 pt-1">
-                <div className="countdown-item-template3">
-                    <span className="number-template3">{timeLeft.days.toString().padStart(2, '0')}</span>
-                    <span className="label-template3">Días</span>
+        <section className="countdown-section-template4 mt-4 py-4">
+            <h2 className="section-title-template4 mb-4">Cuenta atrás</h2>
+            <div className="countdown-numbers-template4 mt-4 pt-1">
+                <div className="countdown-item-template4">
+                    <div className="countdown-circle-template4">
+                        <span className="number-template4">{timeLeft.days.toString().padStart(2, '0')}</span>
+                    </div>
+                    <span className="label-template4">Días</span>
                 </div>
-                <div className="countdown-item-template3">
-                    <span className="number-template3">{timeLeft.hours.toString().padStart(2, '0')}</span>
-                    <span className="label-template3">Horas</span>
+                <div className="countdown-item-template4">
+                    <div className="countdown-circle-template4">
+                    <span className="number-template4">{timeLeft.hours.toString().padStart(2, '0')}</span>
+                    </div>
+                    <span className="label-template4">Horas</span>
                 </div>
-                <div className="countdown-item-template3">
-                    <span className="number-template3">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                    <span className="label-template3">Minutos</span>
+                <div className="countdown-item-template4">
+                    <div className="countdown-circle-template4">
+                    <span className="number-template4">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                    </div>
+                    <span className="label-template4">Minutos</span>
                 </div>
-                <div className="countdown-item-template3">
-                    <span className="number-template3">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                    <span className="label-template3">Segundos</span>
+                <div className="countdown-item-template4">
+                    <div className="countdown-circle-template4">
+                    <span className="number-template4">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                    </div>
+                    <span className="label-template4">Segundos</span>
                 </div>
             </div>
+            <p className="invite-date-template4 mt-4">
+                {formatDate(weddingDate)}
+            </p>
         </section>
     );
 };
 
-export default CountDown_Plantilla_3;
+export default CountDown_Plantilla_4;

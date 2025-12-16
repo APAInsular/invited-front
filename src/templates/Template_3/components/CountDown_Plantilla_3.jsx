@@ -14,6 +14,15 @@ const CountDown_Plantilla_3 = ({ weddingDate }) => {
         };
     };
 
+    const formatDate = (date) => {
+        return new Date(date).toLocaleDateString('es-ES', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    };
+    
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
@@ -44,6 +53,9 @@ const CountDown_Plantilla_3 = ({ weddingDate }) => {
                     <span className="label-template3">Segundos</span>
                 </div>
             </div>
+            <p className="invite-date-template3 mt-4">
+                {formatDate(weddingDate)}
+            </p>
         </section>
     );
 };

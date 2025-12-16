@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap");
+
+.wrapper {
+  --text-font: "Times New Roman", Times, serif;
+  --title-font: Arial;
+  --title-size: 4.0rem;
+  --title-color: rgb(0, 0, 0);
+  --title-weight: normal;
+  --subtitle-font: Arial;
+  --subtitle-weight: bold;
+  --subtitle-size: 1.9rem;
+  --text-color: #000000;
+  --bg-color: rgb(69, 69, 69);
+  --low-font: "Gwendolyn";
+  --text-size: 1.4rem
+}
+
+.wrapper button {
+  background-color: transparent;
+  border-radius: 10%;
+  border: 2px black solid;
+  color: black;
+}
+
+.CouplePhoto {
+    background-color: white;
+    padding: 30px;
+    display: inline-block; 
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.CouplePhoto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+

@@ -62,7 +62,7 @@
 }
 
 .title {
-  font-family: var(--title-font);
+  font-family: var(--title-font), cursive;
   font-size: var(--title-size);
   font-weight: var(--title-weight);
   color: var(--title-color);

@@ -3,7 +3,6 @@ import { useLanguage } from "../context/LanguageContext";
 import usePageTranslation from "../hooks/usePageTranslation";
 import LanguageSelectorPopup from "../components/LanguageSelectorPopUp";
 
-
 /**
  * BaseTemplate
  *

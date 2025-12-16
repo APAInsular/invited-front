@@ -1,4 +1,4 @@
-:root {
+.wrapper {
   --text-font: "sans-serif";
   --title-font: "Allura";
   --subtitle-font: "Allura";
@@ -10,6 +10,6 @@
   --bg-color: #705843;
 }
 
-.Classic section {
+.wrapper section {
   background-color: rgb(255, 228, 175);
 }

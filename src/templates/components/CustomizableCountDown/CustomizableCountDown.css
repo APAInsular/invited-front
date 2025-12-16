@@ -1,0 +1,23 @@
+.CustomizableCountDown .time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CustomizableCountDown .time-box strong {
+  font-size: 1.5rem;
+  padding: 4px 0;
+}
+
+.CustomizableCountDown .time-box span:last-child {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.CustomizableCountDown .time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}

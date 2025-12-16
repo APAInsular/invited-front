@@ -10,56 +10,56 @@ import Page from "../components/Page/Page";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
-import styles from './EleganteParis.module.css';
+
+import styles from "./SanfranciscoArcoiris.module.css";
 import Carrousel from "../components/Carrousel/Carrousel";
 import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 
-import BACKGROUND_0 from "./images/background_0.jpg";
-import BACKGROUND_1 from "./images/background_1.jpg";
-import DECO from "./images/timeline_decoration.png";
+import BACKGROUND_1 from "./images/bg_1.png";
+import BACKGROUND_2 from "./images/bg_2.png";
+import BACKGROUND_3 from "./images/bg_3.png";
+import BACKGROUND_4 from "./images/bg_4.png";
 
 import Timeline from "../components/Timeline/Timeline";
 import CustomizableCountDown from "../components/CustomizableCountDown/CustomizableCountDown";
 
-const EleganteParis = ({ wedding, images, trad, coverImage }) => {
+const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page
         backgroundSize="100%"
-        backgroundImage={BACKGROUND_0}
+        backgroundImage={BACKGROUND_4}
         padding="0"
         minHeight="830px"
       >
         <section>
-          <div className="mt-2">
+          <div className="text-center">
+            <div className={styles.CouplePhoto}>
+              <img src="https://placehold.co/300x300" alt="Couple" />
+            </div>
+
             <CoupleNames
               groom={wedding.user.name}
               bride={wedding.user.partner.name}
               icon="y"
-              asColumn
             />
           </div>
           <div className="text-center">
-            <img
-              className
-              src={"https://placehold.co/250x200"}
-              alt=""
-              style={{ border: "10px double black" }}
-            />
-            <p>
-              Nos casamos y nos encantaria compartir este dia tan especial
-              <br />
-              conustedes.
+            <p className="p-4">
+              ¡Se buscan invitados para asistir a la boda del año!
+              Imprescindible tener muchas ganas de pasárselo bien en la gran
+              fiesta y una ilusión desbordante para compartir el día más
+              importante de nuestra vida.
             </p>
-            <p>
-              Os esperamos el sábado 20 de junio a las 18:00h <br />
-              Hotel Mogán Reina
+            <p className="subtitle">
+              Sábado 5 de julio 2027 <br /> 19:00 <br />
+              Hotel Room Mate Óscar
             </p>
           </div>
         </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND_1} minHeight="830px">
+      <Page backgroundImage={BACKGROUND_1} minHeight="830px" centerVertically>
         <section className="text-center">
           <h3 className="subtitle">Nuestra canción</h3>
           <SongLink
@@ -68,34 +68,21 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
             text={trad("songLink")}
           />
         </section>
-        <section>
-          <h3 className="text-center subtitle">Nos vemos en</h3>
-          <p className="p-5 text-center">
-            Parroquia de San Pedro Mártir
-            <br />
-            Avenida de burgos 204
-            <br />
-            Hortaleza, 28050 Madrid
-          </p>
-        </section>
+
         <section>
           <h3 className="text-center subtitle">Solo faltan</h3>
           <CustomizableCountDown
             weddingDate={wedding.weddingDate}
             text={trad("countdown")}
-            frame={{borderStyle: "2px solid #2c2c2c62", frameMinsize: "60px"}}
+            frame={{ borderStyle: "2px solid #2c2c2c62", frameMinsize: "60px" }}
           />
         </section>
       </Page>
       {/*            images={["https://placehold.co/300x500", "https://placehold.co/300x500", "https://placehold.co/300x500"]}  */}
 
-      <Page backgroundImage={BACKGROUND_0} minHeight="830px">
+      <Page backgroundImage={BACKGROUND_2} minHeight="830px">
         <section>
-          <Timeline
-            events={wedding.events}
-            text={trad("timeline")}
-            line={{ lineSrc: DECO, lineSize: "10px" }}
-          />
+          <Timeline events={wedding.events} text={trad("timeline")} />
         </section>
       </Page>
 
@@ -112,7 +99,7 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
         </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND_0} minHeight="830px">
+      <Page backgroundImage={BACKGROUND_1} minHeight="830px">
         <section>
           <WeddingForm
             weddingId={wedding.id}
@@ -125,7 +112,7 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
         </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND_0} minHeight="150px">
+      <Page backgroundImage={BACKGROUND_2} minHeight="150px">
         <section>
           <h2 className="text-center">
             {"Hecho con mucho amor por el equipo de"}
@@ -139,4 +126,4 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
   );
 };
 
-export default EleganteParis;
+export default SanfranciscoArcoiris;

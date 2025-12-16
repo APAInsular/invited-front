@@ -8,7 +8,9 @@ import Template_2 from "../templates/Template_2/Template_2";
 import HavanaModerna from "../templates/HavanaModerna/HavanaModerna";
 import BaseTemplate from "../templates/BaseTemplate";
 import DemoWrapper from "./../templates/DemoWrapper";
+import JardinMelbourne from "../templates/JardinMelbourne/JardinMelbourne";
 import EleganteParis from "../templates/EleganteParis/EleganteParis";
+import SanfranciscoArcoiris from "../templates/SanfranciscoArcoiris/SanfranciscoArcoiris";
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
@@ -306,7 +308,7 @@ const Invitations = () => {
         translationPage="template1WeddingPage"
         wedding={placeholder}
       >
-        <EleganteParis />
+        <SanfranciscoArcoiris />
       </BaseTemplate>
     </DemoWrapper>
   );

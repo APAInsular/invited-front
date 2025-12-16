@@ -13,14 +13,14 @@ import WeddingForm from "../components/WeddingForm/WeddingForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
-import "./Classic.css";
+import styles from "./Classic.module.css";
 
 const Classic = ({ wedding, images, trad }) => {
 
 
   return (
     // TODO: Idea: Scroll Animation here.
-    <div className="Classic">
+    <div className={styles.styles}>
       <div className="w-100">
         <img
           src={fallbackImage}

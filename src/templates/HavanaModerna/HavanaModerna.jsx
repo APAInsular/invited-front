@@ -17,7 +17,8 @@ import HavanaCountDown from "./components/HavanaCoutDown/HavanaCountDown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
-import "./HavanaModerna.css";
+import "./Override.css";
+import styles from "./HavanaModerna.module.css";
 import Carrousel from '../components/Carrousel/Carrousel';
 import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 import image from "./images/casadosfelices.webp";
@@ -26,7 +27,7 @@ import Timeline from "../components/Timeline/Timeline";
 
 const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
-    <div className="HavanaModerna">
+<div className={`HavanaModerna ${styles.wrapper}`}>
       <Page backgroundImage={BACKGROUND1} padding="0" minHeight="830px">
         <section>
           <div className="d-flex justify-content-center mt-5">

@@ -13,7 +13,7 @@ import Page from "../components/Page/Page";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
-import "./JardinMelbourne.css";
+import styles from "./JardinMelbourne.module.css";
 import Carrousel from "../components/Carrousel/Carrousel";
 import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 
@@ -30,7 +30,7 @@ import Timeline from "../components/Timeline/Timeline";
 
 const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
   return (
-    <div className="JardinMelbourne">
+    <div className={styles.wrapper}>
       <Page backgroundColor="white" padding="0" minHeight="830px">
         <section className="p-5">
           <FramedPhoto frame={FRAME} photo={image} />

@@ -7,6 +7,7 @@ import Template_1 from "../templates/Template_1/Template_1";
 import Template_2 from "../templates/Template_2/Template_2";
 import Template_3 from "../templates/Template_3/Template_3";
 import Template_4 from "../templates/Template_4/Template_4";
+import Template_5 from "../templates/Template_5/Template_5";
 
 const Invitations = () => {
     const [wedding, setWedding] = useState(null);
@@ -31,7 +32,7 @@ const Invitations = () => {
     // }, [idWedding]);
 
     // Si la boda aún no se ha cargado, mostramos un mensaje de carga
-    return <Template_4 wedding={{
+    return <Template_5 wedding={{
     "id": 81,
     "user_id": 19,
     "location_id": 1,

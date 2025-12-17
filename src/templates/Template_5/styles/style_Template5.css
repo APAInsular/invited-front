@@ -13,11 +13,15 @@
     
 }
 
-.body-template4 {
-    background-color: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.body-template5 {
+    background-color: #f0a58e;
 }
 
-.section-bg-template4 {
+.section-bg-template5 {
     position: relative;
     background-size: cover;
     background-position: center;
@@ -28,24 +32,25 @@
     text-align: center;
 }
 
-.bg-portada-template4 {
-    background-image: url('../images/backgrounds/portada.png');
+.bg-portada-template5 {
+    background-image: url('../images/backgrounds/3Londres.jpg');
     
 }
 
-.bg-countdown-template4 {
-    background-image: url('../images/backgrounds/countdown.png');
+.bg-countdown-template5 {
+    background-image: url('../images/backgrounds/2Londres.jpg');
 }
 
-.bg-gallery-template4 {
-    background-image: url('../images/backgrounds/gallery.png');
+.bg-gallery-template5 {
+    background-image: url('../images/backgrounds/4Londres.jpg');
 }
- .bg-asistencia-template4 {
+ /* .bg-asistencia-template5
+ {
     background-image: url('../images/backgrounds/confirmacion-asistencia.png');
-} 
+}  */
 
-.bg-itinerario-template4 {
-    background-image: url('../images/backgrounds/itinerario.jpg');
+.bg-itinerario-template5 {
+    background-image: url('../images/backgrounds/3Londres.jpg');
     width: 100%;
     background-size: 100% auto;
     background-position: top center;
@@ -53,63 +58,63 @@
 }
 
 /* ===== Estilos para la sección de portada ===== */
-/* .header-invite-template4 {
+/* .header-invite-template5 {
     position: relative;
 } */
 
-.header-photo-template4 {
-    width: 250px;
-    height: 250px;
+.header-photo-template5 {
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     position: relative;
     z-index: 3;
-    margin-top: 35px;
+    margin-top: 100px;
 }
 
- .heart-frame {
-    background: url("../images/marco-corazones.png") center/cover no-repeat;
+ .golden-circle-frame {
+    background: url("../images/circulo-londres.png") center/cover no-repeat;
     position: absolute;
-    width: 450px;
-    height: 400px;
-    top: 50%;
+    width: 230px;
+    height: 230px;
+    top: 67%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    margin-top: 15px;
     pointer-events: none;
 } 
 
 
-.invite-name-template4 {
-    font-family: 'Architect Daughter', cursive;
-    font-size: 3rem;
+.invite-name-template5 {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 4rem;
     color: #000;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
-.invite-text-template4 {
+.invite-text-template5 {
     font-size: 1.2rem;
-    font-family: 'Rotis sans serif';
+    font-family: 'Open sans';
     width: 60%;
     color: #000;
 }
 
-.invite-date-template4,
-.invite-location-template4 {
-    font-family: 'Rotis sans serif', cursive;
-    font-size: 1.6rem;
+
+.invite-date-template-5,
+.invite-location-template5 {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 2.5rem;
     margin-bottom: 0;
     color: #000;
 }
 
-.section-title-template4 {
-    font-family: 'Architect Daughter', cursive;
+.section-title-template5 {
+    font-family: 'Luxurious Script', cursive;
     font-size: 3rem;
     color: #000;
 }
 
 
-.song-link-template4 {
+.song-link-template5 {
     font-size: 1rem;
     color: #000;
 }
@@ -120,12 +125,12 @@
     color: #f7f0f0
 } 
 
-.section-subtitle-template4 {
+.section-subtitle-template5 {
     font-size: 1rem;
     color: #000;
 }
 
-.countdown-section-template4 {
+.countdown-section-template5 {
     position: relative;
     text-align: center;
     padding: 3rem 1rem;
@@ -133,28 +138,28 @@
     color: #000;
 }
 
-.countdown-numbers-template4 {
+.countdown-numbers-template5 {
     display: flex;
     justify-content: center;
     gap: 0.8rem;
     flex-wrap: wrap;
 }
 
-.countdown-item-template4 {
+.countdown-item-template5 {
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
 
-.invite-date-template4 {
+.invite-date-template5 {
     font-family: 'Rotis sans serif', cursive;
     font-size: 1.4rem;
     color: #000;
     text-transform: capitalize;
 }
 
-.countdown-circle-template4 {
+.countdown-circle-template5 {
     width: 70px;
     height: 80px;
     background-image: url('../images/circle-timer.png');
@@ -168,7 +173,7 @@
 }
 
 
-.number-template4 {
+.number-template5 {
     font-family: 'Rotis sans serif', cursive;
     font-size: 2rem;
     color: #000;
@@ -189,7 +194,7 @@
 } */
  
 
-.timeline-item-template4 p {
+.timeline-item-template5 p {
     margin: 0;
     font-size: 1.5rem;
     font-family: 'faustina';
@@ -197,7 +202,7 @@
     line-height: 1.4;
 }
 
-.timeline-cake-template4 {
+/* .timeline-cake-template5 {
     width: 150px;
     height: 150px;
     margin: 90px auto 0 auto;
@@ -208,7 +213,7 @@
     background-position: center;
 
     pointer-events: none;
-}
+} */
 
 
  .slider-track{
@@ -228,7 +233,7 @@
 
 } 
 
-.square-carousel-template4 {
+/* .square-carousel-template5 {
     background: url("../images/cuadro-carousel.png") center/cover no-repeat;
     aspect-ratio: 3 / 1;
     position: relative;
@@ -237,22 +242,24 @@
     height: 330px; 
     right: 50px ;
     
-}    
+}     */
 
-.form-title-template4 {
+.form-title-template5 {
     font-family: 'Architect Daughter', cursive;
     font-size: 3rem;
-    color: #fff;
+    color: #000;
 }
 
 
- .form-label-custom-template4 {
+ .form-label-custom-template5
+ {
     font-weight: 500;
-    color: #fff;
+    color: #000;
     font-size: 0.9rem;
 } 
 
- .input-custom-template4 {
+ .input-custom-template5
+ {
     border-radius: 0.5rem;
     border: 1px solid #ccc;
     padding: 0.5rem;
@@ -263,13 +270,13 @@
     background-color: #2C4D65;
 } 
 
-.btn-main-template4 {
+.btn-main-template5 {
     background-color: #031757;
     color: #fff;
     border: none;
 }
 
-.btn-main-template4:hover {
+.btn-main-template5:hover {
     background-color: #95c6c4;
 }
 

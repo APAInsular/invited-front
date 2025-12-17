@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import usePageTranslation from "../hooks/usePageTranslation";
-import LanguageSelectorPopup from "../components/LanguageSelectorPopUp";
+import LanguageSelectorPopup from "../components/LanguageSelectorPopUp/LanguageSelectorPopUp";
 
 /**
  * BaseTemplate

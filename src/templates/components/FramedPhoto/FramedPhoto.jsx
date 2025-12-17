@@ -1,3 +1,5 @@
+import styles from "./FramedPhoto.module.css";
+
 export default function FramedPhoto({
   frame,
   photo,
@@ -14,32 +16,45 @@ export default function FramedPhoto({
   photoOffsetY = 0,
   photoScale = 0.8,
   borderRadius = "8px",
+  mask,
 }) {
   const pTop = paddingTop ?? padding;
   const pBottom = paddingBottom ?? padding;
   const pLeft = paddingLeft ?? padding;
   const pRight = paddingRight ?? padding;
+  const maskStyle = mask
+    ? {
+        mask: mask,
+        WebkitMask: mask,
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskPosition: "center",
+        WebkitMaskPosition: "center",
+        maskSize: "cover",
+        WebkitMaskSize: "cover",
+      }
+    : {};
 
   return (
-    <div style={styles.container}>
-      <div style={{ ...styles.wrapper, aspectRatio: ratio, borderRadius }}>
+    <div className={styles.container}>
+      <div className={styles.wrapper} style={{ aspectRatio: ratio, borderRadius }}>
         <div
+          className={styles.photoWrapper}
           style={{
-            ...styles.photoWrapper,
             top: `${pTop}px`,
             left: `${pLeft}px`,
             right: `${pRight}px`,
             bottom: `${pBottom}px`,
             transform: `translate(${photoOffsetX}px, ${photoOffsetY}px)`,
+            mask: mask || undefined, 
+            WebkitMask: mask || undefined, 
           }}
         >
           <img
             src={photo}
             alt="Foto base"
-            style={{
-              ...styles.photo,
-              transform: `scale(${photoScale})`,
-            }}
+            className={styles.photo}
+            style={{ transform: `scale(${photoScale})` }}
             draggable={false}
           />
         </div>
@@ -47,8 +62,8 @@ export default function FramedPhoto({
         <img
           src={frame}
           alt="Frame"
+          className={styles.frame}
           style={{
-            ...styles.frame,
             transform: `translate(${frameOffsetX}px, ${frameOffsetY}px) scale(${frameScale})`,
           }}
           draggable={false}
@@ -57,33 +72,3 @@ export default function FramedPhoto({
     </div>
   );
 }
-
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  wrapper: {
-    position: "relative",
-    width: "320px",
-    borderRadius: "8px",
-  },
-  photoWrapper: {
-    position: "absolute",
-    overflow: "hidden",
-  },
-  photo: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-  },
-  frame: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    pointerEvents: "none",
-    objectFit: "contain",
-  },
-};

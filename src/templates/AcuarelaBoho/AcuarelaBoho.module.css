@@ -1,0 +1,278 @@
+/* @font-face {
+    font-family: 'Playlist Script';
+    src: url('/fonts/PlayListScript/Playlist-Script.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.wrapper {
+  --text-font: "sans-serif";
+  --title-font: "Dancing Script", cursive;
+  --title-size: 4.75rem;
+  --title-color: #6c5b7b;
+  --title-weight: bold;
+  --subtitle-font: "Dancing Script", cursive;
+  --subtitle-weight: bold;
+  --subtitle-size: 2.4rem;
+  --text-color: #000000;
+  --subtitle-color: #6c5b7b;
+
+  --bg-color: rgb(69, 69, 69);
+  --low-font: "Dancing Script", cursive;
+}
+
+.wrapper button {
+  background-color: transparent;
+  border-radius: 10%;
+  border: 2px black solid;
+  color: black;
+}
+
+.sectionBg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.bgPortadaTemplate1 {
+  background-image: url("./images/backgrounds/bg-portada_Template1.png");
+}
+
+.bgCountdownTemplate1 {
+  background-image: url("./images/backgrounds/bg-countdown_Template1.png");
+}
+
+.bgGalleryTemplate1 {
+  background-image: url("./images/backgrounds/bg-gallery_Template1.png");
+  background-repeat: repeat-y;
+  background-size: auto;
+  background-position: top center;
+  background-attachment: scroll;
+}
+
+.bgItinerarioTemplate1 {
+  background-image: url("./images/backgrounds/bg-itinerario_Template1.png");
+}
+
+/* ===== Estilos para la sección de portada ===== */
+.headerInvite {
+  position: relative;
+}
+
+.headerPhoto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+/* Marco floral por delante y centrado */
+.floralFrame {
+  background: url("./images/photo_frame.png") center/cover no-repeat;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.inviteName {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #6c5b7b;
+}
+
+.inviteText {
+  font-size: 1rem;
+  width: 60%;
+}
+
+.inviteDate,
+.inviteLocation {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  color: #6c5b7b;
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: #5b4a6b;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdownItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flower {
+  background-image: url("./images/flor_dias_y_minutos-removebg-preview.png");
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #6c5b7b;
+  font-family: "Dancing Script", cursive;
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.formLabelCustom {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.inputCustom {
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.formContainer {
+  background-color: #95c6c4;
+}
+
+.bgForm {
+  background-color: #95c6c4;
+}
+
+.btnMain {
+  background-color: #6c5b7b;
+  color: #fff;
+  border: none;
+}
+
+.btnMain:hover {
+  background-color: #95c6c4;
+}
+
+.timelineContainer {
+  padding: 2rem 1rem;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-left: 3px solid #95c6c4;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -1.4rem;
+  top: 0.3rem;
+  width: 16px;
+  height: 16px;
+  background-color: #95c6c4;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #95c6c4;
+}
+
+.timelineContent {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dee2e6;
+  max-width: 500px;
+}
+
+.timelineContent h5 {
+  margin-top: 0;
+  color: #95c6c4;
+  font-weight: bold;
+}
+
+.sliderContainer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.sliderTrack {
+  display: flex;
+  white-space: nowrap;
+}
+
+.sliderImage {
+  height: 150px;
+  width: auto;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.sliderWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.languagePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popupContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.popupContent button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+}

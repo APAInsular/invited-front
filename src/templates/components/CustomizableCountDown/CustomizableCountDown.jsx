@@ -4,7 +4,7 @@ import "./CustomizableCountDown.css";
 
 const CustomizableCountDown = ({ weddingDate, text, frame = {} }) => {
   const timeLeft = useCountdown(weddingDate);
-  const { frameSrc = null, frameMinsize = "80px", borderStyle = null } = frame;
+  const { frameSrc = null, frameMinsize = "80px", borderStyle = null, backgroundSize="contain" } = frame;
 
   const getTimeStyle = () => {
     const style = {
@@ -15,7 +15,7 @@ const CustomizableCountDown = ({ weddingDate, text, frame = {} }) => {
 
     if (frameSrc) {
       style.backgroundImage = `url(${frameSrc})`;
-      style.backgroundSize = "contain";
+      style.backgroundSize = backgroundSize;
       style.backgroundPosition = "center";
       style.backgroundRepeat = "no-repeat";
     } else if (borderStyle) {

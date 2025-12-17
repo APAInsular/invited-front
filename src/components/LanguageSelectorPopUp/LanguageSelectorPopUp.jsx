@@ -1,5 +1,5 @@
 import React from 'react';
-import "../templates/Template_1/styles/style_Template1.css"
+import "./LanguageSelectorPopUp.css";
 
 const LanguageSelectorPopup = ({ onSelect }) => {
     return (

@@ -7,24 +7,18 @@ import Gallery from './components/Gallery_Plantilla_3';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_3';
 import WeddingForm from './components/WeddingForm_Plantilla_3';
 
-import LanguageSelectorPopup from '../../components/LanguageSelectorPopUp';
-import { useLanguage } from "../../context/LanguageContext";
-import usePageTranslation from '../../hooks/usePageTranslation';
 
 import "./styles/style_Template3.css"
 
-import { useEffect, useState } from 'react';
 
-const Template_3 = ({ wedding, trad: t, images }) => {
+const ArmoniosoMalta = ({ wedding, trad: t, images, coverImage }) => {
    
-    const baseUrl = process.env.REACT_APP_AWS_URL;
 
-    const imageUrl = `${baseUrl}${wedding.coverImage}`;
 
     return (
         <div className='body-template2'>
             <section className="header-invite-template2 text-center py-4 section-bg-template2 bg-portada-template2">
-                <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
+                <CoupleNames imageUrl={coverImage} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
             <section className="mt-4 section-bg-template2 bg-countdown-template2">
                 <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} text={t('songLink')} />
@@ -44,4 +38,4 @@ const Template_3 = ({ wedding, trad: t, images }) => {
     );
 };
 
-export default Template_3;
+export default ArmoniosoMalta;

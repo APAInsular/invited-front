@@ -3,14 +3,26 @@ import apiClient from "../config/axiosConfig";
 import { useParams } from "react-router-dom";
 
 import Classic from "../templates/Classic/Classic";
-import Template_1 from "../templates/Template_1/Template_1";
-import Template_2 from "../templates/Template_2/Template_2";
+// import Template_2 from "../templates/Template_2/Template_2";
 import HavanaModerna from "../templates/HavanaModerna/HavanaModerna";
 import BaseTemplate from "../templates/BaseTemplate";
 import DemoWrapper from "./../templates/DemoWrapper";
 import JardinMelbourne from "../templates/JardinMelbourne/JardinMelbourne";
 import EleganteParis from "../templates/EleganteParis/EleganteParis";
 import SanfranciscoArcoiris from "../templates/SanfranciscoArcoiris/SanfranciscoArcoiris";
+import AcuarelaBoho from "../templates/AcuarelaBoho/AcuarelaBoho";
+// import ArmoniosoMalta from '../templates/ArmoniosoMalta/ArmoniosoMalta';
+
+const available = {
+  EleganteParis: <EleganteParis />,
+  HavanaModerna: <HavanaModerna />,
+  SanfranciscoArcoiris: <SanfranciscoArcoiris />,
+  JardinMelbourne: <JardinMelbourne />,
+  // ArmoniosoMalta: <ArmoniosoMalta/>,
+  //Template_2: <Template_2/>,
+  AcuarelaBoho: <AcuarelaBoho/>
+  
+};
 
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
@@ -301,54 +313,25 @@ const Invitations = () => {
   }*/
 
   // Renderizamos el componente dependiendo del valor de wedding.template
+  
+  // * weddingData.wedding.template?
+  const templateName = "AcuarelaBoho".replace(/\s+/g, "");
+  console.log(`T_${templateName}`);
+  
+  if (templateName && available[templateName]) {
+    return (
+      <DemoWrapper>
+        <BaseTemplate
+          translationPage={`T_${templateName}`}
+          wedding={placeholder}
+        >
+          {available[templateName]}
+        </BaseTemplate>
+      </DemoWrapper>
+    );
+  }
 
-  return (
-    <DemoWrapper>
-      <BaseTemplate
-        translationPage="template1WeddingPage"
-        wedding={placeholder}
-      >
-        <EleganteParis />
-      </BaseTemplate>
-    </DemoWrapper>
-  );
+  return <p>Error: Template not found</p>;
 };
 
 export default Invitations;
-
-/*
-
-{(() => {
-        switch (weddingData.wedding.template) {
-          case "Plantilla Romantica":
-            return (
-              <BaseTemplate
-                translationPage="template1WeddingPage"
-                wedding={weddingData.wedding}
-              >
-                <Classic />
-              </BaseTemplate>
-            );
-
-          case "Plantilla Acuarela":
-            return <Template_1 wedding={weddingData.wedding} />;
-
-          case "Plantilla Erase una vez":
-            return <Template_2 wedding={weddingData.wedding} />;
-
-          case "Plantilla Havana Moderna":
-            return (
-              <BaseTemplate
-                translationPage="template1WeddingPage"
-                wedding={weddingData.wedding}
-              >
-                <HavanaModerna />
-              </BaseTemplate>
-            );
-
-          default:
-            return <Classic wedding={weddingData.wedding} />;
-        }
-      })()}
-
-*/

@@ -308,7 +308,7 @@ const Invitations = () => {
         translationPage="template1WeddingPage"
         wedding={placeholder}
       >
-        <SanfranciscoArcoiris />
+        <EleganteParis />
       </BaseTemplate>
     </DemoWrapper>
   );

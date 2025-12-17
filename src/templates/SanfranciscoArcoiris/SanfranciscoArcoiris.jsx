@@ -1,29 +1,24 @@
 import CoupleNames from "../components/CoupleNames/CoupleNames";
 import WeddingForm from "../components/WeddingForm/WeddingForm";
 import SongLink from "../components/SongLink/SongLink";
-
-// TODO: Use .svg logo.
-import LOGO from "../../Images/Logo_invited_recortado-removebg-preview.png";
-
 import Page from "../components/Page/Page";
+import Timeline from "../components/Timeline/Timeline";
+import CustomizableCountDown from "../components/CustomizableCountDown/CustomizableCountDown";
+import Carrousel from "../components/Carrousel/Carrousel";
+import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
+import FooterBranding from "../components/FooterBranding/FooterBranding";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
-
 import styles from "./SanfranciscoArcoiris.module.css";
-import Carrousel from "../components/Carrousel/Carrousel";
-import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 
 import BACKGROUND_1 from "./images/bg_1.png";
 import BACKGROUND_2 from "./images/bg_2.png";
 import BACKGROUND_3 from "./images/bg_3.png";
 import BACKGROUND_4 from "./images/bg_4.png";
 
-import Timeline from "../components/Timeline/Timeline";
-import CustomizableCountDown from "../components/CustomizableCountDown/CustomizableCountDown";
-
-const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
+const SanfranciscoArcoiris = ({ wedding, images, trad }) => {
   return (
     <div className={styles.wrapper}>
       <Page
@@ -41,44 +36,30 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
             <CoupleNames
               groom={wedding.user.name}
               bride={wedding.user.partner.name}
-              icon="y"
+              icon={trad("coupleNames.heartIcon")}
             />
           </div>
+
           <div className="text-center">
-            <p className="p-4">
-              ¡Se buscan invitados para asistir a la boda del año!
-              Imprescindible tener muchas ganas de pasárselo bien en la gran
-              fiesta y una ilusión desbordante para compartir el día más
-              importante de nuestra vida.
-            </p>
-            <p className="subtitle">
-              Sábado 5 de julio 2027 <br /> 19:00 <br />
-              Hotel Room Mate Óscar
+            <p className="p-4">{trad("hero.description")}</p>
+            <p className="subtitle" style={{ whiteSpace: "pre-line" }}>
+              {trad("hero.dateLocation")}
             </p>
           </div>
         </section>
       </Page>
 
-      <Page backgroundImage={BACKGROUND_1} minHeight="830px" centerVertically>
+      <Page minHeight="830px" backgroundImage={BACKGROUND_1}>
         <section className="text-center">
-          <h3 className="subtitle">Nuestra canción</h3>
-          <SongLink
-            songUrl={wedding.musicUrl}
-            songTitle={wedding.musicTitle}
-            text={trad("songLink")}
+          <h3 className="subtitle">{trad("gallery.title")}</h3>
+          <Carrousel
+            images={images}
+            text={trad("gallery")}
+            renderItem={(src, i) => <CarrouselCard key={i} src={src} height="1500px" />}
           />
         </section>
-
-        <section>
-          <h3 className="text-center subtitle">Solo faltan</h3>
-          <CustomizableCountDown
-            weddingDate={wedding.weddingDate}
-            text={trad("countdown")}
-            frame={{ borderStyle: "2px solid #2c2c2c62", frameMinsize: "60px" }}
-          />
-        </section>
+        <h3 className="text-center subtitle">{trad("gallery.cta")}</h3>
       </Page>
-      {/*            images={["https://placehold.co/300x500", "https://placehold.co/300x500", "https://placehold.co/300x500"]}  */}
 
       <Page backgroundImage={BACKGROUND_2} minHeight="830px">
         <section>
@@ -86,16 +67,38 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
         </section>
       </Page>
 
-      <Page minHeight="830px" backgroundImage={BACKGROUND_1}>
+      <Page
+        footer={
+          <section>
+            <h3 className="text-center subtitle">{trad("countdown.title")}</h3>
+            <CustomizableCountDown
+              weddingDate={wedding.weddingDate}
+              text={trad("countdown")}
+              frame={{
+                borderStyle: "2px solid #2c2c2c62",
+                frameMinsize: "60px",
+              }}
+            />
+          </section>
+        }
+        backgroundImage={BACKGROUND_1}
+        minHeight="830px"
+        centerVertically
+      >
         <section className="text-center">
-          <h3 className="subtitle">Nuestra historia...</h3>
-          <Carrousel
-            images={images}
-            text={trad("gallery")}
-            renderItem={(src, i) => (
-              <CarrouselCard src={src} height={"1500px"} />
-            )}
-          />
+          <h3 className="subtitle">{trad("songLink.title")}</h3>
+          <div className="p-3">
+            <SongLink
+              songUrl={wedding.musicUrl}
+              songTitle={wedding.musicTitle}
+              text={trad("songLink")}
+            />
+          </div>
+        </section>
+
+        <section className="text-center">
+          <h3 className="subtitle">{trad("location.title")}</h3>
+          <p className="p-3">{trad("location.address")}</p>
         </section>
       </Page>
 
@@ -106,21 +109,12 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
             text={trad("weddingForm")}
             fields={trad("weddingForm.fields")}
           />
-          <p className="p-3 text-center">
-            ¡Gracias por formar parte de nuestra historia de amor!
-          </p>
+          <p className="p-3 text-center">{trad("footer.thanks")}</p>
         </section>
       </Page>
 
       <Page backgroundImage={BACKGROUND_2} minHeight="150px">
-        <section>
-          <h2 className="text-center">
-            {"Hecho con mucho amor por el equipo de"}
-          </h2>
-          <div className="d-flex justify-content-center mt-3">
-            <img className="logo" src={LOGO} alt="Invited" />
-          </div>
-        </section>
+        <FooterBranding />
       </Page>
     </div>
   );

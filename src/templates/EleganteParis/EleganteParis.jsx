@@ -1,27 +1,23 @@
 import CoupleNames from "../components/CoupleNames/CoupleNames";
 import WeddingForm from "../components/WeddingForm/WeddingForm";
 import SongLink from "../components/SongLink/SongLink";
-
-// TODO: Use .svg logo.
-import LOGO from "../../Images/Logo_invited_recortado-removebg-preview.png";
-
 import Page from "../components/Page/Page";
+import Timeline from "../components/Timeline/Timeline";
+import CustomizableCountDown from "../components/CustomizableCountDown/CustomizableCountDown";
+import Carrousel from "../components/Carrousel/Carrousel";
+import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
+import FooterBranding from "../components/FooterBranding/FooterBranding";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
-import styles from './EleganteParis.module.css';
-import Carrousel from "../components/Carrousel/Carrousel";
-import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
+import styles from "./EleganteParis.module.css";
 
 import BACKGROUND_0 from "./images/background_0.jpg";
 import BACKGROUND_1 from "./images/background_1.jpg";
 import DECO from "./images/timeline_decoration.png";
 
-import Timeline from "../components/Timeline/Timeline";
-import CustomizableCountDown from "../components/CustomizableCountDown/CustomizableCountDown";
-
-const EleganteParis = ({ wedding, images, trad, coverImage }) => {
+const EleganteParis = ({ wedding, images, trad }) => {
   return (
     <div className={styles.wrapper}>
       <Page
@@ -35,25 +31,22 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
             <CoupleNames
               groom={wedding.user.name}
               bride={wedding.user.partner.name}
-              icon="y"
+              icon={trad("coupleNames.heartIcon")}
               asColumn
             />
           </div>
+
           <div className="text-center">
             <img
-              className
-              src={"https://placehold.co/250x200"}
-              alt=""
+              src="https://placehold.co/250x200"
+              alt="couple"
               style={{ border: "10px double black" }}
             />
-            <p>
-              Nos casamos y nos encantaria compartir este dia tan especial
-              <br />
-              conustedes.
-            </p>
-            <p>
-              Os esperamos el sábado 20 de junio a las 18:00h <br />
-              Hotel Mogán Reina
+
+            <p>{trad("hero.description")}</p>
+
+            <p style={{ whiteSpace: "pre-line" }}>
+              {trad("hero.dateLocation")}
             </p>
           </div>
         </section>
@@ -61,33 +54,41 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
 
       <Page backgroundImage={BACKGROUND_1} minHeight="830px">
         <section className="text-center">
-          <h3 className="subtitle">Nuestra canción</h3>
+          <h3 className="subtitle">{trad("songLink.title")}</h3>
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
             text={trad("songLink")}
           />
         </section>
+
         <section>
-          <h3 className="text-center subtitle">Nos vemos en</h3>
+          <h3 className="text-center subtitle">
+            {trad("location.title")}
+          </h3>
           <p className="p-5 text-center">
-            Parroquia de San Pedro Mártir
+            {trad("location.name")}
             <br />
-            Avenida de burgos 204
+            {trad("location.addressLine1")}
             <br />
-            Hortaleza, 28050 Madrid
+            {trad("location.addressLine2")}
           </p>
         </section>
+
         <section>
-          <h3 className="text-center subtitle">Solo faltan</h3>
+          <h3 className="text-center subtitle">
+            {trad("countdown.title")}
+          </h3>
           <CustomizableCountDown
             weddingDate={wedding.weddingDate}
             text={trad("countdown")}
-            frame={{borderStyle: "2px solid #2c2c2c62", frameMinsize: "60px"}}
+            frame={{
+              borderStyle: "2px solid #2c2c2c62",
+              frameMinsize: "60px",
+            }}
           />
         </section>
       </Page>
-      {/*            images={["https://placehold.co/300x500", "https://placehold.co/300x500", "https://placehold.co/300x500"]}  */}
 
       <Page backgroundImage={BACKGROUND_0} minHeight="830px">
         <section>
@@ -99,14 +100,14 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
         </section>
       </Page>
 
-      <Page minHeight="830px" backgroundImage={BACKGROUND_1}>
+      <Page backgroundImage={BACKGROUND_1} minHeight="830px">
         <section className="text-center">
-          <h3 className="subtitle">Nuestra historia...</h3>
+          <h3 className="subtitle">{trad("gallery.title")}</h3>
           <Carrousel
             images={images}
             text={trad("gallery")}
             renderItem={(src, i) => (
-              <CarrouselCard src={src} height={"1500px"} />
+              <CarrouselCard key={i} src={src} height="1500px" />
             )}
           />
         </section>
@@ -120,20 +121,13 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
             fields={trad("weddingForm.fields")}
           />
           <p className="p-3 text-center">
-            ¡Gracias por formar parte de nuestra historia de amor!
+            {trad("footer.thanks")}
           </p>
         </section>
       </Page>
 
       <Page backgroundImage={BACKGROUND_0} minHeight="150px">
-        <section>
-          <h2 className="text-center">
-            {"Hecho con mucho amor por el equipo de"}
-          </h2>
-          <div className="d-flex justify-content-center mt-3">
-            <img className="logo" src={LOGO} alt="Invited" />
-          </div>
-        </section>
+        <FooterBranding />
       </Page>
     </div>
   );

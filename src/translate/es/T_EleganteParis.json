@@ -1,0 +1,65 @@
+{
+  "countdown": {
+    "title": "Solo faltan",
+    "unit1": "días",
+    "unit2": "horas",
+    "unit3": "minutos",
+    "unit4": "segundos"
+  },
+  "coupleNames": {
+    "heartIcon": "y"
+  },
+  "hero": {
+    "description": "Nos casamos y nos encantaría compartir este día tan especial con ustedes.",
+    "dateLocation": "Os esperamos el sábado 20 de junio a las 18:00h\nHotel Mogán Reina"
+  },
+  "songLink": {
+    "title": "Nuestra canción",
+    "playingText": "Reproduciendo la canción: ",
+    "playButton": "▶️ Reproducir Canción",
+    "pauseButton": "⏸️ Pausar Canción"
+  },
+  "location": {
+    "title": "Nos vemos en",
+    "name": "Parroquia de San Pedro Mártir",
+    "addressLine1": "Avenida de Burgos 204",
+    "addressLine2": "Hortaleza, 28050 Madrid"
+  },
+  "timeline": {
+    "title": "Itinerario",
+    "locationPrefix": "📍",
+    "timePrefix": "🕒"
+  },
+  "gallery": {
+    "title": "Nuestra historia..."
+  },
+  "weddingForm": {
+    "title": "Confirmar Asistencia",
+    "requiredNote": "(*) campos obligatorios",
+    "fields": {
+      "name": "Nombre*",
+      "firstSurname": "Primer Apellido*",
+      "secondSurname": "Segundo Apellido",
+      "extraInformation": "Información Extra",
+      "allergy": "Alergias",
+      "feedingLabel": "Tipo de Alimentación",
+      "feedingOption1": "Selecciona...",
+      "feedingOption2": "Sin preferencias",
+      "feedingOption3": "Vegetariano",
+      "feedingOption4": "Vegano",
+      "companionQuestion": "¿Llevarás acompañante?",
+      "companionCount": "¿Cuántos acompañantes?",
+      "answerYes": "Sí",
+      "answerNo": "No",
+      "attendantTitle": "Datos de los acompañantes",
+      "attendantField1": "Nombre",
+      "attendantField2": "Primer Apellido",
+      "attendantField3": "Segundo Apellido",
+      "attendantField4": "Edad del acompañante"
+    },
+    "submitButton": "Enviar Confirmación"
+  },
+  "footer": {
+    "thanks": "¡Gracias por formar parte de nuestra historia de amor!"
+  }
+}

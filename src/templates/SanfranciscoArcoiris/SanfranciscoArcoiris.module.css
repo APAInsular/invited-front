@@ -8,11 +8,18 @@
   --title-weight: normal;
   --subtitle-font: Arial;
   --subtitle-weight: bold;
-  --subtitle-size: 1.9rem;
+  --subtitle-size: 2.3rem;
   --text-color: #000000;
   --bg-color: rgb(69, 69, 69);
   --low-font: "Gwendolyn";
   --text-size: 1.4rem
+}
+
+.wrapper h3 {
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
 }
 
 .wrapper button {

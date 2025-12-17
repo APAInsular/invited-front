@@ -24,6 +24,7 @@ import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 import image from "./images/casadosfelices.webp";
 import TIMELINE_ICON from "./images/right-arrow-svgrepo-com.svg";
 import Timeline from "../components/Timeline/Timeline";
+import FooterBranding from "../components/FooterBranding/FooterBranding";
 
 const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
@@ -127,12 +128,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
       </Page>
 
       <Page backgroundImage={BACKGROUND1} minHeight="150px">
-        <h2 className="text-center">
-          {"Hecho con mucho amor por el equipo de"}
-        </h2>
-        <div className="d-flex justify-content-center mt-3">
-          <img className="logo" src={LOGO} alt="Invited" />
-        </div>
+        <FooterBranding/>
       </Page>
     </div>
   );

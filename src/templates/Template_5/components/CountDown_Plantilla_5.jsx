@@ -33,8 +33,8 @@ const CountDown_Plantilla_5 = ({ weddingDate }) => {
     }, [weddingDate]);
 
     return (
-        <section className="countdown-section-template5 mt-4 py-4">
-            <h2 className="section-title-template5 mb-4">Cuenta atrás</h2>
+        <section className="countdown-section-template5 mt-2 py-4">
+            <h2 className="section-title-template5 mb-4">Cuenta atrás...</h2>
             <div className="countdown-numbers-template5 mt-4 pt-1">
                 <div className="countdown-item-template5">
                     <div className="countdown-circle-template5">

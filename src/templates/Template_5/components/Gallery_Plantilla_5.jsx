@@ -13,7 +13,7 @@ const Gallery_Plantilla_5 = ({ images, speed }) => {
     }, [speed]);
 
     return (
-        <div className="container mt-4 py-4">
+        <div className="container py-4">
             <h2 className="section-title-template5 text-center my-5 mb-5">Nuestra historia</h2>
             <div className="square-carousel-template5" >
                 <div

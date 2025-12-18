@@ -49,10 +49,10 @@ const SongLink_Plantilla_5 = ({ songUrl, songTitle }) => {
     return (
         <section className="text-center">
             <div className="container text-center py-5">
-                <h2 className=" py-3 section-title-template5">Nuestra canción</h2>
+                <h2 className="py-3 section-title-template5">Nuestra canción</h2>
                 <div className="song-link-template5">
                     <p><br /><strong>{songTitle}</strong></p>
-                    <button className="btn btn-cancion " onClick={togglePlay}>
+                    <button className="btn btn-cancion-template5 " onClick={togglePlay}>
                         {playing ? "⏸️ Pausar Canción" : "▶️ Reproducir Canción"}
                     </button>
                     <div

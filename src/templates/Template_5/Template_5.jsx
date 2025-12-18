@@ -7,6 +7,7 @@ import Gallery from './components/Gallery_Plantilla_5';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_5';
 import WeddingForm from './components/WeddingForm_Plantilla_5';
 
+
 import LanguageSelectorPopup from '../../components/LanguageSelectorPopUp';
 import { useLanguage } from "../../context/LanguageContext";
 import usePageTranslation from '../../hooks/usePageTranslation';
@@ -15,7 +16,7 @@ import "./styles/style_Template5.css"
 
 import { useEffect, useState } from 'react';
 
-const Template_4 = ({ wedding }) => {
+const Template_5 = ({ wedding }) => {
     const [newImages, setNewImages] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const { changeLanguage } = useLanguage();
@@ -67,7 +68,7 @@ const Template_4 = ({ wedding }) => {
             <section className="text-center  py-4 section-bg-template5 bg-portada-template5">
                 <CoupleNames imageUrl={imageUrl} groom={wedding.user.name} bride={wedding.user.partner.name} location={wedding.location.city} date={wedding.weddingDate} />
             </section>
-            <section className=" section-bg-template5 bg-countdown-template5">
+            <section className="section-bg-template5 bg-countdown-template5">
                 <SongLink songUrl={wedding.musicUrl} songTitle={wedding.musicTitle} text={t('songLink')} />
                 <Location location={wedding.location.city} country={wedding.location.country} text={t('churchLocation')} />
                 <CountDown weddingDate={wedding.weddingDate} text={t('countdown')} />
@@ -75,14 +76,15 @@ const Template_4 = ({ wedding }) => {
             <section className="section-bg-template5 bg-itinerario-template5">
                 <WeddingTimeLine events={wedding.events} text={t('timeline')} />
             </section>
-            <section className=" section-bg-template5 bg-gallery-template5">
+            <section className="section-bg-template5 bg-gallery-template5">
                 <Gallery images={newImages} speed={20} text={t('gallery')} />
             </section>
-            <section className=" section-bg-template5 bg-gallery-template5">
+            <section className="section-bg-template5 bg-itinerario-template5">
                 <WeddingForm weddingId={wedding.id} text={t('weddingForm')} />
             </section>
+            
         </div>
     );
 };
 
-export default Template_4;
+export default Template_5;

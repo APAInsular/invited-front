@@ -1,0 +1,46 @@
+.timelineContainer {
+    padding: 2rem 1rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid #ccc;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timelineContent {
+     background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    max-width: 500px;
+}
+.timelineContent h5 {
+    margin-top: 0;
+    color: #95c6c4;
+    font-weight: bold;
+}
+
+.timelineContent p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.timelineDot {
+ position: absolute;
+    left: -1.4rem;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    background-color: #95c6c4;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #95c6c4;
+}

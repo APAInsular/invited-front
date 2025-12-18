@@ -1,6 +1,6 @@
-import styles from '../styles/AcuarelaBohoTimeline.module.css';
+import DEFAULT from './DefaultStyle.module.css';
 
-const AcuarelaBohoTimeline = ({ events, text }) => {
+const StylableTimeline = ({ events, text, styles = DEFAULT }) => {
     return (
         <div className={styles.timelineContainer}>
             <h2 className="section-title text-center mb-5">{text.title}</h2>
@@ -23,4 +23,4 @@ const AcuarelaBohoTimeline = ({ events, text }) => {
     );
 };
 
-export default AcuarelaBohoTimeline;
+export default StylableTimeline;

@@ -15,7 +15,6 @@ import PHOTO from "./images/casadosfelices.webp";
 import FRAME from "./images/photo_frame.png";
 import MASK from "./images/mask.png";
 import Location from "../components/Location/Location";
-import AcuarelaBohoTimeline from "./components/AcuarelaBohoTimeline";
 import Timeline from "../components/Timeline/Timeline";
 import Page from "./../components/Page/Page";
 import BG1 from "./images/backgrounds/BG1.png";
@@ -23,8 +22,10 @@ import BG2 from "./images/backgrounds/BG2.png";
 import BG3 from "./images/backgrounds/BG3.png";
 import BG4 from "./images/backgrounds/BG4.png";
 import FooterBranding from "./../components/FooterBranding/FooterBranding";
-import AcuarelaBohoWeddingFormStyles from "./styles/AcuarelaBohoWeddingForm.module.css";
 import SongLink from "../components/SongLink/SongLink";
+import StylableTimeline from './../components/StylableTimeline/StylableTimeline';
+import AcuarelaBohoWeddingFormStyles from "./styles/AcuarelaBohoWeddingForm.module.css";
+import AcuarelaBohoTimeline from "./styles/AcuarelaBohoTimeline.module.css";
 
 const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
   return (
@@ -80,7 +81,7 @@ const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
       </Page>
       <Page backgroundImage={BG2} padding="0" minHeight="830px">
         <section className="text-center">
-          <AcuarelaBohoTimeline events={wedding.events} text={t("timeline")} />
+          <StylableTimeline styles={AcuarelaBohoTimeline} events={wedding.events} text={t("timeline")} />
         </section>
       </Page>
       <Page backgroundImage={BG1} padding="0" minHeight="830px">

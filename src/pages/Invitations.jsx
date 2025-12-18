@@ -11,16 +11,19 @@ import JardinMelbourne from "../templates/JardinMelbourne/JardinMelbourne";
 import EleganteParis from "../templates/EleganteParis/EleganteParis";
 import SanfranciscoArcoiris from "../templates/SanfranciscoArcoiris/SanfranciscoArcoiris";
 import AcuarelaBoho from "../templates/AcuarelaBoho/AcuarelaBoho";
-// import ArmoniosoMalta from '../templates/ArmoniosoMalta/ArmoniosoMalta';
+
+import ArmoniosoMalta from '../templates/ArmoniosoMalta/ArmoniosoMalta';
+import EraseUnaVez from './../templates/EraseUnaVez/EraseUnaVez';
 
 const available = {
   EleganteParis: <EleganteParis />,
   HavanaModerna: <HavanaModerna />,
   SanfranciscoArcoiris: <SanfranciscoArcoiris />,
   JardinMelbourne: <JardinMelbourne />,
+  AcuarelaBoho: <AcuarelaBoho/>,
   // ArmoniosoMalta: <ArmoniosoMalta/>,
-  //Template_2: <Template_2/>,
-  AcuarelaBoho: <AcuarelaBoho/>
+  Classic: <Classic/>,
+  EraseUnaVez: <EraseUnaVez/>,
   
 };
 
@@ -315,7 +318,7 @@ const Invitations = () => {
   // Renderizamos el componente dependiendo del valor de wedding.template
   
   // * weddingData.wedding.template?
-  const templateName = "AcuarelaBoho".replace(/\s+/g, "");
+  const templateName = "EraseUnaVez".replace(/\s+/g, "");
   console.log(`T_${templateName}`);
   
   if (templateName && available[templateName]) {

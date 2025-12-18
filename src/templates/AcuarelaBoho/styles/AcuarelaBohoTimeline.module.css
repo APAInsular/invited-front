@@ -1,5 +1,5 @@
 .timelineContainer {
-    padding: 2rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .timeline {
@@ -14,16 +14,16 @@
 }
 
 .timelineContent {
-     background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #dee2e6;
-    max-width: 500px;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dee2e6;
+  max-width: 500px;
 }
 .timelineContent h5 {
-    margin-top: 0;
-    color: #95c6c4;
-    font-weight: bold;
+  margin-top: 0;
+  color: #95c6c4;
+  font-weight: bold;
 }
 
 .timelineContent p {
@@ -34,13 +34,13 @@
 }
 
 .timelineDot {
- position: absolute;
-    left: -1.4rem;
-    top: 0.3rem;
-    width: 16px;
-    height: 16px;
-    background-color: #95c6c4;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 2px #95c6c4;
+  position: absolute;
+  left: -1.4rem;
+  top: 0.3rem;
+  width: 16px;
+  height: 16px;
+  background-color: #95c6c4;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #95c6c4;
 }

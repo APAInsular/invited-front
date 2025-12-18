@@ -39,25 +39,9 @@
   text-align: center;
 }
 
-.bgPortadaTemplate1 {
-  background-image: url("./images/backgrounds/bg-portada_Template1.png");
-}
 
-.bgCountdownTemplate1 {
-  background-image: url("./images/backgrounds/bg-countdown_Template1.png");
-}
 
-.bgGalleryTemplate1 {
-  background-image: url("./images/backgrounds/bg-gallery_Template1.png");
-  background-repeat: repeat-y;
-  background-size: auto;
-  background-position: top center;
-  background-attachment: scroll;
-}
 
-.bgItinerarioTemplate1 {
-  background-image: url("./images/backgrounds/bg-itinerario_Template1.png");
-}
 
 /* ===== Estilos para la sección de portada ===== */
 .headerInvite {
@@ -146,45 +130,6 @@
   font-family: "Dancing Script", cursive;
 }
 
-.label {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #555;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-
-.formLabelCustom {
-  font-weight: 500;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-.inputCustom {
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  width: 100%;
-}
-
-.formContainer {
-  background-color: #95c6c4;
-}
-
-.bgForm {
-  background-color: #95c6c4;
-}
-
-.btnMain {
-  background-color: #6c5b7b;
-  color: #fff;
-  border: none;
-}
-
-.btnMain:hover {
-  background-color: #95c6c4;
-}
 
 .timelineContainer {
   padding: 2rem 1rem;

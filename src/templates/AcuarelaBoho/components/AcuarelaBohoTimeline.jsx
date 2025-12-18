@@ -1,4 +1,4 @@
-import styles from '../styles/AcuarelaBohoTimeline.css';
+import styles from '../styles/AcuarelaBohoTimeline.module.css';
 
 const AcuarelaBohoTimeline = ({ events, text }) => {
     return (

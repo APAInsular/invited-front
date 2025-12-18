@@ -1,4 +1,3 @@
-import SongLink from "./components/SongLink_Plantilla_1";
 
 import WeddingForm from "../components/WeddingForm/WeddingForm";
 import Carrousel from "../components/Carrousel/Carrousel";
@@ -15,69 +14,76 @@ import FramedPhoto from "../components/FramedPhoto/FramedPhoto";
 import PHOTO from "./images/casadosfelices.webp";
 import FRAME from "./images/photo_frame.png";
 import MASK from "./images/mask.png";
-import Location from '../components/Location/Location';
+import Location from "../components/Location/Location";
 import AcuarelaBohoTimeline from "./components/AcuarelaBohoTimeline";
 import Timeline from "../components/Timeline/Timeline";
+import Page from "./../components/Page/Page";
+import BG1 from "./images/backgrounds/BG1.png";
+import BG2 from "./images/backgrounds/BG2.png";
+import BG3 from "./images/backgrounds/BG3.png";
+import BG4 from "./images/backgrounds/BG4.png";
+import FooterBranding from "./../components/FooterBranding/FooterBranding";
+import AcuarelaBohoWeddingFormStyles from "./styles/AcuarelaBohoWeddingForm.module.css";
+import SongLink from "../components/SongLink/SongLink";
 
 const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
   return (
     <div className={styles.wrapper}>
-      <section
-        className={`${styles.headerInvite} text-center ${styles.sectionBg} ${styles.bgPortadaTemplate1}`}
-      >
-        <div className="position-relative d-inline-block mb-4">
-          <img
-            src={PHOTO}
-            alt="Samantha y Javier"
-            className={`img-fluid rounded-circle header-photo ${styles.headerPhoto}`}
-          ></img>
-          <div className={styles.floralFrame}></div>
-        </div>
+      <Page backgroundImage={BG1} padding="0" minHeight="830px">
+        <section className="text-center">
+          <div className="position-relative d-inline-block mb-4">
+            <img
+              src={PHOTO}
+              alt="Samantha y Javier"
+              className={`img-fluid rounded-circle header-photo ${styles.headerPhoto}`}
+            ></img>
+            <div className={styles.floralFrame}></div>
+          </div>
 
-        <CoupleNames
-          groom={wedding.user.name}
-          bride={wedding.user.partner.name}
-          icon="&"
-          asColumn
-        />
-        <p className="text-center px-5">
-          Tenemos el gusto de invitaros a nuestra boda que tendrá lugar jueves
-          26 de junio de 2025 en Puerto del Rosario
-        </p>
-        <p className="subtitle">
-          jueves 26 de junio de 2025 <br /> En <br /> Puerto del Rosario
-        </p>
-      </section>
-      <section
-        className={`${styles.sectionBg} ${styles.bgCountdownTemplate1} mt-4 py-5`}
-      >
-        <h3 className="subtitle"> 🎶Nuestra cancion especial 🎶</h3>
-        <SongLink
-          songUrl={wedding.musicUrl}
-          songTitle={wedding.musicTitle}
-          text={t("songLink")}
-        />
-        <h3 className="subtitle">¿A donde ir?</h3>
-        <Location
-          location={wedding.location.city}
-          country={wedding.location.country}
-          text={t("churchLocation")}
-        />
-        <h3 className="subtitle">¡¡¡Nos casamos en...!!!</h3>
-        <CustomizableCountDown
-          weddingDate={wedding.weddingDate}
-          text={t("countdown")}
-          frame={{ frameSrc: COUNTDOWN_DECO_0, backgroundSize: "100px" }}
-        />
-      </section>
-      <section
-        className={`py-5 mt-4 ${styles.sectionBg} ${styles.bgItinerarioTemplate1}`}
-      >
-        <Timeline events={wedding.events} text={t("timeline")} />
-      </section>
-      <section
-        className={`py-5 mt-4 ${styles.sectionBg} ${styles.bgPortadaTemplate1}`}
-      >
+          <CoupleNames
+            groom={wedding.user.name}
+            bride={wedding.user.partner.name}
+            icon="&"
+            asColumn
+          />
+          <p className="text-center px-5">
+            Tenemos el gusto de invitaros a nuestra boda que tendrá lugar jueves
+            26 de junio de 2025 en Puerto del Rosario
+          </p>
+          <p className="subtitle">
+            jueves 26 de junio de 2025 <br /> En <br /> Puerto del Rosario
+          </p>
+        </section>
+      </Page>
+
+      <Page backgroundImage={BG3} padding="0" minHeight="830px">
+        <section className="text-center">
+          <h3 className="subtitle"> 🎶Nuestra cancion especial 🎶</h3>
+          <SongLink
+            songUrl={wedding.musicUrl}
+            songTitle={wedding.musicTitle}
+            text={t("songLink")}
+          />
+          <h3 className="subtitle">¿A donde ir?</h3>
+          <Location
+            location={wedding.location.city}
+            country={wedding.location.country}
+            text={t("churchLocation")}
+          />
+          <h3 className="subtitle">¡¡¡Nos casamos en...!!!</h3>
+          <CustomizableCountDown
+            weddingDate={wedding.weddingDate}
+            text={t("countdown")}
+            frame={{ frameSrc: COUNTDOWN_DECO_0, backgroundSize: "100px" }}
+          />
+        </section>
+      </Page>
+      <Page backgroundImage={BG2} padding="0" minHeight="830px">
+        <section className="text-center">
+          <AcuarelaBohoTimeline events={wedding.events} text={t("timeline")} />
+        </section>
+      </Page>
+      <Page backgroundImage={BG1} padding="0" minHeight="830px">
         <Carrousel
           images={images}
           text={t("gallery")}
@@ -85,16 +91,18 @@ const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
             <CarrouselCard key={i} src={src} height="1500px" />
           )}
         />
-      </section>
-      <section
-        className={`py-5 ${styles.sectionBg} ${styles.bgGalleryTemplate1}`}
-      >
+      </Page>
+      <Page backgroundImage={BG4} padding="0" minHeight="830px" centerVertically>
         <WeddingForm
           weddingId={wedding.id}
           text={t("weddingForm")}
           fields={t("weddingForm.fields")}
+          styles={AcuarelaBohoWeddingFormStyles}
         />
-      </section>
+      </Page>
+      <Page backgroundImage={BG4} minHeight="150px">
+        <FooterBranding />
+      </Page>
     </div>
   );
 };

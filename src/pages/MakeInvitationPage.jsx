@@ -303,9 +303,16 @@ export default function MakeInvitationForm() {
                                         <option value="Plantilla Romantica">{t('templateOptions.romantic')}</option>
                                         <option value="Plantilla Acuarela">{t('templateOptions.watercolor')}</option>
                                         <option value="Plantilla Erase una vez">{t('templateOptions.fairytale')}</option>
-                                        <option value="Plantilla Havana Moderna">{t('templateOptions.havana')}</option>
                                         <option value="Plantilla Dulce" disabled>{t('templateOptions.sweet')}</option>
                                         <option value="Plantilla Oscura" disabled>{t('templateOptions.dark')}</option>
+
+                                        <option value="Plantilla Havana Moderna">{t('templateOptions.havana')}</option>
+                                        <option value="Plantilla Armonioso Malta" >{t('templateOptions.malta')}</option>
+                                        <option value="Plantilla Jardin Melbourne" >{t('templateOptions.melbourne')}</option>
+                                        <option value="Plantilla Sanfrancisco Arcoiris" >{t('templateOptions.arcoiris')}</option>
+                                        <option value="Plantilla Tradicional Londres" >{t('templateOptions.londres')}</option>
+                                        <option value="Plantilla Alegre Las Vegas" >{t('templateOptions.vegas')}</option>
+                                        <option value="Plantilla Elegante Paris" >{t('templateOptions.paris')}</option>
                                     </Form.Select>
                                 </Form.Group>
                             </Col>

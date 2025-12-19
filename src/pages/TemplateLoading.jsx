@@ -6,7 +6,7 @@ const TemplateLoading = () => {
     <div className="d-flex align-items-center vh-100">
       <div
         className="w-100 text-center text-dark py-5"
-        style={{ backgroundColor: "rgb(255, 221, 87)" }} // amarillo con estilo
+        style={{ backgroundColor: "rgb(241, 146, 146)"} }
       >
         <div className="mb-3">
           <div

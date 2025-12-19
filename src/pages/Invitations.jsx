@@ -14,78 +14,71 @@ import AcuarelaBoho from "../templates/AcuarelaBoho/AcuarelaBoho";
 import ArmoniosoMalta from "../templates/ArmoniosoMalta/ArmoniosoMalta";
 import EraseUnaVez from "./../templates/EraseUnaVez/EraseUnaVez";
 import TemplateNotFound from "./TemplateNotFound";
-import TemplateLoading from './TemplateLoading';
+import TemplateLoading from "./TemplateLoading";
 import TradicionalLondres from "../templates/TradicionalLondres/TradicionalLondres";
-import AlegreLasVegas from '../templates/AlegreLasVegas/AlegreLasVegas';
-
+import AlegreLasVegas from "../templates/AlegreLasVegas/AlegreLasVegas";
 
 const available = {
-    Romantica: <Classic />,
-    EleganteParis: <EleganteParis />,
-    HavanaModerna: <HavanaModerna />,
-    SanfranciscoArcoiris: <SanfranciscoArcoiris />,
-    JardinMelbourne: <JardinMelbourne />,
-    Acuarela: <AcuarelaBoho />,
-    EraseunaVez: <EraseUnaVez />,
-    ArmoniosoMalta: <ArmoniosoMalta />,
-    AlegreLasVegas: <AlegreLasVegas />,
-    TradicionalLondres: <TradicionalLondres />
+  Romantica: <Classic />,
+  EleganteParis: <EleganteParis />,
+  HavanaModerna: <HavanaModerna />,
+  SanfranciscoArcoiris: <SanfranciscoArcoiris />,
+  JardinMelbourne: <JardinMelbourne />,
+  Acuarela: <AcuarelaBoho />,
+  EraseunaVez: <EraseUnaVez />,
+  ArmoniosoMalta: <ArmoniosoMalta />,
+  AlegreLasVegas: <AlegreLasVegas />,
+  TradicionalLondres: <TradicionalLondres />,
 };
-
 
 const maxRetries = 3;
 const Invitations = () => {
-    const [weddingData, setWeddingData] = useState(null);
-    const { idWedding } = useParams();
-    const [retries, setRetries] = useState(0);
-    const [error, setError] = useState(false);
+  const [weddingData, setWeddingData] = useState(null);
+  const { idWedding } = useParams();
+  const [retries, setRetries] = useState(0);
+  const [error, setError] = useState(false);
 
-    useEffect(() => {
-        const fetchWedding = async () => {
-            try {
-                const response = await apiClient.get(
-                    `/api/weddings/${idWedding}/full-info`
-                );
-                setWeddingData(response.data);
-                console.log(response.data)
-                setError(false);
-            } catch (err) {
-                console.error("Error al obtener la boda:", err);
+  useEffect(() => {
+    const fetchWedding = async () => {
+      try {
+        console.log(idWedding);
+        const response = await apiClient.get(
+          `/api/weddings/${idWedding}/full-info`
+        );
 
-                if (retries < maxRetries) {
-                    setTimeout(() => {
-                        setRetries((prev) => prev + 1);
-                    }, 3000);
-                } else {
-                    setError(true);
-                }
-            }
-        };
+        setWeddingData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error al obtener la boda:", error);
+      }
+    };
 
-        if (!weddingData && !error) {
-            fetchWedding();
-        }
-    }, [idWedding, retries, error, weddingData]);
+    fetchWedding();
+  }, [idWedding]);
 
-    if (!error && !weddingData) {
-        return <TemplateLoading />;
-    }
-
-    if (error || !weddingData?.template) {
-      return <TemplateNotFound />;
-    }
-
-  const pre = weddingData.wedding.template.replace("Plantilla", ""); // ? Replace plantilla with a space
+    const pre = weddingData.wedding.template.replace("Plantilla", ""); // ? Replace plantilla with a space
   console.log(pre);
-  
+
   const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
   console.log(templateName);
+
+  if (!error && !weddingData) {
+    return <TemplateLoading />;
+  }
+
+  if (error || !weddingData?.template) {
+    return <TemplateNotFound />;
+  }
+
+
 
   if (templateName && available[templateName]) {
     // ? Verify if exists this template
     return (
-      <DemoWrapper> {/* 600px width limit */}
-      {/* Handle translation and image state */ }
+      <DemoWrapper>
+        {" "}
+        {/* 600px width limit */}
+        {/* Handle translation and image state */}
         <BaseTemplate
           translationPage={`T_${templateName}`} // ? Assign the translation .json
           wedding={weddingData.wedding} // ? Pass wedding

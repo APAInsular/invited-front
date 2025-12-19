@@ -20,78 +20,78 @@ import AlegreLasVegas from '../templates/AlegreLasVegas/AlegreLasVegas';
 
 
 const available = {
-  Romantica: <Classic />,
-  EleganteParis: <EleganteParis />,
-  HavanaModerna: <HavanaModerna />,
-  SanfranciscoArcoiris: <SanfranciscoArcoiris />,
-  JardinMelbourne: <JardinMelbourne />,
-  Acuarela: <AcuarelaBoho />,
-  EraseunaVez: <EraseUnaVez />,
-  ArmoniosoMalta: <ArmoniosoMalta/>,
-  AlegreLasVegas: <AlegreLasVegas/>,
-  TradicionalLondres: <TradicionalLondres/>
+    Romantica: <Classic />,
+    EleganteParis: <EleganteParis />,
+    HavanaModerna: <HavanaModerna />,
+    SanfranciscoArcoiris: <SanfranciscoArcoiris />,
+    JardinMelbourne: <JardinMelbourne />,
+    Acuarela: <AcuarelaBoho />,
+    EraseunaVez: <EraseUnaVez />,
+    ArmoniosoMalta: <ArmoniosoMalta />,
+    AlegreLasVegas: <AlegreLasVegas />,
+    TradicionalLondres: <TradicionalLondres />
 };
 
 
 const maxRetries = 3;
 const Invitations = () => {
-  const [weddingData, setWeddingData] = useState(null);
-  const { idWedding } = useParams();
-  const [retries, setRetries] = useState(0);
-  const [error, setError] = useState(false);
+    const [weddingData, setWeddingData] = useState(null);
+    const { idWedding } = useParams();
+    const [retries, setRetries] = useState(0);
+    const [error, setError] = useState(false);
 
-  
-  useEffect(() => {
-    const fetchWedding = async () => {
-      try {
-        const response = await apiClient.get(
-          `/api/weddings/${idWedding}/full-info`
-        );
-        setWeddingData(response.data);
-        setError(false);
-      } catch (err) {
-        console.error("Error al obtener la boda:", err);
 
-        if (retries < maxRetries) {
-          setTimeout(() => {
-            setRetries((prev) => prev + 1);
-          }, 3000);
-        } else {
-          setError(true);
+    useEffect(() => {
+        const fetchWedding = async () => {
+            try {
+                const response = await apiClient.get(
+                    `/api/weddings/${idWedding}/full-info`
+                );
+                setWeddingData(response.data);
+                setError(false);
+            } catch (err) {
+                console.error("Error al obtener la boda:", err);
+
+                if (retries < maxRetries) {
+                    setTimeout(() => {
+                        setRetries((prev) => prev + 1);
+                    }, 3000);
+                } else {
+                    setError(true);
+                }
+            }
+        };
+
+        if (!weddingData && !error) {
+            fetchWedding();
         }
-      }
-    };
+    }, [idWedding, retries, error, weddingData]);
 
-    if (!weddingData && !error) {
-      fetchWedding();
+    if (!error && !weddingData) {
+        return <TemplateLoading />;
     }
-  }, [idWedding, retries, error, weddingData]);
 
-  if (!error && !weddingData) {
-    return <TemplateLoading/>;
-  }
+    //if (error || !weddingData?.template) {
+    //return <TemplateNotFound />;
+    //}
 
-  if (error || !weddingData?.template) {
-    return <TemplateNotFound />;
-  }
+    const pre = weddingData.template.replace("Plantilla", ""); // ? Replace plantilla with a space
+    const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
 
-  const pre = weddingData.template.replace("Plantilla", ""); // ? Replace plantilla with a space
-  const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
-
-  if (templateName && available[templateName]) {
-    // ? Verify if exists this template
-    return (
-      <DemoWrapper> {/* 600px width limit */}
-      {/* Handle translation and image state */ }
-        <BaseTemplate
-          translationPage={`T_${templateName}`} // ? Assign the translation .json
-          wedding={weddingData.wedding} // ? Pass wedding
-        >
-          {available[templateName]} {/* Get the specific template */}
-        </BaseTemplate>
-      </DemoWrapper>
-    );
-  }
+    if (templateName && available[templateName]) {
+        // ? Verify if exists this template
+        return (
+            <DemoWrapper> {/* 600px width limit */}
+                {/* Handle translation and image state */}
+                <BaseTemplate
+                    translationPage={`T_${templateName}`} // ? Assign the translation .json
+                    wedding={weddingData.wedding} // ? Pass wedding
+                >
+                    {available[templateName]} {/* Get the specific template */}
+                </BaseTemplate>
+            </DemoWrapper>
+        );
+    }
 };
 
 export default Invitations;

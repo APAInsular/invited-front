@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import apiClient from "../config/axiosConfig";
 import { useParams } from "react-router-dom";
 
 import Classic from "../templates/Classic/Classic";
-// import Template_2 from "../templates/Template_2/Template_2";
 import HavanaModerna from "../templates/HavanaModerna/HavanaModerna";
 import BaseTemplate from "../templates/BaseTemplate";
 import DemoWrapper from "./../templates/DemoWrapper";
@@ -12,67 +11,80 @@ import EleganteParis from "../templates/EleganteParis/EleganteParis";
 import SanfranciscoArcoiris from "../templates/SanfranciscoArcoiris/SanfranciscoArcoiris";
 import AcuarelaBoho from "../templates/AcuarelaBoho/AcuarelaBoho";
 
-import ArmoniosoMalta from '../templates/ArmoniosoMalta/ArmoniosoMalta';
-import EraseUnaVez from './../templates/EraseUnaVez/EraseUnaVez';
+import ArmoniosoMalta from "../templates/ArmoniosoMalta/ArmoniosoMalta";
+import EraseUnaVez from "./../templates/EraseUnaVez/EraseUnaVez";
+import TemplateNotFound from "./TemplateNotFound";
+import TemplateLoading from './TemplateLoading';
 
 const available = {
   EleganteParis: <EleganteParis />,
   HavanaModerna: <HavanaModerna />,
   SanfranciscoArcoiris: <SanfranciscoArcoiris />,
   JardinMelbourne: <JardinMelbourne />,
-  AcuarelaBoho: <AcuarelaBoho/>,
+  AcuarelaBoho: <AcuarelaBoho />,
   // ArmoniosoMalta: <ArmoniosoMalta/>,
-  Classic: <Classic/>,
-  EraseUnaVez: <EraseUnaVez/>,
-  
+  Classic: <Classic />,
+  EraseUnaVez: <EraseUnaVez />,
 };
-
+const maxRetries = 3;
 const Invitations = () => {
   const [weddingData, setWeddingData] = useState(null);
   const { idWedding } = useParams();
-  
+  const [retries, setRetries] = useState(0);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchWedding = async () => {
       try {
-        console.log(idWedding);
         const response = await apiClient.get(
           `/api/weddings/${idWedding}/full-info`
         );
-
         setWeddingData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error al obtener la boda:", error);
+        setError(false);
+      } catch (err) {
+        console.error("Error al obtener la boda:", err);
+
+        if (retries < maxRetries) {
+          setTimeout(() => {
+            setRetries((prev) => prev + 1);
+          }, 3000);
+        } else {
+          setError(true);
+        }
       }
     };
 
-    fetchWedding();
-  }, [idWedding]);
+    if (!weddingData && !error) {
+      fetchWedding();
+    }
+  }, [idWedding, retries, error, weddingData]);
 
-  if (!weddingData) {
-    return <div>Cargando...</div>;
+  if (!error && !weddingData) {
+    return <TemplateLoading/>;
   }
 
-  
-  // * weddingData.wedding.template?
-  const templateName = "EraseUnaVez".replace(/\s+/g, "");
-  console.log(`T_${templateName}`);
-  
+  if (error || !weddingData?.template) {
+    return <TemplateNotFound />;
+  }
+
+  const pre = weddingData.template.replace("plantilla", ""); // ? Replace plantilla with a space
+  const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
+
   if (templateName && available[templateName]) {
+    // ? Verify if exists this template
     return (
       <DemoWrapper>
-        <BaseTemplate
-          translationPage={`T_${templateName}`}
-          wedding={placeholder}
+        {" "}
+        // ? 600px width limit
+        <BaseTemplate // ? Handle translation and image state
+          translationPage={`T_${templateName}`} // ? Assign the translation .json
+          wedding={weddingData.wedding} // ? Pass wedding
         >
-          {available[templateName]}
+          {available[templateName]} // ? Get the specific template
         </BaseTemplate>
       </DemoWrapper>
     );
   }
-
-  return <p>Error: Template not found.</p>;
 };
 
 export default Invitations;

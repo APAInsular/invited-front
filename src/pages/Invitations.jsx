@@ -37,6 +37,7 @@ const Invitations = () => {
   const { idWedding } = useParams();
   const [retries, setRetries] = useState(0);
   const [error, setError] = useState(false);
+  const [templateName, setTemplateName] = useState(null);
 
   useEffect(() => {
     const fetchWedding = async () => {
@@ -51,6 +52,7 @@ const Invitations = () => {
 
         const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
         console.log(templateName);
+        setTemplateName(templateName);
 
         setWeddingData(response.data);
         console.log(response.data);

@@ -46,6 +46,12 @@ const Invitations = () => {
           `/api/weddings/${idWedding}/full-info`
         );
 
+        const pre = response.data.wedding.template.replace("Plantilla", ""); // ? Replace plantilla with a space
+        console.log(pre);
+
+        const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
+        console.log(templateName);
+
         setWeddingData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -56,12 +62,6 @@ const Invitations = () => {
     fetchWedding();
   }, [idWedding]);
 
-    const pre = weddingData.wedding.template.replace("Plantilla", ""); // ? Replace plantilla with a space
-  console.log(pre);
-
-  const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
-  console.log(templateName);
-
   if (!error && !weddingData) {
     return <TemplateLoading />;
   }
@@ -69,8 +69,6 @@ const Invitations = () => {
   if (error || !weddingData?.template) {
     return <TemplateNotFound />;
   }
-
-
 
   if (templateName && available[templateName]) {
     // ? Verify if exists this template

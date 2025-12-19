@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.body-template5 {
+    background-color: #f0a58e;
+}
+
+.section-bg-template5 {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.bg-portada-template5 {
+    background-image: url('../images/backgrounds/fondo1.jpg');
+    
+}
+
+.bg-countdown-template5 {
+    background-image: url('../images/backgrounds/fondo2.jpg');
+}
+
+.bg-gallery-template5 {
+    background-image: url('../images/backgrounds/fondo2.jpg');
+}
+
+.bg-itinerario-template5 {
+    background-image: url('../images/backgrounds/fondo1.jpg');
+} 
+
+/* ===== Estilos para la sección de portada ===== */
+/* .header-invite-template5 {
+    position: relative;
+} */
+
+.header-photo-template5 {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+    margin-top: 100px;
+}
+
+ .golden-circle-frame {
+    background: url("../images/circulo-londres.png") center/cover no-repeat;
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+} 
+
+
+.invite-name-template5 {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 4rem;
+    color: #000;
+    margin-top: 40px;
+}
+
+.invite-text-template5 {
+    font-size: 1.2rem;
+    font-family: 'Open sans';
+    width: 60%;
+    color: #000;
+}
+
+
+.invite-date-template-5,
+.invite-location-template5 {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    color: #000;
+}
+
+.section-title-template5 {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 3.5rem;
+    color: #000;
+}
+
+
+.song-link-template5 {
+    font-size: 1rem;
+    color: #000;
+}
+
+
+.btn-cancion-template5{
+    background-color: #c28708;
+    color: #f7f0f0
+} 
+
+.section-subtitle-template5 {
+    font-size: 1rem;
+    color: #000;
+}
+
+.countdown-section-template5 {
+    position: relative;
+    text-align: center;
+    padding: 3rem 1rem;
+    overflow: hidden;
+    color: #000;
+}
+
+.countdown-numbers-template5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.countdown-item-template5 {
+    position: relative;
+    margin-left: -18px; /* ⬅ superposición */
+
+}
+
+.invite-date-template5 {
+    font-family: 'Open sans', cursive;
+    font-size: 1.4rem;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.countdown-circle-template5 {
+    width: 95px;
+    height: 90px;
+    background-image: url('../images/circulo-londres.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-item-template5:nth-child(1) {
+    z-index: 1;
+}
+
+.countdown-item-template5:nth-child(2) {
+    z-index: 2;
+}
+
+.countdown-item-template5:nth-child(3) {
+    z-index: 1;
+}
+
+.countdown-item-template5:nth-child(4) {
+    z-index: 2;
+}
+
+
+.number-template5 {
+    font-family: 'Open sans', cursive;
+    font-size: 1.5rem;
+    color: #000;
+    line-height: 1;
+}
+
+.label-template {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'Open sans', cursive;
+}
+
+ .timeline-items-template5 {
+    margin-left: 80px; /* mismo ancho que la línea */
+    
+}  
+ 
+.timeline-item-template5 {
+    margin-bottom: 60px; /* espacio entre eventos */
+}
+
+.timeline-item-template5 p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: 'Open sans';
+    color: #000;
+    line-height: 1.4;
+}
+
+.timeline-frame-template5 {
+    position: relative;
+    padding: 60px 40px; /* 👈 margen interno del borde dorado */
+    
+}
+
+
+.timeline-wrapper-template5 {
+    position: relative;
+    display: flex;
+} 
+
+ .timeline-goldenLine-template5 {
+    position: absolute;
+    top: 60px;
+    bottom: 60px; /*sin esto no se muestra la imagen*/
+    left: 0;
+    width: 120px;
+    background-image: url('../images/linea-itinerario.png');
+    background-repeat: repeat-y;
+    background-size: 40px ;
+    background-position: right top;
+
+    pointer-events: none;
+} 
+
+
+ .slider-track{
+    display: flex;
+    white-space: nowrap;
+    overflow:visible;
+    
+} 
+
+.slider-image{
+    height: 100%;
+    width: auto;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    object-fit: cover;
+
+
+} 
+
+.container-template5 {
+    position: relative;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    max-height: 93vh;
+    overflow-y: auto;
+}
+
+
+.form-title-template5 {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 3.5rem;
+    color: #000;
+}
+
+
+ .form-label-custom-template5
+ {
+    font-weight: 500;
+    color: #000;
+    font-size: 0.9rem;
+} 
+
+ .input-custom-template5
+ {
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+} 
+
+
+.btn-main-template5 {
+    background-color: #c28708;
+    color: #fff;
+    border: none;
+}
+
+.btn-main-template5:hover {
+    background-color: #f0a58e;
+}
+

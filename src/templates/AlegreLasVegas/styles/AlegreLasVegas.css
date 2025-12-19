@@ -1,0 +1,265 @@
+@font-face {
+    font-family: 'Architect Daughter';
+    src: url('../../../assets/fonts/ArchitectDaughter/ArchitectsDaughter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+@font-face {
+    font-family: 'Rotis sans serif';
+    src: url('../../../assets/fonts/RotisSansSerif/RotisSansSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+.body-template4 {
+    background-color: #fff;
+}
+
+.section-bg-template4 {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.bg-portada-template4 {
+    background-image: url('../images/backgrounds/portada.png');
+    
+}
+
+.bg-countdown-template4 {
+    background-image: url('../images/backgrounds/countdown.png');
+}
+
+.bg-gallery-template4 {
+    background-image: url('../images/backgrounds/gallery.png');
+}
+ .bg-asistencia-template4 {
+    background-image: url('../images/backgrounds/confirmacion-asistencia.png');
+} 
+
+.bg-itinerario-template4 {
+    background-image: url('../images/backgrounds/itinerario.jpg');
+    width: 100%;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat:repeat-y;
+}
+
+/* ===== Estilos para la sección de portada ===== */
+/* .header-invite-template4 {
+    position: relative;
+} */
+
+.header-photo-template4 {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+    margin-top: 35px;
+}
+
+ .heart-frame {
+    background: url("../images/marco-corazones.png") center/cover no-repeat;
+    position: absolute;
+    width: 450px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    margin-top: 15px;
+    pointer-events: none;
+} 
+
+
+.invite-name-template4 {
+    font-family: 'Architect Daughter', cursive;
+    font-size: 3rem;
+    color: #000;
+    margin-top: 80px;
+}
+
+.invite-text-template4 {
+    font-size: 1.2rem;
+    font-family: 'Rotis sans serif';
+    width: 60%;
+    color: #000;
+}
+
+.invite-date-template4,
+.invite-location-template4 {
+    font-family: 'Rotis sans serif', cursive;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    color: #000;
+}
+
+.section-title-template4 {
+    font-family: 'Architect Daughter', cursive;
+    font-size: 3rem;
+    color: #000;
+}
+
+
+.song-link-template4 {
+    font-size: 1rem;
+    color: #000;
+}
+
+
+.btn-cancion{
+    background-color: #031757;
+    color: #f7f0f0
+} 
+
+.section-subtitle-template4 {
+    font-size: 1rem;
+    color: #000;
+}
+
+.countdown-section-template4 {
+    position: relative;
+    text-align: center;
+    padding: 3rem 1rem;
+    overflow: hidden;
+    color: #000;
+}
+
+.countdown-numbers-template4 {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item-template4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.invite-date-template4 {
+    font-family: 'Rotis sans serif', cursive;
+    font-size: 1.4rem;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.countdown-circle-template4 {
+    width: 70px;
+    height: 80px;
+    background-image: url('../images/circle-timer.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.number-template4 {
+    font-family: 'Rotis sans serif', cursive;
+    font-size: 2rem;
+    color: #000;
+    line-height: 1;
+}
+
+.label-template {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'Rotis sans serif', cursive;
+}
+
+
+.timeline-item-template4 p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: 'faustina';
+    color: #000;
+    line-height: 1.4;
+}
+
+.timeline-cake-template4 {
+    width: 150px;
+    height: 150px;
+    margin: 90px auto 0 auto;
+
+    background-image: url('../images/cake.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    pointer-events: none;
+}
+
+
+ .slider-track{
+    display: flex;
+    white-space: nowrap;
+    overflow:visible;
+    
+} 
+
+.slider-image{
+    height: 100%;
+    width: auto;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    object-fit: cover;
+
+
+} 
+
+.square-carousel-template4 {
+    background: url("../images/cuadro-carousel.png") center/cover no-repeat;
+    aspect-ratio: 3 / 1;
+    position: relative;
+    overflow: hidden;
+    padding: 12% 10%; 
+    height: 330px; 
+    right: 50px ;
+    
+}    
+
+.form-title-template4 {
+    font-family: 'Architect Daughter', cursive;
+    font-size: 3rem;
+    color: #fff;
+}
+
+
+ .form-label-custom-template4 {
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.9rem;
+} 
+
+ .input-custom-template4 {
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    width: 100%;
+} 
+
+.btn-main-template4 {
+    background-color: #031757;
+    color: #fff;
+    border: none;
+}
+
+.btn-main-template4:hover {
+    background-color: #95c6c4;
+}
+

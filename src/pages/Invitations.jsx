@@ -47,7 +47,7 @@ const Invitations = () => {
                     `/api/weddings/${idWedding}/full-info`
                 );
                 setWeddingData(response.data);
-                // console.log(response.data)
+                console.log(response.data)
                 setError(false);
             } catch (err) {
                 console.error("Error al obtener la boda:", err);
@@ -76,10 +76,10 @@ const Invitations = () => {
     }
 
   const pre = weddingData.wedding.template.replace("Plantilla", ""); // ? Replace plantilla with a space
-  // console.log(pre);
+  console.log(pre);
   
   const templateName = pre.replace(/\s+/g, ""); // ? Delete whitespaces
-  // console.log(templateName);
+  console.log(templateName);
 
   if (templateName && available[templateName]) {
     // ? Verify if exists this template

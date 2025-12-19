@@ -336,7 +336,7 @@ const Invitations = () => {
   }*/
 
   // const pre = weddingData.template.replace("plantilla", ""); // ? Replace plantilla with a space
-  const templateName = "ArmoniosoMalta".replace(/\s+/g, ""); // ? Delete whitespaces
+  const templateName = "TradicionalLondres".replace(/\s+/g, ""); // ? Delete whitespaces
 
   if (templateName && available[templateName]) {
     // ? Verify if exists this template

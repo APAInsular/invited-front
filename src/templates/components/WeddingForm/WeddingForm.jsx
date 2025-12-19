@@ -81,11 +81,10 @@ const WeddingForm = ({ weddingId, text, fields, styles = DEFAULT }) => {
     }
   };
 
-  console.log(text);
 
   return (
     <div className="container my-4">
-      <h2 className="mb-3">{text.title}</h2>
+      <h2 className={`mb-3 ${styles.text}`}>{text.title}</h2>
       <p style={{ marginTop: "1px", fontSize: "12px" }}>{text.requiredNotes}</p>
       <form className={`p-4 border rounded ${styles.formContainer}`} onSubmit={handleSendForm}>
         <div className="mb-3">
@@ -168,7 +167,7 @@ const WeddingForm = ({ weddingId, text, fields, styles = DEFAULT }) => {
                   className="form-check-input me-1"
                   onChange={handleCompanionChange}
                 />
-                <label className="form-check-label">{fields.answerYes}</label>
+                <label className={`form-check-label ${styles.formLabel}`}>{fields.answerYes}</label>
               </div>
               <div>
                 <input
@@ -179,7 +178,7 @@ const WeddingForm = ({ weddingId, text, fields, styles = DEFAULT }) => {
                   onChange={handleCompanionChange}
                   defaultChecked
                 />
-                <label className="form-check-label">{fields.answerNo}</label>
+                <label className={`form-check-label ${styles.formLabel}`}>{fields.answerNo}</label>
               </div>
             </div>
           </div>

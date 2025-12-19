@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "Pinyon Script";
+  src: url("../../../assets/fonts/PinyonScript/PinyonScript-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sistina";
+  src: url("../../../assets/fonts/Sistina/Sistina\ LT\ W04\ Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.body-ArmoniosoMalta {
+  --text-size: 12px;
+  --text-font: "Sistina";
+  --subtitle-color: white;
+  --subtitle-font: "Pinyon Script";
+  --text-color: white;
+  --bg-color: #2c4d65;
+  background-color: #2c4d65;
+  color: white;
+}
+
+.body-ArmoniosoMalta button {
+  background-color: #031757;
+  color: #f7f0f0;
+}
+
+.section-bg-ArmoniosoMalta {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.bg-portada-ArmoniosoMalta {
+  background-image: url("../images/backgrounds/fondo.png");
+}
+
+.bg-countdown-ArmoniosoMalta {
+  background-image: url("../images/backgrounds/2.jpg");
+}
+
+.bg-gallery-ArmoniosoMalta {
+  background-image: url("../images/backgrounds/fondo.png");
+}
+
+.bg-footer-ArmoniosoMalta {
+  background-image: url("../images/backgrounds/fondo.png");
+  max-height: 150px;
+}
+
+.bg-itinerario-ArmoniosoMalta {
+  background-image: url("../images/backgrounds/3.jpg");
+}
+
+/* ===== Estilos para la sección de portada ===== */
+.header-invite-ArmoniosoMalta {
+  position: relative;
+}
+
+.header-photo-ArmoniosoMalta {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+  margin-top: 25px;
+}
+
+.circle-frame {
+  background: url("../images/circulo-flores.png") center/cover no-repeat;
+  position: absolute;
+  width: 450px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-top: 90px;
+  pointer-events: none;
+}
+
+.invite-name-ArmoniosoMalta {
+  font-family: "Pinyon Script", cursive;
+  font-size: 3.5rem;
+  margin-top: 80px;
+}
+
+.invite-text-ArmoniosoMalta {
+  font-size: 1.2rem;
+  font-family: "Sistina";
+  width: 60%;
+}
+
+.invite-date-ArmoniosoMalta,
+.invite-location-ArmoniosoMalta {
+  font-family: "Sistina", cursive;
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+.section-title-ArmoniosoMalta {
+  font-family: "Pinyon Script", cursive;
+  font-size: 4rem;
+}
+
+.countdown-section-ArmoniosoMalta {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1rem;
+  overflow: hidden;
+  color: #fff;
+}
+
+.countdown-numbers-ArmoniosoMalta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.countdown-item-ArmoniosoMalta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number-ArmoniosoMalta {
+  font-family: "Sistina", cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.label-ArmoniosoMalta {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  font-family: "Sistina", cursive;
+}
+
+.timeline-item h5 {
+  margin-top: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.timeline-item p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: "faustina";
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.slider-track {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+
+.slider-image {
+  height: 150px;
+  width: auto;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.square-carousel {
+  background: url("../images/cuadro-carrusel.png") center/cover no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+.form-label-custom-ArmoniosoMalta {
+  font-weight: 500;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.bg-form-ArmoniosoMalta {
+  background-color: #2c4d65;
+}
+
+.btn-main-ArmoniosoMalta {
+  background-color: #6c5b7b;
+  color: #fff;
+  border: none;
+}
+
+.btn-main-ArmoniosoMalta:hover {
+  background-color: #95c6c4;
+}
+
+/* .countdown-title-ArmoniosoMalta {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ce0b0b;
+    margin-bottom: 1rem;
+} */
+
+/* .timeline-container-ArmoniosoMalta {
+    padding: 2rem 1rem;
+} */
+
+/* .timeline-ArmoniosoMalta {
+    position: relative;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    border-left: 3px solid #95c6c4;
+} */
+
+/* .timeline-item-ArmoniosoMalta {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot-ArmoniosoMalta {
+    position: absolute;
+    left: -1.4rem;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    background-color: #95c6c4;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #95c6c4;
+}
+
+.timeline-content-ArmoniosoMalta {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    max-width: 500px;
+} */
+
+/* .form-label-custom-ArmoniosoMalta {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+} */
+
+/* .input-custom-ArmoniosoMalta {
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    width: 100%;
+} */
+
+/* .form-container-ArmoniosoMalta {
+    background-color: #95c6c4;
+} */
+
+/* .bg-form-ArmoniosoMalta {
+    background-color: #95c6c4;
+} */
+
+/* .btn-main-ArmoniosoMalta {
+    background-color: #6c5b7b;
+    color: #fff;
+    border: none;
+} */
+
+/* .btn-main-ArmoniosoMalta:hover {
+    background-color: #95c6c4;
+} */
+
+/* .slider-container-ArmoniosoMalta {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+} */
+
+/* .slider-wrapper-ArmoniosoMalta {
+    overflow: hidden;
+    width: 100%;
+} */
+
+/* .input-custom-ArmoniosoMalta {
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    width: 100%;
+} */
+
+/* .form-container-ArmoniosoMalta {
+    background-color: #fff;
+} */

@@ -27,7 +27,7 @@
     "pauseButton": "⏸️ Pausar Canción"
   },
   "weddingForm": {
-    "title": "💍 Confirmar Asistencia",
+    "title": "Confirmar Asistencia",
     "requiredNote": "(*) campos obligatorios",
     "fields": {
       "name": "Nombre*",

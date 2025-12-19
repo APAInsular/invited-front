@@ -7,7 +7,7 @@ const SongLink = ({ songUrl, songTitle, text }) => {
 
   return (
     <div className="container text-center my-4">
-      <p className="fw-semibold fs-5 mb-2">
+      <p className="text fw-semibold fs-5 mb-2">
         <strong>{songTitle}</strong>
       </p>
 

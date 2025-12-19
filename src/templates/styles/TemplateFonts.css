@@ -21,22 +21,22 @@
 
 /* ? Variables */
 :root {
-  --text-font: "sans-serif";
-  --text-size: 1rem;
-  --text-color: black;
+  --template-text-font: "sans-serif";
+  --template-text-size: 1rem;
+  --template-text-color: black;
 
-  --title-font: "Allura";
-  --title-size: 7rem;
-  --title-weight: normal;
-  --title-color: var(--text-color, black);
+  --template-title-font: "Allura";
+  --template-title-size: 7rem;
+  --template-title-weight: normal;
+  --template-title-color: var(--template-text-color, black);
 
-  --subtitle-font: "Allura";
-  --subtitle-size: 1.95rem;
-  --subtitle-weight: normal;
-  --subtitle-color: var(--text-color, black);
+  --template-subtitle-font: "Allura";
+  --template-subtitle-size: 1.95rem;
+  --template-subtitle-weight: normal;
+  --template-subtitle-color: var(--template-text-color, black);
 
-  --low-font: "Sacramento";
-  --low-size: 2.2rem;
+  --template-low-font: "Sacramento";
+  --template-low-size: 2.2rem;
 }
 
 /* ? Font utils */
@@ -61,31 +61,31 @@
 }
 
 .title {
-  font-family: var(--title-font), cursive;
-  font-size: var(--title-size);
-  font-weight: var(--title-weight);
-  color: var(--title-color);
+  font-family: var(--template-title-font), cursive;
+  font-size: var(--template-title-size);
+  font-weight: var(--template-title-weight);
+  color: var(--template-title-color);
   margin: 1rem 0;
 }
 
 .subtitle {
-  font-family: var(--subtitle-font);
-  font-size: var(--subtitle-size);
-  font-weight: var(--subtitle-weight);
-  color: var(--subtitle-color);
+  font-family: var(--template-subtitle-font);
+  font-size: var(--template-subtitle-size);
+  font-weight: var(--template-subtitle-weight);
+  color: var(--template-subtitle-color);
   margin: 0.7rem 0;
 }
 
 .text {
-  font-family: var(--text-font);
-  font-size: var(--text-size);
-  color: var(--text-color);
+  font-family: var(--template-text-font);
+  font-size: var(--template-text-size);
+  color: var(--template-text-color);
   line-height: 1.5;
 }
 
 .title-low {
-  font-family: var(--low-font);
-  font-size: var(--low-size);
+  font-family: var(--template-low-font);
+  font-size: var(--template-low-size);
   opacity: 0.75;
   margin: 0.5rem 0;
 }
@@ -104,23 +104,23 @@
 
 /* ? Font utilities */
 .title {
-  font-family: var(--title-font);
-  font-size: var(--title-size);
-  font-weight: var(--title-weight);
-  color: var(--title-color);
+  font-family: var(--template-title-font);
+  font-size: var(--template-title-size);
+  font-weight: var(--template-title-weight);
+  color: var(--template-title-color);
   margin: 1rem 0;
 }
 
 .subtitle {
-  font-family: var(--subtitle-font);
-  font-size: var(--subtitle-size);
-  font-weight: var(--subtitle-weight);
+  font-family: var(--template-subtitle-font);
+  font-size: var(--template-subtitle-size);
+  font-weight: var(--template-subtitle-weight);
   margin: 0.7rem 0;
 }
 
 .title-low {
-  font-family: var(--low-font);
-  font-size: var(--low-size);
+  font-family: var(--template-low-font);
+  font-size: var(--template-low-size);
   opacity: 0.75;
   margin: 0.5rem 0;
 }

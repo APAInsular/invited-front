@@ -3,8 +3,8 @@
 /* ? This file defines the basics styles of each template. */
 
 :root {
-  --bg-image: none;
-  --bg-color: rgb(72, 72, 72);
+  --template-bg-image: none;
+  --template-bg-color: rgb(72, 72, 72);
 }
 
 /* ? Overrides */
@@ -16,11 +16,11 @@ html {
 }
 
 body {
-  font-family: var(--text-font);
-  font-size: var(--text-size);
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  background-image: var(--bg-image);
+  font-family: var(--template-text-font);
+  font-size: var(--template-text-size);
+  color: var(--template-text-color);
+  background-color: var(--template-bg-color);
+  background-image: var(--template-bg-image);
   line-height: 1.5;
 }
 

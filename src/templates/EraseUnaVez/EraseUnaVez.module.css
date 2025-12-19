@@ -8,14 +8,14 @@
 .wrapper {
   --bg-color: rgb(69, 69, 69);
 
+  --title-size: 2.5rem;
   --title-font: "New Waltograph", cursive;
-  --title-size: 2.0rem;
   --title-color: #6c5b7b;
   --title-weight: bold;
   
   --subtitle-font: "New Waltograph", cursive;
   --subtitle-weight: bold;
-  --subtitle-size: 1.4rem;
+  --subtitle-size: 1.7rem;
 
   --text-font: "sans-serif";
   --text-color: #000000;
@@ -33,40 +33,6 @@
 
 
 
-.countdown-section-template2 {
-  position: relative;
-  text-align: center;
-  padding: 3rem 1rem;
-  overflow: hidden;
-}
-
-.countdown-title-template2 {
-  font-family: "New Waltograph", cursive;
-  font-size: 2rem;
-  color: #000;
-  margin-bottom: 1rem;
-}
-
-.countdown-numbers-template2 {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.countdown-item-template2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.number-template2 {
-  font-family: "New Waltograph", cursive;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #6c5b7b;
-  line-height: 1;
-}
 
 /* ===== Estilos para la sección de portada ===== */
 .header-invite-template2 {

@@ -15,6 +15,7 @@ export default function FramedPhoto({
   photoOffsetX = 2,
   photoOffsetY = 0,
   photoScale = 0.8,
+  maskScale = 1.0,
   borderRadius = "8px",
   mask,
 }) {
@@ -22,18 +23,19 @@ export default function FramedPhoto({
   const pBottom = paddingBottom ?? padding;
   const pLeft = paddingLeft ?? padding;
   const pRight = paddingRight ?? padding;
-  const maskStyle = mask
-    ? {
-        mask: mask,
-        WebkitMask: mask,
-        maskRepeat: "no-repeat",
-        WebkitMaskRepeat: "no-repeat",
-        maskPosition: "center",
-        WebkitMaskPosition: "center",
-        maskSize: "cover",
-        WebkitMaskSize: "cover",
-      }
-    : {};
+const maskStyle = mask
+  ? {
+      maskImage: mask,
+      WebkitMaskImage: mask,
+      maskRepeat: "no-repeat",
+      WebkitMaskRepeat: "no-repeat",
+      maskPosition: "center",
+      WebkitMaskPosition: "center",
+      maskSize: `${maskScale * 100}%`,
+      WebkitMaskSize: `${maskScale * 100}%`,
+    }
+  : {};
+
 
   return (
     <div className={styles.container}>
@@ -46,8 +48,7 @@ export default function FramedPhoto({
             right: `${pRight}px`,
             bottom: `${pBottom}px`,
             transform: `translate(${photoOffsetX}px, ${photoOffsetY}px)`,
-            mask: mask || undefined, 
-            WebkitMask: mask || undefined, 
+            ...maskStyle
           }}
         >
           <img

@@ -19,7 +19,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
 import "./Override.css";
 import styles from "./HavanaModerna.module.css";
-import Carrousel from '../components/Carrousel/Carrousel';
+import Carrousel from "../components/Carrousel/Carrousel";
 import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
 import image from "./images/casadosfelices.webp";
 import TIMELINE_ICON from "./images/right-arrow-svgrepo-com.svg";
@@ -28,7 +28,7 @@ import FooterBranding from "../components/FooterBranding/FooterBranding";
 
 const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
   return (
-<div className={`HavanaModerna ${styles.wrapper}`}>
+    <div className={`HavanaModerna ${styles.wrapper}`}>
       <Page backgroundImage={BACKGROUND1} padding="0" minHeight="830px">
         <section>
           <div className="d-flex justify-content-center mt-5">
@@ -98,25 +98,33 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
           />
         </section>
       </Page>
-          {/*            images={["https://placehold.co/300x500", "https://placehold.co/300x500", "https://placehold.co/300x500"]}  */}
 
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <section className="text-center">
           <h3 className="title-low">Nuestra aventura...</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}icon
+            text={trad("gallery")}
+            icon
             renderItem={(src, i) => (
-              <CarrouselCard src={src} height={"1500px"}/>
+              <CarrouselCard src={src} height={"1500px"} />
             )}
           />
-
           <h3 className="title-low">¡...continuará contigo!</h3>
         </section>
       </Page>
 
-      <Page backgroundSize="auto" backgroundImage={BACKGROUND1} minHeight="830px" centerVertically>
-        <Timeline events={wedding.events} text={trad("timeline")} icon={{iconSrc: TIMELINE_ICON}} />
+      <Page
+        backgroundSize="auto"
+        backgroundImage={BACKGROUND1}
+        minHeight="830px"
+        centerVertically
+      >
+        <Timeline
+          events={wedding.events}
+          text={trad("timeline")}
+          icon={{ iconSrc: TIMELINE_ICON }}
+        />
       </Page>
 
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
@@ -128,7 +136,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
       </Page>
 
       <Page backgroundImage={BACKGROUND1} minHeight="150px">
-        <FooterBranding/>
+        <FooterBranding />
       </Page>
     </div>
   );

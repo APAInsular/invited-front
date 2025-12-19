@@ -4,18 +4,19 @@ export default function FramedPhoto({
   frame,
   photo,
   ratio = "4/5",
-  padding = 12,
+  padding = 0,
   paddingTop,
   paddingBottom,
   paddingLeft,
   paddingRight,
-  frameScale = 1.9,
+  frameScale = 1.0,
   frameOffsetX = 0,
   frameOffsetY = 0,
   photoOffsetX = 2,
   photoOffsetY = 0,
-  photoScale = 0.8,
+  photoScale = 1.0,
   maskScale = 1.0,
+  borderStyle = "",
   borderRadius = "8px",
   mask,
 }) {
@@ -65,6 +66,7 @@ const maskStyle = mask
           alt="Frame"
           className={styles.frame}
           style={{
+            border: borderStyle,
             transform: `translate(${frameOffsetX}px, ${frameOffsetY}px) scale(${frameScale})`,
           }}
           draggable={false}

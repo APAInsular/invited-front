@@ -7,12 +7,9 @@ import Gallery from './components/Gallery_Plantilla_5';
 import WeddingTimeLine from './components/WeddingTimeLine_Plantilla_5';
 import WeddingForm from './components/WeddingForm_Plantilla_5';
 
-
 import "./styles/TradicionalLondres.css"
 
-
 const TradicionalLondres = ({ wedding, trad: t, images, coverImage }) => {
-   
 
     return (
         <div className='body-template5'>

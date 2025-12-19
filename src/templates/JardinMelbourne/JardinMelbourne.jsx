@@ -18,6 +18,7 @@ import styles from "./JardinMelbourne.module.css";
 
 import image from "./images/casadosfelices.webp";
 import FRAME from "./images/photo_frame.png";
+import MASK from "./images/photo_mask.png";
 import DECORATION_0 from "./images/decoration_0.png";
 import DECORATION_1 from "./images/decoration_1.png";
 import TIMELINE_ICON from "./images/timeline_icon.png";
@@ -28,7 +29,7 @@ const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
       {/* Hero */}
       <Page backgroundColor="white" padding="0" minHeight="830px">
         <section className="p-5">
-          <FramedPhoto frame={FRAME} photo={coverImage} />
+          <FramedPhoto frame={FRAME} frameScale={1.3} photoScale={0.5} maskScale={1.3} mask={`url(${MASK})`} photo={coverImage} />
           <div className="mt-2">
             <CoupleNames
               groom={wedding.user.name}
@@ -38,15 +39,13 @@ const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
             />
           </div>
           <p className="mx-3 text-center">
-            {trad("hero.description")}{" "}
+            {trad("hero.description")} {" "}
             <span className="fw-bold text-2xl">
               {formatDateToString(wedding.weddingDate)}
             </span>
-            <br />
-            {trad("hero.time")}{" "}
+            <br /> <span className="fw-bold text-2xl"> a las {" "} {trad("hero.time") } {" "}</span>
             <span className="fw-bold text-2xl">{trad("hero.hour")}</span>
             <br />
-            {trad("hero.location")} <br />
             <span className="fw-bold text-2xl">{wedding.location.city}</span>
             <br />
             <span className="fw-bold text-2xl">{wedding.location.country}</span>

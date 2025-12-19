@@ -1,4 +1,3 @@
-
 import WeddingForm from "../components/WeddingForm/WeddingForm";
 import Carrousel from "../components/Carrousel/Carrousel";
 import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
@@ -23,7 +22,7 @@ import BG3 from "./images/backgrounds/BG3.png";
 import BG4 from "./images/backgrounds/BG4.png";
 import FooterBranding from "./../components/FooterBranding/FooterBranding";
 import SongLink from "../components/SongLink/SongLink";
-import StylableTimeline from './../components/StylableTimeline/StylableTimeline';
+import StylableTimeline from "./../components/StylableTimeline/StylableTimeline";
 import AcuarelaBohoWeddingFormStyles from "./styles/AcuarelaBohoWeddingForm.module.css";
 import AcuarelaBohoTimeline from "./styles/AcuarelaBohoTimeline.module.css";
 
@@ -34,7 +33,7 @@ const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
         <section className="text-center">
           <div className="position-relative d-inline-block mb-4">
             <img
-              src={PHOTO}
+              src={coverImage}
               alt="Samantha y Javier"
               className={`img-fluid rounded-circle header-photo ${styles.headerPhoto}`}
             ></img>
@@ -81,7 +80,11 @@ const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
       </Page>
       <Page backgroundImage={BG2} padding="0" minHeight="830px">
         <section className="text-center">
-          <StylableTimeline styles={AcuarelaBohoTimeline} events={wedding.events} text={t("timeline")} />
+          <StylableTimeline
+            styles={AcuarelaBohoTimeline}
+            events={wedding.events}
+            text={t("timeline")}
+          />
         </section>
       </Page>
       <Page backgroundImage={BG1} padding="0" minHeight="830px">
@@ -93,7 +96,12 @@ const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
           )}
         />
       </Page>
-      <Page backgroundImage={BG4} padding="0" minHeight="830px" centerVertically>
+      <Page
+        backgroundImage={BG4}
+        padding="0"
+        minHeight="830px"
+        centerVertically
+      >
         <WeddingForm
           weddingId={wedding.id}
           text={t("weddingForm")}

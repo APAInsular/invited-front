@@ -68,7 +68,7 @@ const Invitations = () => {
     return <TemplateLoading />;
   }
 
-  if (error || !weddingData?.template) {
+  if (error || !weddingData?.wedding.template) {
     return <TemplateNotFound />;
   }
 

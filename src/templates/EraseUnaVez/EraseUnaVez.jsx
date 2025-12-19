@@ -42,7 +42,7 @@ const EraseUnaVez = ({ wedding, trad: t, images, coverImage }) => {
             maskScale={1.3}
             mask={`url(${PHOTO_MASK})`}
             frame={PHOTO_FRAME2}
-            photo={PHOTO}
+            photo={coverImage}
           />
 
           <CoupleNames

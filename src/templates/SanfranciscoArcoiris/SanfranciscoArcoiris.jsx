@@ -18,7 +18,7 @@ import BACKGROUND_2 from "./images/bg_2.png";
 import BACKGROUND_3 from "./images/bg_3.png";
 import BACKGROUND_4 from "./images/bg_4.png";
 
-const SanfranciscoArcoiris = ({ wedding, images, trad }) => {
+const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page
@@ -30,7 +30,7 @@ const SanfranciscoArcoiris = ({ wedding, images, trad }) => {
         <section>
           <div className="text-center">
             <div className={styles.CouplePhoto}>
-              <img src="https://placehold.co/300x300" alt="Couple" />
+              <img src={coverImage} alt="Couple" />
             </div>
 
             <CoupleNames

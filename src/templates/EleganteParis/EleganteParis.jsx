@@ -17,7 +17,7 @@ import BACKGROUND_0 from "./images/background_0.jpg";
 import BACKGROUND_1 from "./images/background_1.jpg";
 import DECO from "./images/timeline_decoration.png";
 
-const EleganteParis = ({ wedding, images, trad }) => {
+const EleganteParis = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page
@@ -38,7 +38,7 @@ const EleganteParis = ({ wedding, images, trad }) => {
 
           <div className="text-center">
             <img
-              src="https://placehold.co/250x200"
+              src={coverImage}
               alt="couple"
               style={{ border: "10px double black" }}
             />

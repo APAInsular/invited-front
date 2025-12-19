@@ -37,7 +37,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
               style={{ width: "300px", height: "400px" }}
             >
               <img
-                src={image}
+                src={coverImage}
                 alt="Foto base"
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{ objectFit: "contain", padding: "11px" }}

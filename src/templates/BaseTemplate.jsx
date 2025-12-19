@@ -76,13 +76,13 @@ const BaseTemplate = ({ translationPage, wedding, children }) => {
   };
 
   return (
-    <>
+    <div className="Template">
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(child, injectedProps)
           : child
       )}
-    </>
+    </div>
   );
 };
 

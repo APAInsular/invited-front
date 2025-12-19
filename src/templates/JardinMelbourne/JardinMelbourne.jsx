@@ -22,13 +22,13 @@ import DECORATION_0 from "./images/decoration_0.png";
 import DECORATION_1 from "./images/decoration_1.png";
 import TIMELINE_ICON from "./images/timeline_icon.png";
 
-const JardinMelbourne = ({ wedding, images, trad }) => {
+const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       {/* Hero */}
       <Page backgroundColor="white" padding="0" minHeight="830px">
         <section className="p-5">
-          <FramedPhoto frame={FRAME} photo={image} />
+          <FramedPhoto frame={FRAME} photo={coverImage} />
           <div className="mt-2">
             <CoupleNames
               groom={wedding.user.name}

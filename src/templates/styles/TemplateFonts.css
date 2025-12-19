@@ -60,7 +60,7 @@
   font-family: "Playwrite USA Modern" !important;
 }
 
-.title {
+.Template .title {
   font-family: var(--template-title-font), cursive;
   font-size: var(--template-title-size);
   font-weight: var(--template-title-weight);
@@ -68,7 +68,7 @@
   margin: 1rem 0;
 }
 
-.subtitle {
+.Template .subtitle {
   font-family: var(--template-subtitle-font);
   font-size: var(--template-subtitle-size);
   font-weight: var(--template-subtitle-weight);
@@ -76,34 +76,34 @@
   margin: 0.7rem 0;
 }
 
-.text {
+.Template .text {
   font-family: var(--template-text-font);
   font-size: var(--template-text-size);
   color: var(--template-text-color);
   line-height: 1.5;
 }
 
-.title-low {
+.Template .title-low {
   font-family: var(--template-low-font);
   font-size: var(--template-low-size);
   opacity: 0.75;
   margin: 0.5rem 0;
 }
 
-.font-allura {
+.Template .font-allura {
   font-family: "Allura", cursive !important;
 }
 
-.font-satisfy {
+.Template .font-satisfy {
   font-family: "Satisfy", cursive !important;
 }
 
-.font-sacramento {
+.Template .font-sacramento {
   font-family: "Sacramento", cursive !important;
 }
 
 /* ? Font utilities */
-.title {
+.Template .title {
   font-family: var(--template-title-font);
   font-size: var(--template-title-size);
   font-weight: var(--template-title-weight);
@@ -111,14 +111,14 @@
   margin: 1rem 0;
 }
 
-.subtitle {
+.Template .subtitle {
   font-family: var(--template-subtitle-font);
   font-size: var(--template-subtitle-size);
   font-weight: var(--template-subtitle-weight);
   margin: 0.7rem 0;
 }
 
-.title-low {
+.Template .title-low {
   font-family: var(--template-low-font);
   font-size: var(--template-low-size);
   opacity: 0.75;

@@ -18,13 +18,13 @@ import FooterBranding from "../components/FooterBranding/FooterBranding";
 import Page from "../components/Page/Page";
 
 const bgColor = "rgb(255, 228, 175)";
-const Classic = ({ wedding, images, trad }) => {
+const Classic = ({ wedding, images, trad, coverImage }) => {
   return (
     // TODO: Idea: Scroll Animation here.
     <div className={styles.styles}>
       <div className="w-100">
         <img
-          src={fallbackImage}
+          src={coverImage}
           alt="Foto de los novios"
           className="img-fluid"
         />

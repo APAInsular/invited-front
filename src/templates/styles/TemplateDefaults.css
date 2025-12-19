@@ -8,14 +8,14 @@
 }
 
 /* ? Overrides */
-html {
+.Template html {
   scrollbar-width: none;
   /* Firefox */
   -ms-overflow-style: none;
   /* Internet Explorer 10+ */
 }
 
-body {
+.Template body {
   font-family: var(--template-text-font);
   font-size: var(--template-text-size);
   color: var(--template-text-color);
@@ -24,74 +24,73 @@ body {
   line-height: 1.5;
 }
 
-section {
+.Template section {
   min-height: min-content;
   padding: 5px;
 }
 
 /* ? Extended */
-section.sep-top {
+.Template section.sep-top {
   border-top: solid rgba(0, 0, 0, 0.1) 2px;
 }
 
-section.sep-bottom {
+.Template section.sep-bottom {
   border-bottom: solid rgba(0, 0, 0, 0.1) 2px;
 }
 
-section.emphasis {
+.Template section.emphasis {
   border: black 2px dashed;
   transition: 0.3s;
 }
 
-section.emphasis:hover {
+.Template section.emphasis:hover {
   border: black 2px solid;
   scale: 1.02;
   transition: 0.3s;
 }
 
 /* ? Utilities */ /* From Tailwind (I will change this) */
-.bg-image-cover {
+.Template .bg-image-cover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.bg-image-contain {
+.Template .bg-image-contain {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.bold {
+.Template .bold {
   font-weight: bold;
 }
-.logo {
+.Template .logo {
   max-width: 250px;
 }
-.text-xl {
+.Template .text-xl {
   font-size: 1.25rem;
 }
-.text-2xl {
+.Template .text-2xl {
   font-size: 1.5rem;
 }
-.text-3xl {
+.Template .text-3xl {
   font-size: 1.875rem;
 }
-.text-4xl {
+.Template .text-4xl {
   font-size: 2.25rem;
 }
-.text-5xl {
+.Template .text-5xl {
   font-size: 3rem;
 }
-.text-6xl {
+.Template .text-6xl {
   font-size: 3.75rem;
 }
-.white-space-nowrap {
+.Template .white-space-nowrap {
   white-space: nowrap;
 }
 
-/* Texto pequeño debajo de los nombres */
-.couple-description {
+.Template .couple-description {
   font-size: 20px;
   color: #757575;
   margin-top: 20px;

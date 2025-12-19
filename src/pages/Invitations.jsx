@@ -85,7 +85,7 @@ const Invitations = () => {
       {/* Handle translation and image state */ }
         <BaseTemplate
           translationPage={`T_${templateName}`} // ? Assign the translation .json
-          wedding={placeholder} // ? Pass wedding
+          wedding={weddingData.wedding} // ? Pass wedding
         >
           {available[templateName]} {/* Get the specific template */}
         </BaseTemplate>

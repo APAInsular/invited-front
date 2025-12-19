@@ -76,7 +76,6 @@ const Invitations = () => {
     // ? Verify if exists this template
     return (
       <DemoWrapper>
-        {" "}
         {/* 600px width limit */}
         {/* Handle translation and image state */}
         <BaseTemplate
@@ -88,6 +87,7 @@ const Invitations = () => {
       </DemoWrapper>
     );
   }
+  return <TemplateNotFound />;
 };
 
 export default Invitations;

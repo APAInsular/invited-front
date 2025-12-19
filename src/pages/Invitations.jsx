@@ -64,7 +64,7 @@ const Invitations = () => {
     fetchWedding();
   }, [idWedding]);
 
-  if (!error && !weddingData) {
+  if (!error && !weddingData.wedding) {
     return <TemplateLoading />;
   }
 

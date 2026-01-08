@@ -21,6 +21,7 @@ import AboutUs from './pages/AboutUs';
 import Crowfunding from './pages/Crowfunding';
 import ContactPage from './pages/ContactPage';
 import AppLayout from './layouts/AppLayout';
+import TemplateGallery from './pages/TemplateGallery';
 
 const router = createBrowserRouter([
   // Redirigir raíz a español
@@ -51,7 +52,8 @@ const router = createBrowserRouter([
       { path: "thankyou", element: <ThankYouPage /> },
       { path: "about-us", element: <AboutUs /> },
       { path: "crowfunding", element: <Crowfunding /> },
-      { path: "contact", element: <ContactPage /> }
+      { path: "contact", element: <ContactPage /> },
+      { path: "gallery", element: <TemplateGallery /> }
     ]
   }
 ]);

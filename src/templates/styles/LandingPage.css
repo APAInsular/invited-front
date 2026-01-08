@@ -565,3 +565,47 @@ body {
 .faq-answer p {
     margin: 1rem 0;
 }
+
+/* CARRUSEL */
+.invitation-card {
+  max-width: 380px;
+  margin: auto;
+}
+
+/* Controles negros */
+.custom-carousel-control .carousel-control-prev-icon,
+.custom-carousel-control .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* Posición general */
+.custom-carousel-control {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Desktop */
+.carousel-control-prev.custom-carousel-control {
+  left: -3.5rem;
+}
+
+.carousel-control-next.custom-carousel-control {
+  right: -3.5rem;
+}
+
+/* Mobile: más separados de la card */
+@media (max-width: 576px) {
+  .carousel-control-prev.custom-carousel-control {
+    left: -2rem;
+  }
+
+  .carousel-control-next.custom-carousel-control {
+    right: -2rem;
+  }
+}
+
+

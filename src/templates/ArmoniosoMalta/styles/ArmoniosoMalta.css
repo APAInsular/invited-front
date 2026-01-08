@@ -14,12 +14,13 @@
 }
 
 .body-ArmoniosoMalta {
-  --text-size: 12px;
-  --text-font: "Sistina";
-  --subtitle-color: white;
-  --subtitle-font: "Pinyon Script";
-  --text-color: white;
-  --bg-color: #2c4d65;
+  --template-text-size: 12px;
+  --template-subtitle-size: 2.8rem;
+  --template-text-font: "Sistina";
+  --template-subtitle-color: white;
+  --template-subtitle-font: "Pinyon Script";
+  --template-text-color: white;
+  --template-bg-color: #2c4d65;
   background-color: #2c4d65;
   color: white;
 }

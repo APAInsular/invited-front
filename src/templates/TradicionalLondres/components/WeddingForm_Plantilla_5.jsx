@@ -70,7 +70,7 @@ const WeddingForm_Plantilla_5 = ({ weddingId }) => {
     };
 
     return (
-        <div className="container-template5" >
+        <div className="container-template5 p-5 mt-2 mb-2" >
             <h2 className="form-title-template5 pt-5">Confirmar Asistencia</h2>
             <p className="text-dark small">(*) campos obligatorios</p>
             <form className="p-4 border rounded" onSubmit={handleSendForm}>
@@ -115,11 +115,11 @@ const WeddingForm_Plantilla_5 = ({ weddingId }) => {
                         <div className="d-flex gap-3 align-items-center mt-2">
                             <div>
                                 <input type="radio" name="companion" value="yes" className="form-check-input me-1" onChange={handleCompanionChange} />
-                                <label className="form-check-label text-white">Sí</label>
+                                <label className="form-check-label">Sí</label>
                             </div>
                             <div>
                                 <input type="radio" name="companion" value="no" className="form-check-input me-1" onChange={handleCompanionChange} defaultChecked />
-                                <label className="form-check-label text-white">No</label>
+                                <label className="form-check-label">No</label>
                             </div>
                         </div>
                     </div>

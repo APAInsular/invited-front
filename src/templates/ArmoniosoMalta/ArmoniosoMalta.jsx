@@ -27,7 +27,7 @@ const ArmoniosoMalta = ({ wedding, trad: t, images, coverImage }) => {
           date={wedding.weddingDate}
         />
       </section>
-      <section className="mt-4 section-bg-ArmoniosoMalta bg-countdown-ArmoniosoMalta">
+      <section className="section-bg-ArmoniosoMalta bg-countdown-ArmoniosoMalta">
         <h3 className="section-title-ArmoniosoMalta">Nuestra cancion</h3>
         <SongLink
           songUrl={wedding.musicUrl}
@@ -41,10 +41,11 @@ const ArmoniosoMalta = ({ wedding, trad: t, images, coverImage }) => {
         />
         <ArmoniosoMaltaCountDown weddingDate={wedding.weddingDate} text={t("countdown")} />
       </section>
-      <section className="py-5 mt-4 section-bg-ArmoniosoMalta bg-itinerario-ArmoniosoMalta">
+      <section className="py-5 section-bg-ArmoniosoMalta bg-itinerario-ArmoniosoMalta">
         <ArmoniosoMaltaTimeLine events={wedding.events} text={t("timeline")} />
       </section>
-      <section className="py-5 mt-4 section-bg-ArmoniosoMalta bg-gallery-ArmoniosoMalta">
+      <section className="py-5 section-bg-ArmoniosoMalta bg-gallery-ArmoniosoMalta">
+        <h3 className="subtitle">Nuestra Historia</h3>
         <Carrousel
           images={images}
           text={t("gallery")}
@@ -52,9 +53,9 @@ const ArmoniosoMalta = ({ wedding, trad: t, images, coverImage }) => {
             <CarrouselCard key={i} src={src} height="1500px" />
           )}
         />
+          <h3 className="subtitle">¡Que floresca el amor!</h3>
       </section>
       <section className="py-5 section-bg-ArmoniosoMalta bg-gallery-ArmoniosoMalta">
-        
          <WeddingForm
             weddingId={wedding.id}
             text={t("weddingForm")}

@@ -12,11 +12,11 @@ import SanfranciscoArcoiris from "../templates/SanfranciscoArcoiris/Sanfrancisco
 import AcuarelaBoho from "../templates/AcuarelaBoho/AcuarelaBoho";
 
 import ArmoniosoMalta from "../templates/ArmoniosoMalta/ArmoniosoMalta";
-import EraseUnaVez from "./../templates/EraseUnaVez/EraseUnaVez";
 import TemplateNotFound from "./TemplateNotFound";
 import TemplateLoading from "./TemplateLoading";
 import TradicionalLondres from "../templates/TradicionalLondres/TradicionalLondres";
 import AlegreLasVegas from "../templates/AlegreLasVegas/AlegreLasVegas";
+import EraseUnaVez from '../templates/EraseUnaVez/EraseUnaVez';
 
 const available = {
   Romantica: <Classic />,
@@ -253,7 +253,6 @@ const Invitations = () => {
       </DemoWrapper>
     );
   }
-
   return <TemplateNotFound />;
 };
 

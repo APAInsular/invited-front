@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
 
 .wrapper {
-  --text-font: "sans-serif";
-    --title-font: "Allura";
+  --template-text-font: "sans-serif";
+  --template-title-font: "Allura";
 
-  --subtitle-font: "Allura";
-  --title-size: 2.75rem;
-  --title-color: rgb(127, 127, 127);
-  --title-weight: bold;
-  --subtitle-font: "Gwendolyn";
-  --subtitle-weight: bold;
-  --subtitle-size: 2.5rem;
-  --text-color: #705843;
-  --bg-color: #705843;
-  --low-font: "Gwendolyn";
-  --text-size: 1.4rem
+  --template-subtitle-font: "Allura";
+  --template-title-size: 4.75rem;
+  --template-title-color: rgb(127, 127, 127);
+  --template-title-weight: bold;
+  --template-subtitle-font: "Gwendolyn";
+  --template-subtitle-weight: bold;
+  --template-subtitle-size: 2.5rem;
+  --template-text-color: #705843;
+  --template-bg-color: #705843;
+  --template-low-font: "Gwendolyn";
+  --template-text-size: 1.4rem
 }
 
 
 
 .wrapper section {
-  background-color: rgb(255, 228, 175);
+  background-color: rgba(254, 238, 212, 1);
 }

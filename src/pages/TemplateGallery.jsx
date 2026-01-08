@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import usePageTranslation from "./../hooks/usePageTranslation";
 import { useNavigate } from "react-router-dom";
-
+import "../templates/styles/TemplateGallery.css";
 const GalleryItem = ({
   name = "Unknown",
   category = "Unknown",
   imageSrc = "",
 }) => {
   return (
-    <div className="col-12 col-sm-6 col-lg-4">
+    <div className="TemplateGallery col-12 col-sm-6 col-lg-4">
       <div className="card h-100 shadow-sm overflow-hidden">
         <img
           src={imageSrc}

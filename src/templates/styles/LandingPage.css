@@ -582,8 +582,6 @@ body {
 .custom-carousel-control {
   width: 3rem;
   height: 3rem;
-  background-color: rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
 }

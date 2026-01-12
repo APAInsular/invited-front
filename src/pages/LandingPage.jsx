@@ -7,6 +7,16 @@ import Footer from '../components/Footer';
 import usePageTranslation from '../hooks/usePageTranslation';
 import InvitationCard from '../components/InvitationCard';
 
+// CONFIGURACIÓN CENTRALIZADA: Agregar las nuevas plantillas
+const TemplateConfig = [
+    { id: 1, img: '/images/Plantilla_0.png', link: 'https://www.invited.es/es/invitacion/javier-sandra/70' },
+    { id: 2, img: '/images/Plantilla_1.png', link: 'https://www.invited.es/es/invitacion/javier-sandra/71' },
+    { id: 3, img: '/images/Plantilla_2.png', link: 'https://www.invited.es/es/invitacion/luis-lucas/81' },
+    { id: 4, img: '/images/Havana_Moderna.png', link: 'https://www.invited.es/es/invitacion/luis-lucas/85' },
+    { id: 5, img: '/images/Jardin_Melbourne.png', link: 'https://www.invited.es/es/invitacion/javier-sandra/91' },
+];
+
+
 const LandingPage = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
@@ -111,6 +121,20 @@ const LandingPage = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    // FUNCIÓN REUTILIZABLE PARA LAS TARJETAS
+    const renderInvitationCard = (item) => (
+        <InvitationCard
+            key={item.id}
+            data={{
+                img: item.img,
+                title: t(`invitation.cardTitle${item.id}`),
+                text: t(`invitation.cardText${item.id}`),
+                link: item.link
+            }}
+            buttonLabel={t('invitation.button')}
+        />
+    );
+
     return (
         <div style={{ backgroundColor: "#FAF9F8", color: "#2F2F2F", minHeight: "100vh" }}>
 
@@ -144,22 +168,12 @@ const LandingPage = () => {
                 <div className="container">
                     <h2>{t('why.title')}</h2>
                     <div className="beneficios-grid">
-                        <div className="beneficio-item">
-                            <h3>{t('why.cardTitle1')}</h3>
-                            <p>{t('why.cardText1')}</p>
-                        </div>
-                        <div className="beneficio-item">
-                            <h3>{t('why.cardTitle2')}</h3>
-                            <p>{t('why.cardText2')}</p>
-                        </div>
-                        <div className="beneficio-item">
-                            <h3>{t('why.cardTitle3')}</h3>
-                            <p>{t('why.cardText3')}</p>
-                        </div>
-                        <div className="beneficio-item">
-                            <h3>{t('why.cardTitle4')}</h3>
-                            <p>{t('why.cardText4')}</p>
-                        </div>
+                        {[1, 2, 3, 4].map(num => (
+                            <div key={num} className="beneficio-item">
+                                <h3>{t(`why.cardTitle${num}`)}</h3>
+                                <p>{t(`why.cardText${num}`)}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -173,89 +187,46 @@ const LandingPage = () => {
                     </div>
 
                     <div className="position-relative">
-
-                        {/* 1. CARRUSEL MÓVIL */}
+                        {/* 1. CARRUSEL MÓVIL (Automático para todas las cards) */}
                         <div id="carouselMobile" className="carousel slide d-md-none" data-bs-touch="true">
                             <div className="carousel-inner">
-                                {[1, 2, 3, 4].map((id, index) => (
-                                    <div key={`mob-${id}`} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                                {TemplateConfig.map((item, index) => (
+                                    <div key={`mob-${item.id}`} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                                         <div className="row justify-content-center">
-                                            <div className="col-11">
-                                                <InvitationCard
-                                                    data={{
-                                                        img: id === 4 ? '/images/Havana_Moderna.png' : `/images/Plantilla_${id - 1}.png`,
-                                                        title: t(`invitation.cardTitle${id}`),
-                                                        text: t(`invitation.cardText${id}`),
-                                                        link: id === 1 ? 'https://www.invited.es/es/invitacion/javier-sandra/70' :
-                                                            id === 2 ? 'https://www.invited.es/es/invitacion/javier-sandra/71' :
-                                                                id === 3 ? 'https://www.invited.es/es/invitacion/luis-lucas/81' :
-                                                                    'https://www.invited.es/es/invitacion/luis-lucas/85'
-                                                    }}
-                                                    buttonLabel={t('invitation.button')}
-                                                />
-                                            </div>
+                                            <div className="col-11">{renderInvitationCard(item)}</div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
-                            {/* Controles móvil */}
-                            <button className="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselMobile" data-bs-slide="prev">
-                                <span className="carousel-control-prev-icon" />
-                            </button>
-                            <button className="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselMobile" data-bs-slide="next">
-                                <span className="carousel-control-next-icon" />
-                            </button>
+                            <button className="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselMobile" data-bs-slide="prev"><span className="carousel-control-prev-icon" /></button>
+                            <button className="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselMobile" data-bs-slide="next"><span className="carousel-control-next-icon" /></button>
                         </div>
 
-                        {/* 2. CARRUSEL DESKTOP */}
+                        {/* 2. CARRUSEL DESKTOP (Estructurado por grupos) */}
                         <div id="carouselDesktop" className="carousel slide d-none d-md-block" data-bs-interval="false">
                             <div className="carousel-inner">
-                                {/* Slide 1: Tarjetas 1, 2, 3 */}
+                                {/* Slide 1: Primeras 3 tarjetas */}
                                 <div className="carousel-item active">
                                     <div className="row g-4 justify-content-center">
-                                        {[1, 2, 3].map((id) => (
-                                            <div key={`desk-${id}`} className="col-md-4">
-                                                <InvitationCard
-                                                    data={{
-                                                        img: `/images/Plantilla_${id - 1}.png`,
-                                                        title: t(`invitation.cardTitle${id}`),
-                                                        text: t(`invitation.cardText${id}`),
-                                                        link: id === 1 ? 'https://www.invited.es/es/invitacion/javier-sandra/70' :
-                                                            id === 2 ? 'https://www.invited.es/es/invitacion/javier-sandra/71' :
-                                                                'https://www.invited.es/es/invitacion/luis-lucas/81'
-                                                    }}
-                                                    buttonLabel={t('invitation.button')}
-                                                />
-                                            </div>
+                                        {TemplateConfig.slice(0, 3).map(item => (
+                                            <div key={`desk-${item.id}`} className="col-md-4">{renderInvitationCard(item)}</div>
                                         ))}
                                     </div>
                                 </div>
-                                {/* Slide 2: Tarjeta 4 */}
-                                <div className="carousel-item">
-                                    <div className="row g-4 justify-content-center">
-                                        <div className="col-md-4">
-                                            <InvitationCard
-                                                data={{
-                                                    img: '/images/Havana_Moderna.png',
-                                                    title: t('invitation.cardTitle4'),
-                                                    text: t('invitation.cardText4'),
-                                                    link: 'https://www.invited.es/es/invitacion/luis-lucas/85'
-                                                }}
-                                                buttonLabel={t('invitation.button')}
-                                            />
+                                {/* Slide 2: Siguientes tarjetas (4, 5, 6) */}
+                                {TemplateConfig.length > 3 && (
+                                    <div className="carousel-item">
+                                        <div className="row g-4 justify-content-center">
+                                            {TemplateConfig.slice(3, 6).map(item => (
+                                                <div key={`desk-${item.id}`} className="col-md-4">{renderInvitationCard(item)}</div>
+                                            ))}
                                         </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
-                            {/* Controles Desktop */}
-                            <button className="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselDesktop" data-bs-slide="prev">
-                                <span className="carousel-control-prev-icon" />
-                            </button>
-                            <button className="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselDesktop" data-bs-slide="next">
-                                <span className="carousel-control-next-icon" />
-                            </button>
+                            <button className="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselDesktop" data-bs-slide="prev"><span className="carousel-control-prev-icon" /></button>
+                            <button className="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselDesktop" data-bs-slide="next"><span className="carousel-control-next-icon" /></button>
                         </div>
-
                     </div>
                 </div>
             </section>

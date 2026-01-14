@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { AuthProvider } from './context/AuthContext';
 import NavigationBar from './components/NavigationBar';
 import RegisterPartnerPage from './pages/RegisterPartnerPage';

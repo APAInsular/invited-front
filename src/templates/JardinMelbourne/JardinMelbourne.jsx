@@ -16,7 +16,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
 import styles from "./JardinMelbourne.module.css";
 
-import image from "./images/casadosfelices.webp";
 import FRAME from "./images/photo_frame.png";
 import DECORATION_0 from "./images/decoration_0.png";
 import DECORATION_1 from "./images/decoration_1.png";

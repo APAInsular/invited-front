@@ -6,15 +6,9 @@ import '../templates/styles/LandingPage.css';
 import Footer from '../components/Footer';
 import usePageTranslation from '../hooks/usePageTranslation';
 import InvitationCard from '../components/InvitationCard';
+import { TemplateConfig } from '../constants';
 
 // CONFIGURACIÓN CENTRALIZADA: Agregar las nuevas plantillas
-const TemplateConfig = [
-    { id: 1, img: '/images/Plantilla_0.png', link: 'https://www.invited.es/es/invitacion/javier-sandra/70' },
-    { id: 2, img: '/images/Plantilla_1.png', link: 'https://www.invited.es/es/invitacion/javier-sandra/71' },
-    { id: 3, img: '/images/Plantilla_2.png', link: 'https://www.invited.es/es/invitacion/luis-lucas/81' },
-    { id: 4, img: '/images/Havana_Moderna.png', link: 'https://www.invited.es/es/invitacion/luis-lucas/85' },
-    { id: 5, img: '/images/Jardin_Melbourne.png', link: 'https://www.invited.es/es/invitacion/javier-sandra/91' },
-];
 
 
 const LandingPage = () => {

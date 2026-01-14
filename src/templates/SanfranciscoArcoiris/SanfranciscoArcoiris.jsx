@@ -17,6 +17,7 @@ import BACKGROUND_1 from "./images/bg_1.png";
 import BACKGROUND_2 from "./images/bg_2.png";
 import BACKGROUND_3 from "./images/bg_3.png";
 import BACKGROUND_4 from "./images/bg_4.png";
+import image from "./../JardinMelbourne/images/casadosfelices.webp";
 
 const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
   return (

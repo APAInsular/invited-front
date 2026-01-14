@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import usePageTranslation from "./../hooks/usePageTranslation";
 import { useNavigate } from "react-router-dom";
 import "../templates/styles/TemplateGallery.css";
+import { Categories, TemplateConfig } from "../constants.js";
+
 const GalleryItem = ({
   name = "Unknown",
   category = "Unknown",
   imageSrc = "",
+  link = "#",
 }) => {
   return (
     <div className="TemplateGallery col-12 col-sm-6 col-lg-4">
       <div className="card h-100 shadow-sm overflow-hidden">
-        <img
-          src={imageSrc}
-          alt={name}
-          className="card-img-top img-fluid"
-          style={{
-            aspectRatio: "9 / 16",
-            objectFit: "cover",
-          }}
-        />
+        <a href={link}>
+          <img
+            src={imageSrc}
+            alt={name}
+            className="card-img-top img-fluid"
+            style={{
+              aspectRatio: "9 / 16",
+              objectFit: "cover",
+            }}
+          />
+        </a>
         <div className="card-body">
           <h6 className="card-title mb-1">{name}</h6>
           <small className="text-muted">{category}</small>
@@ -53,30 +58,10 @@ const TemplateGallery = () => {
   const navigate = useNavigate();
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
-  const [templates] = useState([
-    { name: "Havana", category: "Moderno", src: "/images/Havana_Moderna.png" },
-    {
-      name: "Vintage Bliss",
-      category: "Vintage",
-      src: "https://placehold.co/200x800",
-    },
-    {
-      name: "Classic Elegance",
-      category: "Clasico",
-      src: "https://placehold.co/200x800",
-    },
-  ]);
-
-  const [categories] = useState([
-    "Quitar Filtro",
-    "Clasico",
-    "Moderno",
-    "Vintage",
-  ]);
   const [search, setSearch] = useState("");
-  const [selectedCategory, setCategory] = useState(categories[0]);
+  const [selectedCategory, setCategory] = useState(Categories[0]);
 
-  const filteredTemplates = templates.filter((t) => {
+  const filteredTemplates = TemplateConfig.filter((t) => {
     const categoryMatch =
       !selectedCategory || selectedCategory === "Quitar Filtro"
         ? true
@@ -102,7 +87,7 @@ const TemplateGallery = () => {
 
         <div className="col-12 col-md-8">
           <ul className="nav gap-2 flex-nowrap overflow-auto">
-            {categories.map((c) => (
+            {Categories.map((c) => (
               <CategoryItem
                 key={c}
                 name={c}
@@ -121,7 +106,8 @@ const TemplateGallery = () => {
               key={i.name}
               name={i.name}
               category={i.category}
-              imageSrc={i.src}
+              imageSrc={i.img}
+              link={i.link}
             />
           ))
         ) : (

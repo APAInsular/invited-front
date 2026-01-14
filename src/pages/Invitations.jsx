@@ -18,7 +18,7 @@ import TemplateLoading from "./TemplateLoading";
 import TradicionalLondres from "../templates/TradicionalLondres/TradicionalLondres";
 import AlegreLasVegas from "../templates/AlegreLasVegas/AlegreLasVegas";
 
-const available = {
+export const available = {
   Romantica: <Classic />,
   EleganteParis: <EleganteParis />,
   HavanaModerna: <HavanaModerna />,

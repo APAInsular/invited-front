@@ -1,0 +1,7 @@
+
+.TemplateGallery body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}

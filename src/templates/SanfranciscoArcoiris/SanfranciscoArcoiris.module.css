@@ -3,7 +3,7 @@
 .wrapper {
   --template-text-font: "Times New Roman", Times, serif;
   --template-title-font: Arial;
-  --template-title-size: 3.5rem;
+  --template-title-size: 3.0rem;
   --template-title-color: rgb(0, 0, 0);
   --template-title-weight: normal;
   --template-subtitle-font: Arial;

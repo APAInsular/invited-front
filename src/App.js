@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { AuthProvider } from './context/AuthContext';
 import NavigationBar from './components/NavigationBar';
 import RegisterPartnerPage from './pages/RegisterPartnerPage';
@@ -21,6 +22,7 @@ import AboutUs from './pages/AboutUs';
 import Crowfunding from './pages/Crowfunding';
 import ContactPage from './pages/ContactPage';
 import AppLayout from './layouts/AppLayout';
+import TemplateGallery from './pages/TemplateGallery';
 
 const router = createBrowserRouter([
   // Redirigir raíz a español
@@ -51,7 +53,8 @@ const router = createBrowserRouter([
       { path: "thankyou", element: <ThankYouPage /> },
       { path: "about-us", element: <AboutUs /> },
       { path: "crowfunding", element: <Crowfunding /> },
-      { path: "contact", element: <ContactPage /> }
+      { path: "contact", element: <ContactPage /> },
+      { path: "gallery", element: <TemplateGallery /> }
     ]
   }
 ]);

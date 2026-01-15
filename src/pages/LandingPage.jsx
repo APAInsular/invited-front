@@ -252,59 +252,25 @@ const LandingPage = () => {
                             </button>
                         </div>
 
-                        {/* 2. CARRUSEL DESKTOP (Estructurado por grupos) */}
-                        <div
-                            id="carouselDesktop"
-                            className="carousel slide d-none d-md-block"
-                            data-bs-interval="false"
-                        >
+                        {/* 2. CARRUSEL DESKTOP (Circular / Infinito) */}
+                        <div id="carouselDesktop" className="carousel slide d-none d-md-block" data-bs-interval="false">
                             <div className="carousel-inner">
-                                {/* Slide 1: Primeras 3 tarjetas */}
-                                <div className="carousel-item active">
-                                    <div className="row g-4 justify-content-center">
-                                        {TemplateConfig.slice(0, 3).map((item) => (
-                                            <div key={`desk-${item.id}`} className="col-md-4">
-                                                {renderInvitationCard(item)}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                {/* Slide 2: Siguientes tarjetas (4, 5, 6) */}
-                                {TemplateConfig.length > 3 && (
-                                    <div className="carousel-item">
+                                {Array.from({ length: Math.ceil(TemplateConfig.length / 3) }).map((_, slideIndex) => (
+                                    <div key={`slide-${slideIndex}`} className={`carousel-item ${slideIndex === 0 ? 'active' : ''}`}>
                                         <div className="row g-4 justify-content-center">
-                                            {TemplateConfig.slice(3, 6).map((item) => (
-                                                <div key={`desk-${item.id}`} className="col-md-4">
-                                                    {renderInvitationCard(item)}
-                                                </div>
-                                            ))}
+                                            {/* Generar siempre 3 tarjetas por slide */}
+                                            {[0, 1, 2].map((offset) => {
+                                                const itemIndex = (slideIndex * 3 + offset) % TemplateConfig.length;
+                                                const item = TemplateConfig[itemIndex];
+                                                return (
+                                                    <div key={`desk-${item.id}-${slideIndex}`} className="col-md-4">
+                                                        {renderInvitationCard(item)}
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
-                                )}
-                                {/* Slide 3: Siguientes tarjetas (7, 8, 9) */}
-                                {TemplateConfig.length > 6 && (
-                                    <div className="carousel-item">
-                                        <div className="row g-4 justify-content-center">
-                                            {TemplateConfig.slice(6, 9).map((item) => (
-                                                <div key={`desk-${item.id}`} className="col-md-4">
-                                                    {renderInvitationCard(item)}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                                {/* Slide 4: Siguientes tarjetas (10, 11, 12) */}
-                                {TemplateConfig.length > 9 && (
-                                    <div className="carousel-item">
-                                        <div className="row g-4 justify-content-center">
-                                            {TemplateConfig.slice(9, 12).map((item) => (
-                                                <div key={`desk-${item.id}`} className="col-md-4">
-                                                    {renderInvitationCard(item)}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
+                                ))}
                             </div>
                             <button
                                 className="carousel-control-prev custom-carousel-control"

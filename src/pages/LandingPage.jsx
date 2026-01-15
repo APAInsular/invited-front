@@ -209,7 +209,7 @@ const LandingPage = () => {
                     <div className="text-center mt-4 mb-5">
                         <Link
                             to={localizedLink("/gallery")}
-                            className="btn bg-pink-pastel btn-lg text-white"
+                            className="btn btn-primary"
                         >
                             {t("invitation.seeMore")}
                         </Link>

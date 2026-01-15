@@ -199,6 +199,14 @@ const LandingPage = () => {
 
       {/* --- SECCIÓN INVITACIONES --- */}
       <section className="py-5 bg-light">
+        <div className="text-center mt-4 mb-5">
+          <Link
+            to={localizedLink("/gallery")}
+            className="btn btn-outline-primary btn-lg"
+          >
+            {t("invitation.seeMore")}
+          </Link>
+        </div>
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold text-danger-emphasis mb-3">
@@ -208,15 +216,6 @@ const LandingPage = () => {
           </div>
 
           <div className="position-relative">
-            <div className="text-center mt-4 mb-5">
-              <Link
-                to={localizedLink("/gallery")}
-                className="btn btn-outline-primary btn-lg"
-              >
-                {t("invitation.seeMore")}
-              </Link>
-            </div>
-
             {/* 1. CARRUSEL MÓVIL (Automático para todas las cards) */}
             <div
               id="carouselMobile"
@@ -275,6 +274,30 @@ const LandingPage = () => {
                   <div className="carousel-item">
                     <div className="row g-4 justify-content-center">
                       {TemplateConfig.slice(3, 6).map((item) => (
+                        <div key={`desk-${item.id}`} className="col-md-4">
+                          {renderInvitationCard(item)}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {/* Slide 3: Siguientes tarjetas (7, 8, 9) */}
+                {TemplateConfig.length > 6 && (
+                  <div className="carousel-item">
+                    <div className="row g-4 justify-content-center">
+                      {TemplateConfig.slice(6, 9).map((item) => (
+                        <div key={`desk-${item.id}`} className="col-md-4">
+                          {renderInvitationCard(item)}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {/* Slide 4: Siguientes tarjetas (10, 11, 12) */}
+                {TemplateConfig.length > 9 && (
+                  <div className="carousel-item">
+                    <div className="row g-4 justify-content-center">
+                      {TemplateConfig.slice(9, 12).map((item) => (
                         <div key={`desk-${item.id}`} className="col-md-4">
                           {renderInvitationCard(item)}
                         </div>

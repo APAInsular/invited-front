@@ -25,11 +25,6 @@
         "cardTitle4": "Havana Moderna",
         "cardText4": "Estética moderna con juegos de sombras naturales y líneas limpias.",
         "cardTitle5": "Jardin Melbourne",
-<<<<<<< HEAD
-        "cardText5": "Diseño de jardin y elegante.",
-        "button": "Ver demo",
-        "seeMore": "Ver mas"
-=======
         "cardText5": "Estética romántica con detalles florales y elegancia natural.",
         "cardTitle6": "Elegante Paris",
         "cardText6": "Sofisticación clásica con texturas en relieve y gran distinción.",
@@ -42,7 +37,6 @@
         "cardTitle10": "Tradicional Londres",
         "cardText10": "Clásica distinción floral con marcos dorados y elegancia atemporal.",
         "button": "Ver demo"
->>>>>>> develop
     },
     "paySection": {
         "title": "Tu invitación digital por 59€",

@@ -217,10 +217,21 @@ const LandingPage = () => {
                                         </div>
                                     </div>
                                 )}
+                                {/* Slide 3: Siguientes tarjetas (7, 8, 9) */}
                                 {TemplateConfig.length > 6 && (
                                     <div className="carousel-item">
                                         <div className="row g-4 justify-content-center">
                                             {TemplateConfig.slice(6, 9).map(item => (
+                                                <div key={`desk-${item.id}`} className="col-md-4">{renderInvitationCard(item)}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                                {/* Slide 4: Siguientes tarjetas (10, 11, 12) */}
+                                {TemplateConfig.length > 9 && (
+                                    <div className="carousel-item">
+                                        <div className="row g-4 justify-content-center">
+                                            {TemplateConfig.slice(9, 12).map(item => (
                                                 <div key={`desk-${item.id}`} className="col-md-4">{renderInvitationCard(item)}</div>
                                             ))}
                                         </div>

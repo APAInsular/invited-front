@@ -48,35 +48,35 @@ export const TemplateConfig = [
     {
         id: 6,
         img: '/images/EleganteParis.png',
-        link: 'https://www.invited.es/es/invitacion/demo/elegante-paris',
+        link: 'https://www.invited.es/es/invitacion/elegante-paris/92',    
         name: "Elegante Paris",
         category: "Clasico"
     },
     {
         id: 7,
         img: '/images/SanfranciscoArcoiris.png',
-        link: 'https://www.invited.es/es/invitacion/demo/sanfrancisco-arcoiris',
+        link: 'https://www.invited.es/es/invitacion/sanfrancisco-arcoiris/90',
         name: "Sanfrancisco Arcoiris",
         category: "Moderno"
     },
     {
         id: 8,
         img: '/images/ArmoniosoMalta.png',
-        link: 'https://www.invited.es/es/invitacion/demo/armonioso-malta',
+        link: 'https://www.invited.es/es/invitacion/armonioso-malta/89',
         name: "Armonioso Malta",
         category: "Elegante"
     },
     {
         id: 9,
         img: '/images/AlegreLasVegas.png',
-        link: 'https://www.invited.es/es/invitacion/demo/alegre-las-vegas',
+        link: 'https://www.invited.es/es/invitacion/alegre-las-vegas/87',
         name: "Alegre Las Vegas",
         category: "Moderno"
     },
     {
         id: 10,
         img: '/images/TradicionalLondres.png',
-        link: 'https://www.invited.es/es/invitacion/demo/tradicional-londres',
+        link: 'https://www.invited.es/es/invitacion/tradicional-londres/86',
         name: "Tradicional Londres",
         category: "Clasico"
     }

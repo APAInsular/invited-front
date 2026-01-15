@@ -170,7 +170,7 @@ const LandingPage = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> 
 
             {/* --- SECCIÓN INVITACIONES --- */}
             <section className="py-5 bg-light">
@@ -212,6 +212,15 @@ const LandingPage = () => {
                                     <div className="carousel-item">
                                         <div className="row g-4 justify-content-center">
                                             {TemplateConfig.slice(3, 6).map(item => (
+                                                <div key={`desk-${item.id}`} className="col-md-4">{renderInvitationCard(item)}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                                {TemplateConfig.length > 6 && (
+                                    <div className="carousel-item">
+                                        <div className="row g-4 justify-content-center">
+                                            {TemplateConfig.slice(6, 9).map(item => (
                                                 <div key={`desk-${item.id}`} className="col-md-4">{renderInvitationCard(item)}</div>
                                             ))}
                                         </div>

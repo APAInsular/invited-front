@@ -1,43 +1,33 @@
 {
   "countdown": {
-    "title": "La cuenta atrás",
+    "title": "⏳ ¡El tiempo no se detiene! ⏳",
     "unit1": "días",
     "unit2": "horas",
     "unit3": "minutos",
     "unit4": "segundos"
   },
   "coupleNames": {
-    "heartIcon": "y"
+    "heartIcon": "&"
   },
   "hero": {
-    "description": "A veces lo que empieza como una locura se convierte en lo mejor de tu vida. Ven a compartir nuestro amor el día",
-    "time": "12:30",
-    "locationCity": "Ciudad del evento",
-    "locationCountry": "País del evento",
-    "hour": "las"
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe adipisci facere architecto accusantium blanditiis, similique cumque nihil, sequi non facilis soluta veniam illo dicta nemo possimus aliquam quod recusandae doloribus!",
+    "cta": "¡No puedes faltar!"
+  },
+  "gallery": {
+    "title": "🌴 Nuestra aventura... 🌴",
+    "cta": "¡...continuará contigo!"
+  },
+  "churchLocation": {
+    "title": "¿Dónde nos encontramos?"
   },
   "songLink": {
-    "title": "Nuestra canción",
+    "title": "🎶 Nuestra canción 🎶",
     "playingText": "Reproduciendo la canción: ",
     "playButton": "▶️ Reproducir Canción",
     "pauseButton": "⏸️ Pausar Canción"
   },
-  "location": {
-    "title": "Nos encontramos en",
-    "addressLine1": "Parroquia de San Pedro Mártir",
-    "addressLine2": "Avenida de Burgos 204",
-    "addressLine3": "Hortaleza, 28050 Madrid"
-  },
-  "timeline": {
-    "title": "Itinerario",
-    "locationPrefix": "📍",
-    "timePrefix": "🕒"
-  },
-  "gallery": {
-    "title": "Nuestra historia..."
-  },
   "weddingForm": {
-    "title": "Confirmar Asistencia",
+    "title": "💍 Confirmar Asistencia",
     "requiredNote": "(*) campos obligatorios",
     "fields": {
       "name": "Nombre*",
@@ -48,7 +38,7 @@
       "feedingLabel": "Tipo de Alimentación",
       "feedingOption1": "Selecciona...",
       "feedingOption2": "Sin preferencias",
-      "feedingOption3": "Vegetariano",
+      "feedingOption3": "Vegetetariano",
       "feedingOption4": "Vegano",
       "companionQuestion": "¿Llevarás acompañante?",
       "companionCount": "¿Cuántos acompañantes?",
@@ -62,7 +52,9 @@
     },
     "submitButton": "Enviar Confirmación"
   },
-  "footer": {
-    "thanks": "¡Gracias por formar parte de nuestra historia de amor!"
+  "timeline": {
+    "title": "💍 Itinerario de la boda 💍",
+    "locationPrefix": "📍",
+    "timePrefix": "🕒"
   }
 }

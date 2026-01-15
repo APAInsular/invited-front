@@ -6,27 +6,29 @@
 }
 
 .wrapper {
-  --bg-color: rgb(69, 69, 69);
+  --template-bg-color: rgb(69, 69, 69);
 
-  --title-size: 2.5rem;
-  --title-font: "New Waltograph", cursive;
-  --title-color: #6c5b7b;
-  --title-weight: bold;
+  --template-title-size: 2.5rem;
+  --template-title-font: "New Waltograph", cursive;
+  --template-title-color: #6c5b7b;
+  --template-title-weight: bold;
   
-  --subtitle-font: "New Waltograph", cursive;
-  --subtitle-weight: bold;
-  --subtitle-size: 1.7rem;
+  --template-subtitle-font: "New Waltograph", cursive;
+  --template-subtitle-weight: bold;
+  --template-subtitle-size: 1.7rem;
 
-  --text-font: "sans-serif";
-  --text-color: #000000;
-  --subtitle-color: #6c5b7b;
+  --template-text-font: "sans-serif";
+  --template-text-color: #000000;
+  --template-subtitle-color: #6c5b7b;
 
-  --low-font: "Dancing Script", cursive;
+  --template-low-font: "Dancing Script", cursive;
 }
 
 .wrapper button {
   background-color: transparent;
   border-radius: 10%;
+  width: 200px;
+  min-height: 50px;
   border: 2px black solid;
   color: black;
 }

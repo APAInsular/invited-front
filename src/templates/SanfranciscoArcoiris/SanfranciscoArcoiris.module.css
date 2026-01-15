@@ -3,7 +3,11 @@
 .wrapper {
   --template-text-font: "Times New Roman", Times, serif;
   --template-title-font: Arial;
+<<<<<<< HEAD
   --template-title-size: 3.0rem;
+=======
+  --template-title-size: 3.5rem;
+>>>>>>> master
   --template-title-color: rgb(0, 0, 0);
   --template-title-weight: normal;
   --template-subtitle-font: Arial;
@@ -25,6 +29,8 @@
 .wrapper button {
   background-color: transparent;
   border-radius: 10%;
+  width: 200px;
+  min-height: 50px;
   border: 2px black solid;
   color: black;
 }

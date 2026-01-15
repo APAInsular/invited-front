@@ -7,27 +7,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 .wrapper {
-  --text-font: "sans-serif";
-  --title-font: "Dancing Script", cursive;
-  --title-size: 4.75rem;
-  --title-color: #6c5b7b;
-  --title-weight: bold;
-  --subtitle-font: "Dancing Script", cursive;
-  --subtitle-weight: bold;
-  --subtitle-size: 2.4rem;
-  --text-color: #000000;
-  --subtitle-color: #6c5b7b;
+  --template-text-font: "sans-serif";
+  --template-title-font: "Dancing Script", cursive;
+  --template-title-size: 4.75rem;
+  --template-title-color: #6c5b7b;
+  --template-title-weight: bold;
+  --template-subtitle-font: "Dancing Script", cursive;
+  --template-subtitle-weight: bold;
+  --template-subtitle-size: 2.4rem;
+  --template-text-color: #000000;
+  --template-subtitle-color: #6c5b7b;
 
-  --bg-color: rgb(69, 69, 69);
-  --low-font: "Dancing Script", cursive;
+  --template-bg-color: rgb(69, 69, 69);
+  --template-low-font: "Dancing Script", cursive;
 }
 
 .wrapper button {
   background-color: transparent;
   border-radius: 10%;
+  width: 200px;
+  height: 50px;
   border: 2px black solid;
   color: black;
 }
+
+
 
 .sectionBg {
   position: relative;

@@ -10,13 +10,13 @@ import SanfranciscoArcoiris from "./templates/SanfranciscoArcoiris/SanfranciscoA
 import TradicionalLondres from "./templates/TradicionalLondres/TradicionalLondres";
 
 export const TemplateConfig = [
-    {
-        id: 1,
-        img: '/images/Plantilla_0.png',
-        link: 'https://www.invited.es/es/invitacion/javier-sandra/70',
-        name: "Classic",
-        category: "Clasico"
-    },
+    // {
+    //     id: 1,
+    //     img: '/images/Plantilla_0.png',
+    //     link: 'https://www.invited.es/es/invitacion/javier-sandra/70',
+    //     name: "Classic",
+    //     category: "Clasico"
+    // },
     {
         id: 2,
         img: '/images/Plantilla_1.png',
@@ -27,7 +27,7 @@ export const TemplateConfig = [
     {
         id: 3,
         img: '/images/Plantilla_2.png',
-        link: 'https://www.invited.es/es/invitacion/luis-lucas/81',
+        link: 'https://www.invited.es/es/invitacion/luis-lucas/95',
         name: "Erase Una Vez",
         category: "Fantasia"
     },

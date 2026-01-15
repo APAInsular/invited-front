@@ -16,6 +16,7 @@ import styles from "./EleganteParis.module.css";
 import BACKGROUND_0 from "./images/background_0.jpg";
 import BACKGROUND_1 from "./images/background_1.jpg";
 import DECO from "./images/timeline_decoration.png";
+import FramedPhoto from "../components/FramedPhoto/FramedPhoto";
 
 const EleganteParis = ({ wedding, images, trad, coverImage }) => {
   return (
@@ -37,10 +38,9 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
           </div>
 
           <div className="text-center">
-            <img
-              src={coverImage}
-              alt="couple"
-              style={{ border: "10px double black" }}
+            <FramedPhoto 
+              borderStyle="black double 2px"
+              photo={coverImage}
             />
 
             <p>{trad("hero.description")}</p>

@@ -1,73 +1,98 @@
 import { useCallback, useEffect, useState } from "react";
 
-import ImagenLogo from "../../Images/Logo_invited_recortado-removebg-preview.png";
-import fallbackImage from "./images/pareja.png";
-import CountDown from "../components/CountDown/CountDown";
-import SongLink from "../components/SongLink/SongLink";
-import CoupleNames from "../components/CoupleNames/CoupleNames";
-import ChurchLocation from "../components/Location/Location";
-import Timeline from "../components/WeddingTimeLine/TimeLine";
-import Gallery from "../components/Gallery/Gallery";
-import WeddingForm from "../components/WeddingForm/WeddingForm";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/TemplateDefaults.css";
 import styles from "./Classic.module.css";
 import FooterBranding from "../components/FooterBranding/FooterBranding";
 import Page from "../components/Page/Page";
+import FramedPhoto from "../components/FramedPhoto/FramedPhoto";
+import { formatDateToString } from "../logic/utils";
+import HavanaCountDown from "../HavanaModerna/components/HavanaCoutDown/HavanaCountDown";
+import Timeline from "../components/Timeline/Timeline";
+import Carrousel from "../components/Carrousel/Carrousel";
+import CarrouselCard from "../components/Carrousel/CarrouselCard/CarrouselCard";
+import CoupleNames from "../components/CoupleNames/CoupleNames";
+import SongLink from "../components/SongLink/SongLink";
+import WeddingForm from "../components/WeddingForm/WeddingForm";
 
-const bgColor = "rgb(255, 228, 175)";
+const bgColor = "rgba(254, 238, 212, 1)";
+
 const Classic = ({ wedding, images, trad, coverImage }) => {
   return (
-    // TODO: Idea: Scroll Animation here.
-    <div className={styles.styles}>
-      <div className="w-100">
-        <img
-          src={coverImage}
-          alt="Foto de los novios"
-          className="img-fluid"
-        />
-      </div>
-
-      <Page backgroundColor={bgColor} minHeight="830px">
-        <section className="sep-bottom">
-          <CoupleNames
-            groom={wedding.user.name}
-            bride={wedding.user.partner.name}
+    <div className={styles.wrapper}>
+      {/* Hero */}
+      <Page backgroundColor={bgColor} padding="0" minHeight="830px">
+        <div className="d-flex justify-content-center">
+          <img
+            src={coverImage}
+            alt="Couple photo"
+            className="img-fluid rounded-4"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
+        </div>
+        <section className="p-5 sep-bottom">
+          <div className="mt-3">
+            <CoupleNames
+              groom={wedding.user.name}
+              bride={wedding.user.partner.name}
+              icon={"♥️"}
+            />
+          </div>
+          
         </section>
-        <section className="sep-bottom">
-          <h3 className="subtitle">Nuestra cancion especial</h3>
+      </Page>
+
+      {/* Song */}
+      <Page backgroundColor={bgColor} minHeight="830px">
+        <section className="text-center">
+          <h3 className="title-low">{trad("songLink.title")}</h3>
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
             text={trad("songLink")}
           />
         </section>
-      </Page>
 
-      <Page backgroundColor={bgColor} minHeight="830px">
+        {/* Location */}
         <section>
-          <CountDown
+          <h3 className="text-center title-low">{trad("location.title")}</h3>
+          <p className="p-5 text-center">{trad("location.address")}</p>
+        </section>
+
+        {/* Countdown */}
+        <section>
+          <h3 className="text-center title-low">{trad("countdown.title")}</h3>
+          <HavanaCountDown
             weddingDate={wedding.weddingDate}
             text={trad("countdown")}
           />
         </section>
-        <section className="sep-bottom">
-          <ChurchLocation
-            location={wedding.location.city}
-            country={wedding.location.country}
-            text={trad("churchLocation")}
+      </Page>
+
+      {/* Timeline */}
+      <Page backgroundColor={bgColor} minHeight="830px">
+        <section>
+          <Timeline events={wedding.events} text={trad("timeline")} />
+          <div className="d-flex justify-content-center"></div>
+        </section>
+      </Page>
+
+      {/* Gallery */}
+      <Page minHeight="830px" backgroundColor={bgColor}>
+        <section className="text-center">
+          <h3 className="title-low">{trad("gallery.title")}</h3>
+          <Carrousel
+            images={images}
+            text={trad("gallery")}
+            renderItem={(src, i) => (
+              <CarrouselCard key={i} src={src} height="1500px" />
+            )}
           />
         </section>
       </Page>
 
-      <Page backgroundColor={bgColor} minHeight="830px">
-        <Gallery images={images} speed={20} text={trad("gallery")} />
-        <Timeline events={wedding.events} text={trad("timeline")} />
-      </Page>
-
+      {/* Wedding Form */}
       <Page backgroundColor={bgColor} minHeight="830px">
         <WeddingForm
           weddingId={wedding.id}
@@ -75,6 +100,7 @@ const Classic = ({ wedding, images, trad, coverImage }) => {
           fields={trad("weddingForm.fields")}
         />
       </Page>
+
       <Page backgroundColor={bgColor} minHeight="150px">
         <FooterBranding />
       </Page>

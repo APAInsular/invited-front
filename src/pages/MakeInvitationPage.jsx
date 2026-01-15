@@ -302,7 +302,7 @@ export default function MakeInvitationForm() {
                                     >
                                         <option value="Plantilla Romantica">{t('templateOptions.romantic')}</option>
                                         <option value="Plantilla Acuarela">{t('templateOptions.watercolor')}</option>
-                                        <option value="Plantilla Erase una vez">{t('templateOptions.fairytale')}</option>
+                                        <option value="Plantilla Erase una Vez">{t('templateOptions.fairytale')}</option>
                                         <option value="Plantilla Dulce" disabled>{t('templateOptions.sweet')}</option>
                                         <option value="Plantilla Oscura" disabled>{t('templateOptions.dark')}</option>
 

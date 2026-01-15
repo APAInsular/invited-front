@@ -1,26 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap");
 
 .wrapper {
-  --text-font: "Times New Roman", Times, serif;
-  --title-font: "Gwendolyn";
-  --title-size: 5.5rem;
-  --title-color: rgb(0, 0, 0);
-  --title-weight: normal;
-  --subtitle-font: "Gwendolyn";
-  --subtitle-weight: bold;
-  --subtitle-size: 2.5rem;
-  --text-color: #000000;
-  --bg-color: rgb(69, 69, 69);
-  --low-font: "Gwendolyn";
-  --text-size: 1.4rem
+  --template-text-font: "Times New Roman", Times, serif;
+  --template-title-font: "Gwendolyn";
+  --template-title-size: 5.5rem;
+  --template-title-color: rgb(0, 0, 0);
+  --template-title-weight: normal;
+  --template-subtitle-font: "Gwendolyn";
+  --template-subtitle-weight: bold;
+  --template-subtitle-size: 2.5rem;
+  --template-text-color: #000000;
+  --template-bg-color: rgb(69, 69, 69);
+  --template-low-font: "Gwendolyn";
+  --template-text-size: 1.4rem
 }
 
 .wrapper button {
   background-color: transparent;
   border-radius: 10%;
+  width: 200px;
+  min-height: 50px;
   border: 2px black solid;
   color: black;
 }
+
+
 
 .wrapper section {
     padding-right: 25%;

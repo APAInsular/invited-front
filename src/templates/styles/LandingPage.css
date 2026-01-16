@@ -527,7 +527,6 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease;
-    color: #2F2F2F;
 }
 
 .faq-question:hover {

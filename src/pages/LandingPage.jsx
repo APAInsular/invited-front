@@ -364,7 +364,7 @@ const LandingPage = () => {
                                 className={`faq-item ${openIndex === index ? "open" : ""}`}
                             >
                                 <button
-                                    className="faq-question text-dark"
+                                    className="faq-question"
                                     onClick={() => toggleFAQ(index)}
                                 >
                                     {faq.question}

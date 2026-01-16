@@ -519,6 +519,7 @@ body {
 .faq-question {
     width: 100%;
     background-color: #f9f9f9;
+    color: black;
     border: none;
     outline: none;
     text-align: left;

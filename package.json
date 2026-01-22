@@ -5,6 +5,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@hookform/resolvers": "^5.2.2",
     "@shadcn/ui": "^0.0.4",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
@@ -26,7 +27,8 @@
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.28.1",
     "react-scripts": "5.0.1",
-    "sweetalert2": "^11.17.2"
+    "sweetalert2": "^11.17.2",
+    "zod": "^4.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,7 +36,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",

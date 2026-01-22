@@ -5,7 +5,7 @@ import apiClient from '../config/axiosConfig';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({name: "aaaaaa"});
 
     // Cargar usuario autenticado al iniciar la app
     useEffect(() => {
@@ -24,13 +24,13 @@ export const AuthProvider = ({ children }) => {
             }
         };
 
-        fetchUser();
+        // fetchUser();
     }, []);
 
     // Función para manejar el login
     const login = (userData, token) => {
         sessionStorage.setItem('auth_token', token);
-        setUser(userData);
+        // setUser(userData);
     };
 
     // Función para manejar el logout

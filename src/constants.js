@@ -92,7 +92,7 @@ export const Categories = [
 ];
 
 export const AvailableTemplates = {
-    Romantica: <Classic />,
+    // Romantica: <Classic />,
     EleganteParis: <EleganteParis />,
     HavanaModerna: <HavanaModerna />,
     SanfranciscoArcoiris: <SanfranciscoArcoiris />,

@@ -148,7 +148,7 @@ const WeddingForm = ({ weddingId, text, fields, styles = DEFAULT }) => {
             value={formGuest.feeding}
             onChange={handleFormChange}
           >
-            <option value="">{fields.feedinOption1}</option>
+            <option value="">{fields.feedingOption1}</option>
             <option value="Sin preferencias">{fields.feedingOption2}</option>
             <option value="Vegetariana">{fields.feedingOption3}</option>
             <option value="Vegana">{fields.feedingOption4}</option>

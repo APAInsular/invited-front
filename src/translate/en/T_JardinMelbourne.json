@@ -1,0 +1,66 @@
+{
+  "countdown": {
+    "title": "⏳ Time does not stop! ⏳",
+    "unit1": "days",
+    "unit2": "hours",
+    "unit3": "minutes",
+    "unit4": "seconds"
+  },
+  "coupleNames": {
+    "heartIcon": "&"
+  },
+  "hero": {
+    "description": "Sometimes what starts as madness becomes the best part of your life. Come share our love on",
+    "time": "12:30",
+    "hour": "at",
+    "cta": "You can't miss it!"
+  },
+  "songLink": {
+    "title": "🎶 Our song 🎶",
+    "playingText": "Playing the song: ",
+    "playButton": "▶️ Play Song",
+    "pauseButton": "⏸️ Pause Song"
+  },
+  "location": {
+    "title": "Where do we meet?",
+    "address": "San Pedro Mártir Parish, Avenida de Burgos 204, Hortaleza, 28050 Madrid"
+  },
+  "timeline": {
+    "title": "💍 Wedding Itinerary 💍",
+    "locationPrefix": "📍",
+    "timePrefix": "🕒"
+  },
+  "gallery": {
+    "title": "🌴 Our adventure... 🌴",
+    "cta": "...will continue with you!"
+  },
+  "weddingForm": {
+    "title": "💍 RSVP",
+    "requiredNote": "(*) required fields",
+    "submitButton": "Submit Confirmation",
+    "fields": {
+      "name": "First Name*",
+      "firstSurname": "Last Name*",
+      "secondSurname": "Second Last Name",
+      "extraInformation": "Additional Information",
+      "allergy": "Allergies",
+      "feedingLabel": "Diet Type",
+      "feedingOption1": "Select...",
+      "feedingOption2": "No preference",
+      "feedingOption3": "Vegetarian",
+      "feedingOption4": "Vegan",
+      "companionQuestion": "Will you bring a guest?",
+      "companionCount": "How many guests?",
+      "answerYes": "Yes",
+      "answerNo": "No",
+      "attendantTitle": "Guest Information",
+      "attendantField1": "First Name",
+      "attendantField2": "Last Name",
+      "attendantField3": "Second Last Name",
+      "attendantField4": "Guest Age"
+    }
+  },
+  "footer": {
+    "thanks": "Thank you for being part of our love story!"
+  }
+}

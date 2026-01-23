@@ -1,6 +1,6 @@
 {
   "countdown": {
-    "title": "La cuenta atrás",
+    "title": "⏳ ¡El tiempo no se detiene! ⏳",
     "unit1": "días",
     "unit2": "horas",
     "unit3": "minutos",
@@ -12,33 +12,32 @@
   "hero": {
     "description": "A veces lo que empieza como una locura se convierte en lo mejor de tu vida. Ven a compartir nuestro amor el día",
     "time": "12:30",
-    "locationCity": "Ciudad del evento",
-    "locationCountry": "País del evento",
-    "hour": "las"
+    "hour": "a las",
+    "cta": "¡No puedes perdértelo!"
   },
   "songLink": {
-    "title": "Nuestra canción",
+    "title": "🎶 Nuestra canción 🎶",
     "playingText": "Reproduciendo la canción: ",
     "playButton": "▶️ Reproducir Canción",
     "pauseButton": "⏸️ Pausar Canción"
   },
   "location": {
     "title": "Nos encontramos en",
-    "addressLine1": "Parroquia de San Pedro Mártir",
-    "addressLine2": "Avenida de Burgos 204",
-    "addressLine3": "Hortaleza, 28050 Madrid"
+    "address": "Parroquia de San Pedro Mártir, Avenida de Burgos 204, Hortaleza, 28050 Madrid"
   },
   "timeline": {
-    "title": "Itinerario",
+    "title": "💍 Itinerario de la Boda 💍",
     "locationPrefix": "📍",
     "timePrefix": "🕒"
   },
   "gallery": {
-    "title": "Nuestra historia..."
+    "title": "🌴 Nuestra aventura... 🌴",
+    "cta": "...continuará contigo!"
   },
   "weddingForm": {
-    "title": "Confirmar Asistencia",
+    "title": "💍 Confirmar Asistencia",
     "requiredNote": "(*) campos obligatorios",
+    "submitButton": "Enviar Confirmación",
     "fields": {
       "name": "Nombre*",
       "firstSurname": "Primer Apellido*",
@@ -59,8 +58,7 @@
       "attendantField2": "Primer Apellido",
       "attendantField3": "Segundo Apellido",
       "attendantField4": "Edad del acompañante"
-    },
-    "submitButton": "Enviar Confirmación"
+    }
   },
   "footer": {
     "thanks": "¡Gracias por formar parte de nuestra historia de amor!"

@@ -31,7 +31,7 @@ const usePageTranslation = (pageName) => {
     }
   }, [language, pageName]);
 
-  // Función para obtener traducciones con soporte para objetos anidados
+  // Función mejorada para obtener traducciones
   const t = (key) => {
     if (!translations) return `[${key}]`;
 
@@ -47,7 +47,14 @@ const usePageTranslation = (pageName) => {
       }
     }
 
-    return value || `[${key}]`;
+    // Si el valor es undefined, retornar la clave entre corchetes
+    if (value === undefined) {
+      return `[${key}]`;
+    }
+
+    // Si el valor es un objeto, retornarlo tal cual (para text, fields, etc.)
+    // Si es un string/número, también retornarlo
+    return value;
   };
 
   return { t, loading, error };

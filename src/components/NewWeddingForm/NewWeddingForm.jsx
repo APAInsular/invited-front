@@ -29,8 +29,18 @@ export default function NewWeddingForm() {
     resolver: zodResolver(WeddingSchema),
     defaultValues: {
       GuestNumber: 1,
+      TemplateName: Object.keys(AvailableTemplates)[0],
+      Location: {
+        city: "",
+        country: "",
+      },
       Events: [
-        { Title: "", City: "", Time: "", Localization: "", Description: "" },
+        {
+          Title: "",
+          Time: "",
+          Description: "",
+          Localization: { city: "", country: "" },
+        },
       ],
     },
   });
@@ -63,34 +73,37 @@ export default function NewWeddingForm() {
     fetch();
   }, []);
 
+  useEffect(() => {
+    console.log("Zod errors:", errors);
+  }, [errors]);
+
+  const fileToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+
   const onSubmit = async (data) => {
     try {
-      const result = await createWedding(weddingToLegacyAdapter(data, user.id));
+      // Imagen principal
+      if (data.CoupleImage?.[0]) {
+        data.HeaderImage = await fileToBase64(data.CoupleImage[0]);
+      }
 
-      await Swal.fire({
-        icon: "success",
-        title: "¡Invitación Creada!",
-        text: "La invitación de boda fue creada correctamente.",
-        confirmButtonText: "Ver invitación",
-        showCancelButton: true,
-        cancelButtonText: "Crear otra",
-      }).then((result) => {
-        if (result.isConfirmed) {
-        } else {
-          // Resetear el formulario para crear otra
-          // window.location.reload();
-        }
-      });
-    } catch (error) {
-      const message =
-        error?.response?.data?.message ||
-        "Ocurrió un error al crear la invitación.";
+      // Galería
+      if (galleryFiles.length > 0) {
+        data.GalleryImages = await Promise.all(galleryFiles.map(fileToBase64));
+      }
 
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: message,
-      });
+      const adapted = weddingToLegacyAdapter(data, user.id);
+
+      await createWedding(adapted);
+
+      Swal.fire("¡Invitación creada!", "", "success");
+    } catch (err) {
+      Swal.fire("Error", "No se pudo crear la invitación", "error");
     }
   };
 
@@ -175,7 +188,9 @@ export default function NewWeddingForm() {
                     {...register("TemplateName")}
                     onChange={handleTemplateChange}
                   >
-                    <option value="">Seleccione Plantilla</option>
+                    <option value="" disabled>
+                      Seleccione Plantilla
+                    </option>{" "}
                     {Object.keys(AvailableTemplates).map((k) => (
                       <option value={k}>{k}</option>
                     ))}
@@ -189,14 +204,22 @@ export default function NewWeddingForm() {
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Ciudad</Form.Label>
-                  <Form.Control {...register("city")} placeholder="Ciudad" />
+                  <Form.Control
+                    {...register("Location.city")}
+                    placeholder="Ciudad"
+                    isInvalid={!!errors.Location?.city}
+                  />
                 </Form.Group>
               </Col>
 
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>País</Form.Label>
-                  <Form.Control {...register("country")} placeholder="País" />
+                  <Form.Control
+                    {...register("Location.country")}
+                    placeholder="País"
+                    isInvalid={!!errors.Location?.country}
+                  />
                 </Form.Group>
               </Col>
             </Row>

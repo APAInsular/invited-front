@@ -181,19 +181,14 @@ export default function NewWeddingForm() {
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>Ciudad</Form.Label>
-                  <Form.Control
-                    {...register("CityName")}
-                    placeholder="Ciudad"
-                  />
+                  <Form.Control {...register("city")} placeholder="Ciudad" />
                 </Form.Group>
               </Col>
+
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Localización</Form.Label>
-                  <Form.Control
-                    {...register("Localization")}
-                    placeholder="Localización"
-                  />
+                  <Form.Label>País</Form.Label>
+                  <Form.Control {...register("country")} placeholder="País" />
                 </Form.Group>
               </Col>
             </Row>
@@ -337,20 +332,47 @@ export default function NewWeddingForm() {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Col>
+
                 <Col md={6}>
-                  <Form.Group>
-                    <Form.Label>Ciudad</Form.Label>
-                    <Form.Control
-                      {...register(`Events.${index}.City`)}
-                      placeholder="Ciudad"
-                      isInvalid={!!errors.Events?.[index]?.City}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.City?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
+                  <Row>
+                    <Col md={6}>
+                      <Form.Group>
+                        <Form.Label>Ciudad</Form.Label>
+                        <Form.Control
+                          {...register(`Events.${index}.Localization.city`)}
+                          placeholder="Ciudad"
+                          isInvalid={
+                            !!errors.Events?.[index]?.Localization?.city
+                          }
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          {errors.Events?.[index]?.Localization?.city?.message}
+                        </Form.Control.Feedback>
+                      </Form.Group>
+                    </Col>
+
+                    <Col md={6}>
+                      <Form.Group>
+                        <Form.Label>País</Form.Label>
+                        <Form.Control
+                          {...register(`Events.${index}.Localization.country`)}
+                          placeholder="País"
+                          isInvalid={
+                            !!errors.Events?.[index]?.Localization?.country
+                          }
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          {
+                            errors.Events?.[index]?.Localization?.country
+                              ?.message
+                          }
+                        </Form.Control.Feedback>
+                      </Form.Group>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
+
               <Row className="mt-2">
                 <Col md={4}>
                   <Form.Group>
@@ -365,19 +387,7 @@ export default function NewWeddingForm() {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Col>
-                <Col md={4}>
-                  <Form.Group>
-                    <Form.Label>Localización</Form.Label>
-                    <Form.Control
-                      {...register(`Events.${index}.Localization`)}
-                      placeholder="Localización"
-                      isInvalid={!!errors.Events?.[index]?.Localization}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.Localization?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Col>
+
                 <Col md={4}>
                   <Form.Group>
                     <Form.Label>Descripción</Form.Label>
@@ -392,6 +402,7 @@ export default function NewWeddingForm() {
                   </Form.Group>
                 </Col>
               </Row>
+
               <div className="mt-2 text-end">
                 <Button
                   variant="danger"
@@ -403,15 +414,15 @@ export default function NewWeddingForm() {
               </div>
             </Card>
           ))}
+
           <Button
             variant="secondary"
             onClick={() =>
               append({
                 Title: "",
-                City: "",
                 Time: "",
-                Localization: "",
                 Description: "",
+                Localization: { city: "", country: "" },
               })
             }
           >

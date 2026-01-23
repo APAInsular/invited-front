@@ -1,10 +1,22 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import WeddingSchema from "../../schemas/WeddingSchema";
-import { Container, Row, Col, Form, Button, Image, Card } from "react-bootstrap";
-import { useState } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Image,
+  Card,
+} from "react-bootstrap";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AvailableTemplates } from "../../constants";
+import {
+  createWedding,
+  weddingToLegacyAdapter,
+} from "../../services/wedding.service";
 
 export default function NewWeddingForm() {
   const {
@@ -22,6 +34,8 @@ export default function NewWeddingForm() {
     },
   });
 
+  const [user, setUser] = useState(null);
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: "Events",
@@ -33,21 +47,42 @@ export default function NewWeddingForm() {
   const [coupleImagePreview, setCoupleImagePreview] = useState(null);
   const [galleryFiles, setGalleryFiles] = useState([]);
 
-  const onSubmit = (data) => {
-    const weddingDate = new Date(data.WeddingDate);
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const data = await getUser();
+        if (!data) return;
 
-    if (weddingDate < tomorrow) {
+        setUser(data);
+      } catch (err) {
+        console.error("Error al obtener el usuario:", err);
+      }
+    };
+
+    fetch();
+  }, []);
+
+  const onSubmit = async (data) => {
+    try {
+      const _result = await createWedding(
+        weddingToLegacyAdapter(data, user.id),
+      );
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Listo!",
+        text: "La boda fue creada correctamente.",
+      });
+    } catch (error) {
+      const message =
+        error?.response?.data?.message || "Ocurrió un error al crear la boda.";
+
       Swal.fire({
         icon: "error",
-        title: "Fecha no válida",
-        text: "La fecha de la boda no puede ser anterior a mañana.",
+        title: "Error",
+        text: message,
       });
-      return;
     }
-
-    console.log(data);
   };
 
   const handleTemplateChange = (e) => {
@@ -153,10 +188,10 @@ export default function NewWeddingForm() {
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Localización (URL Google Maps)</Form.Label>
+                  <Form.Label>Localización</Form.Label>
                   <Form.Control
                     {...register("Localization")}
-                    placeholder="URL Google Maps"
+                    placeholder="Localización"
                   />
                 </Form.Group>
               </Col>
@@ -218,6 +253,34 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
+            <Row>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Titulo Cancion</Form.Label>
+                  <Form.Control
+                    {...register("SongTitle")}
+                    isInvalid={!!errors.SongTitle}
+                    placeholder="..."
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.SongLink?.message}
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>Cancion de boda</Form.Label>
+                  <Form.Control
+                    {...register("SongLink")}
+                    isInvalid={!!errors.SongLink}
+                    placeholder="Youtube Link"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.SongLink?.message}
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Col>
+            </Row>
             {/* Imagen de la pareja */}
             <Row>
               <Col>
@@ -232,19 +295,6 @@ export default function NewWeddingForm() {
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.CoupleImage?.message}
-                  </Form.Control.Feedback>
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-3">
-                  <Form.Label>Cancion de boda</Form.Label>
-                  <Form.Control
-                    {...register("SongLink")}
-                    isInvalid={!!errors.SongLink}
-                    placeholder="Youtube Link"
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.SongLink?.message}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -316,10 +366,10 @@ export default function NewWeddingForm() {
                 </Col>
                 <Col md={4}>
                   <Form.Group>
-                    <Form.Label>Localización (URL Google Maps)</Form.Label>
+                    <Form.Label>Localización</Form.Label>
                     <Form.Control
                       {...register(`Events.${index}.Localization`)}
-                      placeholder="URL"
+                      placeholder="Localización"
                       isInvalid={!!errors.Events?.[index]?.Localization}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -380,8 +430,8 @@ export default function NewWeddingForm() {
             {/* Preview de plantilla */}
             <div
               style={{
-                width: "100%",
-                height: "400px",
+                width: "fit",
+                height: "800px",
                 border: "2px solid #ccc",
                 borderRadius: "8px",
                 overflow: "hidden",

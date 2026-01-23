@@ -5,10 +5,35 @@ import Cookies from 'js-cookie';
 const apiClient = axios.create({
     baseURL: process.env.REACT_APP_BACKEND_URL, // Usa la variable de entorno o un valor por defecto
     withCredentials: true, // Permitir el envío de cookies en las solicitudes
-    headers: {
+ 
+});
+
+/*
+   headers: {
         'Content-Type': 'application/json',
     },
+*/
+
+apiClient.interceptors.request.use(config => {
+    const token = sessionStorage.getItem('auth_token');
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
 });
+
+/*
+apiClient.interceptors.response.use(
+    response => response,
+    error => {
+        if (error.response?.status === 401) {
+            sessionStorage.removeItem('auth_token');
+            // opcional: window.location.href = '/login';
+        }
+        return Promise.reject(error);
+    }
+);
+*/
 
 // Función para obtener el token CSRF
 export const getCsrfToken = async () => {

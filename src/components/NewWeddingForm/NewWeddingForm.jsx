@@ -65,18 +65,26 @@ export default function NewWeddingForm() {
 
   const onSubmit = async (data) => {
     try {
-      const _result = await createWedding(
-        weddingToLegacyAdapter(data, user.id),
-      );
+      const result = await createWedding(weddingToLegacyAdapter(data, user.id));
 
-      Swal.fire({
+      await Swal.fire({
         icon: "success",
-        title: "¡Listo!",
-        text: "La boda fue creada correctamente.",
+        title: "¡Invitación Creada!",
+        text: "La invitación de boda fue creada correctamente.",
+        confirmButtonText: "Ver invitación",
+        showCancelButton: true,
+        cancelButtonText: "Crear otra",
+      }).then((result) => {
+        if (result.isConfirmed) {
+        } else {
+          // Resetear el formulario para crear otra
+          // window.location.reload();
+        }
       });
     } catch (error) {
       const message =
-        error?.response?.data?.message || "Ocurrió un error al crear la boda.";
+        error?.response?.data?.message ||
+        "Ocurrió un error al crear la invitación.";
 
       Swal.fire({
         icon: "error",

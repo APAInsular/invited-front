@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
 import apiClient from '../config/axiosConfig';
-import { getUser } from '../services/user.service';
 
 // Crear el contexto
 export const AuthContext = createContext();
@@ -15,7 +14,9 @@ export const AuthProvider = ({ children }) => {
                 const token = sessionStorage.getItem('auth_token');
                 if (!token) return;
 
-                const response = await getUser();
+                const response = await apiClient.get('/api/user', {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
 
                 setUser(response.data);
             } catch (error) {

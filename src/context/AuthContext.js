@@ -1,11 +1,12 @@
 import { createContext, useState, useEffect } from 'react';
 import apiClient from '../config/axiosConfig';
+import { getUser } from '../services/user.service';
 
 // Crear el contexto
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState({name: "aaaaaa"});
+    const [user, setUser] = useState(null);
 
     // Cargar usuario autenticado al iniciar la app
     useEffect(() => {
@@ -14,9 +15,7 @@ export const AuthProvider = ({ children }) => {
                 const token = sessionStorage.getItem('auth_token');
                 if (!token) return;
 
-                const response = await apiClient.get('/api/user', {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
+                const response = await getUser();
 
                 setUser(response.data);
             } catch (error) {
@@ -24,13 +23,13 @@ export const AuthProvider = ({ children }) => {
             }
         };
 
-        // fetchUser();
+        fetchUser();
     }, []);
 
     // Función para manejar el login
     const login = (userData, token) => {
         sessionStorage.setItem('auth_token', token);
-        // setUser(userData);
+        setUser(userData);
     };
 
     // Función para manejar el logout

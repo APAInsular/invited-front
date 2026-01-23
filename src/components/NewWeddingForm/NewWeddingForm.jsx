@@ -17,6 +17,7 @@ import {
   createWedding,
   weddingToLegacyAdapter,
 } from "../../services/wedding.service";
+import { getUser } from "../../services/user.service";
 
 export default function NewWeddingForm() {
   const {

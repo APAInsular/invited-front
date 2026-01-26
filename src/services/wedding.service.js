@@ -19,7 +19,7 @@ export function weddingToLegacyAdapter(data, user_id) {
   return {
     user_id,
 
-    weddingDate: data.WeddingDate.toISOString().split("T")[0],
+    weddingDate: data.WeddingDate,
 
     template: data.TemplateName,
 
@@ -31,30 +31,30 @@ export function weddingToLegacyAdapter(data, user_id) {
 
     customMessage: data.GuestMessage ?? "",
 
-    dressCode: data.DressCode,
+    dressCode: data.DressCode ?? "",
 
-    musicUrl: data.SongLink,
-    musicTitle: data.SongTitle,
+    musicUrl: data.SongLink ?? "",
+    musicTitle: data.SongTitle ?? "",
 
     groomDescription: data.CoupleName1,
     brideDescription: data.CoupleName2,
 
     location: {
-      city: data.Location.city || data.CityName,
-      country: data.Location.country || data.Localization,
+      city: data.CityName || "",
+      country: data.Localization || "",
     },
 
-    coverImage: data.HeaderImage ?? null,
-    images: data.GalleryImages ?? [],
 
-    // Transformar los eventos al formato backend
+    coverImage: null,
+    images: [],
+
     events: data.Events.map(ev => ({
       name: ev.Title,
       description: ev.Description ?? "",
       time: ev.Time, 
       location: {
-        city: ev.Localization?.city || ev.City || "",
-        country: ev.Localization?.country || "",
+        city: ev.City || "",
+        country: ev.Localization || "",
       },
     })),
   };

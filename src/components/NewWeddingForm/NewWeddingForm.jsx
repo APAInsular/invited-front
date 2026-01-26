@@ -28,11 +28,14 @@ export default function NewWeddingForm() {
   } = useForm({
     resolver: zodResolver(WeddingSchema),
     defaultValues: {
+      Localization: {
+        city: "",
+        country: "",
+      },
       GuestNumber: 1,
       Events: [
         {
           Title: "",
-          City: "",
           Time: "",
           Localization: {
             city: "",
@@ -197,22 +200,31 @@ export default function NewWeddingForm() {
 
             {/* Ubicación */}
             <Row className="mb-3">
-              <Col md={6}>
+              <Col md={4}>
                 <Form.Group>
                   <Form.Label>Ciudad</Form.Label>
                   <Form.Control
-                    {...register("CityName")}
+                    {...register(`Localization.city`)}
+                    isInvalid={!!errors.Events.Localization?.city}
                     placeholder="Ciudad"
                   />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.Events?.Localization?.city?.message}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
-              <Col md={6}>
+
+              <Col md={4}>
                 <Form.Group>
-                  <Form.Label>Localización</Form.Label>
+                  <Form.Label>País</Form.Label>
                   <Form.Control
-                    {...register("Localization")}
-                    placeholder="Localización"
+                    {...register(`Localization.country`)}
+                    isInvalid={!!errors.Events?.Localization?.country}
+                    placeholder="País"
                   />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.Events?.Localization?.country?.message}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
@@ -348,19 +360,6 @@ export default function NewWeddingForm() {
                       />
                       <Form.Control.Feedback type="invalid">
                         {errors.Events?.[index]?.Title?.message}
-                      </Form.Control.Feedback>
-                    </Form.Group>
-                  </Col>
-                  <Col md={6}>
-                    <Form.Group>
-                      <Form.Label>Ciudad</Form.Label>
-                      <Form.Control
-                        {...register(`Events.${index}.City`)}
-                        placeholder="Ciudad"
-                        isInvalid={!!errors.Events?.[index]?.City}
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        {errors.Events?.[index]?.City?.message}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>

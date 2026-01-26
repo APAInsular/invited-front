@@ -31,8 +31,6 @@ const WeddingSchema = z.object({
 
     TemplateName: z.enum(Object.keys(AvailableTemplates)),
 
-    CityName: z.string().min(1),
-
     Location: LocationSchema,
 
 

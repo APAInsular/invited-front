@@ -4,7 +4,11 @@ export async function createWedding(weddingData) {
   try {
     const response = await apiClient.post(
       '/api/weddings',
-      weddingData
+      weddingData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+    }
     );
 
     return response.data;
@@ -24,7 +28,7 @@ function formatDateForMySQL(date) {
 
 // @Garkatron/Matias -- I can't change backend yet, so here I create an object to adapt the data to data that backend expect.
 export function weddingToLegacyAdapter(data, user_id) {
-  
+
   return {
     user_id,
 
@@ -54,8 +58,8 @@ export function weddingToLegacyAdapter(data, user_id) {
     },
 
 
-    coverImage: null,
-    images: [],
+    coverImage: data.HeaderImage,
+    images: data.GalleryImages,
 
     events: data.Events.map(event => ({
       name: event.Title,

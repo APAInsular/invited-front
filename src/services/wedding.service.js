@@ -54,8 +54,8 @@ export function weddingToLegacyAdapter(data, user_id) {
     },
 
 
-    coverImage: null,
-    images: [],
+    coverImage: data.HeaderImage,
+    images: data.GalleryImages,
 
     events: data.Events.map(event => ({
       name: event.Title,

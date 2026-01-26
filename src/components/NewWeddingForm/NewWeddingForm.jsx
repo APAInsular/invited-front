@@ -119,18 +119,20 @@ export default function NewWeddingForm() {
     const file = event.target.files[0];
     if (!file) return;
 
-    setValue("HeaderImage", file); 
+    setValue("coverImage", file, { shouldValidate: true });
+
     const base64 = await fileToBase64(file);
-    setCoupleImagePreview(base64); 
+    setCoupleImagePreview(base64);
   };
 
   const handleGalleryUpload = async (event) => {
     const files = Array.from(event.target.files);
-    if (files.length === 0) return;
+    if (!files.length) return;
 
-    setValue("GalleryImages", files); 
+    setValue("images", files, { shouldValidate: true });
+
     const base64Files = await Promise.all(files.map(fileToBase64));
-    setGalleryFiles(base64Files); 
+    setGalleryFiles(base64Files);
   };
 
   return (

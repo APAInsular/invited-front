@@ -99,12 +99,10 @@ export default function NewWeddingForm() {
   const onSubmit = async (data) => {
     console.log("SUBMIT");
     try {
-      // Imagen principal
       if (data.CoupleImage?.[0]) {
         data.HeaderImage = await fileToBase64(data.CoupleImage[0]);
       }
 
-      // Galería
       if (galleryFiles.length > 0) {
         data.GalleryImages = await Promise.all(galleryFiles.map(fileToBase64));
       }

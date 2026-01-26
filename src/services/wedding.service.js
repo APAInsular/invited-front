@@ -1,17 +1,17 @@
 import apiClient from "../config/axiosConfig";
 
 export async function createWedding(weddingData) {
-    try {
-        const response = await apiClient.post(
-            '/api/weddings',
-            weddingData
-        );
+  try {
+    const response = await apiClient.post(
+      '/api/weddings',
+      weddingData
+    );
 
-        return response.data;
-    } catch (error) {
-        console.error('Error creating wedding:', error);
-        throw error;
-    }
+    return response.data;
+  } catch (error) {
+    console.error('Error creating wedding:', error);
+    throw error;
+  }
 }
 
 // @Garkatron/Matias -- I can't change backend yet, so here I create an object to adapt the data to data that backend expect.
@@ -39,7 +39,7 @@ export function weddingToLegacyAdapter(data, user_id) {
     groomDescription: data.CoupleName1,
     brideDescription: data.CoupleName2,
 
-    location: {
+    Localization: {
       city: data.Localization.city || "",
       country: data.Localization.country || "",
     },
@@ -48,15 +48,15 @@ export function weddingToLegacyAdapter(data, user_id) {
     coverImage: null,
     images: [],
 
-    events: data.Events.map(ev => ({
-      name: ev.Title,
-      description: ev.Description ?? "",
-      time: ev.Time, 
-      location: {
-        city: ev.City || "",
-        country: ev.Localization || "",
+    events: data.Events.map(event => ({
+      Title: event.Title,
+      Time: event.Time,
+      Localization: {
+        city: event.Localization.city,
+        country: event.Localization.country,
       },
-    })),
+      Description: event.Description,
+    }))
   };
 }
 

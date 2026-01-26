@@ -16,6 +16,8 @@ export async function createWedding(weddingData) {
 
 // @Garkatron/Matias -- I can't change backend yet, so here I create an object to adapt the data to data that backend expect.
 export function weddingToLegacyAdapter(data, user_id) {
+  console.log("AAAAAAAAAAAAAAAAAAA: ", data);
+  
   return {
     user_id,
 

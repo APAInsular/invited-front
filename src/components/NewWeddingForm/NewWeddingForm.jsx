@@ -120,13 +120,8 @@ export default function NewWeddingForm() {
     if (!file) return;
 
     setValue("HeaderImage", file); 
-
-    try {
-      const base64 = await fileToBase64(file);
-      setCoupleImagePreview(base64); // Guardamos base64 para preview
-    } catch (err) {
-      console.error("Error convirtiendo la imagen a base64:", err);
-    }
+    const base64 = await fileToBase64(file);
+    setCoupleImagePreview(base64); 
   };
 
   const handleGalleryUpload = async (event) => {
@@ -134,13 +129,8 @@ export default function NewWeddingForm() {
     if (files.length === 0) return;
 
     setValue("GalleryImages", files); 
-
-    try {
-      const base64Files = await Promise.all(files.map(fileToBase64));
-      setGalleryFiles(base64Files);
-    } catch (err) {
-      console.error("Error convirtiendo las imágenes a base64:", err);
-    }
+    const base64Files = await Promise.all(files.map(fileToBase64));
+    setGalleryFiles(base64Files); 
   };
 
   return (

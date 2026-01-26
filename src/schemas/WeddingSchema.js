@@ -62,11 +62,8 @@ const WeddingSchema = z.object({
     SongTitle: z.string(),
 
 
-    HeaderImage: z.string(),
-
-    GalleryImages: z.array(
-        z.string()
-    ).optional(),
+    HeaderImage: z.instanceof(File),
+    GalleryImages: z.array(z.instanceof(File)).optional(),
 
     Events: z.array(EventSchema).min(1, "Minimo un evento").max(100, "100 Eventos como maximo.")
 

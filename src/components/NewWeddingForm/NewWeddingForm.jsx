@@ -114,38 +114,18 @@ export default function NewWeddingForm() {
     setTemplatePreview(`/images/${value}.png`);
   };
 
-  const handleCoupleImageUpload = (e) => {
-    const file = e.target.files[0];
+  const handleCoupleImageUpload = (event) => {
+    const file = event.target.files[0];
     if (!file) return;
 
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      const base64 = reader.result;
-      setCoupleImagePreview(base64);
-      setValue("HeaderImage", base64);
-    };
-
-    reader.readAsDataURL(file);
+    setCoupleImagePreview(file);
   };
 
-  const handleGalleryUpload = (e) => {
-    const files = Array.from(e.target.files);
-    setGalleryFiles(files);
+  const handleGalleryUpload = (event) => {
+    const files = Array.from(event.target.files);
+    if (files.length === 0) return;
 
-    const base64Files = [];
-
-    files.forEach((file, index) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        base64Files.push(reader.result);
-
-        if (base64Files.length === files.length) {
-          setValue("GalleryImages", base64Files);
-        }
-      };
-      reader.readAsDataURL(file);
-    });
+    setGalleryFiles(files); 
   };
 
   return (

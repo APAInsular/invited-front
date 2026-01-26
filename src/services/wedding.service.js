@@ -39,7 +39,7 @@ export function weddingToLegacyAdapter(data, user_id) {
     groomDescription: data.CoupleName1,
     brideDescription: data.CoupleName2,
 
-    Localization: {
+    location: {
       city: data.Localization.city || "",
       country: data.Localization.country || "",
     },

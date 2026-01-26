@@ -24,6 +24,7 @@ export default function NewWeddingForm() {
     register,
     control,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(WeddingSchema),
@@ -115,16 +116,36 @@ export default function NewWeddingForm() {
 
   const handleCoupleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => setCoupleImagePreview(reader.result);
-      reader.readAsDataURL(file);
-    }
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const base64 = reader.result;
+      setCoupleImagePreview(base64);
+      setValue("HeaderImage", base64);
+    };
+
+    reader.readAsDataURL(file);
   };
 
   const handleGalleryUpload = (e) => {
     const files = Array.from(e.target.files);
     setGalleryFiles(files);
+
+    const base64Files = [];
+
+    files.forEach((file, index) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        base64Files.push(reader.result);
+
+        if (base64Files.length === files.length) {
+          setValue("GalleryImages", base64Files);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
   };
 
   return (

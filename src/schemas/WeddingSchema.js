@@ -62,7 +62,7 @@ const WeddingSchema = z.object({
     SongTitle: z.string(),
 
 
-    HeaderImage: z.string().optional().refine(
+    HeaderImage: z.string().refine(
         val => !val || /^data:image\/[a-zA-Z]+;base64,/.test(val),
         { message: "Debe ser una imagen en Base64 válida" }
     ),

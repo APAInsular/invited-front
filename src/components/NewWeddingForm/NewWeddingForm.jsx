@@ -130,9 +130,6 @@ export default function NewWeddingForm() {
     if (!files.length) return;
 
     setValue("images", files, { shouldValidate: true });
-
-    const base64Files = await Promise.all(files.map(fileToBase64));
-    setGalleryFiles(base64Files);
   };
 
   return (

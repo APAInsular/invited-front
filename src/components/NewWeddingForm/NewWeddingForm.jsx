@@ -28,6 +28,10 @@ export default function NewWeddingForm() {
   } = useForm({
     resolver: zodResolver(WeddingSchema),
     defaultValues: {
+      Localization: {
+        city: "",
+        country: "",
+      },
       GuestNumber: 1,
       TemplateName: Object.keys(AvailableTemplates)[0],
       Location: {
@@ -38,8 +42,11 @@ export default function NewWeddingForm() {
         {
           Title: "",
           Time: "",
+          Localization: {
+            city: "",
+            country: "",
+          },
           Description: "",
-          Localization: { city: "", country: "" },
         },
       ],
     },
@@ -59,13 +66,17 @@ export default function NewWeddingForm() {
   const [galleryFiles, setGalleryFiles] = useState([]);
 
   useEffect(() => {
+    console.log("FETCH USER");
     const fetch = async () => {
       try {
         const data = await getUser();
         if (!data) return;
 
+        console.log("USER DATA", data);
+
         setUser(data);
       } catch (err) {
+        console.log("ERROR GETTING USER");
         console.error("Error al obtener el usuario:", err);
       }
     };
@@ -86,6 +97,7 @@ export default function NewWeddingForm() {
     });
 
   const onSubmit = async (data) => {
+    console.log("SUBMIT");
     try {
       // Imagen principal
       if (data.CoupleImage?.[0]) {
@@ -105,6 +117,7 @@ export default function NewWeddingForm() {
     } catch (err) {
       Swal.fire("Error", "No se pudo crear la invitación", "error");
     }
+    console.log("FIISHED");
   };
 
   const handleTemplateChange = (e) => {
@@ -201,25 +214,31 @@ export default function NewWeddingForm() {
 
             {/* Ubicación */}
             <Row className="mb-3">
-              <Col md={6}>
+              <Col md={4}>
                 <Form.Group>
                   <Form.Label>Ciudad</Form.Label>
                   <Form.Control
-                    {...register("Location.city")}
+                    {...register(`Localization.city`)}
+                    isInvalid={!!errors.Localization?.city}
                     placeholder="Ciudad"
-                    isInvalid={!!errors.Location?.city}
                   />
+                  <Form.Control.Feedback type="invalid">
+                    {errors?.Localization?.city?.message}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
 
-              <Col md={6}>
+              <Col md={4}>
                 <Form.Group>
                   <Form.Label>País</Form.Label>
                   <Form.Control
-                    {...register("Location.country")}
+                    {...register(`Localization.country`)}
+                    isInvalid={!!errors?.Localization?.country}
                     placeholder="País"
-                    isInvalid={!!errors.Location?.country}
                   />
+                  <Form.Control.Feedback type="invalid">
+                    {errors?.Localization?.country?.message}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
@@ -290,7 +309,7 @@ export default function NewWeddingForm() {
                     placeholder="..."
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.SongLink?.message}
+                    {errors.SongTitle?.message}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -358,52 +377,7 @@ export default function NewWeddingForm() {
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
-
-                  <Col md={6}>
-                    <Row>
-                      <Col md={6}>
-                        <Form.Group>
-                          <Form.Label>Ciudad</Form.Label>
-                          <Form.Control
-                            {...register(`Events.${index}.Localization.city`)}
-                            placeholder="Ciudad"
-                            isInvalid={
-                              !!errors.Events?.[index]?.Localization?.city
-                            }
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            {
-                              errors.Events?.[index]?.Localization?.city
-                                ?.message
-                            }
-                          </Form.Control.Feedback>
-                        </Form.Group>
-                      </Col>
-
-                      <Col md={6}>
-                        <Form.Group>
-                          <Form.Label>País</Form.Label>
-                          <Form.Control
-                            {...register(
-                              `Events.${index}.Localization.country`,
-                            )}
-                            placeholder="País"
-                            isInvalid={
-                              !!errors.Events?.[index]?.Localization?.country
-                            }
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            {
-                              errors.Events?.[index]?.Localization?.country
-                                ?.message
-                            }
-                          </Form.Control.Feedback>
-                        </Form.Group>
-                      </Col>
-                    </Row>
-                  </Col>
                 </Row>
-
                 <Row className="mt-2">
                   <Col md={4}>
                     <Form.Group>
@@ -418,7 +392,35 @@ export default function NewWeddingForm() {
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Ciudad</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.Localization.city`)}
+                        isInvalid={!!errors.Events?.[index]?.Localization?.city}
+                        placeholder="Ciudad"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Localization?.city?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
 
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>País</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.Localization.country`)}
+                        isInvalid={
+                          !!errors.Events?.[index]?.Localization?.country
+                        }
+                        placeholder="País"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Localization?.country?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
                   <Col md={4}>
                     <Form.Group>
                       <Form.Label>Descripción</Form.Label>
@@ -433,7 +435,6 @@ export default function NewWeddingForm() {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <div className="mt-2 text-end">
                   <Button
                     variant="danger"
@@ -445,21 +446,19 @@ export default function NewWeddingForm() {
                 </div>
               </Card>
             ))}
-
             <Button
               variant="secondary"
               onClick={() =>
                 append({
                   Title: "",
                   Time: "",
-                  Description: "",
                   Localization: { city: "", country: "" },
+                  Description: "",
                 })
               }
             >
               Agregar Evento
             </Button>
-            <hr />
             <div className="text-center mt-4">
               <Button type="submit">Guardar Boda</Button>
             </div>

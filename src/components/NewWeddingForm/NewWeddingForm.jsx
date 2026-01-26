@@ -30,7 +30,16 @@ export default function NewWeddingForm() {
     defaultValues: {
       GuestNumber: 1,
       Events: [
-        { Title: "", City: "", Time: "", Localization: "", Description: "" },
+        {
+          Title: "",
+          City: "",
+          Time: "",
+          Localization: {
+            city: "",
+            country: "",
+          },
+          Description: "",
+        },
       ],
     },
   });
@@ -274,7 +283,7 @@ export default function NewWeddingForm() {
                     placeholder="..."
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.SongLink?.message}
+                    {errors.SongTitle?.message}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -325,112 +334,123 @@ export default function NewWeddingForm() {
               </Form.Text>
             </Form.Group>
 
+            <h4 className="mt-4">Eventos</h4>
+            {fields.map((field, index) => (
+              <Card key={field.id} className="mb-3 p-3">
+                <Row>
+                  <Col md={6}>
+                    <Form.Group>
+                      <Form.Label>Título</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.Title`)}
+                        placeholder="Título del evento"
+                        isInvalid={!!errors.Events?.[index]?.Title}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Title?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
+                  <Col md={6}>
+                    <Form.Group>
+                      <Form.Label>Ciudad</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.City`)}
+                        placeholder="Ciudad"
+                        isInvalid={!!errors.Events?.[index]?.City}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.City?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Row className="mt-2">
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Hora</Form.Label>
+                      <Form.Control
+                        type="time"
+                        {...register(`Events.${index}.Time`)}
+                        isInvalid={!!errors.Events?.[index]?.Time}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Time?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Ciudad</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.Localization.city`)}
+                        isInvalid={!!errors.Events?.[index]?.Localization?.city}
+                        placeholder="Ciudad"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Localization?.city?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
+
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>País</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.Localization.country`)}
+                        isInvalid={
+                          !!errors.Events?.[index]?.Localization?.country
+                        }
+                        placeholder="País"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Localization?.country?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
+                  <Col md={4}>
+                    <Form.Group>
+                      <Form.Label>Descripción</Form.Label>
+                      <Form.Control
+                        {...register(`Events.${index}.Description`)}
+                        placeholder="Descripción opcional"
+                        isInvalid={!!errors.Events?.[index]?.Description}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.Events?.[index]?.Description?.message}
+                      </Form.Control.Feedback>
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <div className="mt-2 text-end">
+                  <Button
+                    variant="danger"
+                    size="sm"
+                    onClick={() => remove(index)}
+                  >
+                    Eliminar Evento
+                  </Button>
+                </div>
+              </Card>
+            ))}
+            <Button
+              variant="secondary"
+              onClick={() =>
+                append({
+                  Title: "",
+                  Time: "",
+                  Localization: { city: "", country: "" },
+                  Description: "",
+                })
+              }
+            >
+              Agregar Evento
+            </Button>
+
             <div className="text-center mt-4">
               <Button type="submit">Guardar Boda</Button>
             </div>
           </Form>
-
-          <h4 className="mt-4">Eventos</h4>
-          {fields.map((field, index) => (
-            <Card key={field.id} className="mb-3 p-3">
-              <Row>
-                <Col md={6}>
-                  <Form.Group>
-                    <Form.Label>Título</Form.Label>
-                    <Form.Control
-                      {...register(`Events.${index}.Title`)}
-                      placeholder="Título del evento"
-                      isInvalid={!!errors.Events?.[index]?.Title}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.Title?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Col>
-                <Col md={6}>
-                  <Form.Group>
-                    <Form.Label>Ciudad</Form.Label>
-                    <Form.Control
-                      {...register(`Events.${index}.City`)}
-                      placeholder="Ciudad"
-                      isInvalid={!!errors.Events?.[index]?.City}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.City?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row className="mt-2">
-                <Col md={4}>
-                  <Form.Group>
-                    <Form.Label>Hora</Form.Label>
-                    <Form.Control
-                      type="time"
-                      {...register(`Events.${index}.Time`)}
-                      isInvalid={!!errors.Events?.[index]?.Time}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.Time?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Col>
-                <Col md={4}>
-                  <Form.Group>
-                    <Form.Label>Localización</Form.Label>
-                    <Form.Control
-                      {...register(`Events.${index}.Localization`)}
-                      placeholder="Localización"
-                      isInvalid={!!errors.Events?.[index]?.Localization}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.Localization?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Col>
-                <Col md={4}>
-                  <Form.Group>
-                    <Form.Label>Descripción</Form.Label>
-                    <Form.Control
-                      {...register(`Events.${index}.Description`)}
-                      placeholder="Descripción opcional"
-                      isInvalid={!!errors.Events?.[index]?.Description}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      {errors.Events?.[index]?.Description?.message}
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Col>
-              </Row>
-              <div className="mt-2 text-end">
-                <Button
-                  variant="danger"
-                  size="sm"
-                  onClick={() => remove(index)}
-                >
-                  Eliminar Evento
-                </Button>
-              </div>
-            </Card>
-          ))}
-          <Button
-            variant="secondary"
-            onClick={() =>
-              append({
-                Title: "",
-                City: "",
-                Time: "",
-                Localization: "",
-                Description: "",
-              })
-            }
-          >
-            Agregar Evento
-          </Button>
-
-          <div className="text-center mt-4">
-            <Button type="submit">Guardar Boda</Button>
-          </div>
         </Col>
 
         {/* Columna Preview */}

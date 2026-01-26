@@ -40,8 +40,8 @@ export function weddingToLegacyAdapter(data, user_id) {
     brideDescription: data.CoupleName2,
 
     location: {
-      city: data.CityName || "",
-      country: data.Localization || "",
+      city: data.Localization.city || "",
+      country: data.Localization.country || "",
     },
 
 

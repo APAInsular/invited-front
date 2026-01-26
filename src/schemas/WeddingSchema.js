@@ -8,7 +8,6 @@ const LocationSchema = z.object({
 
 const EventSchema = z.object({
     Title: z.string().min(1).max(50, "Maximo 50 caracteres (incluido espacios)"),
-    City: z.string().min(3, "Minimo 3 caracteres").max(50, "Maximo 50 caracteres (incluido espacios)"),
     Time: z.string().refine(str => /^([01]\d|2[0-3]):([0-5]\d)$/.test(str), "Formato de hora inválido HH:mm"),
     Localization: LocationSchema,
     Description: z.string().max(100).optional(0)
@@ -31,7 +30,7 @@ const WeddingSchema = z.object({
 
     TemplateName: z.enum(Object.keys(AvailableTemplates)),
 
-    Location: LocationSchema,
+    Localization: LocationSchema,
 
 
     FoodType: z.enum([

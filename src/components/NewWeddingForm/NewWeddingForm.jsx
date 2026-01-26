@@ -49,13 +49,17 @@ export default function NewWeddingForm() {
   const [galleryFiles, setGalleryFiles] = useState([]);
 
   useEffect(() => {
+    console.log("FETCH USER");
     const fetch = async () => {
       try {
         const data = await getUser();
         if (!data) return;
 
+        console.log("USER DATA", data);
+
         setUser(data);
       } catch (err) {
+        console.log("ERROR GETTING USER");
         console.error("Error al obtener el usuario:", err);
       }
     };
@@ -64,10 +68,13 @@ export default function NewWeddingForm() {
   }, []);
 
   const onSubmit = async (data) => {
+    console.log("SUBMIT");
     try {
       const _result = await createWedding(
         weddingToLegacyAdapter(data, user.id),
       );
+
+      console.log("CREATE WEDDING: ", _result);
 
       Swal.fire({
         icon: "success",
@@ -75,6 +82,8 @@ export default function NewWeddingForm() {
         text: "La boda fue creada correctamente.",
       });
     } catch (error) {
+      console.log("ERROR ON CREATE WEDDING: ", error);
+
       const message =
         error?.response?.data?.message || "Ocurrió un error al crear la boda.";
 
@@ -84,6 +93,7 @@ export default function NewWeddingForm() {
         text: message,
       });
     }
+    console.log("FIISHED");
   };
 
   const handleTemplateChange = (e) => {

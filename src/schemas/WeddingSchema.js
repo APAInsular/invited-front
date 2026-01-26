@@ -62,16 +62,10 @@ const WeddingSchema = z.object({
     SongTitle: z.string(),
 
 
-    HeaderImage: z.string().refine(
-        val => !val || /^data:image\/[a-zA-Z]+;base64,/.test(val),
-        { message: "Debe ser una imagen en Base64 válida" }
-    ),
+    HeaderImage: z.string(),
 
     GalleryImages: z.array(
-        z.string().refine(
-            val => /^data:image\/[a-zA-Z]+;base64,/.test(val),
-            { message: "Cada imagen debe estar en Base64 válida" }
-        )
+        z.string()
     ).optional(),
 
     Events: z.array(EventSchema).min(1, "Minimo un evento").max(100, "100 Eventos como maximo.")

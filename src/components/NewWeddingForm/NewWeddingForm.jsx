@@ -81,7 +81,7 @@ export default function NewWeddingForm() {
   }, []);
 
   const onSubmit = async (data) => {
-    console.log("SUBMIT");
+    console.log("SUBMIT", data);
     try {
       const _result = await createWedding(
         weddingToLegacyAdapter(data, user.id),

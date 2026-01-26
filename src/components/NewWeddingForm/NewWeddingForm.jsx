@@ -18,6 +18,7 @@ import {
   weddingToLegacyAdapter,
 } from "../../services/wedding.service";
 import { getUser } from "../../services/user.service";
+import { fileToBase64 } from "../../utils";
 
 export default function NewWeddingForm() {
   const {
@@ -114,18 +115,34 @@ export default function NewWeddingForm() {
     setTemplatePreview(`/images/${value}.png`);
   };
 
-  const handleCoupleImageUpload = (event) => {
+
+
+  const handleCoupleImageUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
 
-    setCoupleImagePreview(file);
+    setCoupleImagePreview(file); 
+
+    try {
+      const base64 = await fileToBase64(file);
+      setValue("HeaderImage", base64); 
+    } catch (err) {
+      console.error("Error convirtiendo la imagen a base64:", err);
+    }
   };
 
-  const handleGalleryUpload = (event) => {
+  const handleGalleryUpload = async (event) => {
     const files = Array.from(event.target.files);
     if (files.length === 0) return;
 
     setGalleryFiles(files); 
+
+    try {
+      const base64Files = await Promise.all(files.map(fileToBase64));
+      setValue("GalleryImages", base64Files); 
+    } catch (err) {
+      console.error("Error convirtiendo las imágenes a base64:", err);
+    }
   };
 
   return (

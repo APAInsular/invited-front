@@ -119,7 +119,7 @@ export default function NewWeddingForm() {
     const file = event.target.files[0];
     if (!file) return;
 
-    setValue("coverImage", file, { shouldValidate: true });
+    setValue("HeaderImage", file, { shouldValidate: true });
 
     const base64 = await fileToBase64(file);
     setCoupleImagePreview(base64);
@@ -129,7 +129,7 @@ export default function NewWeddingForm() {
     const files = Array.from(event.target.files);
     if (!files.length) return;
 
-    setValue("images", files, { shouldValidate: true });
+    setValue("GalleryImages", files, { shouldValidate: true });
   };
 
   return (
@@ -524,22 +524,21 @@ export default function NewWeddingForm() {
                     gap: "8px",
                   }}
                 >
-                  {galleryFiles.map((file, i) => {
-                    const url = URL.createObjectURL(file);
-                    return (
-                      <Image
-                        key={i}
-                        src={url}
-                        style={{
-                          width: "60px",
-                          height: "60px",
-                          objectFit: "cover",
-                          borderRadius: "4px",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                    );
-                  })}
+                  {galleryFiles.length > 0 && (
+                    <div>
+                      <h6 className="mb-2">
+                        Galería ({galleryFiles.length} imágenes)
+                      </h6>
+
+                      <ul style={{ paddingLeft: "1rem", margin: 0 }}>
+                        {galleryFiles.map((file, i) => (
+                          <li key={i} style={{ fontSize: "0.9rem" }}>
+                            {file.name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

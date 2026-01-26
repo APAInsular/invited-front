@@ -14,14 +14,21 @@ export async function createWedding(weddingData) {
   }
 }
 
+function formatDateForMySQL(date) {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 // @Garkatron/Matias -- I can't change backend yet, so here I create an object to adapt the data to data that backend expect.
 export function weddingToLegacyAdapter(data, user_id) {
-  console.log("AAAAAAAAAAAAAAAAAAA: ", data);
   
   return {
     user_id,
 
-    weddingDate: data.WeddingDate,
+    weddingDate: formatDateForMySQL(data.WeddingDate),
 
     template: data.TemplateName,
 

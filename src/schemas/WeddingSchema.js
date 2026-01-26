@@ -55,7 +55,7 @@ const WeddingSchema = z.object({
         "tema",
     ]),
 
-    GuestMessage: z.string().max(500, "Maximo 500 caracteres (inluido espacios)").optional().default(""),
+    GuestMessage: z.string().max(500, "Maximo 500 caracteres (inluido espacios)").default(""),
 
     SongLink: z.url(),
 

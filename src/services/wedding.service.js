@@ -49,13 +49,13 @@ export function weddingToLegacyAdapter(data, user_id) {
     images: [],
 
     events: data.Events.map(event => ({
-      Title: event.Title,
-      Time: event.Time,
-      Localization: {
+      name: event.Title,
+      time: event.Time,
+      location: {
         city: event.Localization.city,
         country: event.Localization.country,
       },
-      Description: event.Description,
+      description: event.Description,
     }))
   };
 }

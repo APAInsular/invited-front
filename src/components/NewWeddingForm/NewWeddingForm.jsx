@@ -205,11 +205,11 @@ export default function NewWeddingForm() {
                   <Form.Label>Ciudad</Form.Label>
                   <Form.Control
                     {...register(`Localization.city`)}
-                    isInvalid={!!errors.Events.Localization?.city}
+                    isInvalid={!!errors.Localization?.city}
                     placeholder="Ciudad"
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.Events?.Localization?.city?.message}
+                    {errors?.Localization?.city?.message}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -219,11 +219,11 @@ export default function NewWeddingForm() {
                   <Form.Label>País</Form.Label>
                   <Form.Control
                     {...register(`Localization.country`)}
-                    isInvalid={!!errors.Events?.Localization?.country}
+                    isInvalid={!!errors?.Localization?.country}
                     placeholder="País"
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.Events?.Localization?.country?.message}
+                    {errors?.Localization?.country?.message}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>

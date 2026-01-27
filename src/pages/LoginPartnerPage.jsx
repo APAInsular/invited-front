@@ -22,7 +22,8 @@ import { fileToBase64 } from "../utils";
 import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function NewWeddingForm() {
-  const { translate: t, loadingTranslation } = usePageTranslation("makeInvitationPage");
+  const { translate: t, loadingTranslation } =
+    usePageTranslation("makeInvitationPage");
 
   const {
     register,
@@ -48,7 +49,9 @@ export default function NewWeddingForm() {
 
   const [user, setUser] = useState(null);
   const { fields, append, remove } = useFieldArray({ control, name: "Events" });
-  const [templatePreview, setTemplatePreview] = useState("/images/default_template.png");
+  const [templatePreview, setTemplatePreview] = useState(
+    "/images/default_template.png",
+  );
   const [coupleImagePreview, setCoupleImagePreview] = useState(null);
   const [galleryFiles, setGalleryFiles] = useState([]);
 
@@ -67,14 +70,17 @@ export default function NewWeddingForm() {
 
   const onSubmit = async (data) => {
     try {
-      const _result = await createWedding(weddingToLegacyAdapter(data, user.id));
+      const _result = await createWedding(
+        weddingToLegacyAdapter(data, user.id),
+      );
       Swal.fire({
         icon: "success",
         title: t("alerts.successTitle"),
         text: t("alerts.successText"),
       });
     } catch (error) {
-      const message = error?.response?.data?.message || t("alerts.genericError");
+      const message =
+        error?.response?.data?.message || t("alerts.genericError");
       Swal.fire({
         icon: "error",
         title: t("alerts.errorTitle"),
@@ -83,7 +89,8 @@ export default function NewWeddingForm() {
     }
   };
 
-  const handleTemplateChange = (e) => setTemplatePreview(`/images/${e.target.value}.png`);
+  const handleTemplateChange = (e) =>
+    setTemplatePreview(`/images/${e.target.value}.png`);
 
   const handleCoupleImageUpload = async (event) => {
     const file = event.target.files[0];
@@ -101,7 +108,10 @@ export default function NewWeddingForm() {
   };
 
   return (
-    <Container className="mt-5 p-4" style={{ backgroundColor: "#F9E9E8", borderRadius: "8px" }}>
+    <Container
+      className="mt-5 p-4"
+      style={{ backgroundColor: "#F9E9E8", borderRadius: "8px" }}
+    >
       <h2 className="text-center mb-4">{t("title")}</h2>
       <Row>
         {/* Columna Formulario */}
@@ -155,12 +165,20 @@ export default function NewWeddingForm() {
               <Col md={6}>
                 <Form.Group>
                   <Form.Label>{t("form.template")}</Form.Label>
-                  <Form.Select {...register("TemplateName")} onChange={handleTemplateChange}>
+                  <Form.Select
+                    {...register("TemplateName")}
+                    onChange={handleTemplateChange}
+                  >
                     <option value="">{t("form.selectTemplate")}</option>
                     {Object.keys(AvailableTemplates).map((k) => (
-                      <option key={k} value={k}>{k}</option>
+                      <option key={k} value={k}>
+                        {k}
+                      </option>
                     ))}
                   </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.TemplateName?.message}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
@@ -289,7 +307,7 @@ export default function NewWeddingForm() {
                   <Form.Control
                     type="file"
                     accept="image/*"
-                    {...register("CoupleImage")}
+                    {...register("HeaderImage")}
                     onChange={handleCoupleImageUpload}
                     isInvalid={!!errors.CoupleImage}
                   />
@@ -309,7 +327,9 @@ export default function NewWeddingForm() {
                 multiple
                 onChange={handleGalleryUpload}
               />
-              <Form.Text className="text-muted">{t("form.galleryHelp")}</Form.Text>
+              <Form.Text className="text-muted">
+                {t("form.galleryHelp")}
+              </Form.Text>
             </Form.Group>
 
             {/* Eventos */}
@@ -365,10 +385,15 @@ export default function NewWeddingForm() {
                       <Form.Control
                         {...register(`Events.${index}.Localization.country`)}
                         placeholder={t("form.country")}
-                        isInvalid={!!errors.Events?.[index]?.Localization?.country}
+                        isInvalid={
+                          !!errors.Events?.[index]?.Localization?.country
+                        }
                       />
                       <Form.Control.Feedback type="invalid">
-                        {t(errors.Events?.[index]?.Localization?.country?.message)}
+                        {t(
+                          errors.Events?.[index]?.Localization?.country
+                            ?.message,
+                        )}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
@@ -388,7 +413,11 @@ export default function NewWeddingForm() {
                 </Row>
 
                 <div className="mt-2 text-end">
-                  <Button variant="danger" size="sm" onClick={() => remove(index)}>
+                  <Button
+                    variant="danger"
+                    size="sm"
+                    onClick={() => remove(index)}
+                  >
                     {t("form.removeEvent")}
                   </Button>
                 </div>
@@ -434,12 +463,16 @@ export default function NewWeddingForm() {
                 marginBottom: "20px",
               }}
             >
-              <Image src={templatePreview} fluid style={{ maxHeight: "100%", objectFit: "contain" }} />
+              <Image
+                src={templatePreview}
+                fluid
+                style={{ maxHeight: "100%", objectFit: "contain" }}
+              />
             </div>
 
             {coupleImagePreview && (
               <div>
-                <h6 className="mb-2">{t("form.coupleImage")}</h6>
+                <h6 className="mb-2">{t("form.HeaderImage")}</h6>
                 <div
                   style={{
                     width: "100%",
@@ -454,7 +487,11 @@ export default function NewWeddingForm() {
                     marginBottom: "20px",
                   }}
                 >
-                  <Image src={coupleImagePreview} fluid style={{ objectFit: "contain", maxHeight: "200px" }} />
+                  <Image
+                    src={coupleImagePreview}
+                    fluid
+                    style={{ objectFit: "contain", maxHeight: "200px" }}
+                  />
                 </div>
               </div>
             )}

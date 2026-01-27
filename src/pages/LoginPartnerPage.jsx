@@ -22,8 +22,9 @@ import { fileToBase64 } from "../utils";
 import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function NewWeddingForm() {
-  const { translate: t, loadingTranslation } =
-    usePageTranslation("makeInvitationPage");
+  const { translate: t, loadingTranslation } = usePageTranslation(
+    "makeInvitationPage"
+  );
 
   const {
     register,
@@ -50,10 +51,16 @@ export default function NewWeddingForm() {
   const [user, setUser] = useState(null);
   const { fields, append, remove } = useFieldArray({ control, name: "Events" });
   const [templatePreview, setTemplatePreview] = useState(
-    "/images/default_template.png",
+    "/images/default_template.png"
   );
   const [coupleImagePreview, setCoupleImagePreview] = useState(null);
   const [galleryFiles, setGalleryFiles] = useState([]);
+
+  // Función helper para mostrar errores traducidos solo si existen
+  const tError = (error) => {
+    if (!error || !error.message) return "";
+    return t(error.message);
+  };
 
   useEffect(() => {
     const fetch = async () => {
@@ -71,7 +78,7 @@ export default function NewWeddingForm() {
   const onSubmit = async (data) => {
     try {
       const _result = await createWedding(
-        weddingToLegacyAdapter(data, user.id),
+        weddingToLegacyAdapter(data, user.id)
       );
       Swal.fire({
         icon: "success",
@@ -128,7 +135,7 @@ export default function NewWeddingForm() {
                     isInvalid={!!errors.CoupleName1}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.CoupleName1?.message)}
+                    {tError(errors.CoupleName1)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -141,7 +148,7 @@ export default function NewWeddingForm() {
                     isInvalid={!!errors.CoupleName2}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.CoupleName2?.message)}
+                    {tError(errors.CoupleName2)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -158,7 +165,7 @@ export default function NewWeddingForm() {
                     isInvalid={!!errors.WeddingDate}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.WeddingDate?.message)}
+                    {tError(errors.WeddingDate)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -168,6 +175,7 @@ export default function NewWeddingForm() {
                   <Form.Select
                     {...register("TemplateName")}
                     onChange={handleTemplateChange}
+                    isInvalid={!!errors.TemplateName}
                   >
                     <option value="">{t("form.selectTemplate")}</option>
                     {Object.keys(AvailableTemplates).map((k) => (
@@ -177,7 +185,7 @@ export default function NewWeddingForm() {
                     ))}
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
-                    {errors.TemplateName?.message}
+                    {tError(errors.TemplateName)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -194,7 +202,7 @@ export default function NewWeddingForm() {
                     isInvalid={!!errors.Localization?.city}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.Localization?.city?.message)}
+                    {tError(errors.Localization?.city)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -207,7 +215,7 @@ export default function NewWeddingForm() {
                     isInvalid={!!errors.Localization?.country}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.Localization?.country?.message)}
+                    {tError(errors.Localization?.country)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -237,7 +245,7 @@ export default function NewWeddingForm() {
                     isInvalid={!!errors.GuestNumber}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.GuestNumber?.message)}
+                    {tError(errors.GuestNumber)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -280,7 +288,7 @@ export default function NewWeddingForm() {
                     placeholder={t("form.songTitle")}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.SongTitle?.message)}
+                    {tError(errors.SongTitle)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -293,7 +301,7 @@ export default function NewWeddingForm() {
                     placeholder={t("form.songLink")}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.SongLink?.message)}
+                    {tError(errors.SongLink)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -309,10 +317,10 @@ export default function NewWeddingForm() {
                     accept="image/*"
                     {...register("HeaderImage")}
                     onChange={handleCoupleImageUpload}
-                    isInvalid={!!errors.CoupleImage}
+                    isInvalid={!!errors.HeaderImage}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {t(errors.CoupleImage?.message)}
+                    {tError(errors.HeaderImage)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -327,9 +335,7 @@ export default function NewWeddingForm() {
                 multiple
                 onChange={handleGalleryUpload}
               />
-              <Form.Text className="text-muted">
-                {t("form.galleryHelp")}
-              </Form.Text>
+              <Form.Text className="text-muted">{t("form.galleryHelp")}</Form.Text>
             </Form.Group>
 
             {/* Eventos */}
@@ -346,7 +352,7 @@ export default function NewWeddingForm() {
                         isInvalid={!!errors.Events?.[index]?.Title}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {t(errors.Events?.[index]?.Title?.message)}
+                        {tError(errors.Events?.[index]?.Title)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
@@ -362,7 +368,7 @@ export default function NewWeddingForm() {
                         isInvalid={!!errors.Events?.[index]?.Time}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {t(errors.Events?.[index]?.Time?.message)}
+                        {tError(errors.Events?.[index]?.Time)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
@@ -375,7 +381,7 @@ export default function NewWeddingForm() {
                         isInvalid={!!errors.Events?.[index]?.Localization?.city}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {t(errors.Events?.[index]?.Localization?.city?.message)}
+                        {tError(errors.Events?.[index]?.Localization?.city)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
@@ -385,15 +391,10 @@ export default function NewWeddingForm() {
                       <Form.Control
                         {...register(`Events.${index}.Localization.country`)}
                         placeholder={t("form.country")}
-                        isInvalid={
-                          !!errors.Events?.[index]?.Localization?.country
-                        }
+                        isInvalid={!!errors.Events?.[index]?.Localization?.country}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {t(
-                          errors.Events?.[index]?.Localization?.country
-                            ?.message,
-                        )}
+                        {tError(errors.Events?.[index]?.Localization?.country)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
@@ -406,7 +407,7 @@ export default function NewWeddingForm() {
                         isInvalid={!!errors.Events?.[index]?.Description}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {t(errors.Events?.[index]?.Description?.message)}
+                        {tError(errors.Events?.[index]?.Description)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>

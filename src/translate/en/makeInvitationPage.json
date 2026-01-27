@@ -1,45 +1,95 @@
 {
-  "formTitle": "Create Your Invitation",
-  "formSubtitle": "Fill out the form and generate your invitation in minutes.",
-  "requiredFieldsNote": "(*) required fields",
-  "partnerName": "Partner Name*",
-  "weddingDate": "Wedding Date*",
-  "templateLabel": "Template to use*",
-  "templateOptions": {
-    "romantic": "Classic Template",
-    "watercolor": "Watercolor Template",
-    "fairytale": "Once Upon a Time Template",
-    "dramatic": "Dramatic Template",
-    "sweet": "Sweet Template",
-    "dark": "Dark Template"
+  "title": "Create New Wedding",
+  "form": {
+    "groomName": "Groom's Name",
+    "brideName": "Bride's Name",
+    "weddingDate": "Wedding Date",
+    "template": "Template",
+    "selectTemplate": "Select Template",
+    "city": "City",
+    "country": "Country",
+    "foodType": "Food Type",
+    "guests": "Guests",
+    "dressCode": "Dress Code",
+    "guestMessage": "Message for Guests",
+    "songTitle": "Song Title",
+    "songLink": "Wedding Song",
+    "coupleImage": "Couple's Image",
+    "gallery": "Image Gallery",
+    "galleryHelp": "You can select multiple images",
+    "events": "Events",
+    "eventTitle": "Title",
+    "eventTime": "Time",
+    "eventDescription": "Description",
+    "addEvent": "Add Event",
+    "removeEvent": "Remove Event",
+    "save": "Save Wedding"
   },
-  "locationTitle": "Wedding Location",
-  "city": "City*",
-  "country": "Location*",
-  "itineraryTitle": "Celebration Itinerary",
-  "itinerarySubtitle": "Add all the milestones of your celebration",
-  "eventName": "Name*",
-  "eventTime": "Time",
-  "eventCity": "City",
-  "eventLocation": "Location",
-  "eventDescription": "Description",
-  "removeEvent": "Remove",
-  "addEvent": "Add Event",
-  "foodTypeLabel": "Food Type*",
-  "foodOptions": {
-    "none": "No Preferences",
-    "vegetarian": "Vegetarian",
-    "vegan": "Vegan",
-    "mixed": "Mixed",
-    "other": "Other"
+  "alerts": {
+    "successTitle": "Success!",
+    "successText": "The wedding was created successfully.",
+    "errorTitle": "Error",
+    "genericError": "An error occurred while creating the wedding."
   },
-  "guestCountLabel": "Number of Guests*",
-  "dressCode": "Dress Code*",
-  "customMessage": "Message for Guests*",
-  "musicTitle": "Song Title*",
-  "musicUrl": "Music Link (YouTube)*",
-  "coupleImage": "Couple Image*",
-  "galleryImages": "Image Gallery*",
-  "submitButton": "Submit",
-  "loadingText": "Loading..."
+  "errors": {
+    "CoupleName": {
+      "required": "Name is required",
+      "min": "Name is too short",
+      "max": "Name is too long"
+    },
+    "WeddingDate": {
+      "invalid": "The date must be valid and from tomorrow onwards"
+    },
+    "TemplateName": {
+      "invalid": "Select a valid template"
+    },
+    "Localization": {
+      "city": {
+        "required": "City is required"
+      },
+      "country": {
+        "required": "Country is required"
+      }
+    },
+    "FoodType": {
+      "invalid": "Select a valid food type"
+    },
+    "GuestNumber": {
+      "min": "There must be at least one guest",
+      "max": "No more than 2000 guests allowed",
+      "positive": "Number of guests cannot be negative"
+    },
+    "DressCode": {
+      "invalid": "Select a valid dress code"
+    },
+    "GuestMessage": {
+      "max": "Maximum 500 characters (including spaces)"
+    },
+    "SongLink": {
+      "invalid": "Enter a valid link"
+    },
+    "SongTitle": {
+      "required": "Song title is required"
+    },
+    "HeaderImage": {
+      "invalid": "You must upload a valid image file"
+    },
+    "GalleryImages": {
+      "invalid": "Images must be valid files"
+    },
+    "Events": {
+      "min": "There must be at least one event",
+      "max": "No more than 100 events allowed",
+      "Title": {
+        "required": "Event title is required",
+        "max": "Maximum 50 characters"
+      },
+      "Time": {
+        "invalid": "Invalid time format HH:mm"
+      },
+      "Description": {
+        "max": "Maximum 100 characters"
+      }
+    }
+  }
 }

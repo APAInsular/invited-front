@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function ThankYouPage() {
-    const { t, loadingTranslation } = usePageTranslation('thankYouPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('thankYouPage');
     const navigate = useNavigate();
 
     if (loadingTranslation) {

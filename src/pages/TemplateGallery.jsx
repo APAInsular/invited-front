@@ -54,7 +54,7 @@ const CategoryItem = ({
 };
 
 const TemplateGallery = () => {
-  const { t, loadingTranslation } = usePageTranslation("registerPage");
+  const { translate: t, loadingTranslation } = usePageTranslation("registerPage");
   const navigate = useNavigate();
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 

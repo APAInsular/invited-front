@@ -8,7 +8,7 @@ const Footer = () => {
     const localizedLink = (path) => {
         return `/${lang}${path}`;
     };
-    const { t, loadingTranslation } = usePageTranslation('footerPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('footerPage');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

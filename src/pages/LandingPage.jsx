@@ -15,7 +15,7 @@ const LandingPage = () => {
     const navigate = useNavigate();
     const { lang } = useParams();
 
-    const { t, loadingTranslation } = usePageTranslation("landingPage");
+    const { translate: t, loadingTranslation } = usePageTranslation("landingPage");
 
     const [formData, setFormData] = useState({
         name: "",

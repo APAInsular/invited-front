@@ -11,7 +11,7 @@ import { useState } from "react";
 import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function UserRegistrationForm() {
-    const { t, loadingTranslation } = usePageTranslation('registerPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('registerPage');
 
 
     const navigate = useNavigate();

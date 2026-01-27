@@ -5,7 +5,7 @@ import usePageTranslation from '../hooks/usePageTranslation';
 
 const AboutUs = () => {
 
-    const { t, loadingTranslation } = usePageTranslation('aboutUsPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('aboutUsPage');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import usePageTranslation from '../../hooks/usePageTranslation';
 
 const CookiesPolicy = () => {
-    const { t, loadingTranslation } = usePageTranslation('cookiesPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('cookiesPage');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

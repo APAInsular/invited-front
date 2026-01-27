@@ -15,7 +15,7 @@ export default function MakeInvitationForm() {
 
     const { lang } = useParams();
 
-    const { t, loadingTranslation } = usePageTranslation('makeInvitationPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('makeInvitationPage');
 
     const [isLoading, setIsLoading] = useState(false);
 

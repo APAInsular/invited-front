@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import usePageTranslation from '../hooks/usePageTranslation';
 
 const UserMenu = ({ user, logout }) => {
-    const { t, loadingTranslation } = usePageTranslation('navigation');
+    const { translate: t, loadingTranslation } = usePageTranslation('navigation');
     const [isOpen, setIsOpen] = useState(false);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [scrolled, setScrolled] = useState(false);

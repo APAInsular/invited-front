@@ -19,7 +19,7 @@ function GuestList({ guestCount, selectedWeddingId, guests, onGuestDeleted }) {
         fetchWeddings();
     }, [selectedWeddingId]);
 
-    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('dashboardPage');
 
 
     const deleteGuest = async (guestId) => {

@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import usePageTranslation from '../../hooks/usePageTranslation';
 
 const LegalNotice = () => {
-    const { t, loadingTranslation } = usePageTranslation('legalNoticePage');
+    const { translate: t, loadingTranslation } = usePageTranslation('legalNoticePage');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

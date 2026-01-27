@@ -4,7 +4,7 @@ import { PersonFill, HeartFill, EnvelopeFill, TelephoneFill } from 'react-bootst
 import usePageTranslation from '../hooks/usePageTranslation';
 
 const ProfileCard = ({ user, onEdit, weddingDate }) => {
-    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('dashboardPage');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

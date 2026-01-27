@@ -8,7 +8,7 @@ import { Eye, EyeOff } from "lucide-react";
 import usePageTranslation from '../hooks/usePageTranslation';
 
 const Login = () => {
-  const { t, loadingTranslation } = usePageTranslation('loginPage');
+  const { translate: t, loadingTranslation } = usePageTranslation('loginPage');
 
   const { login } = useContext(AuthContext);
 

@@ -16,7 +16,7 @@ import usePageTranslation from '../hooks/usePageTranslation';
 function Sidebar({ onSelectComponent, isAdmin }) {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
-  const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+  const { translate: t, loadingTranslation } = usePageTranslation('dashboardPage');
 
   const menuItems = [
     { id: 'dashboard', label: `${t("sidebar.home")}`, icon: <HouseDoor className="me-2" />, action: () => navigate('/dashboard') },

@@ -61,7 +61,7 @@ function Dashboard() {
         setWeddingGuest((prevGuests) => prevGuests.filter(guest => guest.id !== guestId));
     };
 
-    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('dashboardPage');
 
     // Función para generar enlaces con el idioma actual
     const { lang } = useParams();

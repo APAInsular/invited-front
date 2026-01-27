@@ -4,7 +4,7 @@ import usePageTranslation from '../hooks/usePageTranslation';
 
 function WeddingList({ weddings, onWeddingSelect, isAdmin }) {
 
-    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('dashboardPage');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

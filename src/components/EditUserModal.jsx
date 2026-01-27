@@ -15,7 +15,7 @@ function EditUserModal({ show, onClose, userData, onUserUpdated }) {
         partnerSecondSurname: '',
     });
 
-    const { t, loadingTranslation } = usePageTranslation('dashboardPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('dashboardPage');
 
 
     useEffect(() => {

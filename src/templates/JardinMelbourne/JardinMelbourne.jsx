@@ -23,6 +23,8 @@ import DECORATION_1 from "./images/decoration_1.png";
 import TIMELINE_ICON from "./images/timeline_icon.png";
 
 const JardinMelbourne = ({ wedding, images, translate: t, coverImage }) => {
+  console.log(t);
+  
   return (
     <div className={styles.wrapper}>
       {/* Hero */}

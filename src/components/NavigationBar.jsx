@@ -51,7 +51,7 @@ const NavigationBar = () => {
         }
     };
 
-    const { t, loadingTranslation } = usePageTranslation('navigation');
+    const { translate: t, loadingTranslation } = usePageTranslation('navigation');
 
     if (loadingTranslation) {
         return <div className="text-center py-5">Loading translations...</div>;

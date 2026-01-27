@@ -7,7 +7,7 @@ import usePageTranslation from '../hooks/usePageTranslation';
 const ContactPage = () => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
-    const { t, loadingTranslation } = usePageTranslation('contactPage');
+    const { translate: t, loadingTranslation } = usePageTranslation('contactPage');
 
 
     const [formData, setFormData] = useState({

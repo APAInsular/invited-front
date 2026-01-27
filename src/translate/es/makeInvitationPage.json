@@ -1,45 +1,95 @@
 {
-  "formTitle": "Crea tu Invitación",
-  "formSubtitle": "Llena el formulario y genera tu invitación en minutos.",
-  "requiredFieldsNote": "(*) campos obligatorios",
-  "partnerName": "Nombre Pareja*",
-  "weddingDate": "Fecha de la boda*",
-  "templateLabel": "Plantilla a utilizar*",
-  "templateOptions": {
-    "romantic": "Plantilla Clásica",
-    "watercolor": "Plantilla Acuarela",
-    "fairytale": "Plantilla Érase una vez",
-    "havana": "Plantilla Havana Moderna",
-    "sweet": "Plantilla Dulce",
-    "dark": "Plantilla Oscura"
+  "title": "Crear Nueva Boda",
+  "form": {
+    "groomName": "Nombre Novio",
+    "brideName": "Nombre Novia",
+    "weddingDate": "Fecha de Boda",
+    "template": "Plantilla",
+    "selectTemplate": "Seleccione Plantilla",
+    "city": "Ciudad",
+    "country": "País",
+    "foodType": "Tipo de comida",
+    "guests": "Invitados",
+    "dressCode": "Dress Code",
+    "guestMessage": "Mensaje para invitados",
+    "songTitle": "Título Canción",
+    "songLink": "Canción de boda",
+    "coupleImage": "Imagen de la pareja",
+    "gallery": "Galería de imágenes",
+    "galleryHelp": "Puedes seleccionar múltiples imágenes",
+    "events": "Eventos",
+    "eventTitle": "Título",
+    "eventTime": "Hora",
+    "eventDescription": "Descripción",
+    "addEvent": "Agregar Evento",
+    "removeEvent": "Eliminar Evento",
+    "save": "Guardar Boda"
   },
-  "locationTitle": "Localización de la Boda",
-  "city": "Ciudad*",
-  "country": "Localizacion*",
-  "itineraryTitle": "Itinerario de la Celebración",
-  "itinerarySubtitle": "Añade todos los hitos de tu celebración",
-  "eventName": "Nombre*",
-  "eventTime": "Hora",
-  "eventCity": "Ciudad",
-  "eventLocation": "Localización",
-  "eventDescription": "Descripción",
-  "removeEvent": "Eliminar",
-  "addEvent": "Añadir Evento",
-  "foodTypeLabel": "Tipo de alimentación*",
-  "foodOptions": {
-    "none": "Sin Preferencias",
-    "vegetarian": "Vegetariana",
-    "vegan": "Vegana",
-    "mixed": "Mixta",
-    "other": "Otra"
+  "alerts": {
+    "successTitle": "¡Listo!",
+    "successText": "La boda fue creada correctamente.",
+    "errorTitle": "Error",
+    "genericError": "Ocurrió un error al crear la boda."
   },
-  "guestCountLabel": "Número de Invitados*",
-  "dressCode": "Código de vestimenta*",
-  "customMessage": "Mensaje para los invitados*",
-  "musicTitle": "Título de la canción*",
-  "musicUrl": "Enlace de la música (YouTube)*",
-  "coupleImage": "Imagen de la Pareja*",
-  "galleryImages": "Galería de Imágenes*",
-  "submitButton": "Enviar",
-  "loadingText": "Cargando..."
+  "errors": {
+    "CoupleName": {
+      "required": "Nombre requerido",
+      "min": "Nombre demasiado corto",
+      "max": "Nombre demasiado largo"
+    },
+    "WeddingDate": {
+      "invalid": "La fecha debe ser válida y a partir de mañana"
+    },
+    "TemplateName": {
+      "invalid": "Selecciona una plantilla válida"
+    },
+    "Localization": {
+      "city": {
+        "required": "Ciudad requerida"
+      },
+      "country": {
+        "required": "País requerido"
+      }
+    },
+    "FoodType": {
+      "invalid": "Selecciona un tipo de comida válido"
+    },
+    "GuestNumber": {
+      "min": "Debe haber al menos un invitado",
+      "max": "No se aceptan más de 2000 invitados",
+      "positive": "El número de invitados no puede ser negativo"
+    },
+    "DressCode": {
+      "invalid": "Selecciona un dress code válido"
+    },
+    "GuestMessage": {
+      "max": "Máximo 500 caracteres (incluido espacios)"
+    },
+    "SongLink": {
+      "invalid": "Ingresa un enlace válido"
+    },
+    "SongTitle": {
+      "required": "Título de la canción requerido"
+    },
+    "HeaderImage": {
+      "invalid": "Debes subir un archivo de imagen válido"
+    },
+    "GalleryImages": {
+      "invalid": "Las imágenes deben ser archivos válidos"
+    },
+    "Events": {
+      "min": "Debe haber al menos un evento",
+      "max": "No se pueden tener más de 100 eventos",
+      "Title": {
+        "required": "Título del evento requerido",
+        "max": "Máximo 50 caracteres"
+      },
+      "Time": {
+        "invalid": "Formato de hora inválido HH:mm"
+      },
+      "Description": {
+        "max": "Máximo 100 caracteres"
+      }
+    }
+  }
 }

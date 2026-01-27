@@ -1,6 +1,6 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import WeddingSchema from "../../schemas/WeddingSchema";
+import WeddingSchema from "../schemas/WeddingSchema";
 import {
   Container,
   Row,

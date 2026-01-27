@@ -19,7 +19,7 @@ import BG_GALLERY from "./images/backgrounds/gallery.png";
 import BG_ITINERARIO from "./images/backgrounds/itinerario.jpg";
 import FooterBranding from "../components/FooterBranding/FooterBranding";
 
-const AlegreLasVegas = ({ wedding, trad: t, images, coverImage }) => {
+const AlegreLasVegas = ({ wedding, translate: t, images, coverImage }) => {
   return (
     <div className="body-template4">
       <Page

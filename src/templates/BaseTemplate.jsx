@@ -39,7 +39,7 @@ const BaseTemplate = ({ translationPage, wedding, children }) => {
     changeImages();
   }, [wedding.images]);
 
-  const { t: trad, loadingTranslation } = usePageTranslation(translationPage);
+  const { translate, loadingTranslation } = usePageTranslation(translationPage);
 
   const handleLanguageSelect = useCallback(
     (lang) => {
@@ -71,7 +71,7 @@ const BaseTemplate = ({ translationPage, wedding, children }) => {
     wedding,
     images: newImages,
     coverImage: imageUrl,
-    trad,
+    translate,
     loadingTranslation,
   };
 

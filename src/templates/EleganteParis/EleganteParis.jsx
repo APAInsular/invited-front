@@ -18,7 +18,7 @@ import BACKGROUND_1 from "./images/background_1.jpg";
 import DECO from "./images/timeline_decoration.png";
 import FramedPhoto from "../components/FramedPhoto/FramedPhoto";
 
-const EleganteParis = ({ wedding, images, trad, coverImage }) => {
+const EleganteParis = ({ wedding, images, translate: t, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page
@@ -32,7 +32,7 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
             <CoupleNames
               groom={wedding.user.name}
               bride={wedding.user.partner.name}
-              icon={trad("coupleNames.heartIcon")}
+              icon={t("coupleNames.heartIcon")}
               asColumn
             />
           </div>
@@ -43,10 +43,10 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
               photo={coverImage}
             />
 
-            <p>{trad("hero.description")}</p>
+            <p>{t("hero.description")}</p>
 
             <p style={{ whiteSpace: "pre-line" }}>
-              {trad("hero.dateLocation")}
+              {t("hero.dateLocation")}
             </p>
           </div>
         </section>
@@ -54,34 +54,34 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
 
       <Page backgroundImage={BACKGROUND_1} minHeight="830px">
         <section className="text-center">
-          <h3 className="subtitle">{trad("songLink.title")}</h3>
+          <h3 className="subtitle">{t("songLink.title")}</h3>
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
-            text={trad("songLink")}
+            text={t("songLink")}
           />
         </section>
 
         <section>
           <h3 className="text-center subtitle">
-            {trad("location.title")}
+            {t("location.title")}
           </h3>
           <p className="p-5 text-center">
-            {trad("location.name")}
+            {t("location.name")}
             <br />
-            {trad("location.addressLine1")}
+            {t("location.addressLine1")}
             <br />
-            {trad("location.addressLine2")}
+            {t("location.addressLine2")}
           </p>
         </section>
 
         <section>
           <h3 className="text-center subtitle">
-            {trad("countdown.title")}
+            {t("countdown.title")}
           </h3>
           <CustomizableCountDown
             weddingDate={wedding.weddingDate}
-            text={trad("countdown")}
+            text={t("countdown")}
             frame={{
               borderStyle: "2px solid #2c2c2c62",
               frameMinsize: "60px",
@@ -94,7 +94,7 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
         <section>
           <Timeline
             events={wedding.events}
-            text={trad("timeline")}
+            text={t("timeline")}
             line={{ lineSrc: DECO, lineSize: "10px" }}
           />
         </section>
@@ -102,10 +102,10 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
 
       <Page backgroundImage={BACKGROUND_1} minHeight="830px">
         <section className="text-center">
-          <h3 className="subtitle">{trad("gallery.title")}</h3>
+          <h3 className="subtitle">{t("gallery.title")}</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}
+            text={t("gallery")}
             renderItem={(src, i) => (
               <CarrouselCard key={i} src={src} height="1500px" />
             )}
@@ -117,11 +117,11 @@ const EleganteParis = ({ wedding, images, trad, coverImage }) => {
         <section>
           <WeddingForm
             weddingId={wedding.id}
-            text={trad("weddingForm")}
-            fields={trad("weddingForm.fields")}
+            text={t("weddingForm")}
+            fields={t("weddingForm.fields")}
           />
           <p className="p-3 text-center">
-            {trad("footer.thanks")}
+            {t("footer.thanks")}
           </p>
         </section>
       </Page>

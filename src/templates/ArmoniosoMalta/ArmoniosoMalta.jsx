@@ -15,7 +15,7 @@ import Page from '../components/Page/Page';
 import FooterBranding from '../components/FooterBranding/FooterBranding';
 import BG2 from "./images/backgrounds/2.jpg";
 
-const ArmoniosoMalta = ({ wedding, trad: t, images, coverImage }) => {
+const ArmoniosoMalta = ({ wedding, translate: t, images, coverImage }) => {
   return (
     <div className="body-ArmoniosoMalta">
       <section className="header-invite-ArmoniosoMalta text-center py-4 section-bg-ArmoniosoMalta bg-portada-ArmoniosoMalta">

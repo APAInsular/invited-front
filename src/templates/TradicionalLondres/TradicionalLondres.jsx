@@ -9,7 +9,7 @@ import WeddingForm from "./components/WeddingForm_Plantilla_5";
 
 import "./styles/TradicionalLondres.css";
 
-const TradicionalLondres = ({ wedding, trad: t, images, coverImage }) => {
+const TradicionalLondres = ({ wedding, translate: t, images, coverImage }) => {
   return (
     <div className="body-template5">
       <section className="text-center  py-4 section-bg-template5 bg-portada-template5">

@@ -18,7 +18,7 @@ import WeddingForm from "../components/WeddingForm/WeddingForm";
 
 const bgColor = "rgba(254, 238, 212, 1)";
 
-const Classic = ({ wedding, images, trad, coverImage }) => {
+const Classic = ({ wedding, images, translate: t, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       {/* Hero */}
@@ -46,26 +46,26 @@ const Classic = ({ wedding, images, trad, coverImage }) => {
       {/* Song */}
       <Page backgroundColor={bgColor} minHeight="830px">
         <section className="text-center">
-          <h3 className="title-low">{trad("songLink.title")}</h3>
+          <h3 className="title-low">{t("songLink.title")}</h3>
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
-            text={trad("songLink")}
+            text={t("songLink")}
           />
         </section>
 
         {/* Location */}
         <section>
-          <h3 className="text-center title-low">{trad("location.title")}</h3>
-          <p className="p-5 text-center">{trad("location.address")}</p>
+          <h3 className="text-center title-low">{t("location.title")}</h3>
+          <p className="p-5 text-center">{t("location.address")}</p>
         </section>
 
         {/* Countdown */}
         <section>
-          <h3 className="text-center title-low">{trad("countdown.title")}</h3>
+          <h3 className="text-center title-low">{t("countdown.title")}</h3>
           <HavanaCountDown
             weddingDate={wedding.weddingDate}
-            text={trad("countdown")}
+            text={t("countdown")}
           />
         </section>
       </Page>
@@ -73,7 +73,7 @@ const Classic = ({ wedding, images, trad, coverImage }) => {
       {/* Timeline */}
       <Page backgroundColor={bgColor} minHeight="830px">
         <section>
-          <Timeline events={wedding.events} text={trad("timeline")} />
+          <Timeline events={wedding.events} text={t("timeline")} />
           <div className="d-flex justify-content-center"></div>
         </section>
       </Page>
@@ -81,10 +81,10 @@ const Classic = ({ wedding, images, trad, coverImage }) => {
       {/* Gallery */}
       <Page minHeight="830px" backgroundColor={bgColor}>
         <section className="text-center">
-          <h3 className="title-low">{trad("gallery.title")}</h3>
+          <h3 className="title-low">{t("gallery.title")}</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}
+            text={t("gallery")}
             renderItem={(src, i) => (
               <CarrouselCard key={i} src={src} height="1500px" />
             )}
@@ -96,8 +96,8 @@ const Classic = ({ wedding, images, trad, coverImage }) => {
       <Page backgroundColor={bgColor} minHeight="830px">
         <WeddingForm
           weddingId={wedding.id}
-          text={trad("weddingForm")}
-          fields={trad("weddingForm.fields")}
+          text={t("weddingForm")}
+          fields={t("weddingForm.fields")}
         />
       </Page>
 

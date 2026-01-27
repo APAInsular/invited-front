@@ -23,7 +23,7 @@ import WeddingForm from "../components/WeddingForm/WeddingForm";
 
 //</section>
 
-const EraseUnaVez = ({ wedding, trad: t, images, coverImage }) => {
+const EraseUnaVez = ({ wedding, translate: t, images, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page

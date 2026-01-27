@@ -32,7 +32,7 @@ const usePageTranslation = (pageName) => {
   }, [language, pageName]);
 
   // Función para obtener traducciones con soporte para objetos anidados
-  const t = (key) => {
+  const translate = (key) => {
     if (!translations) return `[${key}]`;
 
     const keys = key.split('.');
@@ -50,7 +50,7 @@ const usePageTranslation = (pageName) => {
     return value || `[${key}]`;
   };
 
-  return { t, loading, error };
+  return { translate, loading, error };
 };
 
 export default usePageTranslation;

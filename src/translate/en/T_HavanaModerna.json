@@ -1,0 +1,62 @@
+{
+  "countdown": {
+    "title": "⏳ Time never stops! ⏳",
+    "unit1": "days",
+    "unit2": "hours",
+    "unit3": "minutes",
+    "unit4": "seconds"
+  },
+  "coupleNames": {
+    "heartIcon": "&"
+  },
+  "hero": {
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe adipisci facere architecto accusantium blanditiis, similique cumque nihil, sequi non facilis soluta veniam illo dicta nemo possimus aliquam quod recusandae doloribus!",
+    "cta": "You can’t miss it!",
+    "time": "time",
+    "hour": "hour"
+  },
+  "gallery": {
+    "title": "🌴 Our adventure... 🌴",
+    "cta": "...will continue with you!"
+  },
+  "churchLocation": {
+    "title": "Where do we meet?"
+  },
+  "songLink": {
+    "title": "🎶 Our song 🎶",
+    "playingText": "Now playing the song: ",
+    "playButton": "▶️ Play Song",
+    "pauseButton": "⏸️ Pause Song"
+  },
+  "weddingForm": {
+    "title": "💍 RSVP",
+    "requiredNote": "(*) required fields",
+    "fields": {
+      "name": "First Name*",
+      "firstSurname": "Last Name*",
+      "secondSurname": "Second Last Name",
+      "extraInformation": "Additional Information",
+      "allergy": "Allergies",
+      "feedingLabel": "Meal Preference",
+      "feedingOption1": "Select...",
+      "feedingOption2": "No preference",
+      "feedingOption3": "Vegetarian",
+      "feedingOption4": "Vegan",
+      "companionQuestion": "Will you bring a guest?",
+      "companionCount": "How many guests?",
+      "answerYes": "Yes",
+      "answerNo": "No",
+      "attendantTitle": "Guest Information",
+      "attendantField1": "First Name",
+      "attendantField2": "Last Name",
+      "attendantField3": "Second Last Name",
+      "attendantField4": "Guest age"
+    },
+    "submitButton": "Submit Confirmation"
+  },
+  "timeline": {
+    "title": "💍 Wedding Schedule 💍",
+    "locationPrefix": "📍",
+    "timePrefix": "🕒"
+  }
+}

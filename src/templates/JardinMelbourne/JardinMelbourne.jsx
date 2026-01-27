@@ -22,7 +22,7 @@ import DECORATION_0 from "./images/decoration_0.png";
 import DECORATION_1 from "./images/decoration_1.png";
 import TIMELINE_ICON from "./images/timeline_icon.png";
 
-const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
+const JardinMelbourne = ({ wedding, images, translate: t, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       {/* Hero */}
@@ -33,17 +33,17 @@ const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
             <CoupleNames
               groom={wedding.user.name}
               bride={wedding.user.partner.name}
-              icon={trad("coupleNames.heartIcon")}
+              icon={t("coupleNames.heartIcon")}
               asColumn
             />
           </div>
           <p className="mx-3 text-center">
-            {trad("hero.description")} {" "}
+            {t("hero.description")} {" "}
             <span className="fw-bold text-2xl">
               {formatDateToString(wedding.weddingDate)}
             </span>
-            <br /> <span className="fw-bold text-2xl"> a las {" "} {trad("hero.time") } {" "}</span>
-            <span className="fw-bold text-2xl">{trad("hero.hour")}</span>
+            <br /> <span className="fw-bold text-2xl"> a las {" "} {t("hero.time") } {" "}</span>
+            <span className="fw-bold text-2xl">{t("hero.hour")}</span>
             <br />
             <span className="fw-bold text-2xl">{wedding.location.city}</span>
             <br />
@@ -55,31 +55,31 @@ const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
       {/* Song */}
       <Page backgroundColor="white" minHeight="830px">
         <section className="text-center">
-          <h3 className="title-low">{trad("songLink.title")}</h3>
+          <h3 className="title-low">{t("songLink.title")}</h3>
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
-            text={trad("songLink")}
+            text={t("songLink")}
           />
         </section>
 
         {/* Location */}
         <section>
-          <h3 className="text-center title-low">{trad("location.title")}</h3>
-          <p className="p-5 text-center">{trad("location.address")}</p>
+          <h3 className="text-center title-low">{t("location.title")}</h3>
+          <p className="p-5 text-center">{t("location.address")}</p>
         </section>
 
         {/* Countdown */}
         <section>
-          <h3 className="text-center title-low">{trad("countdown.title")}</h3>
-          <HavanaCountDown weddingDate={wedding.weddingDate} text={trad("countdown")} />
+          <h3 className="text-center title-low">{t("countdown.title")}</h3>
+          <HavanaCountDown weddingDate={wedding.weddingDate} text={t("countdown")} />
         </section>
       </Page>
 
       {/* Timeline */}
       <Page backgroundColor="white" minHeight="830px">
         <section>
-          <Timeline events={wedding.events} text={trad("timeline")} icon={{ iconSrc: TIMELINE_ICON }} />
+          <Timeline events={wedding.events} text={t("timeline")} icon={{ iconSrc: TIMELINE_ICON }} />
           <div className="d-flex justify-content-center">
             <img width={400} src={DECORATION_1} alt="" />
           </div>
@@ -89,10 +89,10 @@ const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
       {/* Gallery */}
       <Page minHeight="830px" backgroundColor="white">
         <section className="text-center">
-          <h3 className="title-low">{trad("gallery.title")}</h3>
+          <h3 className="title-low">{t("gallery.title")}</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}
+            text={t("gallery")}
             renderItem={(src, i) => <CarrouselCard key={i} src={src} height="1500px" />}
           />
           <img className="mt-5" width={300} src={DECORATION_0} alt="" />
@@ -103,8 +103,8 @@ const JardinMelbourne = ({ wedding, images, trad, coverImage }) => {
       <Page backgroundColor="white" minHeight="830px">
         <WeddingForm
           weddingId={wedding.id}
-          text={trad("weddingForm")}
-          fields={trad("weddingForm.fields")}
+          text={t("weddingForm")}
+          fields={t("weddingForm.fields")}
         />
       </Page>
 

@@ -19,7 +19,7 @@ import BACKGROUND_3 from "./images/bg_3.png";
 import BACKGROUND_4 from "./images/bg_4.png";
 import image from "./../JardinMelbourne/images/casadosfelices.webp";
 
-const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
+const SanfranciscoArcoiris = ({ wedding, images, translate: t, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page
@@ -37,14 +37,14 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
             <CoupleNames
               groom={wedding.user.name}
               bride={wedding.user.partner.name}
-              icon={trad("coupleNames.heartIcon")}
+              icon={t("coupleNames.heartIcon")}
             />
           </div>
 
           <div className="text-center">
-            <p className="p-4">{trad("hero.description")}</p>
+            <p className="p-4">{t("hero.description")}</p>
             <p className="subtitle" style={{ whiteSpace: "pre-line" }}>
-              {trad("hero.dateLocation")}
+              {t("hero.dateLocation")}
             </p>
           </div>
         </section>
@@ -52,29 +52,29 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
 
       <Page minHeight="830px" backgroundImage={BACKGROUND_1}>
         <section className="text-center">
-          <h3 className="subtitle">{trad("gallery.title")}</h3>
+          <h3 className="subtitle">{t("gallery.title")}</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}
+            text={t("gallery")}
             renderItem={(src, i) => <CarrouselCard key={i} src={src} height="1500px" />}
           />
         </section>
-        <h3 className="text-center subtitle">{trad("gallery.cta")}</h3>
+        <h3 className="text-center subtitle">{t("gallery.cta")}</h3>
       </Page>
 
       <Page backgroundImage={BACKGROUND_2} minHeight="830px">
         <section>
-          <Timeline events={wedding.events} text={trad("timeline")} />
+          <Timeline events={wedding.events} text={t("timeline")} />
         </section>
       </Page>
 
       <Page
         footer={
           <section>
-            <h3 className="text-center subtitle">{trad("countdown.title")}</h3>
+            <h3 className="text-center subtitle">{t("countdown.title")}</h3>
             <CustomizableCountDown
               weddingDate={wedding.weddingDate}
-              text={trad("countdown")}
+              text={t("countdown")}
               frame={{
                 borderStyle: "2px solid #2c2c2c62",
                 frameMinsize: "60px",
@@ -87,19 +87,19 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
         centerVertically
       >
         <section className="text-center">
-          <h3 className="subtitle">{trad("songLink.title")}</h3>
+          <h3 className="subtitle">{t("songLink.title")}</h3>
           <div className="p-3">
             <SongLink
               songUrl={wedding.musicUrl}
               songTitle={wedding.musicTitle}
-              text={trad("songLink")}
+              text={t("songLink")}
             />
           </div>
         </section>
 
         <section className="text-center">
-          <h3 className="subtitle">{trad("location.title")}</h3>
-          <p className="p-3">{trad("location.address")}</p>
+          <h3 className="subtitle">{t("location.title")}</h3>
+          <p className="p-3">{t("location.address")}</p>
         </section>
       </Page>
 
@@ -107,10 +107,10 @@ const SanfranciscoArcoiris = ({ wedding, images, trad, coverImage }) => {
         <section>
           <WeddingForm
             weddingId={wedding.id}
-            text={trad("weddingForm")}
-            fields={trad("weddingForm.fields")}
+            text={t("weddingForm")}
+            fields={t("weddingForm.fields")}
           />
-          <p className="p-3 text-center">{trad("footer.thanks")}</p>
+          <p className="p-3 text-center">{t("footer.thanks")}</p>
         </section>
       </Page>
 

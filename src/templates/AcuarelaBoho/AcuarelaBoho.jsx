@@ -26,7 +26,7 @@ import StylableTimeline from "./../components/StylableTimeline/StylableTimeline"
 import AcuarelaBohoWeddingFormStyles from "./styles/AcuarelaBohoWeddingForm.module.css";
 import AcuarelaBohoTimeline from "./styles/AcuarelaBohoTimeline.module.css";
 
-const AcuarelaBoho = ({ wedding, trad: t, images, coverImage }) => {
+const AcuarelaBoho = ({ wedding, translate: t, images, coverImage }) => {
   return (
     <div className={styles.wrapper}>
       <Page backgroundImage={BG1} padding="0" minHeight="830px">

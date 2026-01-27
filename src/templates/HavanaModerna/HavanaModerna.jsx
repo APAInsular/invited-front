@@ -26,7 +26,7 @@ import TIMELINE_ICON from "./images/right-arrow-svgrepo-com.svg";
 import Timeline from "../components/Timeline/Timeline";
 import FooterBranding from "../components/FooterBranding/FooterBranding";
 
-const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
+const HavanaModerna = ({ wedding, images, translate: t, coverImage }) => {
   return (
     <div className={`HavanaModerna ${styles.wrapper}`}>
       <Page backgroundImage={BACKGROUND1} padding="0" minHeight="830px">
@@ -73,7 +73,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
             <h3 className="title-low">¡El tiempo no se detiene!</h3>
             <HavanaCountDown
               weddingDate={wedding.weddingDate}
-              text={trad("countdown")}
+              text={t("countdown")}
             />
           </section>
         }
@@ -86,7 +86,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
           <SongLink
             songUrl={wedding.musicUrl}
             songTitle={wedding.musicTitle}
-            text={trad("songLink")}
+            text={t("songLink")}
           />
         </section>
         <section className="text-center">
@@ -94,7 +94,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
           <Location
             location={wedding.location.city}
             country={wedding.location.country}
-            text={trad("churchLocation")}
+            text={t("churchLocation")}
           />
         </section>
       </Page>
@@ -104,7 +104,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
           <h3 className="title-low">Nuestra aventura...</h3>
           <Carrousel
             images={images}
-            text={trad("gallery")}
+            text={t("gallery")}
             icon
             renderItem={(src, i) => (
               <CarrouselCard src={src} height={"1500px"} />
@@ -122,7 +122,7 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
       >
         <Timeline
           events={wedding.events}
-          text={trad("timeline")}
+          text={t("timeline")}
           icon={{ iconSrc: TIMELINE_ICON }}
         />
       </Page>
@@ -130,8 +130,8 @@ const HavanaModerna = ({ wedding, images, trad, coverImage }) => {
       <Page backgroundImage={BACKGROUND1} minHeight="830px">
         <WeddingForm
           weddingId={wedding.id}
-          text={trad("weddingForm")}
-          fields={trad("weddingForm.fields")}
+          text={t("weddingForm")}
+          fields={t("weddingForm.fields")}
         />
       </Page>
 

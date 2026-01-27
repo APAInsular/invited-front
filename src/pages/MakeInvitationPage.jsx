@@ -19,8 +19,13 @@ import {
 } from "../services/wedding.service";
 import { getUser } from "../services/user.service";
 import { fileToBase64 } from "../utils";
+import usePageTranslation from "../hooks/usePageTranslation";
 
 export default function NewWeddingForm() {
+  const { translate: t, loadingTranslation } = usePageTranslation(
+    "makeInvitationPage"
+  );
+
   const {
     register,
     control,
@@ -30,19 +35,13 @@ export default function NewWeddingForm() {
   } = useForm({
     resolver: zodResolver(WeddingSchema),
     defaultValues: {
-      Localization: {
-        city: "",
-        country: "",
-      },
+      Localization: { city: "", country: "" },
       GuestNumber: 1,
       Events: [
         {
           Title: "",
           Time: "",
-          Localization: {
-            city: "",
-            country: "",
-          },
+          Localization: { city: "", country: "" },
           Description: "",
         },
       ],
@@ -50,77 +49,60 @@ export default function NewWeddingForm() {
   });
 
   const [user, setUser] = useState(null);
-
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "Events",
-  });
-
+  const { fields, append, remove } = useFieldArray({ control, name: "Events" });
   const [templatePreview, setTemplatePreview] = useState(
-    "/images/default_template.png",
+    "/images/default_template.png"
   );
   const [coupleImagePreview, setCoupleImagePreview] = useState(null);
   const [galleryFiles, setGalleryFiles] = useState([]);
 
+  // Función helper para mostrar errores traducidos solo si existen
+  const tError = (error) => {
+    if (!error || !error.message) return "";
+    return t(error.message);
+  };
+
   useEffect(() => {
-    console.log("FETCH USER");
     const fetch = async () => {
       try {
         const data = await getUser();
         if (!data) return;
-
-        console.log("USER DATA", data);
-
         setUser(data);
       } catch (err) {
-        console.log("ERROR GETTING USER");
         console.error("Error al obtener el usuario:", err);
       }
     };
-
     fetch();
   }, []);
 
   const onSubmit = async (data) => {
-    console.log("SUBMIT", data);
     try {
       const _result = await createWedding(
-        weddingToLegacyAdapter(data, user.id),
+        weddingToLegacyAdapter(data, user.id)
       );
-
-      console.log("CREATE WEDDING: ", _result);
-
       Swal.fire({
         icon: "success",
-        title: "¡Listo!",
-        text: "La boda fue creada correctamente.",
+        title: t("alerts.successTitle"),
+        text: t("alerts.successText"),
       });
     } catch (error) {
-      console.log("ERROR ON CREATE WEDDING: ", error);
-
       const message =
-        error?.response?.data?.message || "Ocurrió un error al crear la boda.";
-
+        error?.response?.data?.message || t("alerts.genericError");
       Swal.fire({
         icon: "error",
-        title: "Error",
+        title: t("alerts.errorTitle"),
         text: message,
       });
     }
-    console.log("FIISHED");
   };
 
-  const handleTemplateChange = (e) => {
-    const value = e.target.value;
-    setTemplatePreview(`/images/${value}.png`);
-  };
+  const handleTemplateChange = (e) =>
+    setTemplatePreview(`/images/${e.target.value}.png`);
 
   const handleCoupleImageUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
-
     setValue("HeaderImage", file, { shouldValidate: true });
-
     const base64 = await fileToBase64(file);
     setCoupleImagePreview(base64);
   };
@@ -128,8 +110,8 @@ export default function NewWeddingForm() {
   const handleGalleryUpload = async (event) => {
     const files = Array.from(event.target.files);
     if (!files.length) return;
-
     setValue("GalleryImages", files, { shouldValidate: true });
+    setGalleryFiles(files);
   };
 
   return (
@@ -137,7 +119,7 @@ export default function NewWeddingForm() {
       className="mt-5 p-4"
       style={{ backgroundColor: "#F9E9E8", borderRadius: "8px" }}
     >
-      <h2 className="text-center mb-4">Crear Nueva Boda</h2>
+      <h2 className="text-center mb-4">{t("title")}</h2>
       <Row>
         {/* Columna Formulario */}
         <Col md={8}>
@@ -146,27 +128,27 @@ export default function NewWeddingForm() {
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Nombre Novio</Form.Label>
+                  <Form.Label>{t("form.groomName")}</Form.Label>
                   <Form.Control
                     {...register("CoupleName1")}
-                    placeholder="Nombre Novio"
+                    placeholder={t("form.groomName")}
                     isInvalid={!!errors.CoupleName1}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.CoupleName1?.message}
+                    {tError(errors.CoupleName1)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Nombre Novia</Form.Label>
+                  <Form.Label>{t("form.brideName")}</Form.Label>
                   <Form.Control
                     {...register("CoupleName2")}
-                    placeholder="Nombre Novia"
+                    placeholder={t("form.brideName")}
                     isInvalid={!!errors.CoupleName2}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.CoupleName2?.message}
+                    {tError(errors.CoupleName2)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -176,29 +158,35 @@ export default function NewWeddingForm() {
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Fecha de Boda</Form.Label>
+                  <Form.Label>{t("form.weddingDate")}</Form.Label>
                   <Form.Control
                     type="date"
                     {...register("WeddingDate")}
                     isInvalid={!!errors.WeddingDate}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.WeddingDate?.message}
+                    {tError(errors.WeddingDate)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Plantilla</Form.Label>
+                  <Form.Label>{t("form.template")}</Form.Label>
                   <Form.Select
                     {...register("TemplateName")}
                     onChange={handleTemplateChange}
+                    isInvalid={!!errors.TemplateName}
                   >
-                    <option value="">Seleccione Plantilla</option>
+                    <option value="">{t("form.selectTemplate")}</option>
                     {Object.keys(AvailableTemplates).map((k) => (
-                      <option value={k}>{k}</option>
+                      <option key={k} value={k}>
+                        {k}
+                      </option>
                     ))}
                   </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    {tError(errors.TemplateName)}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
@@ -207,28 +195,27 @@ export default function NewWeddingForm() {
             <Row className="mb-3">
               <Col md={4}>
                 <Form.Group>
-                  <Form.Label>Ciudad</Form.Label>
+                  <Form.Label>{t("form.city")}</Form.Label>
                   <Form.Control
                     {...register(`Localization.city`)}
+                    placeholder={t("form.city")}
                     isInvalid={!!errors.Localization?.city}
-                    placeholder="Ciudad"
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors?.Localization?.city?.message}
+                    {tError(errors.Localization?.city)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
-
               <Col md={4}>
                 <Form.Group>
-                  <Form.Label>País</Form.Label>
+                  <Form.Label>{t("form.country")}</Form.Label>
                   <Form.Control
                     {...register(`Localization.country`)}
-                    isInvalid={!!errors?.Localization?.country}
-                    placeholder="País"
+                    placeholder={t("form.country")}
+                    isInvalid={!!errors.Localization?.country}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors?.Localization?.country?.message}
+                    {tError(errors.Localization?.country)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -238,7 +225,7 @@ export default function NewWeddingForm() {
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Tipo de comida</Form.Label>
+                  <Form.Label>{t("form.foodType")}</Form.Label>
                   <Form.Select {...register("FoodType")}>
                     <option value="">Seleccione</option>
                     <option value="buffet">Buffet</option>
@@ -251,14 +238,14 @@ export default function NewWeddingForm() {
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Invitados</Form.Label>
+                  <Form.Label>{t("form.guests")}</Form.Label>
                   <Form.Control
                     type="number"
                     {...register("GuestNumber", { valueAsNumber: true })}
                     isInvalid={!!errors.GuestNumber}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.GuestNumber?.message}
+                    {tError(errors.GuestNumber)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
@@ -268,7 +255,7 @@ export default function NewWeddingForm() {
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Dress Code</Form.Label>
+                  <Form.Label>{t("form.dressCode")}</Form.Label>
                   <Form.Select {...register("DressCode")}>
                     <option value="">Seleccione</option>
                     <option value="formal">Formal</option>
@@ -280,163 +267,164 @@ export default function NewWeddingForm() {
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <Form.Label>Mensaje para invitados</Form.Label>
+                  <Form.Label>{t("form.guestMessage")}</Form.Label>
                   <Form.Control
                     as="textarea"
                     {...register("GuestMessage")}
-                    placeholder="Mensaje"
+                    placeholder={t("form.guestMessage")}
                   />
                 </Form.Group>
               </Col>
             </Row>
 
+            {/* Canción y pareja */}
             <Row>
               <Col>
                 <Form.Group className="mb-3">
-                  <Form.Label>Titulo Cancion</Form.Label>
+                  <Form.Label>{t("form.songTitle")}</Form.Label>
                   <Form.Control
                     {...register("SongTitle")}
                     isInvalid={!!errors.SongTitle}
-                    placeholder="..."
+                    placeholder={t("form.songTitle")}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.SongTitle?.message}
+                    {tError(errors.SongTitle)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group className="mb-3">
-                  <Form.Label>Cancion de boda</Form.Label>
+                  <Form.Label>{t("form.songLink")}</Form.Label>
                   <Form.Control
                     {...register("SongLink")}
                     isInvalid={!!errors.SongLink}
-                    placeholder="Youtube Link"
+                    placeholder={t("form.songLink")}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.SongLink?.message}
+                    {tError(errors.SongLink)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
+
             {/* Imagen de la pareja */}
             <Row>
               <Col>
                 <Form.Group className="mb-3">
-                  <Form.Label>Imagen de la pareja</Form.Label>
+                  <Form.Label>{t("form.coupleImage")}</Form.Label>
                   <Form.Control
                     type="file"
                     accept="image/*"
-                    {...register("CoupleImage")}
+                    {...register("HeaderImage")}
                     onChange={handleCoupleImageUpload}
-                    isInvalid={!!errors.CoupleImage}
+                    isInvalid={!!errors.HeaderImage}
                   />
                   <Form.Control.Feedback type="invalid">
-                    {errors.CoupleImage?.message}
+                    {tError(errors.HeaderImage)}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
 
-            {/* Galería de imágenes */}
+            {/* Galería */}
             <Form.Group className="mb-3">
-              <Form.Label>Galería de imágenes</Form.Label>
+              <Form.Label>{t("form.gallery")}</Form.Label>
               <Form.Control
                 type="file"
                 accept="image/*"
                 multiple
                 onChange={handleGalleryUpload}
               />
-              <Form.Text className="text-muted">
-                Puedes seleccionar múltiples imágenes
-              </Form.Text>
+              <Form.Text className="text-muted">{t("form.galleryHelp")}</Form.Text>
             </Form.Group>
 
-            <h4 className="mt-4">Eventos</h4>
+            {/* Eventos */}
+            <h4 className="mt-4">{t("form.events")}</h4>
             {fields.map((field, index) => (
               <Card key={field.id} className="mb-3 p-3">
                 <Row>
                   <Col md={6}>
                     <Form.Group>
-                      <Form.Label>Título</Form.Label>
+                      <Form.Label>{t("form.eventTitle")}</Form.Label>
                       <Form.Control
                         {...register(`Events.${index}.Title`)}
-                        placeholder="Título del evento"
+                        placeholder={t("form.eventTitle")}
                         isInvalid={!!errors.Events?.[index]?.Title}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.Events?.[index]?.Title?.message}
+                        {tError(errors.Events?.[index]?.Title)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
                 </Row>
+
                 <Row className="mt-2">
                   <Col md={4}>
                     <Form.Group>
-                      <Form.Label>Hora</Form.Label>
+                      <Form.Label>{t("form.eventTime")}</Form.Label>
                       <Form.Control
                         type="time"
                         {...register(`Events.${index}.Time`)}
                         isInvalid={!!errors.Events?.[index]?.Time}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.Events?.[index]?.Time?.message}
+                        {tError(errors.Events?.[index]?.Time)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
                   <Col md={4}>
                     <Form.Group>
-                      <Form.Label>Ciudad</Form.Label>
+                      <Form.Label>{t("form.city")}</Form.Label>
                       <Form.Control
                         {...register(`Events.${index}.Localization.city`)}
+                        placeholder={t("form.city")}
                         isInvalid={!!errors.Events?.[index]?.Localization?.city}
-                        placeholder="Ciudad"
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.Events?.[index]?.Localization?.city?.message}
+                        {tError(errors.Events?.[index]?.Localization?.city)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
-
                   <Col md={4}>
                     <Form.Group>
-                      <Form.Label>País</Form.Label>
+                      <Form.Label>{t("form.country")}</Form.Label>
                       <Form.Control
                         {...register(`Events.${index}.Localization.country`)}
-                        isInvalid={
-                          !!errors.Events?.[index]?.Localization?.country
-                        }
-                        placeholder="País"
+                        placeholder={t("form.country")}
+                        isInvalid={!!errors.Events?.[index]?.Localization?.country}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.Events?.[index]?.Localization?.country?.message}
+                        {tError(errors.Events?.[index]?.Localization?.country)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
                   <Col md={4}>
                     <Form.Group>
-                      <Form.Label>Descripción</Form.Label>
+                      <Form.Label>{t("form.eventDescription")}</Form.Label>
                       <Form.Control
                         {...register(`Events.${index}.Description`)}
-                        placeholder="Descripción opcional"
+                        placeholder={t("form.eventDescription")}
                         isInvalid={!!errors.Events?.[index]?.Description}
                       />
                       <Form.Control.Feedback type="invalid">
-                        {errors.Events?.[index]?.Description?.message}
+                        {tError(errors.Events?.[index]?.Description)}
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Col>
                 </Row>
+
                 <div className="mt-2 text-end">
                   <Button
                     variant="danger"
                     size="sm"
                     onClick={() => remove(index)}
                   >
-                    Eliminar Evento
+                    {t("form.removeEvent")}
                   </Button>
                 </div>
               </Card>
             ))}
+
             <Button
               variant="secondary"
               onClick={() =>
@@ -448,11 +436,11 @@ export default function NewWeddingForm() {
                 })
               }
             >
-              Agregar Evento
+              {t("form.addEvent")}
             </Button>
 
             <div className="text-center mt-4">
-              <Button type="submit">Guardar Boda</Button>
+              <Button type="submit">{t("form.save")}</Button>
             </div>
           </Form>
         </Col>
@@ -462,7 +450,6 @@ export default function NewWeddingForm() {
           <div className="sticky-top" style={{ top: "20px" }}>
             <h5 className="text-center mb-3">Vista Previa</h5>
 
-            {/* Preview de plantilla */}
             <div
               style={{
                 width: "fit",
@@ -484,10 +471,9 @@ export default function NewWeddingForm() {
               />
             </div>
 
-            {/* Preview de imagen de pareja */}
             {coupleImagePreview && (
               <div>
-                <h6 className="mb-2">Imagen de la pareja</h6>
+                <h6 className="mb-2">{t("form.HeaderImage")}</h6>
                 <div
                   style={{
                     width: "100%",
@@ -511,35 +497,18 @@ export default function NewWeddingForm() {
               </div>
             )}
 
-            {/* Preview de galería */}
             {galleryFiles.length > 0 && (
               <div>
                 <h6 className="mb-2">
-                  Galería ({galleryFiles.length} imágenes)
+                  {t("form.gallery")} ({galleryFiles.length} imágenes)
                 </h6>
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "8px",
-                  }}
-                >
-                  {galleryFiles.length > 0 && (
-                    <div>
-                      <h6 className="mb-2">
-                        Galería ({galleryFiles.length} imágenes)
-                      </h6>
-
-                      <ul style={{ paddingLeft: "1rem", margin: 0 }}>
-                        {galleryFiles.map((file, i) => (
-                          <li key={i} style={{ fontSize: "0.9rem" }}>
-                            {file.name}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
+                <ul style={{ paddingLeft: "1rem", margin: 0 }}>
+                  {galleryFiles.map((file, i) => (
+                    <li key={i} style={{ fontSize: "0.9rem" }}>
+                      {file.name}
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
           </div>

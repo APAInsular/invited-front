@@ -1,0 +1,95 @@
+{
+  "title": "Create New Wedding",
+  "form": {
+    "groomName": "Groom's Name",
+    "brideName": "Bride's Name",
+    "weddingDate": "Wedding Date",
+    "template": "Template",
+    "selectTemplate": "Select Template",
+    "city": "City",
+    "country": "Country",
+    "foodType": "Food Type",
+    "guests": "Guests",
+    "dressCode": "Dress Code",
+    "guestMessage": "Message for Guests",
+    "songTitle": "Song Title",
+    "songLink": "Wedding Song",
+    "coupleImage": "Couple's Image",
+    "gallery": "Image Gallery",
+    "galleryHelp": "You can select multiple images",
+    "events": "Events",
+    "eventTitle": "Title",
+    "eventTime": "Time",
+    "eventDescription": "Description",
+    "addEvent": "Add Event",
+    "removeEvent": "Remove Event",
+    "save": "Save Wedding"
+  },
+  "alerts": {
+    "successTitle": "Success!",
+    "successText": "The wedding was created successfully.",
+    "errorTitle": "Error",
+    "genericError": "An error occurred while creating the wedding."
+  },
+  "errors": {
+    "CoupleName": {
+      "required": "Name is required",
+      "min": "Name is too short",
+      "max": "Name is too long"
+    },
+    "WeddingDate": {
+      "invalid": "The date must be valid and from tomorrow onwards"
+    },
+    "TemplateName": {
+      "invalid": "Select a valid template"
+    },
+    "Localization": {
+      "city": {
+        "required": "City is required"
+      },
+      "country": {
+        "required": "Country is required"
+      }
+    },
+    "FoodType": {
+      "invalid": "Select a valid food type"
+    },
+    "GuestNumber": {
+      "min": "There must be at least one guest",
+      "max": "No more than 2000 guests allowed",
+      "positive": "Number of guests cannot be negative"
+    },
+    "DressCode": {
+      "invalid": "Select a valid dress code"
+    },
+    "GuestMessage": {
+      "max": "Maximum 500 characters (including spaces)"
+    },
+    "SongLink": {
+      "invalid": "Enter a valid link"
+    },
+    "SongTitle": {
+      "required": "Song title is required"
+    },
+    "HeaderImage": {
+      "invalid": "You must upload a valid image file"
+    },
+    "GalleryImages": {
+      "invalid": "Images must be valid files"
+    },
+    "Events": {
+      "min": "There must be at least one event",
+      "max": "No more than 100 events allowed",
+      "Title": {
+        "required": "Event title is required",
+        "max": "Maximum 50 characters"
+      },
+      "Time": {
+        "invalid": "Invalid time format HH:mm"
+      },
+      "Description": {
+        "max": "Maximum 100 characters"
+      }
+    }
+  }
+}

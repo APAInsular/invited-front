@@ -121,10 +121,10 @@ export default function NewWeddingForm() {
     >
       <h2 className="text-center mb-4">{t("title")}</h2>
       <Row>
-        {/* Columna Formulario */}
+        {/* Column form */}
         <Col md={8}>
           <Form onSubmit={handleSubmit(onSubmit)}>
-            {/* Nombres de la pareja */}
+            {/* Couple names */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
@@ -154,7 +154,7 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Fecha y plantilla */}
+            {/* Date and template */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
@@ -191,9 +191,9 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Ubicación */}
+            {/* Localization city & country */}
             <Row className="mb-3">
-              <Col md={4}>
+              <Col md={6}>
                 <Form.Group>
                   <Form.Label>{t("form.city")}</Form.Label>
                   <Form.Control
@@ -206,7 +206,7 @@ export default function NewWeddingForm() {
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
-              <Col md={4}>
+              <Col md={6}>
                 <Form.Group>
                   <Form.Label>{t("form.country")}</Form.Label>
                   <Form.Control
@@ -221,7 +221,7 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Tipo de comida e invitados */}
+            {/* Type of food and guests */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
@@ -251,7 +251,7 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Dress code y mensaje */}
+            {/* Dress code and guest message */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group>
@@ -277,7 +277,7 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Canción y pareja */}
+            {/* Song title and Song link */}
             <Row>
               <Col>
                 <Form.Group className="mb-3">
@@ -307,7 +307,7 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Imagen de la pareja */}
+            {/* Image of the couple */}
             <Row>
               <Col>
                 <Form.Group className="mb-3">
@@ -326,7 +326,7 @@ export default function NewWeddingForm() {
               </Col>
             </Row>
 
-            {/* Galería */}
+            {/* Gallery */}
             <Form.Group className="mb-3">
               <Form.Label>{t("form.gallery")}</Form.Label>
               <Form.Control
@@ -338,7 +338,7 @@ export default function NewWeddingForm() {
               <Form.Text className="text-muted">{t("form.galleryHelp")}</Form.Text>
             </Form.Group>
 
-            {/* Eventos */}
+            {/* Events */}
             <h4 className="mt-4">{t("form.events")}</h4>
             {fields.map((field, index) => (
               <Card key={field.id} className="mb-3 p-3">
@@ -445,7 +445,7 @@ export default function NewWeddingForm() {
           </Form>
         </Col>
 
-        {/* Columna Preview */}
+        {/* Preview column */}
         <Col md={4}>
           <div className="sticky-top" style={{ top: "20px" }}>
             <h5 className="text-center mb-3">Vista Previa</h5>

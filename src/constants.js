@@ -26,7 +26,7 @@ export const TemplateConfig = [
     },
     {
         id: 3,
-        img: '/images/Plantilla_2.png',
+        img: '/images/EraseunaVez.png',
         link: 'https://www.invited.es/es/invitacion/luis-lucas/95',
         name: "Erase Una Vez",
         category: "Fantasia"

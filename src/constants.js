@@ -19,7 +19,7 @@ export const TemplateConfig = [
     // },
     {
         id: 2,
-        img: '/images/Plantilla_1.png',
+        img: '/images/Acuarela.png',
         link: 'https://www.invited.es/es/invitacion/javier-sandra/71',
         name: "Acuarela Boho",
         category: "Vintage"
